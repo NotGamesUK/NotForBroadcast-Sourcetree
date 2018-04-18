@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 48dfa99bf1fa917499a5c36af4d24073
+timeCreated: 1523709175
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Answer_Button
+    100002: Body
+    100004: Handset
+    100006: //RootNode
+    100008: Speaker
+    100010: Talk_Button
+    100012: Grill_For_Intercom
+    100014: Incoming_Call_Light
+    100016: Incoming_Call_Light_Bulb
+    100018: Press_To_Talk
+    100020: Inside_Speaker
+    400000: Answer_Button
+    400002: Body
+    400004: Handset
+    400006: //RootNode
+    400008: Speaker
+    400010: Talk_Button
+    400012: Grill_For_Intercom
+    400014: Incoming_Call_Light
+    400016: Incoming_Call_Light_Bulb
+    400018: Press_To_Talk
+    400020: Inside_Speaker
+    2100000: unnamed
+    2100002: Material
+    2300000: Answer_Button
+    2300002: Body
+    2300004: Handset
+    2300006: Speaker
+    2300008: Talk_Button
+    2300010: Grill_For_Intercom
+    2300012: Incoming_Call_Light
+    2300014: Incoming_Call_Light_Bulb
+    2300016: Press_To_Talk
+    2300018: Inside_Speaker
+    3300000: Answer_Button
+    3300002: Body
+    3300004: Handset
+    3300006: Speaker
+    3300008: Talk_Button
+    3300010: Grill_For_Intercom
+    3300012: Incoming_Call_Light
+    3300014: Incoming_Call_Light_Bulb
+    3300016: Press_To_Talk
+    3300018: Inside_Speaker
+    4300000: Answer_Button
+    4300002: Handset
+    4300004: Body
+    4300006: Talk_Button
+    4300008: Speaker
+    4300010: Grill_For_Intercom
+    4300012: Incoming_Call_Light_Bulb
+    4300014: Incoming_Call_Light
+    4300016: Press_To_Talk
+    4300018: Inside_Speaker
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
