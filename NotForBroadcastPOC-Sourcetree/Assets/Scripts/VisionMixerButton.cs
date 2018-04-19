@@ -6,13 +6,12 @@ public class VisionMixerButton : MonoBehaviour {
 
     public int myID;
 
-    private ButtonAnimating myButton;
+    public ButtonAnimating myButton;
     private VisionMixer visionMixer;
     private bool lastCheck;
 
 	// Use this for initialization
 	void Start () {
-        myButton = GetComponentInChildren<ButtonAnimating>();
         visionMixer = GetComponentInParent<VisionMixer>();
         lastCheck = myButton.isDepressed;
 	}
@@ -23,7 +22,10 @@ public class VisionMixerButton : MonoBehaviour {
         {
             Debug.Log("State of button changed.");
             lastCheck = myButton.isDepressed;
-            visionMixer.ScreenChange(myID);
+            if (lastCheck==true) {
+                visionMixer.ScreenChange(myID);
+
+            }
         }
 	}
 }
