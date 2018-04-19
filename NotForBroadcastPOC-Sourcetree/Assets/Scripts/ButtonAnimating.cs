@@ -17,7 +17,7 @@ public class ButtonAnimating : MonoBehaviour {
     private Vector3 endPosition;
     private MeshRenderer myRenderer;
     private bool isSelected = false;
-    private bool isDepressed = false;
+    public bool isDepressed = false;
     private bool canRelease = false;
     private float myDirection;
     private int count = 0;

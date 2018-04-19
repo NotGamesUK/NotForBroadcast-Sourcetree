@@ -585,6 +585,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f872ebda8c3fd204a8e4800687f6e1c4, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &122698997 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1597705708751664, guid: db79b6aae92f7974ebbb41ccf30d3f16,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319162494}
+--- !u!114 &122698999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 122698997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b808805ec588c2e4cbb44333888f8fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myID: 3
 --- !u!1001 &124282514
 Prefab:
   m_ObjectHideFlags: 0
@@ -2161,6 +2178,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3399d300232eca449b14871e91847f64, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &454854679 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1597705708751664, guid: db79b6aae92f7974ebbb41ccf30d3f16,
+    type: 2}
+  m_PrefabInternal: {fileID: 1503031327}
+--- !u!114 &454854681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454854679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b808805ec588c2e4cbb44333888f8fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myID: 4
 --- !u!1 &457368756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,6 +2708,21 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: eff1a97d167507748a9cefaac33a7e45, type: 3}
   m_PrefabInternal: {fileID: 516999574}
+--- !u!1 &536704957 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: f7b1c4302407c3949b471935f2e5bfb4, type: 3}
+  m_PrefabInternal: {fileID: 686600542}
+--- !u!114 &536704958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536704957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1af8ee0216eb064690c7b9e9268d44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &548124908
 Prefab:
   m_ObjectHideFlags: 0
@@ -2857,6 +2906,7 @@ MonoBehaviour:
   buttonType: 0
   myTranslation: {x: 0, y: 0, z: -0.01}
   speed: 7
+  isDepressed: 0
 --- !u!4 &575719895 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 3399d300232eca449b14871e91847f64, type: 3}
@@ -3577,6 +3627,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7b1c4302407c3949b471935f2e5bfb4, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &686680364 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1597705708751664, guid: db79b6aae92f7974ebbb41ccf30d3f16,
+    type: 2}
+  m_PrefabInternal: {fileID: 103891570}
+--- !u!114 &686680366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686680364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b808805ec588c2e4cbb44333888f8fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myID: 2
 --- !u!1 &691661002
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,6 +4146,7 @@ MonoBehaviour:
   buttonType: 0
   myTranslation: {x: 0, y: 0, z: -0.01}
   speed: 7
+  isDepressed: 0
 --- !u!1001 &792640619
 Prefab:
   m_ObjectHideFlags: 0
@@ -4753,6 +4821,7 @@ MonoBehaviour:
   buttonType: 0
   myTranslation: {x: 0, y: 0, z: -0.005}
   speed: 4
+  isDepressed: 0
 --- !u!65 &944242418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4944,6 +5013,7 @@ MonoBehaviour:
   buttonType: 0
   myTranslation: {x: -0.02, y: 0, z: 0}
   speed: 7
+  isDepressed: 0
 --- !u!65 &971742701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5308,6 +5378,7 @@ MonoBehaviour:
   buttonType: 1
   myTranslation: {x: 0, y: 0.014, z: 0}
   speed: 7
+  isDepressed: 0
 --- !u!65 &1029578783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6600,6 +6671,7 @@ MonoBehaviour:
   buttonType: 0
   myTranslation: {x: 0, y: 0, z: -0.01}
   speed: 7
+  isDepressed: 0
 --- !u!1001 &1286119838
 Prefab:
   m_ObjectHideFlags: 0
@@ -7756,6 +7828,7 @@ MonoBehaviour:
   buttonType: 0
   myTranslation: {x: -0.02, y: 0, z: 0}
   speed: 7
+  isDepressed: 0
 --- !u!65 &1394967886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7856,6 +7929,7 @@ MonoBehaviour:
   buttonType: 0
   myTranslation: {x: -0.02, y: 0, z: 0}
   speed: 7
+  isDepressed: 0
 --- !u!65 &1429188004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7925,7 +7999,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 0b7f76ca34e0b9a4b90e0c5189205175, type: 2}
     - target: {fileID: 100002, guid: 73160ad0ccbcc154f97f85fdbd8fef3d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73160ad0ccbcc154f97f85fdbd8fef3d, type: 3}
@@ -8970,6 +9044,7 @@ MonoBehaviour:
   buttonType: 1
   myTranslation: {x: 0, y: 0.035, z: 0}
   speed: 30
+  isDepressed: 0
 --- !u!65 &1660961219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9114,6 +9189,7 @@ MonoBehaviour:
   buttonType: 0
   myTranslation: {x: 0, y: 0, z: -0.01}
   speed: 7
+  isDepressed: 0
 --- !u!1001 &1768799128
 Prefab:
   m_ObjectHideFlags: 0
@@ -9223,6 +9299,7 @@ MonoBehaviour:
   buttonType: 1
   myTranslation: {x: 0, y: 0.014, z: 0}
   speed: 7
+  isDepressed: 0
 --- !u!65 &1803603831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10525,6 +10602,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2055339208 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1597705708751664, guid: db79b6aae92f7974ebbb41ccf30d3f16,
+    type: 2}
+  m_PrefabInternal: {fileID: 1148986404}
+--- !u!114 &2055339210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2055339208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b808805ec588c2e4cbb44333888f8fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myID: 1
 --- !u!4 &2057035390 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f7b1c4302407c3949b471935f2e5bfb4, type: 3}
