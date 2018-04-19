@@ -20,6 +20,7 @@ ModelImporter:
     100024: _On_Light
     100026: Screws
     100028: On_Light_Surround
+    100030: Speaker_Tweeter_Grill
     400000: Case
     400002: //RootNode
     400004: Tweeter
@@ -35,8 +36,10 @@ ModelImporter:
     400024: _On_Light
     400026: Screws
     400028: On_Light_Surround
+    400030: Speaker_Tweeter_Grill
     2100000: unnamed
     2100002: Material
+    2100004: Speaker_Tweeter_Grill__Speaker_Tweeter_Grill_png
     2300000: Case
     2300002: Tweeter
     2300004: Woofer
@@ -51,6 +54,7 @@ ModelImporter:
     2300022: _On_Light
     2300024: Screws
     2300026: On_Light_Surround
+    2300028: Speaker_Tweeter_Grill
     3300000: Case
     3300002: Tweeter
     3300004: Woofer
@@ -65,6 +69,7 @@ ModelImporter:
     3300022: _On_Light
     3300024: Screws
     3300026: On_Light_Surround
+    3300028: Speaker_Tweeter_Grill
     4300000: Tweeter
     4300002: Woofer
     4300004: Case
@@ -79,6 +84,7 @@ ModelImporter:
     4300022: _On_Light
     4300024: Screws
     4300026: On_Light_Surround
+    4300028: Speaker_Tweeter_Grill
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
