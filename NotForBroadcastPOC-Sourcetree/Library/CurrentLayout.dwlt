@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 957
-  m_MinSize: {x: 683, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 681, y: 342}
+  m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
   controlID: 9
 --- !u!114 &3
@@ -64,8 +64,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 957
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -143,7 +143,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1007
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -327,19 +327,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Documents\NFB-Sourcetree\NotForBroadcastPOC-Sourcetree
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 182a0000
-    m_LastClickedID: 10776
-    m_ExpandedIDs: 0000000076290000f42b00004c2c0000e42c0000c4350000c635000000ca9a3bffffff7f
+    m_SelectedIDs: dc290000
+    m_LastClickedID: 10716
+    m_ExpandedIDs: 00000000bc290000dc2900003a2c0000942c00002c2d00002c3600002e36000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000076290000f42b00004c2c0000e42c0000c4350000c6350000
+    m_ExpandedIDs: 00000000bc290000dc2900003a2c0000942c00002c2d00002c3600002e360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -392,8 +392,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 4cf8ffffb0faffff90f7ffffd2f6ffff
-    m_LastClickedInstanceID: -1972
+    m_SelectedInstanceIDs: 84320000
+    m_LastClickedInstanceID: 12932
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -484,10 +484,10 @@ MonoBehaviour:
     height: 558
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 35}
-    m_SelectedIDs: b0faffff
-    m_LastClickedID: -1360
-    m_ExpandedIDs: 5cf9ffffcefaffff00000000f8310000
+    scrollPos: {x: 0, y: 83}
+    m_SelectedIDs: 84320000
+    m_LastClickedID: 12932
+    m_ExpandedIDs: 16f3ffffb4f4ffff7af6ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -538,14 +538,14 @@ MonoBehaviour:
     height: 558
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 732.5742388268878
+  lastFramingTime: 115.29037429077925
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.58248484, y: 0.6712568, z: 0.7225386}
+    m_Target: {x: 1.021842, y: 0.20003673, z: -0.9193667}
     speed: 2
-    m_Value: {x: -0.58248484, y: 0.6712568, z: 0.7225386}
+    m_Value: {x: 1.021842, y: 0.20003673, z: -0.9193667}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -569,13 +569,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.06444112, y: 0.020955665, z: -0.0013534513, w: 0.99770063}
+    m_Target: {x: 0.0954074, y: 0.89051497, z: -0.21963258, w: 0.38683605}
     speed: 2
-    m_Value: {x: 0.064441115, y: 0.020955663, z: -0.0013534512, w: 0.9977005}
+    m_Value: {x: 0.0954074, y: 0.89051497, z: -0.21963258, w: 0.38683605}
   m_Size:
-    m_Target: 0.35785124
+    m_Target: 0.9999481
     speed: 2
-    m_Value: 0.35785124
+    m_Value: 0.9999481
   m_Ortho:
     m_Target: 0
     speed: 2
