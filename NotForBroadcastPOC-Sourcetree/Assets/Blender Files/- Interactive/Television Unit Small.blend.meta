@@ -6,12 +6,47 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Knob
+    100004: Knob_001
+    100006: TV_Unit_Small
+    100008: Cube
+    100010: Number_Display
+    100012: Tuning_Knob
+    100014: Volume__KNob
     400000: //RootNode
+    400002: Knob
+    400004: Knob_001
+    400006: TV_Unit_Small
+    400008: Cube
+    400010: Number_Display
+    400012: Tuning_Knob
+    400014: Volume__KNob
     2100000: Material
+    2100002: unnamed
+    2100004: Material_001
     2300000: //RootNode
+    2300002: Knob
+    2300004: Knob_001
+    2300006: TV_Unit_Small
+    2300008: Cube
+    2300010: Number_Display
+    2300012: Tuning_Knob
+    2300014: Volume__KNob
     3300000: //RootNode
+    3300002: Knob
+    3300004: Knob_001
+    3300006: TV_Unit_Small
+    3300008: Cube
+    3300010: Number_Display
+    3300012: Tuning_Knob
+    3300014: Volume__KNob
     4300000: Cube
     4300002: TV_Unit_Small
+    4300004: Knob_001
+    4300006: Knob
+    4300008: Volume__KNob
+    4300010: Number_Display
+    4300012: Tuning_Knob
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

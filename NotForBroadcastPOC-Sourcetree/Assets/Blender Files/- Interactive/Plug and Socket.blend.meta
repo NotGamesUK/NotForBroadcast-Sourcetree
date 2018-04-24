@@ -9,21 +9,39 @@ ModelImporter:
     100002: //RootNode
     100004: Socket
     100006: Switch
+    100008: Cable_Bezier_Curve
+    100010: Cable_Circle_Curve
+    100012: Cable
     400000: Plug
     400002: //RootNode
     400004: Socket
     400006: Switch
+    400008: Cable_Bezier_Curve
+    400010: Cable_Circle_Curve
+    400012: Cable
     2100000: unnamed
     2100002: Material
+    2100004: Material_002
+    2100006: Material_001
+    2100008: End_of_Switch
     2300000: Plug
     2300002: Socket
     2300004: Switch
+    2300006: Cable_Bezier_Curve
+    2300008: Cable_Circle_Curve
+    2300010: Cable
     3300000: Plug
     3300002: Socket
     3300004: Switch
+    3300006: Cable_Bezier_Curve
+    3300008: Cable_Circle_Curve
+    3300010: Cable
     4300000: Switch
     4300002: Plug
     4300004: Socket
+    4300006: Cable_Circle_Curve
+    4300008: Cable_Bezier_Curve
+    4300010: Cable
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
