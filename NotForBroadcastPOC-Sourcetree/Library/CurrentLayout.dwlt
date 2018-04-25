@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 112
+  controlID: 9
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 113
+  controlID: 10
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 114
+  controlID: 11
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -327,19 +327,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Materials
+    - Assets/Blender Files/- Interactive
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Blender Files/- Interactive
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Documents\NFB-Sourcetree\NotForBroadcastPOC-Sourcetree
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 94290000
-    m_LastClickedID: 10644
-    m_ExpandedIDs: 000000006829000094290000022c00005e2c0000fa2c0000423600004436000072a7000078a70000b0a7000000ca9a3bffffff7f
+    m_SelectedIDs: 002f0000
+    m_LastClickedID: 12032
+    m_ExpandedIDs: 000000007a290000a6290000302b00006e2b00005c2c0000bc2c0000722d0000e42e0000363700003837000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006829000094290000022c00005e2c0000fa2c00004236000044360000
+    m_ExpandedIDs: 000000007a290000a6290000302b00006e2b00005c2c0000bc2c0000722d0000e42e00003637000038370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -484,10 +484,10 @@ MonoBehaviour:
     height: 558
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 203}
-    m_SelectedIDs: fef5ffff
-    m_LastClickedID: -2562
-    m_ExpandedIDs: fef5ffffaef6ffff64f7ffffd6f7ffffdef7ffff82f8ffff8af8ffffd4f8ffffdcf8ffff00f9ffff1cf9ffff34faffff3cfaffff58faffff9efaffffa6faffffaefaffff50fbffff58fbffff9cfbffff00000000c8310000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 7e290000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 06f5ffff5efaffff9cfbffff0000000014310000d2320000d2330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -543,9 +543,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.18457031, y: 0.34295654, z: 0.37554932}
+    m_Target: {x: -1.095581, y: 0.42926025, z: -0.1301918}
     speed: 2
-    m_Value: {x: 0.18457031, y: 0.34295654, z: 0.37554932}
+    m_Value: {x: -1.095581, y: 0.42926025, z: -0.1301918}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -561,21 +561,21 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 0
+      m_Target: 1
       speed: 2
-      m_Value: 0
+      m_Value: 1
     zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.07150902, y: -0.10902145, z: 0.00785433, w: 0.99144834}
+    m_Target: {x: 0.1501278, y: -0.68345976, z: 0.14674166, w: 0.6991855}
     speed: 2
-    m_Value: {x: 0.071507916, y: -0.10901977, z: 0.007854209, w: 0.9914331}
+    m_Value: {x: 0.15012412, y: -0.68344295, z: 0.14673805, w: 0.6991683}
   m_Size:
-    m_Target: 0.24191882
+    m_Target: 0.5766853
     speed: 2
-    m_Value: 0.24191882
+    m_Value: 0.5766853
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -634,7 +634,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
