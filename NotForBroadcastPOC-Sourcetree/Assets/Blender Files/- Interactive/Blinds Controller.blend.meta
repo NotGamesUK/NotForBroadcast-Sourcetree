@@ -9,21 +9,38 @@ ModelImporter:
     100002: Box
     100004: DOWN_Button
     100006: UP_Button
+    100008: Circle
+    100010: BezierCircle
+    100012: BezierCurve
     400000: //RootNode
     400002: Box
     400004: DOWN_Button
     400006: UP_Button
+    400008: Circle
+    400010: BezierCircle
+    400012: BezierCurve
     2100000: unnamed
     2100002: Material
+    2100004: Material_001
+    2100006: Arrow
     2300000: Box
     2300002: DOWN_Button
     2300004: UP_Button
+    2300006: Circle
+    2300008: BezierCircle
+    2300010: BezierCurve
     3300000: Box
     3300002: DOWN_Button
     3300004: UP_Button
+    3300006: Circle
+    3300008: BezierCircle
+    3300010: BezierCurve
     4300000: DOWN_Button
     4300002: UP_Button
     4300004: Box
+    4300006: Circle
+    4300008: BezierCircle
+    4300010: BezierCurve
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
