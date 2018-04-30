@@ -11,28 +11,43 @@ ModelImporter:
     100006: Pole
     100008: //RootNode
     100010: Button
+    100012: Fan_Blade_01
+    100014: Fan_Blade_01_001
+    100016: Fan_Blade_01_002
     400000: Base
     400002: Fan
     400004: Hinge
     400006: Pole
     400008: //RootNode
     400010: Button
+    400012: Fan_Blade_01
+    400014: Fan_Blade_01_001
+    400016: Fan_Blade_01_002
     2100000: unnamed
     2300000: Base
     2300002: Fan
     2300004: Hinge
     2300006: Pole
     2300008: Button
+    2300010: Fan_Blade_01
+    2300012: Fan_Blade_01_001
+    2300014: Fan_Blade_01_002
     3300000: Base
     3300002: Fan
     3300004: Hinge
     3300006: Pole
     3300008: Button
+    3300010: Fan_Blade_01
+    3300012: Fan_Blade_01_001
+    3300014: Fan_Blade_01_002
     4300000: Fan
     4300002: Hinge
     4300004: Pole
     4300006: Base
     4300008: Button
+    4300010: Fan_Blade_01
+    4300012: Fan_Blade_01_002
+    4300014: Fan_Blade_01_001
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
