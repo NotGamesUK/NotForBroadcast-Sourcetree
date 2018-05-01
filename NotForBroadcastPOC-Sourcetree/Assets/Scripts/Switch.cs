@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour {
 
+    private Material defaultMaterial;
     public Material switchOnMaterial;
     public Material mouseOverMaterialOn;
     public Material switchOffMaterial;
     public Material mouseOverMaterialOff;
     public Vector3 myRotation;
     public bool isOn = false;
+    public bool hasPower = true;
 
     private MeshRenderer myRenderer;
     private bool isSelected;
     private Quaternion onRotation;
     private Quaternion offRotation;
+    private bool lastPower;
 
     // Use this for initialization
     void Start()
@@ -24,6 +27,19 @@ public class Switch : MonoBehaviour {
         this.transform.Rotate(myRotation);
         onRotation = this.transform.rotation;
         this.transform.rotation = offRotation;
+        defaultMaterial = GetComponent<MeshRenderer>().material;
+        lastPower = hasPower;
+        if (hasPower)
+        {
+            if (isOn)
+            {
+                myRenderer.material = switchOnMaterial;
+            }
+            else
+            {
+                myRenderer.material = switchOffMaterial;
+            }
+        }
     }
 
     private void OnMouseEnter()
@@ -62,11 +78,6 @@ public class Switch : MonoBehaviour {
         }
     }
 
-    private void OnMouseUp()
-    {
-        // Might be needed if controls slippy/over sensitive
-    }
-
     public void SwitchOn()
     {
         isOn = true;
@@ -92,46 +103,32 @@ public class Switch : MonoBehaviour {
         {
             myRenderer.material = switchOffMaterial;
         }
-
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        //if (myDirection != 0)
-        //{
-        //    this.transform.Translate(myTranslation * (myDirection / speed));
-        //    count++;
-        //    if (count == speed)
-        //    {
-        //        if (myDirection == 1)
-        //        {
-        //            this.transform.position = startPosition;
-        //            this.transform.Translate(myTranslation);
-        //            if (isSelected)
-        //            {
-        //                myRenderer.material = mouseOverMaterialOff;
-        //            }
-        //            else
-        //            {
-        //                myRenderer.material = switchOffMaterial;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            this.transform.position = startPosition;
-        //            if (isSelected)
-        //            {
-        //                myRenderer.material = mouseOverMaterialOn;
-        //            }
-        //            else
-        //            {
-        //                myRenderer.material = switchOnMaterial;
-        //            }
-        //        }
-        //        count = 0;
-        //        myDirection = 0;
-        //    }
-        //}
+        if (lastPower != hasPower)
+        {
+            if (hasPower)
+            {
+                if (isOn)
+                {
+                    myRenderer.material = switchOnMaterial;
+                }
+                else
+                {
+                    myRenderer.material = switchOffMaterial;
+                }
+            }
+        }
+        lastPower = hasPower;
+    }
+
+    private void LateUpdate()
+    {
+        if (!hasPower)
+        {
+            myRenderer.material = defaultMaterial;
+        }
     }
 }

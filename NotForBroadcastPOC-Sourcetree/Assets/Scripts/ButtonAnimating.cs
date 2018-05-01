@@ -8,10 +8,13 @@ public class ButtonAnimating : MonoBehaviour {
     public Material mouseOverMaterialUp;
     public Material buttonDownMaterial;
     public Material mouseOverMaterialDown;
+    private Material defaultMaterial;
     public enum type { Lock, Hold };
     public type buttonType;
     public Vector3 myTranslation;
     public float speed=7;
+    public bool hasPower;
+    private bool lastPower;
 
     private Vector3 startPosition;
     private Vector3 endPosition;
@@ -26,6 +29,19 @@ public class ButtonAnimating : MonoBehaviour {
 	void Start () {
         myRenderer = GetComponent<MeshRenderer>();
         startPosition = this.transform.position;
+        defaultMaterial = GetComponent<MeshRenderer>().material;
+        if (hasPower)
+        {
+            if (isDepressed)
+            {
+                myRenderer.material = buttonDownMaterial;
+            }
+            else
+            {
+                myRenderer.material = buttonUpMaterial;
+            }
+        }
+
     }
 
     private void OnMouseEnter()
@@ -135,5 +151,31 @@ public class ButtonAnimating : MonoBehaviour {
                 myDirection = 0;
             }
         }
-	}
+
+        if (lastPower != hasPower)
+        {
+            if (hasPower)
+            {
+                if (isDepressed)
+                {
+                    myRenderer.material = buttonDownMaterial;
+                }
+                else
+                {
+                    myRenderer.material = buttonUpMaterial;
+                }
+            }
+        }
+        lastPower = hasPower;
+
+    }
+
+    private void LateUpdate()
+    {
+        if (!hasPower)
+        {
+            myRenderer.material = defaultMaterial;
+        }
+    }
+
 }
