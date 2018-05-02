@@ -14,6 +14,16 @@ ModelImporter:
     100012: Fan_Blade_01
     100014: Fan_Blade_01_001
     100016: Fan_Blade_01_002
+    100018: Arm
+    100020: Blade_01
+    100022: Blade_02
+    100024: Blade_03
+    100026: Blade_04
+    100028: Blades_Center
+    100030: Cage_Back
+    100032: Cage_Front
+    100034: Head
+    100036: Motor
     400000: Base
     400002: Fan
     400004: Hinge
@@ -23,6 +33,16 @@ ModelImporter:
     400012: Fan_Blade_01
     400014: Fan_Blade_01_001
     400016: Fan_Blade_01_002
+    400018: Arm
+    400020: Blade_01
+    400022: Blade_02
+    400024: Blade_03
+    400026: Blade_04
+    400028: Blades_Center
+    400030: Cage_Back
+    400032: Cage_Front
+    400034: Head
+    400036: Motor
     2100000: unnamed
     2300000: Base
     2300002: Fan
@@ -32,6 +52,16 @@ ModelImporter:
     2300010: Fan_Blade_01
     2300012: Fan_Blade_01_001
     2300014: Fan_Blade_01_002
+    2300016: Arm
+    2300018: Blade_01
+    2300020: Blade_02
+    2300022: Blade_03
+    2300024: Blade_04
+    2300026: Blades_Center
+    2300028: Cage_Back
+    2300030: Cage_Front
+    2300032: Head
+    2300034: Motor
     3300000: Base
     3300002: Fan
     3300004: Hinge
@@ -40,6 +70,16 @@ ModelImporter:
     3300010: Fan_Blade_01
     3300012: Fan_Blade_01_001
     3300014: Fan_Blade_01_002
+    3300016: Arm
+    3300018: Blade_01
+    3300020: Blade_02
+    3300022: Blade_03
+    3300024: Blade_04
+    3300026: Blades_Center
+    3300028: Cage_Back
+    3300030: Cage_Front
+    3300032: Head
+    3300034: Motor
     4300000: Fan
     4300002: Hinge
     4300004: Pole
@@ -48,6 +88,16 @@ ModelImporter:
     4300010: Fan_Blade_01
     4300012: Fan_Blade_01_002
     4300014: Fan_Blade_01_001
+    4300016: Cage_Back
+    4300018: Cage_Front
+    4300020: Arm
+    4300022: Head
+    4300024: Motor
+    4300026: Blades_Center
+    4300028: Blade_04
+    4300030: Blade_03
+    4300032: Blade_02
+    4300034: Blade_01
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
