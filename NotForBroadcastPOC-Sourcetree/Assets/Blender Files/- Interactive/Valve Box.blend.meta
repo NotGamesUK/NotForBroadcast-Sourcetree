@@ -8,17 +8,112 @@ ModelImporter:
     100000: //RootNode
     100002: Valve_Box
     100004: Valves
+    100006: BezierCircle
+    100008: BezierCircle_001
+    100010: BezierCircle_002
+    100012: BezierCircle_003
+    100014: BezierCircle_004
+    100016: Inside_
+    100018: Inside__001
+    100020: Inside__002
+    100022: Inside__003
+    100024: Valve_Board
+    100026: Valve_Box__Door
+    100028: Valve_Case
+    100030: Valve_Case_001
+    100032: Valve_Case_002
+    100034: Valve_Case_003
+    100036: Element
+    100038: Element_001
+    100040: Element_002
+    100042: Element_003
     400000: //RootNode
     400002: Valve_Box
     400004: Valves
+    400006: BezierCircle
+    400008: BezierCircle_001
+    400010: BezierCircle_002
+    400012: BezierCircle_003
+    400014: BezierCircle_004
+    400016: Inside_
+    400018: Inside__001
+    400020: Inside__002
+    400022: Inside__003
+    400024: Valve_Board
+    400026: Valve_Box__Door
+    400028: Valve_Case
+    400030: Valve_Case_001
+    400032: Valve_Case_002
+    400034: Valve_Case_003
+    400036: Element
+    400038: Element_001
+    400040: Element_002
+    400042: Element_003
     2100000: unnamed
     2100002: Material
     2300000: Valve_Box
     2300002: Valves
+    2300004: BezierCircle
+    2300006: BezierCircle_001
+    2300008: BezierCircle_002
+    2300010: BezierCircle_003
+    2300012: BezierCircle_004
+    2300014: Inside_
+    2300016: Inside__001
+    2300018: Inside__002
+    2300020: Inside__003
+    2300022: Valve_Board
+    2300024: Valve_Box__Door
+    2300026: Valve_Case
+    2300028: Valve_Case_001
+    2300030: Valve_Case_002
+    2300032: Valve_Case_003
+    2300034: Element
+    2300036: Element_001
+    2300038: Element_002
+    2300040: Element_003
     3300000: Valve_Box
     3300002: Valves
+    3300004: BezierCircle
+    3300006: BezierCircle_001
+    3300008: BezierCircle_002
+    3300010: BezierCircle_003
+    3300012: BezierCircle_004
+    3300014: Inside_
+    3300016: Inside__001
+    3300018: Inside__002
+    3300020: Inside__003
+    3300022: Valve_Board
+    3300024: Valve_Box__Door
+    3300026: Valve_Case
+    3300028: Valve_Case_001
+    3300030: Valve_Case_002
+    3300032: Valve_Case_003
+    3300034: Element
+    3300036: Element_001
+    3300038: Element_002
+    3300040: Element_003
     4300000: Valves
     4300002: Valve_Box
+    4300004: Valve_Case_003
+    4300006: Inside__003
+    4300008: BezierCircle_004
+    4300010: Valve_Case_002
+    4300012: Inside__002
+    4300014: BezierCircle_003
+    4300016: Valve_Case_001
+    4300018: Inside__001
+    4300020: BezierCircle_002
+    4300022: Valve_Case
+    4300024: BezierCircle_001
+    4300026: BezierCircle
+    4300028: Inside_
+    4300030: Valve_Box__Door
+    4300032: Valve_Board
+    4300034: Element_003
+    4300036: Element_002
+    4300038: Element_001
+    4300040: Element
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
