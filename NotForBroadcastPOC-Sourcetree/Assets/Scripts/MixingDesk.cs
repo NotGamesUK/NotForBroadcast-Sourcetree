@@ -5,11 +5,13 @@ using UnityEngine;
 public class MixingDesk : MonoBehaviour {
 
     public GroovedSlider[] mySliders;
+    public ButtonAnimating[] myMutes;
+    public ButtonAnimating myBleepButton;
     public bool hasPower=false;
 
 	// Use this for initialization
 	void Start () {
-        mySliders = GetComponentsInChildren<GroovedSlider>();
+
 	}
 	
 	// Update is called once per frame
@@ -24,6 +26,11 @@ public class MixingDesk : MonoBehaviour {
         {
             thisSlider.hasPower = true;
         }
+        foreach (ButtonAnimating thisMute in myMutes)
+        {
+            thisMute.hasPower = true;
+        }
+        myBleepButton.hasPower = true;
     }
 
     void PowerOff()
@@ -33,6 +40,12 @@ public class MixingDesk : MonoBehaviour {
         {
             thisSlider.hasPower = false;
         }
+        foreach (ButtonAnimating thisMute in myMutes)
+        {
+            thisMute.hasPower = false;
+        }
+        myBleepButton.hasPower = false;
+
     }
 }
 
