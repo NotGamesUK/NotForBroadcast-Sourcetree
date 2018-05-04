@@ -2033,6 +2033,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b3de9b2deae1a42b1de7aafeacb4b2, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &368679984 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: eff1a97d167507748a9cefaac33a7e45, type: 3}
+  m_PrefabInternal: {fileID: 806334656}
+--- !u!114 &368679986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 368679984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81c7f93ef8025945a2cde5b0b971ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScreen: {fileID: 0}
+  hasPower: 0
+  screenSync: 1
 --- !u!1 &369081045 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100010, guid: b8a23d68e70b9724d9069cb0b1b0c004, type: 3}
@@ -3324,6 +3342,12 @@ MonoBehaviour:
   - {fileID: 686680366}
   - {fileID: 122698999}
   - {fileID: 454854681}
+  smallScreens:
+  - {fileID: 1937692965}
+  - {fileID: 1847320215}
+  - {fileID: 368679986}
+  - {fileID: 1659499169}
+  masterScreen: {fileID: 1377781582}
 --- !u!114 &536704961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4232,7 +4256,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
@@ -4499,7 +4523,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
@@ -7318,7 +7342,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
@@ -9536,6 +9560,24 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 73160ad0ccbcc154f97f85fdbd8fef3d, type: 3}
   m_PrefabInternal: {fileID: 1449276945}
+--- !u!1 &1377781578 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 41b3de9b2deae1a42b1de7aafeacb4b2, type: 3}
+  m_PrefabInternal: {fileID: 367234753}
+--- !u!114 &1377781582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1377781578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81c7f93ef8025945a2cde5b0b971ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScreen: {fileID: 0}
+  hasPower: 1
+  screenSync: 1
 --- !u!1 &1377941598
 GameObject:
   m_ObjectHideFlags: 0
@@ -10786,6 +10828,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3399d300232eca449b14871e91847f64, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1659499168 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: eff1a97d167507748a9cefaac33a7e45, type: 3}
+  m_PrefabInternal: {fileID: 618891266}
+--- !u!114 &1659499169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659499168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81c7f93ef8025945a2cde5b0b971ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScreen: {fileID: 0}
+  hasPower: 0
+  screenSync: 1
 --- !u!1001 &1660760689
 Prefab:
   m_ObjectHideFlags: 0
@@ -11756,6 +11816,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08161303, y: 0.08047204, z: 0.038277306}
   m_Center: {x: -0.00007450023, y: 0.032855015, z: 0.006972651}
+--- !u!1 &1820857779 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 41b3de9b2deae1a42b1de7aafeacb4b2, type: 3}
+  m_PrefabInternal: {fileID: 302709369}
+--- !u!114 &1820857783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820857779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81c7f93ef8025945a2cde5b0b971ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScreen: {fileID: 0}
+  hasPower: 0
+  screenSync: 1
 --- !u!1 &1835285592
 GameObject:
   m_ObjectHideFlags: 0
@@ -11824,6 +11902,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1835285592}
+--- !u!1 &1847320213 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: eff1a97d167507748a9cefaac33a7e45, type: 3}
+  m_PrefabInternal: {fileID: 882316488}
+--- !u!114 &1847320215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1847320213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81c7f93ef8025945a2cde5b0b971ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScreen: {fileID: 0}
+  hasPower: 0
+  screenSync: 1
 --- !u!1 &1849351554
 GameObject:
   m_ObjectHideFlags: 0
@@ -12302,6 +12398,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f0bec63372ae0241bd641cafe00158b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1937692964 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: eff1a97d167507748a9cefaac33a7e45, type: 3}
+  m_PrefabInternal: {fileID: 516999574}
+--- !u!114 &1937692965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1937692964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81c7f93ef8025945a2cde5b0b971ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScreen: {fileID: 0}
+  hasPower: 0
+  screenSync: 1
 --- !u!4 &1943090750 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 799dfdb05f6b70645bbaa9f08e3b6c90, type: 3}
@@ -13377,7 +13491,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
