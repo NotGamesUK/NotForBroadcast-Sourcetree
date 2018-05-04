@@ -18,7 +18,7 @@ public class RollerBlind : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (myUpButton.isDepressed)
+		if (myUpButton.isDepressed && myUpButton.hasPower)
         {
             if (this.transform.position.y < myMaxY)
             {
@@ -26,7 +26,7 @@ public class RollerBlind : MonoBehaviour {
             }
         }
 
-        if (myDownButton.isDepressed)
+        if (myDownButton.isDepressed && myDownButton.hasPower)
         {
             if (this.transform.position.y > myMinY)
             {

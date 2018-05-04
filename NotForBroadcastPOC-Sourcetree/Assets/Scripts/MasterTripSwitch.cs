@@ -8,16 +8,17 @@ public class MasterTripSwitch : MonoBehaviour {
     public bool isOn=false;
     private bool lastOn=true;
 
-    public PlugSocket[] sockets;
-    public Switch mySwitch;
-    private ValveBox valveBox;
+    private PlugBoard myPlugBoard;
+    private Switch mySwitch;
+    private ValveBox myValveBox;
     public float currentPower;
-    private 
 
     // Use this for initialization
     void Start()
     {
-        valveBox = FindObjectOfType<ValveBox>();
+        myValveBox = FindObjectOfType<ValveBox>();
+        myPlugBoard = FindObjectOfType<PlugBoard>();
+        mySwitch = GetComponentInChildren<Switch>();
     }
 
     // Update is called once per frame
@@ -37,16 +38,9 @@ public class MasterTripSwitch : MonoBehaviour {
         }
 
         // Calculate Current Power
-        currentPower = 0;
-        foreach (PlugSocket thisSocket in sockets)
-        {
-            if (thisSocket.hasPower && thisSocket.isOn)
-            {
-                currentPower += thisSocket.myPower;
-            }
-        }
+        currentPower = myPlugBoard.currentPower;
 
-        if (isOn && (currentPower > maximumPower || valveBox.isOverheated))
+        if (isOn && (currentPower > maximumPower || myValveBox.isOverheated))
         {
             TripPower();
         }
@@ -55,20 +49,25 @@ public class MasterTripSwitch : MonoBehaviour {
 
     private void TripPower()
     {
-
-        foreach (PlugSocket thisSocket in sockets)
-        {
-            thisSocket.hasPower = false;
-        }
+        myPlugBoard.PowerOff();
         mySwitch.SwitchOff();
     }
 
     private void RestorePower()
     {
-
-        foreach (PlugSocket thisSocket in sockets)
-        {
-            thisSocket.hasPower = true;
-        }
+        myPlugBoard.PowerOn();
     }
+
+    void SwitchOn()
+    {
+        // Called by Message when switch changes
+        Debug.Log("TripSwitch On");
+    }
+
+    void SwitchOff()
+    {
+        // Called by Message when switch changes
+        Debug.Log("TripSwitchOff");
+    }
+
 }

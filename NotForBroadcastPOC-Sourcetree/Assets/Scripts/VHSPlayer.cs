@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerMonitoring : MonoBehaviour {
+public class VHSPlayer : MonoBehaviour {
+
+    public ButtonAnimating myButton;
 
 	// Use this for initialization
 	void Start () {

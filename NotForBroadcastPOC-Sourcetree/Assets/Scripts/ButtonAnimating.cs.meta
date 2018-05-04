@@ -5,7 +5,14 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - buttonUpMaterial: {fileID: 2100000, guid: 13e69c447407f3746b050a43edf3f6f7, type: 2}
+  - mouseOverMaterialUp: {fileID: 2100000, guid: 8ef7dc0f91b65f949beeb50d1c64be0e,
+      type: 2}
+  - buttonDownMaterial: {fileID: 2100000, guid: b6ef4d2743919554d8748952bce10879,
+      type: 2}
+  - mouseOverMaterialDown: {fileID: 2100000, guid: 242c7cb8d1e6c94468c03213669ca9f8,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

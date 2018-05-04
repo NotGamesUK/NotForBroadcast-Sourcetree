@@ -9,6 +9,7 @@ public class GroovedSlider : MonoBehaviour {
     public Material mouseOverMaterialUp;
     public Material buttonDownMaterial;
     public Material mouseOverMaterialDown;
+    private Material defaultMaterial;
     public Vector3 myTranslation;
     public Slider mySlider;
 
@@ -17,6 +18,8 @@ public class GroovedSlider : MonoBehaviour {
     private float yChange;
     private float zChange;
     private MeshRenderer myRenderer;
+    public bool hasPower = false;
+    private bool lastPower = false;
     private bool isSelected = false;
     private bool isGrabbed = false;
 
@@ -24,6 +27,7 @@ public class GroovedSlider : MonoBehaviour {
     void Start()
     {
         myRenderer = GetComponent<MeshRenderer>();
+        defaultMaterial = GetComponent<MeshRenderer>().material;
         topPosition = this.transform.position;
         this.transform.Translate(myTranslation);
         bottomPosition = this.transform.position;
@@ -36,8 +40,35 @@ public class GroovedSlider : MonoBehaviour {
         float newZ = bottomPosition.z + (zChange * thisSliderPos);
         this.transform.position = new Vector3(newX, newY, newZ);
 
-
     }
+
+    public void Update()
+    {
+        if (lastPower != hasPower)
+        {
+            if (hasPower)
+            {
+                if (isSelected)
+                {
+                    if (isGrabbed)
+                    {
+                        myRenderer.material = mouseOverMaterialDown;
+                    }
+                    else
+                    {
+                        myRenderer.material = mouseOverMaterialUp;
+                    }
+
+                }
+                else
+                {
+                    myRenderer.material = buttonUpMaterial;
+                }
+            }
+        }
+        lastPower = hasPower;
+    }
+
 
     private void OnMouseEnter()
     {
@@ -87,4 +118,13 @@ public class GroovedSlider : MonoBehaviour {
         // Send new value upwards
         Debug.Log("Slider Moved to " + thisSliderPos);
     }
+
+    private void LateUpdate()
+    {
+        if (!hasPower)
+        {
+            myRenderer.material = defaultMaterial;
+        }
+    }
+
 }
