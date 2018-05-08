@@ -15,10 +15,11 @@ public class Television : MonoBehaviour {
     private VideoClip myClip;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         myScreen=GetComponentInChildren<VideoPlayer>();
-        myAudio = GetComponent<AudioSource>();
-        myClip = myScreen.clip;
+        myAudio =GetComponentInChildren<AudioSource>();
+        myClip =myScreen.clip;
+        Debug.Log("My Audiosource: " + myAudio);
 	}
 	
 	// Update is called once per frame

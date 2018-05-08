@@ -7,7 +7,7 @@ public class SatelliteControl : MonoBehaviour {
     private ButtonAnimating myButton;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         myButton = GetComponentInChildren<ButtonAnimating>();
 	}
 	
