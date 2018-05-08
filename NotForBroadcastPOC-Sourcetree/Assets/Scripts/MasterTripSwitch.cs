@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MasterTripSwitch : MonoBehaviour {
 
-    public float maximumPower;
+    private float maximumPower;
     public bool isOn=false;
     private bool lastOn=true;
 
     private PlugBoard myPlugBoard;
     private Switch mySwitch;
     private ValveBox myValveBox;
+    private MasterGauges myGauges;
+    //[HideInInspector]
     public float currentPower;
 
     // Use this for initialization
@@ -18,7 +20,9 @@ public class MasterTripSwitch : MonoBehaviour {
     {
         myValveBox = FindObjectOfType<ValveBox>();
         myPlugBoard = FindObjectOfType<PlugBoard>();
+        myGauges = FindObjectOfType<MasterGauges>();
         mySwitch = GetComponentInChildren<Switch>();
+        maximumPower = myGauges.maxPower;
     }
 
     // Update is called once per frame
@@ -40,7 +44,7 @@ public class MasterTripSwitch : MonoBehaviour {
         // Calculate Current Power
         currentPower = myPlugBoard.currentPower;
 
-        if (isOn && (currentPower > maximumPower || myValveBox.isOverheated))
+        if (isOn && (myValveBox.isOverheated))
         {
             TripPower();
         }

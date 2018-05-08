@@ -12,7 +12,10 @@ public class RotatingFan : MonoBehaviour {
     public float turnSpeed;
     public float maxTurnAngle;
     public float currentTurnSpeed;
-    private float currentBladeSpeed;
+    [HideInInspector]
+    public bool isTurning = false;
+    [HideInInspector]
+    public float currentBladeSpeed;
 
     private ButtonAnimating myButton;
 
@@ -33,9 +36,10 @@ public class RotatingFan : MonoBehaviour {
             currentBladeSpeed += bladeAcceleration*Time.deltaTime;
             if (currentBladeSpeed>bladeMaxSpeed) { currentBladeSpeed = bladeMaxSpeed; }
             myBlades.transform.Rotate(new Vector3(0, currentBladeSpeed * Time.deltaTime, 0));
-
+            isTurning = false;
             if (!myButton.isDepressed)
             {
+                isTurning = true;
                 // Turn Head
                 myHead.transform.Rotate(new Vector3(0, 0, currentTurnSpeed * Time.deltaTime));
                 float thisRot = myHead.transform.localEulerAngles.z;
@@ -50,6 +54,7 @@ public class RotatingFan : MonoBehaviour {
             }
         } else
         {
+            
             // No Power.  Decelerate Blades if required.
             if (currentBladeSpeed>0)
             {
