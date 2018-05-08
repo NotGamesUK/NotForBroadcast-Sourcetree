@@ -6,6 +6,8 @@ public class ValveBox : MonoBehaviour {
 
     [HideInInspector]
     public bool isOverheated = false;
+    //[HideInInspector]
+    public int valveCount=0;
     public float greenHeatUpSpeed;
     public float orangeHeatUpSpeed;
     public float redHeatUpSpeed;
@@ -19,6 +21,8 @@ public class ValveBox : MonoBehaviour {
     public float fanInfluenceDegrees;
     //[HideInInspector]
     public float currentTemperature;
+    public Material elementMaterial;
+
     private MasterGauges myGauges;
     private RotatingFan myFan;
 
@@ -32,18 +36,19 @@ public class ValveBox : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // Add Heat Gain from Power Status
+        float thisHeatGain = 0;
         switch (myGauges.myPowerStatus)
         {
             case ("Green"):
-                currentTemperature += greenHeatUpSpeed * Time.deltaTime;
+                thisHeatGain = greenHeatUpSpeed * Time.deltaTime;
                 break;
 
             case ("Orange"):
-                currentTemperature += orangeHeatUpSpeed * Time.deltaTime;
+                thisHeatGain = orangeHeatUpSpeed * Time.deltaTime;
                 break;
 
             case ("Red"):
-                currentTemperature += redHeatUpSpeed * Time.deltaTime;
+                thisHeatGain = redHeatUpSpeed * Time.deltaTime;
                 break;
 
             case ("None"):
@@ -55,6 +60,22 @@ public class ValveBox : MonoBehaviour {
                 break;
 
         }
+        switch (valveCount)
+        {
+            case (3):
+                thisHeatGain *= 1.33f;
+                break;
+
+            case (2):
+                thisHeatGain *= 2f;
+                break;
+
+            case (1):
+                thisHeatGain *= 4f;
+                break;
+        }
+        currentTemperature += thisHeatGain;
+
 
         // If Fan is on subtract heat accordingly - never fall below room temperature
         if (myFan.currentBladeSpeed > 0)
@@ -95,5 +116,13 @@ public class ValveBox : MonoBehaviour {
                 isOverheated = false;
             }
         }
+
+
+        float emission = currentTemperature / myGauges.maxTemperature * 5;
+        Color baseColor = Color.Lerp(Color.red, Color.yellow, currentTemperature / myGauges.maxTemperature); //Replace this with whatever you want for your base color at emission level '1'
+
+        Color finalColor = baseColor * Mathf.LinearToGammaSpace(emission);
+
+        elementMaterial.SetColor("_EmissionColor", finalColor);
     }
 }

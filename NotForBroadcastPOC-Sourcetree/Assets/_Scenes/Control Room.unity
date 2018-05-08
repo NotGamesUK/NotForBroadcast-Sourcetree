@@ -4825,15 +4825,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOverheated: 0
+  valveCount: 4
   greenHeatUpSpeed: 1
-  orangeHeatUpSpeed: 5
-  redHeatUpSpeed: 20
+  orangeHeatUpSpeed: 9
+  redHeatUpSpeed: 28
   coolDownSpeed: 2
   fanCoolDownSpeed: 25
   perfectFanAngle: 170
   fanPerfectDegrees: 5
   fanInfluenceDegrees: 20
-  currentTemperature: 0
+  currentTemperature: 20
+  elementMaterial: {fileID: 2100000, guid: 23288ac9f62d06d44a2d6c25f988e481, type: 2}
 --- !u!1 &691661002
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,19 +5124,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: ac5c6422edbac8943a8eadd80a6dd52f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.86602545
+      value: -0.86520123
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: ac5c6422edbac8943a8eadd80a6dd52f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.037775517
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: ac5c6422edbac8943a8eadd80a6dd52f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0218097
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: ac5c6422edbac8943a8eadd80a6dd52f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49999994
+      value: 0.4995241
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: ac5c6422edbac8943a8eadd80a6dd52f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5142,7 +5144,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: ac5c6422edbac8943a8eadd80a6dd52f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: ac5c6422edbac8943a8eadd80a6dd52f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5428,6 +5430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24cdee394b2adf488a56389cfee4f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBlown: 0
 --- !u!1 &773035072
 GameObject:
   m_ObjectHideFlags: 0
@@ -10713,6 +10716,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73160ad0ccbcc154f97f85fdbd8fef3d, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1468248659 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100040, guid: 89e573050866187449623a631c99c320, type: 3}
+  m_PrefabInternal: {fileID: 1983500889}
+--- !u!114 &1468248663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1468248659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24cdee394b2adf488a56389cfee4f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBlown: 0
 --- !u!1 &1471044931 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100028, guid: ac5c6422edbac8943a8eadd80a6dd52f, type: 3}
@@ -11471,6 +11490,22 @@ MonoBehaviour:
   myRotation: {x: 35, y: 0, z: 0}
   isOn: 0
   hasPower: 1
+--- !u!1 &1622883526 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100042, guid: 89e573050866187449623a631c99c320, type: 3}
+  m_PrefabInternal: {fileID: 1983500889}
+--- !u!114 &1622883530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622883526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24cdee394b2adf488a56389cfee4f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBlown: 0
 --- !u!4 &1624440121 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 3399d300232eca449b14871e91847f64, type: 3}
@@ -11714,6 +11749,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.085268825, z: 0.080000035}
   m_Center: {x: 0.0000000014846311, y: -0.08451043, z: 0.05004601}
+--- !u!1 &1677793583 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100038, guid: 89e573050866187449623a631c99c320, type: 3}
+  m_PrefabInternal: {fileID: 1983500889}
+--- !u!114 &1677793587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1677793583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24cdee394b2adf488a56389cfee4f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBlown: 0
 --- !u!1 &1680532420
 GameObject:
   m_ObjectHideFlags: 0
@@ -13609,6 +13660,22 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9218fa60fb3cb424ca768d229e0626bd, type: 2}
+    - target: {fileID: 100028, guid: 89e573050866187449623a631c99c320, type: 3}
+      propertyPath: m_Name
+      value: Valve_Case_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: 89e573050866187449623a631c99c320, type: 3}
+      propertyPath: m_Name
+      value: Valve_Case_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 100032, guid: 89e573050866187449623a631c99c320, type: 3}
+      propertyPath: m_Name
+      value: Valve_Case_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100034, guid: 89e573050866187449623a631c99c320, type: 3}
+      propertyPath: m_Name
+      value: Valve_Case_04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89e573050866187449623a631c99c320, type: 3}
   m_IsPrefabParent: 0
