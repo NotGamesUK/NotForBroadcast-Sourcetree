@@ -52,7 +52,7 @@ public class ValveBox : MonoBehaviour {
                 break;
 
             case ("None"):
-                Debug.Log("System on but no power draining.");
+                //Debug.Log("System on but no power draining.");
                 break;
 
             default:

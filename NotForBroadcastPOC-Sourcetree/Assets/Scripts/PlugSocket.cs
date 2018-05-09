@@ -51,7 +51,7 @@ public class PlugSocket : MonoBehaviour {
 
     public void PowerOn ()
     {
-        Debug.Log("Power On");
+        //Debug.Log("Power On");
         mySwitch.hasPower = true;
         hasPower = true;
         if (isOn)
@@ -62,7 +62,7 @@ public class PlugSocket : MonoBehaviour {
 
     public void PowerOff ()
     {
-        Debug.Log("Power Off");
+        //Debug.Log("Power Off");
 
         mySwitch.hasPower = false;
         hasPower = false;
@@ -75,7 +75,7 @@ public class PlugSocket : MonoBehaviour {
 
     void SwitchOn()
     {
-        Debug.Log("Switch On");
+        //Debug.Log("Switch On");
         isOn = true;
         if (hasPower)
         {
@@ -86,7 +86,7 @@ public class PlugSocket : MonoBehaviour {
 
     void SwitchOff()
     {
-        Debug.Log("Switch Off");
+        //Debug.Log("Switch Off");
         isOn = false;
         if (hasPower)
         {

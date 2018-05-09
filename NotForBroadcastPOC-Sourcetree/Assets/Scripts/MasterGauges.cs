@@ -17,21 +17,30 @@ public class MasterGauges : MonoBehaviour {
     [Tooltip("Above this % alarms will sound and lights turn on - 5 seconds (max) from TripSwitch")]
     [Range(0,100)]
     public float orangeTemperaturePercent;
+    [Tooltip("Tolerence in degrees for satellite tilt after which interference starts (Angle Range is 290-350 with ideal at 310).")]
+    [Range(0, 40)]
+    public float dishTolerance;
+    
     [HideInInspector]
     public string myPowerStatus = "Green";
 
     public Text myPowerDisplay;
     public Text myTemperatureDisplay;
     public Text mySignalDisplay;
+    public Material interferance;
     private MasterTripSwitch myPowerObject;
     private ValveBox myTemperatureObject;
-    
+    private SatelliteDish myDish;
+    private Color interferanceAlpha = new Color(0.8f, 0.8f, 0.8f, 0.8f);
 
-	// Use this for initialization
-	void Start ()
+
+
+    // Use this for initialization
+    void Start ()
     {
         myPowerObject = FindObjectOfType<MasterTripSwitch>();
         myTemperatureObject = FindObjectOfType<ValveBox>();
+        myDish = FindObjectOfType<SatelliteDish>();
     }
 
     // Update is called once per frame
@@ -77,6 +86,50 @@ public class MasterGauges : MonoBehaviour {
         {
             myTemperatureDisplay.color = Color.red;
         }
+
+        // Display Broadcast Reading
+        float thisTilt = myDish.transform.localEulerAngles.x;
+        Debug.Log("This Tilt: " + thisTilt);
+
+        // Start Video and Audio Signal at 100%
+        float audioStrength = 100f;
+        float videoStrength = 100f;
+
+        // Subtract Video based on dish tilt
+        float tiltMin = myDish.idealTilt - dishTolerance;
+        float tiltMax = myDish.idealTilt + dishTolerance;
+        float thisDifference = 0;
+        if (thisTilt<tiltMin || thisTilt>tiltMax)
+        {
+            if (thisTilt < tiltMin)
+            {
+                thisDifference = tiltMin - thisTilt;
+            } else
+            {
+                thisDifference = thisTilt - tiltMax;
+            }
+            thisDifference = Mathf.Round(thisDifference);
+            //Debug.Log("This Difference: " + thisDifference + " out of possible " + (Mathf.Round (myDish.maxTilt - tiltMax)));
+            videoStrength -= Mathf.Round((thisDifference / (Mathf.Round(myDish.maxTilt - tiltMax))) * 100);
+
+            Debug.Log("Video Strength: "+videoStrength+"%");
+        }
+
+        // Subtract Video and Audio based on variables in Signal Control Panel
+
+        // Adjust alpha of interference screen based on Video Signal level
+        interferanceAlpha.a = 1 - (videoStrength/100);
+        Debug.Log("Colour: " + interferanceAlpha);
+        interferance.color = interferanceAlpha;
+
+        // Mix audio over broadcast and turn down other channels propotional to Audio Signal
+
+        // Display Video and Audio Signal fidelity on panel
+        mySignalDisplay.text = videoStrength.ToString() + "%";
+        mySignalDisplay.color = Color.green;
+        if (videoStrength < 65) { mySignalDisplay.color = Color.yellow; }
+        if (videoStrength < 35) { mySignalDisplay.color = Color.red; }
+
     }
 
 }

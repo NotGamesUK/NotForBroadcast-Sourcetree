@@ -19,7 +19,7 @@ public class Television : MonoBehaviour {
         myScreen=GetComponentInChildren<VideoPlayer>();
         myAudio =GetComponentInChildren<AudioSource>();
         myClip =myScreen.clip;
-        Debug.Log("My Audiosource: " + myAudio);
+        //Debug.Log("My Audiosource: " + myAudio);
 	}
 	
 	// Update is called once per frame
@@ -29,7 +29,6 @@ public class Television : MonoBehaviour {
 
     public void PlayVideoFromFrame (VideoClip thisClip, long thisFrame)
     {
-        Debug.Log("Screen Changing to clip: " + thisClip + " at frame " + thisFrame);
         if (hasPower)
         {
             Debug.Log("Screen Changing to clip: " + thisClip + " at frame " + thisFrame);
@@ -92,7 +91,7 @@ public class Television : MonoBehaviour {
     {
         // Find Audio with same name as MyClip
         string thisSearchName = myClip.ToString();
-        Debug.Log("Searching for AudioClip named " + thisSearchName);
+        //Debug.Log("Searching for AudioClip named " + thisSearchName);
 
         // Play Audio
         myAudio.Play();
