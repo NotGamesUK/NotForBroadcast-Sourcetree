@@ -116,7 +116,7 @@ public class GroovedSlider : MonoBehaviour {
         float newZ = bottomPosition.z + (zChange * thisSliderPos);
         this.transform.position = new Vector3(newX, newY, newZ);
         // Send new value upwards
-        Debug.Log("Slider Moved to " + thisSliderPos);
+        //Debug.Log("Slider Moved to " + thisSliderPos);
     }
 
     private void LateUpdate()

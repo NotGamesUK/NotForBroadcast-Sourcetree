@@ -31,7 +31,8 @@ public class MasterGauges : MonoBehaviour {
     private MasterTripSwitch myPowerObject;
     private ValveBox myTemperatureObject;
     private SatelliteDish myDish;
-    private Color interferanceAlpha = new Color(0.8f, 0.8f, 0.8f, 0.8f);
+    private PlayerFrequencyDisplayObject myPlayer;
+    private Color interferanceAlpha = new Color(1f, 1f, 1f, 1f);
 
 
 
@@ -41,6 +42,7 @@ public class MasterGauges : MonoBehaviour {
         myPowerObject = FindObjectOfType<MasterTripSwitch>();
         myTemperatureObject = FindObjectOfType<ValveBox>();
         myDish = FindObjectOfType<SatelliteDish>();
+        myPlayer = FindObjectOfType<PlayerFrequencyDisplayObject>();
     }
 
     // Update is called once per frame
@@ -89,7 +91,7 @@ public class MasterGauges : MonoBehaviour {
 
         // Display Broadcast Reading
         float thisTilt = myDish.transform.localEulerAngles.x;
-        Debug.Log("This Tilt: " + thisTilt);
+        //Debug.Log("This Tilt: " + thisTilt);
 
         // Start Video and Audio Signal at 100%
         float audioStrength = 100f;
@@ -114,12 +116,16 @@ public class MasterGauges : MonoBehaviour {
 
             Debug.Log("Video Strength: "+videoStrength+"%");
         }
-
+        Debug.Log("Video Strength Pre: " + videoStrength + "%");
         // Subtract Video and Audio based on variables in Signal Control Panel
-
+        if (videoStrength>100-myPlayer.currentInterferenceLevel)
+        {
+            videoStrength = 100 - myPlayer.currentInterferenceLevel;
+        }
+        Debug.Log("Video Strength Post: " + videoStrength + "%");
         // Adjust alpha of interference screen based on Video Signal level
         interferanceAlpha.a = 1 - (videoStrength/100);
-        Debug.Log("Colour: " + interferanceAlpha);
+        //Debug.Log("Colour: " + interferanceAlpha);
         interferance.color = interferanceAlpha;
 
         // Mix audio over broadcast and turn down other channels propotional to Audio Signal

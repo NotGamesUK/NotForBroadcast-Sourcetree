@@ -81,7 +81,7 @@ public class Switch : MonoBehaviour {
     public void SwitchOn()
     {
         isOn = true;
-        Debug.Log("SwitchScript - Switch On");
+        //Debug.Log("SwitchScript - Switch On");
         this.transform.rotation = onRotation;
         if (isSelected)
         {
@@ -95,7 +95,7 @@ public class Switch : MonoBehaviour {
     public void SwitchOff()
     {
         isOn = false;
-        Debug.Log("SwitchScript - Switch Off");
+        //Debug.Log("SwitchScript - Switch Off");
         this.transform.rotation = offRotation;
         if (isSelected)
         {

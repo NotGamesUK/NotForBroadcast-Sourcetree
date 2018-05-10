@@ -8,19 +8,24 @@ ModelImporter:
     100000: //RootNode
     100002: Body
     100004: Slider
+    100006: Display_Screen
     400000: //RootNode
     400002: Body
     400004: Slider
+    400006: Display_Screen
     2100000: Material
     2100002: unnamed
     2300000: //RootNode
     2300002: Body
     2300004: Slider
+    2300006: Display_Screen
     3300000: //RootNode
     3300002: Body
     3300004: Slider
+    3300006: Display_Screen
     4300000: Body
     4300002: Slider
+    4300004: Display_Screen
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
