@@ -21,6 +21,7 @@ public class ButtonAnimating : MonoBehaviour {
     private MeshRenderer myRenderer;
     private bool isSelected = false;
     public bool isDepressed = false;
+    public bool isLocked = false;
     private bool canRelease = false;
     private float myDirection;
     private int count = 0;
@@ -72,7 +73,7 @@ public class ButtonAnimating : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        if (isSelected && !isDepressed)
+        if (isSelected && !isDepressed && !isLocked)
         {
             MoveDown();
             if (buttonType == type.Lock)
@@ -84,7 +85,7 @@ public class ButtonAnimating : MonoBehaviour {
 
     private void OnMouseUp()
     {
-        if (buttonType == type.Hold && isSelected && isDepressed)
+        if (buttonType == type.Hold && isSelected && isDepressed && !isLocked)
         {
             myRenderer.material = mouseOverMaterialUp;
             MoveUp();

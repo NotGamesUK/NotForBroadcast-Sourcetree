@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class VHSControlPanel : MonoBehaviour {
 
-    public ButtonAnimating[] selectionButtons;
+    public VHSPlayerSelectionButton[] selectionButtons;
     public ButtonAnimating playButton;
 
     private bool hasPower = false;
+    public int selectedPlayer = 0;
 
 	// Use this for initialization
 	void Start () {
-		
+        playButton.isLocked = true;
 	}
 	
 	// Update is called once per frame
@@ -21,9 +22,9 @@ public class VHSControlPanel : MonoBehaviour {
 
     public void PowerOn()
     {
-        foreach (ButtonAnimating thisButton in selectionButtons)
+        foreach (VHSPlayerSelectionButton thisPlayer in selectionButtons)
         {
-            thisButton.hasPower = true;
+            thisPlayer.myButton.hasPower = true;
         }
         playButton.hasPower = true;
         hasPower = true;
@@ -32,12 +33,31 @@ public class VHSControlPanel : MonoBehaviour {
 
     public void PowerOff()
     {
-        foreach (ButtonAnimating thisButton in selectionButtons)
+        foreach (VHSPlayerSelectionButton thisPlayer in selectionButtons)
         {
-            thisButton.hasPower = false;
+            thisPlayer.myButton.hasPower = false;
         }
         playButton.hasPower = false;
         hasPower = false;
+
+    }
+
+    public void VHSPlayerSelected(int requestedPlayer)
+    {
+        foreach(VHSPlayerSelectionButton thisPlayer in selectionButtons)
+        {
+            if (thisPlayer.myButton.isDepressed && thisPlayer.myID != requestedPlayer)
+            {
+                //Debug.Log("Lifting Button " + thisButton.myID);
+                thisPlayer.myButton.MoveUp();
+            }
+        }
+        selectedPlayer = requestedPlayer;
+    }
+
+    public void PlayButtonPressed()
+    {
+        // if ready to go (ie player is loaded and not currently playing) tell selected player to play tape.
 
     }
 }

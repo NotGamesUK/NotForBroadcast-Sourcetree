@@ -31,7 +31,7 @@ public class VHSTapeBox : MonoBehaviour {
 
     private void OnMouseEnter()
     {
-        if (!isLoaded)
+        if (!isLoaded && !isHeld)
         {
             myRenderer.material = mouseOverMaterial;
             isSelected = true;
@@ -79,6 +79,7 @@ public class VHSTapeBox : MonoBehaviour {
                     thisSlot.myPlayer.LoadTape(myTape);
                     myRenderer.material = defaultMaterial;
                     isLoaded = true;
+                    isHeld = false;
                 }
                 thisSlot.SlotLightOff();
             }

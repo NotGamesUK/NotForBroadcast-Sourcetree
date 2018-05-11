@@ -25,10 +25,10 @@ public class VisionMixer : MonoBehaviour {
     {
         if (hasPower)
         {
-            Debug.Log("Switched to Screen " + selectedScreen);
+            //Debug.Log("Switched to Screen " + selectedScreen);
             long thisFrame = smallScreens[selectedScreen - 1].WhatFrame();
             VideoClip thisClip = smallScreens[selectedScreen - 1].WhatClip();
-            Debug.Log("Clip "+thisClip+" currently at frame " + thisFrame);
+            //Debug.Log("Clip "+thisClip+" currently at frame " + thisFrame);
             masterScreen.PlayVideoFromFrame(thisClip, thisFrame);
             jumpToTV = selectedScreen;
             Invoke("JumpToFrame", 0.01f);
@@ -39,7 +39,7 @@ public class VisionMixer : MonoBehaviour {
         {
             if (thisButton.myButton.isDepressed && thisButton.myID != selectedScreen) {
 
-                Debug.Log("Lifting Button " + thisButton.myID);
+                //Debug.Log("Lifting Button " + thisButton.myID);
                 thisButton.myButton.MoveUp();
             }
         }
@@ -48,7 +48,7 @@ public class VisionMixer : MonoBehaviour {
     void JumpToFrame()
     {
         long thisFrame = smallScreens[jumpToTV - 1].WhatFrame();
-        Debug.Log("Jumping to Screen " + jumpToTV + " at Frame " + thisFrame);
+        //Debug.Log("Jumping to Screen " + jumpToTV + " at Frame " + thisFrame);
         if (!masterScreen.JumpToFrameIfPrepared(thisFrame+2))
         {
             Invoke("JumpToFrame", 0.01f);

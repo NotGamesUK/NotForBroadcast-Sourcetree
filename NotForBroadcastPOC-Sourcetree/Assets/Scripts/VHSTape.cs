@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VHSTape : MonoBehaviour {
-    [Range (0.01f,1f)]
-    public float grabShiftInZ = 0.81f;
-    public string myTitle="UNTITLED";
 
-    private VHSTapeBox myBox;
+    public string myTitle="UNTITLED";
+    [HideInInspector]
+    public VHSTapeBox myBox;
     private Vector3 startPosition;
     private TextMesh[] myLabels;
     private TextMesh myTopLabel;
     private TextMesh mySideLabel;
+    private float grabShiftInZ = 0.81f;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         myBox = GetComponentInChildren<VHSTapeBox>();
         startPosition = this.transform.position;
 

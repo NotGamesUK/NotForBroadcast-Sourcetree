@@ -20,7 +20,7 @@ public class VisionMixerButton : MonoBehaviour {
 	void Update () {
 		if (lastCheck!=myButton.isDepressed)
         {
-            Debug.Log("State of button changed.");
+            //Debug.Log("State of button changed.");
             lastCheck = myButton.isDepressed;
             if (lastCheck==true) {
                 visionMixer.ScreenChange(myID);
