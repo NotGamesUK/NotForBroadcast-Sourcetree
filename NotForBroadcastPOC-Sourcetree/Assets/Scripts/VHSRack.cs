@@ -26,6 +26,7 @@ public class VHSRack : MonoBehaviour {
         foreach (VHSPlayer thisPlayer in videoPlayers)
         {
             thisPlayer.myButton.hasPower = true;
+            thisPlayer.hasPower = true;
         }
         myControlPanel.PowerOn();
         hasPower = true;
@@ -36,6 +37,7 @@ public class VHSRack : MonoBehaviour {
         foreach (VHSPlayer thisPlayer in videoPlayers)
         {
             thisPlayer.myButton.hasPower = false;
+            thisPlayer.hasPower = false;
         }
         myControlPanel.PowerOff();
         hasPower = false;

@@ -9,22 +9,29 @@ ModelImporter:
     100002: //RootNode
     100004: VHS_Machine
     100006: Eject_Button
+    100008: Slot
+    100010: Tape_Load_Point
     400000: Cube_001
     400002: //RootNode
     400004: VHS_Machine
     400006: Eject_Button
+    400008: Slot
+    400010: Tape_Load_Point
     2100000: Material
     2100002: Material_001
     2100004: Material_002
     2300000: Cube_001
     2300002: VHS_Machine
     2300004: Eject_Button
+    2300006: Slot
     3300000: Cube_001
     3300002: VHS_Machine
     3300004: Eject_Button
+    3300006: Slot
     4300000: VHS_Machine
     4300002: Cube_001
     4300004: Eject_Button
+    4300006: Slot
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

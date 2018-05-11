@@ -114,15 +114,15 @@ public class MasterGauges : MonoBehaviour {
             //Debug.Log("This Difference: " + thisDifference + " out of possible " + (Mathf.Round (myDish.maxTilt - tiltMax)));
             videoStrength -= Mathf.Round((thisDifference / (Mathf.Round(myDish.maxTilt - tiltMax))) * 100);
 
-            Debug.Log("Video Strength: "+videoStrength+"%");
+            //Debug.Log("Video Strength: "+videoStrength+"%");
         }
-        Debug.Log("Video Strength Pre: " + videoStrength + "%");
+        //Debug.Log("Video Strength Pre: " + videoStrength + "%");
         // Subtract Video and Audio based on variables in Signal Control Panel
         if (videoStrength>100-myPlayer.currentInterferenceLevel)
         {
             videoStrength = 100 - myPlayer.currentInterferenceLevel;
         }
-        Debug.Log("Video Strength Post: " + videoStrength + "%");
+        //Debug.Log("Video Strength Post: " + videoStrength + "%");
         // Adjust alpha of interference screen based on Video Signal level
         interferanceAlpha.a = 1 - (videoStrength/100);
         //Debug.Log("Colour: " + interferanceAlpha);
