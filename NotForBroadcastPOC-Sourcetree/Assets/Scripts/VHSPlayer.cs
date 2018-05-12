@@ -10,8 +10,10 @@ public class VHSPlayer : MonoBehaviour {
     public bool isPlaying = false;
     public bool isAnimating = false;
     public bool hasPower = false;
-    private VHSTape myTape;
-    private TapeLoader myLoader;
+    //[HideInInspector]
+    public  VHSTape myTape;
+    [HideInInspector]
+    public  TapeLoader myLoader;
     public VHSPlayerSelectionButton mySelectionButton;
     private bool lastButtonCheck;
 

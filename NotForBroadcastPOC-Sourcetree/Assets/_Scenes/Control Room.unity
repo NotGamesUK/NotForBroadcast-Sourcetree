@@ -1081,6 +1081,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b08428b6b83baae438042a5f74f70fcd, type: 2}
+    - target: {fileID: 100002, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
+      propertyPath: m_Name
+      value: Slot 01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
   m_IsPrefabParent: 0
@@ -2251,6 +2259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0e3d79593953e4c92f0a966890b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTape: {fileID: 0}
+  mySlot: {fileID: 586045279}
   ejectDistance: 0.05
   loadSpeed: 2
 --- !u!1 &319793091
@@ -3673,6 +3683,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b08428b6b83baae438042a5f74f70fcd, type: 2}
+    - target: {fileID: 100008, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
+      propertyPath: m_Name
+      value: Slot 02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
   m_IsPrefabParent: 0
@@ -7526,6 +7540,8 @@ MonoBehaviour:
   isPlaying: 0
   isAnimating: 0
   hasPower: 1
+  myTape: {fileID: 0}
+  myLoader: {fileID: 0}
   mySelectionButton: {fileID: 329587003}
 --- !u!1001 &994427479
 Prefab:
@@ -9851,6 +9867,8 @@ MonoBehaviour:
   isPlaying: 0
   isAnimating: 0
   hasPower: 0
+  myTape: {fileID: 0}
+  myLoader: {fileID: 0}
   mySelectionButton: {fileID: 1387080678}
 --- !u!1 &1299690351
 GameObject:
@@ -9970,7 +9988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1315948161
 Transform:
   m_ObjectHideFlags: 0
@@ -10147,6 +10165,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b08428b6b83baae438042a5f74f70fcd, type: 2}
+    - target: {fileID: 100008, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
+      propertyPath: m_Name
+      value: Slot 03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
   m_IsPrefabParent: 0
@@ -12187,6 +12209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0e3d79593953e4c92f0a966890b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTape: {fileID: 0}
+  mySlot: {fileID: 778246557}
   ejectDistance: 0.05
   loadSpeed: 2
 --- !u!1 &1720396332
@@ -13994,6 +14018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0e3d79593953e4c92f0a966890b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTape: {fileID: 0}
+  mySlot: {fileID: 2014259513}
   ejectDistance: 0.05
   loadSpeed: 2
 --- !u!1 &2014259509 stripped
@@ -14244,6 +14270,8 @@ MonoBehaviour:
   isPlaying: 0
   isAnimating: 0
   hasPower: 0
+  myTape: {fileID: 0}
+  myLoader: {fileID: 0}
   mySelectionButton: {fileID: 369081051}
 --- !u!1 &2055339208 stripped
 GameObject:

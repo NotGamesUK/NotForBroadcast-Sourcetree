@@ -54,8 +54,20 @@ public class VHSTapeBox : MonoBehaviour {
         {
             myRenderer.material = defaultMaterial;
             isHeld = true;
+            Debug.Log("This Tape = " + myTape);
             foreach (VHSMachineSlot thisSlot in tapeSlots)
             {
+                if (thisSlot.myPlayer.myTape == myTape)
+                {
+                    Debug.Log("Looking at Slot " + thisSlot);
+                    Debug.Log("Slot Connected to VHS Machine " + thisSlot.myPlayer);
+
+                    Debug.Log("Machine " + thisSlot.myPlayer.myID + " holding tape " + thisSlot.myPlayer.myTape);
+                    Debug.Log("Tape " + myTape + " removed from Player " + thisSlot.myPlayer.myID);
+                    thisSlot.myPlayer.myTape = null;
+                    thisSlot.myPlayer.myLoader.myTape = null;
+                    thisSlot.myPlayer.myLoader.EjectEndedEarly();
+                }
                 thisSlot.SlotLightOn();
             }
         }
@@ -72,7 +84,7 @@ public class VHSTapeBox : MonoBehaviour {
             isHeld = false;
             foreach (VHSMachineSlot thisSlot in tapeSlots)
             {
-                if (thisSlot.isSelected)
+                if (thisSlot.isSelected && !isLoaded)
                 {
                     int loadMachine = thisSlot.myPlayer.myID;
                     Debug.Log("Tape Loading Into Machine " + loadMachine);

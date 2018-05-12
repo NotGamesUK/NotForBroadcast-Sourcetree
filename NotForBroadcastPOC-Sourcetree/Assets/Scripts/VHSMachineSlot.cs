@@ -8,6 +8,7 @@ public class VHSMachineSlot : MonoBehaviour {
     public Material selectedForLoad;
 
     private MeshRenderer myRenderer;
+    private BoxCollider myCollider;
     private Material defaultMaterial;
     [HideInInspector]
     public VHSPlayer myPlayer;
@@ -19,6 +20,9 @@ public class VHSMachineSlot : MonoBehaviour {
         myRenderer = GetComponent<MeshRenderer>();
         defaultMaterial = myRenderer.material;
         myPlayer = GetComponentInParent<VHSPlayer>();
+        myCollider = GetComponent<BoxCollider>();
+
+        myCollider.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -28,16 +32,19 @@ public class VHSMachineSlot : MonoBehaviour {
 
     public void SlotLightOn()
     {
-        if (!myPlayer.isLoaded && !myPlayer.isAnimating && myPlayer.hasPower)
+        if (!myPlayer.isLoaded && !myPlayer.isAnimating && myPlayer.hasPower && !myPlayer.myTape)
         {
             myRenderer.material = readyToLoad;
+            myCollider.enabled = true;
             isLit = true;
+            
         }
     }
 
     public void SlotLightOff()
     {
         myRenderer.material = defaultMaterial;
+        myCollider.enabled = false;
         isLit = false;
     }
 
