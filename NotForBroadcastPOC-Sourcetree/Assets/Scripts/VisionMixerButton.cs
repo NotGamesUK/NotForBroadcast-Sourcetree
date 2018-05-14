@@ -14,6 +14,7 @@ public class VisionMixerButton : MonoBehaviour {
 	void Start () {
         visionMixer = GetComponentInParent<VisionMixer>();
         lastCheck = myButton.isDepressed;
+        myButton.isLocked = true;
 	}
 	
 	// Update is called once per frame
@@ -24,7 +25,7 @@ public class VisionMixerButton : MonoBehaviour {
             lastCheck = myButton.isDepressed;
             if (lastCheck==true) {
                 visionMixer.ScreenChange(myID);
-
+                myButton.isLocked = true;
             }
         }
 	}

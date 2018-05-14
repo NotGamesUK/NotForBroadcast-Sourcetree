@@ -90,7 +90,7 @@ public class ButtonAnimating : MonoBehaviour {
             myRenderer.material = mouseOverMaterialUp;
             MoveUp();
         }
-        if (buttonType == type.Lock)
+        if (buttonType == type.Lock && !isLocked)
         {
             if (canRelease)
             {

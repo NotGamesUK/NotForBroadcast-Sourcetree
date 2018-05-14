@@ -2334,7 +2334,7 @@ MonoBehaviour:
     type: 2}
   buttonType: 0
   myTranslation: {x: 0, y: 0.005, z: 0}
-  speed: 3
+  speed: 1
   hasPower: 0
   isDepressed: 0
   isLocked: 0
@@ -2364,6 +2364,7 @@ MonoBehaviour:
   myButton: {fileID: 0}
   myPlayer: {fileID: 992702111}
   myID: 1
+  myBox: {fileID: 0}
 --- !u!4 &335232299 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 8838a81815c43dc468abbfc76936531b, type: 3}
@@ -2687,7 +2688,7 @@ MonoBehaviour:
     type: 2}
   buttonType: 0
   myTranslation: {x: 0, y: 0.005, z: 0}
-  speed: 3
+  speed: 1
   hasPower: 0
   isDepressed: 0
   isLocked: 0
@@ -2717,6 +2718,7 @@ MonoBehaviour:
   myButton: {fileID: 0}
   myPlayer: {fileID: 2055057434}
   myID: 2
+  myBox: {fileID: 0}
 --- !u!4 &380317453 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 799dfdb05f6b70645bbaa9f08e3b6c90, type: 3}
@@ -10670,7 +10672,7 @@ MonoBehaviour:
     type: 2}
   buttonType: 0
   myTranslation: {x: 0, y: 0.005, z: 0}
-  speed: 3
+  speed: 1
   hasPower: 0
   isDepressed: 0
   isLocked: 0
@@ -10700,6 +10702,7 @@ MonoBehaviour:
   myButton: {fileID: 0}
   myPlayer: {fileID: 1294497431}
   myID: 3
+  myBox: {fileID: 0}
 --- !u!4 &1387876274 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 41b3de9b2deae1a42b1de7aafeacb4b2, type: 3}

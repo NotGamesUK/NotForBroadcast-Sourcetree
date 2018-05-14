@@ -10,7 +10,8 @@ public class VHSPlayerSelectionButton : MonoBehaviour {
     public int myID;
 
     private bool lastCheck;
-    private VHSControlPanel myBox;
+    [HideInInspector]
+    public VHSControlPanel myBox;
 
 
     // Use this for initialization
@@ -30,6 +31,7 @@ public class VHSPlayerSelectionButton : MonoBehaviour {
             if (lastCheck == true)
             {
                 myBox.VHSPlayerSelected(myID);
+                myButton.isLocked = true;
             }
         }
 

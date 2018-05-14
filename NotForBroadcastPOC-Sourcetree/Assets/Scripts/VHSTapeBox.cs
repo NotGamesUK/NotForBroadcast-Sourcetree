@@ -64,8 +64,8 @@ public class VHSTapeBox : MonoBehaviour {
 
                     Debug.Log("Machine " + thisSlot.myPlayer.myID + " holding tape " + thisSlot.myPlayer.myTape);
                     Debug.Log("Tape " + myTape + " removed from Player " + thisSlot.myPlayer.myID);
-                    thisSlot.myPlayer.myTape = null;
-                    thisSlot.myPlayer.myLoader.myTape = null;
+                    //thisSlot.myPlayer.myTape = null;
+                    //thisSlot.myPlayer.myLoader.myTape = null;
                     thisSlot.myPlayer.myLoader.EjectEndedEarly();
                 }
                 thisSlot.SlotLightOn();

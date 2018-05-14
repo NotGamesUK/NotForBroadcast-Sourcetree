@@ -40,14 +40,34 @@ public class VHSPlayer : MonoBehaviour {
     {
         myTape = thisTape;
         Debug.Log("Machine " + myID + " loading tape " + myTape.myTitle);
+
         myLoader.LoadTape(myTape);
         isAnimating = true;
+    }
+
+    public void LoadComplete()
+    {
+        isAnimating = false;
+        isLoaded = true;
+        myButton.isLocked = false;
+        mySelectionButton.myButton.isLocked = false;
+        myButton.MoveDown();
+
     }
 
     void EjectTape()
     {
         Debug.Log("Machine " + myID + " EJECTING tape " + myTape.myTitle);
         myLoader.EjectTape();
+        isLoaded = false;
+        if (mySelectionButton.myButton.isDepressed)
+        {
+            mySelectionButton.myButton.MoveUp();
+            mySelectionButton.myBox.VHSPlayerSelected(0);
+
+        }
+        myButton.isLocked = true;
+        mySelectionButton.myButton.isLocked = true;
         isAnimating = true;
 
     }

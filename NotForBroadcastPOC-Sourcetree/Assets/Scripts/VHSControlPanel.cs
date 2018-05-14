@@ -26,7 +26,7 @@ public class VHSControlPanel : MonoBehaviour {
         {
             thisPlayer.myButton.hasPower = true;
         }
-        playButton.hasPower = true;
+        playButton.hasPower = false;
         hasPower = true;
 
     }
@@ -44,20 +44,33 @@ public class VHSControlPanel : MonoBehaviour {
 
     public void VHSPlayerSelected(int requestedPlayer)
     {
-        foreach(VHSPlayerSelectionButton thisPlayer in selectionButtons)
+        Debug.Log("Selection Request from Button " + requestedPlayer);
+
+        foreach (VHSPlayerSelectionButton thisVHSSelectionButton in selectionButtons)
         {
-            if (thisPlayer.myButton.isDepressed && thisPlayer.myID != requestedPlayer)
+            if (thisVHSSelectionButton.myButton.isDepressed && thisVHSSelectionButton.myID != requestedPlayer)
             {
                 //Debug.Log("Lifting Button " + thisButton.myID);
-                thisPlayer.myButton.MoveUp();
+                thisVHSSelectionButton.myButton.MoveUp();
+                thisVHSSelectionButton.myButton.isLocked = false;
             }
         }
         selectedPlayer = requestedPlayer;
+        if (selectedPlayer != 0)
+        {
+
+            playButton.hasPower = true;
+            playButton.isLocked = false;
+        } else
+        {
+            playButton.hasPower = false;
+            playButton.isLocked = true;
+        }
     }
 
     public void PlayButtonPressed()
     {
         // if ready to go (ie player is loaded and not currently playing) tell selected player to play tape.
-
+        Debug.Log("Play Button Pressed");
     }
 }

@@ -29,11 +29,7 @@ public class TapeLoader : MonoBehaviour {
             {
                 isLoading = false;
                 myTape.transform.position = this.transform.position;
-                myPlayer.isAnimating = false;
-                myPlayer.isLoaded = true;
-                myPlayer.myButton.isLocked = false;
-                myPlayer.mySelectionButton.myButton.isLocked = false;
-                myPlayer.myButton.MoveDown();
+                myPlayer.LoadComplete();
             }
         }
 
@@ -48,7 +44,6 @@ public class TapeLoader : MonoBehaviour {
                 myTape.transform.Translate(ejectDistance, 0f, 0f);
                 myPlayer.isAnimating = false;
                 myPlayer.myButton.MoveUp();
-                //myPlayer.myTape = null;
             }
         }
 
@@ -67,13 +62,6 @@ public class TapeLoader : MonoBehaviour {
     public void EjectTape()
     {
         isEjecting = true;
-        myPlayer.isLoaded = false;
-        myPlayer.mySelectionButton.myButton.isLocked = true;
-        if (myPlayer.mySelectionButton.myButton.isDepressed)
-        {
-            myPlayer.mySelectionButton.myButton.MoveUp();
-        }
-        myPlayer.myButton.isLocked = true;
         myTape.myBox.isLoaded = false;
 
     }
@@ -81,11 +69,11 @@ public class TapeLoader : MonoBehaviour {
     public void EjectEndedEarly()
     {
         isEjecting = false;
-        //myTape.transform.position = this.transform.position;
-        //myTape.transform.Translate(ejectDistance, 0f, 0f);
+        myPlayer.myTape = null;
+        myTape = null;
+
         myPlayer.isAnimating = false;
         myPlayer.myButton.MoveUp();
-        //myPlayer.myTape = null;
 
     }
 }
