@@ -20,29 +20,17 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        float thisLevel = GetInterferenceLevel(other);
-        Debug.Log("Triggered by " + other + " for " + thisLevel + " Interference.");
-        if (currentInterferenceLevel < thisLevel) { currentInterferenceLevel = thisLevel; }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Leaving " + other);
-        currentInterferenceLevel -= 50f;
-    }
 
     public void MoveDotTo(float thisPosition)
     {
         transform.localPosition = new Vector3(transform.localPosition.x, bottomY + (thisPosition * yRange), transform.localPosition.z );
     }
 
-    float GetInterferenceLevel(Collider other) {
+    float GetInterferenceLevel(Collider2D other) {
 
         float thisInterferance = 0;
-        InterferenceHigh thisHigh = other.GetComponent<InterferenceHigh>();
-        InterferenceLow thisLow = other.GetComponent<InterferenceLow>();
+        InterferenceHigh2D thisHigh = other.GetComponent<InterferenceHigh2D>();
+        InterferenceLow2D thisLow = other.GetComponent<InterferenceLow2D>();
         if (thisHigh)
         {
             thisInterferance = thisHigh.myInterferenceLevel;
@@ -55,4 +43,20 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
         return thisInterferance;
 
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    { 
+        float thisLevel = GetInterferenceLevel(other);
+        Debug.Log("Triggered by " + other + " for " + thisLevel + " Interference.");
+        if (currentInterferenceLevel < thisLevel) { currentInterferenceLevel = thisLevel; }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Debug.Log("Leaving " + other);
+        currentInterferenceLevel -= 50f;
+
+    }
+
 }

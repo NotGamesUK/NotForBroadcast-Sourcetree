@@ -70,6 +70,7 @@ public class Television : MonoBehaviour {
         myScreen.Stop();
         if (myAudio)
         {
+            //Debug.Log("Stopping Audio");
             StopAudio();
         }
         hasPower = false;
