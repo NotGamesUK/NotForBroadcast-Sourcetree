@@ -162,8 +162,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
-    oldSize: {x: 0.9, y: 0.45}
-    newSize: {x: 9, y: 4.5}
+    oldSize: {x: 0.901, y: 0.45}
+    newSize: {x: 0.901, y: 0.45}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -219,9 +219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: c01507879aa1edc439201104993e8596, type: 3}
-  - {fileID: 21300002, guid: c01507879aa1edc439201104993e8596, type: 3}
-  - {fileID: 21300004, guid: c01507879aa1edc439201104993e8596, type: 3}
+  - {fileID: 21300000, guid: 3fb07f95894a99a4a9d1b7110584b74c, type: 3}
+  - {fileID: 21300000, guid: 765ddbba04179ae459a1e511c3e2e7f7, type: 3}
+  - {fileID: 21300000, guid: 3a3a654e210216949a98673a7e175a62, type: 3}
 --- !u!114 &114883995686348958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,9 +249,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 100
   mySprites:
-  - {fileID: 21300000, guid: 0e777cffa220490468f299e0c69d3b02, type: 3}
-  - {fileID: 21300002, guid: 0e777cffa220490468f299e0c69d3b02, type: 3}
-  - {fileID: 21300004, guid: 0e777cffa220490468f299e0c69d3b02, type: 3}
+  - {fileID: 21300000, guid: 975bd2917b059044084dc5a8cb1b276e, type: 3}
+  - {fileID: 21300000, guid: 86e3024834d9bb948b8c063369b4c933, type: 3}
+  - {fileID: 21300000, guid: 1636d8a05f8cd3b4abe6c54033dab1be, type: 3}
 --- !u!212 &212059889323298636
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -286,12 +286,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c01507879aa1edc439201104993e8596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fb07f95894a99a4a9d1b7110584b74c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9, y: 4.5}
+  m_Size: {x: 0.901, y: 0.45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -330,7 +330,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e777cffa220490468f299e0c69d3b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 975bd2917b059044084dc5a8cb1b276e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
