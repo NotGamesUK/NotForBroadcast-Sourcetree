@@ -40,7 +40,7 @@ public class InterferenceAnimator2D : MonoBehaviour {
     [Range(0f, 360f)]
     public float tiltDownDegrees=90;
     [Tooltip("Number of seconds to go from Max to Min.")]
-    public float tiltSpeed=5f;
+    public float tiltSpeed=10f;
     public bool startAnticlockwise;
 
     [Space(5)]
@@ -70,7 +70,7 @@ public class InterferenceAnimator2D : MonoBehaviour {
     private int spinDirection;
     private float scalePerSecond;
     private int scaleDirection;
-    private float tiltMaxRot, tiltMinRot, tiltPerSecond, currentTilt;
+    private float tiltMaxRot, tiltMinRot, tiltPerSecond, currentTilt, tiltMonitor;
     private int tiltDirection;
     private float driftMaxX, driftMinX, driftMaxY, driftMinY, driftPerSecondX, driftPerSecondY;
     private int driftDirectionX, driftDirectionY;
@@ -103,9 +103,10 @@ public class InterferenceAnimator2D : MonoBehaviour {
         }
 
         if (isTilting)
+            tiltMonitor = 0;
         {
-            tiltDirection = -1;
-            if (startAnticlockwise) { tiltDirection = 1; }
+            tiltDirection = 1;
+            if (startAnticlockwise) { tiltDirection = -1; }
         }
 
         if (isDrifting)
@@ -150,7 +151,7 @@ public class InterferenceAnimator2D : MonoBehaviour {
 
         if (isSpinning)
         {
-            transform.Rotate(0,0, spinPerSecond * Time.deltaTime * (spinDirection), Space.World);
+            transform.Rotate(0,0, spinPerSecond * Time.deltaTime * spinDirection, Space.World);
         }
 
         if (isScaling)
@@ -173,6 +174,25 @@ public class InterferenceAnimator2D : MonoBehaviour {
 
         if (isTilting)
         {
+            transform.Rotate(0, 0, tiltPerSecond * tiltDirection * Time.deltaTime, Space.World);
+            tiltMonitor += tiltPerSecond * tiltDirection * Time.deltaTime;
+            float thisTilt = transform.rotation.eulerAngles.z;
+            Debug.Log("Current Tilt: " + thisTilt + "   Max/Min Tilt: " + tiltMaxRot + "/" + tiltMinRot + "  Monitor: "+tiltMonitor);
+            if (tiltMonitor >= tiltUpDegrees)
+            {
+                Quaternion newRotation = Quaternion.Euler(0, 0, tiltMaxRot);
+                tiltMonitor = tiltUpDegrees;
+                transform.rotation = newRotation;
+                tiltDirection *= -1;
+            }
+            if (tiltMonitor <= -tiltDownDegrees)
+            {
+                Quaternion newRotation = Quaternion.Euler(0, 0, tiltMinRot);
+                tiltMonitor = -tiltDownDegrees;
+                transform.rotation = newRotation;
+                tiltDirection *= -1;
+            }
+
 
         }
 
@@ -245,7 +265,9 @@ public class InterferenceAnimator2D : MonoBehaviour {
         {
             currentTilt = startRotation.z;
             tiltMaxRot = currentTilt + tiltUpDegrees;
+            if (tiltMaxRot >= 360) { tiltMaxRot -= 360; }
             tiltMinRot = currentTilt - tiltDownDegrees;
+            if (tiltMinRot < 0) { tiltMinRot += 360; }
             tiltPerSecond = (tiltMaxRot - tiltMinRot) / tiltSpeed;
         }
 

@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4435684799731752}
   - component: {fileID: 114763919777001138}
+  - component: {fileID: 114615114648925716}
   m_Layer: 0
   m_Name: Spike Down
   m_TagString: Untagged
@@ -238,6 +239,44 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3fb07f95894a99a4a9d1b7110584b74c, type: 3}
   - {fileID: 21300000, guid: 765ddbba04179ae459a1e511c3e2e7f7, type: 3}
   - {fileID: 21300000, guid: 3a3a654e210216949a98673a7e175a62, type: 3}
+--- !u!114 &114615114648925716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617887548959228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc050fbff4453914e8afa86d38afddd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBouncing: 0
+  bounceUpMax: 0.5
+  bounceDownMax: 0.5
+  bounceSpeed: 5
+  bounceUpFirst: 0
+  isSpinning: 0
+  spinSpeed: 10
+  goAnticlockwise: 0
+  isScaling: 0
+  maxScale: 1.5
+  minScale: 0.5
+  scaleSpeed: 10
+  shrinkFirst: 0
+  isTilting: 0
+  tiltUpDegrees: 90
+  tiltDownDegrees: 90
+  tiltSpeed: 10
+  startAnticlockwise: 0
+  isDrifting: 0
+  driftLeftMax: 0.5
+  driftRightMax: 0.5
+  driftUpMax: 0.5
+  driftDownMax: 0.5
+  driftSpeedX: 5
+  driftSpeedY: 5
+  driftRandomly: 0
+  driftRandomness: 1.75
 --- !u!114 &114763919777001138
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4845601036192598}
   - component: {fileID: 114852937977835796}
+  - component: {fileID: 114866997855139686}
   m_Layer: 0
   m_Name: Fill High
   m_TagString: Untagged
@@ -148,6 +149,44 @@ MonoBehaviour:
   myType: 0
   myVideo: {fileID: 32900000, guid: cff73a2f5a3b8b04eaa4849453b1c6d3, type: 3}
   myAudio: {fileID: 8300000, guid: 9654aa8432965ed4fb62e043009d310b, type: 3}
+--- !u!114 &114866997855139686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435495995423794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc050fbff4453914e8afa86d38afddd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBouncing: 0
+  bounceUpMax: 0.5
+  bounceDownMax: 0.5
+  bounceSpeed: 5
+  bounceUpFirst: 0
+  isSpinning: 0
+  spinSpeed: 10
+  goAnticlockwise: 0
+  isScaling: 0
+  maxScale: 1.5
+  minScale: 0.5
+  scaleSpeed: 10
+  shrinkFirst: 0
+  isTilting: 0
+  tiltUpDegrees: 90
+  tiltDownDegrees: 90
+  tiltSpeed: 10
+  startAnticlockwise: 0
+  isDrifting: 0
+  driftLeftMax: 0.5
+  driftRightMax: 0.5
+  driftUpMax: 0.5
+  driftDownMax: 0.5
+  driftSpeedX: 5
+  driftSpeedY: 5
+  driftRandomly: 0
+  driftRandomness: 1.75
 --- !u!212 &212476736516758336
 SpriteRenderer:
   m_ObjectHideFlags: 1

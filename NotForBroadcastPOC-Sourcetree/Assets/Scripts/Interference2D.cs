@@ -12,8 +12,8 @@ public class Interference2D : MonoBehaviour {
     public VideoClip myVideo;
     public AudioClip myAudio;
 
-    private InterferenceHigh2D myHigh;
-    private InterferenceLow2D myLow;
+    private InterferenceHigh2D[] myHighs;
+    private InterferenceLow2D[] myLows;
     private bool isUnskinned = true;
 
 
@@ -21,8 +21,8 @@ public class Interference2D : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        myHigh = GetComponentInChildren<InterferenceHigh2D>();
-        myLow = GetComponentInChildren<InterferenceLow2D>();
+        myHighs = GetComponentsInChildren<InterferenceHigh2D>();
+        myLows = GetComponentsInChildren<InterferenceLow2D>();
 
 
     }
@@ -45,9 +45,15 @@ public class Interference2D : MonoBehaviour {
 
             }
 
-            myHigh.SkinYourself(thisSkin);
-            myLow.SkinYourself(thisSkin);
-            isUnskinned = false;
+            foreach (InterferenceHigh2D thisHigh in myHighs)
+            {
+                thisHigh.SkinYourself(thisSkin);
+            }
+            foreach (InterferenceLow2D thisLow in myLows)
+            {
+                thisLow.SkinYourself(thisSkin);
+                isUnskinned = false;
+            }
         }
 	}
 }

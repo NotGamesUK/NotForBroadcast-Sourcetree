@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4428701221160278}
   - component: {fileID: 114883995686348958}
+  - component: {fileID: 114290264052245384}
   m_Layer: 0
   m_Name: Spike Up
   m_TagString: Untagged
@@ -206,6 +207,44 @@ PolygonCollider2D:
       - {x: 0.0050000004, y: -0.23600002}
       - {x: 0.23600002, y: -0.0050000004}
       - {x: 0.23600002, y: 0}
+--- !u!114 &114290264052245384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524721935701630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc050fbff4453914e8afa86d38afddd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBouncing: 0
+  bounceUpMax: 0.5
+  bounceDownMax: 0.5
+  bounceSpeed: 5
+  bounceUpFirst: 0
+  isSpinning: 0
+  spinSpeed: 10
+  goAnticlockwise: 0
+  isScaling: 0
+  maxScale: 1.5
+  minScale: 0.5
+  scaleSpeed: 10
+  shrinkFirst: 0
+  isTilting: 0
+  tiltUpDegrees: 90
+  tiltDownDegrees: 90
+  tiltSpeed: 10
+  startAnticlockwise: 0
+  isDrifting: 0
+  driftLeftMax: 0.5
+  driftRightMax: 0.5
+  driftUpMax: 0.5
+  driftDownMax: 0.5
+  driftSpeedX: 5
+  driftSpeedY: 5
+  driftRandomly: 0
+  driftRandomness: 1.75
 --- !u!114 &114681677613432552
 MonoBehaviour:
   m_ObjectHideFlags: 1
