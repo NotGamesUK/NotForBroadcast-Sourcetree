@@ -9,6 +9,8 @@ public class InterferenceHigh2D : MonoBehaviour {
     public Sprite[] mySprites;
 
 
+    [HideInInspector]
+    public Interference2D myParent;
     private SpriteRenderer myRenderer;
 
 
@@ -16,6 +18,7 @@ public class InterferenceHigh2D : MonoBehaviour {
     void Start()
     {
         myRenderer = GetComponent<SpriteRenderer>();
+        myParent = GetComponentInParent<Interference2D>();
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class InterferenceHigh2D : MonoBehaviour {
 
     public void SkinYourself(int thisSprite)
     {
-        Debug.Log("High2D: Skin Request for " + thisSprite);
+        //Debug.Log("High2D: Skin Request for " + thisSprite);
         myRenderer.sprite = mySprites[thisSprite];
     }
 }

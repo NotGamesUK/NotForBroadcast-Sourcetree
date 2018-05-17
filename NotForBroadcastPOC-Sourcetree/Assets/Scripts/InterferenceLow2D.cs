@@ -7,8 +7,8 @@ public class InterferenceLow2D : MonoBehaviour {
     [Range(1f, 100f)]
     public float myInterferenceLevel = 50;
     public Sprite[] mySprites;
-
-
+    [HideInInspector]
+    public Interference2D myParent;
     private SpriteRenderer myRenderer;
 
 
@@ -16,6 +16,8 @@ public class InterferenceLow2D : MonoBehaviour {
     void Start()
     {
         myRenderer = GetComponent<SpriteRenderer>();
+        myParent = GetComponentInParent<Interference2D>();
+
     }
 
     // Update is called once per frame

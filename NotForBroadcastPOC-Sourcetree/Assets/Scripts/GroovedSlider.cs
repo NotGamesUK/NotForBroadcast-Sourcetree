@@ -15,6 +15,7 @@ public class GroovedSlider : MonoBehaviour {
 
     private Vector3 topPosition;
     private Vector3 bottomPosition;
+    private float xChange;
     private float yChange;
     private float zChange;
     private MeshRenderer myRenderer;
@@ -31,11 +32,12 @@ public class GroovedSlider : MonoBehaviour {
         topPosition = this.transform.position;
         this.transform.Translate(myTranslation);
         bottomPosition = this.transform.position;
+        xChange = topPosition.x - bottomPosition.x;
         yChange = topPosition.y - bottomPosition.y;
         zChange = topPosition.z - bottomPosition.z;
         // Move into alignment with slider
         float thisSliderPos = mySlider.value;
-        float newX = bottomPosition.x;
+        float newX = bottomPosition.x + (xChange * thisSliderPos);
         float newY = bottomPosition.y + (yChange * thisSliderPos);
         float newZ = bottomPosition.z + (zChange * thisSliderPos);
         this.transform.position = new Vector3(newX, newY, newZ);
@@ -111,7 +113,7 @@ public class GroovedSlider : MonoBehaviour {
     public void sliderMoved(float thisSliderPos)
     {
         // Adjust 3D slider
-        float newX = bottomPosition.x;
+        float newX = bottomPosition.x + (xChange * thisSliderPos);
         float newY = bottomPosition.y + (yChange * thisSliderPos);
         float newZ = bottomPosition.z + (zChange * thisSliderPos);
         this.transform.position = new Vector3(newX, newY, newZ);

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+
 
 public class Speakers : MonoBehaviour {
 
+    public AudioMixer myDesk;
     private Light[] powerLEDs;
 
 	// Use this for initialization
@@ -22,7 +25,8 @@ public class Speakers : MonoBehaviour {
         {
             thisLight.enabled = true;
         }
-        // Mute all sound
+        // UnMute all sound
+        myDesk.SetFloat("MasterVol", 0f);
     }
 
     void PowerOff()
@@ -31,7 +35,9 @@ public class Speakers : MonoBehaviour {
         {
             thisLight.enabled = false;
         }
-        // Enable all sound
+        // Mute all sound
+        myDesk.SetFloat("MasterVol", -80f);
+
     }
 
 }

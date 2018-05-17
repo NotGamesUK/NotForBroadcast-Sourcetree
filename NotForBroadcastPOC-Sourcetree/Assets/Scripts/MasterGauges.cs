@@ -32,6 +32,7 @@ public class MasterGauges : MonoBehaviour {
     private ValveBox myTemperatureObject;
     private SatelliteDish myDish;
     private PlayerFrequencyDisplayObject myPlayer;
+    private SoundDesk myDesk;
     private Color interferanceAlpha = new Color(1f, 1f, 1f, 1f);
 
 
@@ -43,6 +44,7 @@ public class MasterGauges : MonoBehaviour {
         myTemperatureObject = FindObjectOfType<ValveBox>();
         myDish = FindObjectOfType<SatelliteDish>();
         myPlayer = FindObjectOfType<PlayerFrequencyDisplayObject>();
+        myDesk = FindObjectOfType<SoundDesk>();
     }
 
     // Update is called once per frame
@@ -94,7 +96,6 @@ public class MasterGauges : MonoBehaviour {
         //Debug.Log("This Tilt: " + thisTilt);
 
         // Start Video and Audio Signal at 100%
-        float audioStrength = 100f;
         float videoStrength = 100f;
 
         // Subtract Video based on dish tilt
@@ -118,9 +119,9 @@ public class MasterGauges : MonoBehaviour {
         }
         //Debug.Log("Video Strength Pre: " + videoStrength + "%");
         // Subtract Video and Audio based on variables in Signal Control Panel
-        if (videoStrength>100-myPlayer.currentInterferenceLevel)
+        if (videoStrength>100-myPlayer.currentWhiteNoiseLevel)
         {
-            videoStrength = 100 - myPlayer.currentInterferenceLevel;
+            videoStrength = 100 - myPlayer.currentWhiteNoiseLevel;
         }
         //Debug.Log("Video Strength Post: " + videoStrength + "%");
         // Adjust alpha of interference screen based on Video Signal level
@@ -129,6 +130,9 @@ public class MasterGauges : MonoBehaviour {
         interferance.color = interferanceAlpha;
 
         // Mix audio over broadcast and turn down other channels propotional to Audio Signal
+        float audioInterferenceStrength = -(videoStrength * 0.8f);
+        //Debug.Log("White Noise Volume: " + audioInterferenceStrength);
+        myDesk.SetWhiteNoiseVolume(audioInterferenceStrength);
 
         // Display Video and Audio Signal fidelity on panel
         mySignalDisplay.text = videoStrength.ToString() + "%";

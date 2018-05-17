@@ -6,8 +6,10 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
 
     public float topY;
     public float bottomY;
-    public float currentInterferenceLevel;
+    //[HideInInspector]
+    public float currentWhiteNoiseLevel, currentAudioInterferenceLevel, currentResistanceLevel;
     private float yRange;
+    private Interference2D thisParent;
 
 	// Use this for initialization
 	void Start () {
@@ -45,18 +47,63 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other)
-    { 
+    {
+        thisParent = other.GetComponentInParent<Interference2D>();
         float thisLevel = GetInterferenceLevel(other);
-        Debug.Log("Triggered by " + other + " for " + thisLevel + " Interference.");
-        if (currentInterferenceLevel < thisLevel) { currentInterferenceLevel = thisLevel; }
+
+        switch (thisParent.myType)
+        {
+            case (Interference2D.Type.Default):
+                Debug.Log("Triggered by " + other + " for " + thisLevel + " White Noise.");
+                if (currentWhiteNoiseLevel < thisLevel) { currentWhiteNoiseLevel = thisLevel; }
+                break;
+
+
+            case (Interference2D.Type.Audio):
+                Debug.Log("Triggered by " + other + " for " + thisLevel + " Audio Interference.");
+                if (currentAudioInterferenceLevel < thisLevel) { currentAudioInterferenceLevel = thisLevel; }
+
+                break;
+
+
+            case (Interference2D.Type.Resistance):
+                Debug.Log("Triggered by " + other + " for " + thisLevel + " Resistance Hacking.");
+                if (currentResistanceLevel < thisLevel) { currentResistanceLevel = thisLevel; }
+
+                break;
+
+
+        }
 
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Leaving " + other);
-        currentInterferenceLevel -= 50f;
+        thisParent = other.GetComponentInParent<Interference2D>();
 
+        switch (thisParent.myType)
+        {
+            case (Interference2D.Type.Default):
+                Debug.Log("Leaving White Noise" + other);
+                currentWhiteNoiseLevel -= 50f;
+                break;
+
+
+            case (Interference2D.Type.Audio):
+                Debug.Log("Leaving Audio Interference" + other);
+                currentWhiteNoiseLevel -= 50f;
+
+                break;
+
+
+            case (Interference2D.Type.Resistance):
+                Debug.Log("Leaving Resistance Hack" + other);
+                currentWhiteNoiseLevel -= 50f;
+
+                break;
+
+                //Debug.Log("Leaving " + other);
+        }
     }
 
 }

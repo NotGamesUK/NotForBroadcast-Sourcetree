@@ -10,11 +10,21 @@ public class SoundDesk : MonoBehaviour {
     public ButtonAnimating[] myMutes;
     public AudioMixer myDesk;
     public ButtonAnimating myBleepButton;
+    public Light masterMuteLight;
+    public Light broadcastMuteLight;
+    public float myMuteLightIntensity = 20f;
     public bool hasPower=false;
+    public bool masterIsMuted;
+    private AudioSource myBleep;
+    private bool broadcastIsMuted;
+    private float storedMasterVolume;
+    private float storedBroadcastVolume;
+    
 
 	// Use this for initialization
 	void Start () {
-
+        myBleep = GetComponent<AudioSource>();
+        myDesk.SetFloat("BleepVol", -80f);
 	}
 	
 	// Update is called once per frame
@@ -27,6 +37,7 @@ public class SoundDesk : MonoBehaviour {
         string channelRequired = "Screen0" + thisChannel + "Vol";
         Debug.Log(channelRequired);
         myDesk.SetFloat(channelRequired, -80f);
+        if (!myMutes[thisChannel - 1].isDepressed) { myMutes[thisChannel - 1].MoveDown(); }
     }
 
     public void UnmuteChannel (int thisChannel)
@@ -35,13 +46,86 @@ public class SoundDesk : MonoBehaviour {
         string channelRequired = "Screen0" + thisChannel + "Vol";
         Debug.Log(channelRequired);
         myDesk.SetFloat(channelRequired, 0f);
+        if (myMutes[thisChannel - 1].isDepressed) { myMutes[thisChannel - 1].MoveUp(); }
 
     }
 
     public void SetMasterVolume(float thisVolume)
     {
         thisVolume = 1 - thisVolume;
-        myDesk.SetFloat("MasterVol", thisVolume*-80f);
+        storedMasterVolume = thisVolume * -80f;
+        if (masterIsMuted) { thisVolume = 0; }
+        myDesk.SetFloat("ControlRoomVol", thisVolume*-80f);
+    }
+
+    public void SetBroadcastVolume(float thisVolume)
+    {
+        thisVolume = 1 - thisVolume;
+        storedBroadcastVolume = thisVolume * -80f;
+        if (broadcastIsMuted) { thisVolume = 0; }
+        myDesk.SetFloat("BroadcastVol", thisVolume * -80f);
+    }
+
+    public void SetWhiteNoiseVolume(float thisWNVol)
+    {
+        //Debug.Log("White Noise Volume: " + thisWNVol +"   Censored Signal Volume: "+(-80f-thisWNVol));
+        myDesk.SetFloat("WhiteNoiseVol", thisWNVol);
+        myDesk.SetFloat("CensoredVol", -80f - (thisWNVol));
+
+    }
+
+    public void SetMutes(float thisSetting)
+    {
+        string thisSwitch = thisSetting.ToString();
+        switch (thisSwitch)
+        {
+            case ("0"):
+                masterIsMuted = false;
+                myDesk.SetFloat("ControlRoomVol", storedMasterVolume);
+                broadcastIsMuted = true;
+                myDesk.GetFloat("BroadcastVol", out storedBroadcastVolume);
+                myDesk.SetFloat("BroadcastVol", -80f);
+                // Set master light to green
+                masterMuteLight.color = Color.green;
+                // Set broadcast light to red
+                broadcastMuteLight.color = Color.red;
+                break;
+
+            case ("1"):
+                masterIsMuted = false;
+                broadcastIsMuted = false;
+                myDesk.SetFloat("ControlRoomVol", storedMasterVolume);
+                myDesk.SetFloat("BroadcastVol", storedBroadcastVolume);
+                masterMuteLight.color = Color.green;
+                broadcastMuteLight.color = Color.green;
+                break;
+
+            case ("2"):
+                broadcastIsMuted = false;
+                myDesk.SetFloat("BroadcastVol", storedBroadcastVolume);
+                broadcastIsMuted = true;
+                myDesk.GetFloat("ControlRoomVol", out storedMasterVolume);
+                myDesk.SetFloat("ControlRoomVol", -80f);
+                // Set master light to red
+                masterMuteLight.color = Color.red;
+                // Set broadcast light to green
+                broadcastMuteLight.color = Color.green;
+                break;
+
+                break;
+        }
+    }
+
+    public void BleepOn()
+    {
+        myDesk.SetFloat("SignalVol", -80f);
+        myDesk.SetFloat("BleepVol", 0f);
+    }
+
+    public void BleepOff()
+    {
+        myDesk.SetFloat("SignalVol", 0f);
+        myDesk.SetFloat("BleepVol", -80f);
     }
 
     void PowerOn()
@@ -56,6 +140,9 @@ public class SoundDesk : MonoBehaviour {
             thisMute.hasPower = true;
         }
         myBleepButton.hasPower = true;
+        masterMuteLight.intensity = myMuteLightIntensity;
+        broadcastMuteLight.intensity = myMuteLightIntensity;
+        myBleep.Play();
     }
 
     void PowerOff()
@@ -70,6 +157,9 @@ public class SoundDesk : MonoBehaviour {
             thisMute.hasPower = false;
         }
         myBleepButton.hasPower = false;
+        masterMuteLight.intensity = 0;
+        broadcastMuteLight.intensity = 0;
+        myBleep.Stop();
     }
 }
 

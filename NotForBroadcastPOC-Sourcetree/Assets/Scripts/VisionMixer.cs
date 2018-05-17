@@ -9,11 +9,15 @@ public class VisionMixer : MonoBehaviour {
     public VisionMixerButton[] buttons;
     public Television[] smallScreens;
     public Television masterScreen;
+    private Switch myLinkSwitch;
+    private SoundDesk myMixingDesk;
     private bool hasPower;
     private int jumpToTV;
 
 	// Use this for initialization
 	void Start () {
+        myLinkSwitch = GetComponentInChildren<Switch>();
+        myMixingDesk = FindObjectOfType<SoundDesk>();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +36,24 @@ public class VisionMixer : MonoBehaviour {
             masterScreen.PlayVideoFromFrame(thisClip, thisFrame);
             jumpToTV = selectedScreen;
             Invoke("JumpToFrame", 0.01f);
+
+            // Mute other sound channels as required
+            if (myLinkSwitch.isOn)
+            {
+                for (int n = 1; n <= 4; n++)
+                {
+                    if (n == selectedScreen)
+                    {
+                        // Tell Mixing Desk to unmute the channel
+                        myMixingDesk.UnmuteChannel(n);
+                    }
+                    else
+                    {
+                        // Tell Mixing Desk to mute the channel
+                        myMixingDesk.MuteChannel(n);
+                    }
+                }
+            }
             // Lock all VM Buttons - Prevents making an EDL that is impossible to play back.
             //Debug.Log("Locking Vision Mixer Buttons.");
             foreach(VisionMixerButton thisButton in buttons)
@@ -79,6 +101,7 @@ public class VisionMixer : MonoBehaviour {
             thisButton.myButton.hasPower = true;
             thisButton.myButton.isLocked = false;
         }
+        myLinkSwitch.hasPower = true;
         foreach (Television thisTV in smallScreens)
         {
             thisTV.PowerOn();
@@ -97,6 +120,7 @@ public class VisionMixer : MonoBehaviour {
                 thisButton.myButton.MoveUp();
             }
         }
+        myLinkSwitch.hasPower = false;
         foreach (Television thisTV in smallScreens)
         {
             thisTV.PowerOff();
