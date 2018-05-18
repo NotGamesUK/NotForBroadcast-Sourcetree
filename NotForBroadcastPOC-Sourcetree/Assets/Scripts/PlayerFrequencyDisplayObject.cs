@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerFrequencyDisplayObject : MonoBehaviour {
 
-    public float topY;
-    public float bottomY;
+    public float topY= 0.407f;
+    public float bottomY= -0.397f;
+    public float fadeSpeed=25;
     //[HideInInspector]
     public float currentWhiteNoiseLevel, currentAudioInterferenceLevel, currentResistanceLevel;
+    public float targetWhiteNoiseLevel, targetAudioInterferenceLevel, targetResistanceLevel;
     private float yRange;
+    public AudioSource audioInterferencePlayer;
     private Interference2D thisParent;
 
 	// Use this for initialization
@@ -19,8 +22,44 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
-	}
+		if (currentWhiteNoiseLevel != targetWhiteNoiseLevel)
+        {
+            float thisDirection = Mathf.Sign(targetWhiteNoiseLevel - currentWhiteNoiseLevel);
+            //Debug.Log("White noise fade direction=" + thisDirection);
+            if (thisDirection==-1) { thisDirection = -3; } // Fade Out Faster than fade In
+            currentWhiteNoiseLevel += thisDirection * fadeSpeed * Time.deltaTime;
+            if (currentWhiteNoiseLevel  <0) { currentWhiteNoiseLevel = 0; }
+            if (currentWhiteNoiseLevel >100) { currentWhiteNoiseLevel = 100; }
+            if (currentWhiteNoiseLevel > 49 && currentWhiteNoiseLevel < 51 && targetWhiteNoiseLevel == 50) { currentWhiteNoiseLevel = 50; }
+            //Debug.Log("WHITE NOISE - Current: " + currentWhiteNoiseLevel + "   Target: " + targetWhiteNoiseLevel);
+        }
+
+        if (currentAudioInterferenceLevel != targetAudioInterferenceLevel)
+        {
+            float thisDirection = Mathf.Sign(targetAudioInterferenceLevel - currentAudioInterferenceLevel);
+            //Debug.Log("Audio Interference fade direction=" + thisDirection);
+            if (thisDirection == -1) { thisDirection = -3; } // Fade Out Faster than fade In
+            currentAudioInterferenceLevel += thisDirection * fadeSpeed * Time.deltaTime;
+            if (currentAudioInterferenceLevel < 0) { currentAudioInterferenceLevel = 0; }
+            if (currentAudioInterferenceLevel > 100) { currentAudioInterferenceLevel = 100; }
+            if (currentAudioInterferenceLevel > 49 && currentAudioInterferenceLevel < 51 && targetAudioInterferenceLevel == 50) { currentAudioInterferenceLevel = 50; }
+            //Debug.Log("AUDIO - Current: " + currentAudioInterferenceLevel + "   Target: " + targetAudioInterferenceLevel);
+        }
+
+        if (currentResistanceLevel != targetResistanceLevel)
+        {
+            float thisDirection = Mathf.Sign(targetResistanceLevel - currentResistanceLevel);
+            //Debug.Log("Audio Interference fade direction=" + thisDirection);
+            if (thisDirection == -1) { thisDirection = -3; } // Fade Out Faster than fade In
+            currentResistanceLevel += thisDirection * fadeSpeed * Time.deltaTime;
+            if (currentResistanceLevel < 0) { currentResistanceLevel = 0; }
+            if (currentResistanceLevel > 100) { currentResistanceLevel = 100; }
+            if (currentResistanceLevel > 49 && currentResistanceLevel < 51 && targetResistanceLevel == 50) { currentResistanceLevel = 50; }
+            //Debug.Log("AUDIO - Current: " + currentResistanceLevel + "   Target: " + targetResistanceLevel);
+        }
+
+
+    }
 
 
     public void MoveDotTo(float thisPosition)
@@ -55,20 +94,28 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
         {
             case (Interference2D.Type.Default):
                 Debug.Log("Triggered by " + other + " for " + thisLevel + " White Noise.");
-                if (currentWhiteNoiseLevel < thisLevel) { currentWhiteNoiseLevel = thisLevel; }
+                if (targetWhiteNoiseLevel < thisLevel) { targetWhiteNoiseLevel = thisLevel; }
                 break;
 
 
             case (Interference2D.Type.Audio):
                 Debug.Log("Triggered by " + other + " for " + thisLevel + " Audio Interference.");
-                if (currentAudioInterferenceLevel < thisLevel) { currentAudioInterferenceLevel = thisLevel; }
+                if (other.tag != "ChangeOnly")
+                {
+                    if (targetAudioInterferenceLevel < thisLevel) { targetAudioInterferenceLevel = thisLevel; }
 
+                }
+                if (thisParent.myAudio != audioInterferencePlayer.clip && thisParent.myAudio)
+                {
+                    audioInterferencePlayer.clip = thisParent.myAudio;
+                    audioInterferencePlayer.Play();
+                }
                 break;
 
 
             case (Interference2D.Type.Resistance):
                 Debug.Log("Triggered by " + other + " for " + thisLevel + " Resistance Hacking.");
-                if (currentResistanceLevel < thisLevel) { currentResistanceLevel = thisLevel; }
+                if (targetResistanceLevel < thisLevel) { targetResistanceLevel = thisLevel; }
 
                 break;
 
@@ -85,24 +132,24 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
         {
             case (Interference2D.Type.Default):
                 Debug.Log("Leaving White Noise" + other);
-                currentWhiteNoiseLevel -= 50f;
+                targetWhiteNoiseLevel -= 50f;
+                if (targetWhiteNoiseLevel < 0) { targetWhiteNoiseLevel = 0; }
                 break;
 
 
             case (Interference2D.Type.Audio):
                 Debug.Log("Leaving Audio Interference" + other);
-                currentWhiteNoiseLevel -= 50f;
-
+                targetAudioInterferenceLevel -= 50f;
+                if (targetAudioInterferenceLevel < 0) { targetAudioInterferenceLevel = 0; }
                 break;
 
 
             case (Interference2D.Type.Resistance):
                 Debug.Log("Leaving Resistance Hack" + other);
-                currentWhiteNoiseLevel -= 50f;
-
+                targetResistanceLevel -= 50f;
+                if (targetResistanceLevel < 0) { targetResistanceLevel = 0; }
                 break;
 
-                //Debug.Log("Leaving " + other);
         }
     }
 

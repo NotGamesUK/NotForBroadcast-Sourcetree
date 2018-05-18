@@ -24,7 +24,10 @@ public class SoundDesk : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         myBleep = GetComponent<AudioSource>();
+        myDesk.SetFloat("ResistanceVol", -80f);
         myDesk.SetFloat("BleepVol", -80f);
+        myDesk.SetFloat("WhiteNoiseVol", -80f);
+        myDesk.SetFloat("AudioInterferenceVol", -80f);
 	}
 	
 	// Update is called once per frame
@@ -66,12 +69,50 @@ public class SoundDesk : MonoBehaviour {
         myDesk.SetFloat("BroadcastVol", thisVolume * -80f);
     }
 
-    public void SetWhiteNoiseVolume(float thisWNVol)
+    public void SetWhiteNoiseAudioLevel(float thisVol)
     {
-        //Debug.Log("White Noise Volume: " + thisWNVol +"   Censored Signal Volume: "+(-80f-thisWNVol));
-        myDesk.SetFloat("WhiteNoiseVol", thisWNVol);
-        myDesk.SetFloat("CensoredVol", -80f - (thisWNVol));
+        thisVol = (100 - thisVol)/100;
+        float thisDB = LinearToDecibel(thisVol);
+        float thisOtherDB = LinearToDecibel(1 - thisVol);
+        Debug.Log("White Noise Volume: " + thisVol + "%="+thisDB+"DB.   Audio Interfered Volume: " + thisOtherDB);
+        myDesk.SetFloat("WhiteNoiseVol", thisDB);
+        myDesk.SetFloat("AudioInterferedVol", thisOtherDB);
 
+    }
+
+    public void SetResistanceAudioLevel(float thisVol)
+    {
+        thisVol = (100 - thisVol) / 100;
+        float thisOtherDB = LinearToDecibel(thisVol);
+        float thisDB = LinearToDecibel(1 - thisVol);
+        Debug.Log("Resistance Volume: " + thisVol + "%=" + thisDB + "DB.   Raw Broadcast Volume: " + thisOtherDB);
+        myDesk.SetFloat("ResistanceVol", thisDB);
+        myDesk.SetFloat("RawBroadcastVol", thisOtherDB);
+
+    }
+
+    public void SetAudioInterferenceLevel(float thisVol)
+    {
+        thisVol = (100 - thisVol) / 100;
+        float thisOtherDB = LinearToDecibel(thisVol);
+        float thisDB = LinearToDecibel(1 - thisVol);
+        Debug.Log("Audio Interference Volume: " + thisVol + "%=" + thisDB + "DB.   Censored Signal Volume: " + thisOtherDB);
+        myDesk.SetFloat("AudioInterferenceVol", thisDB);
+        myDesk.SetFloat("CensoredVol", thisOtherDB);
+
+    }
+
+
+    private float LinearToDecibel(float linear)
+    {
+        float dB;
+
+        if (linear != 0)
+            dB = 20.0f * Mathf.Log10(linear);
+        else
+            dB = -144.0f;
+
+        return dB;
     }
 
     public void SetMutes(float thisSetting)

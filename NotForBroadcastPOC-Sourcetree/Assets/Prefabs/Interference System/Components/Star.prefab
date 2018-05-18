@@ -381,6 +381,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 408d9e9c8213a384fb66d4f9f54e0077, type: 3}
   - {fileID: 21300000, guid: 8b0339c2431523548beb713f542197d8, type: 3}
   - {fileID: 21300000, guid: 628e967a3b0eec9469ee6f0df5bf7448, type: 3}
+  myParent: {fileID: 0}
 --- !u!114 &114137559799556650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -397,6 +398,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 408d9e9c8213a384fb66d4f9f54e0077, type: 3}
   - {fileID: 21300000, guid: 8b0339c2431523548beb713f542197d8, type: 3}
   - {fileID: 21300000, guid: 628e967a3b0eec9469ee6f0df5bf7448, type: 3}
+  myParent: {fileID: 0}
 --- !u!114 &114385480844881498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,6 +453,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cfe40835c4e8adc40a4ee7707be17c72, type: 3}
   - {fileID: 21300000, guid: 8871b9fc1185a5646baa255e593afc56, type: 3}
   - {fileID: 21300000, guid: 4172c8c876d7ceb458ec3f3f2ceae29c, type: 3}
+  myParent: {fileID: 0}
 --- !u!114 &114490521283927000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,6 +470,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cfe40835c4e8adc40a4ee7707be17c72, type: 3}
   - {fileID: 21300000, guid: 8871b9fc1185a5646baa255e593afc56, type: 3}
   - {fileID: 21300000, guid: 4172c8c876d7ceb458ec3f3f2ceae29c, type: 3}
+  myParent: {fileID: 0}
 --- !u!114 &114763919777001138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -479,8 +483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myType: 0
-  myVideo: {fileID: 32900000, guid: cff73a2f5a3b8b04eaa4849453b1c6d3, type: 3}
-  myAudio: {fileID: 8300000, guid: 9654aa8432965ed4fb62e043009d310b, type: 3}
+  myVideo: {fileID: 0}
+  myAudio: {fileID: 0}
 --- !u!212 &212382252170592116
 SpriteRenderer:
   m_ObjectHideFlags: 1

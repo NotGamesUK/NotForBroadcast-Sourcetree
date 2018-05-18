@@ -23,17 +23,19 @@ public class MasterGauges : MonoBehaviour {
     
     [HideInInspector]
     public string myPowerStatus = "Green";
+    [HideInInspector]
+    public float videoStrength;
 
     public Text myPowerDisplay;
     public Text myTemperatureDisplay;
     public Text mySignalDisplay;
-    public Material interferance;
+
     private MasterTripSwitch myPowerObject;
     private ValveBox myTemperatureObject;
     private SatelliteDish myDish;
     private PlayerFrequencyDisplayObject myPlayer;
     private SoundDesk myDesk;
-    private Color interferanceAlpha = new Color(1f, 1f, 1f, 1f);
+    private BroadcastTV myBroadcastTV;
 
 
 
@@ -45,6 +47,7 @@ public class MasterGauges : MonoBehaviour {
         myDish = FindObjectOfType<SatelliteDish>();
         myPlayer = FindObjectOfType<PlayerFrequencyDisplayObject>();
         myDesk = FindObjectOfType<SoundDesk>();
+        myBroadcastTV = FindObjectOfType<BroadcastTV>();
     }
 
     // Update is called once per frame
@@ -96,7 +99,7 @@ public class MasterGauges : MonoBehaviour {
         //Debug.Log("This Tilt: " + thisTilt);
 
         // Start Video and Audio Signal at 100%
-        float videoStrength = 100f;
+        videoStrength = 100f;
 
         // Subtract Video based on dish tilt
         float tiltMin = myDish.idealTilt - dishTolerance;
@@ -125,17 +128,16 @@ public class MasterGauges : MonoBehaviour {
         }
         //Debug.Log("Video Strength Post: " + videoStrength + "%");
         // Adjust alpha of interference screen based on Video Signal level
-        interferanceAlpha.a = 1 - (videoStrength/100);
-        //Debug.Log("Colour: " + interferanceAlpha);
-        interferance.color = interferanceAlpha;
+        //myBroadcastTV.SetWhiteNoiseVideoLevel(videoStrength);
+
 
         // Mix audio over broadcast and turn down other channels propotional to Audio Signal
         float audioInterferenceStrength = -(videoStrength * 0.8f);
         //Debug.Log("White Noise Volume: " + audioInterferenceStrength);
-        myDesk.SetWhiteNoiseVolume(audioInterferenceStrength);
+        //myDesk.SetWhiteNoiseAudioLevel(audioInterferenceStrength);
 
         // Display Video and Audio Signal fidelity on panel
-        mySignalDisplay.text = videoStrength.ToString() + "%";
+        mySignalDisplay.text = Mathf.Round(videoStrength).ToString() + "%";
         mySignalDisplay.color = Color.green;
         if (videoStrength < 65) { mySignalDisplay.color = Color.yellow; }
         if (videoStrength < 35) { mySignalDisplay.color = Color.red; }

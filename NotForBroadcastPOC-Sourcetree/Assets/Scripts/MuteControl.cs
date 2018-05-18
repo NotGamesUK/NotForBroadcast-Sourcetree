@@ -26,10 +26,12 @@ public class MuteControl : MonoBehaviour {
                 if (lastCheck == true)
                 {
                     myDesk.MuteChannel(myID);
+                    // Log Change to EDL
                 }
                 else
                 {
                     myDesk.UnmuteChannel(myID);
+                    // Log Change to EDL
                 }
             }
         }

@@ -36,6 +36,7 @@ public class VisionMixer : MonoBehaviour {
             masterScreen.PlayVideoFromFrame(thisClip, thisFrame);
             jumpToTV = selectedScreen;
             Invoke("JumpToFrame", 0.01f);
+            // Log Change to EDL
 
             // Mute other sound channels as required
             if (myLinkSwitch.isOn)
@@ -46,11 +47,13 @@ public class VisionMixer : MonoBehaviour {
                     {
                         // Tell Mixing Desk to unmute the channel
                         myMixingDesk.UnmuteChannel(n);
+                        // Log Change to EDL
                     }
                     else
                     {
                         // Tell Mixing Desk to mute the channel
                         myMixingDesk.MuteChannel(n);
+                        // Log Change to EDL
                     }
                 }
             }

@@ -193,6 +193,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 607ed1a5b5a3a9343ae34a8e4e87e117, type: 3}
   - {fileID: 21300000, guid: ddccbad2afdade546baad27d3d9be29c, type: 3}
   - {fileID: 21300000, guid: 0d04e17338687a84fabc8719e919a355, type: 3}
+  myParent: {fileID: 0}
 --- !u!114 &114490521283927000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,6 +210,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: de426c43be945cc4a8ad6c8df85d6604, type: 3}
   - {fileID: 21300000, guid: aa73dc9c7b15e5440a96c5e75954b66d, type: 3}
   - {fileID: 21300000, guid: cf4bdfb6c218e1747a687d7e2589903f, type: 3}
+  myParent: {fileID: 0}
 --- !u!114 &114514624414107416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,8 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myType: 0
-  myVideo: {fileID: 32900000, guid: cff73a2f5a3b8b04eaa4849453b1c6d3, type: 3}
-  myAudio: {fileID: 8300000, guid: 9654aa8432965ed4fb62e043009d310b, type: 3}
+  myVideo: {fileID: 0}
+  myAudio: {fileID: 0}
 --- !u!212 &212382252170592116
 SpriteRenderer:
   m_ObjectHideFlags: 1
