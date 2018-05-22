@@ -36,18 +36,18 @@ public class SoundDesk : MonoBehaviour {
 
     public void MuteChannel (int thisChannel)
     {
-        Debug.Log("Call to mute Channel: " + thisChannel);
+        //Debug.Log("Call to mute Channel: " + thisChannel);
         string channelRequired = "Screen0" + thisChannel + "Vol";
-        Debug.Log(channelRequired);
+        //Debug.Log(channelRequired);
         myDesk.SetFloat(channelRequired, -80f);
         if (!myMutes[thisChannel - 1].isDepressed) { myMutes[thisChannel - 1].MoveDown(); }
     }
 
     public void UnmuteChannel (int thisChannel)
     {
-        Debug.Log("Call to Unmute Channel: " + thisChannel);
+        //Debug.Log("Call to Unmute Channel: " + thisChannel);
         string channelRequired = "Screen0" + thisChannel + "Vol";
-        Debug.Log(channelRequired);
+        //Debug.Log(channelRequired);
         myDesk.SetFloat(channelRequired, 0f);
         if (myMutes[thisChannel - 1].isDepressed) { myMutes[thisChannel - 1].MoveUp(); }
 
@@ -74,7 +74,7 @@ public class SoundDesk : MonoBehaviour {
         thisVol = (100 - thisVol)/100;
         float thisDB = LinearToDecibel(thisVol);
         float thisOtherDB = LinearToDecibel(1 - thisVol);
-        Debug.Log("White Noise Volume: " + thisVol + "%="+thisDB+"DB.   Audio Interfered Volume: " + thisOtherDB);
+        //Debug.Log("White Noise Volume: " + thisVol + "%="+thisDB+"DB.   Audio Interfered Volume: " + thisOtherDB);
         myDesk.SetFloat("WhiteNoiseVol", thisDB);
         myDesk.SetFloat("AudioInterferedVol", thisOtherDB);
 
@@ -85,7 +85,7 @@ public class SoundDesk : MonoBehaviour {
         thisVol = (100 - thisVol) / 100;
         float thisOtherDB = LinearToDecibel(thisVol);
         float thisDB = LinearToDecibel(1 - thisVol);
-        Debug.Log("Resistance Volume: " + thisVol + "%=" + thisDB + "DB.   Raw Broadcast Volume: " + thisOtherDB);
+        //Debug.Log("Resistance Volume: " + thisVol + "%=" + thisDB + "DB.   Raw Broadcast Volume: " + thisOtherDB);
         myDesk.SetFloat("ResistanceVol", thisDB);
         myDesk.SetFloat("RawBroadcastVol", thisOtherDB);
 
@@ -96,7 +96,7 @@ public class SoundDesk : MonoBehaviour {
         thisVol = (100 - thisVol) / 100;
         float thisOtherDB = LinearToDecibel(thisVol);
         float thisDB = LinearToDecibel(1 - thisVol);
-        Debug.Log("Audio Interference Volume: " + thisVol + "%=" + thisDB + "DB.   Censored Signal Volume: " + thisOtherDB);
+        //Debug.Log("Audio Interference Volume: " + thisVol + "%=" + thisDB + "DB.   Censored Signal Volume: " + thisOtherDB);
         myDesk.SetFloat("AudioInterferenceVol", thisDB);
         myDesk.SetFloat("CensoredVol", thisOtherDB);
 

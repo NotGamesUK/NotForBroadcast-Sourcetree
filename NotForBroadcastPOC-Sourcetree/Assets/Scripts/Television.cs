@@ -7,25 +7,40 @@ public class Television : MonoBehaviour {
 
     [HideInInspector]
     public VideoPlayer myScreen;
-    private AudioSource myAudio;
-    private AudioClip myAudioClip;
+    private AudioSource myAudioSource;
     public bool hasPower=false;
     public bool screenSync = true;
     private bool currentSyncScreen;
     private VideoClip myClip;
+    private AudioClip myAudioClip;
+    private bool waitingForPrepare = false;
 
 	// Use this for initialization
 	void Awake () {
         myScreen=GetComponentInChildren<VideoPlayer>();
-        myAudio =GetComponentInChildren<AudioSource>();
-        myClip =myScreen.clip;
-        //Debug.Log("My Audiosource: " + myAudio);
+        myAudioSource =GetComponentInChildren<AudioSource>();
+        myClip = null;
+        myAudioClip = null;
+        //Debug.LomyScreen.clipg("My Audiosource: " + myAudio);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        // if waitingForPrepared...
+        // Check Screen is ready.  When it is turn off waiting for prepared and increase SequenceController.preparedScreensCount; 
+    }
+
+    public void PrepareScreen(VideoClip thisVideo, AudioClip thisAudio)
+    {
+        // Load Video and Audio Clip
+        // Tell Update to monitor for Prepared
+    }
+
+    public void PlayScreen()
+    {
+        // Disable NoSignal Image
+        // Tell Video and Audio to Play
+    }
 
     public void PlayVideoFromFrame (VideoClip thisClip, long thisFrame)
     {
@@ -52,27 +67,13 @@ public class Television : MonoBehaviour {
 
     public void PowerOn()
     {
-        if (myClip)
-        {
-            myScreen.clip = myClip;
-            myScreen.Play();
-            if (myAudio)
-            {
-                PlayAudio();
-            }
-            hasPower = true;
+        // Enable No Signal Image
 
-        }
+        hasPower = true;
     }
 
     public void PowerOff()
     {
-        myScreen.Stop();
-        if (myAudio)
-        {
-            //Debug.Log("Stopping Audio");
-            StopAudio();
-        }
         hasPower = false;
     }
 
@@ -88,19 +89,19 @@ public class Television : MonoBehaviour {
         return thisClip;
     }
 
-    void PlayAudio()
-    {
-        // Find Audio with same name as MyClip
-        string thisSearchName = myClip.ToString();
-        //Debug.Log("Searching for AudioClip named " + thisSearchName);
+    //void PlayAudio()
+    //{
+    //    // Find Audio with same name as MyClip
+    //    string thisSearchName = myClip.ToString();
+    //    //Debug.Log("Searching for AudioClip named " + thisSearchName);
 
-        // Play Audio
-        myAudio.Play();
+    //    // Play Audio
+    //    myAudioSource.Play();
 
-    }
+    //}
 
-    void StopAudio()
-    {
+    //void StopAudio()
+    //{
 
-    }
+    //}
 }
