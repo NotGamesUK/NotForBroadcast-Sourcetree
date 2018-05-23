@@ -9,10 +9,13 @@ public class VisionMixer : MonoBehaviour {
     public VisionMixerButton[] buttons;
     public Television[] smallScreens;
     public Television masterScreen;
+    public VideoClip barsAndTone;
+    public AudioClip barsAndToneAudio;
     private Switch myLinkSwitch;
     private SoundDesk myMixingDesk;
     private bool hasPower;
     private int jumpToTV;
+    private AudioClip thisAudioClip;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +26,51 @@ public class VisionMixer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+    }
+
+    public void PrepareScreen(int thisScreen, VideoClip thisVideo, AudioClip thisAudio, bool thisLooping)
+    {
+        // Unlock the relevant button
+
+        smallScreens[thisScreen - 1].PrepareScreen(thisVideo, thisAudio, thisLooping);
+    }
+
+    public void PrepareScreens(VideoClip[] theseClips, AudioClip[] theseAudioClips)
+    {
+        // LOCK ALL BUTTONS????
+
+        int maxScreen = theseClips.Length;
+        for (int n = 0; n < maxScreen; n++)
+        {
+            PrepareScreen(n + 1, barsAndTone, barsAndToneAudio, true);
+            smallScreens[n].myScreen.isLooping = true;
+
+            if (theseAudioClips.Length > 1)
+            {
+                thisAudioClip = theseAudioClips[n];
+            }
+            else
+            {
+                thisAudioClip = theseAudioClips[0];
+            }
+            PrepareScreen(n + 1, theseClips[n], thisAudioClip, false);
+        }
+
+        // Set any Unset screens to Bars And Tone and Turn on Looping
+
+    }
+
+    public void PlayScreens()
+    {
+        for (int n = 0; n < 4; n++)
+        {
+            smallScreens[n].PlayScreen();
+        }
+    }
+
+    public void PlayScreen(int thisScreen)
+    {
+        smallScreens[thisScreen - 1].PlayScreen();
     }
 
     public void ScreenChange(int selectedScreen)

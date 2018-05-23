@@ -7,10 +7,13 @@ public class Television : MonoBehaviour {
 
     [HideInInspector]
     public VideoPlayer myScreen;
-    private AudioSource myAudioSource;
     public bool hasPower=false;
     public bool screenSync = true;
+
+
     private bool currentSyncScreen;
+    private AudioSource myAudioSource;
+    private MeshRenderer myNoSignal;
     private VideoClip myClip;
     private AudioClip myAudioClip;
     private bool waitingForPrepare = false;
@@ -21,25 +24,50 @@ public class Television : MonoBehaviour {
         myAudioSource =GetComponentInChildren<AudioSource>();
         myClip = null;
         myAudioClip = null;
+        myNoSignal = GetComponentInChildren<NoSignal>().GetComponent<MeshRenderer>() ;
         //Debug.LomyScreen.clipg("My Audiosource: " + myAudio);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         // if waitingForPrepared...
-        // Check Screen is ready.  When it is turn off waiting for prepared and increase SequenceController.preparedScreensCount; 
+        if (waitingForPrepare)
+        {
+            if (myScreen.isPrepared)
+            {
+                // Check Screen is ready.  When it is:
+                // turn off waitingForPrepared 
+                waitingForPrepare = false;
+                // increase SequenceController.preparedScreensCount; 
+
+
+            }
+        }
     }
 
-    public void PrepareScreen(VideoClip thisVideo, AudioClip thisAudio)
+    public void PrepareScreen(VideoClip thisVideo, AudioClip thisAudio, bool thisLoop)
     {
         // Load Video and Audio Clip
+        myClip = thisVideo;
+        myScreen.Stop();
+        myScreen.clip = myClip;
+        myScreen.Prepare();
+        myScreen.isLooping = thisLoop;
+        myAudioClip = thisAudio;
+        myAudioSource.Stop();
+        myAudioSource.clip = myAudioClip;
         // Tell Update to monitor for Prepared
+        waitingForPrepare = true;
+        Debug.Log("Television: Preparing Screen.");
     }
 
     public void PlayScreen()
     {
         // Disable NoSignal Image
+        myNoSignal.enabled = false;
         // Tell Video and Audio to Play
+        myScreen.Play();
+        if (myAudioSource) { myAudioSource.Play(); }
     }
 
     public void PlayVideoFromFrame (VideoClip thisClip, long thisFrame)
