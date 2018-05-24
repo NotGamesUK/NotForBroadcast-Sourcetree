@@ -21,7 +21,7 @@ public class VHSPlayer : MonoBehaviour {
 	void Start () {
         myLoader = GetComponentInChildren<TapeLoader>();
         lastButtonCheck = myButton.isDepressed;
-        myButton.isLocked = true;
+        myButton.Lock();
 	}
 	
 	// Update is called once per frame
@@ -49,8 +49,8 @@ public class VHSPlayer : MonoBehaviour {
     {
         isAnimating = false;
         isLoaded = true;
-        myButton.isLocked = false;
-        mySelectionButton.myButton.isLocked = false;
+        myButton.Unlock();
+        mySelectionButton.myButton.Unlock();
         myButton.MoveDown();
 
     }
@@ -66,8 +66,8 @@ public class VHSPlayer : MonoBehaviour {
             mySelectionButton.myBox.VHSPlayerSelected(0);
 
         }
-        myButton.isLocked = true;
-        mySelectionButton.myButton.isLocked = true;
+        myButton.Lock();
+        mySelectionButton.myButton.Lock();
         isAnimating = true;
 
     }

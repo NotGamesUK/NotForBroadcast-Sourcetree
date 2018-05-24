@@ -53,9 +53,12 @@ public class Television : MonoBehaviour {
         myScreen.clip = myClip;
         myScreen.Prepare();
         myScreen.isLooping = thisLoop;
-        myAudioClip = thisAudio;
-        myAudioSource.Stop();
-        myAudioSource.clip = myAudioClip;
+        if (myAudioSource)
+        {
+            myAudioClip = thisAudio;
+            myAudioSource.Stop();
+            myAudioSource.clip = myAudioClip;
+        }
         // Tell Update to monitor for Prepared
         waitingForPrepare = true;
         Debug.Log("Television: Preparing Screen.");
@@ -117,19 +120,4 @@ public class Television : MonoBehaviour {
         return thisClip;
     }
 
-    //void PlayAudio()
-    //{
-    //    // Find Audio with same name as MyClip
-    //    string thisSearchName = myClip.ToString();
-    //    //Debug.Log("Searching for AudioClip named " + thisSearchName);
-
-    //    // Play Audio
-    //    myAudioSource.Play();
-
-    //}
-
-    //void StopAudio()
-    //{
-
-    //}
 }

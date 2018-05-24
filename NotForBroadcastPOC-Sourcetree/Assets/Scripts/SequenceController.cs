@@ -52,7 +52,8 @@ public class SequenceController : MonoBehaviour {
             {
                 myBroadcastScreen.PlayAdvert();
                 myClock.StartClock();
-
+                preRollReady = false;
+                waitingForScreens = false;
                 // Invoke StartSequence in Ad-length Seconds minus Run-In Seconds
                 Invoke("StartSequence", thisPreSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn);
             }
@@ -84,7 +85,7 @@ public class SequenceController : MonoBehaviour {
         // Tell each VM screen and Broadcast Screens to prepare and increment targetcount
         myVisionMixer.PrepareScreens(myDataStore.sequenceData[foundPos].screenVideo, myDataStore.sequenceData[foundPos].screenAudio);
         myBroadcastScreen.PrepareScreens(myDataStore.sequenceData[foundPos].screenVideo, myDataStore.sequenceData[foundPos].screenAudio);
-        targetScreensCount = myDataStore.sequenceData[foundPos].screenVideo.Length;
+        targetScreensCount = myDataStore.sequenceData[foundPos].screenVideo.Length*2;
 
         // Get Length of Video for Screen 01
         double thisSequenceVideoLength= myDataStore.sequenceData[foundPos].screenVideo[0].length;
@@ -101,7 +102,7 @@ public class SequenceController : MonoBehaviour {
         // Check VM settings. Tell control room screen to prepare selected screen.  Lock VM buttons.  If no screen selected set to Screen 01 as default.
 
         // Tell Resistance Screen to prepare (and increment targetcount if required)
-        myBroadcastScreen.PrepareAdvert(myDataStore.sequenceData[foundPos].resistanceVideo, myDataStore.sequenceData[foundPos].resistanceAudio);
+        myBroadcastScreen.PrepareResistance(myDataStore.sequenceData[foundPos].resistanceVideo, myDataStore.sequenceData[foundPos].resistanceAudio);
 
         // Load Level into Level Controller
 

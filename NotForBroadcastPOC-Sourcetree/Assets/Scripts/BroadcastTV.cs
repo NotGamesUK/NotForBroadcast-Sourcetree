@@ -88,7 +88,7 @@ public class BroadcastTV : MonoBehaviour {
                 break;
 
             case (BroadcastModes.Advert):
-                // Wait for Ad to End then switch to Live?? Might be handled from sequence 
+                // Wait for Ad to End then switch to Live?? Might be handled from sequence controller
 
                 break;
         }
@@ -101,6 +101,7 @@ public class BroadcastTV : MonoBehaviour {
             {
                 adPreparing = false;
                 mySequenceController.preRollReady = true;
+                Debug.Log("Broadcast TV: Advert Prepared.");
             }
         }
 
@@ -126,30 +127,33 @@ public class BroadcastTV : MonoBehaviour {
         }
     }
 
-    public void PrepareAdvert(VideoClip thisClip, AudioClip thisAudioClip)
+    public void PrepareAdvert(VideoClip thisAdClip, AudioClip thisAdAudioClip)
     {
+        Debug.Log("BROADCAST TV: Preparing " + thisAdClip + " on "+myAdvertScreen);
         myAdvertScreen.Stop();
-        myAdvertScreen.clip = thisClip;
+        myAdvertScreen.clip = thisAdClip;
         myAdvertScreen.Prepare();
         myAdvertAudiosource.Stop();
-        myAdvertAudiosource.clip = thisAudioClip;
+        myAdvertAudiosource.clip = thisAdAudioClip;
         adPreparing = true;
     }
 
     public void PlayAdvert()
     {
+        Debug.Log("Broadcast TV: Playing Advert.");
         myAdvertScreen.Play();
         myAdvertAudiosource.Play();
         myNoSignal.enabled = false;
     }
 
-    public void PrepareResistance(VideoClip thisClip, AudioClip thisAudioClip)
+    public void PrepareResistance(VideoClip thisResistClip, AudioClip thisResistAudioClip)
     {
+        Debug.Log("BROADCAST TV: Preparing " + thisResistClip + " on " + myResistanceScreen);
         myResistanceScreen.Stop();
-        myResistanceScreen.clip = thisClip;
+        myResistanceScreen.clip = thisResistClip;
         myResistanceScreen.Prepare();
         myResistanceAudiosource.Stop();
-        myResistanceAudiosource.clip = thisAudioClip;
+        myResistanceAudiosource.clip = thisResistAudioClip;
         resistancePreparing = true;
     }
 

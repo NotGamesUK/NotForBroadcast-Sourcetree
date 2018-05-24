@@ -31,7 +31,7 @@ public class VHSPlayerSelectionButton : MonoBehaviour {
             if (lastCheck == true)
             {
                 myBox.VHSPlayerSelected(myID);
-                myButton.isLocked = true;
+                //myButton.isLocked = true;
             }
         }
 

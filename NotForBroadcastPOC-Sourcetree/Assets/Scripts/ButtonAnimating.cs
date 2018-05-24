@@ -8,6 +8,8 @@ public class ButtonAnimating : MonoBehaviour {
     public Material mouseOverMaterialUp;
     public Material buttonDownMaterial;
     public Material mouseOverMaterialDown;
+    public Material buttonLockedMaterial;
+    public Material mouseOverMaterialLocked;
     private Material defaultMaterial;
     public enum type { Lock, Hold };
     public type buttonType;
@@ -22,6 +24,7 @@ public class ButtonAnimating : MonoBehaviour {
     private bool isSelected = false;
     public bool isDepressed = false;
     public bool isLocked = false;
+    public bool oneWay = false;
     private bool canRelease = false;
     private float myDirection;
     private int count = 0;
@@ -43,6 +46,37 @@ public class ButtonAnimating : MonoBehaviour {
             }
         }
 
+    }
+
+    public void Lock()
+    {
+        isLocked = true;
+    }
+
+    public void Unlock()
+    {
+        isLocked = false;
+        if (isSelected)
+        {
+            if (isDepressed)
+            {
+                myRenderer.material = mouseOverMaterialDown;
+            } else
+            {
+                myRenderer.material = buttonDownMaterial;
+            }
+        } else
+        {
+            if (isDepressed)
+            {
+                myRenderer.material = mouseOverMaterialUp;
+            }
+            else
+            {
+                myRenderer.material = buttonUpMaterial;
+            }
+
+        }
     }
 
     private void OnMouseEnter()
@@ -85,12 +119,12 @@ public class ButtonAnimating : MonoBehaviour {
 
     private void OnMouseUp()
     {
-        if (buttonType == type.Hold && isSelected && isDepressed && !isLocked)
+        if (buttonType == type.Hold && isSelected && isDepressed && !isLocked )
         {
             myRenderer.material = mouseOverMaterialUp;
             MoveUp();
         }
-        if (buttonType == type.Lock && !isLocked)
+        if (buttonType == type.Lock && !isLocked && !oneWay)
         {
             if (canRelease)
             {
@@ -176,7 +210,19 @@ public class ButtonAnimating : MonoBehaviour {
         if (!hasPower)
         {
             myRenderer.material = defaultMaterial;
+
+        } else if (isLocked)
+        {
+            if (isSelected)
+            {
+                myRenderer.material = mouseOverMaterialLocked;
+            } else
+            {
+                myRenderer.material = buttonLockedMaterial;
+            }
+
         }
+        
     }
 
 }

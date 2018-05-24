@@ -12,7 +12,12 @@ public class VHSControlPanel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        playButton.isLocked = true;
+        playButton.Lock();
+        playButton.oneWay = true;
+        foreach (VHSPlayerSelectionButton thisButton in selectionButtons)
+        {
+            thisButton.myButton.oneWay = true;
+        }
 	}
 	
 	// Update is called once per frame
@@ -52,7 +57,7 @@ public class VHSControlPanel : MonoBehaviour {
             {
                 //Debug.Log("Lifting Button " + thisButton.myID);
                 thisVHSSelectionButton.myButton.MoveUp();
-                thisVHSSelectionButton.myButton.isLocked = false;
+                thisVHSSelectionButton.myButton.Unlock();
             }
         }
         selectedPlayer = requestedPlayer;
@@ -60,11 +65,11 @@ public class VHSControlPanel : MonoBehaviour {
         {
 
             playButton.hasPower = true;
-            playButton.isLocked = false;
+            playButton.Unlock();
         } else
         {
             playButton.hasPower = false;
-            playButton.isLocked = true;
+            playButton.Lock();
         }
     }
 

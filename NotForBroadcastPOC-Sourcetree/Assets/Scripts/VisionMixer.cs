@@ -6,7 +6,7 @@ using UnityEngine.Video;
 
 public class VisionMixer : MonoBehaviour {
 
-    public VisionMixerButton[] buttons;
+    public VisionMixerButton[] myVisionMixerButtons;
     public Television[] smallScreens;
     public Television masterScreen;
     public VideoClip barsAndTone;
@@ -15,12 +15,15 @@ public class VisionMixer : MonoBehaviour {
     private SoundDesk myMixingDesk;
     private bool hasPower;
     private int jumpToTV;
+    private int currentScreen;
+    private int maxScreen;
     private AudioClip thisAudioClip;
 
 	// Use this for initialization
 	void Start () {
         myLinkSwitch = GetComponentInChildren<Switch>();
         myMixingDesk = FindObjectOfType<SoundDesk>();
+        currentScreen = 0;
 	}
 	
 	// Update is called once per frame
@@ -38,12 +41,15 @@ public class VisionMixer : MonoBehaviour {
     public void PrepareScreens(VideoClip[] theseClips, AudioClip[] theseAudioClips)
     {
         // LOCK ALL BUTTONS????
+        foreach (VisionMixerButton thisButton in myVisionMixerButtons)
+        {
+            thisButton.myButton.Lock();
+            thisButton.hasContent = false;
+        }
 
-        int maxScreen = theseClips.Length;
+        maxScreen = theseClips.Length;
         for (int n = 0; n < maxScreen; n++)
         {
-            PrepareScreen(n + 1, barsAndTone, barsAndToneAudio, true);
-            smallScreens[n].myScreen.isLooping = true;
 
             if (theseAudioClips.Length > 1)
             {
@@ -56,21 +62,46 @@ public class VisionMixer : MonoBehaviour {
             PrepareScreen(n + 1, theseClips[n], thisAudioClip, false);
         }
 
-        // Set any Unset screens to Bars And Tone and Turn on Looping
+        //if (maxScreen < 4)
+        //{
+        //    for (int n=maxScreen; n<4; n++)
+        //    {
+        //        // Set all remaining screens to Bars And Tone and Turn on Looping
+
+        //        PrepareScreen(n + 1, barsAndTone, barsAndToneAudio, true);
+        //        smallScreens[n].myScreen.isLooping = true;
+        //    }
+        //}
+
+        if (currentScreen == 0 || currentScreen>maxScreen)
+        {
+            masterScreen.PrepareScreen(barsAndTone, barsAndToneAudio, true);
+        } else
+        {
+            masterScreen.PrepareScreen(theseClips[currentScreen - 1], theseAudioClips[currentScreen - 1], false);
+        }
 
     }
 
     public void PlayScreens()
     {
-        for (int n = 0; n < 4; n++)
+        for (int n = 0; n < maxScreen; n++)
         {
             smallScreens[n].PlayScreen();
+            myVisionMixerButtons[n].hasContent = true;
+            myVisionMixerButtons[n].myButton.Unlock();
+
+
         }
+        masterScreen.PlayScreen();
     }
 
     public void PlayScreen(int thisScreen)
     {
         smallScreens[thisScreen - 1].PlayScreen();
+        myVisionMixerButtons[thisScreen-1].hasContent = true;
+        myVisionMixerButtons[thisScreen-1].myButton.Unlock();
+
     }
 
     public void ScreenChange(int selectedScreen)
@@ -83,6 +114,7 @@ public class VisionMixer : MonoBehaviour {
             //Debug.Log("Clip "+thisClip+" currently at frame " + thisFrame);
             masterScreen.PlayVideoFromFrame(thisClip, thisFrame);
             jumpToTV = selectedScreen;
+            currentScreen = selectedScreen;
             Invoke("JumpToFrame", 0.01f);
             // Log Change to EDL
 
@@ -107,13 +139,13 @@ public class VisionMixer : MonoBehaviour {
             }
             // Lock all VM Buttons - Prevents making an EDL that is impossible to play back.
             //Debug.Log("Locking Vision Mixer Buttons.");
-            foreach(VisionMixerButton thisButton in buttons)
+            foreach(VisionMixerButton thisButton in myVisionMixerButtons)
             {
-                thisButton.myButton.isLocked = true;
+                thisButton.myButton.Lock();
             }
         }
 
-        foreach(VisionMixerButton thisButton in buttons)
+        foreach(VisionMixerButton thisButton in myVisionMixerButtons)
         {
             if (thisButton.myButton.isDepressed && thisButton.myID != selectedScreen) {
 
@@ -135,11 +167,11 @@ public class VisionMixer : MonoBehaviour {
         {
             // Unlock all RAISED VM Buttons because video is now prepared.
             //Debug.Log("Unlocking Vision Mixer Buttons.");
-            foreach (VisionMixerButton thisButton in buttons)
+            foreach (VisionMixerButton thisButton in myVisionMixerButtons)
             {
-                if (!thisButton.myButton.isDepressed)
+                if (thisButton.hasContent) //  && !thisButton.myButton.isDepressed
                 {
-                    thisButton.myButton.isLocked = false;
+                    thisButton.myButton.Unlock();
                 }
             }
         }
@@ -147,10 +179,12 @@ public class VisionMixer : MonoBehaviour {
     }
     void PowerOn()
     {
-        foreach (VisionMixerButton thisButton in buttons)
+        foreach (VisionMixerButton thisButton in myVisionMixerButtons)
         {
             thisButton.myButton.hasPower = true;
-            thisButton.myButton.isLocked = false;
+            if (thisButton.hasContent) {
+                thisButton.myButton.Unlock();
+            }
         }
         myLinkSwitch.hasPower = true;
         foreach (Television thisTV in smallScreens)
@@ -162,10 +196,10 @@ public class VisionMixer : MonoBehaviour {
 
     void PowerOff()
     {
-        foreach (VisionMixerButton thisButton in buttons)
+        foreach (VisionMixerButton thisButton in myVisionMixerButtons)
         {
             thisButton.myButton.hasPower = false;
-            thisButton.myButton.isLocked = true;
+            thisButton.myButton.Lock();
             if (thisButton.myButton.isDepressed)
             {
                 thisButton.myButton.MoveUp();

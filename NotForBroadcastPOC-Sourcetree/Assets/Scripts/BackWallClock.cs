@@ -45,7 +45,7 @@ public class BackWallClock : MonoBehaviour {
         secondsString = (seconds.ToString());
         if (seconds < 10) { secondsString = "0" + secondsString; }
 
-        frames = Mathf.Floor ((clockTime - Mathf.Floor(Time.time))*30);
+        frames = Mathf.Floor ((clockTime - Mathf.Floor(clockTime))*30);
         framesString = (frames.ToString());
         if (frames < 10) { framesString = "0" + framesString; }
 
