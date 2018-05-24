@@ -53,6 +53,30 @@ public class SoundDesk : MonoBehaviour {
 
     }
 
+    public void SetBroadcastChannel (int thisChannel)
+    {
+        for (int n=1; n<=4; n++)
+        {
+            string channelRequired = "Broadcast0" + n + "Vol";
+            float thisVol = -80f;
+            if (n == thisChannel) { thisVol = 0; }
+            myDesk.SetFloat(channelRequired, thisVol);
+            Debug.Log("MIXING DESK: Setting " + channelRequired + " to " + thisVol);
+        }
+    }
+
+    public void SwitchToAdvertSound ()
+    {
+        myDesk.SetFloat("AdvertVol", 0);
+        myDesk.SetFloat("LiveVol", -80f);
+    }
+
+    public void SwitchToBroadcastLiveSound ()
+    {
+        myDesk.SetFloat("AdvertVol", -80f);
+        myDesk.SetFloat("LiveVol", 0f);
+
+    }
     public void SetMasterVolume(float thisVolume)
     {
         thisVolume = 1 - thisVolume;

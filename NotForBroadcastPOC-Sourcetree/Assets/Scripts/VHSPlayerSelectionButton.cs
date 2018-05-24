@@ -20,6 +20,7 @@ public class VHSPlayerSelectionButton : MonoBehaviour {
         myBox = GetComponentInParent<VHSControlPanel>();
         lastCheck = myButton.isDepressed;
         myButton.isLocked = true;
+        myButton.oneWay = true;
 	}
 	
 	// Update is called once per frame

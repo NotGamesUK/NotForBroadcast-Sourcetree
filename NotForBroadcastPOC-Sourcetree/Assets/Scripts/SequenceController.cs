@@ -22,6 +22,8 @@ public class SequenceController : MonoBehaviour {
     private int foundPos;
     [HideInInspector]
     public bool preRollReady;
+    private bool isPlayingAd;
+    private double thisSequenceVideoLength;
 
 
 
@@ -52,10 +54,11 @@ public class SequenceController : MonoBehaviour {
             {
                 myBroadcastScreen.PlayAdvert();
                 myClock.StartClock();
+                isPlayingAd = true;
                 preRollReady = false;
                 waitingForScreens = false;
                 // Invoke StartSequence in Ad-length Seconds minus Run-In Seconds
-                Invoke("StartSequence", thisPreSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn);
+                Invoke("StartSequence", thisPreSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn - broadcastScreenDelayTime);
             }
 
         }
@@ -88,12 +91,12 @@ public class SequenceController : MonoBehaviour {
         targetScreensCount = myDataStore.sequenceData[foundPos].screenVideo.Length*2;
 
         // Get Length of Video for Screen 01
-        double thisSequenceVideoLength= myDataStore.sequenceData[foundPos].screenVideo[0].length;
+        thisSequenceVideoLength= myDataStore.sequenceData[foundPos].screenVideo[0].length;
         Debug.Log("Returned Length: " + thisSequenceVideoLength + " seconds.");
 
         // Set clock to Ad-Length second countdown minus broadcast delay - First Ad is always "Later tonight...."?
         thisPreSequenceVideoLength = (float)myDataStore.sequenceData[foundPos].preSequenceBroadcastVideo.length;
-        myClock.SetTimeAndHold(thisPreSequenceVideoLength, true);
+        myClock.SetTimeAndHold(thisPreSequenceVideoLength-broadcastScreenDelayTime, true);
 
         // Prepare Ad (or countdown if at start) on Broadcast screen
         myBroadcastScreen.PrepareAdvert(myDataStore.sequenceData[foundPos].preSequenceBroadcastSmallerVideo, myDataStore.sequenceData[foundPos].preSequenceBroadcastAudio);
@@ -130,9 +133,29 @@ public class SequenceController : MonoBehaviour {
 
     void StartBroadcastScreens()
     {
-        Debug.Log("STARTING BROADCAST SCREENS");
+        Debug.Log("SEQUENCE CONTROLLER: STARTING BROADCAST SCREENS");
         // Send GO to Broadcast Screens
+        myBroadcastScreen.PlayScreens();
+
         // Set Mode to follow EDL
+    }
+
+    public void ClockAtZero() // CALLED BY WALL CLOCK WHEN TIMER REACHES ZERO
+
+    // If playing an Advert Tell Broadcast System to End Advert and Start Sequence after broadcastscreen delay
+    {
+        Debug.Log("ClockAtZero Called.");
+        if (isPlayingAd)
+        {
+            Invoke("SwitchBroadcastSystemToLive", broadcastScreenDelayTime);
+            myClock.SetTimeAndHold((float)thisSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn - myDataStore.sequenceData[foundPos].runOut, false);
+        }
+    }
+
+    void SwitchBroadcastSystemToLive ()
+    {
+        Debug.Log("SEQUENCE CONTROLLER: Switching Broadcast System to Live Video.");
+        myBroadcastScreen.EndAdvertAndStartLiveBroadcast();
     }
 
     void SequenceOverrun()
@@ -142,7 +165,7 @@ public class SequenceController : MonoBehaviour {
         // If Player does not play in the AD after X Seconds the level is failed
     }
 
-    public void AdvertPlayed(VideoClip thisAdvert)
+    public void EndSequenceAndPlayAdvert(VideoClip thisAdvert)
     {
         // THIS IS CALLED BY VHS CONTROL PANEL WHEN PLAY BUTTON IS PRESSED
         // Tell MasterController that the sequence has ended and also which Advert has been selected to play.

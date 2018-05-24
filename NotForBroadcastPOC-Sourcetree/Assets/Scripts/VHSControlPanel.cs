@@ -14,10 +14,6 @@ public class VHSControlPanel : MonoBehaviour {
 	void Start () {
         playButton.Lock();
         playButton.oneWay = true;
-        foreach (VHSPlayerSelectionButton thisButton in selectionButtons)
-        {
-            thisButton.myButton.oneWay = true;
-        }
 	}
 	
 	// Update is called once per frame

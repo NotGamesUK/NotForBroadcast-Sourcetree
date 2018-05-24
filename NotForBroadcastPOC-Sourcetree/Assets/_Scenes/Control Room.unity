@@ -2712,7 +2712,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 363100464}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.0009999275, y: -0.04, z: -0.0004957877}
+  m_LocalPosition: {x: -0.0009999275, y: -0.022, z: -0.0004957877}
   m_LocalScale: {x: 0.07200004, y: 1.0000005, z: 0.054000027}
   m_Children: []
   m_Father: {fileID: 1114343757}
@@ -4063,6 +4063,7 @@ MonoBehaviour:
   masterScreen: {fileID: 1377781582}
   barsAndTone: {fileID: 32900000, guid: 86f99adf2eb1ad74bb066759d13aeddb, type: 3}
   barsAndToneAudio: {fileID: 8300000, guid: ce00fe688213ee148b23fe07d068993b, type: 3}
+  myBroadcastTVTEMP: {fileID: 1820857780}
 --- !u!114 &536704961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6885,7 +6886,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884500923}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.0009999275, y: -0.04, z: -0.0004957877}
+  m_LocalPosition: {x: -0.0009999275, y: -0.022, z: -0.0004957877}
   m_LocalScale: {x: 0.0720001, y: 1, z: 0.05400006}
   m_Children: []
   m_Father: {fileID: 1114343757}
@@ -7647,7 +7648,7 @@ AudioSource:
   m_GameObject: {fileID: 974873275}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243259429234823968, guid: 660328fa905f49943a2ef1e64657c917,
+  OutputAudioMixerGroup: {fileID: 243231869385303452, guid: 660328fa905f49943a2ef1e64657c917,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -8172,7 +8173,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 42f59fbc9207f7046a1023f1596c8f01, type: 2}
+  - {fileID: 2100000, guid: 5e424c264e08cfb4baf509295565c3af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11760,7 +11761,7 @@ AudioSource:
   m_GameObject: {fileID: 1437489228}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 660328fa905f49943a2ef1e64657c917,
+  OutputAudioMixerGroup: {fileID: 243003522832861134, guid: 660328fa905f49943a2ef1e64657c917,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -12177,7 +12178,7 @@ AudioSource:
   m_GameObject: {fileID: 1502454615}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243259429234823968, guid: 660328fa905f49943a2ef1e64657c917,
+  OutputAudioMixerGroup: {fileID: 243279128731641378, guid: 660328fa905f49943a2ef1e64657c917,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -12574,7 +12575,7 @@ AudioSource:
   m_GameObject: {fileID: 1541167148}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243259429234823968, guid: 660328fa905f49943a2ef1e64657c917,
+  OutputAudioMixerGroup: {fileID: 243082130044253566, guid: 660328fa905f49943a2ef1e64657c917,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -12876,7 +12877,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1608119746}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.0009999275, y: -0.04, z: -0.0004957877}
+  m_LocalPosition: {x: -0.0009999275, y: -0.022, z: -0.0004957877}
   m_LocalScale: {x: 0.07200004, y: 1.0000005, z: 0.054000027}
   m_Children: []
   m_Father: {fileID: 1114343757}
@@ -13413,7 +13414,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1680622379}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.0009999275, y: -0.04, z: -0.0004957877}
+  m_LocalPosition: {x: -0.0009999275, y: -0.022, z: -0.0004957877}
   m_LocalScale: {x: 0.07200004, y: 1.0000005, z: 0.054000027}
   m_Children: []
   m_Father: {fileID: 1114343757}
@@ -13733,10 +13734,12 @@ MonoBehaviour:
     - {fileID: 32900000, guid: 7242e5f934eafc14b87e755856d2c305, type: 3}
     - {fileID: 32900000, guid: 06831931834f31b4a82bf9361902822a, type: 3}
     - {fileID: 32900000, guid: 89e4fdc84382e044bb315ffff827d977, type: 3}
+    - {fileID: 32900000, guid: 8a179b27d3907ee4d94fad862531a000, type: 3}
     playbackVideo:
     - {fileID: 32900000, guid: 64c2ac19f2ec0bd40b489f49390b19b0, type: 3}
     - {fileID: 32900000, guid: 1703962700ffc504bb1c9ce53dbf28c7, type: 3}
     - {fileID: 32900000, guid: 6251452fe095f0d40b3bd51f7296db0a, type: 3}
+    - {fileID: 32900000, guid: c053feca94ea67b428ae6f793a6f8d25, type: 3}
     screenAudio:
     - {fileID: 8300000, guid: e768c8f035eafe345896c087f40fe0de, type: 3}
     interferenceLevel: {fileID: 114475407568326824, guid: 54baeea4edaea624bb8407a71ecbcb2a,
@@ -13768,7 +13771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9c104d7818c97408a4149f000c37c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  broadcastScreenDelayTime: 5
+  broadcastScreenDelayTime: 2
   searchForThis: Blues Band
   preparedScreensCount: 0
   targetScreensCount: 0
@@ -14402,6 +14405,7 @@ MonoBehaviour:
   interferanceMaterial: {fileID: 2100000, guid: be6c850d963f0964a84dcf35113f69c7,
     type: 2}
   resistanceMaterial: {fileID: 2100000, guid: 06dfc8ee0ca0e2b4e930d2008327f6c8, type: 2}
+  advertMaterial: {fileID: 2100000, guid: 5e424c264e08cfb4baf509295565c3af, type: 2}
   myScreens:
   - {fileID: 884500924}
   - {fileID: 1680622381}
@@ -14417,6 +14421,7 @@ MonoBehaviour:
   myResistanceScreen: {fileID: 938097494}
   myResistanceAudiosource: {fileID: 58046796}
   myMode: 0
+  currentScreen: 0
 --- !u!114 &1820857783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15180,7 +15185,7 @@ AudioSource:
   m_GameObject: {fileID: 1951125381}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243259429234823968, guid: 660328fa905f49943a2ef1e64657c917,
+  OutputAudioMixerGroup: {fileID: 243183850671590842, guid: 660328fa905f49943a2ef1e64657c917,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0

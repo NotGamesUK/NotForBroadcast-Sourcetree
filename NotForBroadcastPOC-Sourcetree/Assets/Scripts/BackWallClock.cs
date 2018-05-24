@@ -15,10 +15,11 @@ public class BackWallClock : MonoBehaviour {
     private string framesString;
     private bool isRunning;
     private float clockTime = 0f;
+    private SequenceController myController;
 
 	// Use this for initialization
 	void Start () {
-		
+        myController = FindObjectOfType<SequenceController>();
 	}
 	
 	// Update is called once per frame
@@ -35,6 +36,7 @@ public class BackWallClock : MonoBehaviour {
         {
             clockTime = 0;
             isRunning = false;
+            myController.ClockAtZero();
         }
 
         minutes = Mathf.Floor (clockTime / 60);

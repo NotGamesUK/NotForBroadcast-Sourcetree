@@ -19,6 +19,11 @@ public class VisionMixer : MonoBehaviour {
     private int maxScreen;
     private AudioClip thisAudioClip;
 
+    /// REMOVE AFTER EDL WORKING
+    public BroadcastTV myBroadcastTVTEMP;
+    /////////////////////////////
+
+
 	// Use this for initialization
 	void Start () {
         myLinkSwitch = GetComponentInChildren<Switch>();
@@ -62,16 +67,6 @@ public class VisionMixer : MonoBehaviour {
             PrepareScreen(n + 1, theseClips[n], thisAudioClip, false);
         }
 
-        //if (maxScreen < 4)
-        //{
-        //    for (int n=maxScreen; n<4; n++)
-        //    {
-        //        // Set all remaining screens to Bars And Tone and Turn on Looping
-
-        //        PrepareScreen(n + 1, barsAndTone, barsAndToneAudio, true);
-        //        smallScreens[n].myScreen.isLooping = true;
-        //    }
-        //}
 
         if (currentScreen == 0 || currentScreen>maxScreen)
         {
@@ -118,6 +113,11 @@ public class VisionMixer : MonoBehaviour {
             Invoke("JumpToFrame", 0.01f);
             // Log Change to EDL
 
+
+            /// REMOVE AFTER EDL WORKING //////////////////////
+            myBroadcastTVTEMP.TEMPBroadcastScreenChange (selectedScreen);
+            ///////////////////////////////////////////////////
+
             // Mute other sound channels as required
             if (myLinkSwitch.isOn)
             {
@@ -154,6 +154,7 @@ public class VisionMixer : MonoBehaviour {
             }
         }
     }
+
 
     void JumpToFrame()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MasterTripSwitch : MonoBehaviour {
 
     private float maximumPower;
-    public bool isOn=false;
+    public bool isOn= false;
     private bool lastOn=true;
 
     private PlugBoard myPlugBoard;

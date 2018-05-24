@@ -8,6 +8,7 @@ public class BroadcastTV : MonoBehaviour {
 
     public Material interferanceMaterial;
     public Material resistanceMaterial;
+    public Material advertMaterial;
     public VideoPlayer[] myScreens;
     public AudioSource[] myScreenAudioSources;
     public VideoPlayer myAdvertScreen;
@@ -20,6 +21,8 @@ public class BroadcastTV : MonoBehaviour {
 
     private Color interferanceAlpha = new Color(1f, 1f, 1f, 0f);
     private Color resistanceAlpha = new Color(1f, 1f, 1f, 0f);
+    private Color advertAlpha = new Color(1f, 1f, 1f, 0f);
+
     private PlayerFrequencyDisplayObject myDot;
     private MasterGauges myGauges;
     private SoundDesk myDesk;
@@ -31,6 +34,9 @@ public class BroadcastTV : MonoBehaviour {
     private float lastWhiteNoiseLevel;
     private float lastResistanceLevel;
     private float lastAudioInterferenceLevel;
+    private int maxScreen;
+    private int requestedScreen;
+    public int currentScreen;
 
     // Use this for initialization
     void Start () {
@@ -127,6 +133,65 @@ public class BroadcastTV : MonoBehaviour {
         }
     }
 
+    public void TEMPBroadcastScreenChange(int thisScreen)
+    {
+        requestedScreen = thisScreen;
+        Invoke("ScreenChange", mySequenceController.broadcastScreenDelayTime);
+        Debug.Log("Changing Broadcast Screen to " + requestedScreen + " in " + mySequenceController.broadcastScreenDelayTime + " seconds.");
+    }
+
+    void ScreenChange()
+    {
+        myDesk.SetBroadcastChannel(requestedScreen);
+
+        // Move Current Screen backwards
+        if (currentScreen==0)
+        {
+            myNoSignal.enabled = false;
+            // Bring Selected Screen To Front (0.042)
+            myScreens[requestedScreen - 1].transform.Translate(new Vector3(0f, 0.02f, 0f));
+            // Tell Desk to Select correct Channel
+            myDesk.SetBroadcastChannel(requestedScreen);
+            Debug.Log("Changed Broadcast Screen From NO SIGNAL to " + requestedScreen);
+        }
+        else
+        {
+            // Move Selected screen forwards and previous screen backwards
+            myScreens[currentScreen - 1].transform.Translate(new Vector3(0f, -0.02f, 0f));
+            // Bring Selected Screen To Front (0.042)
+            myScreens[requestedScreen - 1].transform.Translate(new Vector3(0f, 0.02f, 0f));
+            // Tell Desk to Select correct Channel
+            myDesk.SetBroadcastChannel(requestedScreen);
+            // Change Current Screen to Selected Screen
+        }
+        currentScreen = requestedScreen;
+        Debug.Log("Switched Broadcast Screen to " + currentScreen);
+
+    }
+
+    public void EndAdvertAndStartLiveBroadcast()
+    {
+        Debug.Log("BROADCAST TV: Starting Live Broadcast");
+        // Stop and Hide Advert Screen
+        myAdvertScreen.Stop();
+        advertAlpha.a = 0;
+        advertMaterial.color = advertAlpha;
+        myDesk.SwitchToBroadcastLiveSound();
+        if (currentScreen != 0)
+        {
+            // Bring Selected Screen To Front (0.042)
+            myScreens[currentScreen - 1].transform.Translate(new Vector3(0f, 0.002f, 0f));
+            // Tell Desk to Select correct Channel
+            myDesk.SetBroadcastChannel(currentScreen);
+
+        } else
+        {
+            // If no Screen is selected show NoSignal
+            myNoSignal.enabled = true;
+            myDesk.SetBroadcastChannel(0);
+        }
+    }
+
     public void PrepareAdvert(VideoClip thisAdClip, AudioClip thisAdAudioClip)
     {
         Debug.Log("BROADCAST TV: Preparing " + thisAdClip + " on "+myAdvertScreen);
@@ -141,9 +206,12 @@ public class BroadcastTV : MonoBehaviour {
     public void PlayAdvert()
     {
         Debug.Log("Broadcast TV: Playing Advert.");
+        advertAlpha.a = 1f;
+        advertMaterial.color = advertAlpha;
         myAdvertScreen.Play();
         myAdvertAudiosource.Play();
         myNoSignal.enabled = false;
+        myDesk.SwitchToAdvertSound();
     }
 
     public void PrepareResistance(VideoClip thisResistClip, AudioClip thisResistAudioClip)
@@ -165,7 +233,7 @@ public class BroadcastTV : MonoBehaviour {
 
     public void PrepareScreens(VideoClip[] theseClips, AudioClip[] theseAudioClips)
     {
-        int maxScreen = theseClips.Length;
+        maxScreen = theseClips.Length;
         Debug.Log("Broadcast TV Number of Screens Preparing: " + maxScreen);
         for (int n = 0; n < maxScreen; n++)
         {
@@ -182,10 +250,15 @@ public class BroadcastTV : MonoBehaviour {
             myScreenAudioSources[n].clip = thisAudioClip;
         }
 
-        //
-        // Set any Unset screens to Bars And Tone and Turn on Looping
-        //
+    }
 
+    public void PlayScreens()
+    {
+        for (int n = 0; n < maxScreen; n++)
+        {
+            myScreens[n].Play();
+            myScreenAudioSources[n].Play();
+        }
     }
 
     public void SetWhiteNoiseVideoLevel (float thisStrength) 
@@ -206,4 +279,5 @@ public class BroadcastTV : MonoBehaviour {
         //Debug.Log("Colour: " + interferanceAlpha);
         resistanceMaterial.color = resistanceAlpha;
     }
+
 }
