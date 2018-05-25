@@ -24,6 +24,8 @@ public class SequenceController : MonoBehaviour {
     public bool preRollReady;
     private bool isPlayingAd;
     private double thisSequenceVideoLength;
+    private enum GameTypes { Headlines, Live }
+    private GameTypes myGameType;
 
 
 

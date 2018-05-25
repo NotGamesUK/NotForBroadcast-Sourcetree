@@ -16,7 +16,7 @@ public class BroadcastTV : MonoBehaviour {
     public VideoPlayer myResistanceScreen;
     public AudioSource myResistanceAudiosource;
 
-    public enum BroadcastModes { Live, Playback, Advert }
+    public enum BroadcastModes { Live, Playback }
     public BroadcastModes myMode;
 
     private Color interferanceAlpha = new Color(1f, 1f, 1f, 0f);
@@ -93,10 +93,6 @@ public class BroadcastTV : MonoBehaviour {
 
                 break;
 
-            case (BroadcastModes.Advert):
-                // Wait for Ad to End then switch to Live?? Might be handled from sequence controller
-
-                break;
         }
 
         // Prepare Monitoring
