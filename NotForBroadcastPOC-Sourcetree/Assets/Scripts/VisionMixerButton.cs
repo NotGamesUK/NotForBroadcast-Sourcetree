@@ -11,6 +11,8 @@ public class VisionMixerButton : MonoBehaviour {
     private bool lastCheck;
     //[HideInInspector]
     public bool hasContent;
+    private AudioSource mySFX;
+    public AudioClip myButtonSound;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +21,8 @@ public class VisionMixerButton : MonoBehaviour {
         myButton.Lock();
         myButton.oneWay = true;
         hasContent = false;
-
+        mySFX = GetComponent<AudioSource>();
+        mySFX.clip = myButtonSound;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +34,7 @@ public class VisionMixerButton : MonoBehaviour {
             if (lastCheck==true) {
                 visionMixer.ScreenChange(myID);
                 myButton.Lock();
+                mySFX.Play();
             }
         }
 	}

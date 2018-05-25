@@ -8,11 +8,15 @@ public class MuteControl : MonoBehaviour {
     private ButtonAnimating myButton;
     private bool lastCheck;
     private SoundDesk myDesk;
+    private AudioSource mySFX;
+    public AudioClip myButtonSound;
 
 	// Use this for initialization
 	void Start () {
         myButton = GetComponent<ButtonAnimating>();
         myDesk = FindObjectOfType<SoundDesk>();
+        mySFX = GetComponent<AudioSource>();
+        mySFX.clip = myButtonSound;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +38,7 @@ public class MuteControl : MonoBehaviour {
                     // Log Change to EDL
                 }
             }
+            mySFX.Play();
         }
 
     }

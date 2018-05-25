@@ -16,12 +16,21 @@ public class RotatingFan : MonoBehaviour {
     public bool isTurning = false;
     [HideInInspector]
     public float currentBladeSpeed;
+    public AudioClip mySpinUpSFX;
+    public AudioClip mySlowDownSFX;
+    public AudioClip myBladesSFX;
+
+
+
 
     private ButtonAnimating myButton;
+    private AudioSource mySFX;
 
 	// Use this for initialization
 	void Awake () {
         myButton = GetComponentInChildren<ButtonAnimating>();
+        mySFX = GetComponent<AudioSource>();
+        
 	}
 
     private void Start()
@@ -32,6 +41,15 @@ public class RotatingFan : MonoBehaviour {
     void Update () {
 		if (myButton.hasPower)
         {
+            if (mySFX.clip == mySpinUpSFX)
+            {
+                if (!mySFX.isPlaying)
+                {
+                    mySFX.clip = myBladesSFX;
+                    mySFX.loop = true;
+                    mySFX.Play();
+                }
+            }
             // Rotate Blades
             currentBladeSpeed += bladeAcceleration*Time.deltaTime;
             if (currentBladeSpeed>bladeMaxSpeed) { currentBladeSpeed = bladeMaxSpeed; }
@@ -68,10 +86,18 @@ public class RotatingFan : MonoBehaviour {
     void PowerOn()
     {
         myButton.hasPower = true;
+        mySFX.clip = mySpinUpSFX;
+        mySFX.loop = false;
+        mySFX.Play();
+
     }
 
     void PowerOff()
     {
         myButton.hasPower = false;
+        mySFX.clip = mySlowDownSFX;
+        mySFX.loop = false;
+        mySFX.Play();
+
     }
 }

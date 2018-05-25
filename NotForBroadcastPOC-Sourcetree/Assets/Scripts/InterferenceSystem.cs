@@ -6,11 +6,12 @@ public class InterferenceSystem : MonoBehaviour {
 
     public Transform defaultLevel;
     //[HideInInspector]
-    public float audioInterferenceLevel;
-    //[HideInInspector]
-    public float videoInterferenceLevel;
+    //public float audioInterferenceLevel;
+    ////[HideInInspector]
+    //public float videoInterferenceLevel;
 
     private Transform currentLevel;
+    private LevelController myLevel;
 
     // Use this for initialization
     void Start()
@@ -30,11 +31,18 @@ public class InterferenceSystem : MonoBehaviour {
     public void SpawnLevel(Transform thisLevel)
     {
         currentLevel = Instantiate(thisLevel, this.transform, false);
+        myLevel = currentLevel.GetComponent<LevelController>();
     }
 
     public void DestroyLevel()
     {
         Destroy(currentLevel);
         currentLevel = null;
+        myLevel = null;
+    }
+
+    public void StartLevel()
+    {
+        myLevel.levelHasStarted = true;
     }
 }

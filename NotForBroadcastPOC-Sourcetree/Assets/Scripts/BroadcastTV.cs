@@ -15,6 +15,9 @@ public class BroadcastTV : MonoBehaviour {
     public AudioSource myAdvertAudiosource;
     public VideoPlayer myResistanceScreen;
     public AudioSource myResistanceAudiosource;
+    public VideoPlayer myWhiteNoiseScreen;
+    public AudioSource myWhiteNoiseAudiosource;
+    public AudioSource myAudioInterferenceAudiosource;
 
     public enum BroadcastModes { Live, Playback }
     public BroadcastModes myMode;
@@ -227,7 +230,7 @@ public class BroadcastTV : MonoBehaviour {
         myResistanceAudiosource.Play();
     }
 
-    public void PrepareScreens(VideoClip[] theseClips, AudioClip[] theseAudioClips)
+    public void PrepareScreens(VideoClip[] theseClips, AudioClip[] theseAudioClips, AudioClip thisInterferenceAudioclip)
     {
         maxScreen = theseClips.Length;
         Debug.Log("Broadcast TV Number of Screens Preparing: " + maxScreen);
@@ -245,6 +248,7 @@ public class BroadcastTV : MonoBehaviour {
             myScreenAudioSources[n].Stop();
             myScreenAudioSources[n].clip = thisAudioClip;
         }
+        myAudioInterferenceAudiosource.clip = thisInterferenceAudioclip;
 
     }
 
@@ -254,6 +258,17 @@ public class BroadcastTV : MonoBehaviour {
         {
             myScreens[n].Play();
             myScreenAudioSources[n].Play();
+
+        }
+        // Start White Noise
+        myWhiteNoiseAudiosource.Play();
+        myWhiteNoiseAudiosource.loop = true;
+        myWhiteNoiseScreen.Play();
+        myWhiteNoiseScreen.isLooping = true;
+        // Start Audio Interference
+        if (myAudioInterferenceAudiosource.clip)
+        {
+            myAudioInterferenceAudiosource.Play();
         }
     }
 

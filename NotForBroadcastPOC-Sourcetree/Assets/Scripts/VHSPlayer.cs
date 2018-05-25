@@ -16,12 +16,16 @@ public class VHSPlayer : MonoBehaviour {
     public  TapeLoader myLoader;
     public VHSPlayerSelectionButton mySelectionButton;
     private bool lastButtonCheck;
+    private AudioSource mySFX;
+    public AudioClip myLoadSFX;
+    public AudioClip myEjectSFX;
 
 	// Use this for initialization
 	void Start () {
         myLoader = GetComponentInChildren<TapeLoader>();
         lastButtonCheck = myButton.isDepressed;
         myButton.Lock();
+        mySFX = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -40,7 +44,8 @@ public class VHSPlayer : MonoBehaviour {
     {
         myTape = thisTape;
         Debug.Log("Machine " + myID + " loading tape " + myTape.myTitle);
-
+        mySFX.clip = myLoadSFX;
+        mySFX.Play();
         myLoader.LoadTape(myTape);
         isAnimating = true;
     }
@@ -52,7 +57,7 @@ public class VHSPlayer : MonoBehaviour {
         myButton.Unlock();
         mySelectionButton.myButton.Unlock();
         myButton.MoveDown();
-
+        mySFX.Stop();
     }
 
     void EjectTape()
@@ -69,6 +74,7 @@ public class VHSPlayer : MonoBehaviour {
         myButton.Lock();
         mySelectionButton.myButton.Lock();
         isAnimating = true;
-
+        mySFX.clip = myEjectSFX;
+        mySFX.Play();
     }
 }

@@ -9,11 +9,15 @@ public class VHSTapeBox : MonoBehaviour {
     public bool isSelected = false;
     public bool isHeld = false;
     public bool isLoaded = false;
+    public AudioClip myGrabbedSFX;
+    public AudioClip myShelvedSFX;
+
 
     private MeshRenderer myRenderer;
     private Material defaultMaterial;
     private VHSMachineSlot[] tapeSlots;
     private VHSTape myTape;
+    private AudioSource mySFX;
 
 
 	// Use this for initialization
@@ -22,6 +26,7 @@ public class VHSTapeBox : MonoBehaviour {
         defaultMaterial = myRenderer.material;
         tapeSlots = FindObjectsOfType<VHSMachineSlot>();
         myTape = GetComponentInParent<VHSTape>();
+        mySFX = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -54,6 +59,8 @@ public class VHSTapeBox : MonoBehaviour {
         {
             myRenderer.material = defaultMaterial;
             isHeld = true;
+            mySFX.clip = myGrabbedSFX;
+            mySFX.Play();
             Debug.Log("This Tape = " + myTape);
             foreach (VHSMachineSlot thisSlot in tapeSlots)
             {
@@ -99,6 +106,8 @@ public class VHSTapeBox : MonoBehaviour {
             if (!isLoaded)
             {
                 SendMessageUpwards("ReturnToShelf");
+                mySFX.clip = myShelvedSFX;
+                mySFX.Play();
             }
         }
     }
