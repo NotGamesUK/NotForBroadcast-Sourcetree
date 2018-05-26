@@ -34,3 +34,8 @@ sysinfo.txt
 *.unitypackage
 NotForBroadcastPOC-Sourcetree/Temp/UnityLockfile
 NotForBroadcastPOC-Sourcetree/Library/CurrentLayout.dwlt
+NotForBroadcastPOC-Sourcetree/Assets/Master AV/
+NotForBroadcastPOC-Sourcetree/Library/shadercompiler-UnityShaderCompiler.exe0.log
+NotForBroadcastPOC-Sourcetree/Library/ScriptAssemblies/Assembly-CSharp.dll
+NotForBroadcastPOC-Sourcetree/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+NotForBroadcastPOC-Sourcetree/Library/ScriptAssemblies/Assembly-UnityScript.dll
