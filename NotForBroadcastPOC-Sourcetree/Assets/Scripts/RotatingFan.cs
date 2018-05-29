@@ -19,23 +19,33 @@ public class RotatingFan : MonoBehaviour {
     public AudioClip mySpinUpSFX;
     public AudioClip mySlowDownSFX;
     public AudioClip myBladesSFX;
+    public AudioClip myTurningSFX;
+    private bool lastButtonCheck;
 
 
 
 
     private ButtonAnimating myButton;
     private AudioSource mySFX;
+    private AudioSource myTurnSFX;
 
-	// Use this for initialization
-	void Awake () {
+
+    // Use this for initialization
+    void Awake () {
         myButton = GetComponentInChildren<ButtonAnimating>();
         mySFX = GetComponent<AudioSource>();
-        
 	}
 
     private void Start()
     {
         currentTurnSpeed = turnSpeed;
+        myTurnSFX = myHead.GetComponent<AudioSource>();
+        myTurnSFX.loop = true;
+        myTurnSFX.clip = myTurningSFX;
+        myTurnSFX.Stop();
+        lastButtonCheck = myButton.isDepressed;
+        isTurning = false;
+        if (!lastButtonCheck) { isTurning = true; }
     }
     // Update is called once per frame
     void Update () {
@@ -54,8 +64,20 @@ public class RotatingFan : MonoBehaviour {
             currentBladeSpeed += bladeAcceleration*Time.deltaTime;
             if (currentBladeSpeed>bladeMaxSpeed) { currentBladeSpeed = bladeMaxSpeed; }
             myBlades.transform.Rotate(new Vector3(0, currentBladeSpeed * Time.deltaTime, 0));
-            isTurning = false;
-            if (!myButton.isDepressed)
+            if (lastButtonCheck != myButton.isDepressed)
+            {
+                lastButtonCheck = myButton.isDepressed;
+                if (lastButtonCheck)
+                {
+                    isTurning = false;
+                    myTurnSFX.Stop();
+                } else
+                {
+                    isTurning = true;
+                    myTurnSFX.Play();
+                }
+            }
+            if (isTurning)
             {
                 isTurning = true;
                 // Turn Head
@@ -89,6 +111,10 @@ public class RotatingFan : MonoBehaviour {
         mySFX.clip = mySpinUpSFX;
         mySFX.loop = false;
         mySFX.Play();
+        if (isTurning)
+        {
+            myTurnSFX.Play();
+        }
 
     }
 
@@ -98,6 +124,10 @@ public class RotatingFan : MonoBehaviour {
         mySFX.clip = mySlowDownSFX;
         mySFX.loop = false;
         mySFX.Play();
+        if (isTurning)
+        {
+            myTurnSFX.Stop();
+        }
 
     }
 }

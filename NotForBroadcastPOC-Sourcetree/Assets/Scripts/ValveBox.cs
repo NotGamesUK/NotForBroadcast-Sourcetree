@@ -22,15 +22,30 @@ public class ValveBox : MonoBehaviour {
     //[HideInInspector]
     public float currentTemperature;
     public Material elementMaterial;
+    public AudioClip myHumSFX;
+    public AudioClip mySizzleSFX;
+
 
     private MasterGauges myGauges;
     private RotatingFan myFan;
+    private AudioSource[] mySFX;
 
 	// Use this for initialization
 	void Start () {
         myGauges = FindObjectOfType<MasterGauges>();
         currentTemperature = myGauges.roomTemperature;
         myFan = FindObjectOfType<RotatingFan>();
+        mySFX = GetComponents<AudioSource>();
+        mySFX[0].clip = myHumSFX;
+        mySFX[0].loop = true;
+        mySFX[0].volume = 0;
+        mySFX[0].Play();
+        mySFX[1].clip = mySizzleSFX;
+        mySFX[1].loop = true;
+        mySFX[1].volume = 0;
+        mySFX[1].Play();
+
+
     }
 
     // Update is called once per frame
@@ -119,10 +134,15 @@ public class ValveBox : MonoBehaviour {
 
 
         float emission = currentTemperature / myGauges.maxTemperature * 5;
+        float humVolume = emission / 5;
+        float sizzleVolume = Mathf.Clamp(emission - 4, 0f, 1f);
+        Debug.Log("Emission: " + emission + "   Hum: " + humVolume + "   Sizzle" + sizzleVolume);
         Color baseColor = Color.Lerp(Color.red, Color.yellow, currentTemperature / myGauges.maxTemperature); //Replace this with whatever you want for your base color at emission level '1'
 
         Color finalColor = baseColor * Mathf.LinearToGammaSpace(emission);
-
         elementMaterial.SetColor("_EmissionColor", finalColor);
+
+        mySFX[0].volume = humVolume;
+        mySFX[1].volume = sizzleVolume;
     }
 }

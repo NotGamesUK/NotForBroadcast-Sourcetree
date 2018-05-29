@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SatelliteDish : MonoBehaviour {
+public class SatelliteDish : MonoBehaviour
+{
 
     public float dropSpeed;
     public float raiseSpeed;
@@ -14,37 +15,76 @@ public class SatelliteDish : MonoBehaviour {
     public float targetTurn;
     public float minTurn = 15;
     public float maxTurn = 95;
-    private int turnDirection=0;
+    public AudioClip myFallingSFX;
+    public AudioClip myRaisingSFX;
+    public AudioClip myTurningSFX;
+
+
+    private int turnDirection = 0;
     private float currentTurn;
     private float lastTargetTurn;
     private float sliderRange;
     private PlayerFrequencyDisplayObject myReadout;
+    private AudioSource[] mySFX;
+    public bool isDropping;
+    //[HideInInspector]
+    public bool isRaising;
+    public bool isTurning;
+    private bool lastRaising = false;
+    private AudioSource myDropSFX;
+    private AudioSource myRaiseSFX;
+    private AudioSource myTurnSFX;
+
+
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         currentTurn = transform.eulerAngles.y;
         targetTurn = currentTurn;
         lastTargetTurn = currentTurn;
         sliderRange = maxTurn - minTurn;
         myReadout = FindObjectOfType<PlayerFrequencyDisplayObject>();
         MoveTheDot();
+        mySFX = GetComponents<AudioSource>();
+        myDropSFX = mySFX[0];
+        myDropSFX.clip = myFallingSFX;
+        myDropSFX.loop = true;
+        myDropSFX.Stop();
+        myRaiseSFX = mySFX[1];
+        myRaiseSFX.clip = myRaisingSFX;
+        myRaiseSFX.loop = true;
+        myRaiseSFX.Stop();
+        myTurnSFX = mySFX[2];
+        myTurnSFX.clip = myTurningSFX;
+        myTurnSFX.loop = true;
+        myTurnSFX.Stop();
     }
+
+
+
 
     // Update is called once per frame
     void Update()
     {
+        bool lastTurning = isTurning;
+        bool lastDropping = isDropping;
+        isDropping = false;
+        isTurning = false;
         // Dropping Dish
 
         if (dropSpeed > 0)
         {
             Quaternion localRotation = Quaternion.Euler(dropSpeed * Time.deltaTime, 0f, 0f);
             transform.rotation = transform.rotation * localRotation;
+            isDropping = true;
         }
 
         if (transform.localEulerAngles.x > maxTilt)
         {
             transform.eulerAngles = new Vector3(maxTilt, transform.eulerAngles.y, transform.eulerAngles.z);
+            isDropping = false;
         }
 
         // Turning Dish
@@ -56,13 +96,15 @@ public class SatelliteDish : MonoBehaviour {
             //Quaternion localRotation = Quaternion.Euler(0f, turnSpeed * turnDirection * Time.deltaTime, 0f);
             //transform.rotation = transform.rotation * localRotation;
             transform.Rotate(0f, turnSpeed * turnDirection * Time.deltaTime, 0f, Space.World);
+            isTurning = true;
             currentTurn = Mathf.Round(transform.eulerAngles.y);
             if (turnDirection == -1)
             {
-                if (currentTurn<targetTurn)
+                if (currentTurn < targetTurn)
                 {
                     transform.eulerAngles = new Vector3(transform.eulerAngles.x, targetTurn, transform.eulerAngles.z);
                     turnDirection = 0;
+                    isTurning = false;
                 }
             }
             if (turnDirection == 1)
@@ -71,10 +113,60 @@ public class SatelliteDish : MonoBehaviour {
                 {
                     transform.eulerAngles = new Vector3(transform.eulerAngles.x, targetTurn, transform.eulerAngles.z);
                     turnDirection = 0;
+                    isTurning = false;
+                }
+            }
+            if (turnDirection==0) { isTurning = false; }
+
+            MoveTheDot();
+
+            // SoundManagement
+
+        if (lastTurning != isTurning)
+            {
+                if (isTurning)
+                {
+                    Debug.Log("Playing Turn Sound");
+                    myTurnSFX.Play();
+                } else
+                {
+                    Debug.Log("Stopping Turn Sound");
+                    myTurnSFX.Stop();
                 }
             }
 
-            MoveTheDot();
+        if (lastRaising !=isRaising)
+            {
+                if (isRaising)
+                {
+                    Debug.Log("Playing Raise Sound");
+                    myRaiseSFX.Play();
+                }
+                else
+                {
+                    Debug.Log("Stopping Raise Sound");
+                    myRaiseSFX.Stop();
+                }
+
+            }
+
+        if (lastDropping != isDropping)
+            {
+                if (isDropping)
+                {
+                    Debug.Log("Playing Drop Sound");
+                    myDropSFX.Play();
+                }
+                else
+                {
+                    Debug.Log("Stopping Drop Sound");
+                    myDropSFX.Stop();
+                }
+
+            }
+            // Do this at the end to allow for a RaiseDish() call from the tower controller.
+
+            lastRaising = isRaising;
         }
 
 
@@ -106,7 +198,7 @@ public class SatelliteDish : MonoBehaviour {
         if (targetTurn < currentTurn) { turnDirection = -1; }
     }
 
-    public void SignalSliderChange (float thisSliderSetting)
+    public void SignalSliderChange(float thisSliderSetting)
     {
         float tempTarget = minTurn + (thisSliderSetting * sliderRange);
         MakeTurnTo(tempTarget);
@@ -116,11 +208,13 @@ public class SatelliteDish : MonoBehaviour {
     {
         Quaternion localRotation = Quaternion.Euler(-raiseSpeed * Time.deltaTime, 0f, 0f);
         transform.rotation = transform.rotation * localRotation;
-
+        isRaising = true;
         if (transform.localEulerAngles.x < minTilt)
         {
             transform.eulerAngles = new Vector3(minTilt, transform.eulerAngles.y, transform.eulerAngles.z);
+            isRaising = false;
         }
 
     }
 }
+

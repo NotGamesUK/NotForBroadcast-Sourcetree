@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class VHSTape : MonoBehaviour {
 
     public string myTitle="UNTITLED";
+    public VideoClip myVideo;
+    public VideoClip myVideoSmaller;
+    public AudioClip myAudio;
     [HideInInspector]
     public VHSTapeBox myBox;
     private Vector3 startPosition;

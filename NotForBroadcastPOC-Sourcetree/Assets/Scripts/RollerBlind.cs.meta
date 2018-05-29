@@ -5,7 +5,10 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - myUpButton: {instanceID: 0}
+  - myDownButton: {instanceID: 0}
+  - myMotorSound: {fileID: 8300000, guid: 19ecd9f59a32b854fadad085f8e2349f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 583, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 135
+  controlID: 111
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 306, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 136
+  controlID: 112
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 306, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 87
+  controlID: 113
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -202,10 +202,10 @@ MonoBehaviour:
     height: 530
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 783}
-    m_SelectedIDs: c6340000
-    m_LastClickedID: 13510
-    m_ExpandedIDs: 94eeffff16efffff68f1ffff1cf2ffff0af3ffff88f3ffff1cf8ffff68f8fffff2faffff6cfbffff96fbffff00000000d43400004e350000b6350000a4360000e836000032370000063800000a3800008a3800008c380000cc380000543900005e39000086390000b2390000f0390000203a0000
+    scrollPos: {x: 0, y: 220.32104}
+    m_SelectedIDs: cc350000
+    m_LastClickedID: 13772
+    m_ExpandedIDs: 5cf7ffff9cfbffff00000000663700006e380000a4380000003a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -381,12 +381,8 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 6592f12096d3faa4eb145b624b02adb5,
-    type: 2}
-  m_BreadCrumbs:
-  - m_Target: {fileID: 1107526428504443416, guid: 6592f12096d3faa4eb145b624b02adb5,
-      type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
+  m_AnimatorController: {fileID: 0}
+  m_BreadCrumbs: []
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -444,8 +440,8 @@ MonoBehaviour:
     y: 551
     width: 1359
     height: 406
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -501,10 +497,10 @@ MonoBehaviour:
   m_LastProjectPath: E:\Documents\NFB-Sourcetree\NotForBroadcastPOC-Sourcetree
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4ad10000
-    m_LastClickedID: 53578
-    m_ExpandedIDs: 00000000da290000222a0000562c0000de2c0000002f0000942f00002c300000b63200005a4300005c43000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 84}
+    m_SelectedIDs: d02a0000
+    m_LastClickedID: 10960
+    m_ExpandedIDs: 00000000d42900005a2c0000e42c00000c2f0000a22f00003c300000de310000ca3200009e430000a043000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,7 +528,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000da2900000c2a0000222a0000562c0000de2c0000002f0000942f00002c300000ca3100006a320000b63200005a4300005c430000
+    m_ExpandedIDs: 00000000d42900005a2c0000e42c00000c2f0000a22f00003c300000ca3200009e430000a0430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -557,21 +553,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c6340000
-    m_LastClickedInstanceID: 13510
+    m_SelectedInstanceIDs: cc350000
+    m_LastClickedInstanceID: 13772
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300003e77f3ff88910300c05f00007e2c0000062e00003cc1fbffaa3e00007c300000ec3f000000000000de6d0300
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: ButtonSoundPlayer
-      m_OriginalName: ButtonSoundPlayer
+      m_Name: Bleep Footage
+      m_OriginalName: Bleep Footage
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 173566
+      m_UserData: 17396
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -643,7 +639,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fe300000
+    m_SelectedIDs: 
     m_LastClickedID: 12542
     m_ExpandedIDs: 12eb343c
     m_RenameOverlay:
@@ -785,7 +781,7 @@ MonoBehaviour:
     width: 559
     height: 936
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 708.55676}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 156
