@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: eff1a97d167507748a9cefaac33a7e45
-timeCreated: 1524005509
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -49,6 +47,7 @@ ModelImporter:
     4300012: Tuning_Knob
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -68,6 +67,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

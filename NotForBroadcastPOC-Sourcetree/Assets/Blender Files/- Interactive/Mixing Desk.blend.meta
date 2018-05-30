@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: c642eb3566bb7e3428daae4ee065aaeb
-timeCreated: 1524832826
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -94,6 +92,7 @@ ModelImporter:
     4300030: Channel_Select
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -113,6 +112,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
