@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/ARTONLY-controlroom.unity
+- path: Assets/_Scenes/Control Room.unity
   isLoaded: 1
   isActive: 1
