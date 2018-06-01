@@ -1,0 +1,86 @@
+Base path: C:/Program Files (x86)/Unity/Editor/Data
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocess
+  insize=1459 outsize=461 ok=1
+Cmd: preprocess
+  insize=452 outsize=452 ok=1
+Cmd: preprocess
+  insize=1461 outsize=703 ok=1
+Cmd: preprocess
+  insize=1683 outsize=1876 ok=1
+Cmd: preprocess
+  error: 2 plat 21 at (2): failed to open source file: 'HLSLSupport.cginc'
+  error: 2 plat 21 at (6): failed to open source file: 'UnityShaderVariables.cginc'
+  error: 2 plat 21 at (7): failed to open source file: 'UnityShaderUtilities.cginc'
+  error: 2 plat 21 at (8): failed to open source file: 'Lighting.cginc'
+  error: 2 plat 21 at (9): failed to open source file: 'UnityCG.cginc'
+  error: 2 plat 21 at (10): failed to open source file: 'Lighting.cginc'
+  error: 2 plat 21 at (130): Unexpected token . Expected one of: typedef const void inline uniform nointerpolation extern shared static volatile row_major column_major struct sampler or a user-defined type
+  error: 2 plat 21 at (142): failed to open source file: 'Assets/OvrAvatar/Content/Materials/AvatarMaterialStateShader.cginc'
+  insize=5890 outsize=5711 ok=0
+Cmd: preprocess
+  insize=935 outsize=368 ok=1
+Cmd: preprocess
+  insize=2344 outsize=815 ok=1
+Cmd: preprocess
+  insize=1079 outsize=340 ok=1
+Cmd: preprocess
+  insize=1518 outsize=1820 ok=1
+Cmd: preprocess
+  insize=1097 outsize=957 ok=1
+Cmd: preprocess
+  insize=2776 outsize=1173 ok=1
+Cmd: preprocess
+  insize=807 outsize=212 ok=1
+Cmd: preprocess
+  insize=1637 outsize=638 ok=1
+Cmd: preprocess
+  insize=1155 outsize=450 ok=1
+Cmd: preprocess
+  insize=2949 outsize=1143 ok=1
+Cmd: preprocess
+  insize=1654 outsize=704 ok=1
+Cmd: preprocess
+  insize=1521 outsize=496 ok=1
+Cmd: preprocess
+  insize=336 outsize=336 ok=1
+Cmd: preprocess
+  error: 2 plat 21 at (2): failed to open source file: 'HLSLSupport.cginc'
+  error: 2 plat 21 at (6): failed to open source file: 'UnityShaderVariables.cginc'
+  error: 2 plat 21 at (7): failed to open source file: 'UnityShaderUtilities.cginc'
+  error: 2 plat 21 at (8): failed to open source file: 'Lighting.cginc'
+  error: 2 plat 21 at (9): failed to open source file: 'UnityCG.cginc'
+  error: 2 plat 21 at (10): failed to open source file: 'Lighting.cginc'
+  error: 2 plat 21 at (102): Unexpected token . Expected one of: typedef const void inline uniform nointerpolation extern shared static volatile row_major column_major struct sampler or a user-defined type
+  error: 2 plat 21 at (115): failed to open source file: 'Assets/OvrAvatar/Content/Materials/AvatarMaterialStateShader.cginc'
+  insize=5427 outsize=5574 ok=0
+Cmd: preprocess
+  insize=1004 outsize=1807 ok=1
+Cmd: preprocess
+  insize=1730 outsize=949 ok=1
+Cmd: preprocess
+  insize=1371 outsize=372 ok=1
+Cmd: preprocess
+  insize=450 outsize=447 ok=1
+Cmd: preprocess
+  insize=1745 outsize=1632 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: compileSnippet
+  api=4 type=0 insize=1564 outsize=1806 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH _EMISSION _ALPHABLEND_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1564 outsize=6906 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH _EMISSION _ALPHABLEND_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1426 outsize=1602 kw=UNITY_PASS_FORWARDADD DIRECTIONAL _ALPHABLEND_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1426 outsize=3366 kw=UNITY_PASS_FORWARDADD DIRECTIONAL _ALPHABLEND_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=17531 outsize=1818 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=17531 outsize=1262 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4349 outsize=1150 kw=UNITY_PASS_FORWARDADD DIRECTIONAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4349 outsize=1190 kw=UNITY_PASS_FORWARDADD DIRECTIONAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
