@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33151933627061740}
   - component: {fileID: 23634067218351250}
   - component: {fileID: 114471733201511230}
+  - component: {fileID: 65609253205364948}
   m_Layer: 0
   m_Name: Fax Page
   m_TagString: Untagged
@@ -71,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644928780514466}
   m_LocalRotation: {x: 0.70710677, y: 0.70710677, z: -0, w: 0}
-  m_LocalPosition: {x: 0.696, y: -0.873, z: -0}
+  m_LocalPosition: {x: 0.696, y: -0.87, z: 0.001}
   m_LocalScale: {x: 0.9999997, y: 0.9999996, z: 1.0000013}
   m_Children: []
   m_Father: {fileID: 4478444903974010}
@@ -84,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021430446238056}
   m_LocalRotation: {x: -0.5966527, y: -0.27762267, z: 0.3794834, w: 0.65032583}
-  m_LocalPosition: {x: 0.5929605, y: 0.4084, z: -0.384921}
+  m_LocalPosition: {x: 0.6121, y: 0.4367, z: -0.3881}
   m_LocalScale: {x: 0.14850008, y: 0.10500015, z: 1}
   m_Children:
   - {fileID: 4967072652832052}
@@ -99,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063671721008004}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0.859, y: 0.021, z: 0}
+  m_LocalPosition: {x: 0.859, y: 0.021, z: 0.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4478444903974010}
@@ -120,7 +121,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7f5d15206cf0e7a46a2d78bdcb6beae9, type: 3}
+  - {fileID: 2100000, guid: f04f2e8a2e3e59349a25d37ed07086b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -155,7 +156,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7f5d15206cf0e7a46a2d78bdcb6beae9, type: 3}
+  - {fileID: 2100000, guid: f04f2e8a2e3e59349a25d37ed07086b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,7 +191,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 33b1d125318e33745bb9c6ba88668e82, type: 3}
+  - {fileID: 2100000, guid: 15d626cbb4f0dd94a97ac0ec7e76eb10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -217,6 +218,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021430446238056}
   m_Mesh: {fileID: 4300004, guid: 33b1d125318e33745bb9c6ba88668e82, type: 3}
+--- !u!65 &65609253205364948
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021430446238056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2.0000005, z: 0.00000006798655}
+  m_Center: {x: -0.00000047683716, y: 0, z: 0.000000029802322}
 --- !u!102 &102675147001544266
 TextMesh:
   serializedVersion: 3
@@ -322,3 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPaper: {fileID: 102675147001544266}
+  myDefaultMaterial: {fileID: 2100000, guid: 15d626cbb4f0dd94a97ac0ec7e76eb10, type: 2}
+  mySelectedMaterial: {fileID: 2100000, guid: 13e69c447407f3746b050a43edf3f6f7, type: 2}
+  isGrabbable: 1
+  grabShiftInZ: 0
