@@ -15,7 +15,6 @@ public class FaxMachine : MonoBehaviour {
     public AudioClip spoolingSFX;
     public GameObject myPrintHead;
     // public GameObject myCylinder;
-    public float myHeadDirection = 0.1f;
     public float myHeadMin, myHeadMax;
 
     private bool isPrinting;
@@ -53,7 +52,7 @@ public class FaxMachine : MonoBehaviour {
         if (isPrinting)
         {
             // MOVE HEAD.
-            myPrintHead.transform.Translate(new Vector3(myHeadDirection, 0, 0));
+            myPrintHead.transform.Translate(Vector3.left*headPrintSpeed*Time.deltaTime);
           // IF HEAD AT END OF LINE:
           // Call MovePageUp
           // Set to end of Line

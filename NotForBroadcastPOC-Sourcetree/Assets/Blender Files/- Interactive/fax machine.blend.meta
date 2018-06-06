@@ -7,22 +7,33 @@ ModelImporter:
     100002: fax_ink_head
     100004: fax_machine_body
     100006: fax_page
+    100008: wheel
     400000: //RootNode
     400002: fax_ink_head
     400004: fax_machine_body
     400006: fax_page
+    400008: wheel
     2100000: unnamed
+    2100002: cream
+    2100004: black
+    2100006: see_through_black_plastic
+    2100008: green_plastic
+    2100010: red_plastic
     2300000: fax_ink_head
     2300002: fax_machine_body
     2300004: fax_page
+    2300006: wheel
     3300000: fax_ink_head
     3300002: fax_machine_body
     3300004: fax_page
+    3300006: wheel
     4300000: fax_ink_head
     4300002: fax_machine_body
     4300004: fax_page
+    4300006: wheel
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
