@@ -136,7 +136,7 @@ public class ValveBox : MonoBehaviour {
         float emission = currentTemperature / myGauges.maxTemperature * 5;
         float humVolume = emission / 5;
         float sizzleVolume = Mathf.Clamp(emission - 4, 0f, 1f);
-        Debug.Log("Emission: " + emission + "   Hum: " + humVolume + "   Sizzle" + sizzleVolume);
+        //Debug.Log("Emission: " + emission + "   Hum: " + humVolume + "   Sizzle" + sizzleVolume);
         Color baseColor = Color.Lerp(Color.red, Color.yellow, currentTemperature / myGauges.maxTemperature); //Replace this with whatever you want for your base color at emission level '1'
 
         Color finalColor = baseColor * Mathf.LinearToGammaSpace(emission);
