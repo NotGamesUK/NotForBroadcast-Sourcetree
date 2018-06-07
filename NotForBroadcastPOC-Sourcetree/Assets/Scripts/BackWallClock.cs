@@ -13,27 +13,64 @@ public class BackWallClock : MonoBehaviour {
     private string secondsString;
     private float frames=0;
     private string framesString;
+    private bool isRunning;
+    private float clockTime = 0f;
+    private SequenceController myController;
 
 	// Use this for initialization
 	void Start () {
-		
+        myController = FindObjectOfType<SequenceController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        minutes = Mathf.Floor (Time.time / 60);
+        if (clockTime==0 || !isRunning)
+        {
+            myDisplay.text = "00:00:00";
+        }
+        else
+        {
+        clockTime -= Time.deltaTime;
+        if (clockTime<0)
+        {
+            clockTime = 0;
+            isRunning = false;
+            myController.ClockAtZero();
+        }
+
+        minutes = Mathf.Floor (clockTime / 60);
         minutesString = (minutes.ToString());
         if (minutes<10) { minutesString = "0" + minutesString; }
 
-        seconds = Mathf.Floor (Time.time) % 60;
+        seconds = Mathf.Floor (clockTime) % 60;
         secondsString = (seconds.ToString());
         if (seconds < 10) { secondsString = "0" + secondsString; }
 
-        frames = Mathf.Floor ((Time.time - Mathf.Floor(Time.time))*30);
+        frames = Mathf.Floor ((clockTime - Mathf.Floor(clockTime))*30);
         framesString = (frames.ToString());
         if (frames < 10) { framesString = "0" + framesString; }
 
         myDisplay.text = (minutesString+":"+secondsString+":"+framesString);
-	}
+
+        }
+    }
+
+    public void SetTimeAndHold(float thisSetTime, bool shouldHold)
+    {
+        // Set Clock to thisSetTime
+        clockTime = thisSetTime;
+        // if shouldHold turn off isRunning;
+        isRunning = true;
+        if (shouldHold)
+        {
+            isRunning = false;
+        }
+        // ELSE turnOn isRunning;
+    }
+
+    public void StartClock()
+    {
+        isRunning = true;
+    }
 }

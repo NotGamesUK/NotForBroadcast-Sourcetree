@@ -12,6 +12,7 @@ public class GroovedSlider : MonoBehaviour {
     private Material defaultMaterial;
     public Vector3 myTranslation;
     public Slider mySlider;
+    public AudioClip mySliderSound;
 
     private Vector3 topPosition;
     private Vector3 bottomPosition;
@@ -19,6 +20,7 @@ public class GroovedSlider : MonoBehaviour {
     private float yChange;
     private float zChange;
     private MeshRenderer myRenderer;
+    private AudioSource mySFX;
     public bool hasPower = false;
     private bool lastPower = false;
     private bool isSelected = false;
@@ -29,6 +31,8 @@ public class GroovedSlider : MonoBehaviour {
     {
         myRenderer = GetComponent<MeshRenderer>();
         defaultMaterial = GetComponent<MeshRenderer>().material;
+        mySFX = GetComponent<AudioSource>();
+        mySFX.clip = mySliderSound;
         topPosition = this.transform.position;
         this.transform.Translate(myTranslation);
         bottomPosition = this.transform.position;
@@ -119,6 +123,7 @@ public class GroovedSlider : MonoBehaviour {
         this.transform.position = new Vector3(newX, newY, newZ);
         // Send new value upwards
         //Debug.Log("Slider Moved to " + thisSliderPos);
+        mySFX.Play();
     }
 
     private void LateUpdate()

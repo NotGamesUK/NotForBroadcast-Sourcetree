@@ -34,4 +34,8 @@ sysinfo.txt
 *.unitypackage
 NotForBroadcastPOC-Sourcetree/Temp/UnityLockfile
 NotForBroadcastPOC-Sourcetree/Library/CurrentLayout.dwlt
+<<<<<<< HEAD
+=======
+NotForBroadcastPOC-Sourcetree/Packages/manifest.json
+>>>>>>> 0c88a06e89bad251b8c9cbbb82ff2624f6ef40c6
 NotForBroadcastPOC-Sourcetree/Assets/Master AV/

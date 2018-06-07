@@ -9,12 +9,20 @@ public class VisionMixerButton : MonoBehaviour {
     public ButtonAnimating myButton;
     private VisionMixer visionMixer;
     private bool lastCheck;
+    //[HideInInspector]
+    public bool hasContent;
+    private AudioSource mySFX;
+    public AudioClip myButtonSound;
 
 	// Use this for initialization
 	void Start () {
         visionMixer = GetComponentInParent<VisionMixer>();
         lastCheck = myButton.isDepressed;
-        myButton.isLocked = true;
+        myButton.Lock();
+        myButton.oneWay = true;
+        hasContent = false;
+        mySFX = GetComponent<AudioSource>();
+        mySFX.clip = myButtonSound;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +33,8 @@ public class VisionMixerButton : MonoBehaviour {
             lastCheck = myButton.isDepressed;
             if (lastCheck==true) {
                 visionMixer.ScreenChange(myID);
-                myButton.isLocked = true;
+                myButton.Lock();
+                mySFX.Play();
             }
         }
 	}

@@ -18,6 +18,9 @@ public class SatelliteControl : MonoBehaviour {
 		if (myButton.isDepressed && myButton.hasPower)
         {
             myDish.RaiseDish();
+        } else
+        {
+            myDish.isRaising = false;
         }
 	}
 

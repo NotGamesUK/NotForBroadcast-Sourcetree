@@ -10,6 +10,8 @@ public class Switch : MonoBehaviour {
     public Material switchOffMaterial;
     public Material mouseOverMaterialOff;
     public Vector3 myRotation;
+    public AudioClip mySwitchSFX;
+    private AudioSource mySFX;
     public bool isOn = false;
     public bool hasPower = true;
 
@@ -23,6 +25,9 @@ public class Switch : MonoBehaviour {
     void Start()
     {
         myRenderer = GetComponent<MeshRenderer>();
+        mySFX = GetComponent<AudioSource>();
+        mySFX.clip = mySwitchSFX;
+        mySFX.loop = false;
         offRotation = this.transform.rotation;
         this.transform.Rotate(myRotation);
         onRotation = this.transform.rotation;
@@ -52,6 +57,7 @@ public class Switch : MonoBehaviour {
             myRenderer.material = mouseOverMaterialOff;
         }
         isSelected = true;
+
     }
 
     private void OnMouseExit()
@@ -90,6 +96,8 @@ public class Switch : MonoBehaviour {
         {
             myRenderer.material = switchOnMaterial;
         }
+        mySFX.Play();
+
     }
 
     public void SwitchOff()
@@ -105,6 +113,8 @@ public class Switch : MonoBehaviour {
         {
             myRenderer.material = switchOffMaterial;
         }
+        mySFX.Play();
+
     }
 
     public void Update()

@@ -8500,7 +8500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSpeed: 0.068
-  levelHasStarted: 1
+  levelHasStarted: 0
 --- !u!114 &114669567805612136
 MonoBehaviour:
   m_ObjectHideFlags: 1
