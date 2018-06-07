@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23634067218351250}
   - component: {fileID: 114471733201511230}
   - component: {fileID: 65609253205364948}
+  - component: {fileID: 82893222526413530}
   m_Layer: 0
   m_Name: Fax Page
   m_TagString: Untagged
@@ -230,6 +231,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000005, y: 2.0000005, z: 0.00000006798655}
   m_Center: {x: -0.00000047683716, y: 0, z: 0.000000029802322}
+--- !u!82 &82893222526413530
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021430446238056}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!102 &102675147001544266
 TextMesh:
   serializedVersion: 3
@@ -337,5 +433,8 @@ MonoBehaviour:
   myPaper: {fileID: 102675147001544266}
   myDefaultMaterial: {fileID: 2100000, guid: 15d626cbb4f0dd94a97ac0ec7e76eb10, type: 2}
   mySelectedMaterial: {fileID: 2100000, guid: 13e69c447407f3746b050a43edf3f6f7, type: 2}
-  isGrabbable: 1
-  grabShiftInZ: 0
+  myTearSFX: {fileID: 8300000, guid: 136848aaa9f8eac40a63896a1a7c5cf3, type: 3}
+  myPlaceSFX: {fileID: 8300000, guid: 5659d2d3df406ea49a25dd926f31db90, type: 3}
+  myPickupSFX: {fileID: 8300000, guid: 2566f3f8b6ff0b149ac91ada83595cf5, type: 3}
+  isGrabbable: 0
+  grabShiftInZ: 0.4
