@@ -17444,7 +17444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d63992dfd8cd3048b5442e0467cb1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMode: 0
+  myMode: 1
 --- !u!4 &1737591844
 Transform:
   m_ObjectHideFlags: 0
@@ -17470,7 +17470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   broadcastScreenDelayTime: 2
-  sequenceName: 
+  sequenceName: Test
   preparedScreensCount: 0
   targetScreensCount: 0
   preRollReady: 0
