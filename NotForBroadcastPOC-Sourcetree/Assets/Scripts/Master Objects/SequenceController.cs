@@ -7,7 +7,7 @@ public class SequenceController : MonoBehaviour {
 
     [Tooltip("Number of seconds delay between broadcast screen and master screen")]
     public float broadcastScreenDelayTime;
-    public string searchForThis;
+    public string sequenceName;
     //[HideInInspector]
     public int preparedScreensCount, targetScreensCount;
 
@@ -26,6 +26,7 @@ public class SequenceController : MonoBehaviour {
     private double thisSequenceVideoLength;
     private enum GameTypes { Headlines, Live }
     private GameTypes myGameType;
+    
 
 
 
@@ -42,7 +43,7 @@ public class SequenceController : MonoBehaviour {
 
     void TEMPTestDeleteMe()
     {
-        PrepareSequence(searchForThis);
+        PrepareSequence(sequenceName);
     }
 
     // Update is called once per frame
@@ -84,7 +85,7 @@ public class SequenceController : MonoBehaviour {
             Debug.LogError("Cannot Find Sequence with name: " + thisSequenceName);
             return; // BREAK OUT OF LOAD LOOP EARLY AS THERE IS NO SEQUENCE HERE
         }
-        
+        sequenceName = thisSequenceName;
         // Set prepared screens count to 0
         preparedScreensCount = 0;
         // Tell each VM screen and Broadcast Screens to prepare and increment targetcount AND Tell AudioInterference to Prepare (send Null as third parameter if no AudioInterference required at start)

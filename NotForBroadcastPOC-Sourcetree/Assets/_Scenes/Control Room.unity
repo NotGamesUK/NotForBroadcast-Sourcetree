@@ -17358,6 +17358,7 @@ GameObject:
   - component: {fileID: 1737591844}
   - component: {fileID: 1737591842}
   - component: {fileID: 1737591845}
+  - component: {fileID: 1737591843}
   m_Layer: 0
   m_Name: Master Controller
   m_TagString: Untagged
@@ -17432,6 +17433,18 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+--- !u!114 &1737591843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737591841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d63992dfd8cd3048b5442e0467cb1c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMode: 0
 --- !u!4 &1737591844
 Transform:
   m_ObjectHideFlags: 0
@@ -17457,7 +17470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   broadcastScreenDelayTime: 2
-  searchForThis: Blues Band
+  sequenceName: 
   preparedScreensCount: 0
   targetScreensCount: 0
   preRollReady: 0

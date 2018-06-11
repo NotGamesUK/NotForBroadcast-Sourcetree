@@ -141,7 +141,7 @@ public class BroadcastTV : MonoBehaviour {
 
     void ScreenChange()
     {
-        myDesk.SetBroadcastChannel(requestedScreen);
+        myDesk.TEMPORARYSetBroadcastChannel(requestedScreen);
 
         // Move Current Screen backwards
         if (currentScreen==0)
@@ -150,7 +150,7 @@ public class BroadcastTV : MonoBehaviour {
             // Bring Selected Screen To Front (0.042)
             myScreens[requestedScreen - 1].transform.Translate(new Vector3(0f, 0.02f, 0f));
             // Tell Desk to Select correct Channel
-            myDesk.SetBroadcastChannel(requestedScreen);
+            myDesk.TEMPORARYSetBroadcastChannel(requestedScreen);
             Debug.Log("Changed Broadcast Screen From NO SIGNAL to " + requestedScreen);
         }
         else
@@ -160,7 +160,7 @@ public class BroadcastTV : MonoBehaviour {
             // Bring Selected Screen To Front (0.042)
             myScreens[requestedScreen - 1].transform.Translate(new Vector3(0f, 0.02f, 0f));
             // Tell Desk to Select correct Channel
-            myDesk.SetBroadcastChannel(requestedScreen);
+            myDesk.TEMPORARYSetBroadcastChannel(requestedScreen);
             // Change Current Screen to Selected Screen
         }
         currentScreen = requestedScreen;
@@ -181,13 +181,13 @@ public class BroadcastTV : MonoBehaviour {
             // Bring Selected Screen To Front (0.042)
             myScreens[currentScreen - 1].transform.Translate(new Vector3(0f, 0.002f, 0f));
             // Tell Desk to Select correct Channel
-            myDesk.SetBroadcastChannel(currentScreen);
+            myDesk.TEMPORARYSetBroadcastChannel(currentScreen);
 
         } else
         {
             // If no Screen is selected show NoSignal
             myNoSignal.enabled = true;
-            myDesk.SetBroadcastChannel(0);
+            myDesk.TEMPORARYSetBroadcastChannel(0);
         }
     }
 

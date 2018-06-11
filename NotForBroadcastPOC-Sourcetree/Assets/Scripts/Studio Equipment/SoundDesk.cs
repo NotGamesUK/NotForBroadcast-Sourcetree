@@ -19,11 +19,13 @@ public class SoundDesk : MonoBehaviour {
     private bool broadcastIsMuted;
     private float storedMasterVolume;
     private float storedBroadcastVolume;
+    private EDLController myEDLController;
     
 
 	// Use this for initialization
 	void Start () {
         myBleep = GetComponent<AudioSource>();
+        myEDLController = FindObjectOfType<EDLController>();
         myDesk.SetFloat("ResistanceVol", -80f);
         myDesk.SetFloat("BleepVol", -80f);
         myDesk.SetFloat("WhiteNoiseVol", -80f);
@@ -41,6 +43,11 @@ public class SoundDesk : MonoBehaviour {
         //Debug.Log(channelRequired);
         myDesk.SetFloat(channelRequired, -80f);
         if (!myMutes[thisChannel - 1].isDepressed) { myMutes[thisChannel - 1].MoveDown(); }
+        if (myEDLController.myMode == EDLController.EDLModes.Recording)
+        {
+            myEDLController.AddMute(thisChannel);
+        }
+
     }
 
     public void UnmuteChannel (int thisChannel)
@@ -50,10 +57,26 @@ public class SoundDesk : MonoBehaviour {
         //Debug.Log(channelRequired);
         myDesk.SetFloat(channelRequired, 0f);
         if (myMutes[thisChannel - 1].isDepressed) { myMutes[thisChannel - 1].MoveUp(); }
+        if (myEDLController.myMode==EDLController.EDLModes.Recording)
+        {
+            myEDLController.AddUnMute(thisChannel);
+        }
 
     }
 
-    public void SetBroadcastChannel (int thisChannel)
+    public void MuteBroadcastChannel(int thisChannel)
+    {
+        string channelRequired = "Broadcast0" + thisChannel + "Vol";
+        myDesk.SetFloat(channelRequired, -80f);
+    }
+
+    public void UnMuteBroadcastChannel(int thisChannel)
+    {
+        string channelRequired = "Broadcast0" + thisChannel + "Vol";
+        myDesk.SetFloat(channelRequired, 0f);
+    }
+
+    public void TEMPORARYSetBroadcastChannel (int thisChannel)
     {
         for (int n=1; n<=4; n++)
         {
@@ -177,7 +200,6 @@ public class SoundDesk : MonoBehaviour {
                 broadcastMuteLight.color = Color.green;
                 break;
 
-                break;
         }
     }
 
@@ -185,12 +207,22 @@ public class SoundDesk : MonoBehaviour {
     {
         myDesk.SetFloat("SignalVol", -80f);
         myDesk.SetFloat("BleepVol", 0f);
+        if (myEDLController.myMode == EDLController.EDLModes.Recording)
+        {
+            myEDLController.AddBleepOn();
+        }
+
+
     }
 
     public void BleepOff()
     {
         myDesk.SetFloat("SignalVol", 0f);
         myDesk.SetFloat("BleepVol", -80f);
+        if (myEDLController.myMode == EDLController.EDLModes.Recording)
+        {
+            myEDLController.AddBleepOff();
+        }
     }
 
     void PowerOn()
