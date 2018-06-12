@@ -20,6 +20,22 @@ ModelImporter:
     100028: Mute03
     100030: Mute04
     100032: Channel_Select
+    100034: body
+    100036: broadcast_volume_slider
+    100038: CENSOR_BUTTON
+    100040: crossfade
+    100042: face_plate
+    100044: feet
+    100046: interactives
+    100048: master_volume_slider
+    100050: MUTE_BUTTON_1
+    100052: MUTE_BUTTON_2
+    100054: MUTE_BUTTON_3
+    100056: MUTE_BUTTON_4
+    100058: unit
+    100060: wood_side_let
+    100062: wood_side_right
+    100064: wooden_stand_
     400000: //RootNode
     400002: Body
     400004: Slide_Panel
@@ -37,9 +53,30 @@ ModelImporter:
     400028: Mute03
     400030: Mute04
     400032: Channel_Select
+    400034: body
+    400036: broadcast_volume_slider
+    400038: CENSOR_BUTTON
+    400040: crossfade
+    400042: face_plate
+    400044: feet
+    400046: interactives
+    400048: master_volume_slider
+    400050: MUTE_BUTTON_1
+    400052: MUTE_BUTTON_2
+    400054: MUTE_BUTTON_3
+    400056: MUTE_BUTTON_4
+    400058: unit
+    400060: wood_side_let
+    400062: wood_side_right
+    400064: wooden_stand_
     2100000: Material
     2100002: Material_001
     2100004: unnamed
+    2100006: button_001
+    2100008: unit
+    2100010: button
+    2100012: woodpanels
+    2100014: normal_map
     2300000: //RootNode
     2300002: Body
     2300004: Slide_Panel
@@ -57,6 +94,20 @@ ModelImporter:
     2300028: Mute03
     2300030: Mute04
     2300032: Channel_Select
+    2300034: body
+    2300036: broadcast_volume_slider
+    2300038: CENSOR_BUTTON
+    2300040: crossfade
+    2300042: face_plate
+    2300044: feet
+    2300046: master_volume_slider
+    2300048: MUTE_BUTTON_1
+    2300050: MUTE_BUTTON_2
+    2300052: MUTE_BUTTON_3
+    2300054: MUTE_BUTTON_4
+    2300056: wood_side_let
+    2300058: wood_side_right
+    2300060: wooden_stand_
     3300000: //RootNode
     3300002: Body
     3300004: Slide_Panel
@@ -74,6 +125,20 @@ ModelImporter:
     3300028: Mute03
     3300030: Mute04
     3300032: Channel_Select
+    3300034: body
+    3300036: broadcast_volume_slider
+    3300038: CENSOR_BUTTON
+    3300040: crossfade
+    3300042: face_plate
+    3300044: feet
+    3300046: master_volume_slider
+    3300048: MUTE_BUTTON_1
+    3300050: MUTE_BUTTON_2
+    3300052: MUTE_BUTTON_3
+    3300054: MUTE_BUTTON_4
+    3300056: wood_side_let
+    3300058: wood_side_right
+    3300060: wooden_stand_
     4300000: Body
     4300002: Slide_Panel_001
     4300004: Slider_001
@@ -90,6 +155,20 @@ ModelImporter:
     4300026: Mute02
     4300028: Bleep_Button
     4300030: Channel_Select
+    4300032: CENSOR_BUTTON
+    4300034: MUTE_BUTTON_1
+    4300036: MUTE_BUTTON_2
+    4300038: MUTE_BUTTON_3
+    4300040: MUTE_BUTTON_4
+    4300042: crossfade
+    4300044: master_volume_slider
+    4300046: broadcast_volume_slider
+    4300048: body
+    4300050: feet
+    4300052: wooden_stand_
+    4300054: wood_side_let
+    4300056: wood_side_right
+    4300058: face_plate
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
