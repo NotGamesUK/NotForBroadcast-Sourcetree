@@ -126,11 +126,11 @@ public class SatelliteDish : MonoBehaviour
             {
                 if (isTurning)
                 {
-                    Debug.Log("Playing Turn Sound");
+                    //Debug.Log("Playing Turn Sound");
                     myTurnSFX.Play();
                 } else
                 {
-                    Debug.Log("Stopping Turn Sound");
+                    //Debug.Log("Stopping Turn Sound");
                     myTurnSFX.Stop();
                 }
             }
@@ -139,12 +139,12 @@ public class SatelliteDish : MonoBehaviour
             {
                 if (isRaising)
                 {
-                    Debug.Log("Playing Raise Sound");
+                    //Debug.Log("Playing Raise Sound");
                     myRaiseSFX.Play();
                 }
                 else
                 {
-                    Debug.Log("Stopping Raise Sound");
+                    //Debug.Log("Stopping Raise Sound");
                     myRaiseSFX.Stop();
                 }
 
@@ -154,12 +154,12 @@ public class SatelliteDish : MonoBehaviour
             {
                 if (isDropping)
                 {
-                    Debug.Log("Playing Drop Sound");
+                    //Debug.Log("Playing Drop Sound");
                     myDropSFX.Play();
                 }
                 else
                 {
-                    Debug.Log("Stopping Drop Sound");
+                    //Debug.Log("Stopping Drop Sound");
                     myDropSFX.Stop();
                 }
 

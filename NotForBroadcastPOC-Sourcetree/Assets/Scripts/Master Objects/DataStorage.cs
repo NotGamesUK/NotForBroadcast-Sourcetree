@@ -9,9 +9,9 @@ public class DataStorage : MonoBehaviour {
     public class SequenceData
     {
         public string SequenceName;
-        public VideoClip preSequenceBroadcastVideo;
-        public VideoClip preSequenceBroadcastSmallerVideo;
-        public AudioClip preSequenceBroadcastAudio;
+        //public VideoClip preSequenceBroadcastVideo;
+        //public VideoClip preSequenceBroadcastSmallerVideo;
+        //public AudioClip preSequenceBroadcastAudio;
         public float runIn = 30;
         public float runOut = 15;
         public VideoClip[] screenVideo;

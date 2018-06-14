@@ -23,7 +23,7 @@ public class MuteControl : MonoBehaviour {
 	void Update () {
         if (lastCheck != myButton.isDepressed)
         {
-            Debug.Log("State of button changed.");
+            //Debug.Log("State of button changed.");
             lastCheck = myButton.isDepressed;
             if (myButton.hasPower)
             {

@@ -2,24 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VHSControlPanel : MonoBehaviour {
+public class VHSControlPanel : MonoBehaviour
+{
 
     public VHSPlayerSelectionButton[] selectionButtons;
     public ButtonAnimating playButton;
 
+    private SequenceController mySequenceController;
     private bool hasPower = false;
+    private bool isPlayingTape = false;
     public int selectedPlayer = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         playButton.Lock();
         playButton.oneWay = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        mySequenceController = FindObjectOfType<SequenceController>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (playButton.isDepressed && !isPlayingTape)
+        {
+            Debug.Log("VHS CONTROL PANEL PLAY BUTTON NOW DEPRESSED.");
+            PlayButtonPressed();
+        }
+    }
 
     public void PowerOn()
     {
@@ -46,26 +56,29 @@ public class VHSControlPanel : MonoBehaviour {
     public void VHSPlayerSelected(int requestedPlayer)
     {
         Debug.Log("Selection Request from Button " + requestedPlayer);
-
-        foreach (VHSPlayerSelectionButton thisVHSSelectionButton in selectionButtons)
+        if (!isPlayingTape)
         {
-            if (thisVHSSelectionButton.myButton.isDepressed && thisVHSSelectionButton.myID != requestedPlayer)
+            foreach (VHSPlayerSelectionButton thisVHSSelectionButton in selectionButtons)
             {
-                //Debug.Log("Lifting Button " + thisButton.myID);
-                thisVHSSelectionButton.myButton.MoveUp();
-                thisVHSSelectionButton.myButton.Unlock();
+                if (thisVHSSelectionButton.myButton.isDepressed && thisVHSSelectionButton.myID != requestedPlayer)
+                {
+                    //Debug.Log("Lifting Button " + thisButton.myID);
+                    thisVHSSelectionButton.myButton.MoveUp();
+                    thisVHSSelectionButton.myButton.Unlock();
+                }
             }
-        }
-        selectedPlayer = requestedPlayer;
-        if (selectedPlayer != 0)
-        {
+            selectedPlayer = requestedPlayer;
+            if (selectedPlayer != 0)
+            {
 
-            playButton.hasPower = true;
-            playButton.Unlock();
-        } else
-        {
-            playButton.hasPower = false;
-            playButton.Lock();
+                playButton.hasPower = true;
+                playButton.Unlock();
+            }
+            else
+            {
+                playButton.hasPower = false;
+                playButton.Lock();
+            }
         }
     }
 
@@ -73,5 +86,35 @@ public class VHSControlPanel : MonoBehaviour {
     {
         // if ready to go (ie player is loaded and not currently playing) tell selected player to play tape.
         Debug.Log("Play Button Pressed");
+        Debug.Log("Selected Player = " + selectedPlayer);
+        VHSPlayer[] thesePlayers = FindObjectsOfType<VHSPlayer>();
+        string thisName = "";
+        foreach (VHSPlayer thisPlayer in thesePlayers)
+        {
+            if (thisPlayer.myID == selectedPlayer)
+            {
+                thisName = thisPlayer.myTape.myTitle;
+                thisPlayer.isPlaying = true;
+                thisPlayer.myButton.isLocked = true;
+            }
+        }
+        Debug.Log("Selected Advert: " + thisName);
+        mySequenceController.EndSequenceAndPlayAdvert(thisName);
+        isPlayingTape = true;
+    }
+
+    public void TapeComplete()
+    {
+        isPlayingTape = false;
+        playButton.MoveUp();
+        VHSPlayer[] thesePlayers = FindObjectsOfType<VHSPlayer>();
+        foreach (VHSPlayer thisPlayer in thesePlayers)
+        {
+            if (thisPlayer.myID == selectedPlayer)
+            {
+                thisPlayer.isPlaying = false;
+                thisPlayer.myButton.isLocked = false;
+            }
+        }
     }
 }

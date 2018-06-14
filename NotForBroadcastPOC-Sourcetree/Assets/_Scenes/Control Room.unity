@@ -221,7 +221,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1168,7 +1168,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1293,7 +1293,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6216,7 +6216,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &677110289
@@ -6796,7 +6796,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &691661004
@@ -8139,7 +8139,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -11963,7 +11963,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &1124380752
@@ -14505,7 +14505,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!23 &1377941600
@@ -17525,9 +17525,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1737591844}
-  - component: {fileID: 1737591842}
   - component: {fileID: 1737591845}
   - component: {fileID: 1737591843}
+  - component: {fileID: 1737591846}
+  - component: {fileID: 1737591842}
   m_Layer: 0
   m_Name: Master Controller
   m_TagString: Untagged
@@ -17548,14 +17549,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequenceData:
   - SequenceName: Test
-    preSequenceBroadcastVideo: {fileID: 32900000, guid: 9942b57e975c0024a8c99b252d706c75,
-      type: 3}
-    preSequenceBroadcastSmallerVideo: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471,
-      type: 3}
-    preSequenceBroadcastAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01,
-      type: 3}
-    runIn: 0
-    runOut: 0
+    runIn: 5
+    runOut: 10
     screenVideo:
     - {fileID: 32900000, guid: 48fabb9d7734ffe4680407ac65789f19, type: 3}
     - {fileID: 32900000, guid: 7825dea1a45813c4691f07508ba98a5e, type: 3}
@@ -17577,12 +17572,6 @@ MonoBehaviour:
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
   - SequenceName: Blues Band
-    preSequenceBroadcastVideo: {fileID: 32900000, guid: 9942b57e975c0024a8c99b252d706c75,
-      type: 3}
-    preSequenceBroadcastSmallerVideo: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471,
-      type: 3}
-    preSequenceBroadcastAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01,
-      type: 3}
     runIn: 8
     runOut: 11
     screenVideo:
@@ -17597,6 +17586,26 @@ MonoBehaviour:
     - {fileID: 32900000, guid: c053feca94ea67b428ae6f793a6f8d25, type: 3}
     screenAudio:
     - {fileID: 8300000, guid: e768c8f035eafe345896c087f40fe0de, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: The Count
+    runIn: 0
+    runOut: 3
+    screenVideo:
+    - {fileID: 32900000, guid: 3723f4ed7cd8e1c40ac7f7132cc2cfd0, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    playbackVideo:
+    - {fileID: 32900000, guid: 76cc4740642dff84aa83dad957fc4526, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    screenAudio:
+    - {fileID: 8300000, guid: 50109bc760666a945992ac914b76c7b3, type: 3}
     interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
@@ -17639,10 +17648,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   broadcastScreenDelayTime: 2
-  sequenceName: Test
+  sequenceName: Blues Band
   preparedScreensCount: 0
   targetScreensCount: 0
+  TEMPPreRollVideo: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
+  TEMPPreRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
   preRollReady: 0
+--- !u!114 &1737591846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737591841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f90a4a4101120b4aa61b487691147a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelData:
+  - dayNumber: 0
+    levelName: Election Night
+    loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
+    loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
+    loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
+    preRoll: {fileID: 32900000, guid: 653f80eb92b369441bd3d301aebfcfa7, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: 6ad59514797561d4e843700dfc0a3b82, type: 3}
+    preRollAudio: {fileID: 8300000, guid: 56e366b0e7d7d574da619e0ee999f769, type: 3}
+    sequenceNames:
+    - The Count
+    - Test
+    - Blues Band
+    gameEvents: []
+  - dayNumber: 0
+    levelName: The Heatwave
+    loopRoll: {fileID: 0}
+    loopRollSmaller: {fileID: 0}
+    loopRollAudio: {fileID: 0}
+    preRoll: {fileID: 0}
+    preRollSmaller: {fileID: 0}
+    preRollAudio: {fileID: 0}
+    sequenceNames:
+    - 
+    - 
+    - 
+    gameEvents: []
+  masterLevelClock: 0
+  myState: 0
 --- !u!1001 &1746054104
 Prefab:
   m_ObjectHideFlags: 0
@@ -21055,7 +21106,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &2133829765

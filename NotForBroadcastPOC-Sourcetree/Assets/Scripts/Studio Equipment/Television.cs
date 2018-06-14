@@ -61,7 +61,7 @@ public class Television : MonoBehaviour {
         }
         // Tell Update to monitor for Prepared
         waitingForPrepare = true;
-        Debug.Log("Television: Preparing Screen.");
+        //Debug.Log("Television: Preparing Screen.");
     }
 
     public void PlayScreen()
@@ -77,7 +77,7 @@ public class Television : MonoBehaviour {
     {
         if (hasPower)
         {
-            Debug.Log("Screen Changing to clip: " + thisClip + " at frame " + thisFrame);
+            //Debug.Log("Screen Changing to clip: " + thisClip + " at frame " + thisFrame);
 
             myClip = thisClip;
             myScreen.clip = myClip;

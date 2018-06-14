@@ -11,15 +11,12 @@ using UnityEngine;
 public class EditDecision : IComparable<EditDecision>
 {
 
-    public enum EditDecisionType { PlayAd, LoadSequence, Interference, SwitchScreen, MuteChannel, UnMuteChannel, BleepOn, BleepOff, EndSequence };
-    public enum InterfereType { WhiteNoise, Audio, Resistance }
+    public enum EditDecisionType { PlayAd, SequenceInfo, SwitchScreen, MuteChannel, UnMuteChannel, BleepOn, BleepOff, EndSequence };
 
     public float editTime;
     public EditDecisionType editType;
     public int channelNumber;
     public string loadName;
-    public InterfereType interferenceType;
-    public float interferenceLevel;
 
 
     public EditDecision(float thisTime, EditDecisionType thisType, int thisChannel) // SwitchScreen, --MuteChannel, --UnMute Channel;
@@ -36,15 +33,8 @@ public class EditDecision : IComparable<EditDecision>
         loadName = thisLoadName;
     }
 
-    public EditDecision(float thisTime, EditDecisionType thisType, InterfereType thisInterfereType, float thisInterfereLevel) // Interference
-    {
-        editTime = thisTime;
-        editType = thisType;
-        interferenceType = thisInterfereType;
-        interferenceLevel = thisInterfereLevel;
-    }
 
-    public EditDecision(float thisTime, EditDecisionType thisType) // --BleepOn, --BleepOff, EndSequence
+    public EditDecision(float thisTime, EditDecisionType thisType) // --BleepOn, --BleepOff, EndSequence, StartSequence
     {
         editTime = thisTime;
         editType = thisType;

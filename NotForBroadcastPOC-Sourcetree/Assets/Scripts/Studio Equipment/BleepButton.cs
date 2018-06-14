@@ -25,12 +25,12 @@ public class BleepButton : MonoBehaviour {
             {
                 if (lastCheck == true)
                 {
-                    Debug.Log("Bleep On.");
+                    //Debug.Log("Bleep On.");
                     myDesk.BleepOn();
                 }
                 else
                 {
-                    Debug.Log("Bleep Off.");
+                    //Debug.Log("Bleep Off.");
                     myDesk.BleepOff();
                 }
             }

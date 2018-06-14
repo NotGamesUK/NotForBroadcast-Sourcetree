@@ -18,6 +18,7 @@ public class VisionMixer : MonoBehaviour {
     private int currentScreen;
     private int maxScreen;
     private AudioClip thisAudioClip;
+    private EDLController myEDLController;
 
     /// REMOVE AFTER EDL WORKING
     public BroadcastTV myBroadcastTVTEMP;
@@ -28,6 +29,7 @@ public class VisionMixer : MonoBehaviour {
 	void Start () {
         myLinkSwitch = GetComponentInChildren<Switch>();
         myMixingDesk = FindObjectOfType<SoundDesk>();
+        myEDLController = FindObjectOfType<EDLController>();
         currentScreen = 0;
 	}
 	
@@ -70,7 +72,7 @@ public class VisionMixer : MonoBehaviour {
 
         if (currentScreen == 0 || currentScreen>maxScreen)
         {
-            masterScreen.PrepareScreen(barsAndTone, barsAndToneAudio, true);
+            masterScreen.PrepareScreen(barsAndTone, barsAndToneAudio, false);
         } else
         {
             masterScreen.PrepareScreen(theseClips[currentScreen - 1], theseAudioClips[currentScreen - 1], false);
@@ -112,10 +114,15 @@ public class VisionMixer : MonoBehaviour {
             currentScreen = selectedScreen;
             Invoke("JumpToFrame", 0.01f);
             // Log Change to EDL
+            if (myEDLController.myMode == EDLController.EDLModes.Recording)
+            {
+                myEDLController.AddScreenChange(selectedScreen);
+            }
+
 
 
             /// REMOVE AFTER EDL WORKING //////////////////////
-            myBroadcastTVTEMP.TEMPBroadcastScreenChange (selectedScreen);
+            //myBroadcastTVTEMP.TEMPBroadcastScreenChange (selectedScreen);
             ///////////////////////////////////////////////////
 
             // Mute other sound channels as required
@@ -127,13 +134,11 @@ public class VisionMixer : MonoBehaviour {
                     {
                         // Tell Mixing Desk to unmute the channel
                         myMixingDesk.UnmuteChannel(n);
-                        // Log Change to EDL
                     }
                     else
                     {
                         // Tell Mixing Desk to mute the channel
                         myMixingDesk.MuteChannel(n);
-                        // Log Change to EDL
                     }
                 }
             }

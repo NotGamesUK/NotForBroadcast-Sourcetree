@@ -33,7 +33,7 @@ public class PowerManagement : MonoBehaviour {
     public void PowerChange()
 
     {
-        Debug.Log("Power Change Called");
+        //Debug.Log("Power Change Called");
 
         if (myPlug.hasPower != lastPower || myPlug.isOn != lastOn)
         {

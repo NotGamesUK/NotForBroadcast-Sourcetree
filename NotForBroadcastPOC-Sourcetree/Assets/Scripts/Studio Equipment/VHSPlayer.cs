@@ -65,7 +65,7 @@ public class VHSPlayer : MonoBehaviour {
         Debug.Log("Machine " + myID + " EJECTING tape " + myTape.myTitle);
         myLoader.EjectTape();
         isLoaded = false;
-        if (mySelectionButton.myButton.isDepressed)
+        if (mySelectionButton.myButton.isDepressed && !isPlaying)
         {
             mySelectionButton.myButton.MoveUp();
             mySelectionButton.myBox.VHSPlayerSelected(0);
