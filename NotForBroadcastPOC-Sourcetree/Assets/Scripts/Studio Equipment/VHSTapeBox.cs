@@ -61,7 +61,7 @@ public class VHSTapeBox : MonoBehaviour {
             isHeld = true;
             mySFX.clip = myGrabbedSFX;
             mySFX.Play();
-            Debug.Log("This Tape = " + myTape);
+            //Debug.Log("This Tape = " + myTape);
             foreach (VHSMachineSlot thisSlot in tapeSlots)
             {
                 if (thisSlot.myPlayer.myTape == myTape)
@@ -94,7 +94,7 @@ public class VHSTapeBox : MonoBehaviour {
                 if (thisSlot.isSelected && !isLoaded)
                 {
                     int loadMachine = thisSlot.myPlayer.myID;
-                    Debug.Log("Tape Loading Into Machine " + loadMachine);
+                    //Debug.Log("Tape Loading Into Machine " + loadMachine);
                     thisSlot.myPlayer.LoadTape(myTape);
                     myRenderer.material = defaultMaterial;
                     isLoaded = true;

@@ -43,7 +43,7 @@ public class VHSPlayer : MonoBehaviour {
     public void LoadTape(VHSTape thisTape)
     {
         myTape = thisTape;
-        Debug.Log("Machine " + myID + " loading tape " + myTape.myTitle);
+        //Debug.Log("Machine " + myID + " loading tape " + myTape.myTitle);
         mySFX.clip = myLoadSFX;
         mySFX.Play();
         myLoader.LoadTape(myTape);

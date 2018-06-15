@@ -26,7 +26,7 @@ public class VHSControlPanel : MonoBehaviour
     {
         if (playButton.isDepressed && !isPlayingTape)
         {
-            Debug.Log("VHS CONTROL PANEL PLAY BUTTON NOW DEPRESSED.");
+            //Debug.Log("VHS CONTROL PANEL PLAY BUTTON NOW DEPRESSED.");
             PlayButtonPressed();
         }
     }
@@ -55,7 +55,7 @@ public class VHSControlPanel : MonoBehaviour
 
     public void VHSPlayerSelected(int requestedPlayer)
     {
-        Debug.Log("Selection Request from Button " + requestedPlayer);
+        //Debug.Log("Selection Request from Button " + requestedPlayer);
         if (!isPlayingTape)
         {
             foreach (VHSPlayerSelectionButton thisVHSSelectionButton in selectionButtons)
@@ -85,8 +85,8 @@ public class VHSControlPanel : MonoBehaviour
     public void PlayButtonPressed()
     {
         // if ready to go (ie player is loaded and not currently playing) tell selected player to play tape.
-        Debug.Log("Play Button Pressed");
-        Debug.Log("Selected Player = " + selectedPlayer);
+        //Debug.Log("Play Button Pressed");
+        //Debug.Log("Selected Player = " + selectedPlayer);
         VHSPlayer[] thesePlayers = FindObjectsOfType<VHSPlayer>();
         string thisName = "";
         foreach (VHSPlayer thisPlayer in thesePlayers)
@@ -98,7 +98,7 @@ public class VHSControlPanel : MonoBehaviour
                 thisPlayer.myButton.isLocked = true;
             }
         }
-        Debug.Log("Selected Advert: " + thisName);
+        //Debug.Log("Selected Advert: " + thisName);
         mySequenceController.EndSequenceAndPlayAdvert(thisName);
         isPlayingTape = true;
     }

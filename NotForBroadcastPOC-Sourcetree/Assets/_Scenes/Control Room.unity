@@ -1960,6 +1960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a688015d6149a04abfd21284507a1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScreen: {fileID: 691661003}
 --- !u!1 &215975515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3575,6 +3576,7 @@ MonoBehaviour:
   myScreen: {fileID: 0}
   hasPower: 0
   screenSync: 1
+  isPlaying: 0
 --- !u!1 &369081045 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100010, guid: b8a23d68e70b9724d9069cb0b1b0c004, type: 3}
@@ -5002,6 +5004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a688015d6149a04abfd21284507a1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScreen: {fileID: 0}
 --- !u!1 &536704957 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: f7b1c4302407c3949b471935f2e5bfb4, type: 3}
@@ -5030,6 +5033,7 @@ MonoBehaviour:
   masterScreen: {fileID: 1377781582}
   barsAndTone: {fileID: 32900000, guid: 86f99adf2eb1ad74bb066759d13aeddb, type: 3}
   barsAndToneAudio: {fileID: 8300000, guid: ce00fe688213ee148b23fe07d068993b, type: 3}
+  inPostRoll: 0
   myBroadcastTVTEMP: {fileID: 1820857780}
 --- !u!114 &536704961
 MonoBehaviour:
@@ -7164,6 +7168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a688015d6149a04abfd21284507a1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScreen: {fileID: 2133829764}
 --- !u!1001 &723862010
 Prefab:
   m_ObjectHideFlags: 0
@@ -12933,6 +12938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a688015d6149a04abfd21284507a1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScreen: {fileID: 1124380751}
 --- !u!1 &1251884998
 GameObject:
   m_ObjectHideFlags: 0
@@ -14458,6 +14464,7 @@ MonoBehaviour:
   myScreen: {fileID: 0}
   hasPower: 1
   screenSync: 1
+  isPlaying: 0
 --- !u!1 &1377941598
 GameObject:
   m_ObjectHideFlags: 0
@@ -14846,6 +14853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a688015d6149a04abfd21284507a1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScreen: {fileID: 1377941599}
 --- !u!1 &1394967881 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
@@ -16854,6 +16862,7 @@ MonoBehaviour:
   myScreen: {fileID: 0}
   hasPower: 0
   screenSync: 1
+  isPlaying: 0
 --- !u!1001 &1660760689
 Prefab:
   m_ObjectHideFlags: 0
@@ -17549,8 +17558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequenceData:
   - SequenceName: Test
-    runIn: 5
-    runOut: 10
+    runIn: 10
+    runOut: 5
     screenVideo:
     - {fileID: 32900000, guid: 48fabb9d7734ffe4680407ac65789f19, type: 3}
     - {fileID: 32900000, guid: 7825dea1a45813c4691f07508ba98a5e, type: 3}
@@ -17592,8 +17601,8 @@ MonoBehaviour:
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
   - SequenceName: The Count
-    runIn: 0
-    runOut: 3
+    runIn: 5
+    runOut: 5
     screenVideo:
     - {fileID: 32900000, guid: 3723f4ed7cd8e1c40ac7f7132cc2cfd0, type: 3}
     - {fileID: 0}
@@ -17606,6 +17615,48 @@ MonoBehaviour:
     - {fileID: 0}
     screenAudio:
     - {fileID: 8300000, guid: 50109bc760666a945992ac914b76c7b3, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: Temp 01-01
+    runIn: 8
+    runOut: 8
+    screenVideo:
+    - {fileID: 32900000, guid: c607396f57a99a3409f4e2b31142fcef, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: d85bdf9cb0d5bfe48a5c34fe5344cabc, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 24655c82b315a8c46903b956a68e720c, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: Temp 01-02
+    runIn: 8
+    runOut: 8
+    screenVideo:
+    - {fileID: 32900000, guid: aff6adab77a6512429d582f2e752b4b6, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: 3984beab442784347810162bff516805, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 96be166e0963679428db9edf85e68bbe, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: Temp 01-03
+    runIn: 8
+    runOut: 8
+    screenVideo:
+    - {fileID: 32900000, guid: e0c5c1fe7b41d524ba4a1747ada6c2ff, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: df08acc5ab441ab489c01d144f9b85fe, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 3b414854d580b464c9fca592c0fbbf31, type: 3}
     interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
@@ -17671,26 +17722,26 @@ MonoBehaviour:
     loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
-    preRoll: {fileID: 32900000, guid: 653f80eb92b369441bd3d301aebfcfa7, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: 6ad59514797561d4e843700dfc0a3b82, type: 3}
-    preRollAudio: {fileID: 8300000, guid: 56e366b0e7d7d574da619e0ee999f769, type: 3}
+    preRoll: {fileID: 32900000, guid: 0d49aa0ae104efa44b07456e09b96e7a, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: 90b1eaec5511fd048bcbe5d3db03ca67, type: 3}
+    preRollAudio: {fileID: 8300000, guid: de67710b582854a46aa71817a7730a6b, type: 3}
     sequenceNames:
-    - The Count
-    - Test
-    - Blues Band
+    - Temp 01-01
+    - Temp 01-02
+    - Temp 01-03
     gameEvents: []
   - dayNumber: 0
     levelName: The Heatwave
-    loopRoll: {fileID: 0}
-    loopRollSmaller: {fileID: 0}
-    loopRollAudio: {fileID: 0}
-    preRoll: {fileID: 0}
-    preRollSmaller: {fileID: 0}
-    preRollAudio: {fileID: 0}
+    loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
+    loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
+    loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
+    preRoll: {fileID: 32900000, guid: 9942b57e975c0024a8c99b252d706c75, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
+    preRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
     sequenceNames:
-    - 
-    - 
-    - 
+    - Test
+    - The Count
+    - Blues Band
     gameEvents: []
   masterLevelClock: 0
   myState: 0
@@ -18657,6 +18708,7 @@ MonoBehaviour:
   myScreen: {fileID: 0}
   hasPower: 0
   screenSync: 1
+  isPlaying: 0
 --- !u!1 &1835285592
 GameObject:
   m_ObjectHideFlags: 0
@@ -18743,6 +18795,7 @@ MonoBehaviour:
   myScreen: {fileID: 0}
   hasPower: 0
   screenSync: 1
+  isPlaying: 0
 --- !u!1 &1849351554
 GameObject:
   m_ObjectHideFlags: 0
@@ -19423,6 +19476,7 @@ MonoBehaviour:
   myScreen: {fileID: 0}
   hasPower: 0
   screenSync: 1
+  isPlaying: 0
 --- !u!4 &1943090750 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 799dfdb05f6b70645bbaa9f08e3b6c90, type: 3}
@@ -20282,6 +20336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a688015d6149a04abfd21284507a1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScreen: {fileID: 677110288}
 --- !u!1001 &2041657367
 Prefab:
   m_ObjectHideFlags: 0

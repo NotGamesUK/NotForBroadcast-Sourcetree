@@ -39,15 +39,16 @@ public class MasterController : MonoBehaviour {
     public float masterLevelClock;
 
     private List<InterferenceLog> levelInterferenceLog = new List<InterferenceLog>();
-
+    private VideoClip nextAdvert;
+    private AudioClip nextAdvertAudio;
     private SequenceController mySequenceController;
     private BroadcastTV myBroadcastTV;
     private EDLController myEDLController;
+    private VisionMixer myVisionMixer;
     private int currentLevel;
     private int currentSequence;
     private LevelData myLevelData;
-
-    public enum MasterState { Menu, OpeningTitles, Waiting, Active, PostLevel, Paused }
+    public enum MasterState { Menu, OpeningTitles, Waiting, Active, PostLevel, Paused, PostRoll }
     public MasterState myState;
 
     // Use this for initialization
@@ -55,13 +56,14 @@ public class MasterController : MonoBehaviour {
         mySequenceController = GetComponent<SequenceController>();
         myEDLController = GetComponent<EDLController>();
         myBroadcastTV = FindObjectOfType<BroadcastTV>();
+        myVisionMixer = FindObjectOfType<VisionMixer>();
         myState = MasterState.Menu;
         Invoke("TEMPStartGame", 2);
 	}
 
     void TEMPStartGame()
     {
-        PrepareLevel(1);
+        PrepareLevel(2);
     }
 	
 	// Update is called once per frame
@@ -115,6 +117,16 @@ public class MasterController : MonoBehaviour {
 
                 // If in Paused State
                 // Wait for menu system to send resume then call ResumeGame();
+                break;
+
+            case MasterState.PostRoll:
+
+                // If in Post Roll State
+                // Wait for Vision Mixer to announce end of post roll then
+                //if (!myVisionMixer.inPostRoll)
+                //{
+                    mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence - 1], nextAdvert, nextAdvertAudio);
+                //}
                 break;
 
             default:
@@ -188,9 +200,15 @@ public class MasterController : MonoBehaviour {
             Debug.Log("STARTING SEQUENCE " + myLevelData.sequenceNames[currentSequence - 1]);
             // Yes - 
             // Copy EDL into Array for storage before Sequence Controller wipes it
-            // Pass Ad to Sequence Controller and begin next sequence
-            mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence-1], thisAdvert, thisAdvertAudio);
+            // Put the Vision Mixer into ResetSystem Mode
+            //myVisionMixer.inPostRoll = true;
+            //nextAdvert = thisAdvert;
+            //nextAdvertAudio = thisAdvertAudio;
+            //myState = MasterState.PostRoll;
 
+            // Start next Sequence.
+
+            mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence - 1], thisAdvert, thisAdvertAudio);
 
         }
         else
@@ -261,11 +279,11 @@ public class MasterController : MonoBehaviour {
 
             }
         }
-        NoSignal[] theseNoSignals = FindObjectsOfType<NoSignal>();
-        foreach (NoSignal thisNoSignal in theseNoSignals)
-        {
-            thisNoSignal.GetComponent<MeshRenderer>().enabled = true;
-        }
+        //NoSignal[] theseNoSignals = FindObjectsOfType<NoSignal>();
+        //foreach (NoSignal thisNoSignal in theseNoSignals)
+        //{
+        //    thisNoSignal.GetComponent<MeshRenderer>().enabled = true;
+        //}
 
     }
 }

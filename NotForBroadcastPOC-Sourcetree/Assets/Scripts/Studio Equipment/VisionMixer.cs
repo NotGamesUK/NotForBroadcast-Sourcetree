@@ -14,6 +14,8 @@ public class VisionMixer : MonoBehaviour {
     private Switch myLinkSwitch;
     private SoundDesk myMixingDesk;
     private bool hasPower;
+    [HideInInspector]
+    public bool inPostRoll;
     private int jumpToTV;
     private int currentScreen;
     private int maxScreen;
@@ -35,7 +37,30 @@ public class VisionMixer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (inPostRoll)
+        {
+            bool stillPlaying = false;
+            if (masterScreen.isPlaying)
+            {
+                stillPlaying = true;
+            }
+            else
+            {
+                for (int n = 0; n < maxScreen; n++)
+                {
+                    if (smallScreens[n].isPlaying)
+                    {
+                        stillPlaying = true;
+                        break;
+                    }
+                }
+            }
+            if (!stillPlaying)
+            {
+                inPostRoll = false;
+                ResetSystem();
+            }
+        }
     }
 
     public void PrepareScreen(int thisScreen, VideoClip thisVideo, AudioClip thisAudio, bool thisLooping)
@@ -53,7 +78,7 @@ public class VisionMixer : MonoBehaviour {
             thisButton.myButton.Lock();
             thisButton.hasContent = false;
         }
-
+        inPostRoll = false;
         maxScreen = theseClips.Length;
         for (int n = 0; n < maxScreen; n++)
         {
@@ -70,13 +95,13 @@ public class VisionMixer : MonoBehaviour {
         }
 
 
-        if (currentScreen == 0 || currentScreen>maxScreen)
-        {
-            masterScreen.PrepareScreen(barsAndTone, barsAndToneAudio, false);
-        } else
-        {
-            masterScreen.PrepareScreen(theseClips[currentScreen - 1], theseAudioClips[currentScreen - 1], false);
-        }
+        //if (currentScreen == 0 || currentScreen>maxScreen)
+        //{
+        //    masterScreen.PrepareScreen(barsAndTone, barsAndToneAudio, false);
+        //} else
+        //{
+        //    masterScreen.PrepareScreen(theseClips[currentScreen - 1], theseAudioClips[currentScreen - 1], false);
+        //}
 
     }
 
@@ -90,7 +115,7 @@ public class VisionMixer : MonoBehaviour {
 
 
         }
-        masterScreen.PlayScreen();
+        //masterScreen.PlayScreen();
     }
 
     public void PlayScreen(int thisScreen)
@@ -217,6 +242,27 @@ public class VisionMixer : MonoBehaviour {
             thisTV.PowerOff();
         }
         hasPower = false;
+    }
+
+    public void ResetSystem()
+    {
+        // Move Up and Lock all buttons
+
+        // Set currentScreen to 0
+        currentScreen = 0;
+        // LOCK ALL BUTTONS????
+        foreach (VisionMixerButton thisButton in myVisionMixerButtons)
+        {
+            if (thisButton.myButton.isDepressed)
+            {
+                thisButton.myButton.MoveUp();
+            }
+            thisButton.myButton.Lock();
+            
+            thisButton.hasContent = false;
+        }
+
+
     }
 
 }

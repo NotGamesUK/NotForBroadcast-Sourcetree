@@ -93,13 +93,13 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
         switch (thisParent.myType)
         {
             case (Interference2D.Type.Default):
-                Debug.Log("Triggered by " + other + " for " + thisLevel + " White Noise.");
+                //Debug.Log("Triggered by " + other + " for " + thisLevel + " White Noise.");
                 if (targetWhiteNoiseLevel < thisLevel) { targetWhiteNoiseLevel = thisLevel; }
                 break;
 
 
             case (Interference2D.Type.Audio):
-                Debug.Log("Triggered by " + other + " for " + thisLevel + " Audio Interference.");
+                //Debug.Log("Triggered by " + other + " for " + thisLevel + " Audio Interference.");
                 if (other.tag != "ChangeOnly")
                 {
                     if (targetAudioInterferenceLevel < thisLevel) { targetAudioInterferenceLevel = thisLevel; }
@@ -114,7 +114,7 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
 
 
             case (Interference2D.Type.Resistance):
-                Debug.Log("Triggered by " + other + " for " + thisLevel + " Resistance Hacking.");
+                //Debug.Log("Triggered by " + other + " for " + thisLevel + " Resistance Hacking.");
                 if (targetResistanceLevel < thisLevel) { targetResistanceLevel = thisLevel; }
 
                 break;
@@ -131,21 +131,21 @@ public class PlayerFrequencyDisplayObject : MonoBehaviour {
         switch (thisParent.myType)
         {
             case (Interference2D.Type.Default):
-                Debug.Log("Leaving White Noise" + other);
+                //Debug.Log("Leaving White Noise" + other);
                 targetWhiteNoiseLevel -= 50f;
                 if (targetWhiteNoiseLevel < 0) { targetWhiteNoiseLevel = 0; }
                 break;
 
 
             case (Interference2D.Type.Audio):
-                Debug.Log("Leaving Audio Interference" + other);
+                //Debug.Log("Leaving Audio Interference" + other);
                 targetAudioInterferenceLevel -= 50f;
                 if (targetAudioInterferenceLevel < 0) { targetAudioInterferenceLevel = 0; }
                 break;
 
 
             case (Interference2D.Type.Resistance):
-                Debug.Log("Leaving Resistance Hack" + other);
+                //Debug.Log("Leaving Resistance Hack" + other);
                 targetResistanceLevel -= 50f;
                 if (targetResistanceLevel < 0) { targetResistanceLevel = 0; }
                 break;

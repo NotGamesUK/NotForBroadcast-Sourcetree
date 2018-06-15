@@ -48,13 +48,8 @@ public class SequenceController : MonoBehaviour {
         myClock = FindObjectOfType<BackWallClock>();
         myBroadcastScreen = FindObjectOfType<BroadcastTV>();
         myVHSControlPanel = FindObjectOfType<VHSControlPanel>();
-        //Invoke("TEMPTestDeleteMe", 3);
     }
 
-    void TEMPTestDeleteMe()
-    {
-        PrepareSequence(sequenceName, TEMPPreRollVideo, TEMPPreRollAudio);
-    }
 
     // Update is called once per frame
     void Update()
@@ -221,7 +216,7 @@ public class SequenceController : MonoBehaviour {
         VHSTape[] theseVHSTapes = FindObjectsOfType<VHSTape>();
         VideoClip thisAdvertVideo = null;
         AudioClip thisAdvertAudio = null;
-
+        overrunning = false;
         foreach (VHSTape thisVHS in theseVHSTapes)
         {
             if (thisVHS.myTitle == thisAdvertName)

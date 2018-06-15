@@ -9,11 +9,12 @@ public class Television : MonoBehaviour {
     public VideoPlayer myScreen;
     public bool hasPower=false;
     public bool screenSync = true;
+    public bool isPlaying;
 
 
     private bool currentSyncScreen;
     private AudioSource myAudioSource;
-    private MeshRenderer myNoSignal;
+    //private MeshRenderer myNoSignal;
     private VideoClip myClip;
     private AudioClip myAudioClip;
     private bool waitingForPrepare = false;
@@ -24,8 +25,9 @@ public class Television : MonoBehaviour {
         myAudioSource =GetComponentInChildren<AudioSource>();
         myClip = null;
         myAudioClip = null;
-        myNoSignal = GetComponentInChildren<NoSignal>().GetComponent<MeshRenderer>() ;
+        //myNoSignal = GetComponentInChildren<NoSignal>().GetComponent<MeshRenderer>() ;
         //Debug.LomyScreen.clipg("My Audiosource: " + myAudio);
+        isPlaying = false;
 	}
 	
 	// Update is called once per frame
@@ -42,6 +44,10 @@ public class Television : MonoBehaviour {
 
 
             }
+        }
+        if (isPlaying)
+        {
+            if (!myScreen.isPlaying) { isPlaying = false; }
         }
     }
 
@@ -67,9 +73,10 @@ public class Television : MonoBehaviour {
     public void PlayScreen()
     {
         // Disable NoSignal Image
-        myNoSignal.enabled = false;
+        //myNoSignal.enabled = false;
         // Tell Video and Audio to Play
         myScreen.Play();
+        isPlaying = true;
         if (myAudioSource) { myAudioSource.Play(); }
     }
 
