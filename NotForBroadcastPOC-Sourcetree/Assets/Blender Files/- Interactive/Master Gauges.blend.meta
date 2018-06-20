@@ -1,12 +1,54 @@
 fileFormatVersion: 2
 guid: 1ace3fc2b28ee5747bf839d9111da62e
-timeCreated: 1524832824
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: 1_glass
+    100004: 1_guage_face
+    100006: 1_LED
+    100008: 1_LED_frame
+    100010: 1_RIM_low_poly
+    100012: 2_gauge_face
+    100014: 2_glass
+    100016: 2_LED
+    100018: 2_rim_low_poly
+    100020: 2LED_frame
+    100022: 3_glass_
+    100024: 3_guage_face_UNLINKED
+    100026: 3_LED
+    100028: 3_LED_frame
+    100030: 3_RIM_low_poly_001
+    100032: body_-_low_poly
+    100034: Guage_1
+    100036: Guage_2
+    100038: Guage_3
+    100040: needle3
+    100042: needle_1
+    100044: needle_2
     400000: //RootNode
+    400002: 1_glass
+    400004: 1_guage_face
+    400006: 1_LED
+    400008: 1_LED_frame
+    400010: 1_RIM_low_poly
+    400012: 2_gauge_face
+    400014: 2_glass
+    400016: 2_LED
+    400018: 2_rim_low_poly
+    400020: 2LED_frame
+    400022: 3_glass_
+    400024: 3_guage_face_UNLINKED
+    400026: 3_LED
+    400028: 3_LED_frame
+    400030: 3_RIM_low_poly_001
+    400032: body_-_low_poly
+    400034: Guage_1
+    400036: Guage_2
+    400038: Guage_3
+    400040: needle3
+    400042: needle_1
+    400044: needle_2
     2100000: Material
     2300000: //RootNode
     3300000: //RootNode
@@ -32,6 +74,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: 135f573881ec4b545a9e8c53fdb2f198
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: 1_glass
+    100002: 1_guage_face
+    100004: 1_LED
+    100006: 1_LED_frame
+    100008: 1_RIM_low_poly
+    100010: 2_gauge_face
+    100012: 2_glass
+    100014: 2_LED
+    100016: 2_rim_low_poly
+    100018: 2LED_frame
+    100020: 3_glass_
+    100022: 3_guage_face_UNLINKED
+    100024: 3_LED
+    100026: 3_LED_frame
+    100028: 3_RIM_low_poly_001
+    100030: body_-_low_poly
+    100032: Guage_1
+    100034: Guage_2
+    100036: Guage_3
+    100038: //RootNode
+    100040: needle3
+    100042: needle_1
+    100044: needle_2
+    100046: 1_rim_high_poly
+    100048: 2_rim_high_poly
+    100050: 3_guage_face_LINKED
+    100052: 3_rim_high_poly_
+    100054: 3_RIM_low_poly_linkede
+    400000: 1_glass
+    400002: 1_guage_face
+    400004: 1_LED
+    400006: 1_LED_frame
+    400008: 1_RIM_low_poly
+    400010: 2_gauge_face
+    400012: 2_glass
+    400014: 2_LED
+    400016: 2_rim_low_poly
+    400018: 2LED_frame
+    400020: 3_glass_
+    400022: 3_guage_face_UNLINKED
+    400024: 3_LED
+    400026: 3_LED_frame
+    400028: 3_RIM_low_poly_001
+    400030: body_-_low_poly
+    400032: Guage_1
+    400034: Guage_2
+    400036: Guage_3
+    400038: //RootNode
+    400040: needle3
+    400042: needle_1
+    400044: needle_2
+    400046: 1_rim_high_poly
+    400048: 2_rim_high_poly
+    400050: 3_guage_face_LINKED
+    400052: 3_rim_high_poly_
+    400054: 3_RIM_low_poly_linkede
+    2100000: unnamed
+    2100002: BODY_MATERIAL_TEMP
+    2100004: gauge_3_rim_MAT
+    2100006: gauge_3_MAT
+    2100008: guage_face_one_TEMP
+    2100010: glass
+    2100012: rim_materal_TEMP_3
+    2100014: rim_materal_TEMP_2
+    2100016: Material
+    2300000: 1_glass
+    2300002: 1_guage_face
+    2300004: 1_LED
+    2300006: 1_LED_frame
+    2300008: 1_rim_high_poly
+    2300010: 1_RIM_low_poly
+    2300012: 2_gauge_face
+    2300014: 2_glass
+    2300016: 2_LED
+    2300018: 2_rim_high_poly
+    2300020: 2_rim_low_poly
+    2300022: 2LED_frame
+    2300024: 3_glass_
+    2300026: 3_guage_face_LINKED
+    2300028: 3_guage_face_UNLINKED
+    2300030: 3_LED
+    2300032: 3_LED_frame
+    2300034: 3_rim_high_poly_
+    2300036: 3_RIM_low_poly_001
+    2300038: 3_RIM_low_poly_linkede
+    2300040: body_-_low_poly
+    2300042: needle3
+    2300044: needle_1
+    2300046: needle_2
+    3300000: 1_glass
+    3300002: 1_guage_face
+    3300004: 1_LED
+    3300006: 1_LED_frame
+    3300008: 1_rim_high_poly
+    3300010: 1_RIM_low_poly
+    3300012: 2_gauge_face
+    3300014: 2_glass
+    3300016: 2_LED
+    3300018: 2_rim_high_poly
+    3300020: 2_rim_low_poly
+    3300022: 2LED_frame
+    3300024: 3_glass_
+    3300026: 3_guage_face_LINKED
+    3300028: 3_guage_face_UNLINKED
+    3300030: 3_LED
+    3300032: 3_LED_frame
+    3300034: 3_rim_high_poly_
+    3300036: 3_RIM_low_poly_001
+    3300038: 3_RIM_low_poly_linkede
+    3300040: body_-_low_poly
+    3300042: needle3
+    3300044: needle_1
+    3300046: needle_2
+    4300000: 3_LED
+    4300002: 2_LED
+    4300004: 1_LED
+    4300006: 3_LED_frame
+    4300008: 2LED_frame
+    4300010: 1_LED_frame
+    4300012: body_-_low_poly
+    4300014: 3_RIM_low_poly_001
+    4300016: 3_guage_face_UNLINKED
+    4300018: 3_rim_high_poly_
+    4300020: 3_guage_face_LINKED
+    4300022: 3_glass_
+    4300024: 3_RIM_low_poly_linkede
+    4300026: needle3
+    4300028: 2_rim_high_poly
+    4300030: 2_rim_low_poly
+    4300032: 2_glass
+    4300034: 2_gauge_face
+    4300036: needle_2
+    4300038: needle_1
+    4300040: 1_rim_high_poly
+    4300042: 1_guage_face
+    4300044: 1_glass
+    4300046: 1_RIM_low_poly
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
