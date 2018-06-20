@@ -17662,6 +17662,132 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: 01-01 Headlines
+    runIn: 12
+    runOut: 10
+    screenVideo:
+    - {fileID: 32900000, guid: f655731424fe03a4c8467ed6c470fb66, type: 3}
+    - {fileID: 32900000, guid: 9168b9f0946d8944eb07b74f4aec5e4f, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: 061ec8fb1d70a7c4e9d5ba8a001ca112, type: 3}
+    - {fileID: 32900000, guid: 622c09b981a42d549be99c701d1b9f5c, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 1b8b1d1c1d274dd4c8b87058705014bb, type: 3}
+    - {fileID: 8300000, guid: 0568d35282c672048baa3c28be9e1e4e, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: 01-02 Wildish
+    runIn: 17
+    runOut: 16
+    screenVideo:
+    - {fileID: 32900000, guid: 9a8124435eeae5047be1b29292831b82, type: 3}
+    - {fileID: 32900000, guid: 24be0f74d7925ba45bc42004f0661858, type: 3}
+    - {fileID: 32900000, guid: 29e2621222ddce4458443bcdf70ceb33, type: 3}
+    - {fileID: 32900000, guid: 99637f5c175f5244b8ca1e5f5a78c00e, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: a2a0e133029adde408b9a1fa9567b2ed, type: 3}
+    - {fileID: 32900000, guid: 735229d4034c3fd4b980f0c408257bbf, type: 3}
+    - {fileID: 32900000, guid: dcd3b57c84135d246acdcf74c0a8fafa, type: 3}
+    - {fileID: 32900000, guid: 47462e75f3c5df4488d65f430ad827a6, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 069d0c93695fc1b438c8bc7649ee737c, type: 3}
+    - {fileID: 8300000, guid: 069d0c93695fc1b438c8bc7649ee737c, type: 3}
+    - {fileID: 8300000, guid: 069d0c93695fc1b438c8bc7649ee737c, type: 3}
+    - {fileID: 8300000, guid: a08acfdb3792f7f4d9c861d64950bf48, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: 01-03 Party Leaders
+    runIn: 17
+    runOut: 20
+    screenVideo:
+    - {fileID: 32900000, guid: eceadce4af75edf44a8ac4478e0659ee, type: 3}
+    - {fileID: 32900000, guid: 12f610793d74e6f4fbf1c19c204cfec4, type: 3}
+    - {fileID: 32900000, guid: 38fffb57590252e4ea21152c29d425b7, type: 3}
+    - {fileID: 32900000, guid: dc93c43815e408b4b92e6afd3f06e01f, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: 011ebf2511c787442ad0ac300cec5989, type: 3}
+    - {fileID: 32900000, guid: 256d6e14615e4dd4d8d814e9e2dcfc01, type: 3}
+    - {fileID: 32900000, guid: 30dbe1c120588c445bb30ff56a9a6539, type: 3}
+    - {fileID: 32900000, guid: 503fe96ae4498c0409cf0b9bb60217a5, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 891611fe55f8a5b4a91a9ffffa418549, type: 3}
+    - {fileID: 8300000, guid: 5a2e10eb4ad25684f9f8a446419e6ad6, type: 3}
+    - {fileID: 8300000, guid: 5a2e10eb4ad25684f9f8a446419e6ad6, type: 3}
+    - {fileID: 8300000, guid: 5a2e10eb4ad25684f9f8a446419e6ad6, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: 02-01 Babies
+    runIn: 17
+    runOut: 10
+    screenVideo:
+    - {fileID: 32900000, guid: d484246ef963b154db50021162e5d719, type: 3}
+    - {fileID: 32900000, guid: 57e10937006edc14f85f83d677e0b80c, type: 3}
+    - {fileID: 32900000, guid: 68d3a5124241efa429f9a68eb144aaa4, type: 3}
+    - {fileID: 32900000, guid: a1f01323c329d9448947176c4bbc8fec, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: e04251e89c43cdc43b2516d09f1d72e8, type: 3}
+    - {fileID: 32900000, guid: 84f93456a5d87a34eab4f4824864d467, type: 3}
+    - {fileID: 32900000, guid: 9507fa974716b2647b7ccad84d3a7f47, type: 3}
+    - {fileID: 32900000, guid: 6e60e8429204e6b4496005cba02a18d6, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: e19b76d053beb1640a00034c3dc222ed, type: 3}
+    - {fileID: 8300000, guid: 4941ce6d0e33a89439b7f4c93edf6175, type: 3}
+    - {fileID: 8300000, guid: 4792e576d8cb76144bf6b9f0fda389b9, type: 3}
+    - {fileID: 8300000, guid: 452295a844c6ad44890b8a8323af5787, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: 02-02 Thadeus
+    runIn: 32
+    runOut: 24
+    screenVideo:
+    - {fileID: 32900000, guid: e8137408bda731844a79896ebc1a6188, type: 3}
+    - {fileID: 32900000, guid: dc44a2a9d85535f42ac7f879cc1f7696, type: 3}
+    - {fileID: 32900000, guid: 50fc1542647b90a4fbea0e856cbc4bc0, type: 3}
+    - {fileID: 32900000, guid: 3f449d4b6adc3594d820517114f062db, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: e28b4281c20260d438b364ded52b73b0, type: 3}
+    - {fileID: 32900000, guid: 91d416dff7a43734f9419d15d0cbb08e, type: 3}
+    - {fileID: 32900000, guid: 654d7e8ad3c38484992b7e660c2fddd7, type: 3}
+    - {fileID: 32900000, guid: 583465318f52a8741b1549ab772249da, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 28527958ed5bb384a90a1ef9a72b16da, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+  - SequenceName: 02-03 Hostage
+    runIn: 44
+    runOut: 21
+    screenVideo:
+    - {fileID: 32900000, guid: 8fd979857ce1ccd48a3f4e6a2a7a6f7b, type: 3}
+    - {fileID: 32900000, guid: 49906290f621d7d4ea618cf90ff9d29f, type: 3}
+    - {fileID: 32900000, guid: c6bd447aaa7e8fd4b81b2785f7fe8343, type: 3}
+    - {fileID: 32900000, guid: 433fa3b03953ff44bba8e53b870da0fe, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: d79f9c7d3fd16ab468b1897e8c0155ca, type: 3}
+    - {fileID: 32900000, guid: d4def30dc73dffb468cd549145dfc3ff, type: 3}
+    - {fileID: 32900000, guid: 01c9dff33d742dd4c924593efa75b585, type: 3}
+    - {fileID: 32900000, guid: 7dd2d7108b166c24380aa37b900e9a8a, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 54efa292ca905734f93acc0269ef59de, type: 3}
+    interferenceLevel: {fileID: 114665156920355818, guid: da827c0b589dca340a81a31e15d6a62e,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
 --- !u!114 &1737591843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17722,15 +17848,15 @@ MonoBehaviour:
     loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
-    preRoll: {fileID: 32900000, guid: 0d49aa0ae104efa44b07456e09b96e7a, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: 90b1eaec5511fd048bcbe5d3db03ca67, type: 3}
-    preRollAudio: {fileID: 8300000, guid: de67710b582854a46aa71817a7730a6b, type: 3}
+    preRoll: {fileID: 32900000, guid: 9942b57e975c0024a8c99b252d706c75, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
+    preRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
     sequenceNames:
-    - Temp 01-01
-    - Temp 01-02
-    - Temp 01-03
+    - 01-01 Headlines
+    - 01-02 Wildish
+    - 01-03 Party Leaders
     gameEvents: []
-  - dayNumber: 0
+  - dayNumber: 100
     levelName: The Heatwave
     loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
@@ -17739,9 +17865,9 @@ MonoBehaviour:
     preRollSmaller: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
     preRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
     sequenceNames:
-    - Test
-    - The Count
-    - Blues Band
+    - 02-01 Babies
+    - 02-02 Thadeus
+    - 02-03 Hostage
     gameEvents: []
   masterLevelClock: 0
   myState: 0
