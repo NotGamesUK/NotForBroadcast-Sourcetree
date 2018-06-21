@@ -26,9 +26,13 @@ public class MasterGauges : MonoBehaviour {
     [HideInInspector]
     public float videoStrength;
 
-    public Text myPowerDisplay;
-    public Text myTemperatureDisplay;
-    public Text mySignalDisplay;
+    public Text myPowerTextDisplay;
+    public Text myTemperatureTextDisplay;
+    public Text mySignalTextDisplay;
+
+    public Gauge myPowerGauge;
+    public Gauge myTemperatureGauge;
+    public Gauge mySignalGauge;
 
     private MasterTripSwitch myPowerObject;
     private ValveBox myTemperatureObject;
@@ -55,12 +59,16 @@ public class MasterGauges : MonoBehaviour {
     {
         // Display Power Reading
         float thisPower = myPowerObject.currentPower;
-        myPowerDisplay.text = (Mathf.Round(thisPower) + "/" + maxPower);
-        myPowerDisplay.color = Color.white;
+        myPowerTextDisplay.text = (Mathf.Round(thisPower) + "/" + maxPower);
+        float thisPowerPercentage = Mathf.Round((thisPower / maxPower) * 100);
+        Debug.Log("SENDING " + thisPowerPercentage + "% TO POWER GAUGE.");
+        myPowerGauge.SetNeedle(thisPowerPercentage);
+
+        myPowerTextDisplay.color = Color.white;
         myPowerStatus = "None";
         if (myPowerObject.isOn)
         {
-            myPowerDisplay.color = Color.green;
+            myPowerTextDisplay.color = Color.green;
             if (thisPower > 0)
             {
                 myPowerStatus = "Green";
@@ -69,29 +77,34 @@ public class MasterGauges : MonoBehaviour {
         if (thisPower / maxPower >= orangePowerPercent / 100)
         {
             // Turn Text Orange
-            myPowerDisplay.color = Color.yellow;
+            myPowerTextDisplay.color = Color.yellow;
             myPowerStatus = "Orange";
         }
         if (thisPower > maxPower)
         {
             // Turn Text Red
-            myPowerDisplay.color = Color.red;
+            myPowerTextDisplay.color = Color.red;
             myPowerStatus = "Red";
 
         }
 
         // Display Temperature Readings
         float thisTemperature = myTemperatureObject.currentTemperature;
-        myTemperatureDisplay.text = (Mathf.Round(thisTemperature) / maxTemperature * 100+"%");
+        myTemperatureTextDisplay.text = (Mathf.Round(thisTemperature) / maxTemperature * 100+"%");
+        float thisTemperaturePercentage = Mathf.Round(thisTemperature) / maxTemperature * 100;
+        Debug.Log("SENDING " + thisTemperaturePercentage + "% TO TEMPERATURE GAUGE.");
+        myTemperatureGauge.SetNeedle(thisTemperaturePercentage);
+
+
         float orangeTemperature = maxTemperature * (orangeTemperaturePercent / 100);
-        myTemperatureDisplay.color = Color.green;
+        myTemperatureTextDisplay.color = Color.green;
         if (thisTemperature>orangeTemperature)
         {
-            myTemperatureDisplay.color = Color.yellow;
+            myTemperatureTextDisplay.color = Color.yellow;
         }
         if (thisTemperature>maxTemperature || myTemperatureObject.isOverheated)
         {
-            myTemperatureDisplay.color = Color.red;
+            myTemperatureTextDisplay.color = Color.red;
         }
 
         // Display Broadcast Reading
@@ -137,10 +150,18 @@ public class MasterGauges : MonoBehaviour {
         //myDesk.SetWhiteNoiseAudioLevel(audioInterferenceStrength);
 
         // Display Video and Audio Signal fidelity on panel
-        mySignalDisplay.text = Mathf.Round(videoStrength).ToString() + "%";
-        mySignalDisplay.color = Color.green;
-        if (videoStrength < 65) { mySignalDisplay.color = Color.yellow; }
-        if (videoStrength < 35) { mySignalDisplay.color = Color.red; }
+        mySignalTextDisplay.text = Mathf.Round(videoStrength).ToString() + "%";
+
+        Debug.Log("SENDING " + Mathf.Round(videoStrength) + "% TO SIGNAL GAUGE.");
+        mySignalGauge.SetNeedle(Mathf.Round(videoStrength));
+
+        mySignalTextDisplay.color = Color.green;
+        if (videoStrength < 65) {
+            mySignalTextDisplay.color = Color.yellow;
+        }
+        if (videoStrength < 35) {
+            mySignalTextDisplay.color = Color.red;
+        }
 
     }
 
