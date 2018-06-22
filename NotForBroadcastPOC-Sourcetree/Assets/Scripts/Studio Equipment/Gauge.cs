@@ -39,7 +39,6 @@ public class Gauge : MonoBehaviour {
         startRotation = myNeedle.transform.rotation;
 
         myLEDColour = LEDColours.Green;
-        myLED.GoGreen();
 
         // Reverse Percentages for downwards Gauge
         if (!alarmsAtTop)

@@ -22,7 +22,7 @@ public class LED : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         myRenderer = GetComponent<MeshRenderer>();
-        TurnOff();
+        GoGreen();
 	}
 	
 	// Update is called once per frame

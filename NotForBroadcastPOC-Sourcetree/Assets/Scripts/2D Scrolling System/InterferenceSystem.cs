@@ -30,6 +30,10 @@ public class InterferenceSystem : MonoBehaviour {
 
     public void SpawnLevel(Transform thisLevel)
     {
+        if (currentLevel)
+        {
+            Destroy(currentLevel);
+        }
         currentLevel = Instantiate(thisLevel, this.transform, false);
         myLevel = currentLevel.GetComponent<LevelController>();
     }

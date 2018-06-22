@@ -14,7 +14,8 @@ public class BackWallClock : MonoBehaviour {
     private float frames=0;
     private string framesString;
     private bool isRunning;
-    private float clockTime = 0f;
+    [HideInInspector]
+    public float clockTime = 0f;
     private MasterController myController;
 
 	// Use this for initialization

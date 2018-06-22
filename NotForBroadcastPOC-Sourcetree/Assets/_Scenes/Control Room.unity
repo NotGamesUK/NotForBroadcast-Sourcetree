@@ -6435,7 +6435,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.51
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6530,7 +6530,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.51
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7030,6 +7030,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScreen: {fileID: 2133829764}
+--- !u!114 &714195289 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114931469895630556, guid: 27b4c96946bec184ba5520755ef0d245,
+    type: 2}
+  m_PrefabInternal: {fileID: 939055334}
+  m_Script: {fileID: 11500000, guid: 34427252a16d0a2489fb488e14ff6a7b, type: 3}
 --- !u!1001 &723862010
 Prefab:
   m_ObjectHideFlags: 0
@@ -8756,7 +8762,19 @@ Prefab:
       propertyPath: mySignalTextDisplay
       value: 
       objectReference: {fileID: 1037998932}
-    m_RemovedComponents: []
+    - target: {fileID: 114693144510554652, guid: 27b4c96946bec184ba5520755ef0d245,
+        type: 2}
+      propertyPath: myRenderer
+      value: 
+      objectReference: {fileID: 1465288732}
+    - target: {fileID: 114062932826366422, guid: 27b4c96946bec184ba5520755ef0d245,
+        type: 2}
+      propertyPath: myRenderer
+      value: 
+      objectReference: {fileID: 1677023242}
+    m_RemovedComponents:
+    - {fileID: 114605100683912476, guid: 27b4c96946bec184ba5520755ef0d245, type: 2}
+    - {fileID: 114050105516243588, guid: 27b4c96946bec184ba5520755ef0d245, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 27b4c96946bec184ba5520755ef0d245, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &950983382
@@ -10708,7 +10726,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.779, y: -0.71}
-  m_SizeDelta: {x: 12.722, y: 8.264}
+  m_SizeDelta: {x: 12.7, y: 8.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997610271
 MonoBehaviour:
@@ -12543,6 +12561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDisplay: {fileID: 44255609}
+  clockTime: 0
 --- !u!1001 &1242491319
 Prefab:
   m_ObjectHideFlags: 0
@@ -13618,7 +13637,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -15167,6 +15186,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73160ad0ccbcc154f97f85fdbd8fef3d, type: 3}
   m_IsPrefabParent: 0
+--- !u!23 &1465288732 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23252499205061294, guid: 27b4c96946bec184ba5520755ef0d245,
+    type: 2}
+  m_PrefabInternal: {fileID: 939055334}
 --- !u!1 &1468248659 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100040, guid: 89e573050866187449623a631c99c320, type: 3}
@@ -15705,6 +15729,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1517718845}
+--- !u!114 &1523560277 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114027969527087418, guid: 27b4c96946bec184ba5520755ef0d245,
+    type: 2}
+  m_PrefabInternal: {fileID: 939055334}
+  m_Script: {fileID: 11500000, guid: 34427252a16d0a2489fb488e14ff6a7b, type: 3}
 --- !u!4 &1526589647 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: a84403a393cdf5f4da69f07e7f404805, type: 3}
@@ -16507,7 +16537,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4200359354975578, guid: 6e6ffa6da3794da429c06d182bd38f39, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.509
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 4200359354975578, guid: 6e6ffa6da3794da429c06d182bd38f39, type: 2}
       propertyPath: m_LocalPosition.y
@@ -16956,6 +16986,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ff0d1b23671a1740855cfa3177916b4, type: 2}
   m_IsPrefabParent: 0
+--- !u!23 &1677023242 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23159841059214490, guid: 27b4c96946bec184ba5520755ef0d245,
+    type: 2}
+  m_PrefabInternal: {fileID: 939055334}
 --- !u!1 &1677793583 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100038, guid: 89e573050866187449623a631c99c320, type: 3}
@@ -17621,9 +17656,9 @@ MonoBehaviour:
     preRollSmaller: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
     preRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
     sequenceNames:
-    - 02-01 Babies
-    - 02-02 Thadeus
-    - 02-03 Hostage
+    - Temp 01-01
+    - Temp 01-02
+    - Temp 01-03
     gameEvents: []
   masterLevelClock: 0
   myState: 0
@@ -18116,6 +18151,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1796691969 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114496148756067308, guid: 27b4c96946bec184ba5520755ef0d245,
+    type: 2}
+  m_PrefabInternal: {fileID: 939055334}
+  m_Script: {fileID: 11500000, guid: 34427252a16d0a2489fb488e14ff6a7b, type: 3}
 --- !u!1 &1803603826 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100004, guid: b99c030431cff554696b1ae1dee86267, type: 3}
@@ -18302,7 +18343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 18.705, y: -7.215}
+  m_AnchoredPosition: {x: -4.54, y: -7.215}
   m_SizeDelta: {x: -106.236, y: -58.575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812165827
@@ -19303,6 +19344,28 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 799dfdb05f6b70645bbaa9f08e3b6c90, type: 3}
   m_PrefabInternal: {fileID: 1328321665}
+--- !u!1 &1944279102 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1663345336631568, guid: 27b4c96946bec184ba5520755ef0d245,
+    type: 2}
+  m_PrefabInternal: {fileID: 939055334}
+--- !u!114 &1944279103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1944279102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2435b26f4932f3b4b93bb114753d10bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myOffMaterial: {fileID: 2100000, guid: 43058e50f1e0340469ae96ff7d8aa7cd, type: 2}
+  myRedMaterial: {fileID: 2100000, guid: 83cb7497e03cba043a68d96bbc151184, type: 2}
+  myOrangeMaterial: {fileID: 2100000, guid: 67d4926058cd9004aa5a74503c4185aa, type: 2}
+  myGreenMaterial: {fileID: 2100000, guid: 6890fdd8bef1a6b4480a8431109d423b, type: 2}
+  myColour: 0
+  isFlashing: 0
 --- !u!1 &1951125381
 GameObject:
   m_ObjectHideFlags: 0
@@ -19997,6 +20060,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2023207940 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1162516795302108, guid: 27b4c96946bec184ba5520755ef0d245,
+    type: 2}
+  m_PrefabInternal: {fileID: 939055334}
+--- !u!114 &2023207941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2023207940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670d081b0d6a8314f81fdd374abbb6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPower: 800
+  orangePowerPercent: 80
+  roomTemperature: 20
+  maxTemperature: 100
+  orangeTemperaturePercent: 75
+  dishTolerance: 10
+  myPowerStatus: Green
+  videoStrength: 0
+  myPowerTextDisplay: {fileID: 1967249637}
+  myTemperatureTextDisplay: {fileID: 289373260}
+  mySignalTextDisplay: {fileID: 1037998932}
+  myPowerGauge: {fileID: 1523560277}
+  myTemperatureGauge: {fileID: 1796691969}
+  mySignalGauge: {fileID: 714195289}
 --- !u!1001 &2025650015
 Prefab:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@ public class MasterController : MonoBehaviour {
     private int currentLevel;
     private int currentSequence;
     private LevelData myLevelData;
-    public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, EndOfLevel, FailLevel, Paused }
+    public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
     public MasterState myState;
     [HideInInspector]
     public bool preparingAd, overRunning;
@@ -65,12 +65,12 @@ public class MasterController : MonoBehaviour {
         myVisionMixer = FindObjectOfType<VisionMixer>();
         myClock = FindObjectOfType<BackWallClock>();
         myState = MasterState.Menu;
-        Invoke("TEMPStartGame", 2);
+        Invoke("TEMPStartGame", 0.1f);
 	}
 
     void TEMPStartGame()
     {
-        PrepareLevel(2);
+        PrepareLevel(1);
 
     }
 	
@@ -126,6 +126,14 @@ public class MasterController : MonoBehaviour {
                         StartLevel();
                     }
                     myState = MasterState.PlayingAd;
+                    if (currentSequence > 2)
+                    {
+                        // Stop Scoring System
+                        // Copy EDL into Array
+                        // Save All EDLs and Interference Log
+                        myState = MasterState.PostRoll;
+                    }
+                    startPreRollTime = -1;
                 }
                 break;
 
@@ -135,14 +143,22 @@ public class MasterController : MonoBehaviour {
                 // Do InGameManagement();
                 InGameManagement();
                 // Wait for Vision Mixer to announce end of post roll then
-                if (!myVisionMixer.inPostRoll)
+                if (!myVisionMixer.inPostRoll && startPreRollTime == -1)
                 {
                     startPreRollTime = mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence]);
-                    Debug.Log("Intending to start sequence when clock hits" + startPreRollTime);
+                    Debug.Log("Intending to start sequence when clock hits " + startPreRollTime +" seconds.");
 
+                } else if (startPreRollTime>0)  
+                {  
+
+                    if (myClock.clockTime <= startPreRollTime) // When MasterClock is at top of Preroll Start Sequence
+                    {
+                        mySequenceController.StartSequence();
+                        startPreRollTime = 0;
+                    }
                 }
-                // When MasterClock is at top of Preroll Start Sequence
 
+                
                 break;
 
             case MasterState.Active:
@@ -150,29 +166,48 @@ public class MasterController : MonoBehaviour {
                 // If in Active State
                 InGameManagement();
                 // If Overrunning
+                if (overRunning)
+                {
                     // Decrement overrunTime;
+                    overrunTime -= Time.deltaTime;
                     // If it hits Zero there is no signal and the level is failed (NO ADVERT PLAYED)
-                // Monitor Pause Button and if pressed -
-                // call PauseGame()
+                    if (overrunTime <= 0)
+                    {
+                        FailMidLevel("Didn't Play Advert before studio signal cut out.");
+                    }
+                }
+                break;
+
+            case MasterState.PostRoll:
+
+                // If in PostLevel State
+                // Wait for ENTER keypress or end of advert after PostRoll then:
+                if (Input.GetKeyDown(KeyCode.KeypadEnter))
+                {
+                    LevelComplete();
+                }
+
+                // Wait Until OK is pressed on Scoreboard then activate "Upgrade/Repair Menu" (this might be handled from GUI Controller)
                 break;
 
 
             case MasterState.EndOfLevel:
 
-                // If in PostLevel State
-                // Wait Until OK is pressed on Scoreboard then activate "Upgrade/Repair Menu" (this might be handled from GUI Controller
+                // If in EndOfLevel State
+                // Wait for gui to change state
                 break;
 
             case MasterState.FailLevel:
 
-                // If in PostLevel State
-                // Wait Until OK is pressed on Scoreboard then activate "Upgrade/Repair Menu" (this might be handled from GUI Controller
+                // If in FailLevel State
+                // Bring up lights
+                // Wait for gui to change state
                 break;
 
             case MasterState.Paused:
 
                 // If in Paused State
-                // Wait for menu system to send resume then call ResumeGame();
+                // Wait for gui to send resume then call ResumeGame();
                 break;
 
 
@@ -207,15 +242,18 @@ public class MasterController : MonoBehaviour {
                 break;
 
             case MasterState.PlayingAd:
-            case MasterState.PreparingAd:
 
                 // Advert is Over
                 ////Debug.Log("ClockAtZero Called.");
                 Debug.Log("MASTER CONTROLLER: CLOCK AT ZERO ON ADVERT.");
                 mySequenceController.GoLive();
+                myState = MasterState.Active;
                 break;
 
-
+            case MasterState.PostRoll:
+                Debug.Log("MASTER CONTROLLER: End of Last Advert.  Display End of Level Gui.");
+                LevelComplete();
+                break;
         }
     }
 
@@ -264,8 +302,8 @@ public class MasterController : MonoBehaviour {
     {
         Debug.Log("MASTER CONT: PREPARING ADVERT - " + thisAdvert);
         // Set clock to Ad-Length second countdown minus broadcast delay - First Ad is always "Later tonight...."?
-        float thisPreLevelLength = (float)thisAdvert.length;
-        myClock.SetTimeAndHold(thisPreLevelLength - broadcastScreenDelayTime, true);
+        float thisAdLength = (float)thisAdvert.length;
+        myClock.SetTimeAndHold(thisAdLength - broadcastScreenDelayTime, true);
 
         // Prepare Ad (or countdown if at start) on Broadcast screen
         myBroadcastScreen.PrepareAdvert(thisAdvert, thisAdvertAudio);
@@ -291,25 +329,24 @@ public class MasterController : MonoBehaviour {
         // Advance Sequence Count
         currentSequence++;
         // Is sequence count less than 4?
-        if (currentSequence < 4)
+        if (currentSequence < 3)
         {
-            Debug.Log("STARTING SEQUENCE " + myLevelData.sequenceNames[currentSequence]);
+            Debug.Log("MASTER CONTROLLER SEQUENCE COMPLETE.  NEXT SEQUENCE:" + myLevelData.sequenceNames[currentSequence]);
             // Yes - 
             // Copy EDL into Array for storage before Sequence Controller wipes it
             // Put the Vision Mixer into ResetSystem Mode
-            //myVisionMixer.inPostRoll = true;
-            //nextAdvert = thisAdvert;
-            //nextAdvertAudio = thisAdvertAudio;
-            //myState = MasterState.PostRoll;
+            myVisionMixer.inPostRoll = true;
 
             // Enter Ad Break Mode
-            myState = MasterState.PlayingAd;
+            PrepareAdvert(thisAdvert, thisAdvertAudio);
         }
         else
         {
             // No -
-            Debug.Log("BROADCAST COMPLETE");
+            Debug.Log("PLAYING FINAL AD");
             // Play final Ad
+            myVisionMixer.inPostRoll = true;
+            PrepareAdvert(thisAdvert, thisAdvertAudio);
             // Call LevelComplete()
 
         }
@@ -320,9 +357,7 @@ public class MasterController : MonoBehaviour {
     void LevelComplete()
     {
         // Enter PostLevel State
-        // Stop Scoring System
-        // Copy EDL into Array
-        // Save All EDLs and Interference Log
+        myState = MasterState.EndOfLevel;
         // Tell GUI to Display Scorecard, Update/Repair Sequence, and End Level GUI - Watch Broadcast, Replay, Continue.  
 
 
@@ -343,18 +378,20 @@ public class MasterController : MonoBehaviour {
         // Enter Active State
     }
 
-    public void FailMidLevel()
+    public void FailMidLevel(string thisReason)
     {
-        Debug.Log("LEVEL FAILED!!!!");
+        Debug.Log("LEVEL FAILED!  Reason: "+thisReason);
         // Called by Scoring System
         // Also Called by Sequence Controller when Ad not played by end of video
 
         // Stop all Video and Audio
+        // Stop all recording of data
+
         StopAllAudioAndVideo();
         // Play tapeSlowdownSound
         // Fade Screen to black
         // Tell GUI to show Level Failed Menu
-        myState = MasterState.Menu;
+        myState = MasterState.FailLevel;
     }
 
     void StopAllAudioAndVideo()
