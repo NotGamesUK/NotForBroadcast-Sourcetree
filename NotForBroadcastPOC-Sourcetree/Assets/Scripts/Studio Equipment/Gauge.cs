@@ -19,7 +19,6 @@ public class Gauge : MonoBehaviour {
 
 
     private GaugeNeedle myNeedle;
-    [HideInInspector]
     public LED myLED;
     private AudioSource myAlarm;
     private float fullRotation;
@@ -35,7 +34,6 @@ public class Gauge : MonoBehaviour {
     // Use this for initialization
     void Start () {
         myNeedle = GetComponentInChildren<GaugeNeedle>();
-        myLED = GetComponentInChildren<LED>();
         myAlarm = GetComponent<AudioSource>();
         fullRotation = myMaxRotation * 2;
         startRotation = myNeedle.transform.rotation;

@@ -30,6 +30,7 @@ public class BroadcastTV : MonoBehaviour {
     private MasterGauges myGauges;
     private SoundDesk myDesk;
     private SequenceController mySequenceController;
+    private MasterController myMasterController;
     private MeshRenderer myNoSignal;
     private bool[] screenPreparing = new bool[4];
     private bool adPreparing;
@@ -48,6 +49,7 @@ public class BroadcastTV : MonoBehaviour {
         myDesk = FindObjectOfType<SoundDesk>();
         myNoSignal = GetComponentInChildren<NoSignal>().GetComponent<MeshRenderer>();
         mySequenceController = FindObjectOfType<SequenceController>();
+        myMasterController = FindObjectOfType<MasterController>();
         SetResistanceVideoLevel(0);
         SetWhiteNoiseVideoLevel(0);
 	}
@@ -105,7 +107,7 @@ public class BroadcastTV : MonoBehaviour {
             if (myAdvertScreen.isPrepared)
             {
                 adPreparing = false;
-                mySequenceController.preRollReady = true;
+                myMasterController.preparingAd = false;
                 //Debug.Log("Broadcast TV: Advert Prepared.");
             }
         }

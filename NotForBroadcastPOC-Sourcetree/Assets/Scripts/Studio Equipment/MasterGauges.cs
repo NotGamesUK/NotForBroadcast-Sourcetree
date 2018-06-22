@@ -61,7 +61,7 @@ public class MasterGauges : MonoBehaviour {
         float thisPower = myPowerObject.currentPower;
         myPowerTextDisplay.text = (Mathf.Round(thisPower) + "/" + maxPower);
         float thisPowerPercentage = Mathf.Round((thisPower / maxPower) * 100);
-        Debug.Log("SENDING " + thisPowerPercentage + "% TO POWER GAUGE.");
+        //Debug.Log("SENDING " + thisPowerPercentage + "% TO POWER GAUGE.");
         myPowerGauge.SetNeedle(thisPowerPercentage);
 
         myPowerTextDisplay.color = Color.white;
@@ -92,7 +92,7 @@ public class MasterGauges : MonoBehaviour {
         float thisTemperature = myTemperatureObject.currentTemperature;
         myTemperatureTextDisplay.text = (Mathf.Round(thisTemperature) / maxTemperature * 100+"%");
         float thisTemperaturePercentage = Mathf.Round(thisTemperature) / maxTemperature * 100;
-        Debug.Log("SENDING " + thisTemperaturePercentage + "% TO TEMPERATURE GAUGE.");
+        //Debug.Log("SENDING " + thisTemperaturePercentage + "% TO TEMPERATURE GAUGE.");
         myTemperatureGauge.SetNeedle(thisTemperaturePercentage);
 
 
@@ -152,7 +152,7 @@ public class MasterGauges : MonoBehaviour {
         // Display Video and Audio Signal fidelity on panel
         mySignalTextDisplay.text = Mathf.Round(videoStrength).ToString() + "%";
 
-        Debug.Log("SENDING " + Mathf.Round(videoStrength) + "% TO SIGNAL GAUGE.");
+        //Debug.Log("SENDING " + Mathf.Round(videoStrength) + "% TO SIGNAL GAUGE.");
         mySignalGauge.SetNeedle(Mathf.Round(videoStrength));
 
         mySignalTextDisplay.color = Color.green;

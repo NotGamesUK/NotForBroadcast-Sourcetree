@@ -33,6 +33,8 @@ public class MasterController : MonoBehaviour {
 
     }
 
+    public float broadcastScreenDelayTime=2;
+
     public LevelData[] levelData;
 
     [HideInInspector]
@@ -42,21 +44,26 @@ public class MasterController : MonoBehaviour {
     private VideoClip nextAdvert;
     private AudioClip nextAdvertAudio;
     private SequenceController mySequenceController;
-    private BroadcastTV myBroadcastTV;
+    private BroadcastTV myBroadcastScreen;
     private EDLController myEDLController;
     private VisionMixer myVisionMixer;
+    private BackWallClock myClock;
     private int currentLevel;
     private int currentSequence;
     private LevelData myLevelData;
-    public enum MasterState { Menu, OpeningTitles, Waiting, Active, PostLevel, Paused, PostRoll }
+    public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, EndOfLevel, FailLevel, Paused }
     public MasterState myState;
+    [HideInInspector]
+    public bool preparingAd, overRunning;
+    private float overrunTime, startPreRollTime;
 
     // Use this for initialization
     void Start () {
         mySequenceController = GetComponent<SequenceController>();
         myEDLController = GetComponent<EDLController>();
-        myBroadcastTV = FindObjectOfType<BroadcastTV>();
+        myBroadcastScreen = FindObjectOfType<BroadcastTV>();
         myVisionMixer = FindObjectOfType<VisionMixer>();
+        myClock = FindObjectOfType<BackWallClock>();
         myState = MasterState.Menu;
         Invoke("TEMPStartGame", 2);
 	}
@@ -64,10 +71,15 @@ public class MasterController : MonoBehaviour {
     void TEMPStartGame()
     {
         PrepareLevel(2);
+
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        // Monitor Pause Button and if pressed -
+        // call PauseGame()
+
 
         switch (myState)
         {
@@ -78,36 +90,80 @@ public class MasterController : MonoBehaviour {
                 // Allow currentLevel to be set by menu system
                 break;
 
-            case MasterState.OpeningTitles:
+            case MasterState.StartLevel:
                 // If in Opening Titles State
                 // Fade "DAY ???" title
                 // When done call PreLevel()
+
                 PreLevel();
+
                 break;
 
-            case MasterState.Waiting:
+            case MasterState.WaitingForPlayer:
 
                 // If in Waiting State
                 // Check if Condition is met
                 if (Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
-                    StartLevel();
+                    PrepareAdvert(myLevelData.preRollSmaller, myLevelData.preRollAudio);
                 }
                 // Make relevant action (Send Fax, Phone Call, Display/Clear Tutorial text, etc)
                 // Move to next condition
                 // If at end of list of Pre-Conditions StartLevel
                 break;
 
+            case MasterState.PreparingAd:
+
+                // Wait for Advert to finish preparing then play ad and start clock
+                if (!preparingAd)
+                {
+                    Debug.Log("MASTER CONTROLLER AD PREPARED - PLAYING.");
+                    // Play Ad, start clock
+                    myBroadcastScreen.PlayAdvert();
+                    myClock.StartClock();
+                    if (currentSequence == 0)
+                    {
+                        StartLevel();
+                    }
+                    myState = MasterState.PlayingAd;
+                }
+                break;
+
+            case MasterState.PlayingAd:
+
+                // If in AdBreak State
+                // Do InGameManagement();
+                InGameManagement();
+                // Wait for Vision Mixer to announce end of post roll then
+                if (!myVisionMixer.inPostRoll)
+                {
+                    startPreRollTime = mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence]);
+                    Debug.Log("Intending to start sequence when clock hits" + startPreRollTime);
+
+                }
+                // When MasterClock is at top of Preroll Start Sequence
+
+                break;
+
             case MasterState.Active:
 
                 // If in Active State
-                // Advance Master Level Clock
-                // Monitor and trigger game events
+                InGameManagement();
+                // If Overrunning
+                    // Decrement overrunTime;
+                    // If it hits Zero there is no signal and the level is failed (NO ADVERT PLAYED)
                 // Monitor Pause Button and if pressed -
                 // call PauseGame()
                 break;
 
-            case MasterState.PostLevel:
+
+            case MasterState.EndOfLevel:
+
+                // If in PostLevel State
+                // Wait Until OK is pressed on Scoreboard then activate "Upgrade/Repair Menu" (this might be handled from GUI Controller
+                break;
+
+            case MasterState.FailLevel:
 
                 // If in PostLevel State
                 // Wait Until OK is pressed on Scoreboard then activate "Upgrade/Repair Menu" (this might be handled from GUI Controller
@@ -119,15 +175,6 @@ public class MasterController : MonoBehaviour {
                 // Wait for menu system to send resume then call ResumeGame();
                 break;
 
-            case MasterState.PostRoll:
-
-                // If in Post Roll State
-                // Wait for Vision Mixer to announce end of post roll then
-                //if (!myVisionMixer.inPostRoll)
-                //{
-                    mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence - 1], nextAdvert, nextAdvertAudio);
-                //}
-                break;
 
             default:
 
@@ -136,6 +183,40 @@ public class MasterController : MonoBehaviour {
                 break;
         }
 
+    }
+
+    void InGameManagement()
+    {
+        // Advance Master Clock
+        // Monitor and trigger game events
+
+    }
+
+    public void ClockAtZero()
+    {
+        switch (myState)
+        {
+            case MasterState.Active:
+                // Player Is Overrunning
+                Debug.Log("MASTER CONTROLLER: CLOCK AT ZERO - PLAYER IS OVER-RUNNING");
+                // Player is OverRunning ad point
+                // Sound Overrun Alarm
+                overRunning = true;
+                overrunTime = mySequenceController.mySequence.runOut;
+
+                break;
+
+            case MasterState.PlayingAd:
+            case MasterState.PreparingAd:
+
+                // Advert is Over
+                ////Debug.Log("ClockAtZero Called.");
+                Debug.Log("MASTER CONTROLLER: CLOCK AT ZERO ON ADVERT.");
+                mySequenceController.GoLive();
+                break;
+
+
+        }
     }
 
     void PrepareLevel(int thisLevel)
@@ -150,10 +231,10 @@ public class MasterController : MonoBehaviour {
         string thisLevelName = myLevelData.levelName;
         Debug.Log("MC: Day " + thisDay+".  "+thisLevelName+".");
         // Set Mode to OpeningTitles
-        myState = MasterState.OpeningTitles;
+        myState = MasterState.StartLevel;
         // Mute Ambient Sound (But not "DAY ???" SFX).
         // Read RoomState info array and set objects to match
-            // THIS INCLUDES: Power switches, FanLock, VM Link Switch, 
+        // THIS INCLUDES: Power switches, FanLock, VM Link Switch, 
         // Tell Scoring System to Initialise
 
     }
@@ -164,30 +245,45 @@ public class MasterController : MonoBehaviour {
         if (myLevelData.loopRoll)
         {
             // YES - Start Loop Clip
-            myBroadcastTV.PlayPreLoop(myLevelData.loopRollSmaller, myLevelData.loopRollAudio);
+            myBroadcastScreen.PlayPreLoop(myLevelData.loopRollSmaller, myLevelData.loopRollAudio);
             // Enter Waiting State
-            myState = MasterState.Waiting;
+            myState = MasterState.WaitingForPlayer;
+
+        } else
+        {
+            PrepareAdvert(myLevelData.preRollSmaller, myLevelData.preRollAudio);
+            myState = MasterState.PreparingAd;
 
         }
 
-        // NO - Call StartLevel
 
 
     }
 
+    void PrepareAdvert(VideoClip thisAdvert, AudioClip thisAdvertAudio)
+    {
+        Debug.Log("MASTER CONT: PREPARING ADVERT - " + thisAdvert);
+        // Set clock to Ad-Length second countdown minus broadcast delay - First Ad is always "Later tonight...."?
+        float thisPreLevelLength = (float)thisAdvert.length;
+        myClock.SetTimeAndHold(thisPreLevelLength - broadcastScreenDelayTime, true);
+
+        // Prepare Ad (or countdown if at start) on Broadcast screen
+        myBroadcastScreen.PrepareAdvert(thisAdvert, thisAdvertAudio);
+        preparingAd = true;
+
+        myState = MasterState.PreparingAd;
+
+    }
+
+
     void StartLevel()
     {
+        Debug.Log("MASTER CONT: INITIALISING EVENT MONITORING, INTERFERNECE LOGGING, AND MASTER CLOCK.");
         // Begin recording Interference (this is done from elsewhere as a consequence of setting mode to Active
         // Begin running Game Events
         // Start Master Level Clock
         masterLevelClock = 0;
         // Tell Sequence Controller to start first sequence
-        Debug.Log("Preparing Sequence: " + myLevelData.sequenceNames[currentSequence]);
-        mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence], myLevelData.preRollSmaller, myLevelData.preRollAudio);
-        // Set currentSequence to 1
-        currentSequence = 1;
-        // Enter Active State
-        myState = MasterState.Active;
     }
 
     public void SequenceComplete(VideoClip thisAdvert, AudioClip thisAdvertAudio)
@@ -197,7 +293,7 @@ public class MasterController : MonoBehaviour {
         // Is sequence count less than 4?
         if (currentSequence < 4)
         {
-            Debug.Log("STARTING SEQUENCE " + myLevelData.sequenceNames[currentSequence - 1]);
+            Debug.Log("STARTING SEQUENCE " + myLevelData.sequenceNames[currentSequence]);
             // Yes - 
             // Copy EDL into Array for storage before Sequence Controller wipes it
             // Put the Vision Mixer into ResetSystem Mode
@@ -206,10 +302,8 @@ public class MasterController : MonoBehaviour {
             //nextAdvertAudio = thisAdvertAudio;
             //myState = MasterState.PostRoll;
 
-            // Start next Sequence.
-
-            mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence - 1], thisAdvert, thisAdvertAudio);
-
+            // Enter Ad Break Mode
+            myState = MasterState.PlayingAd;
         }
         else
         {
@@ -279,11 +373,5 @@ public class MasterController : MonoBehaviour {
 
             }
         }
-        //NoSignal[] theseNoSignals = FindObjectsOfType<NoSignal>();
-        //foreach (NoSignal thisNoSignal in theseNoSignals)
-        //{
-        //    thisNoSignal.GetComponent<MeshRenderer>().enabled = true;
-        //}
-
     }
 }

@@ -15,11 +15,11 @@ public class BackWallClock : MonoBehaviour {
     private string framesString;
     private bool isRunning;
     private float clockTime = 0f;
-    private SequenceController myController;
+    private MasterController myController;
 
 	// Use this for initialization
 	void Start () {
-        myController = FindObjectOfType<SequenceController>();
+        myController = FindObjectOfType<MasterController>();
 	}
 	
 	// Update is called once per frame

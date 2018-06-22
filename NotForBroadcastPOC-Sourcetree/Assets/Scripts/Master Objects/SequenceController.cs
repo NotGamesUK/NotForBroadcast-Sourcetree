@@ -6,12 +6,11 @@ using UnityEngine.Video;
 public class SequenceController : MonoBehaviour {
 
     [Tooltip("Number of seconds delay between broadcast screen and master screen")]
-    public float broadcastScreenDelayTime;
     public string sequenceName;
     //[HideInInspector]
     public int preparedScreensCount, targetScreensCount;
-    public VideoClip TEMPPreRollVideo;
-    public AudioClip TEMPPreRollAudio;
+    [HideInInspector]
+    public DataStorage.SequenceData mySequence;
 
 
     private DataStorage myDataStore;
@@ -33,7 +32,9 @@ public class SequenceController : MonoBehaviour {
     private double thisSequenceVideoLength;
     private enum GameTypes { Headlines, Live }
     private GameTypes myGameType;
-    
+    [HideInInspector]
+    public float broadcastScreenDelayTime;
+
 
 
 
@@ -48,6 +49,7 @@ public class SequenceController : MonoBehaviour {
         myClock = FindObjectOfType<BackWallClock>();
         myBroadcastScreen = FindObjectOfType<BroadcastTV>();
         myVHSControlPanel = FindObjectOfType<VHSControlPanel>();
+        broadcastScreenDelayTime = myMasterController.broadcastScreenDelayTime;
     }
 
 
@@ -55,41 +57,40 @@ public class SequenceController : MonoBehaviour {
     void Update()
     {
         // If waiting for screens...
-        if (waitingForScreens)
-        {
-            // If Advert Screen is Prepared (CHECK preRollReady - is set by Broadcast system): START CLOCK. START AD SCREEN.
-            if (preRollReady)
-            {
-                myBroadcastScreen.PlayAdvert();
-                myClock.StartClock();
-                isPlayingAd = true;
-                preRollReady = false;
-                waitingForScreens = false;
-                // Invoke StartSequence in Ad-length Seconds minus Run-In Seconds
-                Invoke("StartSequence", thisPreSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn - broadcastScreenDelayTime);
-            }
+        //if (waitingForScreens)
+        //{
+        //    // If Advert Screen is Prepared (CHECK preRollReady - is set by Broadcast system): START CLOCK. START AD SCREEN.
+        //    if (preRollReady)
+        //    {
+        //        isPlayingAd = true;
+        //        preRollReady = false;
+        //        waitingForScreens = false;
+        //        // Invoke StartSequence in Ad-length Seconds minus Run-In Seconds
+        //        Invoke("StartSequence", thisPreSequenceVideoLength - mySequence.runIn - broadcastScreenDelayTime);
+        //    }
+        //}
 
-        }
+        //if (overrunning)
+        //{
+        //    // Player should have played Advert, we are broadcasting PostRoll.
+        //    overrunTime -= Time.deltaTime;
+        //    // Flash Screen Border Red (or some such)
 
-        if (overrunning)
-        {
-            // Player should have played Advert, we are broadcasting PostRoll.
-            overrunTime -= Time.deltaTime;
-            // Flash Screen Border Red (or some such)
-
-            // Has Time run out?
-            if (overrunTime<=0)
-            {
-                myMasterController.FailMidLevel();
-                overrunning = false;
-            }
-        }
+        //    // Has Time run out?
+        //    if (overrunTime<=0)
+        //    {
+        //        myMasterController.FailMidLevel();
+        //        overrunning = false;
+        //    }
+        //}
     }
 
-    public void PrepareSequence(string thisSequenceName, VideoClip thisAdvert, AudioClip thisAdvertAudio)
+    public float PrepareSequence(string thisSequenceName) // Returns Time to Start Pre-Roll
     {
+        Debug.Log("SEQUENCE CONTROLLER: PREPARE SEQUENCE CALLED "+thisSequenceName);
         foundPos = -1;
         int thisLength = myDataStore.sequenceData.Length;
+
         //print("Searching For Sequence: " + thisSequenceName);
         for (int n = 0; n < thisLength; n++)
         {
@@ -102,42 +103,36 @@ public class SequenceController : MonoBehaviour {
         if (foundPos == -1)
         {
             Debug.LogError("Cannot Find Sequence with name: " + thisSequenceName);
-            return; // BREAK OUT OF LOAD LOOP EARLY AS THERE IS NO SEQUENCE HERE
+            return 0; // BREAK OUT OF LOAD LOOP EARLY AS THERE IS NO SEQUENCE HERE
         }
         sequenceName = thisSequenceName;
+        // Make Local Copy of Sequence Data
+        mySequence = myDataStore.sequenceData[foundPos];
         // Set prepared screens count to 0
         preparedScreensCount = 0;
         // Tell each VM screen and Broadcast Screens to prepare and increment targetcount AND Tell AudioInterference to Prepare (send Null as third parameter if no AudioInterference required at start)
-        myVisionMixer.PrepareScreens(myDataStore.sequenceData[foundPos].screenVideo, myDataStore.sequenceData[foundPos].screenAudio);
-        myBroadcastScreen.PrepareScreens(myDataStore.sequenceData[foundPos].screenVideo, myDataStore.sequenceData[foundPos].screenAudio, myDataStore.sequenceData[foundPos].AudioInterference);
-        targetScreensCount = myDataStore.sequenceData[foundPos].screenVideo.Length*2;
+        myVisionMixer.PrepareScreens(mySequence.screenVideo, myDataStore.sequenceData[foundPos].screenAudio);
+        myBroadcastScreen.PrepareScreens(mySequence.screenVideo, mySequence.screenAudio, mySequence.AudioInterference);
+        targetScreensCount = mySequence.screenVideo.Length*2;
 
         // Get Length of Video for Screen 01
-        thisSequenceVideoLength= myDataStore.sequenceData[foundPos].screenVideo[0].length;
+        thisSequenceVideoLength= mySequence.screenVideo[0].length;
         //Debug.Log("Returned Length: " + thisSequenceVideoLength + " seconds.");
 
-        // Set clock to Ad-Length second countdown minus broadcast delay - First Ad is always "Later tonight...."?
-        thisPreSequenceVideoLength = (float)thisAdvert.length;
-        myClock.SetTimeAndHold(thisPreSequenceVideoLength-broadcastScreenDelayTime, true);
-
-        // Prepare Ad (or countdown if at start) on Broadcast screen
-        myBroadcastScreen.PrepareAdvert(thisAdvert, thisAdvertAudio);
+        // Clock and Advert prepared in Master sequence - prerollready set to true by MasterController when ready to prepare
         preRollReady = false;
 
         // Tell Resistance Screen to prepare (and increment targetcount if required)
-        myBroadcastScreen.PrepareResistance(myDataStore.sequenceData[foundPos].resistanceVideo, myDataStore.sequenceData[foundPos].resistanceAudio);
-
-        
+        myBroadcastScreen.PrepareResistance(mySequence.resistanceVideo, mySequence.resistanceAudio);
 
         // Load Level into Level Controller
-        myInterferenceSystem.SpawnLevel(myDataStore.sequenceData[foundPos].interferenceLevel.transform);
+        myInterferenceSystem.SpawnLevel(mySequence.interferenceLevel.transform);
 
-        // Tell update to begin monitoring prepared screens count until target is reached - all ready
-        waitingForScreens = true;
-
+        // return preRollLength to Master Controller
+        return mySequence.runIn;
     }
 
-    void StartSequence()
+    public void StartSequence()
     {
         //Debug.Log("STARTING SCREENS");
         // if TARGET COUNT=PREPARED COUNT:
@@ -170,26 +165,21 @@ public class SequenceController : MonoBehaviour {
         // Set Mode to follow EDL
     }
 
-    public void ClockAtZero() // CALLED BY WALL CLOCK WHEN TIMER REACHES ZERO
+    public void GoLive() {// CALLED BY MASTER CONTROLLER REACHES ZERO
 
-    // If playing an Advert Tell Broadcast System to End Advert and Start Sequence after broadcastscreen delay
-    {
-        ////Debug.Log("ClockAtZero Called.");
-        if (isPlayingAd)
-        {
-            Debug.Log("CLOCK AT ZERO ON ADVERT.");
-            Invoke("SwitchBroadcastSystemToLive", broadcastScreenDelayTime);
-            myClock.SetTimeAndHold((float)thisSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn - myDataStore.sequenceData[foundPos].runOut +broadcastScreenDelayTime, false);
-        } else {
-            if (!overrunning)
-            {
-                Debug.Log("PLAYER IS OVER-RUNNING");
-                // Player is OverRunning ad point
-                // Sound Overrun Alarm
-                overrunning = true;
-                overrunTime = myDataStore.sequenceData[foundPos].runOut;
-            } 
-        }
+        Debug.Log("SEQUENCE CONTROLLER: GOING LIVE");
+        Invoke("SwitchBroadcastSystemToLive", broadcastScreenDelayTime);
+        myClock.SetTimeAndHold((float)thisSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn - myDataStore.sequenceData[foundPos].runOut + broadcastScreenDelayTime, false);
+        //    } else {
+        //        if (!overrunning)
+        //        {
+        //            Debug.Log("PLAYER IS OVER-RUNNING");
+        //            // Player is OverRunning ad point
+        //            // Sound Overrun Alarm
+        //            overrunning = true;
+        //            overrunTime = myDataStore.sequenceData[foundPos].runOut;
+        //        } 
+        //    }
 
     }
 
