@@ -10,7 +10,7 @@ public class TapeLoader : MonoBehaviour {
     public VHSTape myTape;
     private VHSPlayer myPlayer;
     public VHSMachineSlot mySlot;
-    public float ejectDistance=0.07f;
+    public float ejectDistance=0.08f;
     public float loadSpeed=2f;
 
 	// Use this for initialization

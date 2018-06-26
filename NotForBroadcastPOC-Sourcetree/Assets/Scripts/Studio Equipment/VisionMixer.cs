@@ -11,7 +11,7 @@ public class VisionMixer : MonoBehaviour {
     public Television masterScreen;
     public VideoClip barsAndTone;
     public AudioClip barsAndToneAudio;
-    private Switch myLinkSwitch;
+    public Switch myLinkSwitch;
     private SoundDesk myMixingDesk;
     private bool hasPower;
     [HideInInspector]
@@ -29,7 +29,7 @@ public class VisionMixer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        myLinkSwitch = GetComponentInChildren<Switch>();
+        //myLinkSwitch = GetComponentInChildren<Switch>();
         myMixingDesk = FindObjectOfType<SoundDesk>();
         myEDLController = FindObjectOfType<EDLController>();
         currentScreen = 0;
