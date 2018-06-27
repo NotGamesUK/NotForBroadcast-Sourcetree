@@ -48,7 +48,8 @@ public class MasterController : MonoBehaviour {
     private EDLController myEDLController;
     private VisionMixer myVisionMixer;
     private BackWallClock myClock;
-    private int currentLevel;
+    [HideInInspector]
+    public int currentLevel;
     private int currentSequence;
     private LevelData myLevelData;
     public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
@@ -67,7 +68,7 @@ public class MasterController : MonoBehaviour {
         myState = MasterState.Menu;
 	}
 
-    public void TEMPStartGame(int thisLevel)
+    public void StartBroadcast(int thisLevel)
     {
         PrepareLevel(thisLevel);
 
