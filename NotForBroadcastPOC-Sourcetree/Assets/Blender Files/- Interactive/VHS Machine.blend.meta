@@ -11,6 +11,7 @@ ModelImporter:
     100010: Tape_Load_Point
     100012: Flap
     100014: VHS_Machine_High_Poly
+    100016: rack_frame
     400000: Cube_001
     400002: //RootNode
     400004: VHS_Machine
@@ -19,28 +20,33 @@ ModelImporter:
     400010: Tape_Load_Point
     400012: Flap
     400014: VHS_Machine_High_Poly
+    400016: rack_frame
     2100000: Material
     2100002: Material_001
     2100004: Material_002
     2100006: unnamed
+    2100008: Material_004
     2300000: Cube_001
     2300002: VHS_Machine
     2300004: Eject_Button
     2300006: Slot
     2300008: Flap
     2300010: VHS_Machine_High_Poly
+    2300012: rack_frame
     3300000: Cube_001
     3300002: VHS_Machine
     3300004: Eject_Button
     3300006: Slot
     3300008: Flap
     3300010: VHS_Machine_High_Poly
+    3300012: rack_frame
     4300000: VHS_Machine
     4300002: Cube_001
     4300004: Eject_Button
     4300006: Slot
     4300008: Flap
     4300010: VHS_Machine_High_Poly
+    4300012: rack_frame
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

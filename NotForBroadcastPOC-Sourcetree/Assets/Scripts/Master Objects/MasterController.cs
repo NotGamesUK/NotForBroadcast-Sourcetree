@@ -65,12 +65,11 @@ public class MasterController : MonoBehaviour {
         myVisionMixer = FindObjectOfType<VisionMixer>();
         myClock = FindObjectOfType<BackWallClock>();
         myState = MasterState.Menu;
-        Invoke("TEMPStartGame", 0.1f);
 	}
 
-    void TEMPStartGame()
+    public void TEMPStartGame(int thisLevel)
     {
-        PrepareLevel(1);
+        PrepareLevel(thisLevel);
 
     }
 	
