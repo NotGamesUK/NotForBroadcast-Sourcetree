@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: a05cb1d2ac08a0b43bb6c304e947ddf3
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Eject_Button
+    100002: Fast_Forward_Button
+    100004: Pause_Button
+    100006: //RootNode
+    100008: Rewind_Button
+    100010: Tv
+    100012: vhs_FLAP
+    100014: vhs_section_High_poly
+    100016: vhs_slot
+    400000: Eject_Button
+    400002: Fast_Forward_Button
+    400004: Pause_Button
+    400006: //RootNode
+    400008: Rewind_Button
+    400010: Tv
+    400012: vhs_FLAP
+    400014: vhs_section_High_poly
+    400016: vhs_slot
+    2100000: Material
+    2100002: flap
+    2300000: Eject_Button
+    2300002: Fast_Forward_Button
+    2300004: Pause_Button
+    2300006: Rewind_Button
+    2300008: Tv
+    2300010: vhs_FLAP
+    2300012: vhs_section_High_poly
+    2300014: vhs_slot
+    3300000: Eject_Button
+    3300002: Fast_Forward_Button
+    3300004: Pause_Button
+    3300006: Rewind_Button
+    3300008: Tv
+    3300010: vhs_FLAP
+    3300012: vhs_section_High_poly
+    3300014: vhs_slot
+    4300000: Pause_Button
+    4300002: Rewind_Button
+    4300004: Fast_Forward_Button
+    4300006: Eject_Button
+    4300008: vhs_section_High_poly
+    4300010: vhs_slot
+    4300012: vhs_FLAP
+    4300014: Tv
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
