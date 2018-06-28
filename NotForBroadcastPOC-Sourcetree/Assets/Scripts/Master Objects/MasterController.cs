@@ -45,6 +45,7 @@ public class MasterController : MonoBehaviour {
     private AudioClip nextAdvertAudio;
     private SequenceController mySequenceController;
     private BroadcastTV myBroadcastScreen;
+    private GUIController myGUIController;
     private EDLController myEDLController;
     private VisionMixer myVisionMixer;
     private BackWallClock myClock;
@@ -63,6 +64,7 @@ public class MasterController : MonoBehaviour {
         mySequenceController = GetComponent<SequenceController>();
         myEDLController = GetComponent<EDLController>();
         myBroadcastScreen = FindObjectOfType<BroadcastTV>();
+        myGUIController = FindObjectOfType<GUIController>();
         myVisionMixer = FindObjectOfType<VisionMixer>();
         myClock = FindObjectOfType<BackWallClock>();
         myState = MasterState.Menu;
@@ -328,6 +330,13 @@ public class MasterController : MonoBehaviour {
     {
         // Advance Sequence Count
         currentSequence++;
+
+
+        //TESTING: REMOVE -------------------
+        currentSequence = 4;
+        // ----------------------------------
+
+
         // Is sequence count less than 4?
         if (currentSequence < 3)
         {
@@ -348,7 +357,7 @@ public class MasterController : MonoBehaviour {
             myVisionMixer.inPostRoll = true;
             PrepareAdvert(thisAdvert, thisAdvertAudio);
             // Call LevelComplete()
-
+            LevelComplete();
         }
 
 
@@ -359,7 +368,8 @@ public class MasterController : MonoBehaviour {
         // Enter PostLevel State
         myState = MasterState.EndOfLevel;
         // Tell GUI to Display Scorecard, Update/Repair Sequence, and End Level GUI - Watch Broadcast, Replay, Continue.  
-
+        myGUIController.GoToSuccess();
+        
 
     }
 
@@ -391,6 +401,7 @@ public class MasterController : MonoBehaviour {
         // Play tapeSlowdownSound
         // Fade Screen to black
         // Tell GUI to show Level Failed Menu
+        myGUIController.GoToFailed(thisReason);
         myState = MasterState.FailLevel;
     }
 

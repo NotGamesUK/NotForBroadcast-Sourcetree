@@ -12,9 +12,17 @@ public class GUIController : MonoBehaviour
 
     public GameObject mainMenu;
     public GameObject optionsMenu;
-    public GameObject levelEndMenu;
+    public GameObject succeedMenu;
     public GameObject upgradesMenu;
     public GameObject playbackMenu;
+    public GameObject failMenu;
+
+    public AudioClip mainMenuMusic;
+    public AudioClip pauseMenuMusic;
+    public AudioClip succeedMenuMusic;
+    public AudioClip upgradeMenuMusic;
+    public AudioClip failMenuMusic;
+    public AudioClip playbackMenuMusic;
 
     private AudioSource myMusicPlayer;
     private MasterController myMasterController;
@@ -26,93 +34,96 @@ public class GUIController : MonoBehaviour
     {
         myMasterController = FindObjectOfType<MasterController>();
         myMusicPlayer = GetComponent<AudioSource>();
+
+        // Default to Main Menu:
         gameCamera.SetActive(false);
         menuCamera.SetActive(true);
         playbackCamera.SetActive(false);
         mainMenu.SetActive(true);
+        myMusicPlayer.clip = mainMenuMusic;
+        myMusicPlayer.loop = true;
         myMusicPlayer.Play();
-        upgradesMenu.SetActive(false);
         currentMenu = mainMenu;
         currentCamera = menuCamera;
+
 
     }
 
     public void StartBroadcast(int thisBroadcast)
     {
-        mainMenu.SetActive(false);
-        myMusicPlayer.Stop();
-        gameCamera.SetActive(true);
-        menuCamera.SetActive(false);
-        currentCamera = gameCamera;
+        ChangeMenuTo(null);
+        ChangeCameraTo(gameCamera);
+        ChangeMusicTo(null);
         myMasterController.StartBroadcast(thisBroadcast);
     }
 
     public void GoToOptions()
     {
-        mainMenu.SetActive(false);
-        optionsMenu.SetActive(true);
-        currentMenu = optionsMenu;
+        ChangeMenuTo(optionsMenu);
     }
 
     public void GoToMainMenu()
     {
-        if (currentCamera != menuCamera)
-        {
-            menuCamera.SetActive(true);
-            currentCamera.SetActive(false);
-            currentCamera = menuCamera;
-
-        }
-        currentMenu.SetActive(false);
-        mainMenu.SetActive(true);
-        currentMenu = mainMenu;
+        ChangeCameraTo(menuCamera);
+        ChangeMenuTo(mainMenu);
+        ChangeMusicTo(mainMenuMusic);
     }
 
 
     public void GoToPlayback()
     {
-        if (currentMenu = mainMenu) { cameFromMain = true; } else { cameFromMain = false; }
-        currentMenu.SetActive(false);
-        playbackMenu.SetActive(true);
-        playbackCamera.SetActive(true);
-        currentCamera.SetActive(false);
-        currentCamera = playbackCamera;
-        currentMenu = playbackMenu;
+        if (currentMenu == mainMenu) { cameFromMain = true; } else { cameFromMain = false; }
+        ChangeCameraTo(playbackCamera);
+        ChangeMenuTo(playbackMenu);
+        ChangeMusicTo(playbackMenuMusic);
     }
 
     public void LeavePlayback()
     {
-        menuCamera.SetActive(true);
-        currentCamera = menuCamera;
+        ChangeCameraTo(menuCamera);
+        ChangeMusicTo(mainMenuMusic);
 
         if (cameFromMain == true) {
-            mainMenu.SetActive(true);
-            currentMenu = mainMenu;
+            ChangeMenuTo(mainMenu);
         } else
         {
             // Came from End of Level
-            levelEndMenu.SetActive(true);
-            currentMenu = levelEndMenu;
+            ChangeMenuTo(succeedMenu);
         }
-        playbackMenu.SetActive(false);
-        playbackCamera.SetActive(false);
 
     }
 
     public void GoToUpgrades()
     {
-        currentMenu.SetActive(false);
-        upgradesMenu.SetActive(true);
-        currentMenu = upgradesMenu;
+        ChangeMenuTo(upgradesMenu);
+        ChangeMusicTo(upgradeMenuMusic);
+    }
+
+    public void GoToSuccess()
+    {
+        // Initialise Audience Display to animate in.
+        // Set Notes
+        // Set Grade
+        // Set Income
+        ChangeCameraTo(menuCamera);
+        ChangeMenuTo(succeedMenu);
+        ChangeMusicTo(succeedMenuMusic);
+
+    }
+
+    public void GoToFailed(string thisReason)
+    {
+        // Set Reason for Fail
+        ChangeCameraTo(menuCamera);
+        ChangeMenuTo(failMenu);
+        ChangeMusicTo(failMenuMusic);
     }
 
     public void ReplayLevel()
     {
-        gameCamera.SetActive(true);
-        currentMenu.SetActive(false);
-        currentCamera.SetActive(false);
-        currentMenu = null;
-        currentCamera = null;
+        ChangeCameraTo(gameCamera);
+        ChangeMenuTo(null);
+        ChangeMusicTo(null);
         myMasterController.StartBroadcast(myMasterController.currentLevel);
 
     }
@@ -120,16 +131,61 @@ public class GUIController : MonoBehaviour
     public void NextLevel()
     {
         // Simple version for Proof of Concept - needs expansion for full version
-        gameCamera.SetActive(true);
-        currentMenu.SetActive(false);
-        currentCamera.SetActive(false);
-        currentMenu = null;
-        currentCamera = null;
+        ChangeCameraTo(gameCamera);
+        ChangeMenuTo(null);
+        ChangeMusicTo(null);
         myMasterController.StartBroadcast(2);
 
 
     }
     // Update is called once per frame
+
+    void ChangeMusicTo(AudioClip thisMusic)
+    {
+        if (myMusicPlayer.clip != thisMusic)
+        {
+            if (thisMusic)
+            {
+                myMusicPlayer.clip = thisMusic;
+                myMusicPlayer.Play();
+            } else
+            {
+                myMusicPlayer.Stop();
+            }
+        }
+    }
+
+    void ChangeCameraTo (GameObject thisCamera)
+    {
+        if (currentCamera != thisCamera)
+        {
+            thisCamera.SetActive(true);
+            currentCamera.SetActive(false);
+            currentCamera = thisCamera;
+        }
+    }
+
+    void ChangeMenuTo (GameObject thisMenu)
+    {
+        if (currentMenu != thisMenu)
+        {
+            if (thisMenu)
+            {
+                thisMenu.SetActive(true);
+                if (currentMenu)
+                {
+                    currentMenu.SetActive(false);
+                }
+                currentMenu = thisMenu;
+            }
+            else
+            {
+                currentMenu.SetActive(false);
+                currentMenu = null;
+            }
+        }
+
+    }
 
     void Update ()
     {
