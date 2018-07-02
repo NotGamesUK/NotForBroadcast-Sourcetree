@@ -32,7 +32,7 @@ public class InterferenceSystem : MonoBehaviour {
     {
         if (currentLevel)
         {
-            Destroy(currentLevel);
+            Destroy(currentLevel.gameObject);
         }
         currentLevel = Instantiate(thisLevel, this.transform, false);
         myLevel = currentLevel.GetComponent<LevelController>();

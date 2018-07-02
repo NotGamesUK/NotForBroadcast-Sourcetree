@@ -26,7 +26,7 @@ public class Speakers : MonoBehaviour {
             thisLight.enabled = true;
         }
         // UnMute all sound
-        myDesk.SetFloat("MasterVol", 0f);
+        myDesk.SetFloat("SpeakersVol", 0f);
     }
 
     void PowerOff()
@@ -36,7 +36,7 @@ public class Speakers : MonoBehaviour {
             thisLight.enabled = false;
         }
         // Mute all sound
-        myDesk.SetFloat("MasterVol", -80f);
+        myDesk.SetFloat("SpeakersVol", -80f);
 
     }
 

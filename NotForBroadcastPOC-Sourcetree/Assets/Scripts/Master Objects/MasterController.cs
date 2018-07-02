@@ -58,6 +58,7 @@ public class MasterController : MonoBehaviour {
     [HideInInspector]
     public bool preparingAd, overRunning;
     private float overrunTime, startPreRollTime;
+    private List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
 
     // Use this for initialization
     void Start () {
@@ -333,7 +334,7 @@ public class MasterController : MonoBehaviour {
 
 
         //TESTING: REMOVE -------------------
-        currentSequence = 4;
+        //currentSequence = 4;
         // ----------------------------------
 
 
@@ -343,6 +344,7 @@ public class MasterController : MonoBehaviour {
             Debug.Log("MASTER CONTROLLER SEQUENCE COMPLETE.  NEXT SEQUENCE:" + myLevelData.sequenceNames[currentSequence]);
             // Yes - 
             // Copy EDL into Array for storage before Sequence Controller wipes it
+            broadcastEDL[currentSequence] = myEDLController.EDL;
             // Put the Vision Mixer into ResetSystem Mode
             myVisionMixer.inPostRoll = true;
 

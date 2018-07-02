@@ -105,15 +105,32 @@ public class SoundDesk : MonoBehaviour {
         thisVolume = 1 - thisVolume;
         storedMasterVolume = thisVolume * -80f;
         if (masterIsMuted) { thisVolume = 0; }
-        myDesk.SetFloat("ControlRoomVol", thisVolume*-80f);
+        myDesk.SetFloat("ControlRoomVol", LinearToDecibel(1 - thisVolume));
     }
 
     public void SetBroadcastVolume(float thisVolume)
     {
         thisVolume = 1 - thisVolume;
         storedBroadcastVolume = thisVolume * -80f;
-        if (broadcastIsMuted) { thisVolume = 0; }
-        myDesk.SetFloat("BroadcastVol", thisVolume * -80f);
+        if (broadcastIsMuted) { thisVolume = 1; }
+        myDesk.SetFloat("BroadcastVol", LinearToDecibel(1-thisVolume));
+    }
+
+    public void SetGUIMasterVolume(float thisVolume)
+    {
+        myDesk.SetFloat("MasterVol", LinearToDecibel(thisVolume));
+    }
+    public void SetGUIMusicVolume(float thisVolume)
+    {
+        myDesk.SetFloat("GUIMusic", LinearToDecibel(thisVolume));
+    }
+    public void SetGUIRoomVolume(float thisVolume)
+    {
+        myDesk.SetFloat("GUIRoom", LinearToDecibel(thisVolume));
+    }
+    public void SetGUISignalVolume(float thisVolume)
+    {
+        myDesk.SetFloat("GUISignal", LinearToDecibel(thisVolume));
     }
 
     public void SetWhiteNoiseAudioLevel(float thisVol)
