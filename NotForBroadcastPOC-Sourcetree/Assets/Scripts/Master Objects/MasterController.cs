@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class MasterController : MonoBehaviour {
 
@@ -33,6 +36,9 @@ public class MasterController : MonoBehaviour {
 
     }
 
+    public static MasterController uniqueMasterController;
+
+
     public float broadcastScreenDelayTime=2;
 
     public LevelData[] levelData;
@@ -59,6 +65,21 @@ public class MasterController : MonoBehaviour {
     public bool preparingAd, overRunning;
     private float overrunTime, startPreRollTime;
     private List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
+
+
+    private void Awake()
+    {
+        if (uniqueMasterController == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            uniqueMasterController = this;
+        }
+        else if (uniqueMasterController != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     // Use this for initialization
     void Start () {
@@ -320,7 +341,7 @@ public class MasterController : MonoBehaviour {
     void StartLevel()
     {
         Debug.Log("MASTER CONT: INITIALISING EVENT MONITORING, INTERFERNECE LOGGING, AND MASTER CLOCK.");
-        // Begin recording Interference (this is done from elsewhere as a consequence of setting mode to Active
+        // Begin recording Interference (this is done from elsewhere as a consequence of setting mode to Active)
         // Begin running Game Events
         // Start Master Level Clock
         masterLevelClock = 0;
@@ -329,6 +350,7 @@ public class MasterController : MonoBehaviour {
 
     public void SequenceComplete(VideoClip thisAdvert, AudioClip thisAdvertAudio)
     {
+        SortAndSaveEDL();
         // Advance Sequence Count
         currentSequence++;
 
@@ -343,8 +365,7 @@ public class MasterController : MonoBehaviour {
         {
             Debug.Log("MASTER CONTROLLER SEQUENCE COMPLETE.  NEXT SEQUENCE:" + myLevelData.sequenceNames[currentSequence]);
             // Yes - 
-            // Copy EDL into Array for storage before Sequence Controller wipes it
-            broadcastEDL[currentSequence] = myEDLController.EDL;
+
             // Put the Vision Mixer into ResetSystem Mode
             myVisionMixer.inPostRoll = true;
 
@@ -365,13 +386,35 @@ public class MasterController : MonoBehaviour {
 
     }
 
+    void SortAndSaveEDL()
+    {
+        // Copy EDL into Array for storage before Sequence Controller wipes it
+        broadcastEDL[currentSequence] = myEDLController.EDL;
+        broadcastEDL[currentSequence].Sort();
+
+        // DEBUG - List sorted EDL            
+        int decisionCount = 1;
+        Debug.Log("This is EDL[" + currentSequence + "]");
+        foreach (EditDecision thisEdit in broadcastEDL[currentSequence])
+        {
+            print("Sorted Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+            decisionCount++;
+        }
+
+    }
+
     void LevelComplete()
     {
         // Enter PostLevel State
         myState = MasterState.EndOfLevel;
         // Tell GUI to Display Scorecard, Update/Repair Sequence, and End Level GUI - Watch Broadcast, Replay, Continue.  
         myGUIController.GoToSuccess();
-        
+
+
+        // LOAD AND SAVE TEST
+
+        SaveBroadcast("TestSave");
+        LoadBroadcast("TestSave");
 
     }
 
@@ -424,4 +467,72 @@ public class MasterController : MonoBehaviour {
             }
         }
     }
+
+    void SaveBroadcast(string thisSaveName)
+    {
+        BinaryFormatter myFormatter = new BinaryFormatter();
+        FileStream thisOpenedFile = File.Open(Application.persistentDataPath + "/"+thisSaveName+".dat", FileMode.OpenOrCreate);
+
+        BroadcastSaveData thisSaveData = new BroadcastSaveData();
+        thisSaveData.levelNumber = currentLevel;
+        for (int n=0; n<=2; n++)
+        {
+            thisSaveData.savedEDL[n] = broadcastEDL[n];
+
+            //////// DEBUG LOGGING:
+            // DEBUG - List sorted EDL            
+            int decisionCount = 1;
+            Debug.Log("This is Save EDL[" + n + "]");
+            foreach (EditDecision thisEdit in thisSaveData.savedEDL[n])
+            {
+                print("SAVED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+                decisionCount++;
+            }
+            /////////////////////////////////
+
+        }
+
+
+
+        myFormatter.Serialize(thisOpenedFile, thisSaveData);
+        thisOpenedFile.Close();
+    }
+
+    void LoadBroadcast(string thisLoadName)
+    {
+        if (File.Exists(Application.persistentDataPath + "/" + thisLoadName + ".dat"))
+            {
+            BinaryFormatter myFormatter = new BinaryFormatter();
+            FileStream thisOpenedFile = File.Open(Application.persistentDataPath + "/" + thisLoadName + ".dat", FileMode.Open);
+            BroadcastSaveData thisLoadedData = (BroadcastSaveData)myFormatter.Deserialize(thisOpenedFile);
+            thisOpenedFile.Close();
+
+            currentLevel=thisLoadedData.levelNumber;
+            for (int n = 0; n <= 2; n++)
+            {
+                broadcastEDL[n]= thisLoadedData.savedEDL[n];
+
+                //////// DEBUG LOGGING:
+                // DEBUG - List sorted EDL            
+                int decisionCount = 1;
+                Debug.Log("This is Loaded EDL[" + n + "]");
+                foreach (EditDecision thisEdit in broadcastEDL[n])
+                {
+                    print("LOADED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+                    decisionCount++;
+                }
+                /////////////////////////////////
+
+            }
+
+        }
+    }
+}
+
+[Serializable]
+class BroadcastSaveData
+{
+    public int levelNumber;
+    public List<EditDecision>[] savedEDL = new List<EditDecision>[3];
+
 }

@@ -224,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923265198990200}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.112, y: 0.38, z: 0.514}
+  m_LocalPosition: {x: 0.112, y: 0.33, z: 0.514}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4892318093458000}
@@ -242,7 +242,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1110584831427902}
   m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0.0081, y: -0.0013, z: 0.0124}
+  m_LocalPosition: {x: 0, y: -0.0013, z: 0.0124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4892318093458000}
@@ -275,8 +275,9 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 9cda998d47ab5da44b6c63ed0b84ee41, type: 2}
+  - {fileID: 2100000, guid: 43ceb8da779a4384aa399688cb85b343, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,8 +310,9 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 9cda998d47ab5da44b6c63ed0b84ee41, type: 2}
+  - {fileID: 2100000, guid: 43ceb8da779a4384aa399688cb85b343, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -343,6 +345,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 15d626cbb4f0dd94a97ac0ec7e76eb10, type: 2}
   m_StaticBatchInfo:
@@ -377,6 +380,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 15d626cbb4f0dd94a97ac0ec7e76eb10, type: 2}
   m_StaticBatchInfo:
@@ -411,6 +415,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: d54ae68bf5bb65b49986c242bbbbe5a2, type: 2}
   m_StaticBatchInfo:
@@ -445,6 +450,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: d54ae68bf5bb65b49986c242bbbbe5a2, type: 2}
   m_StaticBatchInfo:
@@ -479,6 +485,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: f872ebda8c3fd204a8e4800687f6e1c4, type: 3}
   - {fileID: 2100002, guid: f872ebda8c3fd204a8e4800687f6e1c4, type: 3}
@@ -571,7 +578,8 @@ AudioSource:
   m_GameObject: {fileID: 1165008963945834}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243146164749798980, guid: 660328fa905f49943a2ef1e64657c917,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -592,54 +600,69 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - serializedVersion: 2
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -660,6 +683,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!102 &102525975431713622
 TextMesh:
   serializedVersion: 3
@@ -669,7 +693,7 @@ TextMesh:
   m_GameObject: {fileID: 1575941859929124}
   m_Text: Name of Advert
   m_OffsetZ: 0
-  m_CharacterSize: 0.005
+  m_CharacterSize: 0.008
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 0
@@ -677,10 +701,10 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 8b1642437128f9542b173ce80a35314f, type: 3}
+  m_Font: {fileID: 12800000, guid: bfd5037b78967974ea925537477bd20e, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4278519235
 --- !u!102 &102781690825138640
 TextMesh:
   serializedVersion: 3
@@ -692,7 +716,7 @@ TextMesh:
 
     Advert'
   m_OffsetZ: 0
-  m_CharacterSize: 0.007
+  m_CharacterSize: 0.01
   m_LineSpacing: 0.8
   m_Anchor: 4
   m_Alignment: 1
@@ -700,10 +724,10 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 8b1642437128f9542b173ce80a35314f, type: 3}
+  m_Font: {fileID: 12800000, guid: bfd5037b78967974ea925537477bd20e, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190335
+    rgba: 4278519235
 --- !u!114 &114259822472328690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -715,7 +739,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56c64d56fa78b8419a6869840efa074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTitle: Den's porn<br>stash
+  myTitle: Kittens
+  myVideo: {fileID: 32900000, guid: 4fe401c0ddfc3224cb65566e27902913, type: 3}
+  myVideoSmaller: {fileID: 32900000, guid: 43f35c89c8d3143448c593cb5dc63b6f, type: 3}
+  myAudio: {fileID: 8300000, guid: f44c34ea83707e34e9430d32bed7209f, type: 3}
   myBox: {fileID: 0}
 --- !u!114 &114406492322162062
 MonoBehaviour:

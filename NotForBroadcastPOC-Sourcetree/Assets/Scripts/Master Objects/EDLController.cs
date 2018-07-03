@@ -102,9 +102,10 @@ public class EDLController : MonoBehaviour {
         EDL.Add(new EditDecision(-10f, EditDecision.EditDecisionType.SequenceInfo, mySequenceController.sequenceName));
     }
 
-    public void StartPlayingEDL()
+    public void StartPlayingEDL(List<EditDecision> thisEDL)
     {
         EDLTime = 0;
+        EDL = thisEDL;
         myMode = EDLModes.Playback;
     }
 

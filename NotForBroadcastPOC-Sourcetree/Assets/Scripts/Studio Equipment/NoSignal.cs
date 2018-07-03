@@ -7,6 +7,7 @@ public class NoSignal : MonoBehaviour {
 
     public VideoPlayer myScreen;
     private MeshRenderer myImage;
+    private bool hasJumpedBack = false;
 	// Use this for initialization
 
 	void Start () {
@@ -23,6 +24,24 @@ public class NoSignal : MonoBehaviour {
                 myImage.enabled = false;
             }
 
+        }
+    }
+
+    public void JumpBack()
+    {
+        if (!hasJumpedBack)
+        {
+            this.transform.Translate(new Vector3(0f, -0.2f, 0f));
+            hasJumpedBack = true;
+        }
+    }
+
+    public void JumpToFront()
+    {
+        if (hasJumpedBack)
+        {
+            this.transform.Translate(new Vector3(0f, 0.2f, 0f));
+            hasJumpedBack = false;
         }
     }
 }

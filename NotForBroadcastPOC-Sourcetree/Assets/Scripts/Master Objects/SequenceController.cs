@@ -56,33 +56,7 @@ public class SequenceController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        // If waiting for screens...
-        //if (waitingForScreens)
-        //{
-        //    // If Advert Screen is Prepared (CHECK preRollReady - is set by Broadcast system): START CLOCK. START AD SCREEN.
-        //    if (preRollReady)
-        //    {
-        //        isPlayingAd = true;
-        //        preRollReady = false;
-        //        waitingForScreens = false;
-        //        // Invoke StartSequence in Ad-length Seconds minus Run-In Seconds
-        //        Invoke("StartSequence", thisPreSequenceVideoLength - mySequence.runIn - broadcastScreenDelayTime);
-        //    }
-        //}
 
-        //if (overrunning)
-        //{
-        //    // Player should have played Advert, we are broadcasting PostRoll.
-        //    overrunTime -= Time.deltaTime;
-        //    // Flash Screen Border Red (or some such)
-
-        //    // Has Time run out?
-        //    if (overrunTime<=0)
-        //    {
-        //        myMasterController.FailMidLevel();
-        //        overrunning = false;
-        //    }
-        //}
     }
 
     public float PrepareSequence(string thisSequenceName) // Returns Time to Start Pre-Roll

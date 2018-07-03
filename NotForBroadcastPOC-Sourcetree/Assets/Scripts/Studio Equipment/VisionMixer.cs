@@ -12,6 +12,7 @@ public class VisionMixer : MonoBehaviour {
     public VideoClip barsAndTone;
     public AudioClip barsAndToneAudio;
     public Switch myLinkSwitch;
+    public NoSignal masterNoSignal;
     private SoundDesk myMixingDesk;
     private bool hasPower;
     [HideInInspector]
@@ -136,6 +137,11 @@ public class VisionMixer : MonoBehaviour {
             //Debug.Log("Clip "+thisClip+" currently at frame " + thisFrame);
             masterScreen.PlayVideoFromFrame(thisClip, thisFrame);
             jumpToTV = selectedScreen;
+            if (currentScreen == 0)
+            {
+                Debug.Log("Sending NO SIGNAL to Back on MASTER SCREEN.");
+                masterNoSignal.JumpBack();
+            }
             currentScreen = selectedScreen;
             Invoke("JumpToFrame", 0.01f);
             // Log Change to EDL
@@ -144,11 +150,6 @@ public class VisionMixer : MonoBehaviour {
                 myEDLController.AddScreenChange(selectedScreen);
             }
 
-
-
-            /// REMOVE AFTER EDL WORKING //////////////////////
-            //myBroadcastTVTEMP.TEMPBroadcastScreenChange (selectedScreen);
-            ///////////////////////////////////////////////////
 
             // Mute other sound channels as required
             if (myLinkSwitch.isOn)
@@ -246,11 +247,10 @@ public class VisionMixer : MonoBehaviour {
 
     public void ResetSystem()
     {
-        // Move Up and Lock all buttons
-
+        Debug.Log("Vision Mixer Resetting.");
         // Set currentScreen to 0
         currentScreen = 0;
-        // LOCK ALL BUTTONS????
+        // Move Up and Lock all buttons
         foreach (VisionMixerButton thisButton in myVisionMixerButtons)
         {
             if (thisButton.myButton.isDepressed)
@@ -261,6 +261,7 @@ public class VisionMixer : MonoBehaviour {
             
             thisButton.hasContent = false;
         }
+        masterNoSignal.JumpToFront();
 
 
     }

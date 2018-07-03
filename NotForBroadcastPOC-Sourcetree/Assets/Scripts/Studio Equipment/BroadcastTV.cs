@@ -256,6 +256,11 @@ public class BroadcastTV : MonoBehaviour {
                 thisAudioClip = theseAudioClips[n];
             }
             myScreens[n].Stop();
+            if (currentScreen - 1 == n)
+            {
+                myScreens[n].transform.Translate(new Vector3(0f, -0.02f, 0f));
+                currentScreen = 0;
+            }
             myScreens[n].clip = theseClips[n];
             myScreens[n].Prepare();
             screenPreparing[n] = true;
