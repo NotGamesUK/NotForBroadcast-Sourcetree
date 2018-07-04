@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 748e795e0d675d045a0f8e2914417850
-timeCreated: 1523636434
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -9,20 +7,45 @@ ModelImporter:
     100002: Dish
     100004: Spike
     100006: Tower
+    100008: aerial
+    100010: aerial_cylinder_ONE
+    100012: aerial_cylinder_ONE_001
+    100014: side_aerials
+    100016: top_structure
     400000: //RootNode
     400002: Dish
     400004: Spike
     400006: Tower
+    400008: aerial
+    400010: aerial_cylinder_ONE
+    400012: aerial_cylinder_ONE_001
+    400014: side_aerials
+    400016: top_structure
     2100000: unnamed
     2300000: Dish
     2300002: Spike
     2300004: Tower
+    2300006: aerial
+    2300008: aerial_cylinder_ONE
+    2300010: aerial_cylinder_ONE_001
+    2300012: side_aerials
+    2300014: top_structure
     3300000: Dish
     3300002: Spike
     3300004: Tower
+    3300006: aerial
+    3300008: aerial_cylinder_ONE
+    3300010: aerial_cylinder_ONE_001
+    3300012: side_aerials
+    3300014: top_structure
     4300000: Dish
     4300002: Spike
     4300004: Tower
+    4300006: top_structure
+    4300008: side_aerials
+    4300010: aerial_cylinder_ONE_001
+    4300012: aerial_cylinder_ONE
+    4300014: aerial
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -44,6 +67,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
