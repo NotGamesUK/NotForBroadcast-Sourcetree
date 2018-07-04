@@ -8054,6 +8054,56 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: eff1a97d167507748a9cefaac33a7e45, type: 3}
   m_PrefabInternal: {fileID: 516999574}
+--- !u!1001 &525243150
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2425
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3045
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.501
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0042576934
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.707094
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.707094
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0042576934
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_RootOrder
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &529605794
 GameObject:
   m_ObjectHideFlags: 0
