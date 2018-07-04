@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: c150114a0bea5e84391a14057c9c3cd2
-timeCreated: 1525182053
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -10,11 +8,15 @@ ModelImporter:
     100004: //RootNode
     100006: ON_OFF
     100008: Switch_Middle
+    100010: Catches
+    100012: Centre_pivot_brackets
     400000: Box
     400002: Switch
     400004: //RootNode
     400006: ON_OFF
     400008: Switch_Middle
+    400010: Catches
+    400012: Centre_pivot_brackets
     2100000: unnamed
     2100002: Material
     2100004: Material_002
@@ -23,16 +25,23 @@ ModelImporter:
     2300002: Switch
     2300004: ON_OFF
     2300006: Switch_Middle
+    2300008: Catches
+    2300010: Centre_pivot_brackets
     3300000: Box
     3300002: Switch
     3300004: ON_OFF
     3300006: Switch_Middle
+    3300008: Catches
+    3300010: Centre_pivot_brackets
     4300000: Switch
     4300002: Box
     4300004: Switch_Middle
     4300006: ON_OFF
+    4300008: Centre_pivot_brackets
+    4300010: Catches
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -52,6 +61,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
