@@ -8,6 +8,7 @@ using UnityEngine;
 //in the different collections. In order to use
 //a collection's Sort() method, this class needs to
 //implement the IComparable interface.
+[System.Serializable]
 public class EditDecision : IComparable<EditDecision>
 {
 

@@ -61,7 +61,7 @@ public class MasterController : MonoBehaviour {
     private LevelData myLevelData;
     public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
     public MasterState myState;
-    [HideInInspector]
+    //[HideInInspector]
     public bool preparingAd, overRunning;
     private float overrunTime, startPreRollTime;
     private List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
@@ -353,7 +353,7 @@ public class MasterController : MonoBehaviour {
         SortAndSaveEDL();
         // Advance Sequence Count
         currentSequence++;
-
+        overRunning=false;
 
         //TESTING: REMOVE -------------------
         //currentSequence = 4;
@@ -475,7 +475,7 @@ public class MasterController : MonoBehaviour {
 
         BroadcastSaveData thisSaveData = new BroadcastSaveData();
         thisSaveData.levelNumber = currentLevel;
-        for (int n=0; n<=2; n++)
+        for (int n=0; n<3; n++)
         {
             thisSaveData.savedEDL[n] = broadcastEDL[n];
 
@@ -485,7 +485,7 @@ public class MasterController : MonoBehaviour {
             Debug.Log("This is Save EDL[" + n + "]");
             foreach (EditDecision thisEdit in thisSaveData.savedEDL[n])
             {
-                print("SAVED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+                Debug.Log("SAVED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
                 decisionCount++;
             }
             /////////////////////////////////
@@ -508,7 +508,7 @@ public class MasterController : MonoBehaviour {
             thisOpenedFile.Close();
 
             currentLevel=thisLoadedData.levelNumber;
-            for (int n = 0; n <= 2; n++)
+            for (int n = 0; n <3; n++)
             {
                 broadcastEDL[n]= thisLoadedData.savedEDL[n];
 
