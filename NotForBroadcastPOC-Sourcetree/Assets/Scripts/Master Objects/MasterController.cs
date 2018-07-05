@@ -61,8 +61,8 @@ public class MasterController : MonoBehaviour {
     private LevelData myLevelData;
     public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
     public MasterState myState;
-    //[HideInInspector]
-    public bool preparingAd, overRunning;
+    [HideInInspector]
+    public bool preparingAd, overRunning, inDevMode;
     private float overrunTime, startPreRollTime;
     private List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
 

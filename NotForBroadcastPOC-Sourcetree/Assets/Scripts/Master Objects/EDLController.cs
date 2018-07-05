@@ -17,7 +17,6 @@ public class EDLController : MonoBehaviour {
     private SoundDesk myMixingDesk;
     private BroadcastTV myBroadcastSystem;
 
-
 	// Use this for initialization
 	void Start () {
         mySequenceController = GetComponent<SequenceController>();

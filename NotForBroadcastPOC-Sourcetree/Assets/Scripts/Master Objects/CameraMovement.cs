@@ -12,15 +12,20 @@ public class CameraMovement : MonoBehaviour {
     private float pitch = 0.0f;
     private Animator myAnimator;
     private string myPosition="Centre";
+    private Vector3 startPosition;
+    private float startFOV;
+    private Camera myCamera;
 
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
-        if (freeLook)
-        {
-            myAnimator.enabled = false;
-            // Move Camera and set Depth of Field
-        }
+        startPosition = this.transform.position;
+        myCamera = GetComponent<Camera>();
+        startFOV = myCamera.fieldOfView;
+        //if (freeLook)
+        //{
+        //    FreeLookToggle(true);
+        //}
     }
 
     void Update()
@@ -91,6 +96,24 @@ public class CameraMovement : MonoBehaviour {
 
         }
 
+    }
+
+    public void FreeLookToggle(bool thisSetting)
+    {
+        if (thisSetting)
+        {
+            myAnimator.enabled = false;
+            this.transform.position = new Vector3(0f, 0.91f, -0.04f);
+            myCamera.fieldOfView = 68;
+            freeLook = true;
+        }
+        else
+        {
+            myAnimator.enabled = true;
+            this.transform.position = startPosition;
+            myCamera.fieldOfView = startFOV;
+            freeLook = false;
+        }
     }
 
 }

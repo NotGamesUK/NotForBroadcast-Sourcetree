@@ -12,6 +12,7 @@ public class InterferenceSystem : MonoBehaviour {
 
     private Transform currentLevel;
     private LevelController myLevel;
+    private SignalControlCamera myCamera;
 
     // Use this for initialization
     void Start()
@@ -20,6 +21,7 @@ public class InterferenceSystem : MonoBehaviour {
         {
             SpawnLevel(defaultLevel);
         }
+        myCamera = FindObjectOfType<SignalControlCamera>();
     }
 
     // Update is called once per frame
@@ -36,14 +38,15 @@ public class InterferenceSystem : MonoBehaviour {
         }
         currentLevel = Instantiate(thisLevel, this.transform, false);
         myLevel = currentLevel.GetComponent<LevelController>();
+        myCamera.ResetScrollingCamera();
     }
 
-    public void DestroyLevel()
-    {
-        Destroy(currentLevel);
-        currentLevel = null;
-        myLevel = null;
-    }
+    //public void DestroyLevel()
+    //{
+    //    Destroy(currentLevel);
+    //    currentLevel = null;
+    //    myLevel = null;
+    //}
 
     public void StartLevel()
     {

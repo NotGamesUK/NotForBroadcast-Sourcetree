@@ -24,16 +24,39 @@ public class GUIController : MonoBehaviour
     public AudioClip failMenuMusic;
     public AudioClip playbackMenuMusic;
 
+    public static GUIController uniqueGUIController;
+
     private AudioSource myMusicPlayer;
     private MasterController myMasterController;
-    private GameObject currentMenu;
+    private OptionsController myOptionsController;
+    public GameObject currentMenu;
     private GameObject currentCamera;
+    private CameraMovement freeLookCamera;
+    private DevModeObject[] devModeObjects;
+
     private bool cameFromMain = true;
+
+    private void Awake()
+    {
+        if (uniqueGUIController == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            uniqueGUIController = this;
+        }
+        else if (uniqueGUIController != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     private void Start()
     {
         myMasterController = FindObjectOfType<MasterController>();
+        myOptionsController = GetComponent<OptionsController>();
         myMusicPlayer = GetComponent<AudioSource>();
+        devModeObjects = FindObjectsOfType<DevModeObject>();
+        freeLookCamera = FindObjectOfType<CameraMovement>();
 
         // Default to Main Menu:
         gameCamera.SetActive(false);
@@ -64,6 +87,10 @@ public class GUIController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        if (currentMenu == optionsMenu)
+        {
+            myOptionsController.SaveAllOptions();
+        }
         ChangeCameraTo(menuCamera);
         ChangeMenuTo(mainMenu);
         ChangeMusicTo(mainMenuMusic);
@@ -185,6 +212,21 @@ public class GUIController : MonoBehaviour
             }
         }
 
+    }
+
+    public void DevModeToggle(bool thisSetting)
+    {
+        myMasterController.inDevMode = thisSetting;
+        foreach(DevModeObject thisObject in devModeObjects)
+        {
+            thisObject.DevModeChange(thisSetting);
+        }
+    }
+
+    public void FreeLookToggle(bool thisSetting)
+    {
+        // Turn Freelook on and off
+        freeLookCamera.FreeLookToggle(thisSetting);
     }
 
     void Update ()
