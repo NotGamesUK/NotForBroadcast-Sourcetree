@@ -17,9 +17,12 @@ public class OptionsController : MonoBehaviour {
     private int thisToggleCheck;
     private float thisVolCheck;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
+        Invoke("LoadAndSetOptions", 0.2f);
+    }
 
+    void LoadAndSetOptions() {
 
         if (PlayerPrefs.HasKey("DevMode"))
         {

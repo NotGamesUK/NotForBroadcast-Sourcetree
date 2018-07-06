@@ -65,6 +65,9 @@ public class MasterController : MonoBehaviour {
     public bool preparingAd, overRunning, inDevMode;
     private float overrunTime, startPreRollTime;
     private List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
+    public List<String> savedFiles = new List<string>();
+    private int myDayNumber;
+    private string myLevelName;
 
     private int decisionCount;
 
@@ -94,7 +97,7 @@ public class MasterController : MonoBehaviour {
         broadcastEDL[0] = new List<EditDecision>();
         broadcastEDL[1] = new List<EditDecision>();
         broadcastEDL[2] = new List<EditDecision>();
-
+        LoadFileList();
     }
 
     public void StartBroadcast(int thisLevel)
@@ -294,15 +297,18 @@ public class MasterController : MonoBehaviour {
         // Set Current Sequence to 0
         currentSequence = 0;
         // Display "DAY ???" and Title of Level - On black with suitable sound
-        int thisDay = myLevelData.dayNumber;
-        string thisLevelName = myLevelData.levelName;
-        Debug.Log("MC: Day " + thisDay+".  "+thisLevelName+".");
+        myDayNumber = myLevelData.dayNumber;
+        myLevelName = myLevelData.levelName;
+        Debug.Log("MC: Day " + myDayNumber+".  "+myLevelName+".");
         // Set Mode to OpeningTitles
         myState = MasterState.StartLevel;
         // Mute Ambient Sound (But not "DAY ???" SFX).
         // Read RoomState info array and set objects to match
         // THIS INCLUDES: Power switches, FanLock, VM Link Switch, 
         // Tell Scoring System to Initialise
+
+
+
 
     }
 
@@ -423,9 +429,14 @@ public class MasterController : MonoBehaviour {
 
 
         // LOAD AND SAVE TEST
+        DateTime theTime = DateTime.Now;
+        string date = theTime.ToString("yyyy-MM-dd");
+        string time = theTime.ToString("HH:mm");
+        string saveFileName = ("Day " + myDayNumber + " - " + myLevelName + " - " + date + " " + time);
 
-        SaveBroadcast("TestSave");
-        LoadBroadcast("TestSave");
+        Debug.Log("Saving File with Name: "+saveFileName);
+        SaveBroadcast("saveFileName");
+        LoadBroadcast("saveFileName");
 
     }
 
@@ -479,22 +490,46 @@ public class MasterController : MonoBehaviour {
         }
     }
 
-    void SaveBroadcast(string thisSaveName)
+    void SaveFileList()
     {
-        // DEBUG - LIST ALL BROADCAST EDLS BEFORE SAVING
-        for (int n = 0; n < 3; n++)
+        BinaryFormatter myFormatter = new BinaryFormatter();
+        FileStream thisOpenedFile = File.Open(Application.persistentDataPath + "/BroadcastArchive.dat", FileMode.Create);
+        myFormatter.Serialize(thisOpenedFile, savedFiles);
+        thisOpenedFile.Close();
+
+
+    }
+
+
+    void LoadFileList()
+    {
+        if (File.Exists(Application.persistentDataPath + "/BroadcastArchive.dat"))
         {
-            decisionCount = 1;
-            Debug.Log("This is Broadcast EDL[" + n + "] TO SAVE");
-            foreach (EditDecision thisEdit in broadcastEDL[n])
-            {
-                Debug.Log("BROADCAST EDL Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
-                decisionCount++;
-            }
+            BinaryFormatter myFormatter = new BinaryFormatter();
+            FileStream thisOpenedFile = File.Open(Application.persistentDataPath + "/BroadcastArchive.dat", FileMode.Open);
+            savedFiles.Clear();
+            savedFiles = (List<String>)myFormatter.Deserialize(thisOpenedFile);
+            thisOpenedFile.Close();
         }
 
+    }
+
+    void SaveBroadcast(string thisSaveName)
+    {
+        //// DEBUG - LIST ALL BROADCAST EDLS BEFORE SAVING
+        //for (int n = 0; n < 3; n++)
+        //{
+        //    decisionCount = 1;
+        //    Debug.Log("This is Broadcast EDL[" + n + "] TO SAVE");
+        //    foreach (EditDecision thisEdit in broadcastEDL[n])
+        //    {
+        //        Debug.Log("BROADCAST EDL Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+        //        decisionCount++;
+        //    }
+        //}
+
         BinaryFormatter myFormatter = new BinaryFormatter();
-        FileStream thisOpenedFile = File.Open(Application.persistentDataPath + "/"+thisSaveName+".dat", FileMode.OpenOrCreate);
+        FileStream thisOpenedFile = File.Open(Application.persistentDataPath + "/"+thisSaveName+".dat", FileMode.Create);
 
         BroadcastSaveData thisSaveData = new BroadcastSaveData();
         thisSaveData.levelNumber = currentLevel;
@@ -505,14 +540,14 @@ public class MasterController : MonoBehaviour {
             //////// DEBUG LOGGING:
             // DEBUG - List saved EDL            
 
-            Debug.Log("This is Save EDL[" + n + "]");
-            decisionCount = 1;
-            foreach (EditDecision thisEdit in thisSaveData.savedEDL[n])
-            {
-                Debug.Log("SAVED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
-                decisionCount++;
-            }
-            /////////////////////////////////
+            //Debug.Log("This is Save EDL[" + n + "]");
+            //decisionCount = 1;
+            //foreach (EditDecision thisEdit in thisSaveData.savedEDL[n])
+            //{
+            //    Debug.Log("SAVED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+            //    decisionCount++;
+            //}
+            ///////////////////////////////////
 
         }
 
@@ -520,6 +555,9 @@ public class MasterController : MonoBehaviour {
 
         myFormatter.Serialize(thisOpenedFile, thisSaveData);
         thisOpenedFile.Close();
+        savedFiles.Add(thisSaveName);
+        SaveFileList();
+
     }
 
     void LoadBroadcast(string thisLoadName)
@@ -536,16 +574,16 @@ public class MasterController : MonoBehaviour {
             {
                 broadcastEDL[n]= thisLoadedData.savedEDL[n];
 
-                //////// DEBUG LOGGING:
-                // DEBUG - List sorted EDL            
-                int decisionCount = 1;
-                Debug.Log("This is Loaded EDL[" + n + "]");
-                foreach (EditDecision thisEdit in broadcastEDL[n])
-                {
-                    print("LOADED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
-                    decisionCount++;
-                }
-                /////////////////////////////////
+                ////////// DEBUG LOGGING:
+                //// DEBUG - List sorted EDL            
+                //int decisionCount = 1;
+                //Debug.Log("This is Loaded EDL[" + n + "]");
+                //foreach (EditDecision thisEdit in broadcastEDL[n])
+                //{
+                //    print("LOADED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+                //    decisionCount++;
+                //}
+                ///////////////////////////////////
 
             }
 
