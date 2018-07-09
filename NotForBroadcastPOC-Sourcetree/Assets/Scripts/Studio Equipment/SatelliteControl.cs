@@ -6,9 +6,12 @@ using UnityEngine.PostProcessing;
 public class SatelliteControl : MonoBehaviour {
 
     public PostProcessingProfile myPostProcessing;
+    public float towerFocusDistance, towerAperture, towerFocusPullTime;
 
     private ButtonAnimating myButton;
     private SatelliteDish myDish;
+    private bool isActive, lastActive;
+    private CameraMovement mainCamera;
 
 	// Use this for initialization
 	void Awake () {
@@ -18,7 +21,8 @@ public class SatelliteControl : MonoBehaviour {
 
     private void Start()
     {
-
+        lastActive = isActive;
+        mainCamera = FindObjectOfType<CameraMovement>();
     }
 
     // Update is called once per frame
@@ -26,18 +30,29 @@ public class SatelliteControl : MonoBehaviour {
 		if (myButton.isDepressed && myButton.hasPower)
         {
             myDish.RaiseDish();
-            var myDOF = myPostProcessing.depthOfField.settings;
-            myDOF.focusDistance = 4.9f;
-            myPostProcessing.depthOfField.settings = myDOF;
+            isActive = true;
 
         }
         else
         {
             myDish.isRaising = false;
-            var myDOF = myPostProcessing.depthOfField.settings;
-            myDOF.focusDistance = 1.4f;
-            myPostProcessing.depthOfField.settings = myDOF;
+            isActive = false;
+        }
+        if (isActive != lastActive)
+        {
+            Debug.Log("Satellite Control: Sending Focus Pull");
+            if (isActive)
+            {
+                // Pull Focus to Tower.
+                mainCamera.PullFocusOverTime(towerFocusDistance, towerAperture, towerFocusPullTime);
 
+            } else
+            {
+                // Pull Focus to Desk.
+                mainCamera.ResetFocus();
+
+            }
+            lastActive = isActive;
         }
     }
 

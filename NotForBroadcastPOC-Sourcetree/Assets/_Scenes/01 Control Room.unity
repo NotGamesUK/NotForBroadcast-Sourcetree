@@ -4638,6 +4638,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPostProcessing: {fileID: 11400000, guid: 333cc0749725ed44cbfda41e3d4a7fbf, type: 2}
+  towerFocusDistance: 12
+  towerAperture: 10.7
+  towerFocusPullTime: 0.5
 --- !u!1 &263335317
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,7 +7207,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.9571349, b: 0.8066038, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 0.8
   m_Range: 4.89
   m_SpotAngle: 114
   m_CookieSize: 10
@@ -8008,36 +8011,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1625890092437746, guid: 8f0bec63372ae0241bd641cafe00158b,
     type: 2}
   m_PrefabInternal: {fileID: 1929817120}
---- !u!114 &485473599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 485473598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 333cc0749725ed44cbfda41e3d4a7fbf, type: 2}
---- !u!95 &485473604
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 485473598}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bba92d6f91bcd794ebd9289f896050c0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &489668932
 GameObject:
   m_ObjectHideFlags: 0
@@ -30037,7 +30010,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 0.9929245, g: 0.9529412, b: 1, a: 1}
-  m_Intensity: 1.8
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -30693,6 +30666,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0256411
       objectReference: {fileID: 0}
+    - target: {fileID: 23636451123896736, guid: 5ff0d1b23671a1740855cfa3177916b4,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b72aaeb3526821a4498a336b85e60f25, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ff0d1b23671a1740855cfa3177916b4, type: 2}
   m_IsPrefabParent: 0
@@ -35214,51 +35192,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1625890092437746, guid: 8f0bec63372ae0241bd641cafe00158b, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 114486639052846530, guid: 8f0bec63372ae0241bd641cafe00158b,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20879675325241996, guid: 8f0bec63372ae0241bd641cafe00158b,
-        type: 2}
-      propertyPath: field of view
-      value: 35.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078892098396836, guid: 8f0bec63372ae0241bd641cafe00158b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 1.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 20879675325241996, guid: 8f0bec63372ae0241bd641cafe00158b,
-        type: 2}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4078892098396836, guid: 8f0bec63372ae0241bd641cafe00158b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114827133698020466, guid: 8f0bec63372ae0241bd641cafe00158b,
-        type: 2}
-      propertyPath: freeLook
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1625890092437746, guid: 8f0bec63372ae0241bd641cafe00158b, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20879675325241996, guid: 8f0bec63372ae0241bd641cafe00158b,
-        type: 2}
-      propertyPath: m_AllowMSAA
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20879675325241996, guid: 8f0bec63372ae0241bd641cafe00158b,
-        type: 2}
-      propertyPath: far clip plane
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 20879675325241996, guid: 8f0bec63372ae0241bd641cafe00158b,
-        type: 2}
-      propertyPath: m_RenderingPath
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f0bec63372ae0241bd641cafe00158b, type: 2}
