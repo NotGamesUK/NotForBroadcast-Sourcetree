@@ -1,30 +1,35 @@
 fileFormatVersion: 2
 guid: ae2ca3866daeff64aa89077320490790
-timeCreated: 1522858433
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: Plane
     100004: wall
+    100006: windows
     400000: //RootNode
     400002: Plane
     400004: wall
+    400006: windows
     2100000: Material
     2100002: glass
+    2100004: unnamed
     2300000: //RootNode
     2300002: Plane
     2300004: wall
+    2300006: windows
     3300000: //RootNode
     3300002: Plane
     3300004: wall
+    3300006: windows
     4300000: Cube
     4300002: wall_left_
     4300004: wall
     4300006: Plane
+    4300008: windows
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -44,6 +49,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

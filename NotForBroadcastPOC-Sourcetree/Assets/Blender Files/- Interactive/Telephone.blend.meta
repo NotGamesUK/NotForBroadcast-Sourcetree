@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 48dfa99bf1fa917499a5c36af4d24073
-timeCreated: 1523709175
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -17,6 +15,8 @@ ModelImporter:
     100018: Press_To_Talk
     100020: Inside_Speaker
     100022: Telephone_Speaker_Grill
+    100024: Broken_Button
+    100026: Intercom_LED
     400000: Answer_Button
     400002: Body
     400004: Handset
@@ -29,6 +29,8 @@ ModelImporter:
     400018: Press_To_Talk
     400020: Inside_Speaker
     400022: Telephone_Speaker_Grill
+    400024: Broken_Button
+    400026: Intercom_LED
     2100000: unnamed
     2100002: Material
     2100004: Telephone_Speaker_Grill__Telephone_Speaker_Grill_png
@@ -43,6 +45,8 @@ ModelImporter:
     2300016: Press_To_Talk
     2300018: Inside_Speaker
     2300020: Telephone_Speaker_Grill
+    2300022: Broken_Button
+    2300024: Intercom_LED
     3300000: Answer_Button
     3300002: Body
     3300004: Handset
@@ -54,6 +58,8 @@ ModelImporter:
     3300016: Press_To_Talk
     3300018: Inside_Speaker
     3300020: Telephone_Speaker_Grill
+    3300022: Broken_Button
+    3300024: Intercom_LED
     4300000: Answer_Button
     4300002: Handset
     4300004: Body
@@ -65,6 +71,8 @@ ModelImporter:
     4300016: Press_To_Talk
     4300018: Inside_Speaker
     4300020: Telephone_Speaker_Grill
+    4300022: Intercom_LED
+    4300024: Broken_Button
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -86,6 +94,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

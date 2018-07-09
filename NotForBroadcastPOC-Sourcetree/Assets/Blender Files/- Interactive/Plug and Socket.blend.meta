@@ -10,6 +10,7 @@ ModelImporter:
     100008: Cable_Bezier_Curve
     100010: Cable_Circle_Curve
     100012: Cable
+    100014: Socket_HIGH_POLY
     400000: Plug
     400002: //RootNode
     400004: Socket
@@ -17,6 +18,7 @@ ModelImporter:
     400008: Cable_Bezier_Curve
     400010: Cable_Circle_Curve
     400012: Cable
+    400014: Socket_HIGH_POLY
     2100000: unnamed
     2100002: Material
     2100004: Material_002
@@ -28,18 +30,21 @@ ModelImporter:
     2300006: Cable_Bezier_Curve
     2300008: Cable_Circle_Curve
     2300010: Cable
+    2300012: Socket_HIGH_POLY
     3300000: Plug
     3300002: Socket
     3300004: Switch
     3300006: Cable_Bezier_Curve
     3300008: Cable_Circle_Curve
     3300010: Cable
+    3300012: Socket_HIGH_POLY
     4300000: Switch
     4300002: Plug
     4300004: Socket
     4300006: Cable_Circle_Curve
     4300008: Cable_Bezier_Curve
     4300010: Cable
+    4300012: Socket_HIGH_POLY
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
