@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public class SatelliteControl : MonoBehaviour {
+
+    public PostProcessingProfile myPostProcessing;
 
     private ButtonAnimating myButton;
     private SatelliteDish myDish;
@@ -12,17 +15,31 @@ public class SatelliteControl : MonoBehaviour {
         myButton = GetComponentInChildren<ButtonAnimating>();
         myDish = FindObjectOfType<SatelliteDish>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 		if (myButton.isDepressed && myButton.hasPower)
         {
             myDish.RaiseDish();
-        } else
+            var myDOF = myPostProcessing.depthOfField.settings;
+            myDOF.focusDistance = 4.9f;
+            myPostProcessing.depthOfField.settings = myDOF;
+
+        }
+        else
         {
             myDish.isRaising = false;
+            var myDOF = myPostProcessing.depthOfField.settings;
+            myDOF.focusDistance = 1.4f;
+            myPostProcessing.depthOfField.settings = myDOF;
+
         }
-	}
+    }
 
     void PowerOn()
     {

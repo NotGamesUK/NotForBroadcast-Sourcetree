@@ -15,6 +15,8 @@ public class CameraMovement : MonoBehaviour {
     private Vector3 startPosition;
     private float startFOV;
     private Camera myCamera;
+    private float currentFocusDistance, currentAperture, targetFocusDistance, targetAperture;
+
 
     private void Start()
     {
@@ -114,6 +116,11 @@ public class CameraMovement : MonoBehaviour {
             myCamera.fieldOfView = startFOV;
             freeLook = false;
         }
+    }
+
+    public void PullFocusOverTime(float thisFocusDistance, float thisAperture, float thisTime)
+    {
+
     }
 
 }
