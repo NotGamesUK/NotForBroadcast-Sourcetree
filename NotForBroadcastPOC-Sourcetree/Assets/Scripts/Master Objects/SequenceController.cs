@@ -21,6 +21,7 @@ public class SequenceController : MonoBehaviour {
     private BackWallClock myClock;
     private BroadcastTV myBroadcastScreen;
     private VHSControlPanel myVHSControlPanel;
+    private ScoringController myScoringController;
     private bool waitingForScreens = false;
     private float thisPreSequenceVideoLength;
     private int foundPos;
@@ -49,6 +50,7 @@ public class SequenceController : MonoBehaviour {
         myClock = FindObjectOfType<BackWallClock>();
         myBroadcastScreen = FindObjectOfType<BroadcastTV>();
         myVHSControlPanel = FindObjectOfType<VHSControlPanel>();
+        myScoringController = GetComponent<ScoringController>();
         broadcastScreenDelayTime = myMasterController.broadcastScreenDelayTime;
     }
 
@@ -88,9 +90,10 @@ public class SequenceController : MonoBehaviour {
         myVisionMixer.PrepareScreens(mySequence.screenVideo, myDataStore.sequenceData[foundPos].screenAudio);
         myBroadcastScreen.PrepareScreens(mySequence.screenVideo, mySequence.screenAudio, mySequence.AudioInterference);
         targetScreensCount = mySequence.screenVideo.Length*2;
-
+        // SetScoring Type
+        myScoringController.myScoringMode = mySequence.scoringMode;
         // Get Length of Video for Screen 01
-        thisSequenceVideoLength= mySequence.screenVideo[0].length;
+        thisSequenceVideoLength = mySequence.screenVideo[0].length;
         //Debug.Log("Returned Length: " + thisSequenceVideoLength + " seconds.");
 
         // Clock and Advert prepared in Master sequence - prerollready set to true by MasterController when ready to prepare

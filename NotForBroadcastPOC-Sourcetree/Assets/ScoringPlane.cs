@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class ScoringPlane : MonoBehaviour {
 
     public RenderTexture myColourPlane;
+    public VideoPlayer myScreen;
 
     // FOR TESTING:
 
     public BackWallLight myRedLight;
-    public BackWallLight myBlueLight;
+    public BackWallLight myOrangeLight;
     public BackWallLight myGreenLight;
 
+    private ScoringController myScoringController;
     private Color lastColour;
-    private enum ScoreColour { Red, Green, Blue, Null}
+    public enum ScoreColour { Red, Green, Orange, Null}
     private ScoreColour currentColour;
 
 
@@ -21,48 +24,54 @@ public class ScoringPlane : MonoBehaviour {
     void Start () {
         currentColour = ScoreColour.Null;
         InvokeRepeating("ReadTV", 1, 0.2f);
+        myScoringController = FindObjectOfType<ScoringController>();
 	}
 	
 	// Update is called once per frame
 	void ReadTV () {
-        Texture2D testableTexture = toTexture2D(myColourPlane);
-        Color testColor = testableTexture.GetPixel (0, 0);
-        Debug.Log("Current Colour: " + testColor);
-        if (lastColour != testColor)
+        if (myScreen.isPlaying)
         {
-            // Adjust Lights as necessary
-            switch (currentColour)
+            Texture2D testableTexture = toTexture2D(myColourPlane);
+            Color testColor = testableTexture.GetPixel(0, 0);
+            //Debug.Log("Current Colour: " + testColor);
+            if (lastColour != testColor)
             {
-                case ScoreColour.Red:
-                    myRedLight.LightOff();
-                    break;
+                // Adjust Lights as necessary
+                switch (currentColour)
+                {
+                    case ScoreColour.Red:
+                        myRedLight.LightOff();
+                        break;
 
-                case ScoreColour.Green:
-                    myGreenLight.LightOff();
-                    break;
+                    case ScoreColour.Green:
+                        myGreenLight.LightOff();
+                        break;
 
-                case ScoreColour.Blue:
-                    myBlueLight.LightOff();
-                    break;
+                    case ScoreColour.Orange:
+                        myOrangeLight.LightOff();
+                        break;
+                }
+                if (testColor.r == 1)
+                {
+                    currentColour = ScoreColour.Red;
+                    myRedLight.LightOn();
+                }
+                else if (testColor.g == 1)
+                {
+                    currentColour = ScoreColour.Green;
+                    myGreenLight.LightOn();
+                }
+                else if (testColor.b == 1)
+                {
+                    currentColour = ScoreColour.Orange;
+                    myOrangeLight.LightOn();
+                }
+
+                myScoringController.FootageColourChange(currentColour);
             }
-            if (testColor.r == 1)
-            {
-                currentColour = ScoreColour.Red;
-                myRedLight.LightOn();
-            }
-            else if (testColor.g == 1)
-            {
-                currentColour = ScoreColour.Green;
-                myGreenLight.LightOn();
-            }
-            else if (testColor.b == 1)
-            {
-                currentColour = ScoreColour.Blue;
-                myBlueLight.LightOn();
-            }
+
+            lastColour = testColor;
         }
-
-        lastColour = testColor;
 	}
 
     Texture2D toTexture2D(RenderTexture rTex)

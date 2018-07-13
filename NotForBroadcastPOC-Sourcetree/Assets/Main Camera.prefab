@@ -141,7 +141,7 @@ MonoBehaviour:
   rightViewFocusLength: 1.5
   rightViewAperture: 6
   downViewFocusLength: 0.96
-  downViewAperture: 3.2
+  downViewAperture: 5
 --- !u!124 &124964532253237770
 Behaviour:
   m_ObjectHideFlags: 1

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114420280390703262}
   - component: {fileID: 114724817509428008}
   - component: {fileID: 114258210600043390}
+  - component: {fileID: 114154697584577844}
   - component: {fileID: 114337312807549554}
   m_Layer: 0
   m_Name: Master Controller
@@ -43,6 +44,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114154697584577844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962718779459812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f554da4f0a3034481e830f76c8eaa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumAudiencePercentage: 20
+  maxGreenSecsMultiCam: 10
+  maxOrangeSecsMultiCam: 3
+  maxOrangeSecsSingleCam: 2
+  footageWeight: 1
+  audioWeight: 1
+  interferenceWeight: 1
+  resistanceWeight: 1
+  myScoringMode: 0
+  footageWeighting: 0
+  footageCountdown: 0
 --- !u!114 &114258210600043390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +124,7 @@ MonoBehaviour:
   preparingAd: 0
   overRunning: 0
   inDevMode: 0
+  savedFiles: []
 --- !u!114 &114337312807549554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,6 +160,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: 93bd7b34b4eb3a04a936d1052b7e76ae, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
   - SequenceName: Blues Band
     runIn: 8
     runOut: 11
@@ -156,6 +181,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
   - SequenceName: The Count
     runIn: 5
     runOut: 5
@@ -176,6 +202,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
   - SequenceName: Temp 01-01
     runIn: 8
     runOut: 8
@@ -192,6 +219,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
   - SequenceName: Temp 01-02
     runIn: 8
     runOut: 8
@@ -208,6 +236,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
   - SequenceName: Temp 01-03
     runIn: 8
     runOut: 8
@@ -226,6 +255,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
   - SequenceName: 01-01 Headlines
     runIn: 12
     runOut: 10
@@ -243,6 +273,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
   - SequenceName: 01-02 Wildish
     runIn: 17
     runOut: 16
@@ -266,6 +297,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 1
   - SequenceName: 01-03 Party Leaders
     runIn: 17
     runOut: 20
@@ -289,6 +321,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 1
   - SequenceName: 02-01 Babies
     runIn: 17
     runOut: 10
@@ -312,6 +345,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
   - SequenceName: 02-02 Thadeus
     runIn: 32
     runOut: 24
@@ -332,6 +366,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 1
   - SequenceName: 02-03 Hostage
     runIn: 44
     runOut: 21
@@ -352,6 +387,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 1
 --- !u!114 &114420280390703262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -377,6 +413,7 @@ MonoBehaviour:
     AudioInterference: {fileID: 0}
     resistanceVideo: {fileID: 0}
     resistanceAudio: {fileID: 0}
+    scoringMode: 0
   preRollReady: 0
   broadcastScreenDelayTime: 2
 --- !u!114 &114724817509428008

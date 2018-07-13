@@ -361,37 +361,46 @@ public class MasterController : MonoBehaviour {
 
     public void SequenceComplete(VideoClip thisAdvert, AudioClip thisAdvertAudio)
     {
-        SortAndSaveEDL();
-        // Advance Sequence Count
-        currentSequence++;
-        overRunning=false;
-
-        //TESTING: REMOVE -------------------
-        //currentSequence = 4;
-        // ----------------------------------
-
-
-        // Is sequence count less than 4?
-        if (currentSequence < 3)
+        // Has the player gone to AD too early?
+        if (myClock.clockTime > 2)
         {
-            Debug.Log("MASTER CONTROLLER SEQUENCE COMPLETE.  NEXT SEQUENCE:" + myLevelData.sequenceNames[currentSequence]);
-            // Yes - 
-
-            // Put the Vision Mixer into ResetSystem Mode
-            myVisionMixer.inPostRoll = true;
-
-            // Enter Ad Break Mode
-            PrepareAdvert(thisAdvert, thisAdvertAudio);
+            FailMidLevel("Played Advert Too Early");
         }
         else
         {
-            // No -
-            Debug.Log("PLAYING FINAL AD");
-            // Play final Ad
-            myVisionMixer.inPostRoll = true;
-            PrepareAdvert(thisAdvert, thisAdvertAudio);
-            // Call LevelComplete()
-            LevelComplete();
+
+            SortAndSaveEDL();
+            // Advance Sequence Count
+            currentSequence++;
+            overRunning = false;
+
+            //TESTING: REMOVE -------------------
+            //currentSequence = 4;
+            // ----------------------------------
+
+
+            // Is sequence count less than 4?
+            if (currentSequence < 3)
+            {
+                Debug.Log("MASTER CONTROLLER SEQUENCE COMPLETE.  NEXT SEQUENCE:" + myLevelData.sequenceNames[currentSequence]);
+                // Yes - 
+
+                // Put the Vision Mixer into ResetSystem Mode
+                myVisionMixer.inPostRoll = true;
+
+                // Enter Ad Break Mode
+                PrepareAdvert(thisAdvert, thisAdvertAudio);
+            }
+            else
+            {
+                // No -
+                Debug.Log("PLAYING FINAL AD");
+                // Play final Ad
+                myVisionMixer.inPostRoll = true;
+                PrepareAdvert(thisAdvert, thisAdvertAudio);
+                // Call LevelComplete()
+                LevelComplete();
+            }
         }
 
 
