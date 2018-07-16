@@ -117,5 +117,10 @@ public class ScoringController : MonoBehaviour {
         currentFootageColour = thisColour;
     }
 
+    public void AudioColourChange(ScoringPlane.ScoreColour thisColour, int thisAudioChannel)
+    {
+
+    }
+
 
 }
