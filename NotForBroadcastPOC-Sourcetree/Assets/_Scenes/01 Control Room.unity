@@ -279,7 +279,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -68.743004, z: 0}
 --- !u!95 &8442181
 Animator:
@@ -4876,7 +4876,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1428740881}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!108 &263335319
 Light:
@@ -5382,7 +5382,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -7129,7 +7129,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41b3de9b2deae1a42b1de7aafeacb4b2, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41b3de9b2deae1a42b1de7aafeacb4b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7386,7 +7386,7 @@ Transform:
   - {fileID: 1608261788}
   - {fileID: 1476033415}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &378668034 stripped
 GameObject:
@@ -7788,7 +7788,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &407976651 stripped
 GameObject:
@@ -8922,7 +8922,7 @@ Transform:
   - {fileID: 354086770}
   - {fileID: 603054298}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &508521914
 MonoBehaviour:
@@ -10712,7 +10712,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eff1a97d167507748a9cefaac33a7e45, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eff1a97d167507748a9cefaac33a7e45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11654,7 +11654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185fd4f4e8fff5b45b84a9de2dfe13ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMinY: 1.03
+  myMinY: 0.65
   myMaxY: 1.31
   mySpeed: 0.08
   myUpButton: {fileID: 1029578782}
@@ -11859,7 +11859,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 677110287}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 6cec440bce3273f47ad36ebff3c898e7, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -11878,10 +11878,10 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &677110289
 MeshRenderer:
@@ -12130,7 +12130,7 @@ Transform:
   - {fileID: 253953932}
   - {fileID: 1695325123}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &687270493
 GameObject:
@@ -12417,7 +12417,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 691661002}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 6cec440bce3273f47ad36ebff3c898e7, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -12436,10 +12436,10 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &691661004
 MeshRenderer:
@@ -15898,7 +15898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 6.6700006, y: 90.00001, z: 0}
 --- !u!81 &865199830
 AudioListener:
@@ -16405,6 +16405,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 895067982}
+--- !u!1 &898817624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 898817627}
+  - component: {fileID: 898817626}
+  - component: {fileID: 898817625}
+  m_Layer: 0
+  m_Name: FPSDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &898817625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898817624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617faf8e7275cdc49af413c818c73321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &898817626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898817624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cc57c5c91af7f439aef90a560524d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &898817627
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898817624}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &900726761 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 912dad959da73de4eb3b81c63e26a254, type: 3}
@@ -17557,7 +17609,7 @@ Transform:
   - {fileID: 501939792}
   - {fileID: 28805557}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &942670889
 Prefab:
@@ -17601,7 +17653,7 @@ Prefab:
     - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
@@ -18199,7 +18251,7 @@ RectTransform:
   - {fileID: 1486697719}
   - {fileID: 1258595761}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21148,7 +21200,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: de4599262d4c0c941a78c0d1710fa699, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: de4599262d4c0c941a78c0d1710fa699, type: 3}
@@ -22993,7 +23045,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1124380750}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 6cec440bce3273f47ad36ebff3c898e7, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -23012,10 +23064,10 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &1124380752
 MeshRenderer:
@@ -23325,7 +23377,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4111226156981182, guid: 906f51095a6cb5f46bca4e0601525f76, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114698582469754698, guid: 906f51095a6cb5f46bca4e0601525f76,
         type: 2}
@@ -27141,7 +27193,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377941598}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 6cec440bce3273f47ad36ebff3c898e7, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -27995,12 +28047,12 @@ Transform:
   - {fileID: 516999575}
   - {fileID: 882316489}
   - {fileID: 806334657}
-  - {fileID: 263335318}
   - {fileID: 618891267}
   - {fileID: 1387876274}
+  - {fileID: 263335318}
   - {fileID: 1114343757}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1429187999 stripped
 GameObject:
@@ -30236,7 +30288,7 @@ Transform:
   - {fileID: 1315948161}
   - {fileID: 2049555774}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1548731724
 Prefab:
@@ -32381,7 +32433,7 @@ RectTransform:
   - {fileID: 422716571}
   - {fileID: 819201607}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -33027,7 +33079,7 @@ Transform:
   - {fileID: 1095481291}
   - {fileID: 1305938523}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1725530435 stripped
 Transform:
@@ -36956,7 +37008,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4078892098396836, guid: 8f0bec63372ae0241bd641cafe00158b, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114486639052846530, guid: 8f0bec63372ae0241bd641cafe00158b,
         type: 2}
@@ -39628,7 +39680,7 @@ Transform:
   - {fileID: 900726761}
   - {fileID: 1069329529}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2055057433 stripped
 GameObject:
@@ -40970,7 +41022,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2133829763}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 6cec440bce3273f47ad36ebff3c898e7, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -40989,10 +41041,10 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &2133829765
 MeshRenderer:
