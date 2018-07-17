@@ -16,6 +16,7 @@ public class ScoringPlane : MonoBehaviour {
     public enum ScoringCameraType { Video, Audio }
     public ScoringCameraType myType;
     public int myAudioChannel;
+    public float myIntialDelay;
 
     private ScoringController myScoringController;
     private Color lastColour;
@@ -26,12 +27,17 @@ public class ScoringPlane : MonoBehaviour {
     // Use this for initialization
     void Start () {
         currentColour = ScoreColour.Null;
-        InvokeRepeating("ReadTV", 1, 0.2f);
+        Invoke("SetupSplitRead", myIntialDelay);
         myScoringController = FindObjectOfType<ScoringController>();
 	}
-	
-	// Update is called once per frame
-	void ReadTV () {
+
+    void SetupSplitRead()
+    {
+        InvokeRepeating("ReadTV", 1, 0.5f);
+    }
+
+    // Update is called once per frame
+    void ReadTV () {
         if (myScreen.isPlaying)
         {
             Texture2D testableTexture = toTexture2D(myColourPlane);

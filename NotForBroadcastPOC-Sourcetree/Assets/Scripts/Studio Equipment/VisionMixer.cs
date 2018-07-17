@@ -13,6 +13,7 @@ public class VisionMixer : MonoBehaviour {
     public AudioClip barsAndToneAudio;
     public Switch myLinkSwitch;
     public NoSignal masterNoSignal;
+    public Light myPowerLight;
     private SoundDesk myMixingDesk;
     private bool hasPower;
     [HideInInspector]
@@ -223,6 +224,7 @@ public class VisionMixer : MonoBehaviour {
         {
             thisTV.PowerOn();
         }
+        myPowerLight.enabled = true;
         hasPower = true;
     }
 
@@ -242,6 +244,7 @@ public class VisionMixer : MonoBehaviour {
         {
             thisTV.PowerOff();
         }
+        myPowerLight.enabled = false;
         hasPower = false;
     }
 

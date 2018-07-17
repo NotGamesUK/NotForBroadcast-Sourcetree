@@ -10,8 +10,14 @@ public class SoundDesk : MonoBehaviour {
     public ButtonAnimating[] myMutes;
     public AudioMixer myDesk;
     public ButtonAnimating myBleepButton;
+    public Material greenLED;
+    public Material redLED;
     public Light masterMuteLight;
+    public MeshRenderer masterMuteLED;
     public Light broadcastMuteLight;
+    public MeshRenderer broadcastMuteLED;
+
+    public Light myPowerLight;
     public float myMuteLightIntensity = 20f;
     public bool hasPower=false;
     public bool masterIsMuted;
@@ -192,8 +198,10 @@ public class SoundDesk : MonoBehaviour {
                 myDesk.SetFloat("BroadcastVol", -80f);
                 // Set master light to green
                 masterMuteLight.color = Color.green;
+                masterMuteLED.material = greenLED;
                 // Set broadcast light to red
                 broadcastMuteLight.color = Color.red;
+                broadcastMuteLED.material = redLED;
                 break;
 
             case ("1"):
@@ -202,7 +210,9 @@ public class SoundDesk : MonoBehaviour {
                 myDesk.SetFloat("ControlRoomVol", storedMasterVolume);
                 myDesk.SetFloat("BroadcastVol", storedBroadcastVolume);
                 masterMuteLight.color = Color.green;
+                masterMuteLED.material = greenLED;
                 broadcastMuteLight.color = Color.green;
+                broadcastMuteLED.material = greenLED;
                 break;
 
             case ("2"):
@@ -213,8 +223,10 @@ public class SoundDesk : MonoBehaviour {
                 myDesk.SetFloat("ControlRoomVol", -80f);
                 // Set master light to red
                 masterMuteLight.color = Color.red;
+                masterMuteLED.material = redLED;
                 // Set broadcast light to green
                 broadcastMuteLight.color = Color.green;
+                broadcastMuteLED.material = greenLED;
                 break;
 
         }
@@ -257,6 +269,7 @@ public class SoundDesk : MonoBehaviour {
         masterMuteLight.intensity = myMuteLightIntensity;
         broadcastMuteLight.intensity = myMuteLightIntensity;
         myBleep.Play();
+        myPowerLight.enabled = true;
     }
 
     void PowerOff()
@@ -273,6 +286,8 @@ public class SoundDesk : MonoBehaviour {
         myBleepButton.hasPower = false;
         masterMuteLight.intensity = 0;
         broadcastMuteLight.intensity = 0;
+        myPowerLight.enabled = false;
+
         myBleep.Stop();
     }
 }
