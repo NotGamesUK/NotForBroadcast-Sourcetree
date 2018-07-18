@@ -9,9 +9,6 @@ public class DataStorage : MonoBehaviour {
     public class SequenceData
     {
         public string SequenceName;
-        //public VideoClip preSequenceBroadcastVideo;
-        //public VideoClip preSequenceBroadcastSmallerVideo;
-        //public AudioClip preSequenceBroadcastAudio;
         public float runIn = 30;
         public float runOut = 15;
         public VideoClip[] screenVideo;
@@ -21,6 +18,8 @@ public class DataStorage : MonoBehaviour {
         public AudioClip AudioInterference;
         public VideoClip resistanceVideo;
         public AudioClip resistanceAudio;
+        public ScoringController.ScoringMode scoringMode;
+
 
 
         public string GetName()

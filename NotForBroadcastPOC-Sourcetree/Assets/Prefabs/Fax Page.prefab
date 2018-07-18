@@ -431,10 +431,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPaper: {fileID: 102675147001544266}
-  myDefaultMaterial: {fileID: 2100000, guid: 15d626cbb4f0dd94a97ac0ec7e76eb10, type: 2}
+  myDefaultMaterial: {fileID: 2100000, guid: b72aaeb3526821a4498a336b85e60f25, type: 2}
   mySelectedMaterial: {fileID: 2100000, guid: 13e69c447407f3746b050a43edf3f6f7, type: 2}
   myTearSFX: {fileID: 8300000, guid: 136848aaa9f8eac40a63896a1a7c5cf3, type: 3}
   myPlaceSFX: {fileID: 8300000, guid: 5659d2d3df406ea49a25dd926f31db90, type: 3}
   myPickupSFX: {fileID: 8300000, guid: 2566f3f8b6ff0b149ac91ada83595cf5, type: 3}
+  holdingFaxFocusLength: 0.5
+  holdingFaxAperture: 10.6
   isGrabbable: 0
   grabShiftInZ: 0.4

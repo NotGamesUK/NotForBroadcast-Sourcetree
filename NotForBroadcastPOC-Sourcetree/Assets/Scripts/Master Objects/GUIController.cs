@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -24,12 +25,14 @@ public class GUIController : MonoBehaviour
     public AudioClip failMenuMusic;
     public AudioClip playbackMenuMusic;
 
+    public Text failMenuReasonForFail;
+
     public static GUIController uniqueGUIController;
 
     private AudioSource myMusicPlayer;
     private MasterController myMasterController;
     private OptionsController myOptionsController;
-    public GameObject currentMenu;
+    private GameObject currentMenu;
     private GameObject currentCamera;
     private CameraMovement freeLookCamera;
     private DevModeObject[] devModeObjects;
@@ -141,6 +144,7 @@ public class GUIController : MonoBehaviour
     public void GoToFailed(string thisReason)
     {
         // Set Reason for Fail
+        failMenuReasonForFail.text = thisReason;
         ChangeCameraTo(menuCamera);
         ChangeMenuTo(failMenu);
         ChangeMusicTo(failMenuMusic);
