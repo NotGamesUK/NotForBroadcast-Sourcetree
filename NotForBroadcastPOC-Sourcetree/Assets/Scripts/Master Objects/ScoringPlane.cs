@@ -21,7 +21,8 @@ public class ScoringPlane : MonoBehaviour {
     private ScoringController myScoringController;
     private Color lastColour;
     public enum ScoreColour { Red, Green, Orange, Null}
-    private ScoreColour currentColour;
+    [HideInInspector]
+    public ScoreColour currentColour;
 
 
     // Use this for initialization
@@ -42,7 +43,7 @@ public class ScoringPlane : MonoBehaviour {
         {
             Texture2D testableTexture = toTexture2D(myColourPlane);
             Color testColor = testableTexture.GetPixel(0, 0);
-            Debug.Log("Current Colour: " + testColor);
+            //Debug.Log("Current Colour: " + testColor);
             if (lastColour != testColor)
             {
                 // Adjust Lights as necessary

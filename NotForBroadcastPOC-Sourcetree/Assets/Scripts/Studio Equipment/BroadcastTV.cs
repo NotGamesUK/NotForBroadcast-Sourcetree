@@ -18,6 +18,7 @@ public class BroadcastTV : MonoBehaviour {
     public VideoPlayer myWhiteNoiseScreen;
     public AudioSource myWhiteNoiseAudiosource;
     public AudioSource myAudioInterferenceAudiosource;
+    public Vector3 visibleBroadcastScreenPosition;
 
     public enum BroadcastModes { Live, Playback }
     public BroadcastModes myMode;
@@ -32,6 +33,8 @@ public class BroadcastTV : MonoBehaviour {
     private SequenceController mySequenceController;
     private MasterController myMasterController;
     private MeshRenderer myNoSignal;
+    private BroadcastScreenMover[] myScreenMover = new BroadcastScreenMover[4];
+    private ScoringController myScoringController;
     private bool[] screenPreparing = new bool[4];
     private bool adPreparing;
     private bool resistancePreparing;
@@ -50,8 +53,13 @@ public class BroadcastTV : MonoBehaviour {
         myNoSignal = GetComponentInChildren<NoSignal>().GetComponent<MeshRenderer>();
         mySequenceController = FindObjectOfType<SequenceController>();
         myMasterController = FindObjectOfType<MasterController>();
+        myScoringController = FindObjectOfType<ScoringController>();
         SetResistanceVideoLevel(0);
         SetWhiteNoiseVideoLevel(0);
+        for (int n=0; n<=3; n++)
+        {
+            myScreenMover[n] = myScreens[n].GetComponent<BroadcastScreenMover>();
+        }
 	}
 	
 	// Update is called once per frame
@@ -145,7 +153,7 @@ public class BroadcastTV : MonoBehaviour {
         {
             myNoSignal.enabled = false;
             // Bring Selected Screen To Front (0.042)
-            myScreens[requestedScreen - 1].transform.Translate(new Vector3(0f, 0.02f, 0f));
+            myScreenMover[requestedScreen - 1].MoveToHomePosition();
             // Tell Desk to Select correct Channel
             //myDesk.TEMPORARYSetBroadcastChannel(requestedScreen);
             //Debug.Log("Changed Broadcast Screen From NO SIGNAL to " + requestedScreen);
@@ -153,9 +161,9 @@ public class BroadcastTV : MonoBehaviour {
         else
         {
             // Move Selected screen forwards and previous screen backwards
-            myScreens[currentScreen - 1].transform.Translate(new Vector3(0f, -0.02f, 0f));
+            myScreenMover[currentScreen - 1].MoveToBroadcastPosition();
             // Bring Selected Screen To Front (0.042)
-            myScreens[requestedScreen - 1].transform.Translate(new Vector3(0f, 0.02f, 0f));
+            myScreenMover[requestedScreen - 1].MoveToHomePosition();
             // Tell Desk to Select correct Channel
             //myDesk.TEMPORARYSetBroadcastChannel(requestedScreen);
             // Change Current Screen to Selected Screen
@@ -247,6 +255,7 @@ public class BroadcastTV : MonoBehaviour {
     public void PrepareScreens(VideoClip[] theseClips, AudioClip[] theseAudioClips, AudioClip thisInterferenceAudioclip)
     {
         maxScreen = theseClips.Length;
+        myScoringController.maxAudioChannel = maxScreen;
         //Debug.Log("Broadcast TV Number of Screens Preparing: " + maxScreen);
         for (int n = 0; n < maxScreen; n++)
         {

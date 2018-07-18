@@ -20,13 +20,13 @@ public class BackWallLight : MonoBehaviour {
 
     public void LightOn()
     {
-        Debug.Log("Light On Called");
+        //Debug.Log("Light On Called");
         myRenderer.material = myOnMaterial;
     }
 
     public void LightOff()
     {
-        Debug.Log("Light Off Called");
+        //Debug.Log("Light Off Called");
         myRenderer.material = myOffMaterial;
     }
 

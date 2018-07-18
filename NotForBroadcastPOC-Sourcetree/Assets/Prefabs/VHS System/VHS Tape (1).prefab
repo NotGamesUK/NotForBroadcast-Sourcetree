@@ -224,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923265198990200}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.112, y: 0.33, z: 0.514}
+  m_LocalPosition: {x: 0.112, y: 0.38, z: 0.514}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4892318093458000}
@@ -242,7 +242,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1110584831427902}
   m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.0013, z: 0.0124}
+  m_LocalPosition: {x: -0.0001, y: -0.0013, z: 0.0124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4892318093458000}
@@ -488,7 +488,6 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: f872ebda8c3fd204a8e4800687f6e1c4, type: 3}
-  - {fileID: 2100002, guid: f872ebda8c3fd204a8e4800687f6e1c4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -704,7 +703,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: bfd5037b78967974ea925537477bd20e, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278519235
+    rgba: 4278190335
 --- !u!102 &102781690825138640
 TextMesh:
   serializedVersion: 3
@@ -739,10 +738,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56c64d56fa78b8419a6869840efa074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTitle: Kittens
-  myVideo: {fileID: 32900000, guid: 4fe401c0ddfc3224cb65566e27902913, type: 3}
-  myVideoSmaller: {fileID: 32900000, guid: 43f35c89c8d3143448c593cb5dc63b6f, type: 3}
-  myAudio: {fileID: 8300000, guid: f44c34ea83707e34e9430d32bed7209f, type: 3}
+  myTitle: Wassup!!
+  myVideo: {fileID: 32900000, guid: 950ec6104f7ece84c82211a18214b2de, type: 3}
+  myVideoSmaller: {fileID: 32900000, guid: 73026b0a6b32a2944b61ffdcb3172fa1, type: 3}
+  myAudio: {fileID: 8300000, guid: 011dbf34fd203ee4cb09f3ae8d4ba7ad, type: 3}
   myBox: {fileID: 0}
 --- !u!114 &114406492322162062
 MonoBehaviour:

@@ -171,7 +171,7 @@ public class CameraMovement : MonoBehaviour {
             focusIncrement = (targetFocusDistance - currentFocusDistance) / thisTime;
             focusPullCountdown = thisTime;
             pullingFocus = true;
-            Debug.Log("Main Camera: Adjusting Focus Distance.");
+            //Debug.Log("Main Camera: Adjusting Focus Distance.");
         }
         if (thisAperture != currentAperture)
         {
@@ -179,7 +179,7 @@ public class CameraMovement : MonoBehaviour {
             apertureIncrement = (targetAperture - currentAperture) / thisTime;
             focusPullCountdown = thisTime;
             pullingFocus = true;
-            Debug.Log("Main Camera: Adjusting Aperture.");
+            //Debug.Log("Main Camera: Adjusting Aperture.");
 
         }
     }

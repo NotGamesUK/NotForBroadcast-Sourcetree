@@ -26,12 +26,14 @@ public class SoundDesk : MonoBehaviour {
     private float storedMasterVolume;
     private float storedBroadcastVolume;
     private EDLController myEDLController;
+    private ScoringController myScoringController;
     
 
 	// Use this for initialization
 	void Start () {
         myBleep = GetComponent<AudioSource>();
         myEDLController = FindObjectOfType<EDLController>();
+        myScoringController = FindObjectOfType<ScoringController>();
         myDesk.SetFloat("ResistanceVol", -80f);
         myDesk.SetFloat("BleepVol", -80f);
         myDesk.SetFloat("WhiteNoiseVol", -80f);
@@ -72,14 +74,22 @@ public class SoundDesk : MonoBehaviour {
 
     public void MuteBroadcastChannel(int thisChannel)
     {
+        Debug.Log("Setting Scoring Controller.channelMuted[" + (thisChannel - 1) + "] to true");
+
         string channelRequired = "Broadcast0" + thisChannel + "Vol";
         myDesk.SetFloat(channelRequired, -80f);
+        myScoringController.channelMuted[thisChannel - 1] = true;
+        
     }
 
     public void UnMuteBroadcastChannel(int thisChannel)
     {
+        Debug.Log("Setting Scoring Controller.channelMuted[" + (thisChannel - 1) + "] to false");
+
         string channelRequired = "Broadcast0" + thisChannel + "Vol";
         myDesk.SetFloat(channelRequired, 0f);
+        myScoringController.channelMuted[thisChannel - 1] = false;
+
     }
 
     //public void TEMPORARYSetBroadcastChannel (int thisChannel)
@@ -240,7 +250,7 @@ public class SoundDesk : MonoBehaviour {
         {
             myEDLController.AddBleepOn();
         }
-
+        myScoringController.bleepOn = true;
 
     }
 
@@ -252,6 +262,7 @@ public class SoundDesk : MonoBehaviour {
         {
             myEDLController.AddBleepOff();
         }
+        myScoringController.bleepOn = false;
     }
 
     void PowerOn()
