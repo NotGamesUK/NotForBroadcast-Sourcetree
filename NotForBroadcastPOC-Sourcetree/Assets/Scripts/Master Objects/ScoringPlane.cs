@@ -6,7 +6,6 @@ using UnityEngine.Video;
 public class ScoringPlane : MonoBehaviour {
 
     public RenderTexture myColourPlane;
-    public VideoPlayer myScreen;
 
     // FOR TESTING:
 
@@ -39,7 +38,7 @@ public class ScoringPlane : MonoBehaviour {
 
     // Update is called once per frame
     void ReadTV () {
-        if (myScreen.isPlaying)
+        if (myScoringController.broadcastScreensLive)
         {
             Texture2D testableTexture = toTexture2D(myColourPlane);
             Color testColor = testableTexture.GetPixel(0, 0);
