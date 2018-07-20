@@ -153,7 +153,7 @@ public class BroadcastTV : MonoBehaviour {
         {
             myNoSignal.enabled = false;
             // Bring Selected Screen To Front (0.042)
-            myScreenMover[requestedScreen - 1].MoveToHomePosition();
+            myScreenMover[requestedScreen - 1].MoveToBroadcastPosition();
             // Tell Desk to Select correct Channel
             //myDesk.TEMPORARYSetBroadcastChannel(requestedScreen);
             //Debug.Log("Changed Broadcast Screen From NO SIGNAL to " + requestedScreen);
@@ -161,9 +161,9 @@ public class BroadcastTV : MonoBehaviour {
         else
         {
             // Move Selected screen forwards and previous screen backwards
-            myScreenMover[currentScreen - 1].MoveToBroadcastPosition();
+            myScreenMover[currentScreen - 1].MoveToHomePosition();
             // Bring Selected Screen To Front (0.042)
-            myScreenMover[requestedScreen - 1].MoveToHomePosition();
+            myScreenMover[requestedScreen - 1].MoveToBroadcastPosition();
             // Tell Desk to Select correct Channel
             //myDesk.TEMPORARYSetBroadcastChannel(requestedScreen);
             // Change Current Screen to Selected Screen
@@ -171,6 +171,16 @@ public class BroadcastTV : MonoBehaviour {
         currentScreen = requestedScreen;
         //Debug.Log("Switched Broadcast Screen to " + currentScreen);
 
+    }
+
+    public void ResetScreens()
+    {
+        Debug.LogError("BROADCAST TV RESETTING SCREENS");
+        if (currentScreen != 0)
+        {
+            myScreenMover[currentScreen - 1].MoveToHomePosition();
+            currentScreen = 0;
+        }
     }
 
     public void EndAdvertAndStartLiveBroadcast()
@@ -184,7 +194,7 @@ public class BroadcastTV : MonoBehaviour {
         if (currentScreen != 0)
         {
             // Bring Selected Screen To Front (0.042)
-            myScreens[currentScreen - 1].transform.Translate(new Vector3(0f, 0.002f, 0f));
+            myScreenMover[currentScreen - 1].MoveToBroadcastPosition();
             // Tell Desk to Select correct Channel
             //myDesk.TEMPORARYSetBroadcastChannel(currentScreen);
 

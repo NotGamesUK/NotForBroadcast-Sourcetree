@@ -13,7 +13,10 @@ public class BroadcastScreenMover : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        homePosition = this.transform.position;
+        transform.Translate(new Vector3(-myTranslationFactor, 3.02f, 0f));
+        broadcastPosition = this.transform.position;
+        transform.Translate(new Vector3(myTranslationFactor, -3.02f, 0f));
     }
 
     // Update is called once per frame
@@ -23,15 +26,17 @@ public class BroadcastScreenMover : MonoBehaviour {
 
     public void MoveToBroadcastPosition()
     {
-        transform.Translate(new Vector3(myTranslationFactor, -3.02f, 0f));
+        this.transform.position = broadcastPosition;
+        // transform.Translate(new Vector3(myTranslationFactor, -3.02f, 0f));
         //Debug.Log("My Broadcast Position: " + this.transform.position);
 
     }
 
     public void MoveToHomePosition()
     {
-        transform.Translate(new Vector3(-myTranslationFactor, 3.02f, 0f));
-        //Debug.Log("My Home Position: " + this.transform.position);
+        this.transform.position = homePosition;
+        // transform.Translate(new Vector3(-myTranslationFactor, 3.02f, 0f));
+        // Debug.Log("My Home Position: " + this.transform.position);
 
     }
 }
