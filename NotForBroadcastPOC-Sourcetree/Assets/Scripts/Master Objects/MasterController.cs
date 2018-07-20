@@ -12,8 +12,8 @@ public class MasterController : MonoBehaviour {
     [System.Serializable]
     public class LevelData
     {
-        public int dayNumber;
         public string levelName;
+        public int dayNumber;
         [Tooltip ("Leave this blank to jump straight to main pre-roll")]
         public VideoClip loopRoll;
         public VideoClip loopRollSmaller;

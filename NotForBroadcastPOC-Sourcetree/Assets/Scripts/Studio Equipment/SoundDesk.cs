@@ -18,7 +18,7 @@ public class SoundDesk : MonoBehaviour {
     public MeshRenderer broadcastMuteLED;
 
     public Light myPowerLight;
-    public float myMuteLightIntensity = 20f;
+    public float myMuteLightIntensity = 6f;
     public bool hasPower=false;
     public bool masterIsMuted;
     private AudioSource myBleep;

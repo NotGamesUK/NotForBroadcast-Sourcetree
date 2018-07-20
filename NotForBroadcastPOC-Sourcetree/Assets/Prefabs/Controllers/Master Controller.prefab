@@ -86,8 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   broadcastScreenDelayTime: 2
   levelData:
-  - dayNumber: 0
-    levelName: Election Night
+  - levelName: 01 Election Night
+    dayNumber: 0
     loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
@@ -99,8 +99,8 @@ MonoBehaviour:
     - 01-02 Wildish
     - 01-03 Party Leaders
     gameEvents: []
-  - dayNumber: 100
-    levelName: The Heatwave
+  - levelName: 06 The Heatwave
+    dayNumber: 100
     loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
@@ -112,8 +112,8 @@ MonoBehaviour:
     - 02-02 Thadeus
     - 02-03 Hostage
     gameEvents: []
-  - dayNumber: 666
-    levelName: Test
+  - levelName: Test
+    dayNumber: 666
     loopRoll: {fileID: 32900000, guid: 78806f19c5cad6d4c849cf44e0abc606, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 78806f19c5cad6d4c849cf44e0abc606, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
