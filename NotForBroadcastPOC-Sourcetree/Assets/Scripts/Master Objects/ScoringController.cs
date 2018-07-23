@@ -49,7 +49,7 @@ public class ScoringController : MonoBehaviour {
 
         if (broadcastScreensLive)
         {
-            Debug.Log("Scoring Controller - Currently Scoring Audio");
+            //Debug.Log("Scoring Controller - Currently Scoring Audio");
             muteCount = 0;
             incorrectlyBleepedCount = 0;
             orangeAudioWeighted = false;
@@ -73,7 +73,7 @@ public class ScoringController : MonoBehaviour {
                     if (orangeAudioWeighted == false)
                     {
                         orangeAudioWeighted = true;
-                        Debug.Log("Scoring Controller: Making MODERATE Orange audio out weighting.");
+                        //Debug.Log("Scoring Controller: Making MODERATE Orange audio out weighting.");
                         // MAKE ORANGE AUDIO BROADCAST WEIGHT ADJUSTMENT
 
                     }
@@ -88,7 +88,7 @@ public class ScoringController : MonoBehaviour {
                 {
                     if (!bleepOn)
                     {
-                        Debug.Log("Scoring Controller RED NOT BLEEPED - Heavy Audio Weighting");
+                        //Debug.Log("Scoring Controller RED NOT BLEEPED - Heavy Audio Weighting");
                     }
 
                 }
@@ -105,34 +105,36 @@ public class ScoringController : MonoBehaviour {
 
             }
 
-        }
-
-        // Apply Audio Weighting Here
 
 
-        // Adjust Footage Fail Countdown
+            // Apply Audio Weighting Here
 
-        if (footageCountdown > 0)
-        {
-            footageCountdown -= Time.deltaTime;
-            if (footageCountdown <= 0)
+
+            // Adjust Footage Fail Countdown
+
+            if (footageCountdown > 0)
             {
-                footageWeighting = -1;
-                footageCountdown = -1;
+                footageCountdown -= Time.deltaTime;
+                if (footageCountdown <= 0)
+                {
+                    footageWeighting = -1;
+                    footageCountdown = -1;
+                }
+            }
+
+            // Make Adjustment based on weighting
+            audiencePercentage += footageWeighting * Time.deltaTime*footageWeight;
+
+            if (audiencePercentage < 0) { audiencePercentage = 0; }
+            if (audiencePercentage > 100) { audiencePercentage = 100; }
+            myVUMeter.SetToPercentage(audiencePercentage);
+            if (audiencePercentage < minimumAudiencePercentage)
+            {
+                string failString = "Audience Fell Below " + minimumAudiencePercentage.ToString() + "%";
+                myMasterController.FailMidLevel(failString);
             }
         }
 
-        // Make Adjustment based on weighting
-        audiencePercentage += footageWeighting * Time.deltaTime*footageWeight;
-
-        if (audiencePercentage < 0) { audiencePercentage = 0; }
-        if (audiencePercentage > 100) { audiencePercentage = 100; }
-        myVUMeter.SetToPercentage(audiencePercentage);
-        if (audiencePercentage < minimumAudiencePercentage)
-        {
-            string failString = "Audience Fell Below " + minimumAudiencePercentage.ToString() + "%";
-            myMasterController.FailMidLevel(failString);
-        }
     }
 
     public void FootageColourChange(ScoringPlane.ScoreColour thisColour)

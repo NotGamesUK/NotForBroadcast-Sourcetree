@@ -32,6 +32,7 @@ public class GUIController : MonoBehaviour
     private AudioSource myMusicPlayer;
     private MasterController myMasterController;
     private OptionsController myOptionsController;
+    private PlaybackRoomController myPlaybackController;
     private GameObject currentMenu;
     private GameObject currentCamera;
     private CameraMovement freeLookCamera;
@@ -57,6 +58,7 @@ public class GUIController : MonoBehaviour
     {
         myMasterController = FindObjectOfType<MasterController>();
         myOptionsController = GetComponent<OptionsController>();
+        myPlaybackController = GetComponent<PlaybackRoomController>();
         myMusicPlayer = GetComponent<AudioSource>();
         devModeObjects = FindObjectsOfType<DevModeObject>();
         freeLookCamera = FindObjectOfType<CameraMovement>();
@@ -106,6 +108,7 @@ public class GUIController : MonoBehaviour
         ChangeCameraTo(playbackCamera);
         ChangeMenuTo(playbackMenu);
         ChangeMusicTo(playbackMenuMusic);
+        myPlaybackController.PrepareList();
     }
 
     public void LeavePlayback()

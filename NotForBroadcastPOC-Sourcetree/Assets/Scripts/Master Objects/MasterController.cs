@@ -53,6 +53,7 @@ public class MasterController : MonoBehaviour {
     private BroadcastTV myBroadcastScreen;
     private GUIController myGUIController;
     private EDLController myEDLController;
+    private ScoringController myScoringController;
     private VisionMixer myVisionMixer;
     private BackWallClock myClock;
     [HideInInspector]
@@ -91,6 +92,7 @@ public class MasterController : MonoBehaviour {
         myEDLController = GetComponent<EDLController>();
         myBroadcastScreen = FindObjectOfType<BroadcastTV>();
         myGUIController = FindObjectOfType<GUIController>();
+        myScoringController = GetComponent<ScoringController>();
         myVisionMixer = FindObjectOfType<VisionMixer>();
         myClock = FindObjectOfType<BackWallClock>();
         myState = MasterState.Menu;
@@ -361,6 +363,7 @@ public class MasterController : MonoBehaviour {
 
     public void SequenceComplete(VideoClip thisAdvert, AudioClip thisAdvertAudio)
     {
+        Debug.Log("Sequence Controller: Advert hit with " + myClock.clockTime + " seconds remaining.");
         // Has the player gone to AD too early?
         if (myClock.clockTime > 2)
         {
@@ -435,18 +438,16 @@ public class MasterController : MonoBehaviour {
         myState = MasterState.EndOfLevel;
         // Tell GUI to Display Scorecard, Update/Repair Sequence, and End Level GUI - Watch Broadcast, Replay, Continue.  
         myGUIController.GoToSuccess();
-
-
+        myClock.SetTimeAndHold(0, true);
+        myScoringController.broadcastScreensLive = false;
         // LOAD AND SAVE TEST
         DateTime theTime = DateTime.Now;
-        string date = theTime.ToString("yyyy-MM-dd");
-        string time = theTime.ToString("HH:mm");
-        string saveFileName = ("Day " + myDayNumber + " - " + myLevelName + " - " + date + " " + time);
+        string date = theTime.ToString("ddXXMMXXyy");
+        string time = theTime.ToString("HHCCmm");
+        string saveFileName = ("Day " + myDayNumber + "CC " + myLevelName + " BR GradeCC B+ BR "+date + " - " + time);
 
         Debug.Log("Saving File with Name: "+saveFileName);
-        SaveBroadcast("saveFileName");
-        LoadBroadcast("saveFileName");
-
+        SaveBroadcast(saveFileName);
     }
 
     void PauseGame()
@@ -505,7 +506,7 @@ public class MasterController : MonoBehaviour {
         FileStream thisOpenedFile = File.Open(Application.persistentDataPath + "/BroadcastArchive.dat", FileMode.Create);
         myFormatter.Serialize(thisOpenedFile, savedFiles);
         thisOpenedFile.Close();
-
+        Debug.Log("SAVING FILE LIST");
 
     }
 
@@ -519,6 +520,10 @@ public class MasterController : MonoBehaviour {
             savedFiles.Clear();
             savedFiles = (List<String>)myFormatter.Deserialize(thisOpenedFile);
             thisOpenedFile.Close();
+        }
+        else
+        {
+            Debug.Log("NO FILE LIST EXISTS");
         }
 
     }
@@ -564,7 +569,9 @@ public class MasterController : MonoBehaviour {
 
         myFormatter.Serialize(thisOpenedFile, thisSaveData);
         thisOpenedFile.Close();
+        Debug.Log("Adding File: "+thisSaveName+" to List of names.");
         savedFiles.Add(thisSaveName);
+        Debug.Log("Calling SaveFileList.");
         SaveFileList();
 
     }
