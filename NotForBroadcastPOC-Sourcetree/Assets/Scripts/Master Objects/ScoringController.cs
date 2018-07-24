@@ -7,23 +7,28 @@ public class ScoringController : MonoBehaviour {
     public float minimumAudiencePercentage, maxGreenSecsMultiCam, maxOrangeSecsMultiCam, maxOrangeSecsSingleCam;
     [Range (0, 5f)]
     public float footageWeight, audioWeight, interferenceWeight, resistanceWeight;
+    public ScoringPlane[] myAudioScorer;
 
     private MasterController myMasterController;
     private AudienceVUMeter myVUMeter;
     public enum ScoringMode { SingleCam, MultiCam }
     [HideInInspector]
     public ScoringMode myScoringMode;
+    [HideInInspector]
+    public bool broadcastScreensLive, bleepOn;
+    [HideInInspector]
+    public int maxAudioChannel;
+    public bool[] channelMuted;
+    private int muteCount, incorrectlyBleepedCount;
+    private bool orangeAudioWeighted;
 
     private float audiencePercentage;
-    public float footageWeighting, footageCountdown;
+    private float footageWeighting, footageCountdown;
     private float audioWeighting;
     private float interferenceWighting;
     private ScoringPlane.ScoreColour currentFootageColour;
 
 
-    /// FOR TESTING:
-    /// 
-    private float testPercentageDELETEME = 60;
 
 
     // Use this for initialization
@@ -32,20 +37,6 @@ public class ScoringController : MonoBehaviour {
         myVUMeter = FindObjectOfType<AudienceVUMeter>();
         myScoringMode = ScoringMode.SingleCam;
         audiencePercentage = 70;
-        /// For Testing
-        /// 
-        //Invoke("TEMPRandomVUAdjust", 0.2f);
-
-
-    }
-
-    void TEMPRandomVUAdjust()
-    {
-        testPercentageDELETEME += Random.Range(-3, 3.1f);
-        if (testPercentageDELETEME < 0) { testPercentageDELETEME = 0; }
-        if (testPercentageDELETEME > 100) { testPercentageDELETEME = 100; }
-        myVUMeter.SetToPercentage(testPercentageDELETEME);
-        Invoke("TEMPRandomVUAdjust", 0.2f);
 
     }
 
@@ -53,29 +44,97 @@ public class ScoringController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        // Adjust Footage Fail Countdown
+        // Monitor Audio Scoring and adjust weighting accordingly
+        audioWeighting = 0;
 
-        if (footageCountdown > 0)
+        if (broadcastScreensLive)
         {
-            footageCountdown -= Time.deltaTime;
-            if (footageCountdown <= 0)
+            //Debug.Log("Scoring Controller - Currently Scoring Audio");
+            muteCount = 0;
+            incorrectlyBleepedCount = 0;
+            orangeAudioWeighted = false;
+            for (int n=0; n<maxAudioChannel; n++)
             {
-                footageWeighting = -1;
-                footageCountdown = -1;
+                if (channelMuted[n])
+                {
+                    muteCount++;
+                }
+                else if (myAudioScorer[n].currentColour == ScoringPlane.ScoreColour.Green)
+                {
+                    if (bleepOn)
+                    {
+                        incorrectlyBleepedCount++;
+                        Debug.Log("Scoring Controller GREEN BLEEPED - Incrementing Incorrect Bleep Count to " + incorrectlyBleepedCount);
+                    }
+
+                }
+                else if (myAudioScorer[n].currentColour == ScoringPlane.ScoreColour.Orange)
+                {
+                    if (orangeAudioWeighted == false)
+                    {
+                        orangeAudioWeighted = true;
+                        //Debug.Log("Scoring Controller: Making MODERATE Orange audio out weighting.");
+                        // MAKE ORANGE AUDIO BROADCAST WEIGHT ADJUSTMENT
+
+                    }
+                    if (bleepOn)
+                    {
+                        incorrectlyBleepedCount++;
+                        Debug.Log("Scoring Controller ORANGE BLEEPED - Incrementing Incorrect Bleep Count to " + incorrectlyBleepedCount);
+                    }
+
+                }
+                else if (myAudioScorer[n].currentColour == ScoringPlane.ScoreColour.Red)
+                {
+                    if (!bleepOn)
+                    {
+                        //Debug.Log("Scoring Controller RED NOT BLEEPED - Heavy Audio Weighting");
+                    }
+
+                }
+                if (muteCount==maxAudioChannel)
+                {
+                    Debug.Log("All Viable Channels Muted - Weighting Audio Score.");
+                }
+                else if (incorrectlyBleepedCount == maxAudioChannel)
+                {
+                    Debug.Log("Incorrectly Bleeped!  Weighting Audio Score.");
+                }
+
+
+
+            }
+
+
+
+            // Apply Audio Weighting Here
+
+
+            // Adjust Footage Fail Countdown
+
+            if (footageCountdown > 0)
+            {
+                footageCountdown -= Time.deltaTime;
+                if (footageCountdown <= 0)
+                {
+                    footageWeighting = -1;
+                    footageCountdown = -1;
+                }
+            }
+
+            // Make Adjustment based on weighting
+            audiencePercentage += footageWeighting * Time.deltaTime*footageWeight;
+
+            if (audiencePercentage < 0) { audiencePercentage = 0; }
+            if (audiencePercentage > 100) { audiencePercentage = 100; }
+            myVUMeter.SetToPercentage(audiencePercentage);
+            if (audiencePercentage < minimumAudiencePercentage)
+            {
+                string failString = "Audience Fell Below " + minimumAudiencePercentage.ToString() + "%";
+                myMasterController.FailMidLevel(failString);
             }
         }
 
-        // Make Adjustment based on weighting
-        audiencePercentage += footageWeighting * Time.deltaTime*footageWeight;
-
-        if (audiencePercentage < 0) { audiencePercentage = 0; }
-        if (audiencePercentage > 100) { audiencePercentage = 100; }
-        myVUMeter.SetToPercentage(audiencePercentage);
-        if (audiencePercentage < minimumAudiencePercentage)
-        {
-            string failString = "Audience Fell Below " + minimumAudiencePercentage.ToString() + "%";
-            myMasterController.FailMidLevel(failString);
-        }
     }
 
     public void FootageColourChange(ScoringPlane.ScoreColour thisColour)

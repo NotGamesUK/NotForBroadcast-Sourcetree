@@ -25,7 +25,7 @@ public class VisionMixer : MonoBehaviour {
     private EDLController myEDLController;
 
     /// REMOVE AFTER EDL WORKING
-    public BroadcastTV myBroadcastTVTEMP;
+    public BroadcastTV myBroadcastTV;
     /////////////////////////////
 
 
@@ -34,6 +34,7 @@ public class VisionMixer : MonoBehaviour {
         //myLinkSwitch = GetComponentInChildren<Switch>();
         myMixingDesk = FindObjectOfType<SoundDesk>();
         myEDLController = FindObjectOfType<EDLController>();
+        myBroadcastTV = FindObjectOfType<BroadcastTV>();
         currentScreen = 0;
 	}
 	
@@ -210,6 +211,7 @@ public class VisionMixer : MonoBehaviour {
         }
 
     }
+
     void PowerOn()
     {
         foreach (VisionMixerButton thisButton in myVisionMixerButtons)
@@ -265,7 +267,7 @@ public class VisionMixer : MonoBehaviour {
             thisButton.hasContent = false;
         }
         masterNoSignal.JumpToFront();
-
+        myBroadcastTV.ResetScreens();
 
     }
 

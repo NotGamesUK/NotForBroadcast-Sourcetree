@@ -138,7 +138,6 @@ public class SequenceController : MonoBehaviour {
         //Debug.Log("SEQUENCE CONTROLLER: STARTING BROADCAST SCREENS");
         // Send GO to Broadcast Screens
         myBroadcastScreen.PlayScreens();
-
         // Set Mode to follow EDL
     }
 
@@ -147,16 +146,7 @@ public class SequenceController : MonoBehaviour {
         Debug.Log("SEQUENCE CONTROLLER: GOING LIVE");
         Invoke("SwitchBroadcastSystemToLive", broadcastScreenDelayTime);
         myClock.SetTimeAndHold((float)thisSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn - myDataStore.sequenceData[foundPos].runOut + broadcastScreenDelayTime, false);
-        //    } else {
-        //        if (!overrunning)
-        //        {
-        //            Debug.Log("PLAYER IS OVER-RUNNING");
-        //            // Player is OverRunning ad point
-        //            // Sound Overrun Alarm
-        //            overrunning = true;
-        //            overrunTime = myDataStore.sequenceData[foundPos].runOut;
-        //        } 
-        //    }
+
 
     }
 
@@ -165,6 +155,8 @@ public class SequenceController : MonoBehaviour {
         //Debug.Log("SEQUENCE CONTROLLER: Switching Broadcast System to Live Video.");
         myBroadcastScreen.EndAdvertAndStartLiveBroadcast();
         isPlayingAd = false;
+        myScoringController.broadcastScreensLive = true;
+
     }
 
     void SequenceOverrun()
@@ -195,8 +187,11 @@ public class SequenceController : MonoBehaviour {
         if (thisAdvertVideo)
         {
             myMasterController.SequenceComplete(thisAdvertVideo, thisAdvertAudio);
+            myScoringController.broadcastScreensLive = false;
 
-        } else
+
+        }
+        else
         {
             Debug.Log("CANNOT FIND VIDEO CLIP FOR VHSTape: " + thisAdvertName);
         }

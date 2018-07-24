@@ -67,7 +67,6 @@ public class BackWallClock : MonoBehaviour {
         {
             isRunning = false;
         }
-        // ELSE turnOn isRunning;
     }
 
     public void StartClock()
