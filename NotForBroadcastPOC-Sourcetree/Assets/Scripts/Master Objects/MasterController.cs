@@ -41,7 +41,7 @@ public class MasterController : MonoBehaviour {
 
     public float broadcastScreenDelayTime=2;
 
-    public LevelData[] levelData;
+    public LevelData[] levelDataArray;
 
     [HideInInspector]
     public float masterLevelClock;
@@ -54,8 +54,10 @@ public class MasterController : MonoBehaviour {
     private GUIController myGUIController;
     private EDLController myEDLController;
     private ScoringController myScoringController;
+    private PlaybackRoomController myPlaybackController;
     private VisionMixer myVisionMixer;
     private BackWallClock myClock;
+    private GodOfTheRoom myRoomGod;
     [HideInInspector]
     public int currentLevel;
     private int currentSequence;
@@ -93,8 +95,10 @@ public class MasterController : MonoBehaviour {
         myBroadcastScreen = FindObjectOfType<BroadcastTV>();
         myGUIController = FindObjectOfType<GUIController>();
         myScoringController = GetComponent<ScoringController>();
+        myPlaybackController = FindObjectOfType<PlaybackRoomController>();
         myVisionMixer = FindObjectOfType<VisionMixer>();
         myClock = FindObjectOfType<BackWallClock>();
+        myRoomGod = FindObjectOfType<GodOfTheRoom>();
         myState = MasterState.Menu;
         broadcastEDL[0] = new List<EditDecision>();
         broadcastEDL[1] = new List<EditDecision>();
@@ -105,7 +109,7 @@ public class MasterController : MonoBehaviour {
     public void StartBroadcast(int thisLevel)
     {
         PrepareLevel(thisLevel);
-
+        myRoomGod.SwitchScreensTo3DSound();
     }
 	
 	// Update is called once per frame
@@ -291,11 +295,17 @@ public class MasterController : MonoBehaviour {
         }
     }
 
+    public void GetLevelInfoForPlayback(int thisLevel)
+    {
+        Debug.Log("Trying to Get Playback Info for Level " + thisLevel);
+        myPlaybackController.myLevelData = levelDataArray[thisLevel-1];
+    }
+
     void PrepareLevel(int thisLevel)
     {
         // Set Current Level to thisLevel;
         currentLevel = thisLevel;
-        myLevelData = levelData[currentLevel - 1];
+        myLevelData = levelDataArray[currentLevel - 1];
         // Set Current Sequence to 0
         currentSequence = 0;
         // Display "DAY ???" and Title of Level - On black with suitable sound

@@ -32,6 +32,7 @@ public class BroadcastTV : MonoBehaviour {
     private SoundDesk myDesk;
     private SequenceController mySequenceController;
     private MasterController myMasterController;
+    private PlaybackRoomController myPlaybackController;
     private MeshRenderer myNoSignal;
     private BroadcastScreenMover[] myScreenMover = new BroadcastScreenMover[4];
     private ScoringController myScoringController;
@@ -54,6 +55,7 @@ public class BroadcastTV : MonoBehaviour {
         mySequenceController = FindObjectOfType<SequenceController>();
         myMasterController = FindObjectOfType<MasterController>();
         myScoringController = FindObjectOfType<ScoringController>();
+        myPlaybackController = FindObjectOfType<PlaybackRoomController>();
         SetResistanceVideoLevel(0);
         SetWhiteNoiseVideoLevel(0);
         for (int n=0; n<=3; n++)
@@ -116,6 +118,7 @@ public class BroadcastTV : MonoBehaviour {
             {
                 adPreparing = false;
                 myMasterController.preparingAd = false;
+                myPlaybackController.preparingAd = false;
                 //Debug.Log("Broadcast TV: Advert Prepared.");
             }
         }
@@ -208,7 +211,7 @@ public class BroadcastTV : MonoBehaviour {
 
     public void PrepareAdvert(VideoClip thisAdClip, AudioClip thisAdAudioClip)
     {
-        //Debug.Log("BROADCAST TV: Preparing " + thisAdClip + " on "+myAdvertScreen);
+        Debug.Log("BROADCAST TV: Preparing " + thisAdClip + " on " + myAdvertScreen);
         myAdvertScreen.Stop();
         myAdvertScreen.clip = thisAdClip;
         myAdvertScreen.isLooping = false;

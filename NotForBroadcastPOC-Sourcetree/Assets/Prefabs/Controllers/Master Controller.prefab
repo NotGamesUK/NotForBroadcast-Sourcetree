@@ -85,8 +85,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   broadcastScreenDelayTime: 2
-  levelData:
-  - levelName: 01 Election Night
+  levelDataArray:
+  - levelName: 01 The Election
     dayNumber: 0
     loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
@@ -100,7 +100,7 @@ MonoBehaviour:
     - 01-03 Party Leaders
     gameEvents: []
   - levelName: 06 The Heatwave
-    dayNumber: 100
+    dayNumber: 212
     loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}

@@ -85,6 +85,13 @@ public class GUIController : MonoBehaviour
         myMasterController.StartBroadcast(thisBroadcast);
     }
 
+    public void StartPlayback()
+    {
+        ChangeMenuTo(null);
+        ChangeMusicTo(null);
+    }
+
+
     public void GoToOptions()
     {
         ChangeMenuTo(optionsMenu);
