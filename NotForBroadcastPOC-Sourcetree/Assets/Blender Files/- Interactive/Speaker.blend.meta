@@ -39,6 +39,8 @@ ModelImporter:
     2100002: Material
     2100004: Speaker_Tweeter_Grill__Speaker_Tweeter_Grill_png
     2100006: None__Speaker_Tweeter_Grill_png
+    2100008: SPEAKER_MATY
+    2100010: SPEAKER_MATY__Speaker_Tweeter_Grill_png
     2300000: Case
     2300002: Tweeter
     2300004: Woofer
@@ -54,6 +56,7 @@ ModelImporter:
     2300024: Screws
     2300026: On_Light_Surround
     2300028: Speaker_Tweeter_Grill
+    2300030: //RootNode
     3300000: Case
     3300002: Tweeter
     3300004: Woofer
@@ -69,6 +72,7 @@ ModelImporter:
     3300024: Screws
     3300026: On_Light_Surround
     3300028: Speaker_Tweeter_Grill
+    3300030: //RootNode
     4300000: Tweeter
     4300002: Woofer
     4300004: Case
