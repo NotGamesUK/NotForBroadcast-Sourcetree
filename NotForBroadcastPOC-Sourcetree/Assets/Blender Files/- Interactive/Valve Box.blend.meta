@@ -25,6 +25,14 @@ ModelImporter:
     100038: Element_001
     100040: Element_002
     100042: Element_003
+    100044: Glass
+    100046: Glass_001
+    100048: Glass_002
+    100050: Glass_003
+    100052: Inside
+    100054: Inside_001
+    100056: Inside_002
+    100058: Inside_003
     400000: //RootNode
     400002: Valve_Box
     400004: Valves
@@ -47,6 +55,14 @@ ModelImporter:
     400038: Element_001
     400040: Element_002
     400042: Element_003
+    400044: Glass
+    400046: Glass_001
+    400048: Glass_002
+    400050: Glass_003
+    400052: Inside
+    400054: Inside_001
+    400056: Inside_002
+    400058: Inside_003
     2100000: unnamed
     2100002: Material
     2300000: Valve_Box
@@ -70,6 +86,14 @@ ModelImporter:
     2300036: Element_001
     2300038: Element_002
     2300040: Element_003
+    2300042: Glass
+    2300044: Glass_001
+    2300046: Glass_002
+    2300048: Glass_003
+    2300050: Inside
+    2300052: Inside_001
+    2300054: Inside_002
+    2300056: Inside_003
     3300000: Valve_Box
     3300002: Valves
     3300004: BezierCircle
@@ -91,6 +115,14 @@ ModelImporter:
     3300036: Element_001
     3300038: Element_002
     3300040: Element_003
+    3300042: Glass
+    3300044: Glass_001
+    3300046: Glass_002
+    3300048: Glass_003
+    3300050: Inside
+    3300052: Inside_001
+    3300054: Inside_002
+    3300056: Inside_003
     4300000: Valves
     4300002: Valve_Box
     4300004: Valve_Case_003
@@ -112,6 +144,14 @@ ModelImporter:
     4300036: Element_002
     4300038: Element_001
     4300040: Element
+    4300042: Glass_003
+    4300044: Inside_003
+    4300046: Glass_002
+    4300048: Inside_002
+    4300050: Glass_001
+    4300052: Inside_001
+    4300054: Glass
+    4300056: Inside
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs

@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: ac5c6422edbac8943a8eadd80a6dd52f
-timeCreated: 1523884717
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -24,6 +22,7 @@ ModelImporter:
     100032: Cage_Front
     100034: Head
     100036: Motor
+    100038: Arm_Low_poly
     400000: Base
     400002: Fan
     400004: Hinge
@@ -43,7 +42,9 @@ ModelImporter:
     400032: Cage_Front
     400034: Head
     400036: Motor
+    400038: Arm_Low_poly
     2100000: unnamed
+    2100002: Material
     2300000: Base
     2300002: Fan
     2300004: Hinge
@@ -62,6 +63,7 @@ ModelImporter:
     2300030: Cage_Front
     2300032: Head
     2300034: Motor
+    2300036: Arm_Low_poly
     3300000: Base
     3300002: Fan
     3300004: Hinge
@@ -80,6 +82,7 @@ ModelImporter:
     3300030: Cage_Front
     3300032: Head
     3300034: Motor
+    3300036: Arm_Low_poly
     4300000: Fan
     4300002: Hinge
     4300004: Pole
@@ -98,6 +101,7 @@ ModelImporter:
     4300030: Blade_03
     4300032: Blade_02
     4300034: Blade_01
+    4300036: Arm_Low_poly
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -119,6 +123,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

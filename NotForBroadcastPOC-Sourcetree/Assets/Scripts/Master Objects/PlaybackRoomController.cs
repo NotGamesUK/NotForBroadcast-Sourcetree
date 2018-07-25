@@ -13,12 +13,14 @@ public class PlaybackRoomController : MonoBehaviour {
     public Text myFilenameDisplay;
     public AudioSource mySFXPlayer;
     public AudioClip myLeftRightSFX;
+    public Animator myCameraAnimator;
 
     [HideInInspector]
     public bool preparingAd;
 
     private MasterController myMasterController;
     private BroadcastTV myBroadcastSystem;
+    private SoundDesk myMixingDesk;
     private GUIController myGUIController;
     private GodOfTheRoom myRoomGod;
     private DataStorage myDataStore;
@@ -27,11 +29,13 @@ public class PlaybackRoomController : MonoBehaviour {
     private string currentFilename;
 
     private List<EditDecision>[] playbackEDL = new List<EditDecision>[3];
+    private List<EditDecision> currentPlaybackEDL = new List<EditDecision>();
 
     private enum PlaybackMode { Menu, Pre, Advert, Playback, Post }
     private PlaybackMode myMode;
-    private int currentLevel, currentSequence;
-    private float adCountdown, sequenceClock, masterClock;
+    private int currentLevel, currentSequence, currentEDLPosition, maxEDLPosition;
+    private float adCountdown, playPreRollTime, sequenceClock, masterClock;
+    private bool sequenceStarted, goneLive;
     public MasterController.LevelData myLevelData;
 
 
@@ -39,6 +43,7 @@ public class PlaybackRoomController : MonoBehaviour {
     void Start () {
         myMasterController = FindObjectOfType<MasterController>();
         myBroadcastSystem = FindObjectOfType<BroadcastTV>();
+        myMixingDesk = FindObjectOfType<SoundDesk>();
         myGUIController = GetComponent<GUIController>();
         myDataStore = FindObjectOfType<DataStorage>();
         myRoomGod = FindObjectOfType<GodOfTheRoom>();
@@ -46,6 +51,7 @@ public class PlaybackRoomController : MonoBehaviour {
         playbackEDL[0] = new List<EditDecision>();
         playbackEDL[1] = new List<EditDecision>();
         playbackEDL[2] = new List<EditDecision>();
+        currentPlaybackEDL = new List<EditDecision>();
 
     }
 
@@ -65,6 +71,9 @@ public class PlaybackRoomController : MonoBehaviour {
                 {
                     StartSequencePlayback();
                     myMode = PlaybackMode.Advert;
+                    currentPlaybackEDL = playbackEDL[currentSequence];
+                    maxEDLPosition = currentPlaybackEDL.Count;
+                    Debug.Log("MaxEDLPosition=" + maxEDLPosition);
                 }
                 
 
@@ -73,13 +82,80 @@ public class PlaybackRoomController : MonoBehaviour {
 
             case PlaybackMode.Advert:
 
+                // Adjust Clocks
+                masterClock += Time.deltaTime;
+                adCountdown -= Time.deltaTime;
+
                 // Wait for Preroll secs then start screens and EDL playback
+                if (adCountdown<=playPreRollTime && !sequenceStarted)
+                {
+                    sequenceStarted = true;
+                    sequenceClock = 2f;
+                    currentEDLPosition = 0;
+                    myMode = PlaybackMode.Playback;
+                    Debug.Log("Playback Controller: Starting Broadcast Screens.");
+                    myBroadcastSystem.PlayScreens();
+                }
+                
+                break;
+
+            case PlaybackMode.Playback:
+
+                // Adjust Clocks
+                sequenceClock += Time.deltaTime;
+                masterClock += Time.deltaTime;
+                adCountdown -= Time.deltaTime;
+
+                // Monitor for end of Ad then GoLive
+
+                if (adCountdown <= 0 && !goneLive)
+                {
+                    goneLive = true;
+                    adCountdown = 0;
+                    Debug.Log("Playback Controller: Going Live.");
+                    myBroadcastSystem.EndAdvertAndStartLiveBroadcast();
+
+                    // For Testing
+                    myBroadcastSystem.ScreenChange(1);
+                }
+
+                FollowEDL();
 
                 break;
 
 
-
         }
+    }
+
+    void FollowEDL()
+    {
+        if (currentEDLPosition < maxEDLPosition)
+        {
+            while (currentPlaybackEDL[currentEDLPosition].editTime <= sequenceClock && currentEDLPosition < maxEDLPosition)
+            {
+                EditDecision thisEdit = currentPlaybackEDL[currentEDLPosition];
+                Debug.Log("POSITION - " + currentEDLPosition + " - REACHED EDIT DECISION: " + thisEdit.editType + " at " + thisEdit.editTime);
+                switch (thisEdit.editType)
+                {
+                    case EditDecision.EditDecisionType.SwitchScreen:
+
+                        myBroadcastSystem.ScreenChange(thisEdit.channelNumber);
+                        break;
+
+                    case EditDecision.EditDecisionType.PlayAd:
+                        if (currentSequence < 2)
+                        {
+                            PrepareNextSequence();
+                        }
+                        break;
+                }
+
+                currentEDLPosition++;
+                if (currentEDLPosition == maxEDLPosition) { break; }
+
+            }
+        }
+
     }
 
     public void PrepareList()
@@ -146,14 +222,29 @@ public class PlaybackRoomController : MonoBehaviour {
         Debug.Log("Playback Controller: Pre-Roll Video: " + thisPreRoll);
         Debug.Log("Playback Controller: Pre-Roll Audio: " + thisAudio);
         myBroadcastSystem.PrepareAdvert(thisPreRoll,thisAudio);
+
+        // Set Up Room for Playback
+        myRoomGod.MuteRoom(); // Make all switches etc silent
+        myMixingDesk.ResetMixingDesk();
         myRoomGod.SwitchScreensTo2DSound();
-        myRoomGod.MuteRoom();
         myRoomGod.TripSwitchPower(true);
-        myRoomGod.PlugPower(2, true);
+        myRoomGod.SetAllPlugs("00110000"); // Turn on Spreakers and Mixing Desk
+        myRoomGod.SetMixingDeskChannelSelect(2); // Set to Broadcast Only on Mixing Desk
+        myRoomGod.SetBroadcastVolumeSlider(1f); // Turn Volume to full
+
+
+        myRoomGod.UnMuteRoom(); // Make all switches etc audible
+
+
+
+
         adCountdown = (float)myLevelData.preRoll.length;
         preparingAd = true;
+        sequenceStarted = false;
+        goneLive = false;
         myMode = PlaybackMode.Pre;
         myGUIController.StartPlayback();
+        myCameraAnimator.SetTrigger("StartPlayback");
 
     }
 
@@ -165,7 +256,9 @@ public class PlaybackRoomController : MonoBehaviour {
 
         myBroadcastSystem.PrepareScreens(mySequence.playbackVideo, mySequence.screenAudio, mySequence.AudioInterference);
         myBroadcastSystem.PrepareResistance(mySequence.resistanceVideo, mySequence.resistanceAudio);
-
+        playPreRollTime = mySequence.runIn;
+        Debug.Log("PlayBack Controller: Starting broadcast screen sequence in " + (adCountdown - playPreRollTime) + " seconds.");
+        myMode = PlaybackMode.Advert;
     }
 
     DataStorage.SequenceData FindSequence(string thisSequenceName)
@@ -223,4 +316,29 @@ public class PlaybackRoomController : MonoBehaviour {
         { Debug.Log("FILE NOT FOUND: " + thisLoadName); }
     }
 
+    void PrepareNextSequence()
+    {
+        // Read Advert Name
+        // Find in Tapes
+        // Find Large Video and Audio Files
+        // Prepare ad screen
+        // Look at first Edit Decision in next EDL for next sequence name and set to string nextSequenceName
+        // Invoke StartNextSequence in 2 seconds
+        
+
+    }
+
+    void StartNextSequence()
+    {
+        // Start Advert Screen
+        // Stop Broadcast Screens
+        // Reset Broadcast Screens
+        // Calculate Next startPreRollTime;
+        // Set ad countdown clock to Ad length
+        // Switch to Advert Mode
+        // Tell Broadcast Screens to Prepare nextSequence (use FindSequence(string thisSequenceName)
+        // Increment currentSequence
+        
+
+    }
 }

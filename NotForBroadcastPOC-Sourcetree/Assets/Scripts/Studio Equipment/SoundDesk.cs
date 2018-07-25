@@ -27,6 +27,7 @@ public class SoundDesk : MonoBehaviour {
     private float storedBroadcastVolume;
     private EDLController myEDLController;
     private ScoringController myScoringController;
+    private GodOfTheRoom myRoomGod;
     
 
 	// Use this for initialization
@@ -34,6 +35,7 @@ public class SoundDesk : MonoBehaviour {
         myBleep = GetComponent<AudioSource>();
         myEDLController = FindObjectOfType<EDLController>();
         myScoringController = FindObjectOfType<ScoringController>();
+        myRoomGod = FindObjectOfType<GodOfTheRoom>();
         myDesk.SetFloat("ResistanceVol", -80f);
         myDesk.SetFloat("BleepVol", -80f);
         myDesk.SetFloat("WhiteNoiseVol", -80f);
@@ -92,17 +94,19 @@ public class SoundDesk : MonoBehaviour {
 
     }
 
-    //public void TEMPORARYSetBroadcastChannel (int thisChannel)
-    //{
-    //    for (int n=1; n<=4; n++)
-    //    {
-    //        string channelRequired = "Broadcast0" + n + "Vol";
-    //        float thisVol = -80f;
-    //        if (n == thisChannel) { thisVol = 0; }
-    //        myDesk.SetFloat(channelRequired, thisVol);
-    //        //Debug.Log("MIXING DESK: Setting " + channelRequired + " to " + thisVol);
-    //    }
-    //}
+    public void ResetMixingDesk()
+    {
+        for (int n=1; n<=4; n++)
+        {
+            UnmuteChannel(n);
+            UnMuteBroadcastChannel(n);
+
+        }
+        myRoomGod.SetBroadcastVolumeSlider(1);
+        myRoomGod.SetControlRoomVolumeSlider(1);
+        myRoomGod.SetMixingDeskChannelSelect(1);
+    }
+
 
     public void SwitchToAdvertSound ()
     {

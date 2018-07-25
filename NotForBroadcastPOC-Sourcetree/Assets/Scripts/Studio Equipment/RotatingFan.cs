@@ -81,8 +81,10 @@ public class RotatingFan : MonoBehaviour {
             {
                 isTurning = true;
                 // Turn Head
-                myHead.transform.Rotate(new Vector3(0, 0, currentTurnSpeed * Time.deltaTime));
-                float thisRot = myHead.transform.localEulerAngles.z;
+                myHead.transform.Rotate(new Vector3( 0, currentTurnSpeed * Time.deltaTime, 0));
+                float thisRot = myHead.transform.localEulerAngles.y+180;
+                if (thisRot>360) { thisRot -= 360; }
+                if (thisRot < 0) { thisRot += 360; }
                 if (thisRot >= 180+maxTurnAngle)
                 {
                     currentTurnSpeed = -turnSpeed;

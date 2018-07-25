@@ -178,7 +178,7 @@ public class BroadcastTV : MonoBehaviour {
 
     public void ResetScreens()
     {
-        Debug.LogError("BROADCAST TV RESETTING SCREENS");
+        Debug.Log("BROADCAST TV RESETTING SCREENS");
         if (currentScreen != 0)
         {
             myScreenMover[currentScreen - 1].MoveToHomePosition();
