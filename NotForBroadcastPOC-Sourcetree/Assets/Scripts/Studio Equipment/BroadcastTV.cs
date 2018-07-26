@@ -33,7 +33,8 @@ public class BroadcastTV : MonoBehaviour {
     private SequenceController mySequenceController;
     private MasterController myMasterController;
     private PlaybackRoomController myPlaybackController;
-    private MeshRenderer myNoSignal;
+    [HideInInspector]
+    public MeshRenderer myNoSignal;
     private BroadcastScreenMover[] myScreenMover = new BroadcastScreenMover[4];
     private ScoringController myScoringController;
     private bool[] screenPreparing = new bool[4];
@@ -184,6 +185,14 @@ public class BroadcastTV : MonoBehaviour {
             myScreenMover[currentScreen - 1].MoveToHomePosition();
             currentScreen = 0;
         }
+    }
+
+    public void StopScreens()
+    {
+        myScreens[0].Stop();
+        myScreens[1].Stop();
+        myScreens[2].Stop();
+        myScreens[3].Stop();
     }
 
     public void EndAdvertAndStartLiveBroadcast()

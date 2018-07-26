@@ -26,7 +26,7 @@ public class PlaybackRoomController : MonoBehaviour {
     private DataStorage myDataStore;
     private DataStorage.SequenceData mySequence;
     private int myFileListPosition, maxFileListPosition;
-    private string currentFilename;
+    private string currentFilename, nextSequenceName;
 
     private List<EditDecision>[] playbackEDL = new List<EditDecision>[3];
     private List<EditDecision> currentPlaybackEDL = new List<EditDecision>();
@@ -34,8 +34,8 @@ public class PlaybackRoomController : MonoBehaviour {
     private enum PlaybackMode { Menu, Pre, Advert, Playback, Post }
     private PlaybackMode myMode;
     private int currentLevel, currentSequence, currentEDLPosition, maxEDLPosition;
-    private float adCountdown, playPreRollTime, sequenceClock, masterClock;
-    private bool sequenceStarted, goneLive;
+    private float adCountdown, nextAdCountdown, playPreRollTime, sequenceClock, masterClock;
+    private bool sequenceStarted, goneLive, zoomingOut;
     public MasterController.LevelData myLevelData;
 
 
@@ -115,11 +115,27 @@ public class PlaybackRoomController : MonoBehaviour {
                     Debug.Log("Playback Controller: Going Live.");
                     myBroadcastSystem.EndAdvertAndStartLiveBroadcast();
 
-                    // For Testing
-                    myBroadcastSystem.ScreenChange(1);
                 }
 
                 FollowEDL();
+
+                break;
+
+            case PlaybackMode.Post:
+
+                adCountdown -= Time.deltaTime;
+                if (adCountdown<10 && !zoomingOut)
+                {
+                    myCameraAnimator.SetTrigger("EndPlayback");
+                    zoomingOut = true;
+                }
+                if (adCountdown < 0)
+                {
+                    myMode = PlaybackMode.Menu;
+                    myGUIController.GoToPlayback();
+                    myBroadcastSystem.myNoSignal.enabled = true;
+                }
+
 
                 break;
 
@@ -143,11 +159,29 @@ public class PlaybackRoomController : MonoBehaviour {
                         break;
 
                     case EditDecision.EditDecisionType.PlayAd:
-                        if (currentSequence < 2)
+                        if (currentSequence <= 2)
                         {
-                            PrepareNextSequence();
+                            PrepareNextSequence(thisEdit.loadName);
                         }
                         break;
+
+                    case EditDecision.EditDecisionType.BleepOn:
+                        myMixingDesk.BleepOn();
+                        break;
+
+                    case EditDecision.EditDecisionType.BleepOff:
+                        myMixingDesk.BleepOff();
+                        break;
+
+
+                    case EditDecision.EditDecisionType.MuteChannel:
+                        myMixingDesk.MuteChannel(thisEdit.channelNumber);
+                        break;
+
+                    case EditDecision.EditDecisionType.UnMuteChannel:
+                        myMixingDesk.UnmuteChannel(thisEdit.channelNumber);
+                        break;
+
                 }
 
                 currentEDLPosition++;
@@ -316,29 +350,92 @@ public class PlaybackRoomController : MonoBehaviour {
         { Debug.Log("FILE NOT FOUND: " + thisLoadName); }
     }
 
-    void PrepareNextSequence()
+    void PrepareNextSequence(string thisAdvertName)
     {
         // Read Advert Name
+        Debug.Log("Looking for Advert: " + thisAdvertName);
+
         // Find in Tapes
-        // Find Large Video and Audio Files
-        // Prepare ad screen
-        // Look at first Edit Decision in next EDL for next sequence name and set to string nextSequenceName
-        // Invoke StartNextSequence in 2 seconds
-        
+        VHSTape[] theseVHSTapes = FindObjectsOfType<VHSTape>();
+        VideoClip thisAdvertVideo = null;
+        AudioClip thisAdvertAudio = null;
+        foreach (VHSTape thisVHS in theseVHSTapes)
+        {
+            if (thisVHS.myTitle == thisAdvertName)
+            {
+                // Find Large Video and Audio Files
+                thisAdvertVideo = thisVHS.myVideo;
+                thisAdvertAudio = thisVHS.myAudio;
+                nextAdCountdown = (float)thisAdvertVideo.length;
+            }
+        }
+        if (thisAdvertVideo)
+        {
+            // Prepare ad screen
+            myBroadcastSystem.PrepareAdvert(thisAdvertVideo, thisAdvertAudio);
+            // Look at first Edit Decision in next EDL for next sequence name and set to string nextSequenceName
+            if (currentSequence < 2)
+            {
+                nextSequenceName = playbackEDL[currentSequence + 1][0].loadName;
+                Debug.Log("Next Sequence Name: " + nextSequenceName);
+                // Invoke StartNextSequence in 2 seconds
+                Invoke("StartNextSequence", 2);
+            }
+            else
+            {
+                Debug.Log("Preparing Last Advert");
+                Invoke("StartLastAdvert", 2);
+            }
+        }
+        else
+        {
+            Debug.Log("CANNOT FIND VIDEO CLIP FOR VHSTape: " + thisAdvertName);
+        }
 
     }
+
 
     void StartNextSequence()
     {
         // Start Advert Screen
+        myBroadcastSystem.PlayAdvert();
         // Stop Broadcast Screens
+        myBroadcastSystem.StopScreens();
         // Reset Broadcast Screens
+        myBroadcastSystem.ResetScreens();
+        // Load next sequence
+        mySequence = FindSequence(nextSequenceName);
         // Calculate Next startPreRollTime;
+        playPreRollTime = mySequence.runIn;
         // Set ad countdown clock to Ad length
+        adCountdown = nextAdCountdown;
         // Switch to Advert Mode
-        // Tell Broadcast Screens to Prepare nextSequence (use FindSequence(string thisSequenceName)
-        // Increment currentSequence
-        
+        myMode = PlaybackMode.Advert;
+        // Tell Broadcast Screens to Prepare nextSequence (use FindSequence(string thisSequenceName))
+        myBroadcastSystem.PrepareScreens(mySequence.playbackVideo, mySequence.screenAudio, mySequence.AudioInterference);
+        myBroadcastSystem.PrepareResistance(mySequence.resistanceVideo, mySequence.resistanceAudio);
+        sequenceStarted = false;
+        goneLive = false;
+        // Reset Mixing Desk??
 
+        // Increment currentSequence
+        currentSequence++;
+        currentPlaybackEDL = playbackEDL[currentSequence];
+        maxEDLPosition = currentPlaybackEDL.Count;
+        Debug.Log("MaxEDLPosition=" + maxEDLPosition);
+
+
+    }
+
+    void StartLastAdvert()
+    {
+        Debug.Log("Playing Last Advert");
+
+        myMode = PlaybackMode.Post;
+        adCountdown = nextAdCountdown;
+        myBroadcastSystem.PlayAdvert();
+        myBroadcastSystem.StopScreens();
+        myBroadcastSystem.ResetScreens();
+        zoomingOut = false;
     }
 }
