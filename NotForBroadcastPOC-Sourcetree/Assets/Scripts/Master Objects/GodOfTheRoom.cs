@@ -15,10 +15,11 @@ public class GodOfTheRoom : MonoBehaviour {
     public Slider channelSelectSlider;
 
     private float previousRoomVolume;
+    private ScoringController myScoringController;
 
     // Use this for initialization
     void Start () {
-		
+        myScoringController = FindObjectOfType<ScoringController>();
 	}
 	
 	// Update is called once per frame
@@ -121,4 +122,15 @@ public class GodOfTheRoom : MonoBehaviour {
         channelSelectSlider.value = thisChannel;
     }
 
+    public void ChangeScoringMode(string thisMode)
+    {
+        if (thisMode == "Multi")
+        {
+            myScoringController.myScoringMode = ScoringController.ScoringMode.MultiCam;
+        }
+        else if (thisMode == "Single")
+        {
+            myScoringController.myScoringMode = ScoringController.ScoringMode.SingleCam;
+        }
+    }
 }

@@ -16,24 +16,29 @@ public class ScoringPlane : MonoBehaviour {
     public ScoringCameraType myType;
     public int myAudioChannel;
     public float myIntialDelay;
+    [HideInInspector]
+    public bool screenChanged;
+
 
     private ScoringController myScoringController;
     private Color lastColour;
     public enum ScoreColour { Red, Green, Orange, Null}
     [HideInInspector]
-    public ScoreColour currentColour;
+    public ScoreColour currentColour, lastScoreColour;
 
 
     // Use this for initialization
     void Start () {
         currentColour = ScoreColour.Null;
+        lastScoreColour = currentColour;
         Invoke("SetupSplitRead", myIntialDelay);
         myScoringController = FindObjectOfType<ScoringController>();
+        screenChanged = false;
 	}
 
     void SetupSplitRead()
     {
-        InvokeRepeating("ReadTV", 1, 0.5f);
+        InvokeRepeating("ReadTV", 1, 0.25f);
     }
 
     // Update is called once per frame
@@ -43,7 +48,7 @@ public class ScoringPlane : MonoBehaviour {
             Texture2D testableTexture = toTexture2D(myColourPlane);
             Color testColor = testableTexture.GetPixel(0, 0);
             //Debug.Log("Current Colour: " + testColor);
-            if (lastColour != testColor)
+            if (lastColour != testColor || screenChanged)
             {
                 // Adjust Lights as necessary
                 switch (currentColour)
@@ -78,14 +83,30 @@ public class ScoringPlane : MonoBehaviour {
 
                 if (myType == ScoringCameraType.Video)
                 {
-                    myScoringController.FootageColourChange(currentColour);
-                } else if (myType == ScoringCameraType.Audio)
+                    if (lastScoreColour != currentColour)
+                    {
+                        Debug.Log("Video Colour Change from " + lastScoreColour + " to " + currentColour);
+                        myScoringController.FootageColourChange(currentColour);
+                        screenChanged = false;
+                    }
+                    else if (screenChanged)
+                    {
+                        Debug.Log("Screen Changed but colour HOLDS "+lastScoreColour+" still " + currentColour);
+                        myScoringController.FootageCounterReset(currentColour);
+                        screenChanged = false;
+                    }
+                }
+                else if (myType == ScoringCameraType.Audio)
                 {
-                    myScoringController.AudioColourChange(currentColour, myAudioChannel);
+                    if (lastScoreColour != currentColour)
+                    {
+                        myScoringController.AudioColourChange(currentColour, myAudioChannel);
+                    }
                 }
             }
 
             lastColour = testColor;
+            lastScoreColour = currentColour;
         }
 	}
 

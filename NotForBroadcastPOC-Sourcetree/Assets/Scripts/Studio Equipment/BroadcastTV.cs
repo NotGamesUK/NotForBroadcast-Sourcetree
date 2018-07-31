@@ -19,6 +19,7 @@ public class BroadcastTV : MonoBehaviour {
     public AudioSource myWhiteNoiseAudiosource;
     public AudioSource myAudioInterferenceAudiosource;
     public Vector3 visibleBroadcastScreenPosition;
+    public ScoringPlane myVideoScoringPlane;
 
     public enum BroadcastModes { Live, Playback }
     public BroadcastModes myMode;
@@ -37,6 +38,7 @@ public class BroadcastTV : MonoBehaviour {
     public MeshRenderer myNoSignal;
     private BroadcastScreenMover[] myScreenMover = new BroadcastScreenMover[4];
     private ScoringController myScoringController;
+    
     private bool[] screenPreparing = new bool[4];
     private bool adPreparing;
     private bool resistancePreparing;
@@ -174,7 +176,7 @@ public class BroadcastTV : MonoBehaviour {
         }
         currentScreen = requestedScreen;
         //Debug.Log("Switched Broadcast Screen to " + currentScreen);
-
+        myVideoScoringPlane.screenChanged = true;
     }
 
     public void ResetScreens()

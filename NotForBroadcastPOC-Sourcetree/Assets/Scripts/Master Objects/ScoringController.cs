@@ -8,7 +8,7 @@ public class ScoringController : MonoBehaviour {
     [Range (0, 5f)]
     public float footageWeight, audioWeight, interferenceWeight, resistanceWeight;
     public ScoringPlane[] myAudioScorer;
-
+    public VUBar myUpArrow, myDownArrow;
     private MasterController myMasterController;
     private AudienceVUMeter myVUMeter;
     public enum ScoringMode { SingleCam, MultiCam }
@@ -22,10 +22,8 @@ public class ScoringController : MonoBehaviour {
     private int muteCount, incorrectlyBleepedCount;
     private bool orangeAudioWeighted;
 
-    private float audiencePercentage;
-    private float footageWeighting, footageCountdown;
-    private float audioWeighting;
-    private float interferenceWighting;
+    [HideInInspector]
+    public float audiencePercentage, footageCountdown, footageWeighting, audioWeighting, interferenceWeighting, thisAudienceChange, lastAudienceChange;
     private ScoringPlane.ScoreColour currentFootageColour;
 
 
@@ -37,7 +35,8 @@ public class ScoringController : MonoBehaviour {
         myVUMeter = FindObjectOfType<AudienceVUMeter>();
         myScoringMode = ScoringMode.SingleCam;
         audiencePercentage = 70;
-
+        thisAudienceChange = 0;
+        lastAudienceChange = 0;
     }
 
 
@@ -123,8 +122,30 @@ public class ScoringController : MonoBehaviour {
             }
 
             // Make Adjustment based on weighting
-            audiencePercentage += footageWeighting * Time.deltaTime*footageWeight;
+            lastAudienceChange = thisAudienceChange;
+            thisAudienceChange = footageWeighting * Time.deltaTime * footageWeight;
+            audiencePercentage += thisAudienceChange;
+            if (thisAudienceChange > 0 && lastAudienceChange<=0)
+            {
+                // Turn on UpArrow
+                myUpArrow.LightOn();
+                myDownArrow.LightOff();
 
+            } else if (thisAudienceChange<0 && lastAudienceChange >= 0)
+            {
+                // Turn on DownArrow
+                myDownArrow.LightOn();
+                myUpArrow.LightOff();
+
+
+            } else if (thisAudienceChange == 0)
+            {
+                // Turn Arrows Off
+                myUpArrow.LightOff();
+                myDownArrow.LightOff();
+
+
+            }
             if (audiencePercentage < 0) { audiencePercentage = 0; }
             if (audiencePercentage > 100) { audiencePercentage = 100; }
             myVUMeter.SetToPercentage(audiencePercentage);
@@ -137,10 +158,17 @@ public class ScoringController : MonoBehaviour {
 
     }
 
+    public void FootageCounterReset(ScoringPlane.ScoreColour thisColour)
+    {
+        Debug.Log("Resetting " + thisColour + " counter.");
+        FootageColourChange(thisColour);
+    }
+
+
     public void FootageColourChange(ScoringPlane.ScoreColour thisColour)
     {
 
-        Debug.Log("Scoring Controller: Screen Colour Changed.");
+        //Debug.Log("Scoring Controller: Screen Colour Changed.");
 
         switch (thisColour)
         {

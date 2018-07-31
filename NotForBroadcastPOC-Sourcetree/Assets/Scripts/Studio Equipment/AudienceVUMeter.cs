@@ -20,11 +20,12 @@ public class AudienceVUMeter : MonoBehaviour {
 
     public void SetToPercentage(float thisPercentage)
     {
+        //Debug.Log("Setting VU Bar to " + thisPercentage + " percent.");
         if (thisPercentage < currentPercentage)
         {
             loopStart = (int)Mathf.Round( thisPercentage / 2);
             loopEnd = (int)Mathf.Round(currentPercentage / 2);
-            for (int n=loopStart; n<=loopEnd; n++)
+            for (int n=loopStart; n<loopEnd; n++)
             {
                 myBars[n].LightOff();
             }
@@ -32,7 +33,7 @@ public class AudienceVUMeter : MonoBehaviour {
         {
             loopEnd = (int)Mathf.Round(thisPercentage / 2);
             loopStart = (int)Mathf.Round(currentPercentage / 2);
-            for (int n = loopStart; n <= loopEnd; n++)
+            for (int n = loopStart; n < loopEnd; n++)
             {
                 myBars[n].LightOn();
             }
