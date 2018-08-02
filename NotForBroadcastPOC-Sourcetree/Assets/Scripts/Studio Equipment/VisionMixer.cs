@@ -119,6 +119,8 @@ public class VisionMixer : MonoBehaviour {
 
         }
         //masterScreen.PlayScreen();
+        myMixingDesk.ResetMixingDesk();
+
     }
 
     public void PlayScreen(int thisScreen)
@@ -268,7 +270,6 @@ public class VisionMixer : MonoBehaviour {
         }
         masterNoSignal.JumpToFront();
         myBroadcastTV.ResetScreens();
-
     }
 
 }

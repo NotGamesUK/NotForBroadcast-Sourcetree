@@ -26,7 +26,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1080501838440858
 GameObject:
@@ -38,11 +38,11 @@ GameObject:
   - component: {fileID: 4219543852018714}
   - component: {fileID: 108584740511713412}
   m_Layer: 0
-  m_Name: FaceLight
+  m_Name: FaceLight Gauge 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1162516795302108
 GameObject:
@@ -54,13 +54,13 @@ GameObject:
   - component: {fileID: 4101057285705484}
   - component: {fileID: 95433684544647346}
   - component: {fileID: 82584323013562868}
-  - component: {fileID: 114050105516243588}
+  - component: {fileID: 114166293628645198}
   m_Layer: 0
   m_Name: Master Gauges Analog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1215822931250464
 GameObject:
@@ -78,7 +78,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1267427631295014
 GameObject:
@@ -113,7 +113,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1317358039894682
 GameObject:
@@ -125,11 +125,11 @@ GameObject:
   - component: {fileID: 4240035977789530}
   - component: {fileID: 108147391958196906}
   m_Layer: 0
-  m_Name: FaceLight
+  m_Name: FaceLight Gauge 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1325828347271718
 GameObject:
@@ -146,7 +146,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1339466253749892
 GameObject:
@@ -158,11 +158,11 @@ GameObject:
   - component: {fileID: 4725081832164970}
   - component: {fileID: 108607450858203490}
   m_Layer: 0
-  m_Name: FaceLight
+  m_Name: FaceLight Gauge 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1354081894551826
 GameObject:
@@ -197,7 +197,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1400323402439180
 GameObject:
@@ -214,7 +214,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1408524818950962
 GameObject:
@@ -231,7 +231,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1486280042637606
 GameObject:
@@ -248,7 +248,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1494430498874462
 GameObject:
@@ -266,7 +266,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1522613631383106
 GameObject:
@@ -283,7 +283,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1570800642001364
 GameObject:
@@ -300,7 +300,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1624174115056050
 GameObject:
@@ -317,7 +317,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1663345336631568
 GameObject:
@@ -329,13 +329,13 @@ GameObject:
   - component: {fileID: 4892028226658666}
   - component: {fileID: 33851240192909502}
   - component: {fileID: 23348942746394664}
-  - component: {fileID: 114605100683912476}
+  - component: {fileID: 114348199011945760}
   m_Layer: 0
   m_Name: 1_LED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1784893324515010
 GameObject:
@@ -352,7 +352,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1804178977173492
 GameObject:
@@ -369,7 +369,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1869650786231908
 GameObject:
@@ -386,7 +386,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1892958626431204
 GameObject:
@@ -421,7 +421,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1967710931797250
 GameObject:
@@ -438,7 +438,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1990492193458352
 GameObject:
@@ -455,7 +455,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4018270813773148
 Transform:
@@ -476,9 +476,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162516795302108}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.1218, y: 0.4681, z: 0.7134}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 22.642, y: 4.7680993, z: -11.629}
+  m_LocalScale: {x: 0.93, y: 0.9299999, z: 0.9299999}
   m_Children:
   - {fileID: 4508321012334512}
   - {fileID: 4767480520646968}
@@ -669,8 +669,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1869650786231908}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7070926, y: -0.0044874833, z: -0.0044874833, w: 0.7070926}
+  m_LocalPosition: {x: 0.0011895293, y: 0, z: 0.000007178195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4892028226658666}
@@ -682,7 +682,7 @@ Transform:
   - {fileID: 4240035977789530}
   m_Father: {fileID: 4101057285705484}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -0.72700006}
 --- !u!4 &4806410029502510
 Transform:
   m_ObjectHideFlags: 1
@@ -1626,7 +1626,8 @@ AudioSource:
   m_GameObject: {fileID: 1400323402439180}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243146164749798980, guid: 660328fa905f49943a2ef1e64657c917,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1721,7 +1722,8 @@ AudioSource:
   m_GameObject: {fileID: 1162516795302108}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243146164749798980, guid: 660328fa905f49943a2ef1e64657c917,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1816,7 +1818,8 @@ AudioSource:
   m_GameObject: {fileID: 1869650786231908}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243146164749798980, guid: 660328fa905f49943a2ef1e64657c917,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1911,7 +1914,8 @@ AudioSource:
   m_GameObject: {fileID: 1408524818950962}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243146164749798980, guid: 660328fa905f49943a2ef1e64657c917,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2026,9 +2030,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 18.12
-  m_Range: 0.07
-  m_SpotAngle: 109
+  m_Intensity: 0.83
+  m_Range: 0.2
+  m_SpotAngle: 143
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -2045,7 +2049,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -2062,9 +2066,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 18.12
-  m_Range: 0.07
-  m_SpotAngle: 109
+  m_Intensity: 0.83
+  m_Range: 0.2
+  m_SpotAngle: 143
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -2081,7 +2085,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -2098,9 +2102,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 18.12
-  m_Range: 0.07
-  m_SpotAngle: 109
+  m_Intensity: 0.83
+  m_Range: 0.2
+  m_SpotAngle: 143
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -2117,7 +2121,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -2146,31 +2150,6 @@ MonoBehaviour:
   myAlarmSound: {fileID: 8300000, guid: 1dae743dc7971cb4aa4b15ede1561f8a, type: 3}
   myLED: {fileID: 114062932826366422}
   currentReading: 0
---- !u!114 &114050105516243588
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1162516795302108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670d081b0d6a8314f81fdd374abbb6c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxPower: 800
-  orangePowerPercent: 80
-  roomTemperature: 20
-  maxTemperature: 100
-  orangeTemperaturePercent: 75
-  dishTolerance: 10
-  myPowerStatus: Green
-  videoStrength: 0
-  myPowerTextDisplay: {fileID: 0}
-  myTemperatureTextDisplay: {fileID: 0}
-  mySignalTextDisplay: {fileID: 0}
-  myPowerGauge: {fileID: 114027969527087418}
-  myTemperatureGauge: {fileID: 114496148756067308}
-  mySignalGauge: {fileID: 114931469895630556}
 --- !u!114 &114062932826366422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2221,6 +2200,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f3cbb4f21a6944b246a2a2cf86eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114166293628645198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162516795302108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670d081b0d6a8314f81fdd374abbb6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPower: 800
+  orangePowerPercent: 80
+  roomTemperature: 20
+  maxTemperature: 100
+  orangeTemperaturePercent: 75
+  dishTolerance: 10
+  myPowerStatus: Green
+  videoStrength: 0
+  myPowerTextDisplay: {fileID: 0}
+  myTemperatureTextDisplay: {fileID: 0}
+  mySignalTextDisplay: {fileID: 0}
+  myPowerGauge: {fileID: 114027969527087418}
+  myTemperatureGauge: {fileID: 114496148756067308}
+  mySignalGauge: {fileID: 114931469895630556}
+--- !u!114 &114348199011945760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663345336631568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2435b26f4932f3b4b93bb114753d10bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myOffMaterial: {fileID: 2100000, guid: 43058e50f1e0340469ae96ff7d8aa7cd, type: 2}
+  myRedMaterial: {fileID: 2100000, guid: 83cb7497e03cba043a68d96bbc151184, type: 2}
+  myOrangeMaterial: {fileID: 2100000, guid: 67d4926058cd9004aa5a74503c4185aa, type: 2}
+  myGreenMaterial: {fileID: 2100000, guid: 6890fdd8bef1a6b4480a8431109d423b, type: 2}
+  myColour: 0
+  isFlashing: 0
 --- !u!114 &114496148756067308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2243,23 +2264,6 @@ MonoBehaviour:
   myAlarmSound: {fileID: 8300000, guid: 65249b1cbf4b66649a6c5a329c31c7c4, type: 3}
   myLED: {fileID: 114693144510554652}
   currentReading: 0
---- !u!114 &114605100683912476
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1663345336631568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2435b26f4932f3b4b93bb114753d10bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myOffMaterial: {fileID: 2100000, guid: 43058e50f1e0340469ae96ff7d8aa7cd, type: 2}
-  myRedMaterial: {fileID: 2100000, guid: 83cb7497e03cba043a68d96bbc151184, type: 2}
-  myOrangeMaterial: {fileID: 2100000, guid: 67d4926058cd9004aa5a74503c4185aa, type: 2}
-  myGreenMaterial: {fileID: 2100000, guid: 6890fdd8bef1a6b4480a8431109d423b, type: 2}
-  myColour: 0
-  isFlashing: 0
 --- !u!114 &114693144510554652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2290,12 +2294,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMaxRotation: 130
   alarmsAtTop: 0
-  myAlarmPercentage: 20
-  myOrangePercentage: 66
-  myRedPercentage: 33
+  myAlarmPercentage: 75
+  myOrangePercentage: 90
+  myRedPercentage: 55
   myFlashPercentage: 50
   myLEDFlashRate: 0.4
   myLEDColour: 2
   myAlarmSound: {fileID: 8300000, guid: 57086f7ec16995d48830c393cdf81956, type: 3}
-  myLED: {fileID: 114605100683912476}
+  myLED: {fileID: 0}
   currentReading: 0

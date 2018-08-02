@@ -68,6 +68,7 @@ ModelImporter:
     2100012: rim_materal_TEMP_3
     2100014: rim_materal_TEMP_2
     2100016: Material
+    2100018: Material_001
     2300000: 1_glass
     2300002: 1_guage_face
     2300004: 1_LED
@@ -181,7 +182,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

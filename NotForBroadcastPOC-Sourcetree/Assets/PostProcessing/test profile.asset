@@ -35,10 +35,10 @@ MonoBehaviour:
       fxaaSettings:
         preset: 2
       taaSettings:
-        jitterSpread: 0.489
-        sharpen: 0.55
+        jitterSpread: 0.55
+        sharpen: 3
         stationaryBlending: 0.99
-        motionBlending: 0.902
+        motionBlending: 0.257
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
@@ -71,8 +71,8 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 1
     m_Settings:
-      focusDistance: 0.96
-      aperture: 5
+      focusDistance: 2
+      aperture: 8
       focalLength: 66
       useCameraFov: 0
       kernelSize: 1
@@ -109,7 +109,7 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       tonemapping:
         tonemapper: 1
@@ -335,7 +335,7 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 0.15
+      intensity: 0.2
   grain:
     m_Enabled: 0
     m_Settings:
@@ -344,12 +344,12 @@ MonoBehaviour:
       size: 1.25
       luminanceContribution: 0.553
   vignette:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       mode: 0
-      color: {r: 0, g: 0.38670936, b: 0.3962264, a: 1}
+      color: {r: 1, g: 0, b: 0.6079836, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.606
+      intensity: 0.635
       smoothness: 0.326
       roundness: 0
       mask: {fileID: 0}

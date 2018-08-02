@@ -369,6 +369,8 @@ public class MasterController : MonoBehaviour {
         // Start Master Level Clock
         masterLevelClock = 0;
         // Tell Sequence Controller to start first sequence
+        // StartVUBar
+        myScoringController.InitialiseVU();
     }
 
     public void SequenceComplete(VideoClip thisAdvert, AudioClip thisAdvertAudio)

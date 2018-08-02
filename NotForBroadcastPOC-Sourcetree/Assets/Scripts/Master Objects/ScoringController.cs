@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoringController : MonoBehaviour {
 
-    public float minimumAudiencePercentage, maxGreenSecsMultiCam, maxOrangeSecsMultiCam, maxOrangeSecsSingleCam;
+    public float startAudiencePercentage, minimumAudiencePercentage, maxGreenSecsMultiCam, maxOrangeSecsMultiCam, maxOrangeSecsSingleCam;
     [Range (0, 5f)]
     public float footageWeight, audioWeight, interferenceWeight, resistanceWeight;
     [Range(0.001f, 1.5f)]
@@ -36,7 +36,7 @@ public class ScoringController : MonoBehaviour {
         myMasterController = GetComponent<MasterController>();
         myVUMeter = FindObjectOfType<AudienceVUMeter>();
         myScoringMode = ScoringMode.SingleCam;
-        audiencePercentage = 70;
+        audiencePercentage = startAudiencePercentage;
         thisAudienceChange = 0;
         lastAudienceChange = 0;
     }
@@ -158,6 +158,12 @@ public class ScoringController : MonoBehaviour {
             }
         }
 
+    }
+
+    public void InitialiseVU()
+    {
+        audiencePercentage = startAudiencePercentage;
+        myVUMeter.SetToPercentage(audiencePercentage);
     }
 
     public void FootageCounterReset(ScoringPlane.ScoreColour thisColour)

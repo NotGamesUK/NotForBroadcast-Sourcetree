@@ -48,7 +48,21 @@ public class ScoringPlane : MonoBehaviour {
 
     void SetupSplitRead()
     {
-        InvokeRepeating("ReadTV", 1, 0.5f);
+        if (myType == ScoringCameraType.BleepMonitor)
+        {
+            InvokeRepeating("ReadTV", 1, 0.25f);
+
+        }
+        else if (myType==ScoringCameraType.Video)
+        {
+            InvokeRepeating("ReadTV", 1, 0.5f);
+        }
+        else if (myType == ScoringCameraType.Audio)
+        {
+            // DO NOT INVOKE FOR PLAYTEST?
+            //InvokeRepeating("ReadTV", 1, 0.5f);
+
+        }
     }
 
     // Update is called once per frame

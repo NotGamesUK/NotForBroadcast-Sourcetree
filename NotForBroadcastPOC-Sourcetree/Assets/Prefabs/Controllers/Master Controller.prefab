@@ -275,7 +275,7 @@ MonoBehaviour:
     scoringMode: 0
   - SequenceName: 01-01 Headlines
     runIn: 12
-    runOut: 11
+    runOut: 12
     screenVideo:
     - {fileID: 32900000, guid: ed01ace6b64c7f5419637e9634fcaaae, type: 3}
     - {fileID: 32900000, guid: 002de83564c9b4e48a397a78f83e8a66, type: 3}

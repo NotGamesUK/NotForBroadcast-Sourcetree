@@ -9,7 +9,7 @@ public class SplashScreen : MonoBehaviour {
     // Use this for initialization
     private void Start()
     {
-        Invoke("SplashScreenOver", 3);
+        Invoke("SplashScreenOver", 1f);
     }
 
     void SplashScreenOver()

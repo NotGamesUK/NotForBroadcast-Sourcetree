@@ -243,6 +243,11 @@ public class GUIController : MonoBehaviour
         freeLookCamera.FreeLookToggle(thisSetting);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     void Update ()
     {
 		
