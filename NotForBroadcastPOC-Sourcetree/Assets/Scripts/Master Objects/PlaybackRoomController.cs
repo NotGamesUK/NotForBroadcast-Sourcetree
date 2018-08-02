@@ -192,7 +192,7 @@ public class PlaybackRoomController : MonoBehaviour {
 
     }
 
-    public void PrepareList()
+    public void PrepareList(bool waitForUser)
     {
         myFileListPosition = 0;
         maxFileListPosition = myMasterController.savedFiles.Count-1;
@@ -205,6 +205,10 @@ public class PlaybackRoomController : MonoBehaviour {
             }
             myFileListPosition = maxFileListPosition;
             ParseFilenameAndDisplay(myMasterController.savedFiles[myFileListPosition]);
+            if (!waitForUser)
+            {
+                PreparePlayback();
+            }
         }
         else
         {

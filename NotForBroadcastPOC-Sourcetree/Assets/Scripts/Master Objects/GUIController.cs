@@ -111,11 +111,15 @@ public class GUIController : MonoBehaviour
 
     public void GoToPlayback()
     {
-        if (currentMenu == mainMenu) { cameFromMain = true; } else { cameFromMain = false; }
+        if (currentMenu == mainMenu) {
+            cameFromMain = true;
+        } else {
+            cameFromMain = false;
+        }
         ChangeCameraTo(playbackCamera);
         ChangeMenuTo(playbackMenu);
         ChangeMusicTo(playbackMenuMusic);
-        myPlaybackController.PrepareList();
+        myPlaybackController.PrepareList(cameFromMain);
     }
 
     public void LeavePlayback()

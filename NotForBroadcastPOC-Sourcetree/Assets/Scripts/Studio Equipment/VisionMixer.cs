@@ -81,6 +81,7 @@ public class VisionMixer : MonoBehaviour {
             thisButton.myButton.Lock();
             thisButton.hasContent = false;
         }
+        myMixingDesk.LockMutes();
         inPostRoll = false;
         maxScreen = theseClips.Length;
         for (int n = 0; n < maxScreen; n++)
@@ -115,11 +116,12 @@ public class VisionMixer : MonoBehaviour {
             smallScreens[n].PlayScreen();
             myVisionMixerButtons[n].hasContent = true;
             myVisionMixerButtons[n].myButton.Unlock();
+            myMixingDesk.myMutes[n].Unlock();
+            Debug.Log("Unlocking Mute " + (n));
 
 
         }
         //masterScreen.PlayScreen();
-        myMixingDesk.ResetMixingDesk();
 
     }
 
@@ -128,6 +130,8 @@ public class VisionMixer : MonoBehaviour {
         smallScreens[thisScreen - 1].PlayScreen();
         myVisionMixerButtons[thisScreen-1].hasContent = true;
         myVisionMixerButtons[thisScreen-1].myButton.Unlock();
+        Debug.Log("Unlocking Mute " + (thisScreen - 1));
+        myMixingDesk.myMutes[thisScreen].Unlock();
 
     }
 
@@ -270,6 +274,8 @@ public class VisionMixer : MonoBehaviour {
         }
         masterNoSignal.JumpToFront();
         myBroadcastTV.ResetScreens();
+        myMixingDesk.ResetMixingDesk();
+        myMixingDesk.LockMutes();
     }
 
 }

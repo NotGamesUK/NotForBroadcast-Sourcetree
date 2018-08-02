@@ -110,10 +110,13 @@ public class MasterController : MonoBehaviour {
     {
         PrepareLevel(thisLevel);
         myRoomGod.SwitchScreensTo3DSound();
+        // Tell Scoring System to Initialise
+        myScoringController.InitialiseVU();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         // Monitor Pause Button and if pressed -
         // call PauseGame()
@@ -317,7 +320,6 @@ public class MasterController : MonoBehaviour {
         // Mute Ambient Sound (But not "DAY ???" SFX).
         // Read RoomState info array and set objects to match
         // THIS INCLUDES: Power switches, FanLock, VM Link Switch, 
-        // Tell Scoring System to Initialise
 
 
 
@@ -370,7 +372,6 @@ public class MasterController : MonoBehaviour {
         masterLevelClock = 0;
         // Tell Sequence Controller to start first sequence
         // StartVUBar
-        myScoringController.InitialiseVU();
     }
 
     public void SequenceComplete(VideoClip thisAdvert, AudioClip thisAdvertAudio)

@@ -40,6 +40,7 @@ public class SoundDesk : MonoBehaviour {
         myDesk.SetFloat("BleepVol", -80f);
         myDesk.SetFloat("WhiteNoiseVol", -80f);
         myDesk.SetFloat("AudioInterferenceVol", -80f);
+        LockMutes();
 	}
 	
 	// Update is called once per frame
@@ -100,13 +101,20 @@ public class SoundDesk : MonoBehaviour {
         {
             UnmuteChannel(n);
             UnMuteBroadcastChannel(n);
-
         }
         myRoomGod.SetBroadcastVolumeSlider(1);
         myRoomGod.SetControlRoomVolumeSlider(1);
         myRoomGod.SetMixingDeskChannelSelect(1);
     }
 
+    public void LockMutes()
+    {
+        for (int n = 0; n < 4; n++)
+        {
+            myMutes[n].Lock();
+        }
+
+    }
 
     public void SwitchToAdvertSound ()
     {
