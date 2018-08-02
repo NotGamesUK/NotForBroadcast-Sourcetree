@@ -12,7 +12,9 @@ public class ScoringPlane : MonoBehaviour {
     public BackWallLight myRedLight;
     public BackWallLight myOrangeLight;
     public BackWallLight myGreenLight;
-    public enum ScoringCameraType { Video, Audio }
+    public AudioSource mySFXPlayer;
+    public VUBar myBleepLight;
+    public enum ScoringCameraType { Video, Audio, BleepMonitor }
     public ScoringCameraType myType;
     public int myAudioChannel;
     public float myIntialDelay;
@@ -21,10 +23,16 @@ public class ScoringPlane : MonoBehaviour {
 
 
     private ScoringController myScoringController;
+    private MasterController myMasterController;
     private Color lastColour;
     public enum ScoreColour { Red, Green, Orange, Null}
     [HideInInspector]
     public ScoreColour currentColour, lastScoreColour;
+    private bool watchingChannel;
+    [HideInInspector]
+    public static int bleepWatchingCount;
+    [HideInInspector]
+    public static bool bleepWarningSoundPlayed;
 
 
     // Use this for initialization
@@ -33,12 +41,14 @@ public class ScoringPlane : MonoBehaviour {
         lastScoreColour = currentColour;
         Invoke("SetupSplitRead", myIntialDelay);
         myScoringController = FindObjectOfType<ScoringController>();
+        myMasterController = FindObjectOfType<MasterController>();
         screenChanged = false;
+        watchingChannel = false;
 	}
 
     void SetupSplitRead()
     {
-        InvokeRepeating("ReadTV", 1, 0.25f);
+        InvokeRepeating("ReadTV", 1, 0.5f);
     }
 
     // Update is called once per frame
@@ -91,7 +101,7 @@ public class ScoringPlane : MonoBehaviour {
                     }
                     else if (screenChanged)
                     {
-                        Debug.Log("Screen Changed but colour HOLDS "+lastScoreColour+" still " + currentColour);
+                        Debug.Log("Screen Changed but colour HOLDS " + lastScoreColour + " still " + currentColour);
                         myScoringController.FootageCounterReset(currentColour);
                         screenChanged = false;
                     }
@@ -103,12 +113,47 @@ public class ScoringPlane : MonoBehaviour {
                         myScoringController.AudioColourChange(currentColour, myAudioChannel);
                     }
                 }
+                else if (myType == ScoringCameraType.BleepMonitor)
+                {
+                    if (lastScoreColour != currentColour)
+                    {
+                        if (currentColour == ScoreColour.Red)
+                        {
+                            bleepWatchingCount++;
+                            watchingChannel = true;
+                        }
+                        else if (watchingChannel)
+                        {
+                            if (!bleepWarningSoundPlayed)
+                            {
+                                if (!mySFXPlayer.isPlaying)
+                                {
+                                    mySFXPlayer.Play();
+                                    
+                                }
+                            }
+                            watchingChannel = false;
+                            myBleepLight.LightOn();
+                            Invoke("BleepLightOff", myMasterController.broadcastScreenDelayTime);
+                        }
+                    }
+                }
             }
 
             lastColour = testColor;
             lastScoreColour = currentColour;
         }
 	}
+
+    void BleepLightOff()
+    {
+        bleepWatchingCount--;
+        if (bleepWatchingCount <= 0)
+        {
+            bleepWatchingCount = 0;
+            myBleepLight.LightOff();
+        }
+    }
 
     Texture2D toTexture2D(RenderTexture rTex)
     {

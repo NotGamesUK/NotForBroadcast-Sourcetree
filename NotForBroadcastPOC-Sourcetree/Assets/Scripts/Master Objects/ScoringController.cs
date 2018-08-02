@@ -7,6 +7,8 @@ public class ScoringController : MonoBehaviour {
     public float minimumAudiencePercentage, maxGreenSecsMultiCam, maxOrangeSecsMultiCam, maxOrangeSecsSingleCam;
     [Range (0, 5f)]
     public float footageWeight, audioWeight, interferenceWeight, resistanceWeight;
+    [Range(0.001f, 1.5f)]
+    public float speedOfChange;
     public ScoringPlane[] myAudioScorer;
     public VUBar myUpArrow, myDownArrow;
     private MasterController myMasterController;
@@ -123,7 +125,7 @@ public class ScoringController : MonoBehaviour {
 
             // Make Adjustment based on weighting
             lastAudienceChange = thisAudienceChange;
-            thisAudienceChange = footageWeighting * Time.deltaTime * footageWeight;
+            thisAudienceChange = footageWeighting * Time.deltaTime * footageWeight * speedOfChange;
             audiencePercentage += thisAudienceChange;
             if (thisAudienceChange > 0 && lastAudienceChange<=0)
             {

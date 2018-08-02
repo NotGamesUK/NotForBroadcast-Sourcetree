@@ -1901,6 +1901,8 @@ MonoBehaviour:
   myRedLight: {fileID: 593230014}
   myOrangeLight: {fileID: 1519421750}
   myGreenLight: {fileID: 940932469}
+  mySFXPlayer: {fileID: 0}
+  myBleepLight: {fileID: 0}
   myType: 1
   myAudioChannel: 1
   myIntialDelay: 0.04
@@ -1996,6 +1998,8 @@ MonoBehaviour:
   myRedLight: {fileID: 593230014}
   myOrangeLight: {fileID: 1519421750}
   myGreenLight: {fileID: 940932469}
+  mySFXPlayer: {fileID: 0}
+  myBleepLight: {fileID: 0}
   myType: 1
   myAudioChannel: 3
   myIntialDelay: 0.12
@@ -6659,6 +6663,8 @@ MonoBehaviour:
   myRedLight: {fileID: 347655174}
   myOrangeLight: {fileID: 1295076504}
   myGreenLight: {fileID: 2085592262}
+  mySFXPlayer: {fileID: 0}
+  myBleepLight: {fileID: 0}
   myType: 0
   myAudioChannel: 0
   myIntialDelay: 0
@@ -12924,7 +12930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &678546775
 Transform:
   m_ObjectHideFlags: 0
@@ -12993,7 +12999,9 @@ MonoBehaviour:
   myRedLight: {fileID: 593230014}
   myOrangeLight: {fileID: 1519421750}
   myGreenLight: {fileID: 940932469}
-  myType: 1
+  mySFXPlayer: {fileID: 1662182184}
+  myBleepLight: {fileID: 1662182183}
+  myType: 2
   myAudioChannel: 3
   myIntialDelay: 0.07
   screenChanged: 0
@@ -18402,11 +18410,6 @@ Prefab:
       propertyPath: myAudioScorer.Array.data[3]
       value: 
       objectReference: {fileID: 1846373336}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[2].sequenceNames.Array.data[0]
-      value: 01-03 Party Leaders
-      objectReference: {fileID: 0}
     - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: myUpArrow
@@ -21533,7 +21536,9 @@ MonoBehaviour:
   myRedLight: {fileID: 593230014}
   myOrangeLight: {fileID: 1519421750}
   myGreenLight: {fileID: 940932469}
-  myType: 1
+  mySFXPlayer: {fileID: 1662182184}
+  myBleepLight: {fileID: 1662182183}
+  myType: 2
   myAudioChannel: 1
   myIntialDelay: 0.05
   screenChanged: 0
@@ -25541,6 +25546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce334b3d4c3869941975fcb212d602ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myDownSound: {fileID: 8300000, guid: d25a023dfbada2f4e89f46f836c008b0, type: 3}
+  myUpSound: {fileID: 8300000, guid: c42ee61dfa84ca74fbe97d61e17fac35, type: 3}
   myBars:
   - {fileID: 1303544820}
   - {fileID: 732648287}
@@ -25596,6 +25603,102 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: c9c5bb8ab6c08b84d8769138bf9f8359, type: 3}
   m_PrefabInternal: {fileID: 251314906}
+--- !u!82 &1235764268
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235764264}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243146164749798980, guid: 660328fa905f49943a2ef1e64657c917,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1236244852
 GameObject:
   m_ObjectHideFlags: 0
@@ -32968,6 +33071,8 @@ GameObject:
   - component: {fileID: 1662182182}
   - component: {fileID: 1662182181}
   - component: {fileID: 1662182180}
+  - component: {fileID: 1662182184}
+  - component: {fileID: 1662182183}
   m_Layer: 0
   m_Name: Bleep Surround Light
   m_TagString: Untagged
@@ -33017,7 +33122,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 69d76b6a8e6c6284386ab5adbcca1ced, type: 2}
+  - {fileID: 2100000, guid: 771b49dd21d72c342944163e63400e64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -33044,6 +33149,116 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1662182178}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1662182183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662182178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7e0765f87d64a4d8c393296768ec86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myOffMaterial: {fileID: 2100000, guid: 771b49dd21d72c342944163e63400e64, type: 2}
+  myOnMaterial: {fileID: 2100000, guid: 69d76b6a8e6c6284386ab5adbcca1ced, type: 2}
+  isOn: 0
+--- !u!82 &1662182184
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662182178}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243146164749798980, guid: 660328fa905f49943a2ef1e64657c917,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 635c6546738a90646bae6962030f21a7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1672944907
 Prefab:
   m_ObjectHideFlags: 0
@@ -33223,7 +33438,9 @@ MonoBehaviour:
   myRedLight: {fileID: 593230014}
   myOrangeLight: {fileID: 1519421750}
   myGreenLight: {fileID: 940932469}
-  myType: 1
+  mySFXPlayer: {fileID: 1662182184}
+  myBleepLight: {fileID: 1662182183}
+  myType: 2
   myAudioChannel: 4
   myIntialDelay: 0.08
   screenChanged: 0
@@ -34681,7 +34898,9 @@ MonoBehaviour:
   myRedLight: {fileID: 593230014}
   myOrangeLight: {fileID: 1519421750}
   myGreenLight: {fileID: 940932469}
-  myType: 1
+  mySFXPlayer: {fileID: 1662182184}
+  myBleepLight: {fileID: 1662182183}
+  myType: 2
   myAudioChannel: 2
   myIntialDelay: 0.06
   screenChanged: 0
@@ -36946,6 +37165,8 @@ MonoBehaviour:
   myRedLight: {fileID: 593230014}
   myOrangeLight: {fileID: 1519421750}
   myGreenLight: {fileID: 940932469}
+  mySFXPlayer: {fileID: 0}
+  myBleepLight: {fileID: 0}
   myType: 1
   myAudioChannel: 4
   myIntialDelay: 0.16
@@ -39123,6 +39344,8 @@ MonoBehaviour:
   myRedLight: {fileID: 593230014}
   myOrangeLight: {fileID: 1519421750}
   myGreenLight: {fileID: 940932469}
+  mySFXPlayer: {fileID: 0}
+  myBleepLight: {fileID: 0}
   myType: 1
   myAudioChannel: 2
   myIntialDelay: 0.08
