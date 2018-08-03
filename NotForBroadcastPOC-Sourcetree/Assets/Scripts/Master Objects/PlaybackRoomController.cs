@@ -263,7 +263,7 @@ public class PlaybackRoomController : MonoBehaviour {
 
         // Set Up Room for Playback
         myRoomGod.MuteRoom(); // Make all switches etc silent
-        myMixingDesk.ResetMixingDesk();
+        myMixingDesk.ResetMixingDeskMutes();
         myRoomGod.SwitchScreensTo2DSound();
         myRoomGod.TripSwitchPower(true);
         myRoomGod.SetAllPlugs("00110000"); // Turn on Spreakers and Mixing Desk

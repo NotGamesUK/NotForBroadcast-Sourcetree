@@ -6,6 +6,8 @@ public class AudienceVUMeter : MonoBehaviour {
 
     public AudioClip myDownSound;
     public AudioClip myUpSound;
+    public ImageFader myGreenFlash;
+    public ImageFader myRedFlash;
     public VUBar[] myBars;
 
     private float currentPercentage;
@@ -37,6 +39,7 @@ public class AudienceVUMeter : MonoBehaviour {
                     mySFXPlayer.clip = myDownSound;
                     mySFXPlayer.Play();
                     soundPlayed = true;
+                    myRedFlash.FlashMe();
                 }
             }
         } else if (thisPercentage > currentPercentage)
@@ -51,6 +54,7 @@ public class AudienceVUMeter : MonoBehaviour {
                     mySFXPlayer.clip = myUpSound;
                     mySFXPlayer.Play();
                     soundPlayed = true;
+                    myGreenFlash.FlashMe();
                 }
 
             }

@@ -95,13 +95,17 @@ public class SoundDesk : MonoBehaviour {
 
     }
 
-    public void ResetMixingDesk()
+    public void ResetMixingDeskMutes()
     {
         for (int n=1; n<=4; n++)
         {
             UnmuteChannel(n);
             UnMuteBroadcastChannel(n);
         }
+    }
+
+    public void ResetMixingDeskSliders()
+    {
         myRoomGod.SetBroadcastVolumeSlider(1);
         myRoomGod.SetControlRoomVolumeSlider(1);
         myRoomGod.SetMixingDeskChannelSelect(1);

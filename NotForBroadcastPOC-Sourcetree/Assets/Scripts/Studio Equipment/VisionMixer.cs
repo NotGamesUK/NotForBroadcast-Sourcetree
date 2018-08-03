@@ -274,7 +274,7 @@ public class VisionMixer : MonoBehaviour {
         }
         masterNoSignal.JumpToFront();
         myBroadcastTV.ResetScreens();
-        myMixingDesk.ResetMixingDesk();
+        myMixingDesk.ResetMixingDeskMutes();
         myMixingDesk.LockMutes();
     }
 
