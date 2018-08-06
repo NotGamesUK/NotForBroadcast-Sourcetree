@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114258210600043390}
   - component: {fileID: 114154697584577844}
   - component: {fileID: 114337312807549554}
+  - component: {fileID: 114454455620929406}
   m_Layer: 0
   m_Name: Master Controller
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f554da4f0a3034481e830f76c8eaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startAudiencePercentage: 50
   minimumAudiencePercentage: 20
   maxGreenSecsMultiCam: 10
   maxOrangeSecsMultiCam: 3
@@ -131,7 +133,7 @@ MonoBehaviour:
     preRollSmaller: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
     preRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
     sequenceNames:
-    - 01-03 Party Leaders
+    - Temp 01-01
     - Temp 01-02
     - Temp 01-03
     gameEvents: []
@@ -433,6 +435,17 @@ MonoBehaviour:
     scoringMode: 0
   preRollReady: 0
   broadcastScreenDelayTime: 2
+--- !u!114 &114454455620929406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962718779459812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b890be516826f048934a25ce9a4ef6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114724817509428008
 MonoBehaviour:
   m_ObjectHideFlags: 1

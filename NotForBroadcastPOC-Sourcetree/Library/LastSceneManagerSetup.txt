@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/01 Control Room.unity
+- path: Assets/_Scenes/-- Scoring File Maker.unity
   isLoaded: 1
   isActive: 1
