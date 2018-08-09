@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/00 Splash Screen.unity
     guid: 5765e950aa5e89e4bb0ab85ea28ca647
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/01 Control Room.unity
     guid: b7c12a9aed6c7c545803210659f3a14d
+  - enabled: 1
+    path: Assets/_Scenes/-- Scoring File Maker.unity
+    guid: af4570e8bb9fee848bd32911e1df6b20
   m_configObjects: {}

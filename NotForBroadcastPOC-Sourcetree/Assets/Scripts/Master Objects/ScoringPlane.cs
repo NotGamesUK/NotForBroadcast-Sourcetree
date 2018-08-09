@@ -156,6 +156,7 @@ public class ScoringPlane : MonoBehaviour {
 
             lastColour = testColor;
             lastScoreColour = currentColour;
+            Destroy(testableTexture);
         }
 	}
 

@@ -144,7 +144,7 @@ public class MasterController : MonoBehaviour {
 
                 // If in Waiting State
                 // Check if Condition is met
-                if (Input.GetKeyDown(KeyCode.KeypadEnter))
+                if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
                     PrepareAdvert(myLevelData.preRollSmaller, myLevelData.preRollAudio);
                 }

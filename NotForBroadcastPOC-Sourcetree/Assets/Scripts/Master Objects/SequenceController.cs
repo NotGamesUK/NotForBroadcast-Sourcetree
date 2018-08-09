@@ -42,7 +42,7 @@ public class SequenceController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        myDataStore = GetComponent<DataStorage>();
+        myDataStore = FindObjectOfType<DataStorage>();
         myMasterController = GetComponent<MasterController>();
         myEDLController = GetComponent<EDLController>();
         myVisionMixer = FindObjectOfType<VisionMixer>();

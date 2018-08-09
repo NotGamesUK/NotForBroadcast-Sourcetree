@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class ScoringController : MonoBehaviour {
 
@@ -28,6 +30,23 @@ public class ScoringController : MonoBehaviour {
     public float audiencePercentage, footageCountdown, footageWeighting, audioWeighting, interferenceWeighting, thisAudienceChange, lastAudienceChange;
     private ScoringPlane.ScoreColour currentFootageColour;
 
+    //
+    ////    Scoring System 02    ////
+    //
+
+    [Space(5)]
+    [Header("Scoring System 02")]
+    public VideoPlayer[] broadcastScreen;
+    public VideoPlayer[] bleepScreen;
+    public BackWallLight myWallLightRed, myWallLightOrange, myWallLightGreen;
+
+    private enum ScoreColour { Red, Orange, Green, Null }
+    private ScoreColour[] audioScore = new ScoreColour[4];
+    private ScoreColour[] bleepScore = new ScoreColour[4];
+    private ScoreColour videoScore;
+    private int lastBroadcastFrame, lastBleepFrame;
+    private List<ScoringData>[] sequenceScoring = new List<ScoringData>[3];
+    private bool isTracking;
 
 
 
@@ -39,6 +58,16 @@ public class ScoringController : MonoBehaviour {
         audiencePercentage = startAudiencePercentage;
         thisAudienceChange = 0;
         lastAudienceChange = 0;
+
+        for (int n=0; n<3; n++)
+        {
+            sequenceScoring[n] = new List<ScoringData>();
+        }
+        ////
+        // TEMP TEST CODE FOR SCORING SYSTEM 02 - REMOVE WHEN BEING CALLED FROM MASTER CONTROLLER
+        ////
+        SetUpScoreTracker("01-01 Headlines", "01-02 Wildish", "01-03 Party Leaders");
+
     }
 
 
@@ -217,5 +246,70 @@ public class ScoringController : MonoBehaviour {
 
     }
 
+    //
+    ////    Scoring System 02    ////
+    //
 
+    public void SetUpScoreTracker(string seq1, string seq2, string seq3) {
+
+        // Reset All Variables
+        videoScore = ScoreColour.Null;
+        for (int n=0; n<4; n++)
+        {
+            audioScore[n] = ScoreColour.Null;
+            bleepScore[n] = ScoreColour.Null;
+            if (n< 3) { sequenceScoring[n].Clear(); }
+        }
+        myWallLightGreen.LightOff();
+        myWallLightOrange.LightOff();
+        myWallLightRed.LightOff();
+        lastBroadcastFrame = 0;
+        lastBleepFrame = 0;
+
+        // Create all Scoring Lists for Level
+        TurnTextFileIntoList(seq1, 0);
+        TurnTextFileIntoList(seq2, 1);
+        TurnTextFileIntoList(seq3, 2);
+
+    }
+
+    private void TurnTextFileIntoList(string thisFileName, int thisListNumber)
+    {
+        TextAsset thisScoringFile = (TextAsset)Resources.Load(thisFileName, typeof(TextAsset)); // "/NGVDs/"+thisFileName+".ngvd"
+        StringReader myTextReader = new StringReader(thisScoringFile.text);
+        if (myTextReader == null)
+        {
+            Debug.Log("File: "+thisFileName+ " not found or not readable.");
+        }
+        else
+        {
+            // Read each line from the file
+            
+            string thisLine = myTextReader.ReadLine();
+            thisLine = myTextReader.ReadLine();
+            thisLine = myTextReader.ReadLine();
+            while (thisLine != "XXX")
+            {
+                Debug.Log(thisFileName+" --> " + thisLine);
+                string thisTypeChar = thisLine.Substring(0, 1);
+                ScoringData.ScoreType thisType = ScoringData.ScoreType.Audio;
+                if (thisTypeChar=="V") { thisType = ScoringData.ScoreType.Video; }
+                Debug.Log("Score Type: " + thisType);
+                string thisChannelString = thisLine.Substring(1, 1);
+                int thisChannel = int.Parse(thisChannelString);
+                Debug.Log("Channel: " + thisChannel);
+                string thisColourChar = thisLine.Substring(2, 1);
+                ScoringData.ScoreColour thisColour = ScoringData.ScoreColour.Red;
+                if (thisColourChar == "O") { thisColour = ScoringData.ScoreColour.Orange; }
+                else if (thisColourChar == "G") { thisColour = ScoringData.ScoreColour.Green; }
+                Debug.Log("Colour: " + thisColour);
+                string thisFrameString = thisLine.Substring(3);
+                float thisFrame = float.Parse(thisFrameString);
+                Debug.Log("Frame: " + thisFrame);
+                thisLine = myTextReader.ReadLine();
+                sequenceScoring[thisListNumber].Add(new ScoringData(thisFrame, thisType, thisChannel, thisColour));
+            }
+        }
+
+    }
 }
