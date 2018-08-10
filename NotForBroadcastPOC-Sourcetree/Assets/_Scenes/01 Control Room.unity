@@ -10055,6 +10055,42 @@ Prefab:
       propertyPath: myGreenLight
       value: 
       objectReference: {fileID: 940932469}
+    - target: {fileID: 1973784641169860, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498055782507880, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340276728552942, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843255457842668, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466488392835196, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278802220252598, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041822340117628, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148405901662684, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141807075595242, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbae1774dda63de4d8ada9f3022b3ed4, type: 2}
   m_IsPrefabParent: 0
@@ -15213,6 +15249,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myScreen.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4156777894312240, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15330,6 +15376,61 @@ Prefab:
       propertyPath: myWallLightGreen
       value: 
       objectReference: {fileID: 585802884}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.data[0]
+      value: 
+      objectReference: {fileID: 1010924252}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.data[1]
+      value: 
+      objectReference: {fileID: 482981432}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.data[2]
+      value: 
+      objectReference: {fileID: 808276435}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.data[3]
+      value: 
+      objectReference: {fileID: 1539190345}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.data[4]
+      value: 
+      objectReference: {fileID: 359279870}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.data[5]
+      value: 
+      objectReference: {fileID: 1831938461}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.data[6]
+      value: 
+      objectReference: {fileID: 568578416}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: screen.Array.data[7]
+      value: 
+      objectReference: {fileID: 282919356}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myBleepLight
+      value: 
+      objectReference: {fileID: 1662182183}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: mySFXPlayer
+      value: 
+      objectReference: {fileID: 1662182184}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[2].sequenceNames.Array.data[0]
+      value: 01-03 Party Leaders
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114337312807549554, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}

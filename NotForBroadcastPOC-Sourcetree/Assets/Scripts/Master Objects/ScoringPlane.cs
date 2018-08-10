@@ -110,13 +110,13 @@ public class ScoringPlane : MonoBehaviour {
                     if (lastScoreColour != currentColour)
                     {
                         Debug.Log("Video Colour Change from " + lastScoreColour + " to " + currentColour);
-                        myScoringController.FootageColourChange(currentColour);
+                        //myScoringController.FootageColourChange(currentColour);
                         screenChanged = false;
                     }
                     else if (screenChanged)
                     {
                         Debug.Log("Screen Changed but colour HOLDS " + lastScoreColour + " still " + currentColour);
-                        myScoringController.FootageCounterReset(currentColour);
+                        //myScoringController.FootageCounterReset(currentColour);
                         screenChanged = false;
                     }
                 }
@@ -129,28 +129,28 @@ public class ScoringPlane : MonoBehaviour {
                 }
                 else if (myType == ScoringCameraType.BleepMonitor)
                 {
-                    if (lastScoreColour != currentColour)
-                    {
-                        if (currentColour == ScoreColour.Red)
-                        {
-                            bleepWatchingCount++;
-                            watchingChannel = true;
-                        }
-                        else if (watchingChannel)
-                        {
-                            if (!bleepWarningSoundPlayed)
-                            {
-                                if (!mySFXPlayer.isPlaying)
-                                {
-                                    mySFXPlayer.Play();
+                    //if (lastScoreColour != currentColour)
+                    //{
+                    //    if (currentColour == ScoreColour.Red)
+                    //    {
+                    //        bleepWatchingCount++;
+                    //        watchingChannel = true;
+                    //    }
+                    //    else if (watchingChannel)
+                    //    {
+                    //        if (!bleepWarningSoundPlayed)
+                    //        {
+                    //            if (!mySFXPlayer.isPlaying)
+                    //            {
+                    //                mySFXPlayer.Play();
                                     
-                                }
-                            }
-                            watchingChannel = false;
-                            myBleepLight.LightOn();
-                            Invoke("BleepLightOff", myMasterController.broadcastScreenDelayTime);
-                        }
-                    }
+                    //            }
+                    //        }
+                    //        watchingChannel = false;
+                    //        myBleepLight.LightOn();
+                    //        Invoke("BleepLightOff", myMasterController.broadcastScreenDelayTime);
+                    //    }
+                    //}
                 }
             }
 

@@ -28,7 +28,7 @@ public class ScoringController : MonoBehaviour {
 
     [HideInInspector]
     public float audiencePercentage, footageCountdown, footageWeighting, audioWeighting, interferenceWeighting, thisAudienceChange, lastAudienceChange;
-    private ScoringPlane.ScoreColour currentFootageColour;
+    private ScoringData.ScoreColour currentFootageColour;
 
     //
     ////    Scoring System 02    ////
@@ -36,18 +36,21 @@ public class ScoringController : MonoBehaviour {
 
     [Space(5)]
     [Header("Scoring System 02")]
-    public VideoPlayer[] broadcastScreen;
-    public VideoPlayer[] bleepScreen;
+    public VideoPlayer[] screen; // 0-3 are broadcast screens, 4-7 are Bleep Screens
     public BackWallLight myWallLightRed, myWallLightOrange, myWallLightGreen;
+    public AudioSource mySFXPlayer;
+    public VUBar myBleepLight;
 
-    private enum ScoreColour { Red, Orange, Green, Null }
-    private ScoreColour[] audioScore = new ScoreColour[4];
-    private ScoreColour[] bleepScore = new ScoreColour[4];
-    private ScoreColour videoScore;
-    private int lastBroadcastFrame, lastBleepFrame;
+    private ScoringData.ScoreColour[] screenAudioColour = new ScoringData.ScoreColour[8]; // 0-3 are broadcast screens, 4-7 are Bleep Screens
+    private ScoringData.ScoreColour[] screenVideoColour= new ScoringData.ScoreColour[4]; // Based on whichever screen is currently showing on broadcast TV
+    private long[] lastFrame = new long[8];
+    private int[] listPosition = new int[8];
     private List<ScoringData>[] sequenceScoring = new List<ScoringData>[3];
-    private bool isTracking;
-
+    private List<ScoringData> currentSequence = new List<ScoringData>();
+    private bool[] watchingChannel = new bool[4];
+    private int currentSequenceNumber, currentBroadcastScreen, bleepWatchingCount;
+    private BroadcastTV myBroadcastScreen;
+    private ScoringData.ScoreColour broadcastScreenColour;
 
 
     // Use this for initialization
@@ -59,6 +62,9 @@ public class ScoringController : MonoBehaviour {
         thisAudienceChange = 0;
         lastAudienceChange = 0;
 
+        // Scoring System 02
+
+        myBroadcastScreen = FindObjectOfType<BroadcastTV>();
         for (int n=0; n<3; n++)
         {
             sequenceScoring[n] = new List<ScoringData>();
@@ -66,7 +72,7 @@ public class ScoringController : MonoBehaviour {
         ////
         // TEMP TEST CODE FOR SCORING SYSTEM 02 - REMOVE WHEN BEING CALLED FROM MASTER CONTROLLER
         ////
-        SetUpScoreTracker("01-01 Headlines", "01-02 Wildish", "01-03 Party Leaders");
+        SetUpScoreTracker("01-03 Party Leaders", "01-02 Wildish", "01-03 Party Leaders");
 
     }
 
@@ -74,11 +80,182 @@ public class ScoringController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        // Monitor Audio Scoring and adjust weighting accordingly
-        audioWeighting = 0;
+        // SCORING SYSTEM 02
 
-        if (broadcastScreensLive)
+        // Audio and Video Colour Tracking
+
+        for (int n=0; n<8; n++)
         {
+            if (screen[n].isPlaying)
+            {
+                long thisFrame = screen[n].frame;
+
+                if (thisFrame > lastFrame[n])
+                {
+                    if (listPosition[n] < currentSequence.Count)
+                    {
+                        ScoringData thisData = currentSequence[listPosition[n]];
+                        ScoringData.ScoreColour lastAudioColour = screenAudioColour[n];
+
+                        while (thisData.scoreFrame < thisFrame)
+                        {
+                            // Is it an audio volour change?
+                            if (thisData.editType == ScoringData.ScoreType.Audio)
+                            {
+                                int thisChannelNumber = n;
+                                if (thisChannelNumber > 3) { thisChannelNumber -= 4; }
+                                // Is it my channel?
+                                if (thisData.channelNumber == thisChannelNumber)
+                                {
+                                    // Set new color
+                                    screenAudioColour[n] = thisData.scoreColour;
+                                    Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " AUDIO Score to " + screenAudioColour[n] + " at frame " + thisFrame);
+                                }
+                            }
+                            else // It's a video colour change
+                            {
+                                if (n<4) // Is it a broadcast screen?
+                                {
+                                    // Is it my channel?
+                                    if (thisData.channelNumber == n)
+                                    {
+                                        // Set new color
+                                        screenVideoColour[n] = thisData.scoreColour;
+                                        Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " VIDEO Score to " + screenAudioColour[n] + " at frame " + thisFrame);
+                                    }
+
+                                }
+
+                            }
+
+                            listPosition[n]++;
+                            if (listPosition[n] >= currentSequence.Count) { break; }
+                            thisData = currentSequence[listPosition[n]];
+
+                            // Bleep Monitoring
+                            if (n>=4)
+                            {
+                                int thisBleepChannel = n - 4;
+                                ScoringData.ScoreColour currentColour = screenAudioColour[n];
+                                if (lastAudioColour != currentColour)
+                                {
+                                    if (currentColour == ScoringData.ScoreColour.Red)
+                                    {
+                                        watchingChannel[thisBleepChannel] = true;
+                                    }
+                                    else if (watchingChannel[thisBleepChannel])
+                                    {
+                                        if (!mySFXPlayer.isPlaying)
+                                        {
+                                            mySFXPlayer.Play();
+
+                                        }
+                                        watchingChannel[thisBleepChannel] = false;
+                                        myBleepLight.LightOn();
+                                        bleepWatchingCount++;
+                                        Debug.Log("NEW SCORING SYSTEM - BleepCount INCREASED TO - " + bleepWatchingCount);
+                                        Invoke("BleepLightOff", myMasterController.broadcastScreenDelayTime);
+                                    }
+                                }
+
+                            }
+
+                        }
+                    }
+                    lastFrame[n] = thisFrame;
+
+                }
+            }
+        }
+
+        // Has Video Colour Changed?
+
+        if (broadcastScreensLive) {
+
+            // Has Screen Changed
+            bool screenChanged = false;
+            if (myBroadcastScreen.currentScreen-1 != currentBroadcastScreen)
+            {
+                currentBroadcastScreen = myBroadcastScreen.currentScreen-1;
+                screenChanged = true;
+            }
+
+            // Set to red if no screen has been selected:
+            ScoringData.ScoreColour thisColour = ScoringData.ScoreColour.Red;
+            if (currentBroadcastScreen != -1)
+            {
+                thisColour = screenVideoColour[currentBroadcastScreen];
+            }
+
+            if (broadcastScreenColour != thisColour)
+            {
+
+                // TEMP - Set Back wall lights
+                // Switch Current Light off
+                switch (broadcastScreenColour)
+                {
+                    case ScoringData.ScoreColour.Red:
+                        myWallLightRed.LightOff();
+                        break;
+
+                    case ScoringData.ScoreColour.Orange:
+                        myWallLightOrange.LightOff();
+                        break;
+
+                    case ScoringData.ScoreColour.Green:
+                        myWallLightGreen.LightOff();
+                        break;
+
+
+                }
+
+                broadcastScreenColour = thisColour;
+
+                // Switch New Light On
+                switch (broadcastScreenColour)
+                {
+                    case ScoringData.ScoreColour.Red:
+                        myWallLightRed.LightOn();
+                        break;
+
+                    case ScoringData.ScoreColour.Orange:
+                        myWallLightOrange.LightOn();
+                        break;
+
+                    case ScoringData.ScoreColour.Green:
+                        myWallLightGreen.LightOn();
+                        break;
+
+
+                }
+
+
+                Debug.Log("New Scoring System - Broadcast Screen Colour changed to " + broadcastScreenColour);
+
+                // Call Footage Colour Change Here!!
+                FootageColourChange(broadcastScreenColour);
+
+
+            }
+            else if (screenChanged)
+            {
+                // Screen Changed but Colour Remained the same
+                Debug.Log("New Scoring System - Broadcast Screen Changed but COLOUR is the SAME: " + broadcastScreenColour);
+
+                // Call Footage Counter Reset Here!!
+                FootageCounterReset(broadcastScreenColour);
+
+            }
+
+        
+
+
+
+
+
+            // Monitor Audio Scoring and adjust weighting accordingly
+            audioWeighting = 0;
+
             //Debug.Log("Scoring Controller - Currently Scoring Audio");
             muteCount = 0;
             incorrectlyBleepedCount = 0;
@@ -89,7 +266,7 @@ public class ScoringController : MonoBehaviour {
                 {
                     muteCount++;
                 }
-                else if (myAudioScorer[n].currentColour == ScoringPlane.ScoreColour.Green)
+                else if (screenAudioColour[n] == ScoringData.ScoreColour.Green)
                 {
                     if (bleepOn)
                     {
@@ -98,7 +275,7 @@ public class ScoringController : MonoBehaviour {
                     }
 
                 }
-                else if (myAudioScorer[n].currentColour == ScoringPlane.ScoreColour.Orange)
+                else if (screenAudioColour[n] == ScoringData.ScoreColour.Orange)
                 {
                     if (orangeAudioWeighted == false)
                     {
@@ -114,11 +291,11 @@ public class ScoringController : MonoBehaviour {
                     }
 
                 }
-                else if (myAudioScorer[n].currentColour == ScoringPlane.ScoreColour.Red)
+                else if (screenAudioColour[n] == ScoringData.ScoreColour.Red)
                 {
                     if (!bleepOn)
                     {
-                        //Debug.Log("Scoring Controller RED NOT BLEEPED - Heavy Audio Weighting");
+                        Debug.Log("Scoring Controller RED NOT BLEEPED - Heavy Audio Weighting");
                     }
 
                 }
@@ -195,26 +372,39 @@ public class ScoringController : MonoBehaviour {
         myVUMeter.SetToPercentage(audiencePercentage);
     }
 
-    public void FootageCounterReset(ScoringPlane.ScoreColour thisColour)
+    void BleepLightOff()
+    {
+        bleepWatchingCount--;
+        if (bleepWatchingCount <= 0)
+        {
+            bleepWatchingCount = 0;
+            myBleepLight.LightOff();
+        }
+        Debug.Log("NEW SCORING SYSTEM - BleepCount DECREASED TO - " + bleepWatchingCount);
+
+    }
+
+
+    public void FootageCounterReset(ScoringData.ScoreColour thisColour)
     {
         Debug.Log("Resetting " + thisColour + " counter.");
         FootageColourChange(thisColour);
     }
 
 
-    public void FootageColourChange(ScoringPlane.ScoreColour thisColour)
+    public void FootageColourChange(ScoringData.ScoreColour thisColour)
     {
 
         //Debug.Log("Scoring Controller: Screen Colour Changed.");
 
         switch (thisColour)
         {
-            case ScoringPlane.ScoreColour.Red:
+            case ScoringData.ScoreColour.Red:
                 footageWeighting = -1;
                 footageCountdown = -1;
                 break;
 
-            case ScoringPlane.ScoreColour.Orange:
+            case ScoringData.ScoreColour.Orange:
                 footageWeighting = 0;
                 switch (myScoringMode)
                 {
@@ -228,7 +418,7 @@ public class ScoringController : MonoBehaviour {
                 }
                 break;
 
-            case ScoringPlane.ScoreColour.Green:
+            case ScoringData.ScoreColour.Green:
                 footageWeighting = 1;
                 footageCountdown = -1;
                 if (myScoringMode == ScoringMode.MultiCam)
@@ -252,25 +442,50 @@ public class ScoringController : MonoBehaviour {
 
     public void SetUpScoreTracker(string seq1, string seq2, string seq3) {
 
-        // Reset All Variables
-        videoScore = ScoreColour.Null;
-        for (int n=0; n<4; n++)
-        {
-            audioScore[n] = ScoreColour.Null;
-            bleepScore[n] = ScoreColour.Null;
-            if (n< 3) { sequenceScoring[n].Clear(); }
-        }
-        myWallLightGreen.LightOff();
-        myWallLightOrange.LightOff();
-        myWallLightRed.LightOff();
-        lastBroadcastFrame = 0;
-        lastBleepFrame = 0;
+        sequenceScoring[0].Clear();
+        sequenceScoring[1].Clear();
+        sequenceScoring[2].Clear();
 
         // Create all Scoring Lists for Level
         TurnTextFileIntoList(seq1, 0);
         TurnTextFileIntoList(seq2, 1);
         TurnTextFileIntoList(seq3, 2);
+        // Reset All Variables
+        ResetScoreTracking();
 
+    }
+
+    public void SetUpNextSequenceForTracking()
+    {
+        currentSequenceNumber++;
+        ResetScoreTracking();
+        Debug.Log("Scoring Controller Moving to Next Sequence");
+    }
+
+    void ResetScoreTracking()
+    {
+        for (int n = 0; n < 8; n++)
+        {
+            screenAudioColour[n] = ScoringData.ScoreColour.Null;
+            lastFrame[n] = -1;
+            listPosition[n] = 0;
+            if (n<4)
+            {
+                screenVideoColour[n] = ScoringData.ScoreColour.Null;
+            }
+        }
+        myWallLightGreen.LightOff();
+        myWallLightOrange.LightOff();
+        myWallLightRed.LightOff();
+        bleepWatchingCount = 0;
+        currentSequence = sequenceScoring[currentSequenceNumber];
+
+        // FOR DEBUGGING - REMOVE THIS NEXT LINE
+        PrintCurrentSequenceScoringListToDebugger();
+        //
+
+        currentBroadcastScreen = -1;
+        broadcastScreenColour = ScoringData.ScoreColour.Null;
     }
 
     private void TurnTextFileIntoList(string thisFileName, int thisListNumber)
@@ -311,5 +526,11 @@ public class ScoringController : MonoBehaviour {
             }
         }
 
+    }
+
+    void PrintCurrentSequenceScoringListToDebugger()
+    {
+        int thisListLength = currentSequence.Count;
+        Debug.Log("Sequence " + currentSequenceNumber + " - List Length: " + thisListLength);
     }
 }

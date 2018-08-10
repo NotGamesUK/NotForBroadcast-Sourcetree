@@ -60,7 +60,7 @@ public class MasterController : MonoBehaviour {
     private GodOfTheRoom myRoomGod;
     [HideInInspector]
     public int currentLevel;
-    private int currentSequence;
+    public int currentSequence;
     private LevelData myLevelData;
     public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
     public MasterState myState;
@@ -187,7 +187,8 @@ public class MasterController : MonoBehaviour {
                 if (!myVisionMixer.inPostRoll && startPreRollTime == -1)
                 {
                     startPreRollTime = mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence]);
-                    Debug.Log("Intending to start sequence when clock hits " + startPreRollTime +" seconds.");
+                    Debug.Log("Intending to start sequence when clock hits " + startPreRollTime +" seconds. (SEQUENCE IS "+currentSequence+")");
+                    if (currentSequence > 0) { myScoringController.SetUpNextSequenceForTracking(); }
 
                 } else if (startPreRollTime>0)  
                 {  
