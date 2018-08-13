@@ -26,6 +26,7 @@ public class ButtonAnimating : MonoBehaviour {
     public bool isLocked = false;
     public bool oneWay = false;
     private bool canRelease = false;
+    private bool keyHeld = false;
     private float myDirection;
     private int count = 0;
 
@@ -81,33 +82,56 @@ public class ButtonAnimating : MonoBehaviour {
 
     private void OnMouseEnter()
     {
-        myRenderer.material = mouseOverMaterialUp;
-        if (buttonType==type.Lock && isDepressed)
+        if (!(buttonType == type.Hold && keyHeld))
         {
-            myRenderer.material = mouseOverMaterialDown;
+            myRenderer.material = mouseOverMaterialUp;
+            if (buttonType == type.Lock && isDepressed)
+            {
+                myRenderer.material = mouseOverMaterialDown;
+            }
+            isSelected = true;
         }
-        isSelected = true;
     }
 
     private void OnMouseExit()
     {
-        myRenderer.material = buttonUpMaterial;
-        if (buttonType == type.Lock && isDepressed)
+        if (!(buttonType == type.Hold && keyHeld))
         {
-            myRenderer.material = buttonDownMaterial;
-            canRelease = true;
-        }
 
-        isSelected = false;
-        if (buttonType==type.Hold && isDepressed)
-        {
-            MoveUp();
+            myRenderer.material = buttonUpMaterial;
+            if (buttonType == type.Lock && isDepressed)
+            {
+                myRenderer.material = buttonDownMaterial;
+                canRelease = true;
+            }
+
+            isSelected = false;
+            if (buttonType == type.Hold && isDepressed)
+            {
+                MoveUp();
+            }
         }
     }
 
     private void OnMouseDown()
     {
-        if (isSelected && !isDepressed && !isLocked)
+        if (!(buttonType == type.Hold && keyHeld))
+        {
+
+            if (isSelected && !isDepressed && !isLocked)
+            {
+                MoveDown();
+                if (buttonType == type.Lock)
+                {
+                    canRelease = false;
+                }
+            }
+        }
+    }
+
+    public void KeyDown()
+    {
+        if (!isDepressed && !isLocked)
         {
             MoveDown();
             if (buttonType == type.Lock)
@@ -115,11 +139,16 @@ public class ButtonAnimating : MonoBehaviour {
                 canRelease = false;
             }
         }
+        if (buttonType == type.Hold)
+        {
+            keyHeld = true;
+        }
+
     }
 
-    private void OnMouseUp()
+    public void KeyUp()
     {
-        if (buttonType == type.Hold && isSelected && isDepressed && !isLocked )
+        if (buttonType == type.Hold && isDepressed && !isLocked)
         {
             myRenderer.material = mouseOverMaterialUp;
             MoveUp();
@@ -135,6 +164,36 @@ public class ButtonAnimating : MonoBehaviour {
                 canRelease = true;
             }
 
+        }
+        if (buttonType == type.Hold)
+        {
+            keyHeld = false;
+        }
+
+    }
+
+    private void OnMouseUp()
+    {
+        if (!(buttonType == type.Hold && keyHeld))
+        {
+
+            if (buttonType == type.Hold && isSelected && isDepressed && !isLocked)
+            {
+                myRenderer.material = mouseOverMaterialUp;
+                MoveUp();
+            }
+            if (buttonType == type.Lock && !isLocked && !oneWay)
+            {
+                if (canRelease)
+                {
+                    MoveUp();
+                }
+                else
+                {
+                    canRelease = true;
+                }
+
+            }
         }
 
     }

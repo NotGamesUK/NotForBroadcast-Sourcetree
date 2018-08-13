@@ -1574,6 +1574,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &120624017 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1962718779459812, guid: 4ac06a649f2d4be4aa026106a672787e,
+    type: 2}
+  m_PrefabInternal: {fileID: 942670889}
+--- !u!114 &120624018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 120624017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa89367fbc9276d4082712845a27a8ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myVisionMixerButtons:
+  - {fileID: 611720547}
+  - {fileID: 1381274022}
+  - {fileID: 2052346132}
+  - {fileID: 747111364}
+  myMuteButtons:
+  - {fileID: 994427502}
+  - {fileID: 994427498}
+  - {fileID: 994427494}
+  - {fileID: 994427490}
+  myBleepButton: {fileID: 994427516}
+  myPlayAdButton: {fileID: 766830506}
+  myFrequencyControlSlider: {fileID: 1288185912}
+  mySourceSelectSlider: {fileID: 512674455}
+  myVisonMixerLinkSwitch: {fileID: 1652722400}
+  myMode: 0
 --- !u!1 &125312696 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100018, guid: c9c5bb8ab6c08b84d8769138bf9f8359, type: 3}
@@ -8037,7 +8069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &457368757
 Transform:
   m_ObjectHideFlags: 0
@@ -18411,7 +18443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonUpMaterial: {fileID: 2100000, guid: 005f8a903f000cf43b01a726c4ece0cd, type: 2}
   mouseOverMaterialUp: {fileID: 2100000, guid: 43b6f6e912fcaaa498fa1ba5affccc17, type: 2}
-  buttonDownMaterial: {fileID: 2100000, guid: b6ef4d2743919554d8748952bce10879, type: 2}
+  buttonDownMaterial: {fileID: 2100000, guid: 12a82b975c4c42647908e5894ec27dbf, type: 2}
   mouseOverMaterialDown: {fileID: 2100000, guid: 12a82b975c4c42647908e5894ec27dbf,
     type: 2}
   buttonLockedMaterial: {fileID: 2100000, guid: 4ce13a2b0dd1bf74e95db1c162a6a5f6,
@@ -21125,7 +21157,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1161056744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.427, y: 4.253, z: -12.4}
+  m_LocalPosition: {x: 24.016, y: 3.498, z: -12.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406243288}
@@ -26511,7 +26543,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 7a31b0d3474d9ba4999a7114a021b028, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a31b0d3474d9ba4999a7114a021b028, type: 3}
@@ -36704,6 +36736,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b2e6b0e665e59ca44ad6804ad52fe969, type: 2}
+    - target: {fileID: 100000, guid: a660f391b37d5bf44abe1e32eb8f4fbe, type: 3}
+      propertyPath: m_Name
+      value: VHSPlayButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a660f391b37d5bf44abe1e32eb8f4fbe, type: 3}
   m_IsPrefabParent: 0

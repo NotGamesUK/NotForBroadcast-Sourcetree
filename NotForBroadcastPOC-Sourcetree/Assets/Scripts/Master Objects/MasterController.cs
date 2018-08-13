@@ -58,6 +58,7 @@ public class MasterController : MonoBehaviour {
     private VisionMixer myVisionMixer;
     private BackWallClock myClock;
     private GodOfTheRoom myRoomGod;
+    private InputController myInputController;
     [HideInInspector]
     public int currentLevel;
     public int currentSequence;
@@ -99,6 +100,7 @@ public class MasterController : MonoBehaviour {
         myVisionMixer = FindObjectOfType<VisionMixer>();
         myClock = FindObjectOfType<BackWallClock>();
         myRoomGod = FindObjectOfType<GodOfTheRoom>();
+        myInputController = GetComponent<InputController>();
         myState = MasterState.Menu;
         broadcastEDL[0] = new List<EditDecision>();
         broadcastEDL[1] = new List<EditDecision>();
@@ -135,9 +137,8 @@ public class MasterController : MonoBehaviour {
                 // If in Opening Titles State
                 // Fade "DAY ???" title
                 // When done call PreLevel()
-
+                myInputController.myMode = InputController.InputMode.InGame;
                 PreLevel();
-
                 break;
 
             case MasterState.WaitingForPlayer:
@@ -235,6 +236,7 @@ public class MasterController : MonoBehaviour {
 
             case MasterState.EndOfLevel:
 
+                myInputController.myMode = InputController.InputMode.Menu;
                 // If in EndOfLevel State
                 // Wait for gui to change state
                 break;

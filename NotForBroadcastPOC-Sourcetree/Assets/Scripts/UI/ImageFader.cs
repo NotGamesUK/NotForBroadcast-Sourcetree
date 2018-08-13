@@ -32,14 +32,6 @@ public class ImageFader : MonoBehaviour {
             this.image.color = curColor;
         }
 
-        // FOR TESTING
-
-        if (Input.GetButtonDown("TEMPFlash"))
-        {
-            Debug.Log("FLASH!!!!!");
-            FlashMe();
-        }
-
     }
 
     public void FlashMe()

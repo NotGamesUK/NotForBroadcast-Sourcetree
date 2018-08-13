@@ -39,7 +39,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Down
-    descriptiveName: 
+    descriptiveName: Look Down
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: s
@@ -55,7 +55,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Up
-    descriptiveName: 
+    descriptiveName: Look Up
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: w
@@ -71,7 +71,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Left
-    descriptiveName: 
+    descriptiveName: Look Left
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: a
@@ -87,12 +87,204 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Right
-    descriptiveName: 
+    descriptiveName: Look Right
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: d
     altNegativeButton: 
     altPositiveButton: right
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: VM01
+    descriptiveName: Select Screen 01
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 1
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: VM02
+    descriptiveName: Select Screen 02
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 2
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: VM03
+    descriptiveName: Select Screen 03
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 3
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: VM04
+    descriptiveName: Select Screen 04
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 4
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Mute01
+    descriptiveName: Mute Channel 01
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: f1
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Mute02
+    descriptiveName: Mute Channel 02
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: f2
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Mute03
+    descriptiveName: Mute Channel 03
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: f3
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Mute04
+    descriptiveName: Mute Channel 04
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: f4
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Bleep
+    descriptiveName: Censor
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: space
+    altNegativeButton: 
+    altPositiveButton: right
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SourceLeft
+    descriptiveName: Sound Source Select Left
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: q
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SourceRight
+    descriptiveName: Sound Source Select Right
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: e
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: VMLink
+    descriptiveName: Toggle Vision Mixer Linking
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: f
+    altNegativeButton: 
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -134,8 +326,8 @@ InputManager:
     axis: 1
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Mouse ScrollWheel
-    descriptiveName: 
+    m_Name: DotControl
+    descriptiveName: Broadcast Frequency
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -246,13 +438,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Submit
-    descriptiveName: 
+    m_Name: PlayAd
+    descriptiveName: Play Advert
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: return
     altNegativeButton: 
-    altPositiveButton: joystick button 0
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -279,12 +471,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Cancel
-    descriptiveName: 
+    descriptiveName: Cancel
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: escape
     altNegativeButton: 
-    altPositiveButton: joystick button 1
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000

@@ -39,6 +39,71 @@ public class CameraMovement : MonoBehaviour {
         pullingFocus = false;
     }
 
+    public void LookDown()
+    {
+        if (myPosition != "Down")
+        {
+            myAnimator.SetTrigger("downPressed");
+            myPosition = "Down";
+            PullFocusOverTime(downViewFocusLength, downViewAperture, focusPullTime);
+        }
+
+    }
+
+    public void LookUp()
+    {
+        if (myPosition == "Down")
+        {
+            myAnimator.SetTrigger("upPressed");
+            myPosition = "Centre";
+            PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
+
+        }
+
+    }
+
+    public void LookLeft()
+    {
+        if (myPosition != "Left")
+        {
+            myAnimator.SetTrigger("leftPressed");
+            if (myPosition == "Right")
+            {
+                myPosition = "Centre";
+                PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
+
+            }
+            else
+            {
+                myPosition = "Left";
+                PullFocusOverTime(leftViewFocusLength, leftViewAperture, focusPullTime);
+
+            }
+        }
+
+    }
+
+    public void LookRight()
+    {
+        if (myPosition != "Right")
+        {
+            myAnimator.SetTrigger("rightPressed");
+            if (myPosition == "Left")
+            {
+                myPosition = "Centre";
+                PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
+
+            }
+            else
+            {
+                myPosition = "Right";
+                PullFocusOverTime(rightViewFocusLength, rightViewAperture, focusPullTime);
+
+            }
+        }
+
+    }
+
     void Update()
     {
         if (freeLook)
@@ -52,71 +117,72 @@ public class CameraMovement : MonoBehaviour {
 
                 transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
             }
-        } else
-        {
-            // Keyboard Controls
-            if (Input.GetButtonDown("Down"))
-            {
-                if (myPosition!="Down")
-                {
-                    myAnimator.SetTrigger("downPressed");
-                    myPosition = "Down";
-                    PullFocusOverTime(downViewFocusLength, downViewAperture, focusPullTime);
-                }
-            }
-
-            if (Input.GetButtonDown("Up"))
-            {
-                if (myPosition == "Down")
-                {
-                    myAnimator.SetTrigger("upPressed");
-                    myPosition = "Centre";
-                    PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
-
-                }
-            }
-
-            if (Input.GetButtonDown("Left"))
-            {
-                if (myPosition != "Left")
-                {
-                    myAnimator.SetTrigger("leftPressed");
-                    if (myPosition == "Right")
-                    {
-                        myPosition = "Centre";
-                        PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
-
-                    }
-                    else
-                    {
-                        myPosition = "Left";
-                        PullFocusOverTime(leftViewFocusLength, leftViewAperture, focusPullTime);
-
-                    }
-                }
-            }
-
-            if (Input.GetButtonDown("Right"))
-            {
-                if (myPosition != "Right")
-                {
-                    myAnimator.SetTrigger("rightPressed");
-                    if (myPosition == "Left")
-                    {
-                        myPosition = "Centre";
-                        PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
-
-                    }
-                    else
-                    {
-                        myPosition = "Right";
-                        PullFocusOverTime(rightViewFocusLength, rightViewAperture, focusPullTime);
-
-                    }
-                }
-            }
-
         }
+        //else
+        //{
+        //    // Keyboard Controls
+        //    if (Input.GetButtonDown("Down"))
+        //    {
+        //        if (myPosition!="Down")
+        //        {
+        //            myAnimator.SetTrigger("downPressed");
+        //            myPosition = "Down";
+        //            PullFocusOverTime(downViewFocusLength, downViewAperture, focusPullTime);
+        //        }
+        //    }
+
+        //    if (Input.GetButtonDown("Up"))
+        //    {
+        //        if (myPosition == "Down")
+        //        {
+        //            myAnimator.SetTrigger("upPressed");
+        //            myPosition = "Centre";
+        //            PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
+
+        //        }
+        //    }
+
+        //    if (Input.GetButtonDown("Left"))
+        //    {
+        //        if (myPosition != "Left")
+        //        {
+        //            myAnimator.SetTrigger("leftPressed");
+        //            if (myPosition == "Right")
+        //            {
+        //                myPosition = "Centre";
+        //                PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
+
+        //            }
+        //            else
+        //            {
+        //                myPosition = "Left";
+        //                PullFocusOverTime(leftViewFocusLength, leftViewAperture, focusPullTime);
+
+        //            }
+        //        }
+        //    }
+
+        //    if (Input.GetButtonDown("Right"))
+        //    {
+        //        if (myPosition != "Right")
+        //        {
+        //            myAnimator.SetTrigger("rightPressed");
+        //            if (myPosition == "Left")
+        //            {
+        //                myPosition = "Centre";
+        //                PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
+
+        //            }
+        //            else
+        //            {
+        //                myPosition = "Right";
+        //                PullFocusOverTime(rightViewFocusLength, rightViewAperture, focusPullTime);
+
+        //            }
+        //        }
+        //    }
+
+        //}
 
         if (pullingFocus)
         {

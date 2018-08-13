@@ -72,7 +72,7 @@ public class ScoringController : MonoBehaviour {
         ////
         // TEMP TEST CODE FOR SCORING SYSTEM 02 - REMOVE WHEN BEING CALLED FROM MASTER CONTROLLER
         ////
-        SetUpScoreTracker("01-03 Party Leaders", "01-02 Wildish", "01-03 Party Leaders");
+        SetUpScoreTracker("01-01 Headlines", "01-02 Wildish", "01-03 Party Leaders");
 
     }
 

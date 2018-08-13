@@ -78,7 +78,20 @@ public class Switch : MonoBehaviour {
         if (isSelected && isOn)
         {
             SwitchOff();
-        } else
+        }
+        else
+        {
+            SwitchOn();
+        }
+    }
+
+    public void KeyDown()
+    {
+        if (isOn)
+        {
+            SwitchOff();
+        }
+        else
         {
             SwitchOn();
         }
