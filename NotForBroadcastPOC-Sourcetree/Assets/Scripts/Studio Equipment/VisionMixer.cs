@@ -19,7 +19,8 @@ public class VisionMixer : MonoBehaviour {
     [HideInInspector]
     public bool inPostRoll;
     private int jumpToTV;
-    private int currentScreen;
+    [HideInInspector]
+    public int currentScreen;
     private int maxScreen;
     private AudioClip thisAudioClip;
     private EDLController myEDLController;

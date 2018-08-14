@@ -42,7 +42,8 @@ public class ScoringController : MonoBehaviour {
     public VUBar myBleepLight;
 
     private ScoringData.ScoreColour[] screenAudioColour = new ScoringData.ScoreColour[8]; // 0-3 are broadcast screens, 4-7 are Bleep Screens
-    private ScoringData.ScoreColour[] screenVideoColour= new ScoringData.ScoreColour[4]; // Based on whichever screen is currently showing on broadcast TV
+    //[HideInInspector]
+    public ScoringData.ScoreColour[] screenVideoColour= new ScoringData.ScoreColour[8]; // Based on whichever screen is currently showing on broadcast TV
     private long[] lastFrame = new long[8];
     private int[] listPosition = new int[8];
     private List<ScoringData>[] sequenceScoring = new List<ScoringData>[3];
@@ -90,16 +91,18 @@ public class ScoringController : MonoBehaviour {
             {
                 long thisFrame = screen[n].frame;
 
+                // Are we on a new frame?
                 if (thisFrame > lastFrame[n])
                 {
+                    // Are we at the end of the list?
                     if (listPosition[n] < currentSequence.Count)
                     {
                         ScoringData thisData = currentSequence[listPosition[n]];
                         ScoringData.ScoreColour lastAudioColour = screenAudioColour[n];
 
-                        while (thisData.scoreFrame < thisFrame)
+                        while (thisData.scoreFrame <= thisFrame)
                         {
-                            // Is it an audio volour change?
+                            // Is it an audio colour change?
                             if (thisData.editType == ScoringData.ScoreType.Audio)
                             {
                                 int thisChannelNumber = n;
@@ -114,14 +117,14 @@ public class ScoringController : MonoBehaviour {
                             }
                             else // It's a video colour change
                             {
-                                if (n<4) // Is it a broadcast screen?
+                                if (n<8) // Is it a broadcast screen?
                                 {
                                     // Is it my channel?
-                                    if (thisData.channelNumber == n)
+                                    if (thisData.channelNumber == n || thisData.channelNumber+4 == n)
                                     {
                                         // Set new color
                                         screenVideoColour[n] = thisData.scoreColour;
-                                        Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " VIDEO Score to " + screenAudioColour[n] + " at frame " + thisFrame);
+                                        Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " VIDEO Score to " + screenVideoColour[n] + " at frame " + thisFrame);
                                     }
 
                                 }
@@ -190,45 +193,7 @@ public class ScoringController : MonoBehaviour {
             if (broadcastScreenColour != thisColour)
             {
 
-                // TEMP - Set Back wall lights
-                // Switch Current Light off
-                switch (broadcastScreenColour)
-                {
-                    case ScoringData.ScoreColour.Red:
-                        myWallLightRed.LightOff();
-                        break;
-
-                    case ScoringData.ScoreColour.Orange:
-                        myWallLightOrange.LightOff();
-                        break;
-
-                    case ScoringData.ScoreColour.Green:
-                        myWallLightGreen.LightOff();
-                        break;
-
-
-                }
-
                 broadcastScreenColour = thisColour;
-
-                // Switch New Light On
-                switch (broadcastScreenColour)
-                {
-                    case ScoringData.ScoreColour.Red:
-                        myWallLightRed.LightOn();
-                        break;
-
-                    case ScoringData.ScoreColour.Orange:
-                        myWallLightOrange.LightOn();
-                        break;
-
-                    case ScoringData.ScoreColour.Green:
-                        myWallLightGreen.LightOn();
-                        break;
-
-
-                }
-
 
                 Debug.Log("New Scoring System - Broadcast Screen Colour changed to " + broadcastScreenColour);
 
@@ -413,7 +378,12 @@ public class ScoringController : MonoBehaviour {
                         break;
 
                     case ScoringMode.MultiCam:
-                        footageCountdown = maxOrangeSecsMultiCam;
+                        if (currentFootageColour == ScoringData.ScoreColour.Green)
+                        {
+                            footageWeighting = 1;
+                            footageCountdown = maxOrangeSecsMultiCam;
+
+                        }
                         break;
                 }
                 break;
@@ -469,10 +439,7 @@ public class ScoringController : MonoBehaviour {
             screenAudioColour[n] = ScoringData.ScoreColour.Null;
             lastFrame[n] = -1;
             listPosition[n] = 0;
-            if (n<4)
-            {
-                screenVideoColour[n] = ScoringData.ScoreColour.Null;
-            }
+            screenVideoColour[n] = ScoringData.ScoreColour.Null;
         }
         myWallLightGreen.LightOff();
         myWallLightOrange.LightOff();
