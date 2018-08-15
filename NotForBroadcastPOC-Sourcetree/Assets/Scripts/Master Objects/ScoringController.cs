@@ -8,10 +8,11 @@ public class ScoringController : MonoBehaviour {
 
     public float startAudiencePercentage, minimumAudiencePercentage, maxGreenSecsMultiCam, maxOrangeSecsMultiCam, maxOrangeSecsSingleCam;
     [Range (0, 5f)]
-    public float footageWeight, audioWeight, interferenceWeight, resistanceWeight;
+    public float footageWeight, audioWeight, interferenceWeight, audioInterferenceWeight, resistanceWeight, bleepWeight, bleepCooldownRate, downWeight, upWeight;
     [Range(0.001f, 1.5f)]
     public float speedOfChange;
-    public ScoringPlane[] myAudioScorer;
+    
+    //public ScoringPlane[] myAudioScorer;
     public VUBar myUpArrow, myDownArrow;
     private MasterController myMasterController;
     private AudienceVUMeter myVUMeter;
@@ -23,11 +24,12 @@ public class ScoringController : MonoBehaviour {
     [HideInInspector]
     public int maxAudioChannel;
     public bool[] channelMuted;
+    public bool[] bleepChannelMuted;
     private int muteCount, incorrectlyBleepedCount;
     private bool orangeAudioWeighted;
 
     [HideInInspector]
-    public float audiencePercentage, footageCountdown, footageWeighting, audioWeighting, interferenceWeighting, thisAudienceChange, lastAudienceChange;
+    public float audiencePercentage, footageCountdown, footageWeighting, audioWeighting, interferenceWeighting, bleepWeighting, thisAudienceChange, lastAudienceChange;
     private ScoringData.ScoreColour currentFootageColour;
 
     //
@@ -73,7 +75,7 @@ public class ScoringController : MonoBehaviour {
         ////
         // TEMP TEST CODE FOR SCORING SYSTEM 02 - REMOVE WHEN BEING CALLED FROM MASTER CONTROLLER
         ////
-        SetUpScoreTracker("01-01 Headlines", "01-02 Wildish", "01-03 Party Leaders");
+        SetUpScoreTracker("01-03 Party Leaders", "01-02 Wildish", "01-03 Party Leaders"); // "01-01 Headlines"
 
     }
 
@@ -98,6 +100,7 @@ public class ScoringController : MonoBehaviour {
                     if (listPosition[n] < currentSequence.Count)
                     {
                         ScoringData thisData = currentSequence[listPosition[n]];
+
                         ScoringData.ScoreColour lastAudioColour = screenAudioColour[n];
 
                         while (thisData.scoreFrame <= thisFrame)
@@ -142,7 +145,7 @@ public class ScoringController : MonoBehaviour {
                                 ScoringData.ScoreColour currentColour = screenAudioColour[n];
                                 if (lastAudioColour != currentColour)
                                 {
-                                    if (currentColour == ScoringData.ScoreColour.Red)
+                                    if (currentColour == ScoringData.ScoreColour.Red && !bleepChannelMuted[thisBleepChannel])
                                     {
                                         watchingChannel[thisBleepChannel] = true;
                                     }
@@ -223,6 +226,7 @@ public class ScoringController : MonoBehaviour {
 
             //Debug.Log("Scoring Controller - Currently Scoring Audio");
             muteCount = 0;
+            bool alreadyDoneIt = false;
             incorrectlyBleepedCount = 0;
             orangeAudioWeighted = false;
             for (int n=0; n<maxAudioChannel; n++)
@@ -253,24 +257,35 @@ public class ScoringController : MonoBehaviour {
                     {
                         incorrectlyBleepedCount++;
                         Debug.Log("Scoring Controller ORANGE BLEEPED - Incrementing Incorrect Bleep Count to " + incorrectlyBleepedCount);
+
                     }
 
                 }
                 else if (screenAudioColour[n] == ScoringData.ScoreColour.Red)
                 {
-                    if (!bleepOn)
+                    if (!bleepOn && !alreadyDoneIt)
                     {
                         Debug.Log("Scoring Controller RED NOT BLEEPED - Heavy Audio Weighting");
+                        bleepWeighting -=UpDownAdjust (2f)*Time.deltaTime;
+                        alreadyDoneIt = true;
+                    }
+                    else if (!alreadyDoneIt)
+                    {
+                        bleepWeighting +=UpDownAdjust( 2f) * Time.deltaTime;
+                        alreadyDoneIt = true;
                     }
 
                 }
                 if (muteCount==maxAudioChannel)
                 {
                     Debug.Log("All Viable Channels Muted - Weighting Audio Score.");
+                    audioWeighting = -1;
                 }
-                else if (incorrectlyBleepedCount == maxAudioChannel)
+                else if (incorrectlyBleepedCount == maxAudioChannel-muteCount && !alreadyDoneIt)
                 {
                     Debug.Log("Incorrectly Bleeped!  Weighting Audio Score.");
+                    bleepWeighting -= UpDownAdjust( 0.5f)*Time.deltaTime;
+                    alreadyDoneIt = true;
                 }
 
 
@@ -278,9 +293,43 @@ public class ScoringController : MonoBehaviour {
             }
 
 
+            lastAudienceChange = thisAudienceChange;
+            thisAudienceChange = 0;
 
             // Apply Audio Weighting Here
+            audioWeighting = UpDownAdjust(audioWeighting);
 
+            thisAudienceChange += audioWeighting * Time.deltaTime * audioWeight * speedOfChange;
+
+            // Apply Bleep Weighting Here
+
+            thisAudienceChange += bleepWeighting * bleepWeight * speedOfChange;
+
+            // Allow BleepWeighting to trend towards zero
+
+            if (bleepWeighting<0)
+            {
+                bleepWeighting += (bleepCooldownRate * Time.deltaTime);
+                if (bleepWeighting>0) { bleepWeighting = 0; }
+            }
+            else if (bleepWeighting > 0)
+            {
+                bleepWeighting -= (bleepCooldownRate * Time.deltaTime);
+                if (bleepWeighting < 0) { bleepWeighting = 0; }
+
+            }
+
+            // Adjust Score based on Interference
+
+            interferenceWeighting = 0;
+            //Debug.Log("White Noise: " + myBroadcastScreen.lastWhiteNoiseLevel + "  Audio Interfere: " + myBroadcastScreen.lastAudioInterferenceLevel + "  Resistance: " + myBroadcastScreen.lastResistanceLevel);
+            interferenceWeighting -= ((100-myBroadcastScreen.lastWhiteNoiseLevel) / 50) * interferenceWeight;
+            interferenceWeighting -= (myBroadcastScreen.lastAudioInterferenceLevel / 50) * audioInterferenceWeight;
+            interferenceWeighting += (myBroadcastScreen.lastResistanceLevel / 50) * resistanceWeight;
+
+            interferenceWeighting = UpDownAdjust(interferenceWeighting);
+
+            thisAudienceChange += interferenceWeighting * Time.deltaTime * speedOfChange;
 
             // Adjust Footage Fail Countdown
 
@@ -291,12 +340,15 @@ public class ScoringController : MonoBehaviour {
                 {
                     footageWeighting = -1;
                     footageCountdown = -1;
+                    footageWeighting = UpDownAdjust(footageWeighting);
+
                 }
             }
 
-            // Make Adjustment based on weighting
-            lastAudienceChange = thisAudienceChange;
-            thisAudienceChange = footageWeighting * Time.deltaTime * footageWeight * speedOfChange;
+            // Make Adjustment based on video weighting
+
+
+            thisAudienceChange += footageWeighting * Time.deltaTime * footageWeight * speedOfChange;
             audiencePercentage += thisAudienceChange;
             if (thisAudienceChange > 0 && lastAudienceChange<=0)
             {
@@ -324,11 +376,24 @@ public class ScoringController : MonoBehaviour {
             myVUMeter.SetToPercentage(audiencePercentage);
             if (audiencePercentage < minimumAudiencePercentage)
             {
-                string failString = "Audience Fell Below " + minimumAudiencePercentage.ToString() + "%";
+                string failString = "Audience collapsed./nYou were at less than " + minimumAudiencePercentage.ToString() + " percent.";
                 myMasterController.FailMidLevel(failString);
             }
         }
 
+    }
+
+    float UpDownAdjust (float thisAmount)
+    {
+        if (thisAmount < 0)
+        {
+            thisAmount *= downWeight;
+        }
+        else
+        {
+            thisAmount *= upWeight;
+        }
+        return thisAmount;
     }
 
     public void InitialiseVU()
@@ -367,6 +432,8 @@ public class ScoringController : MonoBehaviour {
             case ScoringData.ScoreColour.Red:
                 footageWeighting = -1;
                 footageCountdown = -1;
+                footageWeighting = UpDownAdjust(footageWeighting);
+
                 break;
 
             case ScoringData.ScoreColour.Orange:
@@ -381,6 +448,8 @@ public class ScoringController : MonoBehaviour {
                         if (currentFootageColour == ScoringData.ScoreColour.Green)
                         {
                             footageWeighting = 1;
+                            footageWeighting = UpDownAdjust(footageWeighting);
+
                             footageCountdown = maxOrangeSecsMultiCam;
 
                         }
@@ -395,6 +464,8 @@ public class ScoringController : MonoBehaviour {
                 {
                     footageCountdown = maxGreenSecsMultiCam;
                 }
+                footageWeighting = UpDownAdjust(footageWeighting);
+
                 break;
 
         }
@@ -445,6 +516,7 @@ public class ScoringController : MonoBehaviour {
         myWallLightOrange.LightOff();
         myWallLightRed.LightOff();
         bleepWatchingCount = 0;
+        bleepWeighting = 0;
         currentSequence = sequenceScoring[currentSequenceNumber];
 
         // FOR DEBUGGING - REMOVE THIS NEXT LINE

@@ -58,6 +58,7 @@ public class SoundDesk : MonoBehaviour {
         {
             myEDLController.AddMute(thisChannel);
         }
+        myScoringController.bleepChannelMuted[thisChannel - 1] = true;
 
     }
 
@@ -72,6 +73,7 @@ public class SoundDesk : MonoBehaviour {
         {
             myEDLController.AddUnMute(thisChannel);
         }
+        myScoringController.bleepChannelMuted[thisChannel - 1] = false;
 
     }
 

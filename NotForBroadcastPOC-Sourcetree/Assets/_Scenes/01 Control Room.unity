@@ -15689,6 +15689,11 @@ Prefab:
       propertyPath: screenVideoColour.Array.size
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: bleepChannelMuted.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4156777894312240, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15860,6 +15865,41 @@ Prefab:
         type: 2}
       propertyPath: levelDataArray.Array.data[2].sequenceNames.Array.data[0]
       value: 01-03 Party Leaders
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: downWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: upWeight
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: bleepWeight
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: bleepCooldownRate
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: audioInterferenceWeight
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: interferenceWeight
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: minimumAudiencePercentage
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114337312807549554, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}

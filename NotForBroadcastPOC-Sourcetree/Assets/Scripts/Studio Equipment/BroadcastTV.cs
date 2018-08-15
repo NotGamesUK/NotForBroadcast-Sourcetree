@@ -42,9 +42,8 @@ public class BroadcastTV : MonoBehaviour {
     private bool[] screenPreparing = new bool[4];
     private bool adPreparing;
     private bool resistancePreparing;
-    private float lastWhiteNoiseLevel;
-    private float lastResistanceLevel;
-    private float lastAudioInterferenceLevel;
+    [HideInInspector]
+    public float lastWhiteNoiseLevel, lastResistanceLevel, lastAudioInterferenceLevel;
     private int maxScreen;
     private int requestedScreen;
     public int currentScreen;

@@ -37,7 +37,9 @@ public class FPSDisplay : MonoBehaviour {
         text += "\nFootage Weighting: " + myScoringController.footageWeighting;
         text += "\nInterference Weighting: " + myScoringController.interferenceWeighting;
         text += "\nAudio Weighting: " + myScoringController.audioWeighting;
+        text += "\nBleep Weighting: " + myScoringController.bleepWeighting;
         text += "\nAudience Adjustment: " + myScoringController.thisAudienceChange;
+
         GUI.Label(rect, text, style);
     }
 }
