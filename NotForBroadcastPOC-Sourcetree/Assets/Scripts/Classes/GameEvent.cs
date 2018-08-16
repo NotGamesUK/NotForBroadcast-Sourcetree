@@ -6,10 +6,20 @@ using System; //This allows the IComparable Interface
 [System.Serializable]
 public class GameEvent : IComparable<GameEvent>
 {
-
+    public string myName;
+    public enum TimeFrame {  Sequence, Advert, Preroll }
+    public TimeFrame myTimeframe;
+    public int mySequenceOrAdNumber;
     public float eventTime;
-    public enum EventType { TripPower, PopFanSwitch, RingPhone, SendFax, NextCorridorEvent, NextWindowEvent }
+
+    public enum EventType { SetPlugs, TripPower, PopFanSwitch, RingPhone, SendFax, CorridorEvent, WindowEvent, SetMasterVolumeSlider, SetBroadcastVolumeSlider, EnableObject }
     public EventType eventType;
+
+    public float floatData;
+    public string stringData;
+    public int integerData;
+    public bool boolData;
+    public GameObject objectData;
 
     //This method is required by the IComparable
     //interface. 

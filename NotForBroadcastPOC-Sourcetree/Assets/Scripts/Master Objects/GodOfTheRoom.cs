@@ -13,19 +13,96 @@ public class GodOfTheRoom : MonoBehaviour {
     public Slider controlRoomVolumeSlider;
     public Slider broadcastVolumeSlider;
     public Slider channelSelectSlider;
+    public Light roomLight;
 
     private float previousRoomVolume;
     private ScoringController myScoringController;
+    private bool fadingSound, fadingLights;
+    private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
 
     // Use this for initialization
     void Start () {
         myScoringController = FindObjectOfType<ScoringController>();
+        defaultRoomLightIntensity = roomLight.intensity;
+        fadingSound = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+		if (fadingSound)
+        {
+            currentSoundFadeVolume += soundFadeIncrement * Time.deltaTime;
+            if (currentSoundFadeVolume >= 100)
+            {
+                currentSoundFadeVolume = 100;
+                fadingSound = false;
+            }
+            float thisDB = LinearToDecibel(currentSoundFadeVolume/100);
+            unityMixingDesk.SetFloat("NonGuiVol", thisDB);
+
+        }
+
+        if (fadingLights)
+        {
+            if (targetLightFadeIntensity > currentLightFadeIntensity)
+            {
+                Debug.Log("ROOM GOD - FADING LIGHT UP TO " + targetLightFadeIntensity);
+
+                currentLightFadeIntensity += lightFadeIncrement*Time.deltaTime;
+
+                if (currentLightFadeIntensity > targetLightFadeIntensity)
+                {
+                    currentLightFadeIntensity = targetLightFadeIntensity;
+                    fadingLights = false;
+                }
+            }
+            if (targetLightFadeIntensity < currentLightFadeIntensity)
+            {
+                Debug.Log("ROOM GOD - FADING LIGHT DOWN TO " + targetLightFadeIntensity);
+
+                currentLightFadeIntensity -= lightFadeIncrement*Time.deltaTime;
+                if (currentLightFadeIntensity < targetLightFadeIntensity)
+                {
+                    currentLightFadeIntensity = targetLightFadeIntensity;
+                    fadingLights = false;
+                }
+            }
+            roomLight.intensity = currentLightFadeIntensity;
+            Debug.Log("ROOM GOD - Light Intensity: " + currentLightFadeIntensity);
+        }
+    }
+
+    private float LinearToDecibel(float linear)
+    {
+        float dB;
+
+        if (linear != 0)
+            dB = 20.0f * Mathf.Log10(linear);
+        else
+            dB = -144.0f;
+
+        return dB;
+    }
+
+    public void FadeRoomLights(float thisTime, bool isFadingUp)
+    {
+        if (isFadingUp)
+        {
+            if (roomLight.intensity == defaultRoomLightIntensity) { return; }
+            targetLightFadeIntensity = defaultRoomLightIntensity;
+            currentLightFadeIntensity = 0;
+        }
+        else
+        {
+            if (roomLight.intensity == 0) { return; }
+            currentLightFadeIntensity = defaultRoomLightIntensity;
+            targetLightFadeIntensity = 0;
+        }
+
+        lightFadeIncrement = defaultRoomLightIntensity / thisTime;
+        fadingLights = true;
+        Debug.Log("ROOM GOD: Fading Light to Intesity of " + targetLightFadeIntensity + " over " + thisTime + " with increnemts of " + lightFadeIncrement + " per second.");
+    }
 
     public void SwitchScreensTo2DSound()
     {
@@ -107,6 +184,19 @@ public class GodOfTheRoom : MonoBehaviour {
         unityMixingDesk.SetFloat("GUIRoom", previousRoomVolume);
     }
 
+    public void MuteAll3DSound()
+    {
+        unityMixingDesk.SetFloat("NonGuiVol", -80f);
+        currentSoundFadeVolume = 0;
+    }
+
+    public void FadeInAll3DSound(float thisTime)
+    {
+        currentSoundFadeVolume = 0;
+        soundFadeIncrement = 100 / thisTime;
+        fadingSound = true;
+    }
+
     public void SetControlRoomVolumeSlider(float thisSetting)
     {
         controlRoomVolumeSlider.value = thisSetting;
@@ -132,5 +222,10 @@ public class GodOfTheRoom : MonoBehaviour {
         {
             myScoringController.myScoringMode = ScoringController.ScoringMode.SingleCam;
         }
+    }
+
+    public void EnableObject(GameObject thisObject, bool thisEnabled)
+    {
+            thisObject.SetActive(thisEnabled);
     }
 }

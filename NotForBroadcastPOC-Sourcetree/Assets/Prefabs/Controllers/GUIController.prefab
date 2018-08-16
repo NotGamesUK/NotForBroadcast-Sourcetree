@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 82689468579292492}
   - component: {fileID: 114698582469754698}
   - component: {fileID: 114181991054300236}
+  - component: {fileID: 114148501199876192}
   m_Layer: 0
   m_Name: GUIController
   m_TagString: Untagged
@@ -138,6 +139,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114148501199876192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227221342673240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c72b4f0c90d4a047a1d0c9747b29741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myFilenameDisplay: {fileID: 0}
+  mySFXPlayer: {fileID: 0}
+  myLeftRightSFX: {fileID: 8300000, guid: 9ab31ac6994aec24fbc459b74dcdd16f, type: 3}
+  myCameraAnimator: {fileID: 0}
+  preparingAd: 0
+  myLevelData:
+    levelName: 
+    dayNumber: 0
+    loopRoll: {fileID: 0}
+    loopRollSmaller: {fileID: 0}
+    loopRollAudio: {fileID: 0}
+    preRoll: {fileID: 0}
+    preRollSmaller: {fileID: 0}
+    preRollAudio: {fileID: 0}
+    sequenceNames:
+    - 
+    - 
+    - 
+    gameEvents: []
 --- !u!114 &114181991054300236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,6 +186,7 @@ MonoBehaviour:
   mySignalVolSlider: {fileID: 0}
   myRoomVolSlider: {fileID: 0}
   myMusicVolSlider: {fileID: 0}
+  myGUIController: {fileID: 114698582469754698}
 --- !u!114 &114698582469754698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,10 +207,12 @@ MonoBehaviour:
   upgradesMenu: {fileID: 0}
   playbackMenu: {fileID: 0}
   failMenu: {fileID: 0}
+  myBlackout: {fileID: 0}
   mainMenuMusic: {fileID: 8300000, guid: 9fd24f0706ac9bf4aa1deb209f820905, type: 3}
   pauseMenuMusic: {fileID: 8300000, guid: cfdb56c21479b624b9a63959fefbf59f, type: 3}
   succeedMenuMusic: {fileID: 8300000, guid: cb76c391fb1adec49ba3aa01bf440229, type: 3}
   upgradeMenuMusic: {fileID: 8300000, guid: edccebbff7364894994691900adae4c2, type: 3}
   failMenuMusic: {fileID: 8300000, guid: cfdb56c21479b624b9a63959fefbf59f, type: 3}
   playbackMenuMusic: {fileID: 8300000, guid: 281405de764dfce44a28aebc97b74c54, type: 3}
-  currentMenu: {fileID: 0}
+  levelStartSFX: {fileID: 8300000, guid: 28e1f79794b35c94ebd534b56cd6c9a0, type: 3}
+  failMenuReasonForFail: {fileID: 0}

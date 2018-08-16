@@ -18,14 +18,19 @@ public class GUIController : MonoBehaviour
     public GameObject playbackMenu;
     public GameObject failMenu;
 
+    public Image myBlackout;
+    public Text myDayDisplay;
+
     public AudioClip mainMenuMusic;
     public AudioClip pauseMenuMusic;
     public AudioClip succeedMenuMusic;
     public AudioClip upgradeMenuMusic;
     public AudioClip failMenuMusic;
     public AudioClip playbackMenuMusic;
+    public AudioClip levelStartSFX;
 
     public Text failMenuReasonForFail;
+    public float myStartLevelBlackoutTime=3;
 
     public static GUIController uniqueGUIController;
 
@@ -73,15 +78,22 @@ public class GUIController : MonoBehaviour
         myMusicPlayer.Play();
         currentMenu = mainMenu;
         currentCamera = menuCamera;
+        myBlackout.enabled = false;
+        myDayDisplay.CrossFadeAlpha(0f, 0.1f, false);
 
 
     }
 
+    void Update()
+    {
+    }
+
     public void StartBroadcast(int thisBroadcast)
     {
+        myBlackout.enabled = true;
         ChangeMenuTo(null);
         ChangeCameraTo(gameCamera);
-        ChangeMusicTo(null);
+        PlayStartSFX();
         myMasterController.StartBroadcast(thisBroadcast);
     }
 
@@ -185,8 +197,28 @@ public class GUIController : MonoBehaviour
     }
     // Update is called once per frame
 
+    void PlayStartSFX()
+    {
+        myMusicPlayer.loop = false;
+        ChangeMusicTo(levelStartSFX);
+    }
+
+    public void DisplayDay(int thisDay)
+    {
+        myDayDisplay.text = "Day   " + thisDay;
+        //myDayDisplay.color = new Color(0.786f, 0.144f, 0.144f, 0f);
+        myDayDisplay.CrossFadeAlpha(1f, 3f, false);
+    }
+
+    public void FadeDay()
+    {
+        myDayDisplay.CrossFadeAlpha(0f, 3f, false);
+        BlackoutFader(5f, false);
+    }
+
     void ChangeMusicTo(AudioClip thisMusic)
     {
+        if (myMusicPlayer.clip == levelStartSFX) { myMusicPlayer.loop = true; }
         if (myMusicPlayer.clip != thisMusic)
         {
             if (thisMusic)
@@ -252,8 +284,15 @@ public class GUIController : MonoBehaviour
         Application.Quit();
     }
 
-    void Update ()
+    void BlackoutFader(float thisFadeTime, bool isFadingIn)
     {
-		
-	}
+        float thisTargetAlpha = 0f;
+        if (isFadingIn)
+        {
+            thisTargetAlpha = 1f;
+        }
+        myBlackout.CrossFadeAlpha(thisTargetAlpha, thisFadeTime, false);
+
+    }
+
 }

@@ -72,10 +72,6 @@ public class ScoringController : MonoBehaviour {
         {
             sequenceScoring[n] = new List<ScoringData>();
         }
-        ////
-        // TEMP TEST CODE FOR SCORING SYSTEM 02 - REMOVE WHEN BEING CALLED FROM MASTER CONTROLLER
-        ////
-        SetUpScoreTracker("01-03 Party Leaders", "01-02 Wildish", "01-03 Party Leaders"); // "01-01 Headlines"
 
     }
 
@@ -127,7 +123,7 @@ public class ScoringController : MonoBehaviour {
                                     {
                                         // Set new color
                                         screenVideoColour[n] = thisData.scoreColour;
-                                        Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " VIDEO Score to " + screenVideoColour[n] + " at frame " + thisFrame);
+                                        //Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " VIDEO Score to " + screenVideoColour[n] + " at frame " + thisFrame);
                                     }
 
                                 }
@@ -159,7 +155,7 @@ public class ScoringController : MonoBehaviour {
                                         watchingChannel[thisBleepChannel] = false;
                                         myBleepLight.LightOn();
                                         bleepWatchingCount++;
-                                        Debug.Log("NEW SCORING SYSTEM - BleepCount INCREASED TO - " + bleepWatchingCount);
+                                        //Debug.Log("NEW SCORING SYSTEM - BleepCount INCREASED TO - " + bleepWatchingCount);
                                         Invoke("BleepLightOff", myMasterController.broadcastScreenDelayTime);
                                     }
                                 }
@@ -544,22 +540,22 @@ public class ScoringController : MonoBehaviour {
             thisLine = myTextReader.ReadLine();
             while (thisLine != "XXX")
             {
-                Debug.Log(thisFileName+" --> " + thisLine);
+                //Debug.Log(thisFileName+" --> " + thisLine);
                 string thisTypeChar = thisLine.Substring(0, 1);
                 ScoringData.ScoreType thisType = ScoringData.ScoreType.Audio;
                 if (thisTypeChar=="V") { thisType = ScoringData.ScoreType.Video; }
-                Debug.Log("Score Type: " + thisType);
+                //Debug.Log("Score Type: " + thisType);
                 string thisChannelString = thisLine.Substring(1, 1);
                 int thisChannel = int.Parse(thisChannelString);
-                Debug.Log("Channel: " + thisChannel);
+                //Debug.Log("Channel: " + thisChannel);
                 string thisColourChar = thisLine.Substring(2, 1);
                 ScoringData.ScoreColour thisColour = ScoringData.ScoreColour.Red;
                 if (thisColourChar == "O") { thisColour = ScoringData.ScoreColour.Orange; }
                 else if (thisColourChar == "G") { thisColour = ScoringData.ScoreColour.Green; }
-                Debug.Log("Colour: " + thisColour);
+                //Debug.Log("Colour: " + thisColour);
                 string thisFrameString = thisLine.Substring(3);
                 float thisFrame = float.Parse(thisFrameString);
-                Debug.Log("Frame: " + thisFrame);
+                //Debug.Log("Frame: " + thisFrame);
                 thisLine = myTextReader.ReadLine();
                 sequenceScoring[thisListNumber].Add(new ScoringData(thisFrame, thisType, thisChannel, thisColour));
             }

@@ -59,6 +59,8 @@ public class MasterController : MonoBehaviour {
     private BackWallClock myClock;
     private GodOfTheRoom myRoomGod;
     private InputController myInputController;
+    private EventController myEventController;
+
     [HideInInspector]
     public int currentLevel;
     public int currentSequence;
@@ -101,6 +103,7 @@ public class MasterController : MonoBehaviour {
         myClock = FindObjectOfType<BackWallClock>();
         myRoomGod = FindObjectOfType<GodOfTheRoom>();
         myInputController = GetComponent<InputController>();
+        myEventController = FindObjectOfType<EventController>();
         myState = MasterState.Menu;
         broadcastEDL[0] = new List<EditDecision>();
         broadcastEDL[1] = new List<EditDecision>();
@@ -114,6 +117,7 @@ public class MasterController : MonoBehaviour {
         myRoomGod.SwitchScreensTo3DSound();
         // Tell Scoring System to Initialise
         myScoringController.InitialiseVU();
+        myRoomGod.MuteAll3DSound();
 
     }
 
@@ -134,11 +138,9 @@ public class MasterController : MonoBehaviour {
                 break;
 
             case MasterState.StartLevel:
-                // If in Opening Titles State
-                // Fade "DAY ???" title
-                // When done call PreLevel()
                 myInputController.myMode = InputController.InputMode.InGame;
                 PreLevel();
+                
                 break;
 
             case MasterState.WaitingForPlayer:
@@ -168,6 +170,7 @@ public class MasterController : MonoBehaviour {
                         StartLevel();
                     }
                     myState = MasterState.PlayingAd;
+                    myEventController.SwitchToNextAdvert();
                     if (currentSequence > 2)
                     {
                         // Stop Scoring System
@@ -198,6 +201,7 @@ public class MasterController : MonoBehaviour {
                     {
                         mySequenceController.StartSequence();
                         startPreRollTime = 0;
+                        myEventController.SwitchToNextSequence();
                     }
                 }
 
@@ -318,15 +322,27 @@ public class MasterController : MonoBehaviour {
         myDayNumber = myLevelData.dayNumber;
         myLevelName = myLevelData.levelName;
         Debug.Log("MC: Day " + myDayNumber+".  "+myLevelName+".");
+        myGUIController.DisplayDay(myDayNumber);
         // Set Mode to OpeningTitles
         myState = MasterState.StartLevel;
         // Mute Ambient Sound (But not "DAY ???" SFX).
         // Read RoomState info array and set objects to match
         // THIS INCLUDES: Power switches, FanLock, VM Link Switch, 
+        // Load Scoring Data in Scoring Controller
+        Invoke("LoadDataAfterDayDisplayed", 3);
 
 
 
 
+    }
+
+    void LoadDataAfterDayDisplayed()
+    {
+        myScoringController.SetUpScoreTracker(myLevelData.sequenceNames[0], myLevelData.sequenceNames[1], myLevelData.sequenceNames[2]); // "01-01 Headlines"
+        myGUIController.FadeDay();
+        myEventController.InitialiseAndStartEventReading(myLevelData.gameEvents);
+
+        myRoomGod.FadeInAll3DSound(5f);
     }
 
     void PreLevel()
