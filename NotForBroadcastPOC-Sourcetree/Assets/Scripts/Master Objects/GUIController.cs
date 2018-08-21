@@ -205,7 +205,7 @@ public class GUIController : MonoBehaviour
 
     public void DisplayDay(int thisDay)
     {
-        myDayDisplay.text = "Day   " + thisDay;
+        myDayDisplay.text = "Day  " + thisDay;
         //myDayDisplay.color = new Color(0.786f, 0.144f, 0.144f, 0f);
         myDayDisplay.CrossFadeAlpha(1f, 3f, false);
     }

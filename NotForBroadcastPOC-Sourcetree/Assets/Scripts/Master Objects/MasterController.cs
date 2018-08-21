@@ -22,6 +22,7 @@ public class MasterController : MonoBehaviour {
         public VideoClip preRollSmaller;
         public AudioClip preRollAudio;
         public string[] sequenceNames = new string[3];
+        public string advertList;
         public List<GameEvent> gameEvents;
 
         public string GetName()
@@ -118,7 +119,7 @@ public class MasterController : MonoBehaviour {
         // Tell Scoring System to Initialise
         myScoringController.InitialiseVU();
         myRoomGod.MuteAll3DSound();
-
+        myRoomGod.LoadTapeRack(myLevelData.advertList);
     }
 
     // Update is called once per frame
@@ -504,6 +505,7 @@ public class MasterController : MonoBehaviour {
         // Also Called by Sequence Controller when Ad not played by end of video
 
         // Stop all Video and Audio
+
         // Stop all recording of data
 
         StopAllAudioAndVideo();

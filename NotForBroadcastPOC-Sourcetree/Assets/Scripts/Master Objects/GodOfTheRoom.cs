@@ -17,12 +17,15 @@ public class GodOfTheRoom : MonoBehaviour {
 
     private float previousRoomVolume;
     private ScoringController myScoringController;
+    private VHSTapeController myVHSTapeRack;
+
     private bool fadingSound, fadingLights;
     private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
 
     // Use this for initialization
     void Start () {
         myScoringController = FindObjectOfType<ScoringController>();
+        myVHSTapeRack = FindObjectOfType<VHSTapeController>();
         defaultRoomLightIntensity = roomLight.intensity;
         fadingSound = false;
 	}
@@ -46,7 +49,7 @@ public class GodOfTheRoom : MonoBehaviour {
         {
             if (targetLightFadeIntensity > currentLightFadeIntensity)
             {
-                Debug.Log("ROOM GOD - FADING LIGHT UP TO " + targetLightFadeIntensity);
+                //Debug.Log("ROOM GOD - FADING LIGHT UP TO " + targetLightFadeIntensity);
 
                 currentLightFadeIntensity += lightFadeIncrement*Time.deltaTime;
 
@@ -58,7 +61,7 @@ public class GodOfTheRoom : MonoBehaviour {
             }
             if (targetLightFadeIntensity < currentLightFadeIntensity)
             {
-                Debug.Log("ROOM GOD - FADING LIGHT DOWN TO " + targetLightFadeIntensity);
+                //Debug.Log("ROOM GOD - FADING LIGHT DOWN TO " + targetLightFadeIntensity);
 
                 currentLightFadeIntensity -= lightFadeIncrement*Time.deltaTime;
                 if (currentLightFadeIntensity < targetLightFadeIntensity)
@@ -68,7 +71,7 @@ public class GodOfTheRoom : MonoBehaviour {
                 }
             }
             roomLight.intensity = currentLightFadeIntensity;
-            Debug.Log("ROOM GOD - Light Intensity: " + currentLightFadeIntensity);
+            //Debug.Log("ROOM GOD - Light Intensity: " + currentLightFadeIntensity);
         }
     }
 
@@ -227,5 +230,10 @@ public class GodOfTheRoom : MonoBehaviour {
     public void EnableObject(GameObject thisObject, bool thisEnabled)
     {
             thisObject.SetActive(thisEnabled);
+    }
+
+    public void LoadTapeRack(string thisLoadString)
+    {
+        myVHSTapeRack.SetAllTapesFromString(thisLoadString);
     }
 }

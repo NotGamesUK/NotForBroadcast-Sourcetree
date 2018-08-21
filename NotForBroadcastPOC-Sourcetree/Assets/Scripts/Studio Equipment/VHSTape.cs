@@ -14,7 +14,9 @@ public class VHSTape : MonoBehaviour {
     private Vector3 startPosition;
     private TextMesh[] myLabels;
     private TextMesh myTopLabel;
+    private MeshRenderer myTopMesh;
     private TextMesh mySideLabel;
+    private MeshRenderer mySideMesh;
     private float grabShiftInZ = 0.81f;
 
 
@@ -32,16 +34,15 @@ public class VHSTape : MonoBehaviour {
             if (thisMesh.lineSpacing == 1)
             {
                 mySideLabel = thisMesh;
+                mySideMesh = thisMesh.GetComponent<MeshRenderer>();
             } else
             {
                 myTopLabel = thisMesh;
+                myTopMesh = thisMesh.GetComponent<MeshRenderer>();
+
             }
         }
-        string myTopLabelText=myTitle.Replace("<br>", "\n");
-        string mySideLabelText=myTitle.Replace("<br>", " ");
-        mySideLabel.text = mySideLabelText;
-        myTopLabel.text = myTopLabelText;
-
+        RewriteLabel();
     }
 	
 	// Update is called once per frame
@@ -54,9 +55,25 @@ public class VHSTape : MonoBehaviour {
         }
 	}
 
-    void ReturnToShelf()
+    public void ReturnToShelf()
     {
         this.transform.position = startPosition;
     }
 
+    public void SetMyFont(Font thisFont, Material thisMaterial)
+    {
+        myTopLabel.font = thisFont;
+        mySideLabel.font = thisFont;
+        myTopMesh.material = thisMaterial;
+        mySideMesh.material = thisMaterial;
+    }
+
+    public void RewriteLabel()
+    {
+        string myTopLabelText = myTitle.Replace("<br>", "\n");
+        string mySideLabelText = myTitle.Replace("<br>", " ");
+        mySideLabel.text = mySideLabelText;
+        myTopLabel.text = myTopLabelText;
+
+    }
 }

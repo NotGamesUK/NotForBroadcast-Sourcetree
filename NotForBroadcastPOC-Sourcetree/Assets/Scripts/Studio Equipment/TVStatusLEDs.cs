@@ -41,7 +41,7 @@ public class TVStatusLEDs : MonoBehaviour {
             {
                 // Broadcast Screen
                 thisCheckID = myBroadcastSystem.currentScreen - 1;
-                if (!myScoringController.broadcastScreensLive)
+                if (!myScoringController.broadcastScreensLive && thisCheckID>=0)
                 {
                     canDoIt = false;
                 }

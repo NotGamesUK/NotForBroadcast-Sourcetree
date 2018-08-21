@@ -22,6 +22,7 @@ public class SequenceController : MonoBehaviour {
     private BroadcastTV myBroadcastScreen;
     private VHSControlPanel myVHSControlPanel;
     private ScoringController myScoringController;
+    private OnAirLight myOnAirLight;
     private bool waitingForScreens = false;
     private float thisPreSequenceVideoLength;
     private int foundPos;
@@ -51,6 +52,7 @@ public class SequenceController : MonoBehaviour {
         myBroadcastScreen = FindObjectOfType<BroadcastTV>();
         myVHSControlPanel = FindObjectOfType<VHSControlPanel>();
         myScoringController = GetComponent<ScoringController>();
+        myOnAirLight = FindObjectOfType<OnAirLight>();
         broadcastScreenDelayTime = myMasterController.broadcastScreenDelayTime;
     }
 
@@ -156,7 +158,7 @@ public class SequenceController : MonoBehaviour {
         myBroadcastScreen.EndAdvertAndStartLiveBroadcast();
         isPlayingAd = false;
         myScoringController.broadcastScreensLive = true;
-
+        myOnAirLight.LightOn();
     }
 
     void SequenceOverrun()
@@ -188,6 +190,7 @@ public class SequenceController : MonoBehaviour {
         {
             myMasterController.SequenceComplete(thisAdvertVideo, thisAdvertAudio);
             myScoringController.broadcastScreensLive = false;
+            myOnAirLight.LightOff();
 
 
         }

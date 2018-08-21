@@ -269,7 +269,7 @@ public class PlaybackRoomController : MonoBehaviour {
         myRoomGod.SetAllPlugs("00110000"); // Turn on Spreakers and Mixing Desk
         myRoomGod.SetMixingDeskChannelSelect(2); // Set to Broadcast Only on Mixing Desk
         myRoomGod.SetBroadcastVolumeSlider(1f); // Turn Volume to full
-
+        myRoomGod.LoadTapeRack(myLevelData.advertList);
 
         myRoomGod.UnMuteRoom(); // Make all switches etc audible
 

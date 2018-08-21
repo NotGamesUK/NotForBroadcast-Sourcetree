@@ -372,7 +372,7 @@ public class ScoringController : MonoBehaviour {
             myVUMeter.SetToPercentage(audiencePercentage);
             if (audiencePercentage < minimumAudiencePercentage)
             {
-                string failString = "Audience collapsed./nYou were at less than " + minimumAudiencePercentage.ToString() + " percent.";
+                string failString = "Audience fell to less than " + minimumAudiencePercentage.ToString() + " percent.";
                 myMasterController.FailMidLevel(failString);
             }
         }
