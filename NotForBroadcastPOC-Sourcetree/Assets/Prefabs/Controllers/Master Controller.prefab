@@ -126,7 +126,7 @@ MonoBehaviour:
     - 01-01 Headlines
     - 01-02 Wildish
     - 01-03 Party Leaders
-    advertList: Nandos#Um Bongo#XXX#Budweiser#XXX#Haribo#Pet Insurance#XXX
+    advertList: 'Nandos#Um Bongo#XXX#Budweiser#XXX#Haribo#Pet Insurance#XXX '
     gameEvents:
     - myName: Set Up Plugs
       myTimeframe: 2
@@ -190,7 +190,7 @@ MonoBehaviour:
     - 02-01 Babies
     - 02-02 Thadeus
     - 02-03 Hostage
-    advertList: 
+    advertList: Team01#Team02#Team03#XXX#XXX#Haribo#XXX#Resistance
     gameEvents: []
   - levelName: Test
     dayNumber: 666
@@ -201,10 +201,10 @@ MonoBehaviour:
     preRollSmaller: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
     preRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
     sequenceNames:
-    - 01-03 Party Leaders
+    - Temp 01-01
     - Temp 01-02
     - Temp 01-03
-    advertList: 
+    advertList: Team01#Team02#Team03#XXX#XXX#Haribo#XXX#Resistance
     gameEvents: []
   masterLevelClock: 0
   currentLevel: 0

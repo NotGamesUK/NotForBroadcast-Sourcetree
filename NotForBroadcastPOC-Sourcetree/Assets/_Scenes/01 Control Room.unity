@@ -25768,6 +25768,38 @@ MonoBehaviour:
     adAudio: {fileID: 8300000, guid: b99da71b50cd6a84f887a85e245b1cab, type: 3}
     labelFont: {fileID: 12800000, guid: bfd5037b78967974ea925537477bd20e, type: 3}
     labelMaterial: {fileID: 2100000, guid: 43ceb8da779a4384aa399688cb85b343, type: 2}
+  - advertName: Team01
+    tapeLabel: Team<br>Talk 01
+    adNumber: 0
+    smallVideo: {fileID: 32900000, guid: 448c2f0c9b5e5e74c97582162c588b17, type: 3}
+    largeVideo: {fileID: 32900000, guid: a6af98b111d81ab4a822ff3ecda601c4, type: 3}
+    adAudio: {fileID: 8300000, guid: 3467c083caad20e418d37dab300d3d31, type: 3}
+    labelFont: {fileID: 12800000, guid: 558d4bcf01826c44f8edc96ddae9c139, type: 3}
+    labelMaterial: {fileID: 2100000, guid: fe86d07c66b2b6847bdd773ad688db4a, type: 2}
+  - advertName: Team02
+    tapeLabel: Team<br>Talk 02
+    adNumber: 0
+    smallVideo: {fileID: 32900000, guid: ff870dfd3df37c4458609b8e0301c360, type: 3}
+    largeVideo: {fileID: 32900000, guid: 0dae6c56bbd7fee418703e54bbdc3a5f, type: 3}
+    adAudio: {fileID: 8300000, guid: 0e19883cc8eaaa74d9f430b94ca48df1, type: 3}
+    labelFont: {fileID: 12800000, guid: 558d4bcf01826c44f8edc96ddae9c139, type: 3}
+    labelMaterial: {fileID: 2100000, guid: fe86d07c66b2b6847bdd773ad688db4a, type: 2}
+  - advertName: Team03
+    tapeLabel: Team<br>Talk 03
+    adNumber: 0
+    smallVideo: {fileID: 32900000, guid: b10ab0db202d11a41a1eeacd050582a2, type: 3}
+    largeVideo: {fileID: 32900000, guid: 49ffb7b405ecb684daf6a8c59535ccb8, type: 3}
+    adAudio: {fileID: 8300000, guid: 821bfae961a414a4d8fdf32f76f016cb, type: 3}
+    labelFont: {fileID: 12800000, guid: 558d4bcf01826c44f8edc96ddae9c139, type: 3}
+    labelMaterial: {fileID: 2100000, guid: fe86d07c66b2b6847bdd773ad688db4a, type: 2}
+  - advertName: Resistance
+    tapeLabel: Perfume<br>Advert
+    adNumber: 0
+    smallVideo: {fileID: 32900000, guid: 2203918bbe101cb40b8bb92c453c1af0, type: 3}
+    largeVideo: {fileID: 32900000, guid: 24c61ee10fa07644fab96d0790365f06, type: 3}
+    adAudio: {fileID: 8300000, guid: 557b6fefebd77ac4cac8753c9bf9ac5d, type: 3}
+    labelFont: {fileID: 12800000, guid: 8b1642437128f9542b173ce80a35314f, type: 3}
+    labelMaterial: {fileID: 2100000, guid: 9cda998d47ab5da44b6c63ed0b84ee41, type: 2}
 --- !u!1 &1313595625
 GameObject:
   m_ObjectHideFlags: 0
