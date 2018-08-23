@@ -61,7 +61,7 @@ public class VHSTapeController : MonoBehaviour
                 // Set Label Text VideoReferences
                 myTapes[thisTape].myTitle = thisAdvert.tapeLabel;
                 myTapes[thisTape].myVideo = thisAdvert.largeVideo;
-                myTapes[thisTape].myVideo = thisAdvert.smallVideo;
+                myTapes[thisTape].myVideoSmaller = thisAdvert.smallVideo;
                 myTapes[thisTape].myAudio = thisAdvert.adAudio;
                 return true;
             }

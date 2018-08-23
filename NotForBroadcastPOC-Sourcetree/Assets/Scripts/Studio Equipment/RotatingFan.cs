@@ -20,12 +20,13 @@ public class RotatingFan : MonoBehaviour {
     public AudioClip mySlowDownSFX;
     public AudioClip myBladesSFX;
     public AudioClip myTurningSFX;
+
     private bool lastButtonCheck;
+    private Quaternion myHeadStartRotation;
 
 
-
-
-    private ButtonAnimating myButton;
+    [HideInInspector]
+    public ButtonAnimating myButton;
     private AudioSource mySFX;
     private AudioSource myTurnSFX;
 
@@ -46,7 +47,9 @@ public class RotatingFan : MonoBehaviour {
         lastButtonCheck = myButton.isDepressed;
         isTurning = false;
         if (!lastButtonCheck) { isTurning = true; }
+        myHeadStartRotation = myHead.transform.rotation;
     }
+
     // Update is called once per frame
     void Update () {
 		if (myButton.hasPower)
@@ -131,5 +134,10 @@ public class RotatingFan : MonoBehaviour {
             myTurnSFX.Stop();
         }
 
+    }
+
+    public void ResetHead()
+    {
+        myHead.transform.rotation = myHeadStartRotation;
     }
 }

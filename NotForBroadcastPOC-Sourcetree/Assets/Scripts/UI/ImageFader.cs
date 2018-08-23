@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class ImageFader : MonoBehaviour {
 
     public float myFadeSpeed;
+    public Animator myCameraAnimator;
+
     private Image image;
     private float targetAlpha;
 
@@ -19,26 +21,45 @@ public class ImageFader : MonoBehaviour {
             Debug.LogError("Error: No image on " + this.name);
         }
         this.targetAlpha = this.image.color.a;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Color curColor = this.image.color;
-        float alphaDiff = Mathf.Abs(curColor.a - this.targetAlpha);
-        if (alphaDiff > 0.0001f)
+        if (myCameraAnimator.GetCurrentAnimatorStateInfo(0).IsName("CameraIdleCentre"))
         {
-            curColor.a = Mathf.Lerp(curColor.a, targetAlpha, this.myFadeSpeed * Time.deltaTime);
-            this.image.color = curColor;
-        }
 
+            Color curColor = this.image.color;
+            float alphaDiff = Mathf.Abs(curColor.a - this.targetAlpha);
+            if (alphaDiff > 0.0001f)
+            {
+                curColor.a = Mathf.Lerp(curColor.a, targetAlpha, this.myFadeSpeed * Time.deltaTime);
+                this.image.color = curColor;
+            }
+        }
+        else
+        {
+            if (this.image.color.a != 0)
+            {
+                Color curColor = this.image.color;
+                curColor.a = 0;
+                this.image.color = curColor;
+
+            }
+        }
     }
 
     public void FlashMe()
     {
-        myFadeSpeed = 30;
-        FadeIn();
-        Invoke("FlashPartTwo", 0.1f);
+        if (myCameraAnimator.GetCurrentAnimatorStateInfo(0).IsName("CameraIdleCentre"))
+        {
+            myFadeSpeed = 30;
+            FadeIn();
+            Invoke("FlashPartTwo", 0.1f);
+
+        }
+
 
 
     }

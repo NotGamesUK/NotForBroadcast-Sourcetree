@@ -168,11 +168,51 @@ MonoBehaviour:
       integerData: 0
       boolData: 1
       objectData: {fileID: 0}
-    - myName: Enable Phone
-      myTimeframe: 2
-      mySequenceOrAdNumber: 1
-      eventTime: 1
-      eventType: 9
+    - myName: TEST - POP FAN
+      myTimeframe: 1
+      mySequenceOrAdNumber: 0
+      eventTime: 5
+      eventType: 2
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Seq 02 Switch to Multi Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 38
+      eventType: 10
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Seq 02 Switch Back to Single Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 181
+      eventType: 11
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Seq 03 Switch to Multi Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 3
+      eventTime: 63
+      eventType: 10
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Seq 03 Switch Back to Single Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 262
+      eventType: 11
       floatData: 0
       stringData: 
       integerData: 0

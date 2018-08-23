@@ -156,7 +156,7 @@ public class EventController : MonoBehaviour {
                 break;
 
             case GameEvent.EventType.PopFanSwitch:
-
+                myRoomGod.SetFanSwitch(thisEvent.boolData);
 
                 break;
 
@@ -173,6 +173,27 @@ public class EventController : MonoBehaviour {
 
             case GameEvent.EventType.EnableObject:
                 myRoomGod.EnableObject(thisEvent.objectData, thisEvent.boolData);
+
+                break;
+
+            case GameEvent.EventType.MultiCamScoringOn:
+                myRoomGod.SwitchToMulticamMode();
+
+                break;
+
+            case GameEvent.EventType.SingleCamScoringOn:
+                myRoomGod.SwitchToSingleCamMode();
+
+                break;
+
+            case GameEvent.EventType.RhythmCamScoringOn:
+                // For Full Version
+                myRoomGod.SwitchToRhythmCamMode();
+                
+                break;
+
+            case GameEvent.EventType.SetTowerDropSpeed:
+                myRoomGod.SetTowerDropSpeed(thisEvent.floatData);
 
                 break;
 

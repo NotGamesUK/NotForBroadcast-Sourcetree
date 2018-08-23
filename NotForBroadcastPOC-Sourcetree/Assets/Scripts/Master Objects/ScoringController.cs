@@ -16,8 +16,8 @@ public class ScoringController : MonoBehaviour {
     public VUBar myUpArrow, myDownArrow;
     private MasterController myMasterController;
     private AudienceVUMeter myVUMeter;
-    public enum ScoringMode { SingleCam, MultiCam }
-    [HideInInspector]
+    public enum ScoringMode { SingleCam, MultiCam, RhythmCam }
+    //[HideInInspector]
     public ScoringMode myScoringMode;
     [HideInInspector]
     public bool broadcastScreensLive, bleepOn;

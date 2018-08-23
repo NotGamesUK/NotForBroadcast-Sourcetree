@@ -29,13 +29,16 @@ public class ValveBox : MonoBehaviour {
     private MasterGauges myGauges;
     private RotatingFan myFan;
     private AudioSource[] mySFX;
+    private ValveElement[] myElements;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         myGauges = FindObjectOfType<MasterGauges>();
         currentTemperature = myGauges.roomTemperature;
         myFan = FindObjectOfType<RotatingFan>();
         mySFX = GetComponents<AudioSource>();
+        myElements = FindObjectsOfType<ValveElement>();
+
         mySFX[0].clip = myHumSFX;
         mySFX[0].loop = true;
         mySFX[0].volume = 0;
@@ -145,4 +148,14 @@ public class ValveBox : MonoBehaviour {
         mySFX[0].volume = humVolume;
         mySFX[1].volume = sizzleVolume;
     }
+
+    public void ResetMe()
+    {
+        foreach(ValveElement thisElement in myElements)
+        {
+            thisElement.isBlown = false;
+        }
+        currentTemperature = myGauges.roomTemperature;
+    }
+
 }

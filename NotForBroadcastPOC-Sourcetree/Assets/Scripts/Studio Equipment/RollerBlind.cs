@@ -15,6 +15,7 @@ public class RollerBlind : MonoBehaviour
 
     private AudioSource mySFX;
     private bool isMoving;
+    private Vector3 myStartPosition;
 
 
     // Use this for initialization
@@ -24,6 +25,7 @@ public class RollerBlind : MonoBehaviour
         mySFX.clip = myMotorSound;
         mySFX.loop = true;
         mySFX.Stop();
+        myStartPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -67,6 +69,14 @@ public class RollerBlind : MonoBehaviour
         }
 
 
+
+    }
+    
+    public void ResetMe()
+    {
+        transform.position = myStartPosition;
+        isMoving = false;
+        mySFX.Stop();
 
     }
 }

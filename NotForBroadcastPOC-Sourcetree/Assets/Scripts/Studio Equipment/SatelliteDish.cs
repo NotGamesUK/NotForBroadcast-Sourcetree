@@ -34,7 +34,8 @@ public class SatelliteDish : MonoBehaviour
     private AudioSource myDropSFX;
     private AudioSource myRaiseSFX;
     private AudioSource myTurnSFX;
-
+    [HideInInspector]
+    public Quaternion myStartRotation;
 
 
 
@@ -60,6 +61,7 @@ public class SatelliteDish : MonoBehaviour
         myTurnSFX.clip = myTurningSFX;
         myTurnSFX.loop = true;
         myTurnSFX.Stop();
+        myStartRotation = transform.rotation;
     }
 
 

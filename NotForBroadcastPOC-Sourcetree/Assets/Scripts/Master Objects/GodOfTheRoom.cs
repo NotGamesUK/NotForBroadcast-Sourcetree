@@ -18,6 +18,14 @@ public class GodOfTheRoom : MonoBehaviour {
     private float previousRoomVolume;
     private ScoringController myScoringController;
     private VHSTapeController myVHSTapeRack;
+    private BroadcastTV myBroadcastSystem;
+    private SoundDesk myMixingDesk;
+    private RotatingFan myFan;
+    private SatelliteDish myTower;
+    private VisionMixer myVisionMixer;
+    private RollerBlind[] myBlinds;
+    private ValveBox myValveBox;
+    private MasterGauges myGauges;
 
     private bool fadingSound, fadingLights;
     private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
@@ -26,6 +34,13 @@ public class GodOfTheRoom : MonoBehaviour {
     void Start () {
         myScoringController = FindObjectOfType<ScoringController>();
         myVHSTapeRack = FindObjectOfType<VHSTapeController>();
+        myBroadcastSystem = FindObjectOfType<BroadcastTV>();
+        myMixingDesk = FindObjectOfType<SoundDesk>();
+        myFan = FindObjectOfType<RotatingFan>();
+        myTower = FindObjectOfType<SatelliteDish>();
+        myBlinds = FindObjectsOfType<RollerBlind>();
+        myValveBox = FindObjectOfType<ValveBox>();
+        myGauges = FindObjectOfType<MasterGauges>();
         defaultRoomLightIntensity = roomLight.intensity;
         fadingSound = false;
 	}
@@ -236,4 +251,116 @@ public class GodOfTheRoom : MonoBehaviour {
     {
         myVHSTapeRack.SetAllTapesFromString(thisLoadString);
     }
+
+    public void SetTowerDropSpeed(float thisSpeed)
+    {
+        myTower.dropSpeed = thisSpeed;
+    }
+
+    public void SetTowerRotationSpeed(float thisSpeed)
+    {
+        myTower.turnSpeed = thisSpeed;
+    }
+
+    public void SetVisionMixerLinkSwitch(bool linkOn)
+    {
+        if (linkOn)
+        {
+            if (!myVisionMixer.myLinkSwitch.isOn)
+            {
+                myVisionMixer.myLinkSwitch.KeyDown();
+
+            }
+        } else
+        {
+            if (myVisionMixer.myLinkSwitch.isOn)
+            {
+                myVisionMixer.myLinkSwitch.KeyDown();
+
+            }
+
+        }
+    }
+
+    public void SwitchToMulticamMode()
+    {
+        myScoringController.myScoringMode = ScoringController.ScoringMode.MultiCam;
+    }
+
+    public void SwitchToSingleCamMode()
+    {
+        myScoringController.myScoringMode = ScoringController.ScoringMode.SingleCam;
+    }
+
+    public void SwitchToRhythmCamMode()
+    {
+        // For Full Version
+        myScoringController.myScoringMode = ScoringController.ScoringMode.RhythmCam;
+    }
+
+    public void SetFanSwitch(bool rotationOff)
+    {
+        if (rotationOff)
+        {
+            myFan.myButton.KeyDown();
+
+        }
+        else
+        {
+            myFan.myButton.KeyUp();
+        }
+    }
+
+    public void SetRoomTemperature(float thisTemperature)
+    {
+        myGauges.roomTemperature = thisTemperature;
+    }
+
+    public void ResetRoom()
+    {
+        // Returns Room to Default State
+        MuteRoom();
+        SetRoomTemperature(20);
+
+        //// Left View
+        // Power
+        SetAllPlugs("00000000");
+        TripSwitchPower(false);
+        // Broadcast Tower
+        SetTowerDropSpeed(0);
+        SetTowerRotationSpeed(10);
+        myTower.transform.rotation = myTower.myStartRotation;
+        // Fan
+        SetFanSwitch(true);
+        myFan.ResetHead();
+        // Blinds
+        foreach(RollerBlind thisBlind in myBlinds)
+        {
+            thisBlind.ResetMe();
+        }
+        // ValveBox
+        myValveBox.ResetMe();
+
+
+        //// Right View
+
+
+        //// Front View
+
+
+        SetMixingDeskChannelSelect(1);
+        SetControlRoomVolumeSlider(1);
+        SetBroadcastVolumeSlider(1);
+        SetVisionMixerLinkSwitch(false);
+
+
+        //// Down View
+
+
+        myVHSTapeRack.SetAllTapesFromString("XXX#XXX#XXX#XXX#XXX#XXX#XXX#XXX");
+
+
+
+    }
+
 }

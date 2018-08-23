@@ -18,11 +18,15 @@ public class InputController : MonoBehaviour {
     public InputMode myMode;
 
     private CameraMovement myCameraController;
+    private GUIController myGUIController;
+    private bool isPaused;
 
 	// Use this for initialization
 	void Start () {
         myCameraController = FindObjectOfType<CameraMovement>();
+        myGUIController = FindObjectOfType<GUIController>();
         myMode = InputMode.Inactive;
+        isPaused = false;
 	}
 	
 	// Update is called once per frame
@@ -150,7 +154,26 @@ public class InputController : MonoBehaviour {
 
                 if (Input.GetButtonDown("VMLink"))
                 {
-                    myVisonMixerLinkSwitch.KeyDown();                }
+                    myVisonMixerLinkSwitch.KeyDown();
+                }
+
+                if (Input.GetButtonDown("Pause"))
+                {
+                    if (isPaused)
+                    {
+                        myGUIController.Unpause();
+                        isPaused = false;
+                    }
+                    else
+                    {
+                        if (myGUIController.currentMenu == null)
+                        {
+                            myGUIController.GoToPauseMenu();
+                            isPaused = true;
+                        }
+                    }
+                }
+
 
 
 

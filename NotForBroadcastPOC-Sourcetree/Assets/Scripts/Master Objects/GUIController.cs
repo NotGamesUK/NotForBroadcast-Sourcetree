@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
 
@@ -17,6 +18,7 @@ public class GUIController : MonoBehaviour
     public GameObject upgradesMenu;
     public GameObject playbackMenu;
     public GameObject failMenu;
+    public GameObject pauseMenu;
 
     public Image myBlackout;
     public Text myDayDisplay;
@@ -38,10 +40,15 @@ public class GUIController : MonoBehaviour
     private MasterController myMasterController;
     private OptionsController myOptionsController;
     private PlaybackRoomController myPlaybackController;
-    private GameObject currentMenu;
+    [HideInInspector]
+    public GameObject currentMenu;
     private GameObject currentCamera;
     private CameraMovement freeLookCamera;
     private DevModeObject[] devModeObjects;
+    private List<VideoPlayer> pausedVideoPlayers = new List<VideoPlayer>();
+    private VideoPlayer[] allVideoPlayers;
+    private List<AudioSource> pausedAudioSources = new List<AudioSource>();
+    private AudioSource[] allAudioSources;
 
     private bool cameFromMain = true;
 
@@ -67,6 +74,8 @@ public class GUIController : MonoBehaviour
         myMusicPlayer = GetComponent<AudioSource>();
         devModeObjects = FindObjectsOfType<DevModeObject>();
         freeLookCamera = FindObjectOfType<CameraMovement>();
+        allVideoPlayers = FindObjectsOfType<VideoPlayer>();
+        allAudioSources = FindObjectsOfType<AudioSource>();
 
         // Default to Main Menu:
         gameCamera.SetActive(false);
@@ -118,6 +127,48 @@ public class GUIController : MonoBehaviour
         ChangeCameraTo(menuCamera);
         ChangeMenuTo(mainMenu);
         ChangeMusicTo(mainMenuMusic);
+    }
+
+    public void GoToPauseMenu()
+    {
+        pausedVideoPlayers.Clear();
+        pausedAudioSources.Clear();
+        foreach (VideoPlayer thisPlayer in allVideoPlayers)
+        {
+            if (thisPlayer.isPlaying)
+            {
+                thisPlayer.Pause();
+                pausedVideoPlayers.Add(thisPlayer);
+            }
+        }
+        foreach(AudioSource thisPlayer in allAudioSources)
+        {
+            if (thisPlayer.isPlaying)
+            {
+                thisPlayer.Pause();
+                pausedAudioSources.Add(thisPlayer);
+            }
+        }
+        ChangeMenuTo(pauseMenu);
+        ChangeMusicTo(pauseMenuMusic);
+        myMusicPlayer.Play();
+        Time.timeScale = 0f;
+    }
+
+    public void Unpause()
+    {
+        foreach (VideoPlayer thisPlayer in pausedVideoPlayers)
+        {
+            thisPlayer.Play();
+        }
+        foreach (AudioSource thisPlayer in pausedAudioSources)
+        {
+            thisPlayer.Play();
+        }
+
+        ChangeMenuTo(null);
+        ChangeMusicTo(null);
+        Time.timeScale = 1f;
     }
 
 

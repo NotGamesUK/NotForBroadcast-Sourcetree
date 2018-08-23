@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114412603254871544}
   - component: {fileID: 50478376865887356}
   - component: {fileID: 61807714810991730}
+  - component: {fileID: 95327400492948174}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -76,6 +77,7 @@ GameObject:
   - component: {fileID: 114697938996740520}
   - component: {fileID: 50698585686121728}
   - component: {fileID: 61940746071766320}
+  - component: {fileID: 95333396343347668}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -95,6 +97,7 @@ GameObject:
   - component: {fileID: 114323086678916808}
   - component: {fileID: 50422793375803016}
   - component: {fileID: 61311108285791578}
+  - component: {fileID: 95166138661666442}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -114,6 +117,7 @@ GameObject:
   - component: {fileID: 114911152322898068}
   - component: {fileID: 50460170682901072}
   - component: {fileID: 61082517841428210}
+  - component: {fileID: 95566777681895950}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -167,6 +171,7 @@ GameObject:
   - component: {fileID: 114645115756865778}
   - component: {fileID: 50129844562920656}
   - component: {fileID: 61075468053369000}
+  - component: {fileID: 95778928388452340}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -220,6 +225,7 @@ GameObject:
   - component: {fileID: 114608725990809494}
   - component: {fileID: 50852395268329028}
   - component: {fileID: 61864559861170764}
+  - component: {fileID: 95717359007626716}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -239,6 +245,7 @@ GameObject:
   - component: {fileID: 114349155521122982}
   - component: {fileID: 50177752930475428}
   - component: {fileID: 61892113302245718}
+  - component: {fileID: 95484428964227600}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -309,6 +316,7 @@ GameObject:
   - component: {fileID: 114566516785408192}
   - component: {fileID: 50731724746774280}
   - component: {fileID: 61524358045496340}
+  - component: {fileID: 95137390571676952}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -346,6 +354,7 @@ GameObject:
   - component: {fileID: 114371438991908548}
   - component: {fileID: 50753778587636932}
   - component: {fileID: 61395326480656128}
+  - component: {fileID: 95304472533795544}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -382,6 +391,7 @@ GameObject:
   - component: {fileID: 114493045698602434}
   - component: {fileID: 50244005321240110}
   - component: {fileID: 61010053600800518}
+  - component: {fileID: 95814157255354718}
   m_Layer: 0
   m_Name: Low Freq
   m_TagString: Untagged
@@ -1271,6 +1281,186 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.225, y: 0.22526765}
   m_EdgeRadius: 0
+--- !u!95 &95137390571676952
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757745555413364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95166138661666442
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147233900398230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95304472533795544
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836468954113168}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95327400492948174
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019263224823212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95333396343347668
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137989116709380}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95484428964227600
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1505555667080226}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95566777681895950
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1160049446130994}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95717359007626716
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415375451323626}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95778928388452340
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276337336098384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95814157255354718
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885111427376574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e35e2790cabcd947bea98b6295971ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95954411625109424
 Animator:
   serializedVersion: 3
@@ -1555,7 +1745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1572,7 +1762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1589,7 +1779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1606,7 +1796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1623,7 +1813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1640,7 +1830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1685,7 +1875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1792,7 +1982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1809,7 +1999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
@@ -1982,7 +2172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myInterferenceLevel: 50
   mySprites:
-  - {fileID: 21300000, guid: 6c797d5537394bd46b6dfb53a352c1ee, type: 3}
+  - {fileID: 21300000, guid: 4094be33d731850489adf1badb2b5769, type: 3}
   - {fileID: 21300000, guid: ea7f18af7788e12459fd54c88b16ed21, type: 3}
   - {fileID: 21300000, guid: 642cc883693e8294bb8abea5b2d217a0, type: 3}
   myParent: {fileID: 0}
