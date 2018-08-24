@@ -10,7 +10,8 @@ public class VHSControlPanel : MonoBehaviour
 
     private SequenceController mySequenceController;
     private bool hasPower = false;
-    private bool isPlayingTape = false;
+    [HideInInspector]
+    public bool isPlayingTape = false;
     public int selectedPlayer = 0;
 
     // Use this for initialization
@@ -101,20 +102,38 @@ public class VHSControlPanel : MonoBehaviour
         //Debug.Log("Selected Advert: " + thisName);
         mySequenceController.EndSequenceAndPlayAdvert(thisName);
         isPlayingTape = true;
+        for(int n=0; n<3; n++)
+        {
+            if (n != selectedPlayer-1)
+            {
+                    selectionButtons[n].myButton.Lock();
+            }
+        }
+        playButton.Lock();
     }
 
     public void TapeComplete()
     {
         isPlayingTape = false;
         playButton.MoveUp();
+        Debug.Log("ADVERT COMPLETE!!!!!!!!!!!!!!!!!!!!!!");
         VHSPlayer[] thesePlayers = FindObjectsOfType<VHSPlayer>();
         foreach (VHSPlayer thisPlayer in thesePlayers)
         {
             if (thisPlayer.myID == selectedPlayer)
             {
                 thisPlayer.isPlaying = false;
-                thisPlayer.myButton.isLocked = false;
+                thisPlayer.EjectTape();
             }
+            else
+            {
+                if (thisPlayer.isLoaded)
+                {
+                    selectionButtons[thisPlayer.myID-1].myButton.Unlock();
+                }
+            }
+
         }
     }
+
 }

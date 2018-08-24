@@ -157,7 +157,7 @@ public class InputController : MonoBehaviour {
                     myVisonMixerLinkSwitch.KeyDown();
                 }
 
-                if (Input.GetButtonDown("Pause"))
+                if (Input.GetButtonDown("Pause") || Input.GetButtonDown("Cancel"))
                 {
                     if (isPaused)
                     {

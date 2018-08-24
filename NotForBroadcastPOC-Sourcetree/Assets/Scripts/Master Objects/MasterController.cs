@@ -398,7 +398,7 @@ public class MasterController : MonoBehaviour {
     {
         Debug.Log("Sequence Controller: Advert hit with " + myClock.clockTime + " seconds remaining.");
         // Has the player gone to AD too early?
-        if (myClock.clockTime > 2)
+        if (myClock.clockTime >20000)//> 2)
         {
             FailMidLevel("Played Advert Too Early");
         }

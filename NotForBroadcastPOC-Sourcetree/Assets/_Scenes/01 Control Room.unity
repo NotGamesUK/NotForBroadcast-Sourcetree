@@ -6718,7 +6718,8 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5bbdda26a53f9f248ac7efe95b43019c, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: b8a23d68e70b9724d9069cb0b1b0c004, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: b8a23d68e70b9724d9069cb0b1b0c004, type: 3}
   m_IsPrefabParent: 0
 --- !u!1 &354086769
@@ -26607,6 +26608,7 @@ MonoBehaviour:
   - {fileID: 369081051}
   - {fileID: 1387080678}
   playButton: {fileID: 766830506}
+  isPlayingTape: 0
   selectedPlayer: 0
 --- !u!1 &1346266186
 GameObject:

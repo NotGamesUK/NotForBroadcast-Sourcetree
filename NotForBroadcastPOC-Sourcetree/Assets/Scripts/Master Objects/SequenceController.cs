@@ -130,7 +130,6 @@ public class SequenceController : MonoBehaviour {
         // Start EDL
         myEDLController.StartRecordingEDL();
         // Make VHS Control Panel Play Button Active again
-        myVHSControlPanel.TapeComplete();
 
 
     }
@@ -148,6 +147,7 @@ public class SequenceController : MonoBehaviour {
         Debug.Log("SEQUENCE CONTROLLER: GOING LIVE");
         Invoke("SwitchBroadcastSystemToLive", broadcastScreenDelayTime);
         myClock.SetTimeAndHold((float)thisSequenceVideoLength - myDataStore.sequenceData[foundPos].runIn - myDataStore.sequenceData[foundPos].runOut + broadcastScreenDelayTime, false);
+        myOnAirLight.LightOn();
 
 
     }
@@ -158,7 +158,11 @@ public class SequenceController : MonoBehaviour {
         myBroadcastScreen.EndAdvertAndStartLiveBroadcast();
         isPlayingAd = false;
         myScoringController.broadcastScreensLive = true;
-        myOnAirLight.LightOn();
+        if (myMasterController.currentSequence > 0)
+        {
+            myVHSControlPanel.TapeComplete();
+        }
+
     }
 
     void SequenceOverrun()

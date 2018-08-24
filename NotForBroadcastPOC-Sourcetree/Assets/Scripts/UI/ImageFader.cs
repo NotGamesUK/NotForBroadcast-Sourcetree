@@ -9,6 +9,7 @@ public class ImageFader : MonoBehaviour {
     public float myFadeSpeed;
     public Animator myCameraAnimator;
 
+    private GUIController myGUI;
     private Image image;
     private float targetAlpha;
 
@@ -21,31 +22,33 @@ public class ImageFader : MonoBehaviour {
             Debug.LogError("Error: No image on " + this.name);
         }
         this.targetAlpha = this.image.color.a;
-
+        myGUI = FindObjectOfType<GUIController>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (myCameraAnimator.GetCurrentAnimatorStateInfo(0).IsName("CameraIdleCentre"))
-        {
+    {   if (myGUI.currentMenu == null)
+        { // WE ARE BROADCASTING)
+            if (myCameraAnimator.GetCurrentAnimatorStateInfo(0).IsName("CameraIdleCentre"))
+            {
 
-            Color curColor = this.image.color;
-            float alphaDiff = Mathf.Abs(curColor.a - this.targetAlpha);
-            if (alphaDiff > 0.0001f)
-            {
-                curColor.a = Mathf.Lerp(curColor.a, targetAlpha, this.myFadeSpeed * Time.deltaTime);
-                this.image.color = curColor;
-            }
-        }
-        else
-        {
-            if (this.image.color.a != 0)
-            {
                 Color curColor = this.image.color;
-                curColor.a = 0;
-                this.image.color = curColor;
+                float alphaDiff = Mathf.Abs(curColor.a - this.targetAlpha);
+                if (alphaDiff > 0.0001f)
+                {
+                    curColor.a = Mathf.Lerp(curColor.a, targetAlpha, this.myFadeSpeed * Time.deltaTime);
+                    this.image.color = curColor;
+                }
+            }
+            else
+            {
+                if (this.image.color.a != 0)
+                {
+                    Color curColor = this.image.color;
+                    curColor.a = 0;
+                    this.image.color = curColor;
 
+                }
             }
         }
     }

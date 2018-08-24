@@ -19,10 +19,12 @@ public class VHSPlayer : MonoBehaviour {
     private AudioSource mySFX;
     public AudioClip myLoadSFX;
     public AudioClip myEjectSFX;
+    private VHSControlPanel myControlPanel;
 
 	// Use this for initialization
 	void Start () {
         myLoader = GetComponentInChildren<TapeLoader>();
+        myControlPanel = FindObjectOfType<VHSControlPanel>();
         lastButtonCheck = myButton.isDepressed;
         myButton.Lock();
         mySFX = GetComponent<AudioSource>();
@@ -54,13 +56,16 @@ public class VHSPlayer : MonoBehaviour {
     {
         isAnimating = false;
         isLoaded = true;
+        if (!myControlPanel.isPlayingTape)
+        {
+            mySelectionButton.myButton.Unlock();
+        }
         myButton.Unlock();
-        mySelectionButton.myButton.Unlock();
         myButton.MoveDown();
         mySFX.Stop();
     }
 
-    void EjectTape()
+    public void EjectTape()
     {
         Debug.Log("Machine " + myID + " EJECTING tape " + myTape.myTitle);
         myLoader.EjectTape();
