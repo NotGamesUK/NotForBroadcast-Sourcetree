@@ -20,6 +20,9 @@ public class Gauge : MonoBehaviour {
 
     private GaugeNeedle myNeedle;
     public LED myLED;
+    public bool hasSecondGauge;
+    [Tooltip("Only Needed for Signal Gauge to slave to Tower Control")]
+    public LED mySecondLED;
     private AudioSource myAlarm;
     private float fullRotation;
     private Quaternion startRotation;
@@ -93,14 +96,17 @@ public class Gauge : MonoBehaviour {
             {
                 case LEDColours.Green:
                     myLED.GoGreen();
+                    if (hasSecondGauge) { mySecondLED.GoGreen(); }
                     break;
 
                 case LEDColours.Orange:
                     myLED.GoOrange();
+                    if (hasSecondGauge) { mySecondLED.GoOrange(); }
                     break;
 
                 case LEDColours.Red:
                     myLED.GoRed();
+                    if (hasSecondGauge) { mySecondLED.GoRed(); }
                     break;
 
             }
@@ -110,11 +116,13 @@ public class Gauge : MonoBehaviour {
         if (LEDFlashing && thisComparePercentage < myFlashPercentage)
         {
             myLED.FlashOff();
+            if (hasSecondGauge) { mySecondLED.FlashOff(); }
             LEDFlashing = false;
 
         } else if (!LEDFlashing && thisComparePercentage >= myFlashPercentage)
         {
             myLED.FlashOn(myLEDFlashRate);
+            if (hasSecondGauge) { mySecondLED.FlashOn(myLEDFlashRate); }
             LEDFlashing = true;
         }
 

@@ -70,7 +70,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 3
+  m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -135,13 +135,13 @@ MonoBehaviour:
   myPostProcessing: {fileID: 11400000, guid: 333cc0749725ed44cbfda41e3d4a7fbf, type: 2}
   focusPullTime: 0.5
   frontViewFocusLength: 2
-  frontViewAperture: 8
-  leftViewFocusLength: 1.5
-  leftViewAperture: 7
+  frontViewAperture: 32
+  leftViewFocusLength: 1.21
+  leftViewAperture: 8
   rightViewFocusLength: 1.5
-  rightViewAperture: 6
-  downViewFocusLength: 0.96
-  downViewAperture: 5
+  rightViewAperture: 32
+  downViewFocusLength: 0.85
+  downViewAperture: 8
 --- !u!124 &124964532253237770
 Behaviour:
   m_ObjectHideFlags: 1

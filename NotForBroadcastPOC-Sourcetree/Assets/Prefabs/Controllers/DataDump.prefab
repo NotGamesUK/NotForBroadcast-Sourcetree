@@ -173,7 +173,7 @@ MonoBehaviour:
     scoringMode: 1
   - SequenceName: 02-01 Babies
     runIn: 17
-    runOut: 10
+    runOut: 12
     screenVideo:
     - {fileID: 32900000, guid: c67241ac5a30c7d4989f32002a92cae1, type: 3}
     - {fileID: 32900000, guid: 6242f31519aa090429408f3c916d3548, type: 3}
@@ -186,10 +186,10 @@ MonoBehaviour:
     - {fileID: 32900000, guid: 79c61bb8f5b279f45a65bac8d71ea401, type: 3}
     screenAudio:
     - {fileID: 8300000, guid: 5bca95fa37ca5aa4b9d23cd24accb8b3, type: 3}
-    - {fileID: 8300000, guid: 209a845d3f6899b489ede84acbc35f63, type: 3}
+    - {fileID: 8300000, guid: f053450547a0dd446b43e93967a8fe1d, type: 3}
     - {fileID: 8300000, guid: 38a5235284c13fc4095993ef377dd38b, type: 3}
     - {fileID: 8300000, guid: af51570e160930a4c91b444463d2db83, type: 3}
-    interferenceLevel: {fileID: 114475407568326824, guid: 54baeea4edaea624bb8407a71ecbcb2a,
+    interferenceLevel: {fileID: 114028421285393916, guid: 8ccc5fa5ae658a14b80e9d319e270bac,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
@@ -209,7 +209,7 @@ MonoBehaviour:
     - {fileID: 32900000, guid: f5e5d60e0db54554d8a851ee0bb80f2c, type: 3}
     - {fileID: 32900000, guid: df84ea3becf197c49bb89913ac3b4c48, type: 3}
     screenAudio:
-    - {fileID: 8300000, guid: 8c334e6beb80fad499547a54ba4862e3, type: 3}
+    - {fileID: 8300000, guid: 460f7e717dc53784bb3f5dc98ba42430, type: 3}
     interferenceLevel: {fileID: 114475407568326824, guid: 54baeea4edaea624bb8407a71ecbcb2a,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
@@ -230,7 +230,7 @@ MonoBehaviour:
     - {fileID: 32900000, guid: 7dccbb1997d68934283956d2c5ccbeb1, type: 3}
     - {fileID: 32900000, guid: 394c5a5886cedbf48af58aa1a0f6ee5d, type: 3}
     screenAudio:
-    - {fileID: 8300000, guid: 64b5ae452c5dabc47ab51ea4a6394dc2, type: 3}
+    - {fileID: 8300000, guid: 617701a6fe2314a4081b572eef34eb35, type: 3}
     interferenceLevel: {fileID: 114475407568326824, guid: 54baeea4edaea624bb8407a71ecbcb2a,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}

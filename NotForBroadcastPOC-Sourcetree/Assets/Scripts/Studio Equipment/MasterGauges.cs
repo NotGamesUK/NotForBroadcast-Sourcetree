@@ -26,9 +26,9 @@ public class MasterGauges : MonoBehaviour {
     [HideInInspector]
     public float videoStrength;
 
-    public Text myPowerTextDisplay;
-    public Text myTemperatureTextDisplay;
-    public Text mySignalTextDisplay;
+    //public Text myPowerTextDisplay;
+    //public Text myTemperatureTextDisplay;
+    //public Text mySignalTextDisplay;
 
     public Gauge myPowerGauge;
     public Gauge myTemperatureGauge;
@@ -41,7 +41,7 @@ public class MasterGauges : MonoBehaviour {
     private SoundDesk myDesk;
     private BroadcastTV myBroadcastTV;
 
-
+    private float defaultMaxPower, defaultOrangePowerPercent, defaultRoomTemperature, defaultMaxTemperature, defaultOrangeTemperaturePercent, defaultDishTolerance;
 
     // Use this for initialization
     void Start ()
@@ -52,6 +52,13 @@ public class MasterGauges : MonoBehaviour {
         myPlayer = FindObjectOfType<PlayerFrequencyDisplayObject>();
         myDesk = FindObjectOfType<SoundDesk>();
         myBroadcastTV = FindObjectOfType<BroadcastTV>();
+
+        defaultMaxPower = maxPower;
+        defaultOrangePowerPercent = orangePowerPercent;
+        defaultRoomTemperature = roomTemperature;
+        defaultMaxTemperature = maxTemperature;
+        defaultOrangeTemperaturePercent = orangeTemperaturePercent;
+        defaultDishTolerance = dishTolerance;
     }
 
     // Update is called once per frame
@@ -59,16 +66,16 @@ public class MasterGauges : MonoBehaviour {
     {
         // Display Power Reading
         float thisPower = myPowerObject.currentPower;
-        myPowerTextDisplay.text = (Mathf.Round(thisPower) + "/" + maxPower);
+        //myPowerTextDisplay.text = (Mathf.Round(thisPower) + "/" + maxPower);
         float thisPowerPercentage = Mathf.Round((thisPower / maxPower) * 100);
         //Debug.Log("SENDING " + thisPowerPercentage + "% TO POWER GAUGE.");
         myPowerGauge.SetNeedle(thisPowerPercentage);
-
-        myPowerTextDisplay.color = Color.white;
+        //Debug.Log("Cureent Power: " + thisPower + " = " + thisPowerPercentage + "%");
+        //myPowerTextDisplay.color = Color.white;
         myPowerStatus = "None";
         if (myPowerObject.isOn)
         {
-            myPowerTextDisplay.color = Color.green;
+            //myPowerTextDisplay.color = Color.green;
             if (thisPower > 0)
             {
                 myPowerStatus = "Green";
@@ -77,34 +84,34 @@ public class MasterGauges : MonoBehaviour {
         if (thisPower / maxPower >= orangePowerPercent / 100)
         {
             // Turn Text Orange
-            myPowerTextDisplay.color = Color.yellow;
+            //myPowerTextDisplay.color = Color.yellow;
             myPowerStatus = "Orange";
         }
         if (thisPower > maxPower)
         {
             // Turn Text Red
-            myPowerTextDisplay.color = Color.red;
+            //myPowerTextDisplay.color = Color.red;
             myPowerStatus = "Red";
 
         }
 
         // Display Temperature Readings
         float thisTemperature = myTemperatureObject.currentTemperature;
-        myTemperatureTextDisplay.text = (Mathf.Round(thisTemperature) / maxTemperature * 100+"%");
+        //myTemperatureTextDisplay.text = (Mathf.Round(thisTemperature) / maxTemperature * 100+"%");
         float thisTemperaturePercentage = Mathf.Round(thisTemperature) / maxTemperature * 100;
         //Debug.Log("SENDING " + thisTemperaturePercentage + "% TO TEMPERATURE GAUGE.");
         myTemperatureGauge.SetNeedle(thisTemperaturePercentage);
 
 
         float orangeTemperature = maxTemperature * (orangeTemperaturePercent / 100);
-        myTemperatureTextDisplay.color = Color.green;
+        //myTemperatureTextDisplay.color = Color.green;
         if (thisTemperature>orangeTemperature)
         {
-            myTemperatureTextDisplay.color = Color.yellow;
+            //myTemperatureTextDisplay.color = Color.yellow;
         }
         if (thisTemperature>maxTemperature || myTemperatureObject.isOverheated)
         {
-            myTemperatureTextDisplay.color = Color.red;
+            //myTemperatureTextDisplay.color = Color.red;
         }
 
         // Display Broadcast Reading
@@ -150,19 +157,29 @@ public class MasterGauges : MonoBehaviour {
         //myDesk.SetWhiteNoiseAudioLevel(audioInterferenceStrength);
 
         // Display Video and Audio Signal fidelity on panel
-        mySignalTextDisplay.text = Mathf.Round(videoStrength).ToString() + "%";
+        //mySignalTextDisplay.text = Mathf.Round(videoStrength).ToString() + "%";
 
         //Debug.Log("SENDING " + Mathf.Round(videoStrength) + "% TO SIGNAL GAUGE.");
         mySignalGauge.SetNeedle(Mathf.Round(videoStrength));
 
-        mySignalTextDisplay.color = Color.green;
+        //mySignalTextDisplay.color = Color.green;
         if (videoStrength < 65) {
-            mySignalTextDisplay.color = Color.yellow;
+            //mySignalTextDisplay.color = Color.yellow;
         }
         if (videoStrength < 35) {
-            mySignalTextDisplay.color = Color.red;
+            //mySignalTextDisplay.color = Color.red;
         }
 
+    }
+
+    public void ResetMe()
+    {
+        maxPower = defaultMaxPower;
+        orangePowerPercent = defaultOrangePowerPercent;
+        roomTemperature = defaultRoomTemperature;
+        maxTemperature = defaultMaxTemperature;
+        orangeTemperaturePercent = defaultOrangeTemperaturePercent;
+        dishTolerance = defaultDishTolerance;
     }
 
 }

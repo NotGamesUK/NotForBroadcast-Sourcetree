@@ -218,5 +218,10 @@ public class SatelliteDish : MonoBehaviour
         }
 
     }
+
+    public void DropDish()
+    {
+        transform.eulerAngles = new Vector3(maxTilt, transform.eulerAngles.y, transform.eulerAngles.z);
+    }
 }
 

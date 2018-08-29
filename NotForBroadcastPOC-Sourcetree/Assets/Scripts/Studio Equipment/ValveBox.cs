@@ -24,6 +24,8 @@ public class ValveBox : MonoBehaviour {
     public Material elementMaterial;
     public AudioClip myHumSFX;
     public AudioClip mySizzleSFX;
+    public GameObject myDoorOpen;
+    public GameObject myDoorClosed;
 
 
     private MasterGauges myGauges;
@@ -78,6 +80,8 @@ public class ValveBox : MonoBehaviour {
                 break;
 
         }
+        //Debug.Log("Applying "+myGauges.myPowerStatus+" Heat Up");
+
         switch (valveCount)
         {
             case (3):
@@ -93,12 +97,15 @@ public class ValveBox : MonoBehaviour {
                 break;
         }
         currentTemperature += thisHeatGain;
-
+        //Debug.Log("Heat Gain: " + thisHeatGain);
 
         // If Fan is on subtract heat accordingly - never fall below room temperature
         if (myFan.currentBladeSpeed > 0)
         {
-            float thisFanAngle=myFan.myHead.transform.localEulerAngles.z;
+            float thisFanAngle=myFan.myHead.transform.localEulerAngles.y;
+            thisFanAngle += 180;
+            if (thisFanAngle > 360) { thisFanAngle-=360; }
+            //Debug.Log("Fan Angle: " + thisFanAngle);
             if (thisFanAngle>(perfectFanAngle-fanPerfectDegrees) && thisFanAngle < (perfectFanAngle + fanPerfectDegrees))
             {
                 currentTemperature -= fanCoolDownSpeed*Time.deltaTime;
@@ -156,6 +163,8 @@ public class ValveBox : MonoBehaviour {
             thisElement.isBlown = false;
         }
         currentTemperature = myGauges.roomTemperature;
+        myDoorClosed.SetActive(true);
+        myDoorOpen.SetActive(false);
     }
 
 }

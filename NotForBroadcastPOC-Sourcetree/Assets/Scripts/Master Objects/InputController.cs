@@ -19,12 +19,14 @@ public class InputController : MonoBehaviour {
 
     private CameraMovement myCameraController;
     private GUIController myGUIController;
+    private GodOfTheRoom myRoomGod;
     private bool isPaused;
 
 	// Use this for initialization
 	void Start () {
         myCameraController = FindObjectOfType<CameraMovement>();
         myGUIController = FindObjectOfType<GUIController>();
+        myRoomGod = FindObjectOfType<GodOfTheRoom>();
         myMode = InputMode.Inactive;
         isPaused = false;
 	}
@@ -174,6 +176,15 @@ public class InputController : MonoBehaviour {
                     }
                 }
 
+                if (Input.GetButtonDown("ChangeSky"))
+                {
+                    myRoomGod.SetSkyForLevel(6);
+                }
+
+                if (Input.GetButtonDown("ResetSky"))
+                {
+                    myRoomGod.TEMPResetSky();
+                }
 
 
 

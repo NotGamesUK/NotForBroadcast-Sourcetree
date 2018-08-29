@@ -103,7 +103,7 @@ public class EventController : MonoBehaviour {
             myState = RoomControllerState.Advert;
 
         }
-        myRoomGod.FadeRoomLights(5f, true);
+        myRoomGod.FadeRoomLights(2.5f, true);
     }
 
     public void SwitchToNextSequence()
@@ -113,7 +113,7 @@ public class EventController : MonoBehaviour {
         currentListPosition = 0;
         myState = RoomControllerState.Sequence;
         Debug.Log("EVENT CONTROLLER: Switching to Sequence " + currentSequence);
-        myRoomGod.FadeRoomLights(5f, false);
+        myRoomGod.FadeRoomLights(2f, false);
 
     }
 
@@ -197,7 +197,24 @@ public class EventController : MonoBehaviour {
 
                 break;
 
+            case GameEvent.EventType.SetTowerTurnSpeed:
+                myRoomGod.SetTowerRotationSpeed(thisEvent.floatData);
 
+                break;
+
+            case GameEvent.EventType.SetMaximumPower:
+                myRoomGod.SetMaximumPower(thisEvent.floatData);
+
+                break;
+
+            case GameEvent.EventType.SetRoomTemperature:
+                myRoomGod.SetRoomTemperature(thisEvent.floatData);
+
+                break;
+
+            case GameEvent.EventType.DropSatelliteDish:
+                myRoomGod.DropSatellite();
+                break;
 
         }
     }

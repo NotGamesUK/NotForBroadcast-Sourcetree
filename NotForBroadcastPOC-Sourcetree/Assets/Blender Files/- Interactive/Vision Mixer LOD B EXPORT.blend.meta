@@ -14,6 +14,7 @@ ModelImporter:
     100016: stand
     100018: //RootNode
     100020: Play_Button
+    100022: upgrade_panel
     400000: Body
     400002: body_high_poly
     400004: button_1
@@ -25,6 +26,7 @@ ModelImporter:
     400016: stand
     400018: //RootNode
     400020: Play_Button
+    400022: upgrade_panel
     2100000: unnamed
     2300000: body_high_poly
     2300002: button_1
@@ -35,6 +37,7 @@ ModelImporter:
     2300012: RAISED_HIGH_POLY
     2300014: stand
     2300016: Play_Button
+    2300018: upgrade_panel
     3300000: body_high_poly
     3300002: button_1
     3300004: button_2
@@ -44,6 +47,7 @@ ModelImporter:
     3300012: RAISED_HIGH_POLY
     3300014: stand
     3300016: Play_Button
+    3300018: upgrade_panel
     4300000: Link_Switch
     4300002: button_3
     4300004: button_4
@@ -53,6 +57,7 @@ ModelImporter:
     4300012: RAISED_HIGH_POLY
     4300014: stand
     4300016: Play_Button
+    4300018: upgrade_panel
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

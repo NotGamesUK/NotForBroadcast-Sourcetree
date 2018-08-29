@@ -14,6 +14,17 @@ public class GodOfTheRoom : MonoBehaviour {
     public Slider broadcastVolumeSlider;
     public Slider channelSelectSlider;
     public Light roomLight;
+    public Sun mySky;
+
+    [Space(5)]
+    [Header("Objects that get Activated/Deactivated:")]
+    public GameObject myLensFlareLight;
+    public GameObject myVisionMixerLinkSwitch;
+    public GameObject myVisionMixerUpgradePanel;
+    public GameObject myIntercom;
+    public GameObject myFaxMachine;
+    public GameObject myTowerControlPlug;
+    public GameObject myTowerControlLever;
 
     private float previousRoomVolume;
     private ScoringController myScoringController;
@@ -108,13 +119,13 @@ public class GodOfTheRoom : MonoBehaviour {
         {
             if (roomLight.intensity == defaultRoomLightIntensity) { return; }
             targetLightFadeIntensity = defaultRoomLightIntensity;
-            currentLightFadeIntensity = 0;
+            currentLightFadeIntensity = 1.2f;
         }
         else
         {
             if (roomLight.intensity == 0) { return; }
             currentLightFadeIntensity = defaultRoomLightIntensity;
-            targetLightFadeIntensity = 0;
+            targetLightFadeIntensity = 1.2f;
         }
 
         lightFadeIncrement = defaultRoomLightIntensity / thisTime;
@@ -262,6 +273,11 @@ public class GodOfTheRoom : MonoBehaviour {
         myTower.turnSpeed = thisSpeed;
     }
 
+    public void DropSatellite()
+    {
+        myTower.DropDish();
+    }
+
     public void SetVisionMixerLinkSwitch(bool linkOn)
     {
         if (linkOn)
@@ -316,6 +332,21 @@ public class GodOfTheRoom : MonoBehaviour {
         myGauges.roomTemperature = thisTemperature;
     }
 
+    public void SetMaximumPower(float thisPower)
+    {
+        myGauges.maxPower = thisPower;
+    }
+
+    public void TEMPResetSky()
+    {
+        mySky.ResetSky();
+    }
+
+    public void SetSkyForLevel(int thisLevel)
+    {
+        mySky.SetSky(thisLevel);
+    }
+
     public void ResetRoom()
     {
         // Returns Room to Default State
@@ -330,6 +361,10 @@ public class GodOfTheRoom : MonoBehaviour {
         SetTowerDropSpeed(0);
         SetTowerRotationSpeed(10);
         myTower.transform.rotation = myTower.myStartRotation;
+        // Tower Control
+        myTowerControlPlug.SetActive(true);
+        myTowerControlLever.SetActive(true);
+
         // Fan
         SetFanSwitch(true);
         myFan.ResetHead();
@@ -340,17 +375,25 @@ public class GodOfTheRoom : MonoBehaviour {
         }
         // ValveBox
         myValveBox.ResetMe();
+        // Skybox
+        mySky.ResetSky();
+        myLensFlareLight.SetActive(false);
+
 
 
         //// Right View
-
+        // Comms
+        myIntercom.SetActive(false);
+        myFaxMachine.SetActive(false);
 
         //// Front View
-
+        myGauges.ResetMe();
 
         SetMixingDeskChannelSelect(1);
         SetControlRoomVolumeSlider(1);
         SetBroadcastVolumeSlider(1);
+        myVisionMixerLinkSwitch.SetActive(true);
+        myVisionMixerUpgradePanel.SetActive(true);
         SetVisionMixerLinkSwitch(false);
 
 
@@ -358,7 +401,6 @@ public class GodOfTheRoom : MonoBehaviour {
 
 
         myVHSTapeRack.SetAllTapesFromString("XXX#XXX#XXX#XXX#XXX#XXX#XXX#XXX");
-
 
 
     }

@@ -115,13 +115,14 @@ MonoBehaviour:
   broadcastScreenDelayTime: 2
   levelDataArray:
   - levelName: 01 The Election
+    levelNumber: 1
     dayNumber: 1
-    loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
-    loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
-    loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
-    preRoll: {fileID: 32900000, guid: 9942b57e975c0024a8c99b252d706c75, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
-    preRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
+    loopRoll: {fileID: 32900000, guid: a7e47b2f98a2cc7459e1b343a11abc23, type: 3}
+    loopRollSmaller: {fileID: 32900000, guid: 3fef20388c0b7a14b8d6146623c74160, type: 3}
+    loopRollAudio: {fileID: 8300000, guid: 95304d84dfc4abd48bf19f70410bcb40, type: 3}
+    preRoll: {fileID: 32900000, guid: 50005953ff3abd94aa2b1d0fd089d9a6, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: 01e6d1021e5704e46ba10c16770f7824, type: 3}
+    preRollAudio: {fileID: 8300000, guid: 6db78d83a6ef07c4c8b6b7d3b997b7b3, type: 3}
     sequenceNames:
     - 01-01 Headlines
     - 01-02 Wildish
@@ -137,16 +138,6 @@ MonoBehaviour:
       stringData: 11110000
       integerData: 0
       boolData: 0
-      objectData: {fileID: 0}
-    - myName: Turn on Trip Switch
-      myTimeframe: 2
-      mySequenceOrAdNumber: 0
-      eventTime: 0
-      eventType: 1
-      floatData: 0
-      stringData: 
-      integerData: 0
-      boolData: 1
       objectData: {fileID: 0}
     - myName: Set Master Volume Slider
       myTimeframe: 2
@@ -168,11 +159,31 @@ MonoBehaviour:
       integerData: 0
       boolData: 1
       objectData: {fileID: 0}
-    - myName: TEST - POP FAN
-      myTimeframe: 1
+    - myName: Hide Tower Control Plug
+      myTimeframe: 2
       mySequenceOrAdNumber: 0
-      eventTime: 5
-      eventType: 2
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Hide Tower Control
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Hide Link Switch
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
       floatData: 0
       stringData: 
       integerData: 0
@@ -219,20 +230,162 @@ MonoBehaviour:
       boolData: 0
       objectData: {fileID: 0}
   - levelName: 06 The Heatwave
+    levelNumber: 6
     dayNumber: 212
-    loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
-    loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}
-    loopRollAudio: {fileID: 8300000, guid: 975c083d90ce4cc49a3ae23507fd02d6, type: 3}
-    preRoll: {fileID: 32900000, guid: 9942b57e975c0024a8c99b252d706c75, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: d28f882cf3397b74199ade3ea6ea0471, type: 3}
-    preRollAudio: {fileID: 8300000, guid: 913cf1c6563c81742b4d7c380698fc01, type: 3}
+    loopRoll: {fileID: 32900000, guid: 36c22482778a1044083efe2cb162f446, type: 3}
+    loopRollSmaller: {fileID: 32900000, guid: ad61d8863f9d39a4ab5d55891005a345, type: 3}
+    loopRollAudio: {fileID: 8300000, guid: 5d8b5818d1313f24ab6f6c189340eb8e, type: 3}
+    preRoll: {fileID: 32900000, guid: 0a66f6a062289404e914ba76522417a2, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: e2ffa4577947a5842964229858752c5d, type: 3}
+    preRollAudio: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
     sequenceNames:
     - 02-01 Babies
     - 02-02 Thadeus
     - 02-03 Hostage
     advertList: Team01#Team02#Team03#XXX#XXX#Haribo#XXX#Resistance
-    gameEvents: []
+    gameEvents:
+    - myName: Remove Closed Valve Box Door
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Show Open Valve Box Door
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Show Lens Flare Sun
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Hide VM Upgrade Panel
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Set Max Power
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 15
+      floatData: 510
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Drop Satellite Dish
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 17
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Set Room Temperature
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 16
+      floatData: 38
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Set Tower Turn Speed
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 14
+      floatData: 60
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Set Tower Drop Speed
+      myTimeframe: 0
+      mySequenceOrAdNumber: 1
+      eventTime: 310
+      eventType: 13
+      floatData: 0.25
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Ping Fan Button
+      myTimeframe: 0
+      mySequenceOrAdNumber: 1
+      eventTime: 150
+      eventType: 2
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Ping Fan Button
+      myTimeframe: 0
+      mySequenceOrAdNumber: 1
+      eventTime: 215
+      eventType: 2
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Ping Fan Button
+      myTimeframe: 0
+      mySequenceOrAdNumber: 1
+      eventTime: 265
+      eventType: 2
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Ping Fan Button
+      myTimeframe: 0
+      mySequenceOrAdNumber: 1
+      eventTime: 310
+      eventType: 2
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Ping Fan Button
+      myTimeframe: 0
+      mySequenceOrAdNumber: 1
+      eventTime: 335
+      eventType: 2
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
   - levelName: Test
+    levelNumber: 0
     dayNumber: 666
     loopRoll: {fileID: 32900000, guid: b44b991f869ec9045a2bd2bfe8d25e33, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 9d06a5d559e30d24595efb6e61ba022f, type: 3}

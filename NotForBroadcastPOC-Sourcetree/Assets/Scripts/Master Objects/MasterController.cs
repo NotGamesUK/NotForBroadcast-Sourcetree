@@ -13,6 +13,7 @@ public class MasterController : MonoBehaviour {
     public class LevelData
     {
         public string levelName;
+        public int levelNumber;
         public int dayNumber;
         [Tooltip ("Leave this blank to jump straight to main pre-roll")]
         public VideoClip loopRoll;
@@ -309,14 +310,37 @@ public class MasterController : MonoBehaviour {
     public void GetLevelInfoForPlayback(int thisLevel)
     {
         Debug.Log("Trying to Get Playback Info for Level " + thisLevel);
-        myPlaybackController.myLevelData = levelDataArray[thisLevel-1];
+        int thisPlaybackLevel = GetListNumberFromLevelNumber(thisLevel);
+        myPlaybackController.myLevelData = levelDataArray[thisPlaybackLevel];
     }
 
+    int GetListNumberFromLevelNumber(int thislevel)
+    {
+        int listPosition = -1;
+        for (int n=0; n<levelDataArray.Length; n++)
+        {
+            if (levelDataArray[n].levelNumber == thislevel)
+            {
+                listPosition = n;
+            }
+        }
+        if (listPosition != -1)
+        {
+            return listPosition;
+
+        }
+        else
+        {
+            Debug.Log("ERROR: MASTER CONTROLLER CAN'T FIND LEVEL.");
+            return -1;
+        }
+
+    }
     void PrepareLevel(int thisLevel)
     {
         // Set Current Level to thisLevel;
-        currentLevel = thisLevel;
-        myLevelData = levelDataArray[currentLevel - 1];
+        currentLevel = GetListNumberFromLevelNumber( thisLevel);
+        myLevelData = levelDataArray[currentLevel];
         // Set Current Sequence to 0
         currentSequence = 0;
         // Display "DAY ???" and Title of Level - On black with suitable sound
@@ -331,7 +355,7 @@ public class MasterController : MonoBehaviour {
         // THIS INCLUDES: Power switches, FanLock, VM Link Switch, 
         // Load Scoring Data in Scoring Controller
         Invoke("LoadDataAfterDayDisplayed", 3);
-
+        myRoomGod.SetSkyForLevel(thisLevel);
 
 
 
