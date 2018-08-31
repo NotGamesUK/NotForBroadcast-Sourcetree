@@ -11,6 +11,7 @@ ModelImporter:
     100010: Number_Display
     100012: Tuning_Knob
     100014: Volume__KNob
+    100016: number_label
     400000: //RootNode
     400002: Knob
     400004: Knob_001
@@ -19,6 +20,7 @@ ModelImporter:
     400010: Number_Display
     400012: Tuning_Knob
     400014: Volume__KNob
+    400016: number_label
     2100000: Material
     2100002: unnamed
     2100004: Material_001
@@ -32,6 +34,7 @@ ModelImporter:
     2300010: Number_Display
     2300012: Tuning_Knob
     2300014: Volume__KNob
+    2300016: number_label
     3300000: //RootNode
     3300002: Knob
     3300004: Knob_001
@@ -40,6 +43,7 @@ ModelImporter:
     3300010: Number_Display
     3300012: Tuning_Knob
     3300014: Volume__KNob
+    3300016: number_label
     4300000: Cube
     4300002: TV_Unit_Small
     4300004: Knob_001
@@ -47,6 +51,7 @@ ModelImporter:
     4300008: Volume__KNob
     4300010: Number_Display
     4300012: Tuning_Knob
+    4300014: number_label
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
