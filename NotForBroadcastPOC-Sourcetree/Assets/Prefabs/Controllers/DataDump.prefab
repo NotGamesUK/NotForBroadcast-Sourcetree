@@ -191,7 +191,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: af51570e160930a4c91b444463d2db83, type: 3}
     interferenceLevel: {fileID: 114028421285393916, guid: 8ccc5fa5ae658a14b80e9d319e270bac,
       type: 2}
-    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    AudioInterference: {fileID: 8300000, guid: 93bd7b34b4eb3a04a936d1052b7e76ae, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
     resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
     scoringMode: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
     - {fileID: 32900000, guid: df84ea3becf197c49bb89913ac3b4c48, type: 3}
     screenAudio:
     - {fileID: 8300000, guid: 460f7e717dc53784bb3f5dc98ba42430, type: 3}
-    interferenceLevel: {fileID: 114475407568326824, guid: 54baeea4edaea624bb8407a71ecbcb2a,
+    interferenceLevel: {fileID: 114475407568326824, guid: 6cda06faead672347beaed2875167fa1,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
@@ -218,7 +218,7 @@ MonoBehaviour:
     scoringMode: 1
   - SequenceName: 02-03 Hostage
     runIn: 44
-    runOut: 21
+    runOut: 24
     screenVideo:
     - {fileID: 32900000, guid: 6a216aaa51bebdf429351b3bec6b65dd, type: 3}
     - {fileID: 32900000, guid: 5a5a4156fa8c7164daba6475641441e0, type: 3}
@@ -231,7 +231,7 @@ MonoBehaviour:
     - {fileID: 32900000, guid: 394c5a5886cedbf48af58aa1a0f6ee5d, type: 3}
     screenAudio:
     - {fileID: 8300000, guid: 617701a6fe2314a4081b572eef34eb35, type: 3}
-    interferenceLevel: {fileID: 114475407568326824, guid: 54baeea4edaea624bb8407a71ecbcb2a,
+    interferenceLevel: {fileID: 114762710994928008, guid: bec533ba1a394e5409e4ed7000c46c5e,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}

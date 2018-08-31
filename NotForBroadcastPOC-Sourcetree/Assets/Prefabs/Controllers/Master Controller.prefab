@@ -70,6 +70,7 @@ MonoBehaviour:
   downWeight: 1
   upWeight: 1.2
   speedOfChange: 0.3
+  godWeighting: 0
   myUpArrow: {fileID: 0}
   myDownArrow: {fileID: 0}
   myScoringMode: 0
@@ -235,9 +236,9 @@ MonoBehaviour:
     loopRoll: {fileID: 32900000, guid: 36c22482778a1044083efe2cb162f446, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: ad61d8863f9d39a4ab5d55891005a345, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 5d8b5818d1313f24ab6f6c189340eb8e, type: 3}
-    preRoll: {fileID: 32900000, guid: 0a66f6a062289404e914ba76522417a2, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: e2ffa4577947a5842964229858752c5d, type: 3}
-    preRollAudio: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
+    preRoll: {fileID: 32900000, guid: 8adbccfdf7ff02741831c4e52262ad6b, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: d49251b75f4142f4984d3f415a37588c, type: 3}
+    preRollAudio: {fileID: 8300000, guid: f2c940ae3fb851b428b774a101b1608a, type: 3}
     sequenceNames:
     - 02-01 Babies
     - 02-02 Thadeus
@@ -283,6 +284,28 @@ MonoBehaviour:
       stringData: 
       integerData: 0
       boolData: 0
+      objectData: {fileID: 0}
+    - myName: Show Fax Machine
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Send Test Fax
+      myTimeframe: 1
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 4
+      floatData: 0
+      stringData: JAY'S NEW TEST FAX Line One<br>Line Two<br><br>Line Four<br>This
+        should be line Five<br><br><br><br><br>And this is line ten<br>JAY'S NEW TEST
+        FAX
+      integerData: 0
+      boolData: 1
       objectData: {fileID: 0}
     - myName: Set Max Power
       myTimeframe: 2
@@ -380,6 +403,36 @@ MonoBehaviour:
       eventTime: 335
       eventType: 2
       floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Stop Tower Drop
+      myTimeframe: 1
+      mySequenceOrAdNumber: 1
+      eventTime: 0
+      eventType: 13
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Stop Audience Falling
+      myTimeframe: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 267
+      eventType: 18
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Force Audience Rise
+      myTimeframe: 0
+      mySequenceOrAdNumber: 3
+      eventTime: 45
+      eventType: 20
+      floatData: 0.1
       stringData: 
       integerData: 0
       boolData: 0
