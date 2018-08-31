@@ -146,8 +146,7 @@ public class EventController : MonoBehaviour {
 
 
             case GameEvent.EventType.SendFax:
-
-
+                myRoomGod.SendFax(thisEvent.stringData);
                 break;
 
             case GameEvent.EventType.RingPhone:
@@ -214,6 +213,18 @@ public class EventController : MonoBehaviour {
 
             case GameEvent.EventType.DropSatelliteDish:
                 myRoomGod.DropSatellite();
+                break;
+
+            case GameEvent.EventType.ChangeScoringDownWeight:
+                myRoomGod.SetDownWeight(thisEvent.floatData);
+                break;
+
+            case GameEvent.EventType.ChangeScoringUpWeight:
+                myRoomGod.SetUpWeight(thisEvent.floatData);
+                break;
+
+            case GameEvent.EventType.SetScoringGodWeight:
+                myRoomGod.SetGodWeight(thisEvent.floatData);
                 break;
 
         }

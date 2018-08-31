@@ -48,22 +48,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1221495095698212
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4085934192167518}
-  - component: {fileID: 108614481697314778}
-  m_Layer: 0
-  m_Name: Spot Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1644928780514466
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,19 +66,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4085934192167518
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1221495095698212}
-  m_LocalRotation: {x: -0.000000119209275, y: 0.99999875, z: -0.0000001490116, w: -0.0016034839}
-  m_LocalPosition: {x: 0.00014891117, y: 0.00008685235, z: 0.6369941}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4478444903974010}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180.18399, z: 0}
 --- !u!4 &4401384116051622
 Transform:
   m_ObjectHideFlags: 1
@@ -114,13 +85,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021430446238056}
-  m_LocalRotation: {x: -0.5966527, y: -0.27762267, z: 0.3794834, w: 0.65032583}
-  m_LocalPosition: {x: 0.75, y: 0.64, z: -0.411}
-  m_LocalScale: {x: 0.14850008, y: 0.10500015, z: 1}
+  m_LocalRotation: {x: -0.5966526, y: -0.2776228, z: 0.37948343, w: 0.6503258}
+  m_LocalPosition: {x: 0.5929605, y: 0.40840006, z: -0.3849213}
+  m_LocalScale: {x: 0.14849994, y: 0.10499998, z: 1}
   m_Children:
   - {fileID: 4967072652832052}
   - {fileID: 4401384116051622}
-  - {fileID: 4085934192167518}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -438,42 +408,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
---- !u!108 &108614481697314778
-Light:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1221495095698212}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 0
-  m_Color: {r: 0.9811321, g: 0.9279006, b: 0.17123532, a: 1}
-  m_Intensity: 1
-  m_Range: 0.73
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!114 &114156174705631852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -502,7 +436,9 @@ MonoBehaviour:
   myTearSFX: {fileID: 8300000, guid: 136848aaa9f8eac40a63896a1a7c5cf3, type: 3}
   myPlaceSFX: {fileID: 8300000, guid: 5659d2d3df406ea49a25dd926f31db90, type: 3}
   myPickupSFX: {fileID: 8300000, guid: 2566f3f8b6ff0b149ac91ada83595cf5, type: 3}
-  holdingFaxFocusLength: 0.5
-  holdingFaxAperture: 10.6
+  holdingFaxFocusLength: 1.5
+  holdingFaxAperture: 32
+  mainCamera: {fileID: 114845368960948496, guid: 28e2516e16cbf5a42bdd57554b8046cc,
+    type: 2}
   isGrabbable: 0
   grabShiftInZ: 0.4

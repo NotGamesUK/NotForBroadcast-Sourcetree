@@ -11,7 +11,11 @@ public class ScoringController : MonoBehaviour {
     public float footageWeight, audioWeight, interferenceWeight, audioInterferenceWeight, resistanceWeight, bleepWeight, bleepCooldownRate, downWeight, upWeight;
     [Range(0.001f, 1.5f)]
     public float speedOfChange;
-    
+    [HideInInspector]
+    public float godWeighting; // Used by Event Controller to force audience in a direction.
+
+    private float defaultUpWeight, defaultDownWeight, defaultSpeedOfChange;
+
     //public ScoringPlane[] myAudioScorer;
     public VUBar myUpArrow, myDownArrow;
     private MasterController myMasterController;
@@ -60,21 +64,31 @@ public class ScoringController : MonoBehaviour {
     void Start () {
         myMasterController = GetComponent<MasterController>();
         myVUMeter = FindObjectOfType<AudienceVUMeter>();
+
+        // Scoring System 02
+
+        myBroadcastScreen = FindObjectOfType<BroadcastTV>();
+        ResetMe();
+    }
+
+    public void ResetMe()
+    {
         myScoringMode = ScoringMode.SingleCam;
         audiencePercentage = startAudiencePercentage;
         thisAudienceChange = 0;
         lastAudienceChange = 0;
 
-        // Scoring System 02
-
-        myBroadcastScreen = FindObjectOfType<BroadcastTV>();
-        for (int n=0; n<3; n++)
+        for (int n = 0; n < 3; n++)
         {
             sequenceScoring[n] = new List<ScoringData>();
         }
 
-    }
+        defaultDownWeight = downWeight;
+        defaultUpWeight = upWeight;
+        defaultSpeedOfChange = speedOfChange;
+        godWeighting = 0;
 
+    }
 
     // Update is called once per frame
     void Update () {
@@ -345,7 +359,14 @@ public class ScoringController : MonoBehaviour {
 
 
             thisAudienceChange += footageWeighting * Time.deltaTime * footageWeight * speedOfChange;
+            // If there is a GodWeighting over-ride all the above and force a change:
+            if (godWeighting != 0)
+            {
+                thisAudienceChange = godWeighting * Time.deltaTime;
+            }
+
             audiencePercentage += thisAudienceChange;
+
             if (thisAudienceChange > 0 && lastAudienceChange<=0)
             {
                 // Turn on UpArrow

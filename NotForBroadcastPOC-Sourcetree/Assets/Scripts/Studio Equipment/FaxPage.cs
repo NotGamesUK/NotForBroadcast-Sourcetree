@@ -12,7 +12,8 @@ public class FaxPage : MonoBehaviour {
     public AudioClip myPickupSFX;
     public float holdingFaxFocusLength;
     public float holdingFaxAperture;
-    
+    public CameraMovement mainCamera;
+
     //[HideInInspector]
     public bool isGrabbable;
     public float grabShiftInZ=0.5f;
@@ -23,7 +24,6 @@ public class FaxPage : MonoBehaviour {
     private MeshRenderer myRenderer;
     private AudioSource mySFX;
     private InTray myInTray;
-    private CameraMovement mainCamera;
     // private Shredder myShredder; -- FOR FINAL VERSION
     
     
@@ -34,7 +34,6 @@ public class FaxPage : MonoBehaviour {
         myRenderer = GetComponent<MeshRenderer>();
         mySFX = GetComponent<AudioSource>();
         myInTray = FindObjectOfType<InTray>();
-        mainCamera = FindObjectOfType<CameraMovement>();
         // myShredder = FindObjectOfType<Shredder>(); -- FOR FINAL VERSION
     }
 

@@ -27,7 +27,7 @@ public class FaxMachine : MonoBehaviour {
     private int lineCount;
     private int currentLine;
     private int maxPageLines=25;
-    private bool tempToggle;
+    //private bool tempToggle;
     
     
 	// Use this for initialization
@@ -36,11 +36,11 @@ public class FaxMachine : MonoBehaviour {
         headMove = headPrintSpeed;
 	}
 	
-    void TempStartFaxDELETEME()
-    {
-        Debug.Log("Telling Fax Machine to receive.");
-        ReceiveFax("Line One<br>Line Two<br><br>Line Four<br>This should be line Five<br><br><br><br><br>And this is line ten<br>");
-    }
+    //void TempStartFaxDELETEME()
+    //{
+    //    Debug.Log("Telling Fax Machine to receive.");
+    //    ReceiveFax("Line One<br>Line Two<br><br>Line Four<br>This should be line Five<br><br><br><br><br>And this is line ten<br>");
+    //}
 
 
 	// Update is called once per frame
@@ -48,12 +48,12 @@ public class FaxMachine : MonoBehaviour {
 
         ///////////////// REMOVE NEXT AFTER TESTING ////////////////////////
 
-        if (!tempToggle)
-        {
-            Invoke("TempStartFaxDELETEME", 0.5f);
-            Debug.Log("Invoking Receive Fax.");
-            tempToggle = true;
-        }
+        //if (!tempToggle)
+        //{
+        //    Invoke("TempStartFaxDELETEME", 0.5f);
+        //    Debug.Log("Invoking Receive Fax.");
+        //    tempToggle = true;
+        //}
 
         ///////////////// REMOVE ABOVE AFTER TESTING ///////////////////////
 

@@ -22,7 +22,7 @@ public class GodOfTheRoom : MonoBehaviour {
     public GameObject myVisionMixerLinkSwitch;
     public GameObject myVisionMixerUpgradePanel;
     public GameObject myIntercom;
-    public GameObject myFaxMachine;
+    public GameObject myFaxMachineGameObject;
     public GameObject myTowerControlPlug;
     public GameObject myTowerControlLever;
 
@@ -37,6 +37,7 @@ public class GodOfTheRoom : MonoBehaviour {
     private RollerBlind[] myBlinds;
     private ValveBox myValveBox;
     private MasterGauges myGauges;
+    private FaxMachine myFaxMachine;
 
     private bool fadingSound, fadingLights;
     private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
@@ -52,6 +53,7 @@ public class GodOfTheRoom : MonoBehaviour {
         myBlinds = FindObjectsOfType<RollerBlind>();
         myValveBox = FindObjectOfType<ValveBox>();
         myGauges = FindObjectOfType<MasterGauges>();
+        myFaxMachine = myFaxMachineGameObject.GetComponent<FaxMachine>();
         defaultRoomLightIntensity = roomLight.intensity;
         fadingSound = false;
 	}
@@ -347,6 +349,26 @@ public class GodOfTheRoom : MonoBehaviour {
         mySky.SetSky(thisLevel);
     }
 
+    public void SetDownWeight(float thisWeight)
+    {
+        myScoringController.upWeight = thisWeight;
+    }
+
+    public void SetUpWeight(float thisWeight)
+    {
+        myScoringController.downWeight = thisWeight;
+    }
+
+    public void SetGodWeight(float thisWeight)
+    {
+        myScoringController.godWeighting = thisWeight;
+    }
+
+    public void SendFax(string thisText)
+    {
+        myFaxMachine.ReceiveFax(thisText);
+    }
+
     public void ResetRoom()
     {
         // Returns Room to Default State
@@ -361,6 +383,7 @@ public class GodOfTheRoom : MonoBehaviour {
         SetTowerDropSpeed(0);
         SetTowerRotationSpeed(10);
         myTower.transform.rotation = myTower.myStartRotation;
+
         // Tower Control
         myTowerControlPlug.SetActive(true);
         myTowerControlLever.SetActive(true);
@@ -384,7 +407,7 @@ public class GodOfTheRoom : MonoBehaviour {
         //// Right View
         // Comms
         myIntercom.SetActive(false);
-        myFaxMachine.SetActive(false);
+        myFaxMachineGameObject.SetActive(false);
 
         //// Front View
         myGauges.ResetMe();
@@ -402,6 +425,9 @@ public class GodOfTheRoom : MonoBehaviour {
 
         myVHSTapeRack.SetAllTapesFromString("XXX#XXX#XXX#XXX#XXX#XXX#XXX#XXX");
 
+
+        // Controllers
+        myScoringController.ResetMe();
 
     }
 
