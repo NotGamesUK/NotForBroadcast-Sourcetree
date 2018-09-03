@@ -20,6 +20,7 @@ public class BroadcastTV : MonoBehaviour {
     public AudioSource myAudioInterferenceAudiosource;
     public Vector3 visibleBroadcastScreenPosition;
     public ScoringPlane myVideoScoringPlane;
+    
 
     public enum BroadcastModes { Live, Playback }
     public BroadcastModes myMode;
@@ -65,9 +66,42 @@ public class BroadcastTV : MonoBehaviour {
             myScreenMover[n] = myScreens[n].GetComponent<BroadcastScreenMover>();
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void ResetMe()
+    {
+        SetResistanceVideoLevel(0);
+        myDesk.SetResistanceAudioLevel(0);
+        SetWhiteNoiseVideoLevel(0);
+        myDesk.SetWhiteNoiseAudioLevel(0);
+        myDesk.SetAudioInterferenceLevel(0);
+        myMode = BroadcastModes.Live;
+        lastAudioInterferenceLevel = 0;
+        lastResistanceLevel = 0;
+        lastWhiteNoiseLevel = 0;
+        for (int n=0; n<4; n++)
+        {
+            screenPreparing[n] = false;
+            myScreens[n].Stop();
+            myScreens[n].clip = null;
+            myScreenAudioSources[n].Stop();
+            myScreenAudioSources[n].clip = null;
+
+        }
+        adPreparing = false;
+        myAdvertScreen.Stop();
+        advertAlpha.a = 0;
+        advertMaterial.color = advertAlpha;
+        myAdvertAudiosource.Stop();
+        resistancePreparing = false;
+        currentScreen = 0;
+        StopScreens();
+        ResetScreens();
+        myNoSignal.enabled = true;
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 		switch (myMode)
         {
             case (BroadcastModes.Live):

@@ -139,5 +139,9 @@ public class RotatingFan : MonoBehaviour {
     public void ResetHead()
     {
         myHead.transform.rotation = myHeadStartRotation;
+        isTurning = false;
+        currentBladeSpeed = 0;
+        myTurnSFX.Stop();
+        mySFX.Stop();
     }
 }

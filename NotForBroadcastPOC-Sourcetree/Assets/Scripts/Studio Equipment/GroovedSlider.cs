@@ -25,6 +25,7 @@ public class GroovedSlider : MonoBehaviour {
     private bool lastPower = false;
     private bool isSelected = false;
     private bool isGrabbed = false;
+    private float defaultSliderValue;
 
     // Use this for initialization
     void Start()
@@ -41,11 +42,24 @@ public class GroovedSlider : MonoBehaviour {
         zChange = topPosition.z - bottomPosition.z;
         // Move into alignment with slider
         float thisSliderPos = mySlider.value;
+        defaultSliderValue = thisSliderPos;
         float newX = bottomPosition.x + (xChange * thisSliderPos);
         float newY = bottomPosition.y + (yChange * thisSliderPos);
         float newZ = bottomPosition.z + (zChange * thisSliderPos);
         this.transform.position = new Vector3(newX, newY, newZ);
 
+    }
+
+    public void ResetMe()
+    {
+        // Move into alignment with slider
+        float thisSliderPos = mySlider.value;
+        float newX = bottomPosition.x + (xChange * thisSliderPos);
+        float newY = bottomPosition.y + (yChange * thisSliderPos);
+        float newZ = bottomPosition.z + (zChange * thisSliderPos);
+        this.transform.position = new Vector3(newX, newY, newZ);
+        myRenderer.material = defaultMaterial;
+        mySlider.value = defaultSliderValue;
     }
 
     public void Update()

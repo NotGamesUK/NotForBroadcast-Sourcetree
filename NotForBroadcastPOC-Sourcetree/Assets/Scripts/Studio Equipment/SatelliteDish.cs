@@ -64,7 +64,15 @@ public class SatelliteDish : MonoBehaviour
         myStartRotation = transform.rotation;
     }
 
-
+    public void ResetMe()
+    {
+        isRaising = false;
+        isTurning = false;
+        myRaiseSFX.Stop();
+        myTurnSFX.Stop();
+        myDropSFX.Stop();
+        myReadout.MoveDotTo(0.5f);
+    }
 
 
     // Update is called once per frame
@@ -179,7 +187,7 @@ public class SatelliteDish : MonoBehaviour
         lastTargetTurn = targetTurn;
     }
 
-    void MoveTheDot()
+    public void MoveTheDot()
     {
         // Move PlayerDisplayObject to reflect current turn
 

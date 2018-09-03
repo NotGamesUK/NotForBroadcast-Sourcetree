@@ -29,6 +29,7 @@ public class ButtonAnimating : MonoBehaviour {
     private bool keyHeld = false;
     private float myDirection;
     private int count = 0;
+    private bool startIsDepressed, startIsLocked, startHasPower;
 
 	// Use this for initialization
 	void Start () {
@@ -46,7 +47,18 @@ public class ButtonAnimating : MonoBehaviour {
                 myRenderer.material = buttonUpMaterial;
             }
         }
+        startIsDepressed = isDepressed;
+        startIsLocked = isLocked;
+        startHasPower = hasPower;
+    }
 
+    public void ResetMe()
+    {
+        this.transform.position = startPosition;
+        isLocked = startIsLocked;
+        isDepressed = startIsDepressed;
+        hasPower = startHasPower;
+        myRenderer.material = defaultMaterial;
     }
 
     public void Lock()

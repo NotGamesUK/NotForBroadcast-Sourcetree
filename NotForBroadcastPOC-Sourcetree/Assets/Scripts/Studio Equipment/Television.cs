@@ -30,6 +30,21 @@ public class Television : MonoBehaviour {
         isPlaying = false;
 	}
 	
+    public void ResetMe()
+    {
+        isPlaying = false;
+        myClip = null;
+        myAudioClip = null;
+        myScreen.Stop();
+        myScreen.clip = null;
+        if (myAudioSource)
+        {
+            myAudioSource.Stop();
+            myAudioSource.clip = null;
+
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
         // if waitingForPrepared...

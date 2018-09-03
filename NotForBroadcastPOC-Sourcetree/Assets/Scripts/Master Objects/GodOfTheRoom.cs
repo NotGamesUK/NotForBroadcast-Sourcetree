@@ -15,6 +15,7 @@ public class GodOfTheRoom : MonoBehaviour {
     public Slider channelSelectSlider;
     public Light roomLight;
     public Sun mySky;
+    public Television[] allScreensExceptBroadcast;
 
     [Space(5)]
     [Header("Objects that get Activated/Deactivated:")]
@@ -25,8 +26,10 @@ public class GodOfTheRoom : MonoBehaviour {
     public GameObject myFaxMachineGameObject;
     public GameObject myTowerControlPlug;
     public GameObject myTowerControlLever;
+    public GroovedSlider myFrequencyControlSlider;
 
-    private float previousRoomVolume;
+
+    public float previousRoomVolume;
     private ScoringController myScoringController;
     private VHSTapeController myVHSTapeRack;
     private BroadcastTV myBroadcastSystem;
@@ -37,7 +40,14 @@ public class GodOfTheRoom : MonoBehaviour {
     private RollerBlind[] myBlinds;
     private ValveBox myValveBox;
     private MasterGauges myGauges;
+    private VHSPlayer[] allVHSPlayers;
     private FaxMachine myFaxMachine;
+    private InterferenceSystem myInterferenceSystem;
+    private MasterController myMasterController;
+    private SequenceController mySequenceController;
+    private GUIController myGUIController;
+    private BackWallClock myBackWallClock;
+    
 
     private bool fadingSound, fadingLights;
     private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
@@ -53,7 +63,14 @@ public class GodOfTheRoom : MonoBehaviour {
         myBlinds = FindObjectsOfType<RollerBlind>();
         myValveBox = FindObjectOfType<ValveBox>();
         myGauges = FindObjectOfType<MasterGauges>();
+        allVHSPlayers = FindObjectsOfType<VHSPlayer>();
         myFaxMachine = myFaxMachineGameObject.GetComponent<FaxMachine>();
+        myVisionMixer = FindObjectOfType<VisionMixer>();
+        myInterferenceSystem = FindObjectOfType<InterferenceSystem>();
+        myMasterController = FindObjectOfType<MasterController>();
+        mySequenceController = FindObjectOfType<SequenceController>();
+        myGUIController = FindObjectOfType<GUIController>();
+        myBackWallClock = FindObjectOfType<BackWallClock>();
         defaultRoomLightIntensity = roomLight.intensity;
         fadingSound = false;
 	}
@@ -206,6 +223,7 @@ public class GodOfTheRoom : MonoBehaviour {
     public void MuteRoom()
     {
         unityMixingDesk.GetFloat("GUIRoom", out previousRoomVolume);
+        Debug.Log("Previous Room Volume: " + previousRoomVolume);
         unityMixingDesk.SetFloat("GUIRoom", -80f);
     }
 
@@ -369,20 +387,41 @@ public class GodOfTheRoom : MonoBehaviour {
         myFaxMachine.ReceiveFax(thisText);
     }
 
+    public void TEMPRestartBroadcast()
+    {
+        myGUIController.StartBroadcast(6);
+    }
+
     public void ResetRoom()
     {
         // Returns Room to Default State
         MuteRoom();
         SetRoomTemperature(20);
 
+        //// All Views - May Not Be Necessary
+
+        //ButtonAnimating[] allButtons = FindObjectsOfType<ButtonAnimating>();
+        //foreach(ButtonAnimating thisButton in allButtons)
+        //{
+        //    thisButton.ResetMe();
+        //}
+        //Switch[] allSwitches = FindObjectsOfType<Switch>();
+        //foreach (Switch thisSwitch in allSwitches)
+        //{
+        //    thisSwitch.ResetMe();
+        //}
+
         //// Left View
+
         // Power
         SetAllPlugs("00000000");
         TripSwitchPower(false);
+
         // Broadcast Tower
         SetTowerDropSpeed(0);
         SetTowerRotationSpeed(10);
         myTower.transform.rotation = myTower.myStartRotation;
+        myTower.ResetMe();
 
         // Tower Control
         myTowerControlPlug.SetActive(true);
@@ -391,44 +430,90 @@ public class GodOfTheRoom : MonoBehaviour {
         // Fan
         SetFanSwitch(true);
         myFan.ResetHead();
+        
+
         // Blinds
         foreach(RollerBlind thisBlind in myBlinds)
         {
             thisBlind.ResetMe();
         }
+
         // ValveBox
         myValveBox.ResetMe();
+
         // Skybox
         mySky.ResetSky();
         myLensFlareLight.SetActive(false);
 
 
-
         //// Right View
+
         // Comms
         myIntercom.SetActive(false);
         myFaxMachineGameObject.SetActive(false);
 
+
         //// Front View
+
+        // Gauges
         myGauges.ResetMe();
 
-        SetMixingDeskChannelSelect(1);
-        SetControlRoomVolumeSlider(1);
-        SetBroadcastVolumeSlider(1);
+        // Mixing Desk
+        //SetMixingDeskChannelSelect(1);
+        //SetControlRoomVolumeSlider(1);
+        //SetBroadcastVolumeSlider(1);
+
+        // Vision Mixer
         myVisionMixerLinkSwitch.SetActive(true);
         myVisionMixerUpgradePanel.SetActive(true);
         SetVisionMixerLinkSwitch(false);
+        myVisionMixer.ResetSystem();
 
+        // Frequency Control
+        myFrequencyControlSlider.ResetMe();
+
+
+        // Interference Scroller
+        myInterferenceSystem.ResetMe();
+
+        // Screens 1-4 and Master
+        foreach(Television thisTelevision in allScreensExceptBroadcast)
+        {
+            thisTelevision.ResetMe();
+        }
+
+
+        // Broadcast System
+        myBroadcastSystem.ResetMe();
+
+        // On-Air Light
+        mySequenceController.myOnAirLight.LightOff();
+
+        // Audience Display
+        myScoringController.InitialiseVU();
+
+        // Clock
+        myBackWallClock.ResetMe();
 
         //// Down View
 
-
+        // Tape Rack
         myVHSTapeRack.SetAllTapesFromString("XXX#XXX#XXX#XXX#XXX#XXX#XXX#XXX");
 
+        // VHS Machines and Panel
+        foreach (VHSPlayer thisPlayer in allVHSPlayers)
+        {
+            thisPlayer.ResetMe();
+        }
 
-        // Controllers
+        //// Controllers
         myScoringController.ResetMe();
+        // EDL Controller
+        // Sequence Controller
+        // Input Controller?
+        // 
 
+        UnMuteRoom();
     }
 
 }

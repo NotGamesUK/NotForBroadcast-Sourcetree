@@ -23,6 +23,13 @@ public class BackWallClock : MonoBehaviour {
         myController = FindObjectOfType<MasterController>();
 	}
 	
+    public void ResetMe()
+    {
+        clockTime = 0;
+        isRunning = false;
+        myDisplay.text = "00:00:00";
+    }
+
 	// Update is called once per frame
 	void Update () {
 

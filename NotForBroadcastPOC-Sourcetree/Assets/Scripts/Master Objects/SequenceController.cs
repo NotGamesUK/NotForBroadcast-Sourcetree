@@ -22,7 +22,8 @@ public class SequenceController : MonoBehaviour {
     private BroadcastTV myBroadcastScreen;
     private VHSControlPanel myVHSControlPanel;
     private ScoringController myScoringController;
-    private OnAirLight myOnAirLight;
+    [HideInInspector]
+    public OnAirLight myOnAirLight;
     private bool waitingForScreens = false;
     private float thisPreSequenceVideoLength;
     private int foundPos;

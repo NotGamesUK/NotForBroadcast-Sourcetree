@@ -16920,6 +16920,16 @@ Prefab:
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[5].objectData
       value: 
       objectReference: {fileID: 1322203590}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: bleepCooldownRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: bleepWeight
+      value: 0.14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
   m_IsPrefabParent: 0
@@ -27987,6 +27997,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: allScreensExceptBroadcast.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4103822304424784, guid: fa01610e6703a1f47a4cddf12ec6bb58, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.027804282
@@ -28174,6 +28189,36 @@ Prefab:
       propertyPath: myFaxMachineGameObject
       value: 
       objectReference: {fileID: 1322203590}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: myFrequencyControlSlider
+      value: 
+      objectReference: {fileID: 1792216889}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: allScreensExceptBroadcast.Array.data[0]
+      value: 
+      objectReference: {fileID: 1937692965}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: allScreensExceptBroadcast.Array.data[1]
+      value: 
+      objectReference: {fileID: 1847320215}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: allScreensExceptBroadcast.Array.data[2]
+      value: 
+      objectReference: {fileID: 368679986}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: allScreensExceptBroadcast.Array.data[3]
+      value: 
+      objectReference: {fileID: 1659499169}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: allScreensExceptBroadcast.Array.data[4]
+      value: 
+      objectReference: {fileID: 1377781582}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa01610e6703a1f47a4cddf12ec6bb58, type: 2}
   m_IsPrefabParent: 0
@@ -37241,6 +37286,11 @@ Prefab:
     - target: {fileID: 4249088191000898, guid: 28e2516e16cbf5a42bdd57554b8046cc, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 95821340252233518, guid: 28e2516e16cbf5a42bdd57554b8046cc,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28e2516e16cbf5a42bdd57554b8046cc, type: 2}

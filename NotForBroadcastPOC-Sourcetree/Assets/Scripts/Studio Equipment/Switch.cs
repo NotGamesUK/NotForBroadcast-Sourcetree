@@ -20,6 +20,7 @@ public class Switch : MonoBehaviour {
     private Quaternion onRotation;
     private Quaternion offRotation;
     private bool lastPower;
+    private bool startHasPower;
 
     // Use this for initialization
     void Start()
@@ -45,6 +46,16 @@ public class Switch : MonoBehaviour {
                 myRenderer.material = switchOffMaterial;
             }
         }
+        startHasPower = hasPower;
+
+    }
+
+    public void ResetMe()
+    {
+        hasPower = startHasPower;
+        isOn = false;
+        this.transform.rotation = offRotation;
+        myRenderer.material = defaultMaterial;
     }
 
     private void OnMouseEnter()

@@ -176,14 +176,15 @@ public class InputController : MonoBehaviour {
                     }
                 }
 
-                if (Input.GetButtonDown("ChangeSky"))
+
+                if (Input.GetButtonDown("TEMPResetRoom"))
                 {
-                    myRoomGod.SetSkyForLevel(6);
+                    myRoomGod.ResetRoom();
                 }
 
-                if (Input.GetButtonDown("ResetSky"))
+                if (Input.GetButtonDown("TEMPRestartBroadcast"))
                 {
-                    myRoomGod.TEMPResetSky();
+                    myRoomGod.TEMPRestartBroadcast();
                 }
 
 

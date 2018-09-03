@@ -100,8 +100,10 @@ public class GUIController : MonoBehaviour
     public void StartBroadcast(int thisBroadcast)
     {
         myBlackout.enabled = true;
+        BlackoutFader(0.01f, true);
         ChangeMenuTo(null);
         ChangeCameraTo(gameCamera);
+        myMusicPlayer.clip = null;
         PlayStartSFX();
         myMasterController.StartBroadcast(thisBroadcast);
     }
@@ -250,6 +252,7 @@ public class GUIController : MonoBehaviour
 
     void PlayStartSFX()
     {
+        Debug.Log("-------------------------------------------------------------------------PLAYING START SFX");
         myMusicPlayer.loop = false;
         ChangeMusicTo(levelStartSFX);
     }

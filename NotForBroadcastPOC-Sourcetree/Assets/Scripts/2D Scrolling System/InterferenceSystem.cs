@@ -52,4 +52,10 @@ public class InterferenceSystem : MonoBehaviour {
     {
         myLevel.levelHasStarted = true;
     }
+
+    public void ResetMe()
+    {
+        if (currentLevel) { Destroy(currentLevel.gameObject); }
+        myCamera.ResetScrollingCamera();
+    }
 }
