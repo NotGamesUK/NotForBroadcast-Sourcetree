@@ -197,7 +197,7 @@ MonoBehaviour:
     scoringMode: 0
   - SequenceName: 02-02 Thadeus
     runIn: 32
-    runOut: 24
+    runOut: 21
     screenVideo:
     - {fileID: 32900000, guid: 4bfe0358dca4a58469196633941e073e, type: 3}
     - {fileID: 32900000, guid: 3fde4fe32f2fc9b4cbc21b505fbdfffd, type: 3}
@@ -218,7 +218,7 @@ MonoBehaviour:
     scoringMode: 1
   - SequenceName: 02-03 Hostage
     runIn: 44
-    runOut: 24
+    runOut: 27
     screenVideo:
     - {fileID: 32900000, guid: 6a216aaa51bebdf429351b3bec6b65dd, type: 3}
     - {fileID: 32900000, guid: 5a5a4156fa8c7164daba6475641441e0, type: 3}

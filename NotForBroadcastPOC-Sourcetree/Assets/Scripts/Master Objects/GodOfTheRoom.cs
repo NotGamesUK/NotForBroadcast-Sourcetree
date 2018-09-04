@@ -16,6 +16,8 @@ public class GodOfTheRoom : MonoBehaviour {
     public Light roomLight;
     public Sun mySky;
     public Television[] allScreensExceptBroadcast;
+    public RollerBlind[] myBlinds;
+    public VHSPlayer[] myVHSPlayers;
 
     [Space(5)]
     [Header("Objects that get Activated/Deactivated:")]
@@ -37,7 +39,6 @@ public class GodOfTheRoom : MonoBehaviour {
     private RotatingFan myFan;
     private SatelliteDish myTower;
     private VisionMixer myVisionMixer;
-    private RollerBlind[] myBlinds;
     private ValveBox myValveBox;
     private MasterGauges myGauges;
     private VHSPlayer[] allVHSPlayers;
@@ -47,7 +48,7 @@ public class GodOfTheRoom : MonoBehaviour {
     private SequenceController mySequenceController;
     private GUIController myGUIController;
     private BackWallClock myBackWallClock;
-    
+    private CheckpointData[] myCheckpoints=new CheckpointData[2];
 
     private bool fadingSound, fadingLights;
     private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
@@ -544,11 +545,82 @@ public class GodOfTheRoom : MonoBehaviour {
 
     public void MakeCheckpoint(int thisCheckpointNumber)
     {
+        // Level Data
+        myCheckpoints[thisCheckpointNumber] = new CheckpointData();
+        myCheckpoints[thisCheckpointNumber] .currentLevel = myMasterController.currentLevel;
+        myCheckpoints[thisCheckpointNumber] .nextSequence = myMasterController.currentSequence + 1;
+
+        // Left View
+        myCheckpoints[thisCheckpointNumber] .fanIsLocked = myFan.myButton.isDepressed;
+        myCheckpoints[thisCheckpointNumber] .tripSwitchIsOn = tripSwitch.isOn;
+        string thisPlugString = "";
+        for (int n = 0; n <= 7; n++)
+        {
+            if (plugSwitch[n].isOn)
+            {
+                thisPlugString += "1";
+            }
+            else
+            {
+                thisPlugString += "0";
+            }
+        }
+        Debug.Log("Make Checkpoint Plug String: " + thisPlugString);
+        myCheckpoints[thisCheckpointNumber] .blind01height = myBlinds[0].transform.localPosition.y;
+        myCheckpoints[thisCheckpointNumber] .blind02height = myBlinds[1].transform.localPosition.y;
+
+        // Right View
+
+        // Add InTray Fax Data Storage Here when In-Tray is Implemented
+
+        // Down View
+
+        for (int n=0; n<3; n++)
+        {
+            if (myVHSPlayers[n].myTape)
+            {
+                myCheckpoints[thisCheckpointNumber] .VHSTapeTitles[n] = myVHSPlayers[n].myTape.myTitle;
+            }
+            else
+            {
+                myCheckpoints[thisCheckpointNumber] .VHSTapeTitles[n] = "EMPTY";
+            }
+        }
+
+        // Controllers
+
+        for (int n=0; n<=thisCheckpointNumber; n++)
+        {
+            myCheckpoints[thisCheckpointNumber] .previousEDLs[n] = myMasterController.broadcastEDL[n];
+        }
+
+        // Front View
+
+        myCheckpoints[thisCheckpointNumber] .audienceNumbers = myScoringController.audiencePercentage;
+        myCheckpoints[thisCheckpointNumber] .masterVolume = controlRoomVolumeSlider.value;
+        myCheckpoints[thisCheckpointNumber] .broadcastVolume = broadcastVolumeSlider.value;
+        myCheckpoints[thisCheckpointNumber] .soundDeskSelectValue = channelSelectSlider.value;
+        myCheckpoints[thisCheckpointNumber] .linkSwitchStatus = myVisionMixer.myLinkSwitch.isOn;
 
     }
 
-    public void LoadCheckpoint(int thisCheckpointNumber)
+    public void ContinueFromCheckpoint(int thisCheckpointNumber)
     {
+        // Tell Master Controller to LoadPreviousEDLs(adNumber);
+
+        // Call RetryFromCheckpoint(int thisCheckpointNumber)
+
+    }
+
+    public void RetryFromCheckpoint(int thisCheckpointNumber)
+    {
+        // Reset Room
+
+        // Do all Events up to Current Sequence - Alter behaviour of some (eg - SendFax should add Fax straight to InTray)
+
+        // Load and Implement Checkpoint Data
+
+        // Tell Master Controller to RetryFromAd(int adNumber);
 
     }
 

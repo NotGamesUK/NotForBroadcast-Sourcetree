@@ -180,6 +180,9 @@ public class MasterGauges : MonoBehaviour {
         maxTemperature = defaultMaxTemperature;
         orangeTemperaturePercent = defaultOrangeTemperaturePercent;
         dishTolerance = defaultDishTolerance;
+        myPowerGauge.ResetMe();
+        myTemperatureGauge.ResetMe();
+        mySignalGauge.ResetMe();
     }
 
 }

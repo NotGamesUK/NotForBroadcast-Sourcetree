@@ -131,7 +131,7 @@ MonoBehaviour:
     - 01-01 Headlines
     - 01-02 Wildish
     - 01-03 Party Leaders
-    advertList: 'Nandos#Um Bongo#XXX#Budweiser#XXX#Haribo#Pet Insurance#XXX '
+    advertList: 'Nandos#Um Bongo#XXX#Budweiser#XXX#Skittles#Pot Noodle#XXX '
     gameEvents:
     - myName: Set Up Plugs
       myTimeframe: 2

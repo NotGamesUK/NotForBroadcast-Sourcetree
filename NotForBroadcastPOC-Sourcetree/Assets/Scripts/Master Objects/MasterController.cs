@@ -72,7 +72,8 @@ public class MasterController : MonoBehaviour {
     [HideInInspector]
     public bool preparingAd, overRunning, inDevMode;
     private float overrunTime, startPreRollTime;
-    private List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
+    [HideInInspector]
+    public List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
     public List<String> savedFiles = new List<string>();
     private int myDayNumber;
     private string myLevelName;
@@ -336,6 +337,7 @@ public class MasterController : MonoBehaviour {
         }
 
     }
+
     void PrepareLevel(int thisLevel)
     {
         // Set Current Level to thisLevel;
@@ -406,7 +408,6 @@ public class MasterController : MonoBehaviour {
 
     }
 
-
     void StartLevel()
     {
         Debug.Log("MASTER CONT: INITIALISING EVENT MONITORING, INTERFERNECE LOGGING, AND MASTER CLOCK.");
@@ -430,6 +431,8 @@ public class MasterController : MonoBehaviour {
         {
 
             SortAndSaveEDL();
+            myRoomGod.MakeCheckpoint(currentSequence);
+
             // Advance Sequence Count
             currentSequence++;
             overRunning = false;
@@ -568,7 +571,6 @@ public class MasterController : MonoBehaviour {
 
     }
 
-
     void LoadFileList()
     {
         if (File.Exists(Application.persistentDataPath + "/BroadcastArchive.dat"))
@@ -662,6 +664,24 @@ public class MasterController : MonoBehaviour {
             }
 
         }
+    }
+
+    public void LoadPreviousEDLs(int adNumber) // Called from Continue/Load Checkpoint
+    {
+        // Load Previous EDLs
+
+        // Call RetryFromAd(int adNumber)
+
+    }
+
+    public void RetryFromAd(int adNumber) // Called Mid-Level so no need to load EDLs.
+    {
+        // Set appropriate Variables - currentSequence, post-Roll (Set to zero).
+
+        // Tell Score and Reply not to appear.
+
+        // Tell VHS Player to Play ad.
+
     }
 }
 

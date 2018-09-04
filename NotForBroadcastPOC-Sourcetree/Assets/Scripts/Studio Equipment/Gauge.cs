@@ -58,7 +58,25 @@ public class Gauge : MonoBehaviour {
         // TEMPORARY:
         lastReading = currentReading;
     }
-	
+
+
+    public void ResetMe()
+    {
+        myNeedle.transform.rotation = startRotation;
+        myAlarm.Stop();
+        alarmSounding = false;
+        myLEDColour = LEDColours.Green;
+        myLED.GoGreen();
+        myLED.FlashOff();
+        LEDFlashing = false;
+        if (hasSecondGauge)
+        {
+            mySecondLED.GoGreen();
+            mySecondLED.FlashOff();
+        }
+
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (lastReading!=currentReading) {

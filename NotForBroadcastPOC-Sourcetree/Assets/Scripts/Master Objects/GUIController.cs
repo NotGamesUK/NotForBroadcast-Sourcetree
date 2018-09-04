@@ -40,6 +40,7 @@ public class GUIController : MonoBehaviour
     private MasterController myMasterController;
     private OptionsController myOptionsController;
     private PlaybackRoomController myPlaybackController;
+    private GodOfTheRoom myRoomGod;
     [HideInInspector]
     public GameObject currentMenu;
     private GameObject currentCamera;
@@ -49,7 +50,7 @@ public class GUIController : MonoBehaviour
     private VideoPlayer[] allVideoPlayers;
     private List<AudioSource> pausedAudioSources = new List<AudioSource>();
     private AudioSource[] allAudioSources;
-
+    private bool paused;
     private bool cameFromMain = true;
 
     private void Awake()
@@ -71,6 +72,7 @@ public class GUIController : MonoBehaviour
         myMasterController = FindObjectOfType<MasterController>();
         myOptionsController = GetComponent<OptionsController>();
         myPlaybackController = GetComponent<PlaybackRoomController>();
+        myRoomGod = FindObjectOfType<GodOfTheRoom>();
         myMusicPlayer = GetComponent<AudioSource>();
         devModeObjects = FindObjectsOfType<DevModeObject>();
         freeLookCamera = FindObjectOfType<CameraMovement>();
@@ -89,7 +91,7 @@ public class GUIController : MonoBehaviour
         currentCamera = menuCamera;
         myBlackout.enabled = false;
         myDayDisplay.CrossFadeAlpha(0f, 0.1f, false);
-
+        paused = false;
 
     }
 
@@ -122,6 +124,13 @@ public class GUIController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        if (paused)
+        {
+            Unpause();
+            myRoomGod.ResetRoom();
+            paused = false;
+
+        }
         if (currentMenu == optionsMenu)
         {
             myOptionsController.SaveAllOptions();
@@ -155,6 +164,7 @@ public class GUIController : MonoBehaviour
         ChangeMusicTo(pauseMenuMusic);
         myMusicPlayer.Play();
         Time.timeScale = 0f;
+        paused = true;
     }
 
     public void Unpause()
@@ -171,6 +181,7 @@ public class GUIController : MonoBehaviour
         ChangeMenuTo(null);
         ChangeMusicTo(null);
         Time.timeScale = 1f;
+        paused = false;
     }
 
 
