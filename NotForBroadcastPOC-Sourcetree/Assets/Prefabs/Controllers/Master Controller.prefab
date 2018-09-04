@@ -65,8 +65,8 @@ MonoBehaviour:
   interferenceWeight: 4
   audioInterferenceWeight: 1.08
   resistanceWeight: 1
-  bleepWeight: 0.25
-  bleepCooldownRate: 0.25
+  bleepWeight: 0.14
+  bleepCooldownRate: 0.5
   downWeight: 1
   upWeight: 1.2
   speedOfChange: 0.3
@@ -102,6 +102,9 @@ MonoBehaviour:
   mySFXPlayer: {fileID: 0}
   myBleepLight: {fileID: 0}
   screenVideoColour: 0000000000000000000000000000000000000000000000000000000000000000
+  currentSequenceNumber: 0
+  currentBroadcastScreen: 0
+  bleepWatchingCount: 0
 --- !u!114 &114258210600043390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,9 +124,9 @@ MonoBehaviour:
     loopRoll: {fileID: 32900000, guid: a7e47b2f98a2cc7459e1b343a11abc23, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 3fef20388c0b7a14b8d6146623c74160, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 95304d84dfc4abd48bf19f70410bcb40, type: 3}
-    preRoll: {fileID: 32900000, guid: 50005953ff3abd94aa2b1d0fd089d9a6, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: 01e6d1021e5704e46ba10c16770f7824, type: 3}
-    preRollAudio: {fileID: 8300000, guid: 6db78d83a6ef07c4c8b6b7d3b997b7b3, type: 3}
+    preRoll: {fileID: 32900000, guid: 0a66f6a062289404e914ba76522417a2, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: e2ffa4577947a5842964229858752c5d, type: 3}
+    preRollAudio: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
     sequenceNames:
     - 01-01 Headlines
     - 01-02 Wildish
@@ -155,7 +158,7 @@ MonoBehaviour:
       mySequenceOrAdNumber: 0
       eventTime: 0
       eventType: 8
-      floatData: 0.6
+      floatData: 0.2
       stringData: 
       integerData: 0
       boolData: 1
@@ -486,6 +489,7 @@ MonoBehaviour:
     resistanceVideo: {fileID: 0}
     resistanceAudio: {fileID: 0}
     scoringMode: 0
+  myOnAirLight: {fileID: 0}
   preRollReady: 0
   broadcastScreenDelayTime: 2
 --- !u!114 &114523897991296926

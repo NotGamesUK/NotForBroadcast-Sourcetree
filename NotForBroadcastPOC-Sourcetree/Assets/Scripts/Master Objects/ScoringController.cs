@@ -522,6 +522,10 @@ public class ScoringController : MonoBehaviour {
         godWeighting = 0;
         downWeight = defaultDownWeight;
         upWeight = defaultUpWeight;
+        audioWeighting = 0;
+        footageWeighting = 0;
+        interferenceWeighting = 0;
+        
         speedOfChange = defaultSpeedOfChange;
         broadcastScreensLive = false;
         for (int n = 0; n < 4; n++)

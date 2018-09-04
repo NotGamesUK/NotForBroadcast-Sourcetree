@@ -76,6 +76,7 @@ public class GodOfTheRoom : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+
 	void Update () {
 		if (fadingSound)
         {
@@ -120,6 +121,8 @@ public class GodOfTheRoom : MonoBehaviour {
         }
     }
 
+    // General
+
     private float LinearToDecibel(float linear)
     {
         float dB;
@@ -131,6 +134,29 @@ public class GodOfTheRoom : MonoBehaviour {
 
         return dB;
     }
+
+    public void EnableObject(GameObject thisObject, bool thisEnabled)
+    {
+        thisObject.SetActive(thisEnabled);
+    }
+
+    public void SetRoomTemperature(float thisTemperature)
+    {
+        myGauges.roomTemperature = thisTemperature;
+    }
+
+    public void SetMaximumPower(float thisPower)
+    {
+        myGauges.maxPower = thisPower;
+    }
+
+    public void SetSkyForLevel(int thisLevel)
+    {
+        mySky.SetSky(thisLevel);
+    }
+
+
+    // Room Controls
 
     public void FadeRoomLights(float thisTime, bool isFadingUp)
     {
@@ -152,27 +178,38 @@ public class GodOfTheRoom : MonoBehaviour {
         Debug.Log("ROOM GOD: Fading Light to Intesity of " + targetLightFadeIntensity + " over " + thisTime + " with increnemts of " + lightFadeIncrement + " per second.");
     }
 
-    public void SwitchScreensTo2DSound()
+    public void MuteRoom()
     {
-        foreach(AudioSource thisAudiosource in switchableScreenAudioSources)
-        {
-            thisAudiosource.spatialBlend = 0;
-        }
+        unityMixingDesk.GetFloat("GUIRoom", out previousRoomVolume);
+        Debug.Log("Previous Room Volume: " + previousRoomVolume);
+        unityMixingDesk.SetFloat("GUIRoom", -80f);
     }
 
-    public void SwitchScreensTo3DSound()
+    public void UnMuteRoom()
     {
-        foreach (AudioSource thisAudiosource in switchableScreenAudioSources)
-        {
-            thisAudiosource.spatialBlend = 1;
-        }
-
+        unityMixingDesk.SetFloat("GUIRoom", previousRoomVolume);
     }
 
-    public void SetAllPlugs (string thisPlugSet) // Recieves a binary string: "10101010" - 1s turn plug on, 0s turn it off.
+    public void MuteAll3DSound()
+    {
+        unityMixingDesk.SetFloat("NonGuiVol", -80f);
+        currentSoundFadeVolume = 0;
+    }
+
+    public void FadeInAll3DSound(float thisTime)
+    {
+        currentSoundFadeVolume = 0;
+        soundFadeIncrement = 100 / thisTime;
+        fadingSound = true;
+    }
+
+
+    // Left View
+
+    public void SetAllPlugs(string thisPlugSet) // Recieves a binary string: "10101010" - 1s turn plug on, 0s turn it off.
     {
         Debug.Log("StringReceived: " + thisPlugSet);
-        for (int n=0; n<=7; n++)
+        for (int n = 0; n <= 7; n++)
         {
             char thisSettingAsChar = thisPlugSet[n];
             int thisSetting = (int)char.GetNumericValue(thisSettingAsChar);
@@ -182,7 +219,9 @@ public class GodOfTheRoom : MonoBehaviour {
             {
                 Debug.Log("Turning Off Plug " + n);
                 PlugPower(n, false);
-            } else if (thisSetting==1) {
+            }
+            else if (thisSetting == 1)
+            {
                 Debug.Log("Turning On Plug " + n);
                 PlugPower(n, true);
             }
@@ -220,30 +259,60 @@ public class GodOfTheRoom : MonoBehaviour {
         }
     }
 
-    public void MuteRoom()
+    public void SetTowerDropSpeed(float thisSpeed)
     {
-        unityMixingDesk.GetFloat("GUIRoom", out previousRoomVolume);
-        Debug.Log("Previous Room Volume: " + previousRoomVolume);
-        unityMixingDesk.SetFloat("GUIRoom", -80f);
+        myTower.dropSpeed = thisSpeed;
+    }
+
+    public void SetTowerRotationSpeed(float thisSpeed)
+    {
+        myTower.turnSpeed = thisSpeed;
+    }
+
+    public void DropSatellite()
+    {
+        myTower.DropDish();
+    }
+
+    public void SetFanSwitch(bool rotationOff)
+    {
+        if (rotationOff)
+        {
+            myFan.myButton.KeyDown();
+
+        }
+        else
+        {
+            myFan.myButton.KeyUp();
+        }
     }
 
 
-    public void UnMuteRoom()
+    // Right View
+
+    public void SendFax(string thisText)
     {
-        unityMixingDesk.SetFloat("GUIRoom", previousRoomVolume);
+        myFaxMachine.ReceiveFax(thisText);
     }
 
-    public void MuteAll3DSound()
+
+    // Front View
+
+    public void SwitchScreensTo2DSound()
     {
-        unityMixingDesk.SetFloat("NonGuiVol", -80f);
-        currentSoundFadeVolume = 0;
+        foreach (AudioSource thisAudiosource in switchableScreenAudioSources)
+        {
+            thisAudiosource.spatialBlend = 0;
+        }
     }
 
-    public void FadeInAll3DSound(float thisTime)
+    public void SwitchScreensTo3DSound()
     {
-        currentSoundFadeVolume = 0;
-        soundFadeIncrement = 100 / thisTime;
-        fadingSound = true;
+        foreach (AudioSource thisAudiosource in switchableScreenAudioSources)
+        {
+            thisAudiosource.spatialBlend = 1;
+        }
+
     }
 
     public void SetControlRoomVolumeSlider(float thisSetting)
@@ -261,43 +330,6 @@ public class GodOfTheRoom : MonoBehaviour {
         channelSelectSlider.value = thisChannel;
     }
 
-    public void ChangeScoringMode(string thisMode)
-    {
-        if (thisMode == "Multi")
-        {
-            myScoringController.myScoringMode = ScoringController.ScoringMode.MultiCam;
-        }
-        else if (thisMode == "Single")
-        {
-            myScoringController.myScoringMode = ScoringController.ScoringMode.SingleCam;
-        }
-    }
-
-    public void EnableObject(GameObject thisObject, bool thisEnabled)
-    {
-            thisObject.SetActive(thisEnabled);
-    }
-
-    public void LoadTapeRack(string thisLoadString)
-    {
-        myVHSTapeRack.SetAllTapesFromString(thisLoadString);
-    }
-
-    public void SetTowerDropSpeed(float thisSpeed)
-    {
-        myTower.dropSpeed = thisSpeed;
-    }
-
-    public void SetTowerRotationSpeed(float thisSpeed)
-    {
-        myTower.turnSpeed = thisSpeed;
-    }
-
-    public void DropSatellite()
-    {
-        myTower.DropDish();
-    }
-
     public void SetVisionMixerLinkSwitch(bool linkOn)
     {
         if (linkOn)
@@ -307,7 +339,8 @@ public class GodOfTheRoom : MonoBehaviour {
                 myVisionMixer.myLinkSwitch.KeyDown();
 
             }
-        } else
+        }
+        else
         {
             if (myVisionMixer.myLinkSwitch.isOn)
             {
@@ -315,6 +348,29 @@ public class GodOfTheRoom : MonoBehaviour {
 
             }
 
+        }
+    }
+
+
+    // Down View
+
+    public void LoadTapeRack(string thisLoadString)
+    {
+        myVHSTapeRack.SetAllTapesFromString(thisLoadString);
+    }
+
+
+    // Controllers
+
+    public void ChangeScoringMode(string thisMode)
+    {
+        if (thisMode == "Multi")
+        {
+            myScoringController.myScoringMode = ScoringController.ScoringMode.MultiCam;
+        }
+        else if (thisMode == "Single")
+        {
+            myScoringController.myScoringMode = ScoringController.ScoringMode.SingleCam;
         }
     }
 
@@ -334,39 +390,6 @@ public class GodOfTheRoom : MonoBehaviour {
         myScoringController.myScoringMode = ScoringController.ScoringMode.RhythmCam;
     }
 
-    public void SetFanSwitch(bool rotationOff)
-    {
-        if (rotationOff)
-        {
-            myFan.myButton.KeyDown();
-
-        }
-        else
-        {
-            myFan.myButton.KeyUp();
-        }
-    }
-
-    public void SetRoomTemperature(float thisTemperature)
-    {
-        myGauges.roomTemperature = thisTemperature;
-    }
-
-    public void SetMaximumPower(float thisPower)
-    {
-        myGauges.maxPower = thisPower;
-    }
-
-    public void TEMPResetSky()
-    {
-        mySky.ResetSky();
-    }
-
-    public void SetSkyForLevel(int thisLevel)
-    {
-        mySky.SetSky(thisLevel);
-    }
-
     public void SetDownWeight(float thisWeight)
     {
         myScoringController.upWeight = thisWeight;
@@ -382,10 +405,12 @@ public class GodOfTheRoom : MonoBehaviour {
         myScoringController.godWeighting = thisWeight;
     }
 
-    public void SendFax(string thisText)
-    {
-        myFaxMachine.ReceiveFax(thisText);
-    }
+
+
+    //public void TEMPResetSky()
+    //{
+    //    mySky.ResetSky();
+    //}
 
     public void TEMPRestartBroadcast()
     {
@@ -397,6 +422,7 @@ public class GodOfTheRoom : MonoBehaviour {
         // Returns Room to Default State
         MuteRoom();
         SetRoomTemperature(20);
+        FadeRoomLights(0.01f, true);
 
         //// All Views - May Not Be Necessary
 
@@ -514,6 +540,16 @@ public class GodOfTheRoom : MonoBehaviour {
         // 
 
         UnMuteRoom();
+    }
+
+    public void MakeCheckpoint(int thisCheckpointNumber)
+    {
+
+    }
+
+    public void LoadCheckpoint(int thisCheckpointNumber)
+    {
+
     }
 
 }
