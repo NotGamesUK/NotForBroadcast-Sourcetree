@@ -38576,6 +38576,14 @@ Prefab:
       propertyPath: orangeHeatUpSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1802479150209230, guid: e2f04d8f790408b4b9c995fa97acee43, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897270746800872, guid: e2f04d8f790408b4b9c995fa97acee43, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2f04d8f790408b4b9c995fa97acee43, type: 2}
   m_IsPrefabParent: 0
