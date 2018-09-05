@@ -90,7 +90,7 @@ public class LED : MonoBehaviour {
 
     public void FlashOn(float thisFlashRate)
     {
-        Debug.Log("LED: Starting to Flash");
+        //Debug.Log("LED: Starting to Flash");
         flashIsOn = true;
         isFlashing = true;
         myFlashRate = thisFlashRate;
@@ -98,7 +98,7 @@ public class LED : MonoBehaviour {
 
     public void FlashOff()
     {
-        Debug.Log("LED: Stopping Flash");
+        //Debug.Log("LED: Stopping Flash");
         isFlashing = false;
         if (!flashIsOn)
         {

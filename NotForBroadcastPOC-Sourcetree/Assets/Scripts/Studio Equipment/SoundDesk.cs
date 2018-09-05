@@ -79,7 +79,7 @@ public class SoundDesk : MonoBehaviour {
 
     public void MuteBroadcastChannel(int thisChannel)
     {
-        Debug.Log("Setting Scoring Controller.channelMuted[" + (thisChannel - 1) + "] to true");
+        //Debug.Log("Setting Scoring Controller.channelMuted[" + (thisChannel - 1) + "] to true");
 
         string channelRequired = "Broadcast0" + thisChannel + "Vol";
         myDesk.SetFloat(channelRequired, -80f);
@@ -89,7 +89,7 @@ public class SoundDesk : MonoBehaviour {
 
     public void UnMuteBroadcastChannel(int thisChannel)
     {
-        Debug.Log("Setting Scoring Controller.channelMuted[" + (thisChannel - 1) + "] to false");
+        //Debug.Log("Setting Scoring Controller.channelMuted[" + (thisChannel - 1) + "] to false");
 
         string channelRequired = "Broadcast0" + thisChannel + "Vol";
         myDesk.SetFloat(channelRequired, 0f);

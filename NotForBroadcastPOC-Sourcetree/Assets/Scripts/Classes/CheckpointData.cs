@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using System;
 
 [System.Serializable]
@@ -19,6 +20,9 @@ public class CheckpointData : IComparable<CheckpointData>
 
     // Down View
     public string[] VHSTapeTitles = new string[3];
+    public int currentVHSPlayerSelected;
+    public VideoClip currentAdVideo;
+    public AudioClip currentAdAudio;
 
     // Controllers
     public List<EditDecision>[] previousEDLs = new List<EditDecision>[2];

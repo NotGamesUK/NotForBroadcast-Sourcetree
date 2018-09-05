@@ -22,6 +22,12 @@ public class GUIController : MonoBehaviour
 
     public Image myBlackout;
     public Text myDayDisplay;
+    public Text mySegmentDisplay;
+
+    public GameObject retryFloater;
+    public Text myRetryCountdownDisplay;
+    public Text myRetryGradeDisplay;
+
 
     public AudioClip mainMenuMusic;
     public AudioClip pauseMenuMusic;
@@ -40,6 +46,7 @@ public class GUIController : MonoBehaviour
     private MasterController myMasterController;
     private OptionsController myOptionsController;
     private PlaybackRoomController myPlaybackController;
+    private ScoringController myScoringController;
     private GodOfTheRoom myRoomGod;
     [HideInInspector]
     public GameObject currentMenu;
@@ -52,6 +59,9 @@ public class GUIController : MonoBehaviour
     private AudioSource[] allAudioSources;
     private bool paused;
     private bool cameFromMain = true;
+    private bool showingRetry;
+    private float myRetryCountdown;
+    private int currentDay, currentSegment;
 
     private void Awake()
     {
@@ -66,12 +76,12 @@ public class GUIController : MonoBehaviour
         }
     }
 
-
     private void Start()
     {
         myMasterController = FindObjectOfType<MasterController>();
         myOptionsController = GetComponent<OptionsController>();
         myPlaybackController = GetComponent<PlaybackRoomController>();
+        myScoringController = FindObjectOfType<ScoringController>();
         myRoomGod = FindObjectOfType<GodOfTheRoom>();
         myMusicPlayer = GetComponent<AudioSource>();
         devModeObjects = FindObjectsOfType<DevModeObject>();
@@ -91,12 +101,38 @@ public class GUIController : MonoBehaviour
         currentCamera = menuCamera;
         myBlackout.enabled = false;
         myDayDisplay.CrossFadeAlpha(0f, 0.1f, false);
+        mySegmentDisplay.CrossFadeAlpha(0f, 0.1f, false);
         paused = false;
 
     }
 
     void Update()
     {
+        if (showingRetry)
+        {
+            myRetryCountdown -= Time.deltaTime;
+            if (myRetryCountdown > 0)
+            {
+                myRetryCountdownDisplay.text = Mathf.CeilToInt(myRetryCountdown).ToString();
+            }
+            else
+            {
+                showingRetry = false;
+                retryFloater.SetActive(false);
+            }
+        }
+    }
+
+    public void ShowRetry(float thisTime)
+    {
+        if (!showingRetry)
+        {
+            showingRetry = true;
+            myRetryCountdown = thisTime;
+            myRetryCountdownDisplay.text = Mathf.CeilToInt(thisTime).ToString();
+            myRetryGradeDisplay.text = myScoringController.GetCurrentGrade();
+            retryFloater.SetActive(true);
+        }
     }
 
     public void StartBroadcast(int thisBroadcast)
@@ -110,12 +146,34 @@ public class GUIController : MonoBehaviour
         myMasterController.StartBroadcast(thisBroadcast);
     }
 
+    public void ReplaySegment()
+    {
+        myBlackout.enabled = true;
+        BlackoutFader(0.01f, true);
+        PlayStartSFX();
+        DisplaySegmentNumber();
+    }
+
+    public void DisplaySegmentNumber()
+    {
+        DisplayDay(currentDay);
+        mySegmentDisplay.text = "Segment  " + myMasterController.currentSequence;
+        //myDayDisplay.color = new Color(0.786f, 0.144f, 0.144f, 0f);
+        mySegmentDisplay.CrossFadeAlpha(1f, 3f, false);
+    }
+
+    public void FadeSegment()
+    {
+        FadeDay();
+        mySegmentDisplay.CrossFadeAlpha(0f, 3f, false);
+        BlackoutFader(5f, false);
+    }
+
     public void StartPlayback()
     {
         ChangeMenuTo(null);
         ChangeMusicTo(null);
     }
-
 
     public void GoToOptions()
     {
@@ -183,7 +241,6 @@ public class GUIController : MonoBehaviour
         Time.timeScale = 1f;
         paused = false;
     }
-
 
     public void GoToPlayback()
     {
@@ -263,7 +320,6 @@ public class GUIController : MonoBehaviour
 
     void PlayStartSFX()
     {
-        Debug.Log("-------------------------------------------------------------------------PLAYING START SFX");
         myMusicPlayer.loop = false;
         ChangeMusicTo(levelStartSFX);
     }
@@ -273,6 +329,7 @@ public class GUIController : MonoBehaviour
         myDayDisplay.text = "Day  " + thisDay;
         //myDayDisplay.color = new Color(0.786f, 0.144f, 0.144f, 0f);
         myDayDisplay.CrossFadeAlpha(1f, 3f, false);
+        currentDay = thisDay;
     }
 
     public void FadeDay()
@@ -283,8 +340,8 @@ public class GUIController : MonoBehaviour
 
     void ChangeMusicTo(AudioClip thisMusic)
     {
-        if (myMusicPlayer.clip == levelStartSFX) { myMusicPlayer.loop = true; }
-        if (myMusicPlayer.clip != thisMusic)
+        if (myMusicPlayer.clip == levelStartSFX && thisMusic!=levelStartSFX) { myMusicPlayer.loop = true; }
+        if (myMusicPlayer.clip != thisMusic || thisMusic == levelStartSFX)
         {
             if (thisMusic)
             {

@@ -41,7 +41,7 @@ public class CameraMovement : MonoBehaviour {
 
     public void LookDown()
     {
-        Debug.Log("TOLD TO LOOK DOWN.  My Current Position: "+myPosition);
+        //Debug.Log("TOLD TO LOOK DOWN.  My Current Position: "+myPosition);
         if (myPosition != "Down")
         {
             myAnimator.SetTrigger("downPressed");

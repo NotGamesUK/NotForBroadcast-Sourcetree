@@ -21,7 +21,7 @@ public class VHSTapeController : MonoBehaviour
 
         // break Text into substrings
         tapeNames = loadInstructions.Split(char.Parse("#"));
-        Debug.Log("1:" + tapeNames[0] + ".  2:" + tapeNames[1] + ".  3:" + tapeNames[2]);
+        //Debug.Log("1:" + tapeNames[0] + ".  2:" + tapeNames[1] + ".  3:" + tapeNames[2]);
 
         // Loop through tapes
         for (int n = 0; n < 8; n++)
@@ -30,15 +30,16 @@ public class VHSTapeController : MonoBehaviour
             {
                 myTapes[n].SetMyFont(thisAdvert.labelFont, thisAdvert.labelMaterial);
                 myTapes[n].RewriteLabel();
+                myTapes[n].myName = thisAdvert.advertName;
                 ShowTape(n);
-                Debug.Log("Setting Tape " + n + " to " + thisAdvert.tapeLabel);
+                //Debug.Log("Setting Tape " + n + " to " + thisAdvert.tapeLabel);
             }
             // Tell tape to Reset labeltext if necessary
             else
             {
                 // Hide any unused tapes
                 HideTape(n);
-                Debug.Log("Hiding Tape " + n + " because label is " + tapeNames[n]);
+                //Debug.Log("Hiding Tape " + n + " because label is " + tapeNames[n]);
             }
 
         }

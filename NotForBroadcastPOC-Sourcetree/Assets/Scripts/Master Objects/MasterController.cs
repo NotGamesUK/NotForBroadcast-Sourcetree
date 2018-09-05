@@ -66,7 +66,8 @@ public class MasterController : MonoBehaviour {
     [HideInInspector]
     public int currentLevel;
     public int currentSequence;
-    private LevelData myLevelData;
+    [HideInInspector]
+    public LevelData myLevelData;
     public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
     public MasterState myState;
     [HideInInspector]
@@ -153,6 +154,8 @@ public class MasterController : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
                     PrepareAdvert(myLevelData.preRollSmaller, myLevelData.preRollAudio);
+                    myRoomGod.MakeCheckpoint(0);
+
                 }
                 // Make relevant action (Send Fax, Phone Call, Display/Clear Tutorial text, etc)
                 // Move to next condition
@@ -195,7 +198,10 @@ public class MasterController : MonoBehaviour {
                 {
                     startPreRollTime = mySequenceController.PrepareSequence(myLevelData.sequenceNames[currentSequence]);
                     Debug.Log("Intending to start sequence when clock hits " + startPreRollTime +" seconds. (SEQUENCE IS "+currentSequence+")");
-                    if (currentSequence > 0) { myScoringController.SetUpNextSequenceForTracking(); }
+                    if (currentSequence > 0) {
+                        myScoringController.SetUpNextSequenceForTracking();
+                        myGUIController.ShowRetry(myClock.clockTime - startPreRollTime);
+                    }
 
                 } else if (startPreRollTime>0)  
                 {  
@@ -431,10 +437,11 @@ public class MasterController : MonoBehaviour {
         {
 
             SortAndSaveEDL();
-            myRoomGod.MakeCheckpoint(currentSequence);
 
             // Advance Sequence Count
             currentSequence++;
+            myRoomGod.MakeCheckpoint(currentSequence);
+
             overRunning = false;
 
             //TESTING: REMOVE -------------------
@@ -481,10 +488,10 @@ public class MasterController : MonoBehaviour {
         {
             // DEBUG - List sorted EDLs            
             decisionCount = 1;
-            Debug.Log("This is EDL[" + n + "]");
+            //Debug.Log("This is EDL[" + n + "]");
             foreach (EditDecision thisEdit in broadcastEDL[n])
             {
-                print("Sorted Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+                //print("Sorted Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
                 decisionCount++;
             }
 
@@ -678,7 +685,7 @@ public class MasterController : MonoBehaviour {
     {
         // Set appropriate Variables - currentSequence, post-Roll (Set to zero).
 
-        // Tell Score and Reply not to appear.
+        // Tell Score and Replay not to appear.
 
         // Tell VHS Player to Play ad.
 

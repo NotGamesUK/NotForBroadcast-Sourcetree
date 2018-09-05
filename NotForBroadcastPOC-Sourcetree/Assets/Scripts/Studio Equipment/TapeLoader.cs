@@ -59,6 +59,15 @@ public class TapeLoader : MonoBehaviour {
         isLoading = true;
     }
 
+    public void InstantLoadTape(VHSTape thisTape)
+    {
+        myTape = thisTape;
+        myTape.transform.position = this.transform.position;
+        myTape.myBox.isSelected = false;
+        mySlot.isSelected = false;
+    }
+
+
     public void EjectTape()
     {
         isEjecting = true;

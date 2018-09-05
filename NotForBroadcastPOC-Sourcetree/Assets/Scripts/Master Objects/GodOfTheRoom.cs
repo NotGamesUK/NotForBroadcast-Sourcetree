@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Video;
 using UnityEngine.UI;
 
-public class GodOfTheRoom : MonoBehaviour {
+public class GodOfTheRoom : MonoBehaviour
+{
 
     public AudioMixer unityMixingDesk;
     public AudioSource[] switchableScreenAudioSources;
@@ -34,6 +36,7 @@ public class GodOfTheRoom : MonoBehaviour {
     public float previousRoomVolume;
     private ScoringController myScoringController;
     private VHSTapeController myVHSTapeRack;
+    private VHSControlPanel myVHSPlayerSelectionPanel;
     private BroadcastTV myBroadcastSystem;
     private SoundDesk myMixingDesk;
     private RotatingFan myFan;
@@ -47,16 +50,22 @@ public class GodOfTheRoom : MonoBehaviour {
     private MasterController myMasterController;
     private SequenceController mySequenceController;
     private GUIController myGUIController;
+    private EventController myEventController;
     private BackWallClock myBackWallClock;
-    private CheckpointData[] myCheckpoints=new CheckpointData[2];
+    private VHSTape[] allTapes;
+    private CheckpointData[] myCheckpoints = new CheckpointData[3];
+    private VideoClip advertAfterCheckpointVideo;
+    private AudioClip advertAfterCheckpointAudio;
 
     private bool fadingSound, fadingLights;
     private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         myScoringController = FindObjectOfType<ScoringController>();
         myVHSTapeRack = FindObjectOfType<VHSTapeController>();
+        myVHSPlayerSelectionPanel = FindObjectOfType<VHSControlPanel>();
         myBroadcastSystem = FindObjectOfType<BroadcastTV>();
         myMixingDesk = FindObjectOfType<SoundDesk>();
         myFan = FindObjectOfType<RotatingFan>();
@@ -71,15 +80,19 @@ public class GodOfTheRoom : MonoBehaviour {
         myMasterController = FindObjectOfType<MasterController>();
         mySequenceController = FindObjectOfType<SequenceController>();
         myGUIController = FindObjectOfType<GUIController>();
+        myEventController = FindObjectOfType<EventController>();
         myBackWallClock = FindObjectOfType<BackWallClock>();
+        allTapes = FindObjectsOfType<VHSTape>();
+
         defaultRoomLightIntensity = roomLight.intensity;
         fadingSound = false;
-	}
-	
-	// Update is called once per frame
+    }
 
-	void Update () {
-		if (fadingSound)
+    // Update is called once per frame
+
+    void Update()
+    {
+        if (fadingSound)
         {
             currentSoundFadeVolume += soundFadeIncrement * Time.deltaTime;
             if (currentSoundFadeVolume >= 100)
@@ -87,7 +100,7 @@ public class GodOfTheRoom : MonoBehaviour {
                 currentSoundFadeVolume = 100;
                 fadingSound = false;
             }
-            float thisDB = LinearToDecibel(currentSoundFadeVolume/100);
+            float thisDB = LinearToDecibel(currentSoundFadeVolume / 100);
             unityMixingDesk.SetFloat("NonGuiVol", thisDB);
 
         }
@@ -98,7 +111,7 @@ public class GodOfTheRoom : MonoBehaviour {
             {
                 //Debug.Log("ROOM GOD - FADING LIGHT UP TO " + targetLightFadeIntensity);
 
-                currentLightFadeIntensity += lightFadeIncrement*Time.deltaTime;
+                currentLightFadeIntensity += lightFadeIncrement * Time.deltaTime;
 
                 if (currentLightFadeIntensity > targetLightFadeIntensity)
                 {
@@ -110,7 +123,7 @@ public class GodOfTheRoom : MonoBehaviour {
             {
                 //Debug.Log("ROOM GOD - FADING LIGHT DOWN TO " + targetLightFadeIntensity);
 
-                currentLightFadeIntensity -= lightFadeIncrement*Time.deltaTime;
+                currentLightFadeIntensity -= lightFadeIncrement * Time.deltaTime;
                 if (currentLightFadeIntensity < targetLightFadeIntensity)
                 {
                     currentLightFadeIntensity = targetLightFadeIntensity;
@@ -176,13 +189,13 @@ public class GodOfTheRoom : MonoBehaviour {
 
         lightFadeIncrement = defaultRoomLightIntensity / thisTime;
         fadingLights = true;
-        Debug.Log("ROOM GOD: Fading Light to Intesity of " + targetLightFadeIntensity + " over " + thisTime + " with increnemts of " + lightFadeIncrement + " per second.");
+        //Debug.Log("ROOM GOD: Fading Light to Intesity of " + targetLightFadeIntensity + " over " + thisTime + " with increnemts of " + lightFadeIncrement + " per second.");
     }
 
     public void MuteRoom()
     {
         unityMixingDesk.GetFloat("GUIRoom", out previousRoomVolume);
-        Debug.Log("Previous Room Volume: " + previousRoomVolume);
+        //Debug.Log("Previous Room Volume: " + previousRoomVolume);
         unityMixingDesk.SetFloat("GUIRoom", -80f);
     }
 
@@ -209,26 +222,26 @@ public class GodOfTheRoom : MonoBehaviour {
 
     public void SetAllPlugs(string thisPlugSet) // Recieves a binary string: "10101010" - 1s turn plug on, 0s turn it off.
     {
-        Debug.Log("StringReceived: " + thisPlugSet);
+        //Debug.Log("StringReceived: " + thisPlugSet);
         for (int n = 0; n <= 7; n++)
         {
             char thisSettingAsChar = thisPlugSet[n];
             int thisSetting = (int)char.GetNumericValue(thisSettingAsChar);
-            Debug.Log("Char " + n + " = " + thisSettingAsChar);
-            Debug.Log("Setting " + n + " = " + thisSetting);
+            //Debug.Log("Char " + n + " = " + thisSettingAsChar);
+            //Debug.Log("Setting " + n + " = " + thisSetting);
             if (thisSetting == 0)
             {
-                Debug.Log("Turning Off Plug " + n);
+                //Debug.Log("Turning Off Plug " + n);
                 PlugPower(n, false);
             }
             else if (thisSetting == 1)
             {
-                Debug.Log("Turning On Plug " + n);
+                //Debug.Log("Turning On Plug " + n);
                 PlugPower(n, true);
             }
             else
             {
-                Debug.Log("Plug " + n + " UNCHANGED.  Setting:" + thisSetting);
+                //Debug.Log("Plug " + n + " UNCHANGED.  Setting:" + thisSetting);
             }
         }
     }
@@ -457,10 +470,10 @@ public class GodOfTheRoom : MonoBehaviour {
         // Fan
         SetFanSwitch(true);
         myFan.ResetHead();
-        
+
 
         // Blinds
-        foreach(RollerBlind thisBlind in myBlinds)
+        foreach (RollerBlind thisBlind in myBlinds)
         {
             thisBlind.ResetMe();
         }
@@ -504,7 +517,7 @@ public class GodOfTheRoom : MonoBehaviour {
         myInterferenceSystem.ResetMe();
 
         // Screens 1-4 and Master
-        foreach(Television thisTelevision in allScreensExceptBroadcast)
+        foreach (Television thisTelevision in allScreensExceptBroadcast)
         {
             thisTelevision.ResetMe();
         }
@@ -541,18 +554,20 @@ public class GodOfTheRoom : MonoBehaviour {
         // 
 
         UnMuteRoom();
+        Debug.Log("GOD: Room is reset!");
+
     }
 
     public void MakeCheckpoint(int thisCheckpointNumber)
     {
         // Level Data
         myCheckpoints[thisCheckpointNumber] = new CheckpointData();
-        myCheckpoints[thisCheckpointNumber] .currentLevel = myMasterController.currentLevel;
-        myCheckpoints[thisCheckpointNumber] .nextSequence = myMasterController.currentSequence + 1;
+        myCheckpoints[thisCheckpointNumber].currentLevel = myMasterController.currentLevel;
+        myCheckpoints[thisCheckpointNumber].nextSequence = myMasterController.currentSequence + 1;
 
         // Left View
-        myCheckpoints[thisCheckpointNumber] .fanIsLocked = myFan.myButton.isDepressed;
-        myCheckpoints[thisCheckpointNumber] .tripSwitchIsOn = tripSwitch.isOn;
+        myCheckpoints[thisCheckpointNumber].fanIsLocked = myFan.myButton.isDepressed;
+        myCheckpoints[thisCheckpointNumber].tripSwitchIsOn = tripSwitch.isOn;
         string thisPlugString = "";
         for (int n = 0; n <= 7; n++)
         {
@@ -565,9 +580,10 @@ public class GodOfTheRoom : MonoBehaviour {
                 thisPlugString += "0";
             }
         }
-        Debug.Log("Make Checkpoint Plug String: " + thisPlugString);
-        myCheckpoints[thisCheckpointNumber] .blind01height = myBlinds[0].transform.localPosition.y;
-        myCheckpoints[thisCheckpointNumber] .blind02height = myBlinds[1].transform.localPosition.y;
+        //Debug.Log("Make Checkpoint Plug String: " + thisPlugString);
+        myCheckpoints[thisCheckpointNumber].plugSwitchStatusString = thisPlugString;
+        myCheckpoints[thisCheckpointNumber].blind01height = myBlinds[0].transform.localPosition.y;
+        myCheckpoints[thisCheckpointNumber].blind02height = myBlinds[1].transform.localPosition.y;
 
         // Right View
 
@@ -575,32 +591,111 @@ public class GodOfTheRoom : MonoBehaviour {
 
         // Down View
 
-        for (int n=0; n<3; n++)
+        for (int n = 0; n < 3; n++)
         {
             if (myVHSPlayers[n].myTape)
             {
-                myCheckpoints[thisCheckpointNumber] .VHSTapeTitles[n] = myVHSPlayers[n].myTape.myTitle;
+                Debug.Log("GOD: Making Checkpoint - VHS Player " + (n + 1) + " has tape " + myVHSPlayers[n].myTape.myName);
+                myCheckpoints[thisCheckpointNumber].VHSTapeTitles[n] = myVHSPlayers[n].myTape.myName;
             }
             else
             {
-                myCheckpoints[thisCheckpointNumber] .VHSTapeTitles[n] = "EMPTY";
+                Debug.Log("GOD: Making Checkpoint - VHS Player " + (n + 1) + " is EMPTY.");
+
+                myCheckpoints[thisCheckpointNumber].VHSTapeTitles[n] = "EMPTY";
             }
         }
 
+        myCheckpoints[thisCheckpointNumber].currentVHSPlayerSelected = myVHSPlayerSelectionPanel.selectedPlayer;
+        myCheckpoints[thisCheckpointNumber].currentAdVideo = myBroadcastSystem.myAdvertScreen.clip;
+        myCheckpoints[thisCheckpointNumber].currentAdAudio = myBroadcastSystem.myAdvertAudiosource.clip;
+
         // Controllers
 
-        for (int n=0; n<=thisCheckpointNumber; n++)
+        for (int n = 0; n <= thisCheckpointNumber; n++)
         {
-            myCheckpoints[thisCheckpointNumber] .previousEDLs[n] = myMasterController.broadcastEDL[n];
+            myCheckpoints[thisCheckpointNumber].previousEDLs[n] = myMasterController.broadcastEDL[n];
         }
 
         // Front View
 
-        myCheckpoints[thisCheckpointNumber] .audienceNumbers = myScoringController.audiencePercentage;
-        myCheckpoints[thisCheckpointNumber] .masterVolume = controlRoomVolumeSlider.value;
-        myCheckpoints[thisCheckpointNumber] .broadcastVolume = broadcastVolumeSlider.value;
-        myCheckpoints[thisCheckpointNumber] .soundDeskSelectValue = channelSelectSlider.value;
-        myCheckpoints[thisCheckpointNumber] .linkSwitchStatus = myVisionMixer.myLinkSwitch.isOn;
+        myCheckpoints[thisCheckpointNumber].audienceNumbers = myScoringController.audiencePercentage;
+        myCheckpoints[thisCheckpointNumber].masterVolume = controlRoomVolumeSlider.value;
+        myCheckpoints[thisCheckpointNumber].broadcastVolume = broadcastVolumeSlider.value;
+        myCheckpoints[thisCheckpointNumber].soundDeskSelectValue = channelSelectSlider.value;
+        myCheckpoints[thisCheckpointNumber].linkSwitchStatus = myVisionMixer.myLinkSwitch.isOn;
+
+        Debug.Log("GOD: Checkpoint Created!! Number: " + thisCheckpointNumber);
+
+    }
+
+    void LoadCheckpoint(int thisCheckpointNumber)
+    {
+        // Level Data
+        CheckpointData thisCheckpoint = myCheckpoints[thisCheckpointNumber];
+
+        // Left View
+        SetFanSwitch(thisCheckpoint.fanIsLocked);
+        TripSwitchPower(thisCheckpoint.tripSwitchIsOn);
+        SetAllPlugs(thisCheckpoint.plugSwitchStatusString);
+        myBlinds[0].transform.localPosition = new Vector3(myBlinds[0].transform.localPosition.x, thisCheckpoint.blind01height, myBlinds[0].transform.localPosition.z);
+        myBlinds[1].transform.localPosition = new Vector3(myBlinds[1].transform.localPosition.x, thisCheckpoint.blind02height, myBlinds[1].transform.localPosition.z);
+
+        // Right View
+
+        // Add InTray Fax Data Storage Here when In-Tray is Implemented
+
+        // Down View
+        for (int n = 0; n < 3; n++)
+        {
+            Debug.Log("GOD: Checkpoint Loader Looking for VHS TAPE " + thisCheckpoint.VHSTapeTitles[n] + " for Player " + (n + 1));
+            if (thisCheckpoint.VHSTapeTitles[n]!="EMPTY")
+            {
+                Debug.Log("GOD is Searching...");
+                foreach(VHSTape thisTape in allTapes)
+                {
+                    Debug.Log("Comparing " + thisCheckpoint.VHSTapeTitles[n] + " with " + thisTape.myName);
+                    if (thisTape.myName == thisCheckpoint.VHSTapeTitles[n])
+                    {
+                        Debug.Log("Attempting to Load Tape " + thisTape.myTitle + " into VHS Player " + (n + 1));
+                        myVHSPlayers[n].InstantLoadTape(thisTape);
+                    }
+                }
+            }
+        }
+        if (thisCheckpoint.currentVHSPlayerSelected > 0)
+        {
+            Debug.Log("GOD (Checkpoint): Selecting Player " + thisCheckpoint.currentVHSPlayerSelected)
+;            myVHSPlayerSelectionPanel.selectionButtons[thisCheckpoint.currentVHSPlayerSelected].myButton.MoveDown();
+        }
+        advertAfterCheckpointVideo = thisCheckpoint.currentAdVideo;
+        advertAfterCheckpointAudio = thisCheckpoint.currentAdAudio;
+
+        // Controllers
+
+        for (int n = 0; n <= thisCheckpointNumber; n++)
+        {
+            myCheckpoints[thisCheckpointNumber].previousEDLs[n] = myMasterController.broadcastEDL[n];
+        }
+
+        // Front View
+
+        myScoringController.audiencePercentage = thisCheckpoint.audienceNumbers;
+        controlRoomVolumeSlider.value=thisCheckpoint.masterVolume;
+        broadcastVolumeSlider.value=thisCheckpoint.broadcastVolume;
+        channelSelectSlider.value=thisCheckpoint.soundDeskSelectValue;
+
+        if (thisCheckpoint.linkSwitchStatus)
+        {
+            SetVisionMixerLinkSwitch(true);
+        }
+        else
+        {
+            SetVisionMixerLinkSwitch(false);
+        }
+        
+
+        Debug.Log("GOD: Checkpoint is Loaded!");
 
     }
 
@@ -612,16 +707,34 @@ public class GodOfTheRoom : MonoBehaviour {
 
     }
 
-    public void RetryFromCheckpoint(int thisCheckpointNumber)
+    public void RetryFromCheckpoint()
     {
-        // Reset Room
+        Debug.Log("CURRENT SEGMENT WHEN RETRY CALLED: " + myMasterController.currentSequence);
+        advertAfterCheckpointAudio = null;
+        advertAfterCheckpointVideo = null;
+        Invoke("RetryFromCheckpointPart02", 3);
+        MuteRoom();
+        myGUIController.ReplaySegment();
 
+        // Reset Room
+        ResetRoom();
+        myVHSTapeRack.SetAllTapesFromString(myMasterController.myLevelData.advertList);
         // Do all Events up to Current Sequence - Alter behaviour of some (eg - SendFax should add Fax straight to InTray)
+        myEventController.DoAllEventsUpTo(myMasterController.currentSequence-1);
+        Debug.Log("GOD: Events Are all Caught Up!");
 
         // Load and Implement Checkpoint Data
+        LoadCheckpoint(myMasterController.currentSequence - 1);
 
-        // Tell Master Controller to RetryFromAd(int adNumber);
 
     }
 
+    public void RetryFromCheckpointPart02()
+    {
+        myGUIController.FadeSegment();
+        UnMuteRoom();
+        // Tell Master Controller to RetryFromAd(int adNumber);
+
+
+    }
 }

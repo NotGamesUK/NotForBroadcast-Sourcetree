@@ -65,6 +65,16 @@ public class VHSPlayer : MonoBehaviour {
         mySFX.Stop();
     }
 
+    public void InstantLoadTape(VHSTape thisTape)
+    {
+        myTape = thisTape;
+        myLoader.InstantLoadTape(thisTape);
+        isLoaded = true;
+        mySelectionButton.myButton.Unlock();
+        myButton.Unlock();
+        myButton.MoveDown();
+    }
+
     public void EjectTape()
     {
         Debug.Log("Machine " + myID + " EJECTING tape " + myTape.myTitle);
@@ -90,7 +100,7 @@ public class VHSPlayer : MonoBehaviour {
         {
             mySelectionButton.myButton.MoveUp();
             mySelectionButton.myBox.VHSPlayerSelected(0);
-
+            lastButtonCheck = false;
         }
         mySelectionButton.myButton.Lock();
         isAnimating = false;

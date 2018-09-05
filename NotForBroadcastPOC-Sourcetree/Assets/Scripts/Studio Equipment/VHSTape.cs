@@ -11,6 +11,7 @@ public class VHSTape : MonoBehaviour {
     public AudioClip myAudio;
     [HideInInspector]
     public VHSTapeBox myBox;
+    public string myName;
     private Vector3 startPosition;
     private TextMesh[] myLabels;
     private TextMesh myTopLabel;

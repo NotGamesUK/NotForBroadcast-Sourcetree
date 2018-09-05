@@ -118,7 +118,7 @@ public class VisionMixer : MonoBehaviour {
             myVisionMixerButtons[n].hasContent = true;
             myVisionMixerButtons[n].myButton.Unlock();
             myMixingDesk.myMutes[n].Unlock();
-            Debug.Log("Unlocking Mute " + (n));
+            //Debug.Log("Unlocking Mute " + (n));
 
 
         }
@@ -131,7 +131,7 @@ public class VisionMixer : MonoBehaviour {
         smallScreens[thisScreen - 1].PlayScreen();
         myVisionMixerButtons[thisScreen-1].hasContent = true;
         myVisionMixerButtons[thisScreen-1].myButton.Unlock();
-        Debug.Log("Unlocking Mute " + (thisScreen - 1));
+        //Debug.Log("Unlocking Mute " + (thisScreen - 1));
         myMixingDesk.myMutes[thisScreen].Unlock();
 
     }
@@ -148,7 +148,7 @@ public class VisionMixer : MonoBehaviour {
             jumpToTV = selectedScreen;
             if (currentScreen == 0)
             {
-                Debug.Log("Sending NO SIGNAL to Back on MASTER SCREEN.");
+                //Debug.Log("Sending NO SIGNAL to Back on MASTER SCREEN.");
                 masterNoSignal.JumpBack();
             }
             currentScreen = selectedScreen;
@@ -259,7 +259,7 @@ public class VisionMixer : MonoBehaviour {
 
     public void ResetSystem()
     {
-        Debug.Log("Vision Mixer Resetting.");
+        //Debug.Log("Vision Mixer Resetting.");
         // Set currentScreen to 0
         currentScreen = 0;
         // Move Up and Lock all buttons

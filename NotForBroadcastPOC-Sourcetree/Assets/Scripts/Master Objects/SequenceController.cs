@@ -5,7 +5,6 @@ using UnityEngine.Video;
 
 public class SequenceController : MonoBehaviour {
 
-    [Tooltip("Number of seconds delay between broadcast screen and master screen")]
     public string sequenceName;
     //[HideInInspector]
     public int preparedScreensCount, targetScreensCount;

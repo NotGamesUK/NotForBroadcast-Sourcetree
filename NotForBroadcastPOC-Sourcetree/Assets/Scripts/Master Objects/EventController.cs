@@ -10,8 +10,9 @@ public class EventController : MonoBehaviour {
     public RoomControllerState myState;
     private float myClock;
     private List<GameEvent> myEventList = new List<GameEvent>();
-    private int currentAdvert, currentSequence, currentListPosition, maxListPosition;
-
+    [HideInInspector]
+    public int currentAdvert, currentSequence, currentListPosition, maxListPosition;
+    private bool catchingUp;
 
 	// Use this for initialization
 	void Start () {
@@ -75,7 +76,7 @@ public class EventController : MonoBehaviour {
         for (int i = 0; i < thisList.Count; i++)
         {
             myEventList.Add(thisList[i]);
-            Debug.Log("Adding Event: " + thisList[i].eventType);
+            //Debug.Log("Adding Event: " + thisList[i].eventType);
         }
         myEventList.Sort();
         maxListPosition = myEventList.Count;
@@ -84,6 +85,7 @@ public class EventController : MonoBehaviour {
         currentSequence = 0;
         currentListPosition = 0;
         myState = RoomControllerState.PreRoll;
+        catchingUp = false;
     }
 
     public void SwitchToNextAdvert()
@@ -91,7 +93,7 @@ public class EventController : MonoBehaviour {
 
         myClock = 0;
         currentAdvert++;
-        Debug.Log("EVENT CONTROLLER: Switching to Advert " + currentAdvert);
+        //Debug.Log("EVENT CONTROLLER: Switching to Advert " + currentAdvert);
 
         currentListPosition = 0;
         if (currentAdvert >= 4)
@@ -112,14 +114,14 @@ public class EventController : MonoBehaviour {
         currentSequence++;
         currentListPosition = 0;
         myState = RoomControllerState.Sequence;
-        Debug.Log("EVENT CONTROLLER: Switching to Sequence " + currentSequence);
+        //Debug.Log("EVENT CONTROLLER: Switching to Sequence " + currentSequence);
         myRoomGod.FadeRoomLights(2f, false);
 
     }
 
-    void DoEvent (GameEvent thisEvent)
+    void DoEvent(GameEvent thisEvent)
     {
-        Debug.Log("Doing Event " + thisEvent.eventType + " in " + thisEvent.myTimeframe + " " + thisEvent.mySequenceOrAdNumber);
+        //Debug.Log("Doing Event " + thisEvent.eventType + " in " + thisEvent.myTimeframe + " " + thisEvent.mySequenceOrAdNumber);
         switch (thisEvent.eventType)
         {
             case GameEvent.EventType.SetPlugs:
@@ -146,7 +148,14 @@ public class EventController : MonoBehaviour {
 
 
             case GameEvent.EventType.SendFax:
-                myRoomGod.SendFax(thisEvent.stringData);
+                if (catchingUp)
+                {
+                    // Put Fax Straight on In-Tray
+                }
+                else
+                {
+                    myRoomGod.SendFax(thisEvent.stringData);
+                }
                 break;
 
             case GameEvent.EventType.RingPhone:
@@ -155,8 +164,10 @@ public class EventController : MonoBehaviour {
                 break;
 
             case GameEvent.EventType.PopFanSwitch:
-                myRoomGod.SetFanSwitch(thisEvent.boolData);
-
+                if (!catchingUp)
+                {
+                    myRoomGod.SetFanSwitch(thisEvent.boolData);
+                }
                 break;
 
             case GameEvent.EventType.SetBroadcastVolumeSlider:
@@ -188,7 +199,7 @@ public class EventController : MonoBehaviour {
             case GameEvent.EventType.RhythmCamScoringOn:
                 // For Full Version
                 myRoomGod.SwitchToRhythmCamMode();
-                
+
                 break;
 
             case GameEvent.EventType.SetTowerDropSpeed:
@@ -228,5 +239,44 @@ public class EventController : MonoBehaviour {
                 break;
 
         }
+    }
+
+    public void DoAllEventsUpTo(int thisSequence)
+    {
+        Debug.Log("EVENT CONTROLLER: Doing All Events up to end of Sequence " + thisSequence);
+        catchingUp = true;
+        myState = RoomControllerState.Advert;
+        myClock = 0;
+        currentSequence = 0;
+        currentAdvert = 0;
+        currentListPosition = 0;
+        DoAllEventsLabelled(GameEvent.TimeFrame.Preroll, 0);
+        while (currentSequence < thisSequence)
+        {
+            DoAllEventsLabelled(GameEvent.TimeFrame.Advert, currentSequence);
+            currentSequence++;
+            DoAllEventsLabelled(GameEvent.TimeFrame.Sequence, currentSequence);
+        }
+
+
+
+        catchingUp = false;
+    }
+
+    void DoAllEventsLabelled(GameEvent.TimeFrame thisTimeFrame, float thisSequenceOrAdNumber)
+    {
+        Debug.Log("EVENT CONTROLLER: Doing All Events Labelled " + thisTimeFrame + ":" + thisSequenceOrAdNumber);
+        for (int n = 0; n < myEventList.Count; n++)
+        {
+            if (myEventList[n].myTimeframe == thisTimeFrame)
+            {
+                if (myEventList[n].mySequenceOrAdNumber == thisSequenceOrAdNumber)
+                {
+                    DoEvent(myEventList[n]);
+                }
+            }
+        }
+
+
     }
 }

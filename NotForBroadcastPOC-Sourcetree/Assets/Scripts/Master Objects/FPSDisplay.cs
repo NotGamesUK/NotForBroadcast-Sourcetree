@@ -6,11 +6,20 @@ public class FPSDisplay : MonoBehaviour {
 
     float deltaTime = 0.0f;
     private ScoringController myScoringController;
+    private MasterController myMasterController;
+    private SequenceController mySequenceController;
+    private EDLController myEDLController;
+    private EventController myEventController;
 
+    
 
     private void Start()
     {
         myScoringController = FindObjectOfType<ScoringController>();
+        myMasterController = FindObjectOfType<MasterController>();
+        mySequenceController = FindObjectOfType<SequenceController>();
+        myEDLController = FindObjectOfType<EDLController>();
+        myEventController = FindObjectOfType<EventController>();
     }
 
     void Update()
@@ -41,5 +50,23 @@ public class FPSDisplay : MonoBehaviour {
         text += "\nAudience Adjustment: " + myScoringController.thisAudienceChange;
 
         GUI.Label(rect, text, style);
+
+        GUIStyle style02 = new GUIStyle();
+
+        Rect rect02 = new Rect(0, 0, w, h * 2 / 100);
+        style02.alignment = TextAnchor.UpperRight;
+        style02.fontSize = h * 2 / 100;
+        style02.normal.textColor = Color.white;//new Color(0.0f, 0.0f, 0.5f, 1.0f);
+        string text02 = "";
+        text02 += "MASTER CONTROLLER Current Level: " + myMasterController.currentLevel;
+        text02 += "\nMASTER CONTROLLER Current Sequence: " + myMasterController.currentSequence;
+        text02 += "\nSEQUENCE CONTROLLER Current Sequence: " + mySequenceController.sequenceName;
+        text02 += "\nSCORING CONTROLLER Current Sequence: " + myScoringController.currentSequenceNumber;
+        text02 += "\nEVENT CONTROLLER Phase: " + myEventController.myState;
+        text02 += "\nEVENT CONTROLLER Advert Number: " + myEventController.currentAdvert;
+        text02 += "\nEVENT CONTROLLER Sequence Number: " + myEventController.currentSequence;
+
+        GUI.Label(rect02, text02, style02);
+
     }
 }

@@ -110,7 +110,7 @@ public class ScoringController : MonoBehaviour {
                             {
                                 // Set new color
                                 screenAudioColour[n] = thisData.scoreColour;
-                                Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " AUDIO Score to " + screenAudioColour[n] + " at frame " + thisFrame);
+                                //Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " AUDIO Score to " + screenAudioColour[n] + " at frame " + thisFrame);
                             }
                         }
                         else // It's a video colour change
@@ -193,7 +193,7 @@ public class ScoringController : MonoBehaviour {
 
             broadcastScreenColour = thisColour;
 
-            Debug.Log("New Scoring System - Broadcast Screen Colour changed to " + broadcastScreenColour);
+            //Debug.Log("New Scoring System - Broadcast Screen Colour changed to " + broadcastScreenColour);
 
             // Call Footage Colour Change Here!!
             FootageColourChange(broadcastScreenColour);
@@ -203,7 +203,7 @@ public class ScoringController : MonoBehaviour {
         else if (screenChanged)
         {
             // Screen Changed but Colour Remained the same
-            Debug.Log("New Scoring System - Broadcast Screen Changed but COLOUR is the SAME: " + broadcastScreenColour);
+            //Debug.Log("New Scoring System - Broadcast Screen Changed but COLOUR is the SAME: " + broadcastScreenColour);
 
             // Call Footage Counter Reset Here!!
             FootageCounterReset(broadcastScreenColour);
@@ -235,7 +235,7 @@ public class ScoringController : MonoBehaviour {
                 if (bleepOn)
                 {
                     incorrectlyBleepedCount++;
-                    Debug.Log("Scoring Controller GREEN BLEEPED - Incrementing Incorrect Bleep Count to " + incorrectlyBleepedCount);
+                    //Debug.Log("Scoring Controller GREEN BLEEPED - Incrementing Incorrect Bleep Count to " + incorrectlyBleepedCount);
                 }
 
             }
@@ -251,7 +251,7 @@ public class ScoringController : MonoBehaviour {
                 if (bleepOn)
                 {
                     incorrectlyBleepedCount++;
-                    Debug.Log("Scoring Controller ORANGE BLEEPED - Incrementing Incorrect Bleep Count to " + incorrectlyBleepedCount);
+                    //Debug.Log("Scoring Controller ORANGE BLEEPED - Incrementing Incorrect Bleep Count to " + incorrectlyBleepedCount);
 
                 }
 
@@ -260,7 +260,7 @@ public class ScoringController : MonoBehaviour {
             {
                 if (!bleepOn && !alreadyDoneIt)
                 {
-                    Debug.Log("Scoring Controller RED NOT BLEEPED - Heavy Audio Weighting");
+                    //Debug.Log("Scoring Controller RED NOT BLEEPED - Heavy Audio Weighting");
                     bleepWeighting -=UpDownAdjust (2f)*Time.deltaTime;
                     alreadyDoneIt = true;
                 }
@@ -273,12 +273,12 @@ public class ScoringController : MonoBehaviour {
             }
             if (muteCount==maxAudioChannel)
             {
-                Debug.Log("All Viable Channels Muted - Weighting Audio Score.");
+                //Debug.Log("All Viable Channels Muted - Weighting Audio Score.");
                 audioWeighting = -1;
             }
             else if (incorrectlyBleepedCount == maxAudioChannel-muteCount && !alreadyDoneIt)
             {
-                Debug.Log("Incorrectly Bleeped!  Weighting Audio Score.");
+                //Debug.Log("Incorrectly Bleeped!  Weighting Audio Score.");
                 bleepWeighting -= UpDownAdjust( 0.5f)*Time.deltaTime;
                 alreadyDoneIt = true;
             }
@@ -504,8 +504,63 @@ public class ScoringController : MonoBehaviour {
     {
         currentSequenceNumber++;
         ResetScoreTracking();
-        Debug.Log("Scoring Controller Moving to Next Sequence");
+        //Debug.Log("Scoring Controller Moving to Next Sequence");
     }
+
+    public string GetCurrentGrade()
+    {
+        string thisGrade = "E";
+        if (audiencePercentage > 15)
+        {
+            thisGrade = "D-";
+        }
+        if (audiencePercentage > 25)
+        {
+            thisGrade = "D";
+        }
+        if (audiencePercentage > 35)
+        {
+            thisGrade = "D+";
+        }
+        if (audiencePercentage > 45)
+        {
+            thisGrade = "C-";
+        }
+        if (audiencePercentage > 55)
+        {
+            thisGrade = "C";
+        }
+        if (audiencePercentage > 65)
+        {
+            thisGrade = "C+";
+        }
+        if (audiencePercentage > 75)
+        {
+            thisGrade = "B-";
+        }
+        if (audiencePercentage > 80)
+        {
+            thisGrade = "B";
+        }
+        if (audiencePercentage > 85)
+        {
+            thisGrade = "B+";
+        }
+        if (audiencePercentage > 90)
+        {
+            thisGrade = "A-";
+        }
+        if (audiencePercentage > 95)
+        {
+            thisGrade = "A";
+        }
+        if (audiencePercentage >= 99)
+        {
+            thisGrade = "A+";
+        }
+        return thisGrade;
+    }
+
 
     public void ResetMe()
     {
@@ -610,4 +665,5 @@ public class ScoringController : MonoBehaviour {
         int thisListLength = currentSequence.Count;
         Debug.Log("Sequence " + currentSequenceNumber + " - List Length: " + thisListLength);
     }
+
 }
