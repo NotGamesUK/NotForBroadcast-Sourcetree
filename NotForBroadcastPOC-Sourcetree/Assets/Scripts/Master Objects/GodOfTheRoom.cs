@@ -23,6 +23,7 @@ public class GodOfTheRoom : MonoBehaviour
 
     [Space(5)]
     [Header("Objects that get Activated/Deactivated:")]
+    [Space(2)]
     public GameObject myLensFlareLight;
     public GameObject myVisionMixerLinkSwitch;
     public GameObject myVisionMixerUpgradePanel;
@@ -33,6 +34,12 @@ public class GodOfTheRoom : MonoBehaviour
     public GameObject myMuteCover;
     public GroovedSlider myFrequencyControlSlider;
 
+    [Space(5)]
+    [Header("Materials that get Swapped (with their respective MeshRenderers)")]
+    [Space(2)]
+    public Material noTapeMixingDesk;
+    public Material tapedMixingDesk;
+    public MeshRenderer mixingDeskFacePlateMesh;
 
     public float previousRoomVolume;
     private ScoringController myScoringController;
@@ -366,6 +373,17 @@ public class GodOfTheRoom : MonoBehaviour
         }
     }
 
+    public void ShowTapeOnMixingDesk(bool showMe)
+    {
+        if (showMe)
+        {
+            mixingDeskFacePlateMesh.material = tapedMixingDesk;
+        } else
+        {
+            mixingDeskFacePlateMesh.material = noTapeMixingDesk;
+        }
+    }
+
 
     // Down View
 
@@ -501,6 +519,7 @@ public class GodOfTheRoom : MonoBehaviour
 
         // Mixing Desk
         myMuteCover.SetActive(false);
+        mixingDeskFacePlateMesh.material = tapedMixingDesk;
         //SetMixingDeskChannelSelect(1);
         //SetControlRoomVolumeSlider(1);
         //SetBroadcastVolumeSlider(1);

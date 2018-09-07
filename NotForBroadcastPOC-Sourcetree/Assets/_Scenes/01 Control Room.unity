@@ -12952,7 +12952,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 628014816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -17641,6 +17641,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.size
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 4156777894312240, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -17880,6 +17885,116 @@ Prefab:
       propertyPath: levelDataArray.Array.data[0].preRollAudio
       value: 
       objectReference: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].myName
+      value: Hide Mixing Desk Tape
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].myTimeframe
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].mySequenceOrAdNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].eventTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].eventType
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].boolData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].objectData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].myName
+      value: Seq 02 Switch to Multi Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].eventTime
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].eventType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].myName
+      value: Seq 02 Switch Back to Single Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].mySequenceOrAdNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].eventTime
+      value: 181
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].eventType
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].myName
+      value: Seq 03 Switch to Multi Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].mySequenceOrAdNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].eventTime
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].eventType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].myName
+      value: Seq 03 Switch Back to Single Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].mySequenceOrAdNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].eventTime
+      value: 262
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].eventType
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
   m_IsPrefabParent: 0
@@ -23588,6 +23703,11 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 142e87e4014a0d74080553b1e53f5466, type: 3}
   m_PrefabInternal: {fileID: 525243150}
+--- !u!23 &1096604629 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300042, guid: c642eb3566bb7e3428daae4ee065aaeb,
+    type: 3}
+  m_PrefabInternal: {fileID: 994427479}
 --- !u!1001 &1096884713
 Prefab:
   m_ObjectHideFlags: 0
@@ -29464,6 +29584,21 @@ Prefab:
       propertyPath: myMuteCover
       value: 
       objectReference: {fileID: 1215248222}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: noTapeMixingDesk
+      value: 
+      objectReference: {fileID: 2100000, guid: 794537c04b21fc34ab5d90166be01520, type: 2}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: tapedMixingDesk
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e48ca7ab601d094782b3a2ce0eab085, type: 2}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: mixingDeskFacePlateMesh
+      value: 
+      objectReference: {fileID: 1096604629}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa01610e6703a1f47a4cddf12ec6bb58, type: 2}
   m_IsPrefabParent: 0

@@ -240,6 +240,10 @@ public class EventController : MonoBehaviour {
 
             case GameEvent.EventType.SetVisionMixerLinkSwitch:
                 myRoomGod.SetVisionMixerLinkSwitch(thisEvent.boolData);
+                break;
+
+            case GameEvent.EventType.ShowTapeOnMixingDesk:
+                myRoomGod.ShowTapeOnMixingDesk(thisEvent.boolData);
 
                 break;
 
