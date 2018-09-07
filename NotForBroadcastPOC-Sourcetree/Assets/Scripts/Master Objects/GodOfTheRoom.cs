@@ -30,6 +30,7 @@ public class GodOfTheRoom : MonoBehaviour
     public GameObject myFaxMachineGameObject;
     public GameObject myTowerControlPlug;
     public GameObject myTowerControlLever;
+    public GameObject myMuteCover;
     public GroovedSlider myFrequencyControlSlider;
 
 
@@ -499,6 +500,7 @@ public class GodOfTheRoom : MonoBehaviour
         myGauges.ResetMe();
 
         // Mixing Desk
+        myMuteCover.SetActive(false);
         //SetMixingDeskChannelSelect(1);
         //SetControlRoomVolumeSlider(1);
         //SetBroadcastVolumeSlider(1);
@@ -553,7 +555,6 @@ public class GodOfTheRoom : MonoBehaviour
         // Input Controller?
         // 
 
-        UnMuteRoom();
         Debug.Log("GOD: Room is reset!");
 
     }
@@ -563,7 +564,7 @@ public class GodOfTheRoom : MonoBehaviour
         // Level Data
         myCheckpoints[thisCheckpointNumber] = new CheckpointData();
         myCheckpoints[thisCheckpointNumber].currentLevel = myMasterController.currentLevel;
-        myCheckpoints[thisCheckpointNumber].nextSequence = myMasterController.currentSequence + 1;
+        myCheckpoints[thisCheckpointNumber].nextSequence = myMasterController.currentSequence;
 
         // Left View
         myCheckpoints[thisCheckpointNumber].fanIsLocked = myFan.myButton.isDepressed;
@@ -612,10 +613,10 @@ public class GodOfTheRoom : MonoBehaviour
 
         // Controllers
 
-        for (int n = 0; n <= thisCheckpointNumber; n++)
-        {
-            myCheckpoints[thisCheckpointNumber].previousEDLs[n] = myMasterController.broadcastEDL[n];
-        }
+        //for (int n = 0; n <= thisCheckpointNumber; n++)
+        //{
+        //    myCheckpoints[thisCheckpointNumber].previousEDLs[n] = myMasterController.broadcastEDL[n];
+        //}
 
         // Front View
 
@@ -671,12 +672,6 @@ public class GodOfTheRoom : MonoBehaviour
         advertAfterCheckpointVideo = thisCheckpoint.currentAdVideo;
         advertAfterCheckpointAudio = thisCheckpoint.currentAdAudio;
 
-        // Controllers
-
-        for (int n = 0; n <= thisCheckpointNumber; n++)
-        {
-            myCheckpoints[thisCheckpointNumber].previousEDLs[n] = myMasterController.broadcastEDL[n];
-        }
 
         // Front View
 
@@ -693,7 +688,15 @@ public class GodOfTheRoom : MonoBehaviour
         {
             SetVisionMixerLinkSwitch(false);
         }
-        
+
+        // Controllers
+
+        myMasterController.currentSequence = thisCheckpoint.nextSequence;
+        myEventController.currentAdvert = thisCheckpoint.nextSequence;
+        //for (int n = 0; n <= thisCheckpointNumber; n++)
+        //{
+        //    myCheckpoints[thisCheckpointNumber].previousEDLs[n] = myMasterController.broadcastEDL[n];
+        //}
 
         Debug.Log("GOD: Checkpoint is Loaded!");
 
@@ -707,13 +710,12 @@ public class GodOfTheRoom : MonoBehaviour
 
     }
 
+
     public void RetryFromCheckpoint()
     {
         Debug.Log("CURRENT SEGMENT WHEN RETRY CALLED: " + myMasterController.currentSequence);
         advertAfterCheckpointAudio = null;
         advertAfterCheckpointVideo = null;
-        Invoke("RetryFromCheckpointPart02", 3);
-        MuteRoom();
         myGUIController.ReplaySegment();
 
         // Reset Room
@@ -726,6 +728,11 @@ public class GodOfTheRoom : MonoBehaviour
         // Load and Implement Checkpoint Data
         LoadCheckpoint(myMasterController.currentSequence - 1);
 
+        // Setup Master Controller to continue from relevant sequence
+        myVisionMixer.inPostRoll = false;
+        myMasterController.ClearEDL(myMasterController.currentSequence);
+        myMasterController.PrepareAdvert(advertAfterCheckpointVideo, advertAfterCheckpointAudio);
+        Invoke("RetryFromCheckpointPart02", 3);
 
     }
 

@@ -399,7 +399,7 @@ public class MasterController : MonoBehaviour {
 
     }
 
-    void PrepareAdvert(VideoClip thisAdvert, AudioClip thisAdvertAudio)
+    public void PrepareAdvert(VideoClip thisAdvert, AudioClip thisAdvertAudio)
     {
         Debug.Log("MASTER CONT: PREPARING ADVERT - " + thisAdvert);
         // Set clock to Ad-Length second countdown minus broadcast delay - First Ad is always "Later tonight...."?
@@ -497,6 +497,11 @@ public class MasterController : MonoBehaviour {
 
         }
 
+    }
+
+    public void ClearEDL(int thisEDL)
+    {
+        broadcastEDL[thisEDL].Clear();
     }
 
     void LevelComplete()

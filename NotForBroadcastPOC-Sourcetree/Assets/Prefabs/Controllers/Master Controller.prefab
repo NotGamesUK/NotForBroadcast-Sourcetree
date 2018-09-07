@@ -124,9 +124,9 @@ MonoBehaviour:
     loopRoll: {fileID: 32900000, guid: a7e47b2f98a2cc7459e1b343a11abc23, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 3fef20388c0b7a14b8d6146623c74160, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 95304d84dfc4abd48bf19f70410bcb40, type: 3}
-    preRoll: {fileID: 32900000, guid: 0a66f6a062289404e914ba76522417a2, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: e2ffa4577947a5842964229858752c5d, type: 3}
-    preRollAudio: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
+    preRoll: {fileID: 32900000, guid: 50005953ff3abd94aa2b1d0fd089d9a6, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: 01e6d1021e5704e46ba10c16770f7824, type: 3}
+    preRollAudio: {fileID: 8300000, guid: 6db78d83a6ef07c4c8b6b7d3b997b7b3, type: 3}
     sequenceNames:
     - 01-01 Headlines
     - 01-02 Wildish
@@ -183,6 +183,16 @@ MonoBehaviour:
       integerData: 0
       boolData: 0
       objectData: {fileID: 0}
+    - myName: Set Link Switch To On
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 21
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
     - myName: Hide Link Switch
       myTimeframe: 2
       mySequenceOrAdNumber: 0
@@ -192,6 +202,16 @@ MonoBehaviour:
       stringData: 
       integerData: 0
       boolData: 0
+      objectData: {fileID: 0}
+    - myName: Show Mute Cover
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 1
       objectData: {fileID: 0}
     - myName: Seq 02 Switch to Multi Mode
       myTimeframe: 0
@@ -383,16 +403,6 @@ MonoBehaviour:
     - myName: Ping Fan Button
       myTimeframe: 0
       mySequenceOrAdNumber: 1
-      eventTime: 265
-      eventType: 2
-      floatData: 0
-      stringData: 
-      integerData: 0
-      boolData: 0
-      objectData: {fileID: 0}
-    - myName: Ping Fan Button
-      myTimeframe: 0
-      mySequenceOrAdNumber: 1
       eventTime: 310
       eventType: 2
       floatData: 0
@@ -404,6 +414,16 @@ MonoBehaviour:
       myTimeframe: 0
       mySequenceOrAdNumber: 1
       eventTime: 335
+      eventType: 2
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Ping Fan Button
+      myTimeframe: 0
+      mySequenceOrAdNumber: 1
+      eventTime: 375
       eventType: 2
       floatData: 0
       stringData: 
@@ -458,6 +478,22 @@ MonoBehaviour:
   masterLevelClock: 0
   currentLevel: 0
   currentSequence: 0
+  myLevelData:
+    levelName: 
+    levelNumber: 0
+    dayNumber: 0
+    loopRoll: {fileID: 0}
+    loopRollSmaller: {fileID: 0}
+    loopRollAudio: {fileID: 0}
+    preRoll: {fileID: 0}
+    preRollSmaller: {fileID: 0}
+    preRollAudio: {fileID: 0}
+    sequenceNames:
+    - 
+    - 
+    - 
+    advertList: 
+    gameEvents: []
   myState: 0
   preparingAd: 0
   overRunning: 0

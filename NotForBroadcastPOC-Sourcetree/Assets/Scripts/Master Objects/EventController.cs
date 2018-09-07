@@ -238,6 +238,12 @@ public class EventController : MonoBehaviour {
                 myRoomGod.SetGodWeight(thisEvent.floatData);
                 break;
 
+            case GameEvent.EventType.SetVisionMixerLinkSwitch:
+                myRoomGod.SetVisionMixerLinkSwitch(thisEvent.boolData);
+
+                break;
+
+
         }
     }
 

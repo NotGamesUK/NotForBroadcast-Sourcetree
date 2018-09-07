@@ -148,6 +148,10 @@ public class GUIController : MonoBehaviour
 
     public void ReplaySegment()
     {
+        if (showingRetry)
+        {
+            myRetryCountdown = 0;
+        }
         myBlackout.enabled = true;
         BlackoutFader(0.01f, true);
         PlayStartSFX();
@@ -302,6 +306,7 @@ public class GUIController : MonoBehaviour
         ChangeCameraTo(gameCamera);
         ChangeMenuTo(null);
         ChangeMusicTo(null);
+        myRoomGod.ResetRoom();
         myMasterController.StartBroadcast(myMasterController.currentLevel);
 
     }

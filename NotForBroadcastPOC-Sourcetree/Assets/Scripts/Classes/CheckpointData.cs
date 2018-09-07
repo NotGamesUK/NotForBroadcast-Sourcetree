@@ -25,7 +25,7 @@ public class CheckpointData : IComparable<CheckpointData>
     public AudioClip currentAdAudio;
 
     // Controllers
-    public List<EditDecision>[] previousEDLs = new List<EditDecision>[2];
+    public List<EditDecision>[] previousEDLs = new List<EditDecision>[3];
 
     // Front View
     public float audienceNumbers, masterVolume, broadcastVolume, soundDeskSelectValue;

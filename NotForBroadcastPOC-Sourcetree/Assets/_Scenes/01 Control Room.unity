@@ -2839,8 +2839,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21.59, y: 15.57}
-  m_SizeDelta: {x: 75.26, y: 31.14}
+  m_AnchoredPosition: {x: -23.1, y: 15.57}
+  m_SizeDelta: {x: 72.24, y: 31.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &199489928
 MonoBehaviour:
@@ -17481,11 +17481,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.size
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 4156777894312240, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -17518,71 +17513,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myVisionMixerButtons.Array.data[0]
-      value: 
-      objectReference: {fileID: 611720547}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myVisionMixerButtons.Array.data[1]
-      value: 
-      objectReference: {fileID: 1381274022}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myVisionMixerButtons.Array.data[2]
-      value: 
-      objectReference: {fileID: 2052346132}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myVisionMixerButtons.Array.data[3]
-      value: 
-      objectReference: {fileID: 747111364}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myMuteButtons.Array.data[0]
-      value: 
-      objectReference: {fileID: 994427502}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myMuteButtons.Array.data[1]
-      value: 
-      objectReference: {fileID: 994427498}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myMuteButtons.Array.data[2]
-      value: 
-      objectReference: {fileID: 994427494}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myMuteButtons.Array.data[3]
-      value: 
-      objectReference: {fileID: 994427490}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myBleepButton
-      value: 
-      objectReference: {fileID: 994427516}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myPlayAdButton
-      value: 
-      objectReference: {fileID: 766830506}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myFrequencyControlSlider
-      value: 
-      objectReference: {fileID: 1288185912}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: mySourceSelectSlider
-      value: 
-      objectReference: {fileID: 512674455}
-    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: myVisonMixerLinkSwitch
-      value: 
-      objectReference: {fileID: 1652722400}
     - target: {fileID: 114154697584577844, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: myUpArrow
@@ -17658,6 +17588,71 @@ Prefab:
       propertyPath: myBleepLight
       value: 
       objectReference: {fileID: 1662182183}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myVisionMixerButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 611720547}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myVisionMixerButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1381274022}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myVisionMixerButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 2052346132}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myVisionMixerButtons.Array.data[3]
+      value: 
+      objectReference: {fileID: 747111364}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myMuteButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 994427502}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myMuteButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 994427498}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myMuteButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 994427494}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myMuteButtons.Array.data[3]
+      value: 
+      objectReference: {fileID: 994427490}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myBleepButton
+      value: 
+      objectReference: {fileID: 994427516}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myPlayAdButton
+      value: 
+      objectReference: {fileID: 766830506}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myFrequencyControlSlider
+      value: 
+      objectReference: {fileID: 1288185912}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: mySourceSelectSlider
+      value: 
+      objectReference: {fileID: 512674455}
+    - target: {fileID: 114523897991296926, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: myVisonMixerLinkSwitch
+      value: 
+      objectReference: {fileID: 1652722400}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[3].objectData
@@ -17670,9 +17665,14 @@ Prefab:
       objectReference: {fileID: 253953930}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[5].objectData
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].objectData
       value: 
       objectReference: {fileID: 1652722395}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[7].objectData
+      value: 
+      objectReference: {fileID: 1215248222}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[0].objectData
@@ -17705,144 +17705,21 @@ Prefab:
       objectReference: {fileID: 1322203590}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[13].eventTime
-      value: 310
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].eventTime
-      value: 335
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[15].eventTime
-      value: 375
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].myName
-      value: Hide Link Switch
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].myTimeframe
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].mySequenceOrAdNumber
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].eventTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].eventType
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].objectData
+      propertyPath: levelDataArray.Array.data[0].preRoll
       value: 
-      objectReference: {fileID: 1652722395}
+      objectReference: {fileID: 32900000, guid: 0a66f6a062289404e914ba76522417a2,
+        type: 3}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[7].myName
-      value: Seq 02 Switch to Multi Mode
-      objectReference: {fileID: 0}
+      propertyPath: levelDataArray.Array.data[0].preRollSmaller
+      value: 
+      objectReference: {fileID: 32900000, guid: e2ffa4577947a5842964229858752c5d,
+        type: 3}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[7].eventTime
-      value: 38
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[7].eventType
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].myName
-      value: Seq 02 Switch Back to Single Mode
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].mySequenceOrAdNumber
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].eventTime
-      value: 181
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].eventType
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].myName
-      value: Seq 03 Switch to Multi Mode
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].mySequenceOrAdNumber
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].eventTime
-      value: 63
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].eventType
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].myName
-      value: Seq 03 Switch Back to Single Mode
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].mySequenceOrAdNumber
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].eventTime
-      value: 262
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].eventType
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].myName
-      value: Seq 03 Switch Back to Single Mode
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].mySequenceOrAdNumber
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].eventTime
-      value: 262
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].eventType
-      value: 11
-      objectReference: {fileID: 0}
+      propertyPath: levelDataArray.Array.data[0].preRollAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
   m_IsPrefabParent: 0
@@ -19677,6 +19554,10 @@ Prefab:
     - target: {fileID: 400058, guid: c642eb3566bb7e3428daae4ee065aaeb, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100066, guid: c642eb3566bb7e3428daae4ee065aaeb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c642eb3566bb7e3428daae4ee065aaeb, type: 3}
@@ -25766,6 +25647,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64bbf86b43b178d40b3a8e401b524ba2, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1215248222 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100066, guid: c642eb3566bb7e3428daae4ee065aaeb, type: 3}
+  m_PrefabInternal: {fileID: 994427479}
 --- !u!1001 &1219197713
 Prefab:
   m_ObjectHideFlags: 0
@@ -27751,8 +27636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.980034, y: 15.97}
-  m_SizeDelta: {x: 37.81, y: 33.1}
+  m_AnchoredPosition: {x: 43.44, y: 14.590009}
+  m_SizeDelta: {x: 45.59, y: 33.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334886558
 MonoBehaviour:
@@ -27786,7 +27671,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B
+  m_Text: B+
 --- !u!222 &1334886559
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29397,6 +29282,11 @@ Prefab:
       propertyPath: myVHSPlayers.Array.data[2]
       value: 
       objectReference: {fileID: 1294497431}
+    - target: {fileID: 114067201243774936, guid: fa01610e6703a1f47a4cddf12ec6bb58,
+        type: 2}
+      propertyPath: myMuteCover
+      value: 
+      objectReference: {fileID: 1215248222}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa01610e6703a1f47a4cddf12ec6bb58, type: 2}
   m_IsPrefabParent: 0
@@ -30428,7 +30318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -33.999985}
+  m_AnchoredPosition: {x: 0, y: -34}
   m_SizeDelta: {x: -129.32, y: -370.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443451192

@@ -14,7 +14,7 @@ public class GameEvent : IComparable<GameEvent>
 
     public enum EventType { SetPlugs, TripPower, PopFanSwitch, RingPhone, SendFax, CorridorEvent, WindowEvent, SetMasterVolumeSlider, SetBroadcastVolumeSlider,
         EnableObject, MultiCamScoringOn, SingleCamScoringOn, RhythmCamScoringOn, SetTowerDropSpeed, SetTowerTurnSpeed, SetMaximumPower, SetRoomTemperature, DropSatelliteDish,
-        ChangeScoringDownWeight, ChangeScoringUpWeight, SetScoringGodWeight }
+        ChangeScoringDownWeight, ChangeScoringUpWeight, SetScoringGodWeight, SetVisionMixerLinkSwitch }
     public EventType eventType;
 
     public float floatData;
