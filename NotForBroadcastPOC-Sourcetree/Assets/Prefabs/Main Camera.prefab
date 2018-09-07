@@ -137,7 +137,7 @@ MonoBehaviour:
   frontViewFocusLength: 2
   frontViewAperture: 32
   leftViewFocusLength: 1.21
-  leftViewAperture: 8
+  leftViewAperture: 9
   rightViewFocusLength: 1.5
   rightViewAperture: 32
   downViewFocusLength: 0.85
