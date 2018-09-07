@@ -25,6 +25,7 @@ ModelImporter:
     4300002: Corridor_Wall
     4300004: Notice_Board
     4300006: Window_Corridor
+    4300008: Corridor_wall
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
