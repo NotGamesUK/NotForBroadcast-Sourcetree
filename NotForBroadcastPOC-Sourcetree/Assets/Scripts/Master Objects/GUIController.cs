@@ -303,11 +303,12 @@ public class GUIController : MonoBehaviour
 
     public void ReplayLevel()
     {
-        ChangeCameraTo(gameCamera);
-        ChangeMenuTo(null);
-        ChangeMusicTo(null);
+        //ChangeCameraTo(gameCamera);
+        //ChangeMenuTo(null);
+        //ChangeMusicTo(null);
         myRoomGod.ResetRoom();
-        myMasterController.StartBroadcast(myMasterController.currentLevel);
+        Debug.Log("RESTART TESTING: Calling Broadcast " + myMasterController.levelCalledFromGUI);
+        StartBroadcast(myMasterController.levelCalledFromGUI);
 
     }
 

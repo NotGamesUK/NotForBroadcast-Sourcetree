@@ -65,7 +65,7 @@ public class GodOfTheRoom : MonoBehaviour
     private VideoClip advertAfterCheckpointVideo;
     private AudioClip advertAfterCheckpointAudio;
 
-    private bool fadingSound, fadingLights;
+    private bool fadingSound, fadingLights, roomMuted;
     private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
 
     // Use this for initialization
@@ -94,6 +94,7 @@ public class GodOfTheRoom : MonoBehaviour
 
         defaultRoomLightIntensity = roomLight.intensity;
         fadingSound = false;
+        roomMuted = false;
     }
 
     // Update is called once per frame
@@ -202,14 +203,29 @@ public class GodOfTheRoom : MonoBehaviour
 
     public void MuteRoom()
     {
-        unityMixingDesk.GetFloat("GUIRoom", out previousRoomVolume);
-        //Debug.Log("Previous Room Volume: " + previousRoomVolume);
-        unityMixingDesk.SetFloat("GUIRoom", -80f);
+        Debug.Log("MUTE ROOM CALLED! -----------------------------------------------------");
+        if (!roomMuted)
+        {
+            Debug.Log("MUTING ROOM! ----------------------------------------------------------------");
+
+            unityMixingDesk.GetFloat("GUIRoom", out previousRoomVolume);
+            //Debug.Log("Previous Room Volume: " + previousRoomVolume);
+            unityMixingDesk.SetFloat("GUIRoom", -80f);
+            roomMuted = true;
+        }
     }
 
     public void UnMuteRoom()
     {
-        unityMixingDesk.SetFloat("GUIRoom", previousRoomVolume);
+        Debug.Log("UNMUTE ROOM CALLED! -----------------------------------------------------");
+
+        if (roomMuted)
+        {
+            Debug.Log("UNMUTING ROOM! ----------------------------------------------------------------");
+
+            unityMixingDesk.SetFloat("GUIRoom", previousRoomVolume);
+            roomMuted = false;
+        }
     }
 
     public void MuteAll3DSound()

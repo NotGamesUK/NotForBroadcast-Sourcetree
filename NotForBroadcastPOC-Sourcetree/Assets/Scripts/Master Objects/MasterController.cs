@@ -64,7 +64,7 @@ public class MasterController : MonoBehaviour {
     private EventController myEventController;
 
     [HideInInspector]
-    public int currentLevel;
+    public int currentLevel, levelCalledFromGUI;
     public int currentSequence;
     [HideInInspector]
     public LevelData myLevelData;
@@ -117,6 +117,7 @@ public class MasterController : MonoBehaviour {
 
     public void StartBroadcast(int thisLevel)
     {
+        levelCalledFromGUI = thisLevel;
         PrepareLevel(thisLevel);
         myRoomGod.SwitchScreensTo3DSound();
         // Tell Scoring System to Initialise
