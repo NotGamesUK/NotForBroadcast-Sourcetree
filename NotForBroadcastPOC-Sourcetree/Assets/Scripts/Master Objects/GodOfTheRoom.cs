@@ -469,6 +469,7 @@ public class GodOfTheRoom : MonoBehaviour
     public void ResetRoom()
     {
         // Returns Room to Default State
+        MuteAll3DSound();
         MuteRoom();
         SetRoomTemperature(20);
         FadeRoomLights(0.01f, true);
@@ -576,15 +577,18 @@ public class GodOfTheRoom : MonoBehaviour
 
         // Tape Rack
         myVHSTapeRack.SetAllTapesFromString("XXX#XXX#XXX#XXX#XXX#XXX#XXX#XXX");
-
+        myVHSPlayerSelectionPanel.ResetMe();
         // VHS Machines and Panel
         foreach (VHSPlayer thisPlayer in allVHSPlayers)
         {
             thisPlayer.ResetMe();
         }
 
+        
+
         //// Controllers
         myScoringController.ResetMe();
+        
         // EDL Controller
         // Sequence Controller
         // Input Controller?
@@ -727,7 +731,8 @@ public class GodOfTheRoom : MonoBehaviour
         // Controllers
 
         myMasterController.currentSequence = thisCheckpoint.nextSequence;
-        myEventController.currentAdvert = thisCheckpoint.nextSequence;
+        myEventController.currentAdvert = thisCheckpoint.nextSequence-1;
+        myScoringController.currentSequenceNumber = thisCheckpoint.nextSequence;
         //for (int n = 0; n <= thisCheckpointNumber; n++)
         //{
         //    myCheckpoints[thisCheckpointNumber].previousEDLs[n] = myMasterController.broadcastEDL[n];
@@ -767,6 +772,7 @@ public class GodOfTheRoom : MonoBehaviour
         myVisionMixer.inPostRoll = false;
         myMasterController.ClearEDL(myMasterController.currentSequence);
         myMasterController.PrepareAdvert(advertAfterCheckpointVideo, advertAfterCheckpointAudio);
+        myScoringController.SetUpScoreTracker(myMasterController.myLevelData.sequenceNames[0], myMasterController.myLevelData.sequenceNames[1], myMasterController.myLevelData.sequenceNames[2]);
         Invoke("RetryFromCheckpointPart02", 3);
 
     }
@@ -775,6 +781,7 @@ public class GodOfTheRoom : MonoBehaviour
     {
         myGUIController.FadeSegment();
         UnMuteRoom();
+        FadeInAll3DSound(5f);
         // Tell Master Controller to RetryFromAd(int adNumber);
 
 

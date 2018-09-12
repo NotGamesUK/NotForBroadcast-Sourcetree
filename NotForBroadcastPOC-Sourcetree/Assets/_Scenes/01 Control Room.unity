@@ -18023,7 +18023,7 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.size
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4156777894312240, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -18362,7 +18362,7 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].mySequenceOrAdNumber
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
@@ -18373,6 +18373,26 @@ Prefab:
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].eventType
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[13].myName
+      value: TEST - TRIP SWITCH IN SEQ 01-01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[13].mySequenceOrAdNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[13].eventTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[13].eventType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}

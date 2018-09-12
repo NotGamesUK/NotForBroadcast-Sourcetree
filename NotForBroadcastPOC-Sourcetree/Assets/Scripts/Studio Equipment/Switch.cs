@@ -120,7 +120,11 @@ public class Switch : MonoBehaviour {
         {
             myRenderer.material = switchOnMaterial;
         }
-        mySFX.Play();
+        if (mySFX.isActiveAndEnabled)
+        {
+            mySFX.Play();
+
+        }
 
     }
 
@@ -137,7 +141,11 @@ public class Switch : MonoBehaviour {
         {
             myRenderer.material = switchOffMaterial;
         }
-        mySFX.Play();
+        if (mySFX.isActiveAndEnabled)
+        {
+            mySFX.Play();
+
+        }
 
     }
 

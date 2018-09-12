@@ -22,6 +22,13 @@ public class VHSControlPanel : MonoBehaviour
         mySequenceController = FindObjectOfType<SequenceController>();
     }
 
+    public void ResetMe()
+    {
+        isPlayingTape = false;
+        playButton.MoveUp();
+        //playButton.Lock();
+    }
+
     // Update is called once per frame
     void Update()
     {

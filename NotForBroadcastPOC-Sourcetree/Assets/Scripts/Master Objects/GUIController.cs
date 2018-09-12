@@ -191,7 +191,7 @@ public class GUIController : MonoBehaviour
             Unpause();
             myRoomGod.ResetRoom();
             paused = false;
-
+            myOptionsController.SaveAllOptions();
         }
         if (currentMenu == optionsMenu)
         {
@@ -243,6 +243,7 @@ public class GUIController : MonoBehaviour
         ChangeMenuTo(null);
         ChangeMusicTo(null);
         Time.timeScale = 1f;
+        myOptionsController.SaveAllOptions();
         paused = false;
     }
 
@@ -309,7 +310,6 @@ public class GUIController : MonoBehaviour
         myRoomGod.ResetRoom();
         Debug.Log("RESTART TESTING: Calling Broadcast " + myMasterController.levelCalledFromGUI);
         StartBroadcast(myMasterController.levelCalledFromGUI);
-
     }
 
     public void NextLevel()

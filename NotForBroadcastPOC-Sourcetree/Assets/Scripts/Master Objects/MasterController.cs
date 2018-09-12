@@ -377,6 +377,7 @@ public class MasterController : MonoBehaviour {
         myEventController.InitialiseAndStartEventReading(myLevelData.gameEvents);
 
         myRoomGod.FadeInAll3DSound(5f);
+        myRoomGod.UnMuteRoom();
     }
 
     void PreLevel()

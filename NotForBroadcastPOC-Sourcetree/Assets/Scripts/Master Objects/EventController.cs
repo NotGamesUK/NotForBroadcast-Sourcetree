@@ -258,12 +258,13 @@ public class EventController : MonoBehaviour {
         myState = RoomControllerState.Advert;
         myClock = 0;
         currentSequence = 0;
-        currentAdvert = 0;
+        currentAdvert = -1;
         currentListPosition = 0;
         DoAllEventsLabelled(GameEvent.TimeFrame.Preroll, 0);
         while (currentSequence < thisSequence)
         {
-            DoAllEventsLabelled(GameEvent.TimeFrame.Advert, currentSequence);
+            currentAdvert++;
+            DoAllEventsLabelled(GameEvent.TimeFrame.Advert, currentAdvert);
             currentSequence++;
             DoAllEventsLabelled(GameEvent.TimeFrame.Sequence, currentSequence);
         }
