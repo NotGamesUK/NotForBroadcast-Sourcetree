@@ -71,6 +71,7 @@ public class VHSPlayer : MonoBehaviour {
         myLoader.InstantLoadTape(thisTape);
         isLoaded = true;
         mySelectionButton.myButton.Unlock();
+        mySelectionButton.myButton.hasPower = true;
         myButton.Unlock();
         myButton.MoveDown();
     }
@@ -84,7 +85,6 @@ public class VHSPlayer : MonoBehaviour {
         {
             mySelectionButton.myButton.MoveUp();
             mySelectionButton.myBox.VHSPlayerSelected(0);
-
         }
         myButton.Lock();
         mySelectionButton.myButton.Lock();

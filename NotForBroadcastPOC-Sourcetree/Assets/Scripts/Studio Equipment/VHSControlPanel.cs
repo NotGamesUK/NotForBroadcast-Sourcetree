@@ -25,8 +25,12 @@ public class VHSControlPanel : MonoBehaviour
     public void ResetMe()
     {
         isPlayingTape = false;
+        foreach(VHSPlayerSelectionButton thisButton in selectionButtons)
+        {
+            thisButton.ResetMe();
+        }
         playButton.MoveUp();
-        //playButton.Lock();
+        playButton.Lock();
     }
 
     // Update is called once per frame

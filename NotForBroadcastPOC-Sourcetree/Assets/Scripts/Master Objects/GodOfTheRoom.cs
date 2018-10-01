@@ -647,8 +647,13 @@ public class GodOfTheRoom : MonoBehaviour
         }
 
         myCheckpoints[thisCheckpointNumber].currentVHSPlayerSelected = myVHSPlayerSelectionPanel.selectedPlayer;
+        Debug.Log("GOD: Making Checkpoint - Currently Selected VHS Player: " + myVHSPlayerSelectionPanel.selectedPlayer);
+
         myCheckpoints[thisCheckpointNumber].currentAdVideo = myBroadcastSystem.myAdvertScreen.clip;
+        Debug.Log("GOD: Making Checkpoint - Current Ad Video: " + myBroadcastSystem.myAdvertScreen.clip);
+
         myCheckpoints[thisCheckpointNumber].currentAdAudio = myBroadcastSystem.myAdvertAudiosource.clip;
+        Debug.Log("GOD: Making Checkpoint - Current Ad Audio: " + myBroadcastSystem.myAdvertAudiosource.clip);
 
         // Controllers
 
@@ -706,7 +711,7 @@ public class GodOfTheRoom : MonoBehaviour
         if (thisCheckpoint.currentVHSPlayerSelected > 0)
         {
             Debug.Log("GOD (Checkpoint): Selecting Player " + thisCheckpoint.currentVHSPlayerSelected)
-;            myVHSPlayerSelectionPanel.selectionButtons[thisCheckpoint.currentVHSPlayerSelected].myButton.MoveDown();
+;           myVHSPlayerSelectionPanel.selectionButtons[thisCheckpoint.currentVHSPlayerSelected-1].myButton.MoveDown();
         }
         advertAfterCheckpointVideo = thisCheckpoint.currentAdVideo;
         advertAfterCheckpointAudio = thisCheckpoint.currentAdAudio;

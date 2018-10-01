@@ -18023,7 +18023,7 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.size
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4156777894312240, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
       propertyPath: m_LocalPosition.x

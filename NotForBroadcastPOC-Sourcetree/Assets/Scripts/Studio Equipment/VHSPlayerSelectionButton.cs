@@ -37,4 +37,12 @@ public class VHSPlayerSelectionButton : MonoBehaviour {
         }
 
     }
+
+    public void ResetMe()
+    {
+        myButton.isDepressed = false;
+        myButton.isLocked = true;
+        myButton.hasPower = false;
+        lastCheck = false;
+    }
 }

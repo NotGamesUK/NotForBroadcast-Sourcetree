@@ -86,17 +86,17 @@ public class ScoringController : MonoBehaviour {
     {
         if (screen[n].isPlaying)
         {
-                Debug.Log("---------------------------- LOOKING AT SCREEN " + n);
+            //Debug.Log("---------------------------- LOOKING AT SCREEN " + n);
             long thisFrame = screen[n].frame;
             // Are we on a new frame?
             if (thisFrame > lastFrame[n])
                 {
-                    Debug.Log("For Screen " + n + ": This Frame - " + thisFrame + ".  Last Frame - " + lastFrame[n] + ".");
+                    //Debug.Log("For Screen " + n + ": This Frame - " + thisFrame + ".  Last Frame - " + lastFrame[n] + ".");
 
                     // Are we at the end of the list?
                     if (listPosition[n] < currentSequence.Count)
                 {
-                        Debug.Log("---------------------------- SCORING SCREEN " + n);
+                        //Debug.Log("---------------------------- SCORING SCREEN " + n);
 
                         ScoringData thisData = currentSequence[listPosition[n]];
 
@@ -114,7 +114,7 @@ public class ScoringController : MonoBehaviour {
                             {
                                 // Set new color
                                 screenAudioColour[n] = thisData.scoreColour;
-                                    //Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " AUDIO Score to " + screenAudioColour[n] + " at frame " + thisFrame);
+                                //Debug.Log("NEW SCORING SYSTEM: Changed Screen " + n + " AUDIO Score to " + screenAudioColour[n] + " at frame " + thisFrame);
                                 }
                         }
                         else // It's a video colour change
