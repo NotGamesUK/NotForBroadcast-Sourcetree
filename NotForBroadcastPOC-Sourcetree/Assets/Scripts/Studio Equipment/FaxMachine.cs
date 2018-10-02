@@ -160,12 +160,15 @@ public class FaxMachine : MonoBehaviour {
         {
             // Beep to show finished
             myPrintAudiosource.clip = beepingSFX;
+            myPrintAudiosource.loop = true;
             myPrintAudiosource.Play();
+
             // clear is Scrolling and isPrinting
             isScrolling = false;
             isPrinting = false;
             // Set Paper to grabable
             myPage.isGrabbable = true;
+            myPage.GoGrabbable();
         }
         else        // ELSE (Not at page max)
 
@@ -174,5 +177,11 @@ public class FaxMachine : MonoBehaviour {
             Invoke("ScrollPageUp", scrollSpeed);
         }
 
+    }
+
+    public void StopBeep()
+    {
+        myPrintAudiosource.Stop();
+        myPrintAudiosource.loop = false;
     }
 }

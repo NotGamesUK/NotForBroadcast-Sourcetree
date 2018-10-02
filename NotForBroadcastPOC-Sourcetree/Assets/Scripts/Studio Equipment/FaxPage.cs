@@ -24,7 +24,10 @@ public class FaxPage : MonoBehaviour {
     private MeshRenderer myRenderer;
     private AudioSource mySFX;
     private InTray myInTray;
+    private GUIController myGUIController;
+    private FaxMachine myFaxMachine;
     // private Shredder myShredder; -- FOR FINAL VERSION
+    private bool mouseIsOver;
     
     
     
@@ -32,29 +35,30 @@ public class FaxPage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         myRenderer = GetComponent<MeshRenderer>();
+        mouseIsOver = false;
         mySFX = GetComponent<AudioSource>();
         myInTray = FindObjectOfType<InTray>();
+        myGUIController = FindObjectOfType<GUIController>();
+        myFaxMachine = FindObjectOfType<FaxMachine>();
         // myShredder = FindObjectOfType<Shredder>(); -- FOR FINAL VERSION
     }
 
     // Update is called once per frame
     void Update () {
-		if (isGrabbed)
-        {
-            {
-                Vector3 temp = Input.mousePosition;
-                temp.z = grabShiftInZ; // Set this to be the distance you want the object to be placed in front of the camera.
-                this.transform.position = Camera.main.ScreenToWorldPoint(temp);
-                Vector3 directionToCamera = Camera.main.transform.position - this.transform.position;
-                Quaternion targetRotation = Quaternion.LookRotation(directionToCamera, Vector3.back);
-                this.transform.rotation = targetRotation;
-            }
+    }
 
+    public void GoGrabbable()
+    {
+        if (mouseIsOver)
+        {
+            myRenderer.material = mySelectedMaterial;
+            isSelected = true;
         }
     }
 
     private void OnMouseEnter()
     {
+        mouseIsOver = true;
         if (isGrabbable)
         {
             Debug.Log("Mouse On Page.");
@@ -65,6 +69,7 @@ public class FaxPage : MonoBehaviour {
 
     private void OnMouseExit()
     {
+        mouseIsOver = false;
         if (isSelected)
         {
             myRenderer.material = myDefaultMaterial;
@@ -76,53 +81,27 @@ public class FaxPage : MonoBehaviour {
     {
         if (isSelected)
         {
-            isGrabbed = true;
+            mySFX.clip = myTearSFX;
+            myInTray.PlayTrayChangeSFX();
+            myInTray.AddFaxToTray(myPaper.text);
+            myGUIController.ShowPaperwork(true);
+            myFaxMachine.StopBeep();
+            //Object.Destroy(this.gameObject); // REPLACE THIS LINE WITH CODE TO PUT FAX PAPER ON IN TRAY AND GO DORMANT.
+            isGrabbable = false;
             myRenderer.material = myDefaultMaterial;
-            if (isStored)
-            {
-                // On InTray
-                mySFX.clip = myPickupSFX;
-
-            } else
-            {
-                // On FaxMachine
-                mySFX.clip = myTearSFX;
-            }
-            mySFX.Play();
-            mainCamera.PullFocusOverTime(holdingFaxFocusLength, holdingFaxAperture, 0.25f);
+            Vector3 myNewPosition = myInTray.myFaxTray.transform.position;
+            Quaternion myNewRotation = myInTray.myFaxTray.transform.rotation;
+            this.transform.position = myNewPosition;
+            this.transform.rotation = myNewRotation;
         }
 
     }
 
-    private void OnMouseUp()
-    {
-        if (isGrabbed)
-        {
-            if (myInTray)
-            {
-                this.transform.position = myInTray.transform.position;
-                this.transform.Translate(new Vector3(0f, 0.08f, 0f), Space.World);
-                this.transform.rotation = myInTray.transform.rotation;
-                this.transform.Rotate(Vector3.left, 90);
-                // Play Putting Page Down Sound
-                mySFX.clip = myPlaceSFX;
-                mySFX.Play();
-                isGrabbed = false;
-                isStored = true;
-                mainCamera.ResetFocus();
-
-            } else
-            {
-                // No In-Tray exists - check for Shredder and act accordingly. -- FOR FINAL VERSION
-            }
-        }
-    }
 
     public void SetText(string thisText)
     {
         //Debug.Log("Page - My Paper (Text Mesh) = " + myPaper);
         myPaper.text = thisText;
     }
-
 
 }

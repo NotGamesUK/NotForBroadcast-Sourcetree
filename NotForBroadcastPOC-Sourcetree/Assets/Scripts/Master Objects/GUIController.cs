@@ -19,8 +19,12 @@ public class GUIController : MonoBehaviour
     public GameObject playbackMenu;
     public GameObject failMenu;
     public GameObject pauseMenu;
+    public GameObject paperworkMenu;
 
     public Image myBlackout;
+    public Image myPaperworkImageDisplay;
+    public Text myPaperworkTextDisplay;
+    public Sprite myFaxPageBackgroundImage;
     public Text myDayDisplay;
     public Text mySegmentDisplay;
 
@@ -36,7 +40,7 @@ public class GUIController : MonoBehaviour
     public AudioClip failMenuMusic;
     public AudioClip playbackMenuMusic;
     public AudioClip levelStartSFX;
-
+    
     public Text failMenuReasonForFail;
     public float myStartLevelBlackoutTime=3;
 
@@ -48,6 +52,7 @@ public class GUIController : MonoBehaviour
     private PlaybackRoomController myPlaybackController;
     private ScoringController myScoringController;
     private GodOfTheRoom myRoomGod;
+    private InTray myInTray;
     [HideInInspector]
     public GameObject currentMenu;
     private GameObject currentCamera;
@@ -61,7 +66,8 @@ public class GUIController : MonoBehaviour
     private bool cameFromMain = true;
     private bool showingRetry;
     private float myRetryCountdown;
-    private int currentDay, currentSegment;
+    private int currentDay, currentSegment, currentTray;
+    
 
     private void Awake()
     {
@@ -83,6 +89,7 @@ public class GUIController : MonoBehaviour
         myPlaybackController = GetComponent<PlaybackRoomController>();
         myScoringController = FindObjectOfType<ScoringController>();
         myRoomGod = FindObjectOfType<GodOfTheRoom>();
+        myInTray = FindObjectOfType<InTray>();
         myMusicPlayer = GetComponent<AudioSource>();
         devModeObjects = FindObjectsOfType<DevModeObject>();
         freeLookCamera = FindObjectOfType<CameraMovement>();
@@ -134,6 +141,72 @@ public class GUIController : MonoBehaviour
             retryFloater.SetActive(true);
         }
     }
+
+    public void ResetPaperwork()
+    {
+
+    }
+
+    public void ShowPaperwork(bool showTopTray)
+    {
+        paperworkMenu.SetActive(true);
+        if (showTopTray)
+        {
+            TraySelected(1);
+        }
+        else
+        {
+            TraySelected(2);
+        }
+        DisplayCurrentPaperwork();
+        myInTray.PlayTrayChangeSFX();
+
+    }
+
+    void DisplayCurrentPaperwork()
+    {
+        if (currentTray == 1)
+        {
+            myPaperworkImageDisplay.sprite = myFaxPageBackgroundImage;
+            myPaperworkTextDisplay.text = myInTray.ReturnTextFromTray();
+        } else
+        {
+            myPaperworkImageDisplay.sprite = myInTray.ReturnImageFromTray();
+            myPaperworkTextDisplay.text = "";
+        }
+        // Rotate myPaperworkImageDisplay a Random Amount +/- 2 degrees
+
+
+
+    }
+
+    public void TraySelected (int thisTray)
+    {
+        if (thisTray != currentTray)
+        {
+            myInTray.PlayTrayChangeSFX();
+
+            currentTray = thisTray;
+            DisplayCurrentPaperwork();
+        }
+
+    }
+
+    public void ChangePaperworkPage(int thisShift)
+    {
+        if (myInTray.ChangePage(currentTray, thisShift))
+        {
+
+            DisplayCurrentPaperwork();
+        }
+
+    }
+
+    public void HidePaperwork()
+    {
+        paperworkMenu.SetActive(false);
+    }
+
 
     public void StartBroadcast(int thisBroadcast)
     {
