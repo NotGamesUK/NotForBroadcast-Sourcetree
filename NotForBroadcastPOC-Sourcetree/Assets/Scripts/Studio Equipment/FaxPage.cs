@@ -83,24 +83,34 @@ public class FaxPage : MonoBehaviour {
         {
             mySFX.clip = myTearSFX;
             myInTray.PlayTrayChangeSFX();
-            myInTray.AddFaxToTray(myPaper.text);
-            myGUIController.ShowPaperwork(true);
-            myFaxMachine.StopBeep();
-            //Object.Destroy(this.gameObject); // REPLACE THIS LINE WITH CODE TO PUT FAX PAPER ON IN TRAY AND GO DORMANT.
-            isGrabbable = false;
-            myRenderer.material = myDefaultMaterial;
-            Vector3 myNewPosition = myInTray.myFaxTray.transform.position;
-            Quaternion myNewRotation = myInTray.myFaxTray.transform.rotation;
-            this.transform.position = myNewPosition;
-            this.transform.rotation = myNewRotation;
+            MoveToTray(true);
         }
 
     }
 
+    public void MoveToTray(bool andOpenGUI)
+    {
+        myInTray.AddFaxToTray(myPaper.text);
+        if (andOpenGUI)
+        {
+            myGUIController.ShowPaperwork(true);
+        }
+        myFaxMachine.StopBeep();
+        //Object.Destroy(this.gameObject); // REPLACE THIS LINE WITH CODE TO PUT FAX PAPER ON IN TRAY AND GO DORMANT.
+        isGrabbable = false;
+        myRenderer.material = myDefaultMaterial;
+        Vector3 myNewPosition = myInTray.myFaxTray.transform.position;
+        Quaternion myNewRotation = myInTray.myFaxTray.transform.rotation;
+        this.transform.position = myNewPosition;
+        this.transform.rotation = myNewRotation;
 
-    public void SetText(string thisText)
+    }
+
+
+    public void SetText(string thisText, float thisCharacterSize)
     {
         //Debug.Log("Page - My Paper (Text Mesh) = " + myPaper);
+        myPaper.characterSize = thisCharacterSize;
         myPaper.text = thisText;
     }
 

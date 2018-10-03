@@ -124,9 +124,9 @@ MonoBehaviour:
     loopRoll: {fileID: 32900000, guid: a7e47b2f98a2cc7459e1b343a11abc23, type: 3}
     loopRollSmaller: {fileID: 32900000, guid: 3fef20388c0b7a14b8d6146623c74160, type: 3}
     loopRollAudio: {fileID: 8300000, guid: 95304d84dfc4abd48bf19f70410bcb40, type: 3}
-    preRoll: {fileID: 32900000, guid: 50005953ff3abd94aa2b1d0fd089d9a6, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: 01e6d1021e5704e46ba10c16770f7824, type: 3}
-    preRollAudio: {fileID: 8300000, guid: 6db78d83a6ef07c4c8b6b7d3b997b7b3, type: 3}
+    preRoll: {fileID: 32900000, guid: 0a66f6a062289404e914ba76522417a2, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: e2ffa4577947a5842964229858752c5d, type: 3}
+    preRollAudio: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
     sequenceNames:
     - 01-01 Headlines
     - 01-02 Wildish
@@ -213,6 +213,16 @@ MonoBehaviour:
       integerData: 0
       boolData: 1
       objectData: {fileID: 0}
+    - myName: Hide Mixing Desk Tape
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 22
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
     - myName: Seq 02 Switch to Multi Mode
       myTimeframe: 0
       mySequenceOrAdNumber: 2
@@ -245,7 +255,7 @@ MonoBehaviour:
       objectData: {fileID: 0}
     - myName: Seq 03 Switch Back to Single Mode
       myTimeframe: 0
-      mySequenceOrAdNumber: 2
+      mySequenceOrAdNumber: 3
       eventTime: 262
       eventType: 11
       floatData: 0
@@ -318,15 +328,71 @@ MonoBehaviour:
       integerData: 0
       boolData: 1
       objectData: {fileID: 0}
-    - myName: Send Test Fax
+    - myName: Send Briefing Fax 01
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 4
+      floatData: 0.05
+      stringData: 'Broadcast Structure:<br><br>SQ 01: OB : Single Cam - Short, Wolfe,
+        Bannon. Throwing to correspondents.<br>BREAK 01.  <br>SQ 02: Multicam  in
+        studio. Donaldson and 2 guests.<br>BREAK 02.  <br>SQ 03:  Multicam in studio.
+        Donaldson with feline guests.<br>BREAK 03<br><br>A Polite Reminder: It is
+        mandatory that you play the approved adverts.<br>Failure to comply will be
+        seen as an act of treason.<br><br>DAILY NOTES:<br>The Broadcast Dish is still
+        faulty. <br>Winch it back into place using the switch provided.<br>Power Rationing
+        is still in effect. <br>Conserve energy by only having essential equipment
+        powered up. <br>Use the power gauge for reference.<br>Your request for climate
+        control is once again deemed inessential.<br>If overheating valves should
+        become a problem, maintenance suggests<br>using your desk fan to keep them
+        cool.<br>Maintenance regret that they have not yet had time to fix <br>the
+        desk fan''s Rotation Lock which may still be unreliable.<br>'
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Send Censor list Fax 02
+      myTimeframe: 1
+      mySequenceOrAdNumber: 1
+      eventTime: 0
+      eventType: 4
+      floatData: 0.05
+      stringData: "<br>POLITE REMINDER:<br><br>The following titles have been added
+        to the Sensitivity Charter.<br>Discussion of such ideas requires Level 5 Clearance.<br>Ensure
+        they are not broadcast.<br>THIS IS A PUBLIC SAFETY CONCERN.<br><br><br>Friedrich
+        Hayek - The Road to Serfdom<br><br>Niccol\xF2 Machiavelli - The Prince<br><br>Thomas
+        Paine - The Rights of Man<br><br>Ayn Rand - Atlas Shrugged<br><br>Ayn Rand
+        - The Fountainhead "
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Send Do as he says Fax 03
+      myTimeframe: 0
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 4
+      floatData: 0.25
+      stringData: <br>Do as he says.<br><br>We are working<br>to regain control.
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Send security team Fax 04
+      myTimeframe: 0
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 4
+      floatData: 0.25
+      stringData: Security team<br>on approach.<br>Continue Broadcast.<br>Await Instructions.
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Send cut to ads Fax 05
       myTimeframe: 1
       mySequenceOrAdNumber: 0
       eventTime: 0
       eventType: 4
-      floatData: 0
-      stringData: JAY'S NEW TEST FAX Line One<br>Line Two<br><br>Line Four<br>This
-        should be line Five<br><br><br><br><br>And this is line ten<br>JAY'S NEW TEST
-        FAX
+      floatData: 0.25
+      stringData: CUT TO THE ADS.<br>CUT TO THE ADS.<br>CUT TO THE ADS.<br>CUT TO
+        THE ADS.<br>CUT TO THE ADS.<br>CUT TO THE ADS.<br>CUT TO THE ADS.
       integerData: 0
       boolData: 1
       objectData: {fileID: 0}
@@ -477,6 +543,7 @@ MonoBehaviour:
     gameEvents: []
   masterLevelClock: 0
   currentLevel: 0
+  levelCalledFromGUI: 0
   currentSequence: 0
   myLevelData:
     levelName: 

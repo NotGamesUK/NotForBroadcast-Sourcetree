@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021430446238056}
   m_LocalRotation: {x: -0.5966526, y: -0.2776228, z: 0.37948343, w: 0.6503258}
-  m_LocalPosition: {x: 0.5929605, y: 0.40840006, z: -0.3849213}
+  m_LocalPosition: {x: 0.5929605, y: 0.4084001, z: -0.3849213}
   m_LocalScale: {x: 0.14849994, y: 0.10499998, z: 1}
   m_Children:
   - {fileID: 4967072652832052}
@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063671721008004}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0.859, y: 0.021, z: 0.001}
+  m_LocalPosition: {x: 0.933, y: 0.021, z: 0.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4478444903974010}
@@ -122,7 +122,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f04f2e8a2e3e59349a25d37ed07086b7, type: 2}
+  - {fileID: 2100000, guid: f2f27dd90f4a2c94b89c2ec88e277abe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,7 +157,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f04f2e8a2e3e59349a25d37ed07086b7, type: 2}
+  - {fileID: 2100000, guid: f2f27dd90f4a2c94b89c2ec88e277abe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,7 +192,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 15d626cbb4f0dd94a97ac0ec7e76eb10, type: 2}
+  - {fileID: 2100000, guid: b72aaeb3526821a4498a336b85e60f25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -376,14 +376,14 @@ TextMesh:
     Break 03: Team 03 - Being a Team Player'
   m_OffsetZ: 0
   m_CharacterSize: 0.04
-  m_LineSpacing: 2.16
+  m_LineSpacing: 1.05
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 8
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 7f5d15206cf0e7a46a2d78bdcb6beae9, type: 3}
+  m_Font: {fileID: 12800000, guid: 9c8d4ff4096edc849a1636aae0779794, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -396,15 +396,15 @@ TextMesh:
   m_GameObject: {fileID: 1063671721008004}
   m_Text: '- IMPORTANT -'
   m_OffsetZ: 0
-  m_CharacterSize: 0.06
-  m_LineSpacing: 1
+  m_CharacterSize: 0.18
+  m_LineSpacing: 1.02
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 11
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 7f5d15206cf0e7a46a2d78bdcb6beae9, type: 3}
+  m_Font: {fileID: 12800000, guid: 9c8d4ff4096edc849a1636aae0779794, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPaper: {fileID: 102675147001544266}
   myDefaultMaterial: {fileID: 2100000, guid: b72aaeb3526821a4498a336b85e60f25, type: 2}
-  mySelectedMaterial: {fileID: 2100000, guid: 13e69c447407f3746b050a43edf3f6f7, type: 2}
+  mySelectedMaterial: {fileID: 2100000, guid: c9c637539ecd93049b1d1558a1bc84f1, type: 2}
   myTearSFX: {fileID: 8300000, guid: 136848aaa9f8eac40a63896a1a7c5cf3, type: 3}
   myPlaceSFX: {fileID: 8300000, guid: 5659d2d3df406ea49a25dd926f31db90, type: 3}
   myPickupSFX: {fileID: 8300000, guid: 2566f3f8b6ff0b149ac91ada83595cf5, type: 3}

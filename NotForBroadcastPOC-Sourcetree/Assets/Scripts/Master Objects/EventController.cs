@@ -154,7 +154,7 @@ public class EventController : MonoBehaviour {
                 }
                 else
                 {
-                    myRoomGod.SendFax(thisEvent.stringData);
+                    myRoomGod.SendFax(thisEvent.stringData, thisEvent.floatData);
                 }
                 break;
 

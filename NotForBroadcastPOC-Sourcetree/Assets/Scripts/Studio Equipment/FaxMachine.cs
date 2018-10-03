@@ -32,9 +32,20 @@ public class FaxMachine : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
+        myPage = null;
         myPrintHead.transform.localPosition = (new Vector3(0.1f, myPrintHead.transform.localPosition.y, myPrintHead.transform.localPosition.z));
         headMove = headPrintSpeed;
+        //ResetMe();
 	}
+
+    public void ResetMe()
+    {
+        if (myPage!=null)
+        {
+            Destroy(myPage.gameObject);
+            myPage = null;
+        }
+    }
 	
     //void TempStartFaxDELETEME()
     //{
@@ -116,9 +127,12 @@ public class FaxMachine : MonoBehaviour {
         myPrintAudiosource.Play();
     }
 
-    public void ReceiveFax (string thisText) // Normally called by Sequence or Master Controller
+    public void ReceiveFax (string thisText, float thisCharacterSize) // Normally called by Sequence or Master Controller
     {
-
+        if (myPage != null)
+        {
+            myPage.MoveToTray(false);
+        }
         // Create a Fax Page at correct Origin.
         FaxPage myCreatedPage = Instantiate(blankPage).GetComponent<FaxPage>();
         // Count Line Breaks (use | symbol to denote) in text and replace with /n
@@ -130,7 +144,7 @@ public class FaxMachine : MonoBehaviour {
         Debug.Log("Pre Replace Text = "+thisText);
         Debug.Log("Post Replace Text = "+myPassingText);
         // Give Fax Page its Text
-        myCreatedPage.SetText(myPassingText);
+        myCreatedPage.SetText(myPassingText, thisCharacterSize);
         myPage = myCreatedPage;
         // Tell Update to begin Printing
         isPrinting = true;

@@ -29,6 +29,9 @@ public class InTray : MonoBehaviour {
 
     public void ResetMe()
     {
+        // Destroy all physical faxes in tray
+
+        // Reset
         allFaxText.Clear();
         numberOfFaxes = 0;
         numberOfResourcePages = allResourcePages.Length;

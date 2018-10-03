@@ -160,6 +160,7 @@ public class GodOfTheRoom : MonoBehaviour
 
     public void EnableObject(GameObject thisObject, bool thisEnabled)
     {
+        Debug.Log("ENABLING " + thisObject);
         thisObject.SetActive(thisEnabled);
     }
 
@@ -328,9 +329,9 @@ public class GodOfTheRoom : MonoBehaviour
 
     // Right View
 
-    public void SendFax(string thisText)
+    public void SendFax(string thisText, float thisCharacterSize)
     {
-        myFaxMachine.ReceiveFax(thisText);
+        myFaxMachine.ReceiveFax(thisText, thisCharacterSize);
     }
 
 
@@ -526,6 +527,7 @@ public class GodOfTheRoom : MonoBehaviour
 
         // Comms
         myIntercom.SetActive(false);
+        myFaxMachine.ResetMe();
         myFaxMachineGameObject.SetActive(false);
 
 
@@ -629,6 +631,8 @@ public class GodOfTheRoom : MonoBehaviour
 
         // Add InTray Fax Data Storage Here when In-Tray is Implemented
 
+
+
         // Down View
 
         for (int n = 0; n < 3; n++)
@@ -689,6 +693,8 @@ public class GodOfTheRoom : MonoBehaviour
         // Right View
 
         // Add InTray Fax Data Storage Here when In-Tray is Implemented
+
+
 
         // Down View
         for (int n = 0; n < 3; n++)
