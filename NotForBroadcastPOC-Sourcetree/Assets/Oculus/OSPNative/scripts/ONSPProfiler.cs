@@ -19,7 +19,7 @@ public class ONSPProfiler : MonoBehaviour
         Application.runInBackground = true;
         if (profilerEnabled)
         {
-            Debug.Log("Oculus Audio Profiler enabled, IP address = " + Network.player.ipAddress);
+            //Debug.Log("Oculus Audio Profiler enabled, IP address = " + Network.player.ipAddress);
         }
     }
 
