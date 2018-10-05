@@ -11,6 +11,7 @@ public class GUIController : MonoBehaviour
     public GameObject gameCamera;
     public GameObject menuCamera;
     public GameObject playbackCamera;
+    public CameraMovement freeLookCamera;
 
     public GameObject mainMenu;
     public GameObject optionsMenu;
@@ -56,7 +57,6 @@ public class GUIController : MonoBehaviour
     [HideInInspector]
     public GameObject currentMenu;
     private GameObject currentCamera;
-    private CameraMovement freeLookCamera;
     private DevModeObject[] devModeObjects;
     private List<VideoPlayer> pausedVideoPlayers = new List<VideoPlayer>();
     private VideoPlayer[] allVideoPlayers;
@@ -92,7 +92,7 @@ public class GUIController : MonoBehaviour
         myInTray = FindObjectOfType<InTray>();
         myMusicPlayer = GetComponent<AudioSource>();
         devModeObjects = FindObjectsOfType<DevModeObject>();
-        freeLookCamera = FindObjectOfType<CameraMovement>();
+        //freeLookCamera = FindObjectOfType<CameraMovement>();
         allVideoPlayers = FindObjectsOfType<VideoPlayer>();
         allAudioSources = FindObjectsOfType<AudioSource>();
 

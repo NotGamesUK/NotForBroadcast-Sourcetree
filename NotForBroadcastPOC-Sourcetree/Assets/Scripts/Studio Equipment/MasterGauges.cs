@@ -152,7 +152,7 @@ public class MasterGauges : MonoBehaviour {
 
 
         // Mix audio over broadcast and turn down other channels propotional to Audio Signal
-        float audioInterferenceStrength = -(videoStrength * 0.8f);
+        //float audioInterferenceStrength = -(videoStrength * 0.8f);
         //Debug.Log("White Noise Volume: " + audioInterferenceStrength);
         //myDesk.SetWhiteNoiseAudioLevel(audioInterferenceStrength);
 

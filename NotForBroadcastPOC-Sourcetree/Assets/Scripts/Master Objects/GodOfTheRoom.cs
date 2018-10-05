@@ -46,7 +46,7 @@ public class GodOfTheRoom : MonoBehaviour
     private VHSTapeController myVHSTapeRack;
     private VHSControlPanel myVHSPlayerSelectionPanel;
     private BroadcastTV myBroadcastSystem;
-    private SoundDesk myMixingDesk;
+    //private SoundDesk myMixingDesk;
     private RotatingFan myFan;
     private SatelliteDish myTower;
     private VisionMixer myVisionMixer;
@@ -75,7 +75,7 @@ public class GodOfTheRoom : MonoBehaviour
         myVHSTapeRack = FindObjectOfType<VHSTapeController>();
         myVHSPlayerSelectionPanel = FindObjectOfType<VHSControlPanel>();
         myBroadcastSystem = FindObjectOfType<BroadcastTV>();
-        myMixingDesk = FindObjectOfType<SoundDesk>();
+        //myMixingDesk = FindObjectOfType<SoundDesk>();
         myFan = FindObjectOfType<RotatingFan>();
         myTower = FindObjectOfType<SatelliteDish>();
         myBlinds = FindObjectsOfType<RollerBlind>();

@@ -176,7 +176,7 @@ public class InterferenceAnimator2D : MonoBehaviour {
         {
             transform.Rotate(0, 0, tiltPerSecond * tiltDirection * Time.deltaTime, Space.World);
             tiltMonitor += tiltPerSecond * tiltDirection * Time.deltaTime;
-            float thisTilt = transform.rotation.eulerAngles.z;
+            //float thisTilt = transform.rotation.eulerAngles.z;
             //Debug.Log("Current Tilt: " + thisTilt + "   Max/Min Tilt: " + tiltMaxRot + "/" + tiltMinRot + "  Monitor: "+tiltMonitor);
             if (tiltMonitor >= tiltUpDegrees)
             {
