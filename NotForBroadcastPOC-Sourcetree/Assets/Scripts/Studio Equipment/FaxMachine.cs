@@ -23,7 +23,8 @@ public class FaxMachine : MonoBehaviour {
     private bool isPrinting;
     private float headMove;
     private bool isScrolling;
-    private FaxPage myPage;
+    [HideInInspector]
+    public FaxPage myPage;
     private int lineCount;
     private int currentLine;
     private int maxPageLines=25;

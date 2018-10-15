@@ -12,6 +12,7 @@ public class InTray : MonoBehaviour {
     public InTrayCollisionDetection myFaxTray;
     private GUIController myGUIController;
     private List<string> allFaxText;
+    private List<float> allFaxFontSizes;
     [HideInInspector]
     public int numberOfFaxes, numberOfResourcePages, currentFax, currentResourcePage;
     private AudioSource mySFX;
@@ -21,6 +22,7 @@ public class InTray : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         allFaxText = new List<string>();
+        allFaxFontSizes = new List<float>();
         mySFX = GetComponent<AudioSource>();
         myGUIController = FindObjectOfType<GUIController>();
         ResetMe();
@@ -33,6 +35,7 @@ public class InTray : MonoBehaviour {
 
         // Reset
         allFaxText.Clear();
+        allFaxFontSizes.Clear();
         numberOfFaxes = 0;
         numberOfResourcePages = allResourcePages.Length;
         currentFax = 0;
@@ -45,11 +48,13 @@ public class InTray : MonoBehaviour {
 		
 	}
 
-    public void AddFaxToTray(string thisFaxBodyText)
+    public void AddFaxToTray(string thisFaxBodyText, float thisFaxFontSize)
     {
         allFaxText.Add(thisFaxBodyText);
+        allFaxFontSizes.Add(thisFaxFontSize);
         currentFax = allFaxText.Count - 1;
         myFaxTray.hasContents = true;
+        numberOfFaxes++;
     }
 
     public bool ChangePage(int thisTray, int thisChange)
@@ -82,6 +87,11 @@ public class InTray : MonoBehaviour {
     public string ReturnTextFromTray()
     {
         return allFaxText[currentFax];
+    }
+
+    public float ReturnFontSizeFromTray()
+    {
+        return allFaxFontSizes[currentFax];
     }
 
     public Sprite ReturnImageFromTray()

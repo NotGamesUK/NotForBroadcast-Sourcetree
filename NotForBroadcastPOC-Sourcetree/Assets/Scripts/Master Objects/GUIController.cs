@@ -168,7 +168,14 @@ public class GUIController : MonoBehaviour
         if (currentTray == 1)
         {
             myPaperworkImageDisplay.sprite = myFaxPageBackgroundImage;
+            float thisPaperworkCharSize = myInTray.ReturnFontSizeFromTray();
+            int thisFontSize = 9;
+            if (thisPaperworkCharSize == 0.25)
+            {
+                thisFontSize = 35;
+            }
             myPaperworkTextDisplay.text = myInTray.ReturnTextFromTray();
+            myPaperworkTextDisplay.fontSize = thisFontSize;
         } else
         {
             myPaperworkImageDisplay.sprite = myInTray.ReturnImageFromTray();

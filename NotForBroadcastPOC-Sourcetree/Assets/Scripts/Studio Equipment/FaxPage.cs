@@ -90,7 +90,7 @@ public class FaxPage : MonoBehaviour {
 
     public void MoveToTray(bool andOpenGUI)
     {
-        myInTray.AddFaxToTray(myPaper.text);
+        myInTray.AddFaxToTray(myPaper.text, myPaper.characterSize);
         if (andOpenGUI)
         {
             myGUIController.ShowPaperwork(true);
@@ -103,7 +103,7 @@ public class FaxPage : MonoBehaviour {
         Quaternion myNewRotation = myInTray.myFaxTray.transform.rotation;
         this.transform.position = myNewPosition;
         this.transform.rotation = myNewRotation;
-
+        myFaxMachine.myPage = null;
     }
 
 
