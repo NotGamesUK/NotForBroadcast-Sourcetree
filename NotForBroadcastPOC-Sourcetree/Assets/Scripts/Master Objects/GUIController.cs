@@ -25,6 +25,7 @@ public class GUIController : MonoBehaviour
     public Image myBlackout;
     public Image myPaperworkImageDisplay;
     public Text myPaperworkTextDisplay;
+    public Text myFaxPageHeaderDisplay;
     public Sprite myFaxPageBackgroundImage;
     public Text myDayDisplay;
     public Text mySegmentDisplay;
@@ -168,6 +169,7 @@ public class GUIController : MonoBehaviour
         if (currentTray == 1)
         {
             myPaperworkImageDisplay.sprite = myFaxPageBackgroundImage;
+            myFaxPageHeaderDisplay.text = " - IMPORTANT -";
             float thisPaperworkCharSize = myInTray.ReturnFontSizeFromTray();
             int thisFontSize = 9;
             if (thisPaperworkCharSize == 0.25)
@@ -180,6 +182,8 @@ public class GUIController : MonoBehaviour
         {
             myPaperworkImageDisplay.sprite = myInTray.ReturnImageFromTray();
             myPaperworkTextDisplay.text = "";
+            myFaxPageHeaderDisplay.text = "";
+
         }
         // Rotate myPaperworkImageDisplay a Random Amount +/- 2 degrees
 

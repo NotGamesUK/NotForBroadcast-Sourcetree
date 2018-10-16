@@ -71,6 +71,12 @@ public class RollerBlind : MonoBehaviour
 
 
     }
+
+    public void SetToPercentageUp (float thisPercentage)
+    {
+        float thisYPos = (thisPercentage * (myMaxY - myMinY)) + myMinY;
+        this.transform.position = new Vector3 (this.transform.position.x, thisYPos, this.transform.position.z);
+    }
     
     public void ResetMe()
     {

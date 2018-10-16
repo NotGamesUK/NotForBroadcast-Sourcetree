@@ -324,6 +324,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &18715155
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 508521913}
+    m_Modifications:
+    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037438531912232, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &20378830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,7 +1792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -33.99994}
+  m_AnchoredPosition: {x: 0, y: -33.999878}
   m_SizeDelta: {x: -129.32, y: -370.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97158204
@@ -10546,9 +10592,7 @@ Transform:
   m_Children:
   - {fileID: 354086770}
   - {fileID: 222694590}
-  - {fileID: 1078892773}
-  - {fileID: 1484793655}
-  - {fileID: 510810471}
+  - {fileID: 1628456474}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10641,57 +10685,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509867785}
   m_CullTransparentMesh: 0
---- !u!1001 &510810470
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 508521913}
-    m_Modifications:
-    - target: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368022045421946, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bec533ba1a394e5409e4ed7000c46c5e, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &510810471 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4008121843966210, guid: bec533ba1a394e5409e4ed7000c46c5e,
-    type: 2}
-  m_PrefabInternal: {fileID: 510810470}
 --- !u!1 &511811638
 GameObject:
   m_ObjectHideFlags: 0
@@ -15471,11 +15464,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114702673880052898, guid: f95a9107e1619354fabf1de096ecf8cf,
-        type: 2}
-      propertyPath: sequenceData.Array.data[3].runOut
-      value: 13
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95a9107e1619354fabf1de096ecf8cf, type: 2}
   m_IsPrefabAsset: 0
@@ -18736,7 +18724,12 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.size
-      value: 24
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.size
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4156777894312240, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -18914,22 +18907,22 @@ Prefab:
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[3].objectData
       value: 
-      objectReference: {fileID: 337205138}
+      objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[4].objectData
       value: 
-      objectReference: {fileID: 253953930}
+      objectReference: {fileID: 337205138}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].objectData
       value: 
-      objectReference: {fileID: 1652722395}
+      objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[7].objectData
       value: 
-      objectReference: {fileID: 1215248222}
+      objectReference: {fileID: 1652722395}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[0].objectData
@@ -19013,7 +19006,7 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[10].myName
-      value: TEST LARGE FONT
+      value: Set Max Power
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
@@ -19033,108 +19026,107 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[10].eventType
-      value: 4
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[10].floatData
-      value: 0.25
+      value: 510
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[10].stringData
-      value: CUT TO THE ADS.<br>CUT TO THE ADS.<br>CUT TO THE ADS.<br>CUT TO THE ADS.<br>CUT
-        TO THE ADS.<br>CUT TO THE ADS.<br>CUT TO THE ADS.
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[10].boolData
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[10].objectData
       value: 
-      objectReference: {fileID: 1322203590}
+      objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[11].myName
-      value: Set Max Power
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[11].eventType
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[11].floatData
-      value: 510
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[12].myName
       value: Drop Satellite Dish
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[12].eventType
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[11].eventType
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[12].floatData
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[11].floatData
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[13].myName
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[12].myName
       value: Set Room Temperature
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[13].eventType
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[12].eventType
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[13].floatData
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[12].floatData
       value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].myName
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[13].myName
       value: Set Tower Turn Speed
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].myTimeframe
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].mySequenceOrAdNumber
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].eventTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
-        type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].eventType
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[13].eventType
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].floatData
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[13].floatData
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
-      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[15].myName
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].myName
       value: Set Tower Drop Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].myTimeframe
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].mySequenceOrAdNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].eventTime
+      value: 310
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].eventType
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[14].floatData
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[15].myName
+      value: Send Tower Droping Fax
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
@@ -19144,12 +19136,12 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[15].eventType
-      value: 13
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[15].floatData
-      value: 0.25
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
@@ -19219,7 +19211,7 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[22].myName
-      value: Stop Audience Falling
+      value: Send Tower No Longer Dropping Fax
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
@@ -19229,12 +19221,12 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[22].eventTime
-      value: 267
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[22].eventType
-      value: 18
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
@@ -19244,32 +19236,347 @@ Prefab:
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[23].myName
-      value: Force Audience Rise
+      value: Stop Audience Falling
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[23].mySequenceOrAdNumber
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[23].eventTime
-      value: 45
+      value: 267
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[23].eventType
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[23].floatData
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
         type: 2}
       propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[5].myTimeframe
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[1].myName
+      value: Set Blinds to Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[1].eventType
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[1].floatData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[1].stringData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[1].boolData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[2].myName
+      value: Set Master Volume Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[2].eventType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[2].floatData
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[3].myName
+      value: Set Broadcast Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[3].eventType
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[3].floatData
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[3].boolData
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[4].myName
+      value: Hide Tower Control Plug
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[5].myName
+      value: Hide Tower Control
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[5].eventType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[5].boolData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[5].objectData
+      value: 
+      objectReference: {fileID: 253953930}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].myName
+      value: Set Link Switch To On
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].eventType
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[6].boolData
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[7].myName
+      value: Hide Link Switch
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[7].boolData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].myName
+      value: Show Mute Cover
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].eventType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].boolData
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[8].objectData
+      value: 
+      objectReference: {fileID: 1215248222}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].myName
+      value: Hide Mixing Desk Tape
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].myTimeframe
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].mySequenceOrAdNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].eventTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[9].eventType
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].myName
+      value: Seq 02 Switch to Multi Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].eventTime
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[10].eventType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].myName
+      value: Seq 02 Switch Back to Single Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].mySequenceOrAdNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].eventTime
+      value: 181
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[11].eventType
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].myName
+      value: Seq 03 Switch to Multi Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].eventTime
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[12].eventType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[13].myName
+      value: Seq 03 Switch Back to Single Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[13].mySequenceOrAdNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[13].eventTime
+      value: 262
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[13].eventType
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[14].myName
+      value: Seq 03 Switch Back to Single Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[14].mySequenceOrAdNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[14].eventTime
+      value: 262
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[0].gameEvents.Array.data[14].eventType
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[24].myName
+      value: Switch to Single Cam Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[24].mySequenceOrAdNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[24].eventTime
+      value: 267
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[24].eventType
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[24].floatData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[15].stringData
+      value: FAULT WARNING!!<br><br><br><br>Maintainance reporting an inclanation
+        slip error on the Satellite Dish:<br><br>The dish mountings are coming loose
+        causing the dish to drop slowly over time.<br>Please be on the look-out for
+        interference and raise the dish accordingly.<br>
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[22].myTimeframe
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[25].myName
+      value: Force Audience Rise
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[25].mySequenceOrAdNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[25].eventTime
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[25].eventType
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[25].floatData
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258210600043390, guid: 4ac06a649f2d4be4aa026106a672787e,
+        type: 2}
+      propertyPath: levelDataArray.Array.data[1].gameEvents.Array.data[22].stringData
+      value: FAULT UPDATE!<br><br><br><br>Maintainance reporting inclination error
+        fixed:<br><br>Dish no longer dropping.<br>The maintainance team thanks you
+        for being a Team Player during this difficult time.<br>
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ac06a649f2d4be4aa026106a672787e, type: 2}
@@ -20379,7 +20686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.5400085, y: 179.7}
+  m_AnchoredPosition: {x: -3.540039, y: 179.70001}
   m_SizeDelta: {x: -7.08, y: -378.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979667072
@@ -21204,7 +21511,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100066, guid: c642eb3566bb7e3428daae4ee065aaeb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300062, guid: c642eb3566bb7e3428daae4ee065aaeb, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -24897,57 +25204,6 @@ MonoBehaviour:
   myOffMaterial: {fileID: 2100000, guid: 3b942b16f8f7a68499d63c41ef8d244a, type: 2}
   myOnMaterial: {fileID: 2100000, guid: ee5cb8a9f8234f54fa307eeb9fd4823e, type: 2}
   isOn: 0
---- !u!1001 &1078892772
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 508521913}
-    m_Modifications:
-    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1830059425685282, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8ccc5fa5ae658a14b80e9d319e270bac, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &1078892773 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac,
-    type: 2}
-  m_PrefabInternal: {fileID: 1078892772}
 --- !u!1 &1084228844
 GameObject:
   m_ObjectHideFlags: 0
@@ -26507,6 +26763,11 @@ Prefab:
       propertyPath: freeLookCamera
       value: 
       objectReference: {fileID: 485473601}
+    - target: {fileID: 114698582469754698, guid: 906f51095a6cb5f46bca4e0601525f76,
+        type: 2}
+      propertyPath: myFaxPageHeaderDisplay
+      value: 
+      objectReference: {fileID: 979667072}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906f51095a6cb5f46bca4e0601525f76, type: 2}
   m_IsPrefabAsset: 0
@@ -32439,7 +32700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -33.99994}
+  m_AnchoredPosition: {x: 0, y: -33.999878}
   m_SizeDelta: {x: -129.32, y: -370.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443451192
@@ -32931,7 +33192,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2957407d0fec21247b35f75a119db9be, type: 3}
   - {fileID: 21300000, guid: c625315139d533749a897d9a08caa141, type: 3}
   - {fileID: 21300000, guid: e75b54a586e1d01428495fc1d572edb6, type: 3}
-  myBeepSound: {fileID: 8300000, guid: 4a749cda2113ba94895f0d891316bf70, type: 3}
+  myBeepSound: {fileID: 8300000, guid: 247caccfbeacb5e4b8a287ea47745d2a, type: 3}
   myChangePageSound: {fileID: 8300000, guid: 5659d2d3df406ea49a25dd926f31db90, type: 3}
   myChangeTraySound: {fileID: 8300000, guid: 9ab31ac6994aec24fbc459b74dcdd16f, type: 3}
   myFaxTray: {fileID: 2025650018}
@@ -33116,11 +33377,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 03d790580f61b8b4bbc5dda92b0fa5d7,
     type: 3}
   m_PrefabInternal: {fileID: 1604696779}
---- !u!4 &1484793655 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1,
-    type: 2}
-  m_PrefabInternal: {fileID: 2091341960}
 --- !u!1 &1486697718
 GameObject:
   m_ObjectHideFlags: 0
@@ -35513,6 +35769,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1621424837}
   m_CullTransparentMesh: 0
+--- !u!4 &1628456474 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4520634580001288, guid: 8ccc5fa5ae658a14b80e9d319e270bac,
+    type: 2}
+  m_PrefabInternal: {fileID: 18715155}
 --- !u!1001 &1628791941
 Prefab:
   m_ObjectHideFlags: 0
@@ -44917,52 +45178,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2087926502}
   m_CullTransparentMesh: 0
---- !u!1001 &2091341960
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 508521913}
-    m_Modifications:
-    - target: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227728560114, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372428161533270, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6cda06faead672347beaed2875167fa1, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &2093163837 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 51f00881989f80442a41fbef180e7b5b,

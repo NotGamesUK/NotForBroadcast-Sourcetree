@@ -326,6 +326,13 @@ public class GodOfTheRoom : MonoBehaviour
         }
     }
 
+    public void SetBlinds(float thisPercentageDown)
+    {
+        foreach(RollerBlind thisBlind in myBlinds)
+        {
+            thisBlind.SetToPercentageUp(thisPercentageDown);
+        }
+    }
 
     // Right View
 

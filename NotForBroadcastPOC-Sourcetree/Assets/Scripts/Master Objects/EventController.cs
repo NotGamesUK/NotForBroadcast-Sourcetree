@@ -247,6 +247,11 @@ public class EventController : MonoBehaviour {
 
                 break;
 
+            case GameEvent.EventType.SetBlindsToPercentageUp:
+                myRoomGod.SetBlinds(thisEvent.floatData);
+
+                break;
+
 
         }
     }
