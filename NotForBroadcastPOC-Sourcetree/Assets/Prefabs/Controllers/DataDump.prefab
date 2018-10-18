@@ -189,7 +189,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f053450547a0dd446b43e93967a8fe1d, type: 3}
     - {fileID: 8300000, guid: 38a5235284c13fc4095993ef377dd38b, type: 3}
     - {fileID: 8300000, guid: af51570e160930a4c91b444463d2db83, type: 3}
-    interferenceLevel: {fileID: 114028421285393916, guid: 8ccc5fa5ae658a14b80e9d319e270bac,
+    interferenceLevel: {fileID: 114337871108762698, guid: 8ccc5fa5ae658a14b80e9d319e270bac,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: 93bd7b34b4eb3a04a936d1052b7e76ae, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
@@ -210,7 +210,7 @@ MonoBehaviour:
     - {fileID: 32900000, guid: df84ea3becf197c49bb89913ac3b4c48, type: 3}
     screenAudio:
     - {fileID: 8300000, guid: 460f7e717dc53784bb3f5dc98ba42430, type: 3}
-    interferenceLevel: {fileID: 114475407568326824, guid: 6cda06faead672347beaed2875167fa1,
+    interferenceLevel: {fileID: 114481291672357136, guid: 6cda06faead672347beaed2875167fa1,
       type: 2}
     AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
     resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
