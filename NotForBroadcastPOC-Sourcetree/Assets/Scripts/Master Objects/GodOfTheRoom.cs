@@ -15,7 +15,7 @@ public class GodOfTheRoom : MonoBehaviour
     public Slider controlRoomVolumeSlider;
     public Slider broadcastVolumeSlider;
     public Slider channelSelectSlider;
-    public Light roomLight;
+    public Light[] roomLights;
     public Sun mySky;
     public Television[] allScreensExceptBroadcast;
     public RollerBlind[] myBlinds;
@@ -66,7 +66,9 @@ public class GodOfTheRoom : MonoBehaviour
     private AudioClip advertAfterCheckpointAudio;
 
     private bool fadingSound, fadingLights, roomMuted;
-    private float soundFadeIncrement, currentSoundFadeVolume, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity, defaultRoomLightIntensity;
+    private float soundFadeIncrement, currentSoundFadeVolume;
+    private float[] defaultRoomLightIntensity, lightFadeIncrement, currentLightFadeIntensity, targetLightFadeIntensity;
+    private int numberOfRoomLights;
 
     // Use this for initialization
     void Start()
@@ -91,8 +93,18 @@ public class GodOfTheRoom : MonoBehaviour
         myEventController = FindObjectOfType<EventController>();
         myBackWallClock = FindObjectOfType<BackWallClock>();
         allTapes = FindObjectsOfType<VHSTape>();
+        numberOfRoomLights = roomLights.Length;
+        Debug.Log("NUMBER OF ROOM LIGHTS: "+numberOfRoomLights);
+        defaultRoomLightIntensity = new float[numberOfRoomLights];
+        lightFadeIncrement = new float[numberOfRoomLights];
+        currentLightFadeIntensity = new float[numberOfRoomLights];
+        targetLightFadeIntensity = new float[numberOfRoomLights];
+        for (int n=0; n<numberOfRoomLights; n++)
+        {
+            defaultRoomLightIntensity[n] = roomLights[n].intensity;
+            Debug.Log("Room Light " + n + " intensity set to " + defaultRoomLightIntensity[n]);
+        }
 
-        defaultRoomLightIntensity = roomLight.intensity;
         fadingSound = false;
         roomMuted = false;
     }
@@ -116,31 +128,35 @@ public class GodOfTheRoom : MonoBehaviour
 
         if (fadingLights)
         {
-            if (targetLightFadeIntensity > currentLightFadeIntensity)
+            for (int n = 0; n < numberOfRoomLights; n++)
             {
-                //Debug.Log("ROOM GOD - FADING LIGHT UP TO " + targetLightFadeIntensity);
 
-                currentLightFadeIntensity += lightFadeIncrement * Time.deltaTime;
-
-                if (currentLightFadeIntensity > targetLightFadeIntensity)
+                if (targetLightFadeIntensity[n] > currentLightFadeIntensity[n])
                 {
-                    currentLightFadeIntensity = targetLightFadeIntensity;
-                    fadingLights = false;
-                }
-            }
-            if (targetLightFadeIntensity < currentLightFadeIntensity)
-            {
-                //Debug.Log("ROOM GOD - FADING LIGHT DOWN TO " + targetLightFadeIntensity);
+                    //Debug.Log("ROOM GOD - FADING LIGHT UP TO " + targetLightFadeIntensity);
 
-                currentLightFadeIntensity -= lightFadeIncrement * Time.deltaTime;
-                if (currentLightFadeIntensity < targetLightFadeIntensity)
-                {
-                    currentLightFadeIntensity = targetLightFadeIntensity;
-                    fadingLights = false;
+                    currentLightFadeIntensity[n] += lightFadeIncrement[n] * Time.deltaTime;
+
+                    if (currentLightFadeIntensity[n] > targetLightFadeIntensity[n])
+                    {
+                        currentLightFadeIntensity[n] = targetLightFadeIntensity[n];
+                        fadingLights = false;
+                    }
                 }
+                if (targetLightFadeIntensity[n] < currentLightFadeIntensity[n])
+                {
+                    //Debug.Log("ROOM GOD - FADING LIGHT DOWN TO " + targetLightFadeIntensity);
+
+                    currentLightFadeIntensity[n] -= lightFadeIncrement[n] * Time.deltaTime;
+                    if (currentLightFadeIntensity[n] < targetLightFadeIntensity[n])
+                    {
+                        currentLightFadeIntensity[n] = targetLightFadeIntensity[n];
+                        fadingLights = false;
+                    }
+                }
+                roomLights[n].intensity = currentLightFadeIntensity[n];
+                //Debug.Log("ROOM GOD - Light Intensity: " + currentLightFadeIntensity);
             }
-            roomLight.intensity = currentLightFadeIntensity;
-            //Debug.Log("ROOM GOD - Light Intensity: " + currentLightFadeIntensity);
         }
     }
 
@@ -184,20 +200,23 @@ public class GodOfTheRoom : MonoBehaviour
 
     public void FadeRoomLights(float thisTime, bool isFadingUp)
     {
-        if (isFadingUp)
+        for (int n = 0; n < numberOfRoomLights; n++)
         {
-            if (roomLight.intensity == defaultRoomLightIntensity) { return; }
-            targetLightFadeIntensity = defaultRoomLightIntensity;
-            currentLightFadeIntensity = 0f;
-        }
-        else
-        {
-            if (roomLight.intensity == 0) { return; }
-            currentLightFadeIntensity = defaultRoomLightIntensity;
-            targetLightFadeIntensity = 0f;
-        }
+            if (isFadingUp)
+            {
+                if (roomLights[n].intensity == defaultRoomLightIntensity[n]) { return; }
+                targetLightFadeIntensity[n] = defaultRoomLightIntensity[n];
+                currentLightFadeIntensity[n] = 0f;
+            }
+            else
+            {
+                if (roomLights[n].intensity == 0) { return; }
+                currentLightFadeIntensity[n] = defaultRoomLightIntensity[n];
+                targetLightFadeIntensity[n] = 0f;
+            }
 
-        lightFadeIncrement = defaultRoomLightIntensity / thisTime;
+            lightFadeIncrement[n] = defaultRoomLightIntensity[n] / thisTime;
+        }
         fadingLights = true;
         //Debug.Log("ROOM GOD: Fading Light to Intesity of " + targetLightFadeIntensity + " over " + thisTime + " with increnemts of " + lightFadeIncrement + " per second.");
     }

@@ -6,6 +6,7 @@ public class OnAirLight : MonoBehaviour {
 
     public MeshRenderer myOnAirText;
     public Light myLight;
+    public GameObject myBulbCover;
 
 	// Use this for initialization
 	void Start () {
@@ -16,13 +17,14 @@ public class OnAirLight : MonoBehaviour {
     {
         myOnAirText.enabled = true;
         myLight.enabled = true;
-
+        myBulbCover.SetActive(false);
     }
 
     public void LightOff()
     {
         myOnAirText.enabled = false;
         myLight.enabled = false;
+        myBulbCover.SetActive(true);
 
     }
 
