@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -71,8 +71,8 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 1
     m_Settings:
-      focusDistance: 1.2
-      aperture: 11.5
+      focusDistance: 2
+      aperture: 32
       focalLength: 66
       useCameraFov: 0
       kernelSize: 1
@@ -109,7 +109,7 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
         tonemapper: 1
@@ -120,12 +120,12 @@ MonoBehaviour:
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
-        postExposure: 0
-        temperature: 0
+        postExposure: 0.6
+        temperature: -0
         tint: 0
         hueShift: 0
-        saturation: 1
-        contrast: 1
+        saturation: 1.639
+        contrast: 0.711
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -156,15 +156,6 @@ MonoBehaviour:
               inWeight: 0
               outWeight: 0
             - serializedVersion: 3
-              time: 0.55131966
-              value: 0.3125
-              inSlope: 1
-              outSlope: 1
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
               time: 1
               value: 1
               inSlope: 1
@@ -186,16 +177,7 @@ MonoBehaviour:
             - serializedVersion: 3
               time: 0
               value: 0
-              inSlope: 1
-              outSlope: 1
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 0.2521994
-              value: 0.30624998
-              inSlope: 1
+              inSlope: 0
               outSlope: 1
               tangentMode: 0
               weightedMode: 0
@@ -205,7 +187,7 @@ MonoBehaviour:
               time: 1
               value: 1
               inSlope: 1
-              outSlope: 1
+              outSlope: 0
               tangentMode: 0
               weightedMode: 0
               inWeight: 0
@@ -251,17 +233,8 @@ MonoBehaviour:
             - serializedVersion: 3
               time: 0
               value: 0
-              inSlope: 1
+              inSlope: 0
               outSlope: 1
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 0.80351907
-              value: 0.825
-              inSlope: -0.49563953
-              outSlope: -0.49563953
               tangentMode: 0
               weightedMode: 0
               inWeight: 0
@@ -270,7 +243,7 @@ MonoBehaviour:
               time: 1
               value: 1
               inSlope: 1
-              outSlope: 1
+              outSlope: 0
               tangentMode: 0
               weightedMode: 0
               inWeight: 0

@@ -8,15 +8,15 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
+  m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1962718779459812}
-  m_IsPrefabParent: 1
+  m_IsPrefabAsset: 1
 --- !u!1 &1962718779459812
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4156777894312240}
   - component: {fileID: 114420280390703262}
@@ -34,7 +34,7 @@ GameObject:
 --- !u!4 &4156777894312240
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962718779459812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -47,7 +47,7 @@ Transform:
 --- !u!114 &114154697584577844
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1
@@ -108,7 +108,7 @@ MonoBehaviour:
 --- !u!114 &114258210600043390
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1
@@ -121,9 +121,9 @@ MonoBehaviour:
   - levelName: 01 The Election
     levelNumber: 1
     dayNumber: 1
-    loopRoll: {fileID: 32900000, guid: a7e47b2f98a2cc7459e1b343a11abc23, type: 3}
-    loopRollSmaller: {fileID: 32900000, guid: 3fef20388c0b7a14b8d6146623c74160, type: 3}
-    loopRollAudio: {fileID: 8300000, guid: 95304d84dfc4abd48bf19f70410bcb40, type: 3}
+    loopRoll: {fileID: 32900000, guid: 50005953ff3abd94aa2b1d0fd089d9a6, type: 3}
+    loopRollSmaller: {fileID: 32900000, guid: 01e6d1021e5704e46ba10c16770f7824, type: 3}
+    loopRollAudio: {fileID: 8300000, guid: 6db78d83a6ef07c4c8b6b7d3b997b7b3, type: 3}
     preRoll: {fileID: 32900000, guid: 0a66f6a062289404e914ba76522417a2, type: 3}
     preRollSmaller: {fileID: 32900000, guid: e2ffa4577947a5842964229858752c5d, type: 3}
     preRollAudio: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
@@ -140,6 +140,16 @@ MonoBehaviour:
       eventType: 0
       floatData: 0
       stringData: 11110000
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Set Blinds to Down
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 23
+      floatData: 0
+      stringData: 
       integerData: 0
       boolData: 0
       objectData: {fileID: 0}
@@ -367,8 +377,8 @@ MonoBehaviour:
       objectData: {fileID: 0}
     - myName: Send Do as he says Fax 03
       myTimeframe: 0
-      mySequenceOrAdNumber: 0
-      eventTime: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 371
       eventType: 4
       floatData: 0.25
       stringData: <br>Do as he says.<br><br>We are working<br>to regain control.
@@ -377,8 +387,8 @@ MonoBehaviour:
       objectData: {fileID: 0}
     - myName: Send security team Fax 04
       myTimeframe: 0
-      mySequenceOrAdNumber: 0
-      eventTime: 0
+      mySequenceOrAdNumber: 3
+      eventTime: 102
       eventType: 4
       floatData: 0.25
       stringData: Security team<br>on approach.<br>Continue Broadcast.<br>Await Instructions.
@@ -387,8 +397,8 @@ MonoBehaviour:
       objectData: {fileID: 0}
     - myName: Send cut to ads Fax 05
       myTimeframe: 1
-      mySequenceOrAdNumber: 0
-      eventTime: 0
+      mySequenceOrAdNumber: 3
+      eventTime: 390
       eventType: 4
       floatData: 0.25
       stringData: CUT TO THE ADS.<br>CUT TO THE ADS.<br>CUT TO THE ADS.<br>CUT TO
@@ -443,6 +453,19 @@ MonoBehaviour:
       eventType: 13
       floatData: 0.25
       stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Send Tower Droping Fax
+      myTimeframe: 0
+      mySequenceOrAdNumber: 1
+      eventTime: 310
+      eventType: 4
+      floatData: 0.05
+      stringData: FAULT WARNING!!<br><br><br><br>Maintainance reporting an inclanation
+        slip error on the Satellite Dish:<br><br>The dish mountings are coming loose
+        causing the dish to drop slowly over time.<br>Please be on the look-out for
+        interference and raise the dish accordingly.<br>
       integerData: 0
       boolData: 0
       objectData: {fileID: 0}
@@ -506,6 +529,18 @@ MonoBehaviour:
       integerData: 0
       boolData: 0
       objectData: {fileID: 0}
+    - myName: Send Tower No Longer Dropping Fax
+      myTimeframe: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 0
+      eventType: 4
+      floatData: 0
+      stringData: FAULT UPDATE!<br><br><br><br>Maintainance reporting inclination
+        error fixed:<br><br>Dish no longer dropping.<br>The maintainance team thanks
+        you for being a Team Player during this difficult time.<br>
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
     - myName: Stop Audience Falling
       myTimeframe: 0
       mySequenceOrAdNumber: 2
@@ -516,12 +551,22 @@ MonoBehaviour:
       integerData: 0
       boolData: 0
       objectData: {fileID: 0}
+    - myName: Switch to Single Cam Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 267
+      eventType: 11
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
     - myName: Force Audience Rise
       myTimeframe: 0
       mySequenceOrAdNumber: 3
       eventTime: 45
       eventType: 20
-      floatData: 0.1
+      floatData: 0.2
       stringData: 
       integerData: 0
       boolData: 0
@@ -569,7 +614,7 @@ MonoBehaviour:
 --- !u!114 &114420280390703262
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1
@@ -598,7 +643,7 @@ MonoBehaviour:
 --- !u!114 &114523897991296926
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1
@@ -625,7 +670,7 @@ MonoBehaviour:
 --- !u!114 &114724817509428008
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1

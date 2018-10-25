@@ -188,13 +188,13 @@ public class GodOfTheRoom : MonoBehaviour
         {
             if (roomLight.intensity == defaultRoomLightIntensity) { return; }
             targetLightFadeIntensity = defaultRoomLightIntensity;
-            currentLightFadeIntensity = 1.2f;
+            currentLightFadeIntensity = 0f;
         }
         else
         {
             if (roomLight.intensity == 0) { return; }
             currentLightFadeIntensity = defaultRoomLightIntensity;
-            targetLightFadeIntensity = 1.2f;
+            targetLightFadeIntensity = 0f;
         }
 
         lightFadeIncrement = defaultRoomLightIntensity / thisTime;
