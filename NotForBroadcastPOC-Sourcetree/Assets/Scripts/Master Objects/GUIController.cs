@@ -22,6 +22,8 @@ public class GUIController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject paperworkMenu;
 
+    public MainMenuTelly menuRoomTelly;
+
     public Image myBlackout;
     public Image myPaperworkImageDisplay;
     public Text myPaperworkTextDisplay;
@@ -451,6 +453,15 @@ public class GUIController : MonoBehaviour
             thisCamera.SetActive(true);
             currentCamera.SetActive(false);
             currentCamera = thisCamera;
+            if (currentCamera == menuCamera)
+            {
+                menuRoomTelly.PlayVideo();
+            }
+            else
+            {
+                menuRoomTelly.PauseVideo();
+            }
+
         }
     }
 
