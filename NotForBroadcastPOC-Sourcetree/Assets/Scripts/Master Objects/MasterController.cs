@@ -442,7 +442,6 @@ public class MasterController : MonoBehaviour {
 
             // Advance Sequence Count
             currentSequence++;
-            myRoomGod.MakeCheckpoint(currentSequence);
 
             overRunning = false;
 
@@ -456,6 +455,9 @@ public class MasterController : MonoBehaviour {
             {
                 Debug.Log("MASTER CONTROLLER SEQUENCE COMPLETE.  NEXT SEQUENCE:" + myLevelData.sequenceNames[currentSequence]);
                 // Yes - 
+                // Make A Checkpoint
+                myRoomGod.MakeCheckpoint(currentSequence-1);
+
 
                 // Put the Vision Mixer into ResetSystem Mode
                 myVisionMixer.inPostRoll = true;

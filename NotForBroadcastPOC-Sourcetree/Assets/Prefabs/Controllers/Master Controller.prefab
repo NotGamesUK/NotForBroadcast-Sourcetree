@@ -121,12 +121,12 @@ MonoBehaviour:
   - levelName: 01 The Election
     levelNumber: 1
     dayNumber: 1
-    loopRoll: {fileID: 32900000, guid: 50005953ff3abd94aa2b1d0fd089d9a6, type: 3}
-    loopRollSmaller: {fileID: 32900000, guid: 01e6d1021e5704e46ba10c16770f7824, type: 3}
-    loopRollAudio: {fileID: 8300000, guid: 6db78d83a6ef07c4c8b6b7d3b997b7b3, type: 3}
-    preRoll: {fileID: 32900000, guid: 0a66f6a062289404e914ba76522417a2, type: 3}
-    preRollSmaller: {fileID: 32900000, guid: e2ffa4577947a5842964229858752c5d, type: 3}
-    preRollAudio: {fileID: 8300000, guid: c010016e5a0141e44a18721c43b25ec7, type: 3}
+    loopRoll: {fileID: 32900000, guid: a7e47b2f98a2cc7459e1b343a11abc23, type: 3}
+    loopRollSmaller: {fileID: 32900000, guid: 3fef20388c0b7a14b8d6146623c74160, type: 3}
+    loopRollAudio: {fileID: 8300000, guid: 95304d84dfc4abd48bf19f70410bcb40, type: 3}
+    preRoll: {fileID: 32900000, guid: 50005953ff3abd94aa2b1d0fd089d9a6, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: 01e6d1021e5704e46ba10c16770f7824, type: 3}
+    preRollAudio: {fileID: 8300000, guid: 6db78d83a6ef07c4c8b6b7d3b997b7b3, type: 3}
     sequenceNames:
     - 01-01 Headlines
     - 01-02 Wildish
@@ -144,7 +144,7 @@ MonoBehaviour:
       boolData: 0
       objectData: {fileID: 0}
     - myName: Set Blinds to Down
-      myTimeframe: 2
+      myTimeframe: 1
       mySequenceOrAdNumber: 0
       eventTime: 0
       eventType: 23
@@ -273,6 +273,16 @@ MonoBehaviour:
       integerData: 0
       boolData: 0
       objectData: {fileID: 0}
+    - myName: TEST Spawn Walker
+      myTimeframe: 1
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 5
+      floatData: 0
+      stringData: MaleCorridorWalker
+      integerData: 10
+      boolData: 0
+      objectData: {fileID: 0}
   - levelName: 06 The Heatwave
     levelNumber: 6
     dayNumber: 212
@@ -335,6 +345,16 @@ MonoBehaviour:
       eventType: 9
       floatData: 0
       stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Spawn Corridor Guard
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 5
+      floatData: 0
+      stringData: MaleCorridorGuardStanding
       integerData: 0
       boolData: 1
       objectData: {fileID: 0}
@@ -584,7 +604,7 @@ MonoBehaviour:
     - Temp 01-01
     - Temp 01-02
     - Temp 01-03
-    advertList: Team01#Team02#Team03#XXX#XXX#Haribo#XXX#Resistance
+    advertList: Nandos#Um Bongo#Team01#Budweiser#Team02#Skittles#Pot Noodle#Team03
     gameEvents: []
   masterLevelClock: 0
   currentLevel: 0

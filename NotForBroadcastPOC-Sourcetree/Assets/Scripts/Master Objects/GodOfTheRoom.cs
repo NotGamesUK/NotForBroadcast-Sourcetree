@@ -41,6 +41,13 @@ public class GodOfTheRoom : MonoBehaviour
     public Material tapedMixingDesk;
     public MeshRenderer mixingDeskFacePlateMesh;
 
+    [Space(5)]
+    [Header("Humans")]
+    [Space(2)]
+    public GameObject maleCorridorWalker;
+    public GameObject maleCorridorGuardStanding;
+
+    [Space(2)]
     public float previousRoomVolume;
     private ScoringController myScoringController;
     private VHSTapeController myVHSTapeRack;
@@ -360,6 +367,27 @@ public class GodOfTheRoom : MonoBehaviour
         myFaxMachine.ReceiveFax(thisText, thisCharacterSize);
     }
 
+    public void SpawnHuman (string thisCharacterName, int secondsAlive)
+    {
+        GameObject thisHuman = null;
+        switch (thisCharacterName)
+        {
+            case "MaleCorridorWalker":
+                thisHuman = Instantiate(maleCorridorWalker);
+                break;
+
+            case "MaleCorridorGuardStanding":
+                thisHuman = Instantiate(maleCorridorGuardStanding);
+                break;
+
+        }
+        if (thisHuman!=null && secondsAlive != 0)
+        {
+            HumanExtra thisDoomed = thisHuman.GetComponent<HumanExtra>();
+            thisDoomed.KillMeIn(secondsAlive);
+        }
+    }
+
 
     // Front View
 
@@ -555,6 +583,13 @@ public class GodOfTheRoom : MonoBehaviour
         myIntercom.SetActive(false);
         myFaxMachine.ResetMe();
         myFaxMachineGameObject.SetActive(false);
+
+        // Humans
+        HumanExtra[] theseHumans = FindObjectsOfType<HumanExtra>();
+        foreach (HumanExtra thisHuman in theseHumans)
+        {
+            Destroy(thisHuman.gameObject);
+        }
 
 
         //// Front View

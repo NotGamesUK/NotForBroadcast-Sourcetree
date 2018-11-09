@@ -1,0 +1,1419 @@
+fileFormatVersion: 2
+guid: 070827df3bd37654c8d6477c6589ae65
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: title glitch_SpriteSheet_0
+    21300002: title glitch_SpriteSheet_1
+    21300004: title glitch_SpriteSheet_2
+    21300006: title glitch_SpriteSheet_3
+    21300008: title glitch_SpriteSheet_4
+    21300010: title glitch_SpriteSheet_5
+    21300012: title glitch_SpriteSheet_6
+    21300014: title glitch_SpriteSheet_7
+    21300016: title glitch_SpriteSheet_8
+    21300018: title glitch_SpriteSheet_9
+    21300020: title glitch_SpriteSheet_10
+    21300022: title glitch_SpriteSheet_11
+    21300024: title glitch_SpriteSheet_12
+    21300026: title glitch_SpriteSheet_13
+    21300028: title glitch_SpriteSheet_14
+    21300030: title glitch_SpriteSheet_15
+    21300032: title glitch_SpriteSheet_16
+    21300034: title glitch_SpriteSheet_17
+    21300036: title glitch_SpriteSheet_18
+    21300038: title glitch_SpriteSheet_19
+    21300040: title glitch_SpriteSheet_20
+    21300042: title glitch_SpriteSheet_21
+    21300044: title glitch_SpriteSheet_22
+    21300046: title glitch_SpriteSheet_23
+    21300048: title glitch_SpriteSheet_24
+    21300050: title glitch_SpriteSheet_25
+    21300052: title glitch_SpriteSheet_26
+    21300054: title glitch_SpriteSheet_27
+    21300056: title glitch_SpriteSheet_28
+    21300058: title glitch_SpriteSheet_29
+    21300060: title glitch_SpriteSheet_30
+    21300062: title glitch_SpriteSheet_31
+    21300064: title glitch_SpriteSheet_32
+    21300066: title glitch_SpriteSheet_33
+    21300068: title glitch_SpriteSheet_34
+    21300070: title glitch_SpriteSheet_35
+    21300072: title glitch_SpriteSheet_36
+    21300074: title glitch_SpriteSheet_37
+    21300076: title glitch_SpriteSheet_38
+    21300078: title glitch_SpriteSheet_39
+    21300080: title glitch_SpriteSheet_40
+    21300082: title glitch_SpriteSheet_41
+    21300084: title glitch_SpriteSheet_42
+    21300086: title glitch_SpriteSheet_43
+    21300088: title glitch_SpriteSheet_44
+    21300090: title glitch_SpriteSheet_45
+    21300092: title glitch_SpriteSheet_46
+    21300094: title glitch_SpriteSheet_47
+    21300096: title glitch_SpriteSheet_48
+    21300098: title glitch_SpriteSheet_49
+    21300100: title glitch_SpriteSheet_50
+    21300102: title glitch_SpriteSheet_51
+    21300104: title glitch_SpriteSheet_52
+    21300106: title glitch_SpriteSheet_53
+    21300108: title glitch_SpriteSheet_54
+    21300110: title glitch_SpriteSheet_55
+    21300112: title glitch_SpriteSheet_56
+    21300114: title glitch_SpriteSheet_57
+    21300116: title glitch_SpriteSheet_58
+    21300118: title glitch_SpriteSheet_59
+    21300120: Main Menu Glitch_0
+    21300122: Main Menu Glitch_1
+    21300124: Main Menu Glitch_2
+    21300126: Main Menu Glitch_3
+    21300128: Main Menu Glitch_4
+    21300130: Main Menu Glitch_5
+    21300132: Main Menu Glitch_6
+    21300134: Main Menu Glitch_7
+    21300136: Main Menu Glitch_8
+    21300138: Main Menu Glitch_9
+    21300140: Main Menu Glitch_10
+    21300142: Main Menu Glitch_11
+    21300144: Main Menu Glitch_12
+    21300146: Main Menu Glitch_13
+    21300148: Main Menu Glitch_14
+    21300150: Main Menu Glitch_15
+    21300152: Main Menu Glitch_16
+    21300154: Main Menu Glitch_17
+    21300156: Main Menu Glitch_18
+    21300158: Main Menu Glitch_19
+    21300160: Main Menu Glitch_20
+    21300162: Main Menu Glitch_21
+    21300164: Main Menu Glitch_22
+    21300166: Main Menu Glitch_23
+    21300168: Main Menu Glitch_24
+    21300170: Main Menu Glitch_25
+    21300172: Main Menu Glitch_26
+    21300174: Main Menu Glitch_27
+    21300176: Main Menu Glitch_28
+    21300178: Main Menu Glitch_29
+    21300180: Main Menu Glitch_30
+    21300182: Main Menu Glitch_31
+    21300184: Main Menu Glitch_32
+    21300186: Main Menu Glitch_33
+    21300188: Main Menu Glitch_34
+    21300190: Main Menu Glitch_35
+    21300192: Main Menu Glitch_36
+    21300194: Main Menu Glitch_37
+    21300196: Main Menu Glitch_38
+    21300198: Main Menu Glitch_39
+    21300200: Main Menu Glitch_40
+    21300202: Main Menu Glitch_41
+    21300204: Main Menu Glitch_42
+    21300206: Main Menu Glitch_43
+    21300208: Main Menu Glitch_44
+    21300210: Main Menu Glitch_45
+    21300212: Main Menu Glitch_46
+    21300214: Main Menu Glitch_47
+    21300216: Main Menu Glitch_48
+    21300218: Main Menu Glitch_49
+    21300220: Main Menu Glitch_50
+    21300222: Main Menu Glitch_51
+    21300224: Main Menu Glitch_52
+    21300226: Main Menu Glitch_53
+    21300228: Main Menu Glitch_54
+    21300230: Main Menu Glitch_55
+    21300232: Main Menu Glitch_56
+    21300234: Main Menu Glitch_57
+    21300236: Main Menu Glitch_58
+    21300238: Main Menu Glitch_59
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Main Menu Glitch_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1740
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478cbf399b20e3b419977dfe6b57508e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_1
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1740
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd086d12d7201d74d90c82f03d8c0b60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f7e96f2667e8e46b8e61633356e60e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_3
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1680
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b81e516022e5d47a3f1aa8314d536d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b63b687bf41ad34cb838649d343642d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_5
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1620
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77701614d5da2674991eb45e42321314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1560
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487a0628daee95843a49f5bdf9764f08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_7
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1560
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7666f63dcdea0f34caea01e8b4d9f465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88e9f5e387c6af43b508b2941fac1f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_9
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1500
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dcd9ac3a166cb468dea0fbf0e83863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd881dbbd4dad949b1bf70fa068fb2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_11
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1440
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69125eaec3f104046b6d431dd53d8331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1380
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55fefe7bc6826a49a9282ded9a6d9a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_13
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1380
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c81a3a019c91b4393a6840b383c446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1320
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db81b7110f2208841a1dff20a77637eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_15
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1320
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d79134e7a3159b4f8782a40a8682008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1260
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3addf0a591715f49b2d10bf85edbe76
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_17
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1260
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2a56e434ad0374da6e06cce72c9991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066a2212522e29544901749f087c65e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_19
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1200
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b94b04f8e42eb74ca3625ab438b1921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1140
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab149a422a4aa745a8addbbaf6a93c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_21
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1140
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf2bd10e9eb47e4eb831b540923782b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9591e6534234842a6e59227238093d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_23
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1080
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb5d64264d06af49ab499e6eb2f4d81
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1020
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c831db2c9f0922419acfb2b1215644a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_25
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1020
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38afb2fdaf406f04abecc1baef6508e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc80a1303f1d7bc48a934af2fd03fc9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_27
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 960
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783d54c8e57a6494dbc5c529c2f13a49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979389f6d864cf546a5b54c853f77b64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_29
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 900
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb28376c56048b545bef9592ad68798c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a08376f9f4a9a4fae56bd2424b97c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_31
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 840
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3d7c4fc0e31ac4c9ba82d9c13d2e66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 780
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a1530f7c85a1747b4f3ff09f6b7df5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_33
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 780
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e712d3299d27945ba33c73802113bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fd27aef28df484e85bb0e736a2e16b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_35
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 720
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e07ade71206a247856c768a79c4dbc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 660
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61170654ca213b3439c1092f5bab7f2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_37
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 660
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4115516b4343ae842aee54885fc6afea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1837f9453ef3e0a4395b9af75e5fd150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_39
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 600
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a017ebd171d4c7449a50a4cb9510dd8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3543961f2a35cc94db4ce962ef6b37b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_41
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 540
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38e4f4a9883a4e45abac73b462bc9c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ac1817c562f684385ea4e17a802a24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_43
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 480
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10f050d10dd526439fd21d951b09cf1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fdee9ede7ced84b852ecff6da2d6d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_45
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 420
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77551b70d22708b4d89995b7bd15bb9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 409f476ba990c83498658b07e1f96f01
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_47
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 360
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79b37eeb2255ba4bb909274d00aa117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241cc7b74b8abf643a47f55fb31b7cc2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_49
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 300
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090e3c01879a06a4e85a48f5af1721e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177f4b2d0520c444f87bd82a406e9b19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_51
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 240
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7ace4b6fa75084694b11807f101967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819406e37fd9bda43bb5a54087d50e1e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_53
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 180
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb33e4e353f0144993cbd514e8ec236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217b739d172b0914eb1d8d3670b68b1e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_55
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 120
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6940f29ae48a3cc4dbd2d674ebd314a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b39b78c5fd8ac48bc0ee3ffbd22cda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_57
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 60
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2aca6789f63544bbde4469c225338f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0e509b8c0a95948b39d0fa143ba61b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Menu Glitch_59
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 533
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e448c516ab502409def16f5d80c978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 66de49fe096fcc246a6b7fcc14981032
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -309,6 +309,7 @@ public class GUIController : MonoBehaviour
             }
         }
         ChangeMenuTo(pauseMenu);
+        ChangeCameraTo(menuCamera);
         ChangeMusicTo(pauseMenuMusic);
         myMusicPlayer.Play();
         Time.timeScale = 0f;
@@ -327,6 +328,7 @@ public class GUIController : MonoBehaviour
         }
 
         ChangeMenuTo(null);
+        ChangeCameraTo(gameCamera);
         ChangeMusicTo(null);
         Time.timeScale = 1f;
         myOptionsController.SaveAllOptions();

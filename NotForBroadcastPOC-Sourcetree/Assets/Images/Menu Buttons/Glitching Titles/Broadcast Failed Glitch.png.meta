@@ -1,0 +1,1419 @@
+fileFormatVersion: 2
+guid: 13c8dae52839b0a468339b758bca9cb1
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: failed Spritesheet_0
+    21300002: failed Spritesheet_1
+    21300004: failed Spritesheet_2
+    21300006: failed Spritesheet_3
+    21300008: failed Spritesheet_4
+    21300010: failed Spritesheet_5
+    21300012: failed Spritesheet_6
+    21300014: failed Spritesheet_7
+    21300016: failed Spritesheet_8
+    21300018: failed Spritesheet_9
+    21300020: failed Spritesheet_10
+    21300022: failed Spritesheet_11
+    21300024: failed Spritesheet_12
+    21300026: failed Spritesheet_13
+    21300028: failed Spritesheet_14
+    21300030: failed Spritesheet_15
+    21300032: failed Spritesheet_16
+    21300034: failed Spritesheet_17
+    21300036: failed Spritesheet_18
+    21300038: failed Spritesheet_19
+    21300040: failed Spritesheet_20
+    21300042: failed Spritesheet_21
+    21300044: failed Spritesheet_22
+    21300046: failed Spritesheet_23
+    21300048: failed Spritesheet_24
+    21300050: failed Spritesheet_25
+    21300052: failed Spritesheet_26
+    21300054: failed Spritesheet_27
+    21300056: failed Spritesheet_28
+    21300058: failed Spritesheet_29
+    21300060: failed Spritesheet_30
+    21300062: failed Spritesheet_31
+    21300064: failed Spritesheet_32
+    21300066: failed Spritesheet_33
+    21300068: failed Spritesheet_34
+    21300070: failed Spritesheet_35
+    21300072: failed Spritesheet_36
+    21300074: failed Spritesheet_37
+    21300076: failed Spritesheet_38
+    21300078: failed Spritesheet_39
+    21300080: failed Spritesheet_40
+    21300082: failed Spritesheet_41
+    21300084: failed Spritesheet_42
+    21300086: failed Spritesheet_43
+    21300088: failed Spritesheet_44
+    21300090: failed Spritesheet_45
+    21300092: failed Spritesheet_46
+    21300094: failed Spritesheet_47
+    21300096: failed Spritesheet_48
+    21300098: failed Spritesheet_49
+    21300100: failed Spritesheet_50
+    21300102: failed Spritesheet_51
+    21300104: failed Spritesheet_52
+    21300106: failed Spritesheet_53
+    21300108: failed Spritesheet_54
+    21300110: failed Spritesheet_55
+    21300112: failed Spritesheet_56
+    21300114: failed Spritesheet_57
+    21300116: failed Spritesheet_58
+    21300118: failed Spritesheet_59
+    21300120: Broadcast Failed Glitch_0
+    21300122: Broadcast Failed Glitch_1
+    21300124: Broadcast Failed Glitch_2
+    21300126: Broadcast Failed Glitch_3
+    21300128: Broadcast Failed Glitch_4
+    21300130: Broadcast Failed Glitch_5
+    21300132: Broadcast Failed Glitch_6
+    21300134: Broadcast Failed Glitch_7
+    21300136: Broadcast Failed Glitch_8
+    21300138: Broadcast Failed Glitch_9
+    21300140: Broadcast Failed Glitch_10
+    21300142: Broadcast Failed Glitch_11
+    21300144: Broadcast Failed Glitch_12
+    21300146: Broadcast Failed Glitch_13
+    21300148: Broadcast Failed Glitch_14
+    21300150: Broadcast Failed Glitch_15
+    21300152: Broadcast Failed Glitch_16
+    21300154: Broadcast Failed Glitch_17
+    21300156: Broadcast Failed Glitch_18
+    21300158: Broadcast Failed Glitch_19
+    21300160: Broadcast Failed Glitch_20
+    21300162: Broadcast Failed Glitch_21
+    21300164: Broadcast Failed Glitch_22
+    21300166: Broadcast Failed Glitch_23
+    21300168: Broadcast Failed Glitch_24
+    21300170: Broadcast Failed Glitch_25
+    21300172: Broadcast Failed Glitch_26
+    21300174: Broadcast Failed Glitch_27
+    21300176: Broadcast Failed Glitch_28
+    21300178: Broadcast Failed Glitch_29
+    21300180: Broadcast Failed Glitch_30
+    21300182: Broadcast Failed Glitch_31
+    21300184: Broadcast Failed Glitch_32
+    21300186: Broadcast Failed Glitch_33
+    21300188: Broadcast Failed Glitch_34
+    21300190: Broadcast Failed Glitch_35
+    21300192: Broadcast Failed Glitch_36
+    21300194: Broadcast Failed Glitch_37
+    21300196: Broadcast Failed Glitch_38
+    21300198: Broadcast Failed Glitch_39
+    21300200: Broadcast Failed Glitch_40
+    21300202: Broadcast Failed Glitch_41
+    21300204: Broadcast Failed Glitch_42
+    21300206: Broadcast Failed Glitch_43
+    21300208: Broadcast Failed Glitch_44
+    21300210: Broadcast Failed Glitch_45
+    21300212: Broadcast Failed Glitch_46
+    21300214: Broadcast Failed Glitch_47
+    21300216: Broadcast Failed Glitch_48
+    21300218: Broadcast Failed Glitch_49
+    21300220: Broadcast Failed Glitch_50
+    21300222: Broadcast Failed Glitch_51
+    21300224: Broadcast Failed Glitch_52
+    21300226: Broadcast Failed Glitch_53
+    21300228: Broadcast Failed Glitch_54
+    21300230: Broadcast Failed Glitch_55
+    21300232: Broadcast Failed Glitch_56
+    21300234: Broadcast Failed Glitch_57
+    21300236: Broadcast Failed Glitch_58
+    21300238: Broadcast Failed Glitch_59
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1740
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e068fe0f2452245bcb3e330efecbe7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_1
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1740
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f8d166f43322b47aa7ae2ea26fac11
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96badbfafb9afc44bbda87f2c3a579d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_3
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1680
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4198988e511908449939a87756f3d4b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8055ea48575a594c8937620bda43e6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_5
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1620
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d641b07f2918de949806369626f4ff3a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1560
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b55f7c6cc2451b4689db8cc4f6df3bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_7
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1560
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892ccf5b8f90fb343860e3e001f4a9e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62daff3e04f9ae64180dd5cda656654d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_9
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1500
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313e6e1584021a5458c82cfbf4314501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8621c6101711f4a4f9c7d63920e6c920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_11
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1440
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a6b06e6cc23b942a3b525c7c9b7583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1380
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e02fd98dc1dd34da2ab387812eb1b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_13
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1380
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852c41e46904a6c46be6bbcddc6d0582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1320
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a82ce7e3e18714e9dbeb14a1979b56
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_15
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1320
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514a3ac889510374da0d4858a8ec45a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1260
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a545e9aa81ee304689455a881f44b1e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_17
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1260
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899bf097381e13b42a06096be1aa8d37
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a655e3a6a26d82418d6438f4460a97b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_19
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1200
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4221d6cd2388f946871d1dd1dc910c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1140
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397da63d137511241a366401afa9a06c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_21
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1140
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd6a65d20f8e6448a98f81e476227b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1221f040fa03c6d46bc24f9f97f30e99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_23
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1080
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eefd2eede6a64447a2572ecfdf80d1c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1020
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b69fda2924d57418cc848a5bdf4ad1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_25
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1020
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4e4b61f2a71ec47bd6d4d38f23ba40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1412c8463889794ab65df31f0d5467d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_27
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 960
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e95a8492f8c50468c25d7b2aa155c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5636ffba8ac79a4fa5519f256bd5928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_29
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 900
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1328351b69905da40a3f0e7f2a45322a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890259b853bf38841b7763af5617541b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_31
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 840
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23499cad29f37ad419a21b6e0cc96586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 780
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4562171c32e7a745b1522e4af898efe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_33
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 780
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7537b6a422af87248bc3a5b54d2c6201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82626c1d3fc63348a94609e5f4eb4f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_35
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 720
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361a2b40b78385a428b896969e6220ae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 660
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b025a21be96223747abbd630f5b0db48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_37
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 660
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62e93199af2c554c9e6e844c31bdac1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64df6273acf7ee4588727d65c6a15a7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_39
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 600
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48afce2ce51ad84c9893181e1d54861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59543eb0c225cce48849f2edc3f44ed0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_41
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 540
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f0ff260aec8674293340ca9b3412fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdba6b5cec2238f48bf735ac7181fa2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_43
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 480
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98712fb48fc1a7542b684bcfadbd591b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d8558ed7d75db47a696a34d3fb4809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_45
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 420
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689269ac3be961e418e022db27a67d3c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb11aceb283d1b45b7583ed3b355be4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_47
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 360
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8978f76efb2f8a4499003bc7487bc0e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873666c51d7523747bdf53a18ec34f27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_49
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 300
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49fc6e338163c94398fe3a99917ae0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a385a598b3fcc774d88119f9a163b245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_51
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 240
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2396dd0c4e79fb4d898cb7c5a7270a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb9f9ccd6bd6f345b91f6f1e5ae92b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_53
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 180
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c907a7d7644ed9242a2ae3f4c8d4eb5e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997a0f297cb735541a11ea1448800e15
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_55
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 120
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec03f990ff5d4c4e921951d7729a3fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d49a3576cc22e24d98c877c4444cf5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_57
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 60
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2105fbe6c3f39343b22d2d68b9ee20e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60511e16980ab684ca7ca3eff257f56c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broadcast Failed Glitch_59
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 0
+        width: 536
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe5100cb8b7ace439231c184d9879f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4741e125f21e9b7429663b7160999ccb
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

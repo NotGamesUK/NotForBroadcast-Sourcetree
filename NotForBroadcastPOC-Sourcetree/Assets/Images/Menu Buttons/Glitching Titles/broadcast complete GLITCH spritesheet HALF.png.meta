@@ -1,0 +1,1359 @@
+fileFormatVersion: 2
+guid: ec7e5b0204dbdbc489325817f0d6a532
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: broadcast complete GLITCH spritesheet HALF_0
+    21300002: broadcast complete GLITCH spritesheet HALF_1
+    21300004: broadcast complete GLITCH spritesheet HALF_2
+    21300006: broadcast complete GLITCH spritesheet HALF_3
+    21300008: broadcast complete GLITCH spritesheet HALF_4
+    21300010: broadcast complete GLITCH spritesheet HALF_5
+    21300012: broadcast complete GLITCH spritesheet HALF_6
+    21300014: broadcast complete GLITCH spritesheet HALF_7
+    21300016: broadcast complete GLITCH spritesheet HALF_8
+    21300018: broadcast complete GLITCH spritesheet HALF_9
+    21300020: broadcast complete GLITCH spritesheet HALF_10
+    21300022: broadcast complete GLITCH spritesheet HALF_11
+    21300024: broadcast complete GLITCH spritesheet HALF_12
+    21300026: broadcast complete GLITCH spritesheet HALF_13
+    21300028: broadcast complete GLITCH spritesheet HALF_14
+    21300030: broadcast complete GLITCH spritesheet HALF_15
+    21300032: broadcast complete GLITCH spritesheet HALF_16
+    21300034: broadcast complete GLITCH spritesheet HALF_17
+    21300036: broadcast complete GLITCH spritesheet HALF_18
+    21300038: broadcast complete GLITCH spritesheet HALF_19
+    21300040: broadcast complete GLITCH spritesheet HALF_20
+    21300042: broadcast complete GLITCH spritesheet HALF_21
+    21300044: broadcast complete GLITCH spritesheet HALF_22
+    21300046: broadcast complete GLITCH spritesheet HALF_23
+    21300048: broadcast complete GLITCH spritesheet HALF_24
+    21300050: broadcast complete GLITCH spritesheet HALF_25
+    21300052: broadcast complete GLITCH spritesheet HALF_26
+    21300054: broadcast complete GLITCH spritesheet HALF_27
+    21300056: broadcast complete GLITCH spritesheet HALF_28
+    21300058: broadcast complete GLITCH spritesheet HALF_29
+    21300060: broadcast complete GLITCH spritesheet HALF_30
+    21300062: broadcast complete GLITCH spritesheet HALF_31
+    21300064: broadcast complete GLITCH spritesheet HALF_32
+    21300066: broadcast complete GLITCH spritesheet HALF_33
+    21300068: broadcast complete GLITCH spritesheet HALF_34
+    21300070: broadcast complete GLITCH spritesheet HALF_35
+    21300072: broadcast complete GLITCH spritesheet HALF_36
+    21300074: broadcast complete GLITCH spritesheet HALF_37
+    21300076: broadcast complete GLITCH spritesheet HALF_38
+    21300078: broadcast complete GLITCH spritesheet HALF_39
+    21300080: broadcast complete GLITCH spritesheet HALF_40
+    21300082: broadcast complete GLITCH spritesheet HALF_41
+    21300084: broadcast complete GLITCH spritesheet HALF_42
+    21300086: broadcast complete GLITCH spritesheet HALF_43
+    21300088: broadcast complete GLITCH spritesheet HALF_44
+    21300090: broadcast complete GLITCH spritesheet HALF_45
+    21300092: broadcast complete GLITCH spritesheet HALF_46
+    21300094: broadcast complete GLITCH spritesheet HALF_47
+    21300096: broadcast complete GLITCH spritesheet HALF_48
+    21300098: broadcast complete GLITCH spritesheet HALF_49
+    21300100: broadcast complete GLITCH spritesheet HALF_50
+    21300102: broadcast complete GLITCH spritesheet HALF_51
+    21300104: broadcast complete GLITCH spritesheet HALF_52
+    21300106: broadcast complete GLITCH spritesheet HALF_53
+    21300108: broadcast complete GLITCH spritesheet HALF_54
+    21300110: broadcast complete GLITCH spritesheet HALF_55
+    21300112: broadcast complete GLITCH spritesheet HALF_56
+    21300114: broadcast complete GLITCH spritesheet HALF_57
+    21300116: broadcast complete GLITCH spritesheet HALF_58
+    21300118: broadcast complete GLITCH spritesheet HALF_59
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2002
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473b569a3830ba743bbb524f99038f1a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_1
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2002
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444f2b91121dc8a43a16cab64d28c943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1933
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fbf8e7d90890a4b82afb8981c6f912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_3
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1933
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9ad77df1a8c084b8c8c2850b7586b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1864
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5974e48d1632fe44aac34dfd58bc40a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_5
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1864
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12e9b45bdaaaa74c8c049a0ed6c006a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1795
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9239c72e306e5e4da28fea2bf36e8b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_7
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1795
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb7c6bb36f7c8f498f19840d533fdfe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1726
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9a6a1ba78fc37419020e44b5551d1e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_9
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1726
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66439f6ff6bd3c64d851d3a7fea3a5ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1657
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0ffa7510688b045bc46c8f1c8daf64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_11
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1657
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7da52dc8fdc2ac4da83fd499f410d4f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1588
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a745c6568bec94ab41b82ed8914175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_13
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1588
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa20cb1dc49289c40a7958d7dd8c708d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1519
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056ed2e66b07d2d429e2139741a96084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_15
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1519
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d5cb6c366d8bf44bb5577ac61ed936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1450
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c407ab765979fc24c8b6073c54139d20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_17
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1450
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b966efd1cfead6f45838eedc84139f0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1381
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397133e5d9fcd4743b89ee78960869dd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_19
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1381
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1381bf9f15907e43b7d48a405941ccf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1312
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5718451e79c1b3640937b1d92004fbfd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_21
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1312
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ccfe0a06a8bab84a83679a957d568ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1243
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e173b9e953e55740b930d1177c7bdd7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_23
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1243
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f22c40a7b6a95499be8696010f933e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1174
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3e2222c810ed34c9966dc74be707bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_25
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1174
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be36299b1cf3d04da8ab5f1416b71ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1105
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beaf7e72463984e46a808d9a62fcabda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_27
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1105
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0935ceb787c6143a79e394ab045c44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1036
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a832a5b122ce54bbddd9f11cbda2e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_29
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1036
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5292f03deb39a4fa6cffcbcf465641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 967
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4184b7e78d77004886972b20cd62781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_31
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 967
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15285e405372c7f4cbe80fe32ae07e13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 898
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee00cd915ccdf164a8ce956b1580022a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_33
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 898
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39e9b0d656faec4c83446c0e23fa86d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 829
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7243d792e864044baec5ff6eacc322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_35
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 829
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344902d93fa64a34fb9c1d5b9c379eb6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 760
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525edb5d85099a84ea57f1c7ca216531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_37
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 760
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2106da354f53847beb0b7c719c3fd8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 691
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0917d46d1b46a0045a98d0069fd6f794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_39
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 691
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117904c1c82f8d44eafe891b14796d8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 622
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc047b448a7b23b44bd807dab3fae5f4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_41
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 622
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f50d9cacfae59c44bdf18af7ea65391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52eae2a5f8a25374286edcadcca3d0f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_43
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 553
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f91da645b624444ac35e5ab2575d42
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 484
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb23b4af0b4142499ad0bd30b71ca19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_45
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 484
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f52b2c55f5523645bfc1db51b660fe8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 415
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2877a56ca0c431a43bd8b19edd2413d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_47
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 415
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7650e5a291db0794383b377b6444ed82
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 346
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fcf098e1bf4874b8e2a40d95bb6c0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_49
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 346
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b6a6d908d0152478fe16470ad953f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 277
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5c45e9cbbba534dbd3b2c7297d9c4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_51
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 277
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a123f5b54872d7b45af1414e2f1e6db7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79afa03a5da4bf4db206b66235ed882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_53
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 208
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ac4a40f50e1bc46a4904b6d1825305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 139
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2be37e5ce102bd44a1383bbe05f276e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_55
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 139
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 034721396504a0b49b42eee4295076b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d82ae3bc0ea68409cffa992f2274d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_57
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 70
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64200279f628474479189cd451a3e144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ecf650cc61a6a2449fad051d772a5ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broadcast complete GLITCH spritesheet HALF_59
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1
+        width: 623
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772095acf2252af4a8f1d8c1178ce40c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: fe5ace0cff05df1439907e4ffb0e1537
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

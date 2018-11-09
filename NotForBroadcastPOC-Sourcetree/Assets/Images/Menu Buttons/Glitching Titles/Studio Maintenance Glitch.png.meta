@@ -1,0 +1,1359 @@
+fileFormatVersion: 2
+guid: 9b057437192e43e4d95a5822c00968e6
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Studio Maintenance Glitch_0
+    21300002: Studio Maintenance Glitch_1
+    21300004: Studio Maintenance Glitch_2
+    21300006: Studio Maintenance Glitch_3
+    21300008: Studio Maintenance Glitch_4
+    21300010: Studio Maintenance Glitch_5
+    21300012: Studio Maintenance Glitch_6
+    21300014: Studio Maintenance Glitch_7
+    21300016: Studio Maintenance Glitch_8
+    21300018: Studio Maintenance Glitch_9
+    21300020: Studio Maintenance Glitch_10
+    21300022: Studio Maintenance Glitch_11
+    21300024: Studio Maintenance Glitch_12
+    21300026: Studio Maintenance Glitch_13
+    21300028: Studio Maintenance Glitch_14
+    21300030: Studio Maintenance Glitch_15
+    21300032: Studio Maintenance Glitch_16
+    21300034: Studio Maintenance Glitch_17
+    21300036: Studio Maintenance Glitch_18
+    21300038: Studio Maintenance Glitch_19
+    21300040: Studio Maintenance Glitch_20
+    21300042: Studio Maintenance Glitch_21
+    21300044: Studio Maintenance Glitch_22
+    21300046: Studio Maintenance Glitch_23
+    21300048: Studio Maintenance Glitch_24
+    21300050: Studio Maintenance Glitch_25
+    21300052: Studio Maintenance Glitch_26
+    21300054: Studio Maintenance Glitch_27
+    21300056: Studio Maintenance Glitch_28
+    21300058: Studio Maintenance Glitch_29
+    21300060: Studio Maintenance Glitch_30
+    21300062: Studio Maintenance Glitch_31
+    21300064: Studio Maintenance Glitch_32
+    21300066: Studio Maintenance Glitch_33
+    21300068: Studio Maintenance Glitch_34
+    21300070: Studio Maintenance Glitch_35
+    21300072: Studio Maintenance Glitch_36
+    21300074: Studio Maintenance Glitch_37
+    21300076: Studio Maintenance Glitch_38
+    21300078: Studio Maintenance Glitch_39
+    21300080: Studio Maintenance Glitch_40
+    21300082: Studio Maintenance Glitch_41
+    21300084: Studio Maintenance Glitch_42
+    21300086: Studio Maintenance Glitch_43
+    21300088: Studio Maintenance Glitch_44
+    21300090: Studio Maintenance Glitch_45
+    21300092: Studio Maintenance Glitch_46
+    21300094: Studio Maintenance Glitch_47
+    21300096: Studio Maintenance Glitch_48
+    21300098: Studio Maintenance Glitch_49
+    21300100: Studio Maintenance Glitch_50
+    21300102: Studio Maintenance Glitch_51
+    21300104: Studio Maintenance Glitch_52
+    21300106: Studio Maintenance Glitch_53
+    21300108: Studio Maintenance Glitch_54
+    21300110: Studio Maintenance Glitch_55
+    21300112: Studio Maintenance Glitch_56
+    21300114: Studio Maintenance Glitch_57
+    21300116: Studio Maintenance Glitch_58
+    21300118: Studio Maintenance Glitch_59
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3335
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918f1773ddb9628458bb98c7f43a7979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_1
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 3335
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342d8f2bbb67cdf4ea9fd83cda653f76
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3220
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520da610ffb468f4db1d30398b7b9892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_3
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 3220
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2270bd7d6e480494a9e9c1d13825e243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3105
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5cea79cbb71a84f8b1b1015e44cef0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_5
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 3105
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aaae0008269dbd46bceeff81b4e6d37
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2990
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d514b509c4b6a66419eecd7da208aae3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_7
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2990
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 262db119d145e4147a9e02c866e192f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2875
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45aa1f5849723334395108ba3c30ea6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_9
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2875
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f20c50d1f100314dbb3f0a34529ce58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2760
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c306a0fe24c12240a706e2e7d768aff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_11
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2760
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8911f4d996179cb4cb72168c1db8b009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2645
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7640dd6c0a46cbf4f88e1e562a2fb4b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_13
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2645
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed12792d272f13644a5f7a84a41a2b29
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2530
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc2326e999de154498c0b41775c9955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_15
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2530
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d715bbbf2399548a882741f278dec3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2415
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e9761f160e75b4e84a55bf744ad3eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_17
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2415
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b274cb241e90e4184ab78eef06a584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2300
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa5924e5a018f1449583d1dead21f2e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_19
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2300
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17ab16c764a2a74987b6063fefd4cf0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2185
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e410d386ea1d03a4f88b25834b6f541c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_21
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2185
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c036807744f7a5b46a49f4b3170a3b36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2070
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33155446df0277644b20582b8dad84c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_23
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 2070
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7a6a3d29fbc5f4d8cc043f7f05c782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1955
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2b329a21c426d45ab12a8ddaa9ce6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_25
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1955
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30696ec54e07bf14cb5d8b74e53dfd28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1840
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e185ef3bbb4289b42aad48ae86bae1ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_27
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1840
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5bcdc6c420ff648a836760a8e6052b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1725
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63d149ca63af5c48bdc75f686be99b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_29
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1725
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ae7150d43ae994882147f68c77f3d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1610
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4129b8934ae5247929cc571dcb615a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_31
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1610
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c84457c8526cae408a2620fe8f75b4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1495
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99930d7e98291d4895ac1424ec7242d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_33
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1495
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff55b5e499efe7439b88bdbfab6e034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1380
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635b353c1ec9a4f4684a3a94e03262fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_35
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1380
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950f83d59d32896449d6c3803e7935de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1265
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d07258f935c1504a8b1e8f4ff5c733e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_37
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1265
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9daef12ec23434da109a0de6e9f11d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1150
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec398409d57f5e4881d095b7036d7ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_39
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1150
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6d9141b44399c4bb0ae55c5d5a4200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1035
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e55e97e5f18124fbc5b04409f29a84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_41
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1035
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae095308071a18c41893eabbb4cab31e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 920
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3367667d797fc747beecace24fd24c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_43
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 920
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6117f82a13479164e98cd277b5d06c79
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 805
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1251109ed64bb3040bebd5d12239cb6e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_45
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 805
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f82184d92c90254b9c41250d7c1c1ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 690
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb876191e6774d64d9083ffaa73eba04
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_47
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 690
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0cbf404b3bbdcb4ea47e0d23fbfb02b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e0eb603df020a479d36aa7e6bcf30f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_49
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 575
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d7c1490710e6a4fb286d0b8cd84b2e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 460
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c5523f4a5a14d49a3f12bf3c2ba559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_51
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 460
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dca98b71c053e94490b41d15cd1d453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 345
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38bd32f65c2b9df4e8661448788579d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_53
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 345
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd1d82e5b03d2141b56f34f5eadfa19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f95838506e17a84cbd92ea41180a4a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_55
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 230
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32e96601e898824aa6a0796d7dc5af7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a96ac81b33029b4086217249f896992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_57
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 115
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ff6955e81d9ff4c92b41a70936daf1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6084c1900d8639b4db60ac009f090004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Studio Maintenance Glitch_59
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 0
+        width: 1226
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af503a9b8996025489e4486403b04075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: bb90c2dd581ff3c4997a0fb847cdf9f2
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

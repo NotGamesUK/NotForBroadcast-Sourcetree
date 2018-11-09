@@ -12,7 +12,7 @@ public class GameEvent : IComparable<GameEvent>
     public int mySequenceOrAdNumber;
     public float eventTime;
 
-    public enum EventType { SetPlugs, TripPower, PopFanSwitch, RingPhone, SendFax, CorridorEvent, WindowEvent, SetMasterVolumeSlider, SetBroadcastVolumeSlider,
+    public enum EventType { SetPlugs, TripPower, PopFanSwitch, RingPhone, SendFax, SpawnHuman, WindowEvent, SetMasterVolumeSlider, SetBroadcastVolumeSlider,
         EnableObject, MultiCamScoringOn, SingleCamScoringOn, RhythmCamScoringOn, SetTowerDropSpeed, SetTowerTurnSpeed, SetMaximumPower, SetRoomTemperature, DropSatelliteDish,
         ChangeScoringDownWeight, ChangeScoringUpWeight, SetScoringGodWeight, SetVisionMixerLinkSwitch, ShowTapeOnMixingDesk, SetBlindsToPercentageUp }
     public EventType eventType;

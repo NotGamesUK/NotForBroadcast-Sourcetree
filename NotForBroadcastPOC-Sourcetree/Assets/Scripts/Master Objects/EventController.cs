@@ -135,8 +135,8 @@ public class EventController : MonoBehaviour {
                 break;
 
 
-            case GameEvent.EventType.CorridorEvent:
-
+            case GameEvent.EventType.SpawnHuman:
+                myRoomGod.SpawnHuman(thisEvent.stringData, thisEvent.integerData);
 
                 break;
 

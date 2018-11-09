@@ -1,0 +1,1419 @@
+fileFormatVersion: 2
+guid: a21ce7b55118de343936d0d3d4354d01
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: paused_glitch spritesheet_0
+    21300002: paused_glitch spritesheet_1
+    21300004: paused_glitch spritesheet_2
+    21300006: paused_glitch spritesheet_3
+    21300008: paused_glitch spritesheet_4
+    21300010: paused_glitch spritesheet_5
+    21300012: paused_glitch spritesheet_6
+    21300014: paused_glitch spritesheet_7
+    21300016: paused_glitch spritesheet_8
+    21300018: paused_glitch spritesheet_9
+    21300020: paused_glitch spritesheet_10
+    21300022: paused_glitch spritesheet_11
+    21300024: paused_glitch spritesheet_12
+    21300026: paused_glitch spritesheet_13
+    21300028: paused_glitch spritesheet_14
+    21300030: paused_glitch spritesheet_15
+    21300032: paused_glitch spritesheet_16
+    21300034: paused_glitch spritesheet_17
+    21300036: paused_glitch spritesheet_18
+    21300038: paused_glitch spritesheet_19
+    21300040: paused_glitch spritesheet_20
+    21300042: paused_glitch spritesheet_21
+    21300044: paused_glitch spritesheet_22
+    21300046: paused_glitch spritesheet_23
+    21300048: paused_glitch spritesheet_24
+    21300050: paused_glitch spritesheet_25
+    21300052: paused_glitch spritesheet_26
+    21300054: paused_glitch spritesheet_27
+    21300056: paused_glitch spritesheet_28
+    21300058: paused_glitch spritesheet_29
+    21300060: paused_glitch spritesheet_30
+    21300062: paused_glitch spritesheet_31
+    21300064: paused_glitch spritesheet_32
+    21300066: paused_glitch spritesheet_33
+    21300068: paused_glitch spritesheet_34
+    21300070: paused_glitch spritesheet_35
+    21300072: paused_glitch spritesheet_36
+    21300074: paused_glitch spritesheet_37
+    21300076: paused_glitch spritesheet_38
+    21300078: paused_glitch spritesheet_39
+    21300080: paused_glitch spritesheet_40
+    21300082: paused_glitch spritesheet_41
+    21300084: paused_glitch spritesheet_42
+    21300086: paused_glitch spritesheet_43
+    21300088: paused_glitch spritesheet_44
+    21300090: paused_glitch spritesheet_45
+    21300092: paused_glitch spritesheet_46
+    21300094: paused_glitch spritesheet_47
+    21300096: paused_glitch spritesheet_48
+    21300098: paused_glitch spritesheet_49
+    21300100: paused_glitch spritesheet_50
+    21300102: paused_glitch spritesheet_51
+    21300104: paused_glitch spritesheet_52
+    21300106: paused_glitch spritesheet_53
+    21300108: paused_glitch spritesheet_54
+    21300110: paused_glitch spritesheet_55
+    21300112: paused_glitch spritesheet_56
+    21300114: paused_glitch spritesheet_57
+    21300116: paused_glitch spritesheet_58
+    21300118: paused_glitch spritesheet_59
+    21300120: Paused Glitch_0
+    21300122: Paused Glitch_1
+    21300124: Paused Glitch_2
+    21300126: Paused Glitch_3
+    21300128: Paused Glitch_4
+    21300130: Paused Glitch_5
+    21300132: Paused Glitch_6
+    21300134: Paused Glitch_7
+    21300136: Paused Glitch_8
+    21300138: Paused Glitch_9
+    21300140: Paused Glitch_10
+    21300142: Paused Glitch_11
+    21300144: Paused Glitch_12
+    21300146: Paused Glitch_13
+    21300148: Paused Glitch_14
+    21300150: Paused Glitch_15
+    21300152: Paused Glitch_16
+    21300154: Paused Glitch_17
+    21300156: Paused Glitch_18
+    21300158: Paused Glitch_19
+    21300160: Paused Glitch_20
+    21300162: Paused Glitch_21
+    21300164: Paused Glitch_22
+    21300166: Paused Glitch_23
+    21300168: Paused Glitch_24
+    21300170: Paused Glitch_25
+    21300172: Paused Glitch_26
+    21300174: Paused Glitch_27
+    21300176: Paused Glitch_28
+    21300178: Paused Glitch_29
+    21300180: Paused Glitch_30
+    21300182: Paused Glitch_31
+    21300184: Paused Glitch_32
+    21300186: Paused Glitch_33
+    21300188: Paused Glitch_34
+    21300190: Paused Glitch_35
+    21300192: Paused Glitch_36
+    21300194: Paused Glitch_37
+    21300196: Paused Glitch_38
+    21300198: Paused Glitch_39
+    21300200: Paused Glitch_40
+    21300202: Paused Glitch_41
+    21300204: Paused Glitch_42
+    21300206: Paused Glitch_43
+    21300208: Paused Glitch_44
+    21300210: Paused Glitch_45
+    21300212: Paused Glitch_46
+    21300214: Paused Glitch_47
+    21300216: Paused Glitch_48
+    21300218: Paused Glitch_49
+    21300220: Paused Glitch_50
+    21300222: Paused Glitch_51
+    21300224: Paused Glitch_52
+    21300226: Paused Glitch_53
+    21300228: Paused Glitch_54
+    21300230: Paused Glitch_55
+    21300232: Paused Glitch_56
+    21300234: Paused Glitch_57
+    21300236: Paused Glitch_58
+    21300238: Paused Glitch_59
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Paused Glitch_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1682
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a642d4452a70a04eae2adbd511ef92d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_1
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1682
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483f3336676fb824a99c7ecf8a3e69c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1624
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0404825963c0e84b808098daddb841d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1624
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18198864df73cd47b3c8391a11ca56e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1566
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5251a808851b2774c98469dc5c88d324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_5
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1566
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848ffbd02a55fc8469b02c0a9bf31429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1508
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad11a5d114de6ae42a34b4267d1c5702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_7
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1508
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1112aaf3af73f749aa89e40b9613242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1450
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b75a86e6e8ad440b1329c7cce6769b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_9
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1450
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b19bd3eb89656c45acd787a30cb880c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1392
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e43092093bb0fa4692a0d65ae13cc46
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_11
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1392
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fe161d87693ef48bd7861c32681d55
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1334
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d353953ed98a34fa64b3e3f67dad22
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_13
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1334
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee515a8c9bed2b34f8c3c62b44ce1392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1276
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d5dc170c345184cb79ce979883f233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_15
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1276
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e925ff1f949c44084bb0730364e0e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1218
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c1feab916ca754b92a5b5131ae6a1e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_17
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1218
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e9d13ce2cc7644688741d910a11ff6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1160
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f81bd89d81232c4e86a91bc354294cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_19
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1160
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f96b774856769c45baa3224ea867350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1102
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e7f7b911dc08a42bc7c24ad146245f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_21
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1102
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d2defcd10202a428970e027362a777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1044
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1886bad38bd3e245884754029bd147b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_23
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1044
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4091f406d922eb142b98acce3b562ba5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 986
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ddd908ee8ee0f42ab2041d8bb94ee4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_25
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 986
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132ef92cad3916a43b5e966e7f234389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 928
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ef92914b4fc2d4e8e30956f96f897b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_27
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 928
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bfecf4135fd384da571d4c9f7c533e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 870
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6358a2c13562fb649848fa6cc58adf73
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_29
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 870
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e2e7c725e27f994b86e072526de84c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 812
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee4cdb525d4d7f488594c20a6ca3e18
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_31
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 812
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b0464a311e9f14ea16d8b166109d2e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 754
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930bf82fcf1cf9e45998ec262e22b4cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_33
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 754
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8519fb0ed165a504e96f252224d28d65
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 696
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9bc42e78e0d44e4596eca04f7cd453d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_35
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 696
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3c5edf6e5a67b4db8e74b58ba257b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 638
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247ef722d2e74bc4ca8fe8846dadb34b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_37
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 638
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a70f422651321843bea3251f557b1ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 580
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04b64f9b1571ca45acad97ef50fd498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_39
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 580
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0947e7ea80c284dbfa5012717c7917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 522
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ecd741235cdae41acc06cb0ef2567d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_41
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 522
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ab3f8f665e680468782818aa952d5f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebf59c68270ec9479a892720e1be535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_43
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 464
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7b65954fbad654fb628018c1eb0e17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 406
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c206d48c1c49d2048bb3fb7dfc9754c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_45
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 406
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630d6ab2cfc995640a392a59a7ee547d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c5ce43234e9d84ba8b29557f04bad3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_47
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 348
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86cfa5056af7ce489530c6afa035a8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 290
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c58473c474f2b4d8aa95daf19f8928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_49
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 290
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240d97d5e1b8ed44189ef14fd9a91134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bb5c1665cf5e14486eded16623d4fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_51
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 232
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5416755d8ad6f34d923b6b25ccc902e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 174
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d990c5d055e46054180e24eecc6c8bcc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_53
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 174
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd744d0e782f19646b2f99ec1e89e1b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2387525eba92d73449d4860606876ebe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_55
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 116
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faacd15688b9d1b41a36549470035b02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66046da9b1aae44484f901b4a22fe58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_57
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 58
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc2184f18ab7854a831dd4da5c60a1a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f813347e456f7d439fe89fc43a2189a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused Glitch_59
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 237
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfd5aea1f512434ca610e3a3e60c436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 55b9068d2cab46446bb44615662ec047
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
