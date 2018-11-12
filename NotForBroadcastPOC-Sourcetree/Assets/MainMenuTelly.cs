@@ -11,7 +11,7 @@ public class MainMenuTelly : MonoBehaviour {
     public Light myFlickerLight;
     public Light myWallFlickerLight;
     public string[] frameColourChanges;
-    public MenuTitleJudder myJudder;
+    public MenuTitleJudder[] myJudders;
 
     private VideoPlayer myScreen;
     private int nextChangeFrame, maxChangePosition, currentArrayPos, lastFrame;
@@ -28,8 +28,14 @@ public class MainMenuTelly : MonoBehaviour {
         nextChangeFrame = 0;
         baseColour = Color.white * 0.5f;
         lastFrame = 0;
-        myJudder.JudderOn();
-	}
+        foreach (MenuTitleJudder thisJudder in myJudders)
+        {
+            if (thisJudder.isActiveAndEnabled)
+            {
+                thisJudder.JudderOn();
+            }
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -50,10 +56,23 @@ public class MainMenuTelly : MonoBehaviour {
                 baseColour = nextBaseColour;
                 if (nextColour == "W")
                 {
-                    myJudder.JudderOn();
-                } else
+                    foreach (MenuTitleJudder thisJudder in myJudders)
+                    {
+                        if (thisJudder.isActiveAndEnabled)
+                        {
+                            thisJudder.JudderOn();
+                        }
+                    }
+                }
+                else
                 {
-                    myJudder.JudderOff();
+                    foreach (MenuTitleJudder thisJudder in myJudders)
+                    {
+                        if (thisJudder.isActiveAndEnabled)
+                        {
+                            thisJudder.JudderOff();
+                        }
+                    }
                 }
                 //while (thisFrame > nextChangeFrame)
                 //{
