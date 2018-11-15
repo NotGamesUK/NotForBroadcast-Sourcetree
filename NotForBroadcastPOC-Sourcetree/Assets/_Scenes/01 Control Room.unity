@@ -2431,19 +2431,21 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 885a6366035c2f447a674b2280a29a0a, type: 3}
-    m_FontSize: 27
+    m_Font: {fileID: 12800000, guid: ff3a015580ef046ac85fa087703e0a2d, type: 3}
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close
+  m_Text: 'CLOSE
+
+'
 --- !u!222 &103650504
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11251,19 +11253,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 885a6366035c2f447a674b2280a29a0a, type: 3}
+    m_Font: {fileID: 12800000, guid: ff3a015580ef046ac85fa087703e0a2d, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Top Tray
+  m_Text: TOP TRAY
 --- !u!222 &443417837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30985,19 +30987,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 885a6366035c2f447a674b2280a29a0a, type: 3}
+    m_Font: {fileID: 12800000, guid: ff3a015580ef046ac85fa087703e0a2d, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bottom Tray
+  m_Text: BOTTOM TRAY
 --- !u!222 &1170622816
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38641,7 +38643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24528301, g: 0.11222855, b: 0.14680675, a: 0.92941177}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -39156,8 +39158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.63, y: 150.25}
-  m_SizeDelta: {x: 726.8, y: 61.7}
+  m_AnchoredPosition: {x: -191, y: 150.25}
+  m_SizeDelta: {x: 338.9, y: 61.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442651578
 MonoBehaviour:
@@ -40656,7 +40658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1499392724
 Transform:
   m_ObjectHideFlags: 0
@@ -40980,8 +40982,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.63, y: -187.77}
-  m_SizeDelta: {x: 122.12, y: 44.73}
+  m_AnchoredPosition: {x: -326.99, y: -194.62}
+  m_SizeDelta: {x: 56.87, y: 30.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504116038
 MonoBehaviour:
@@ -41041,7 +41043,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1504116036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -56846,7 +56848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.63, y: -18.920002}
+  m_AnchoredPosition: {x: -234.90001, y: 29.939995}
   m_SizeDelta: {x: 241.07, y: 37.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880046996
@@ -56907,7 +56909,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1880046994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -57764,32 +57766,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114845368960948496, guid: 28e2516e16cbf5a42bdd57554b8046cc,
-        type: 2}
-      propertyPath: leftViewAperture
-      value: 11.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091179178779524, guid: 28e2516e16cbf5a42bdd57554b8046cc, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114436308629453398, guid: 28e2516e16cbf5a42bdd57554b8046cc,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249088191000898, guid: 28e2516e16cbf5a42bdd57554b8046cc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 27.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249088191000898, guid: 28e2516e16cbf5a42bdd57554b8046cc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -32.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249088191000898, guid: 28e2516e16cbf5a42bdd57554b8046cc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e2516e16cbf5a42bdd57554b8046cc, type: 2}
   m_IsPrefabAsset: 0
@@ -58157,7 +58133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.63, y: 44.8}
+  m_AnchoredPosition: {x: -234.89, y: 74}
   m_SizeDelta: {x: 241.07, y: 37.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1951172160
@@ -58218,7 +58194,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1951172158}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 

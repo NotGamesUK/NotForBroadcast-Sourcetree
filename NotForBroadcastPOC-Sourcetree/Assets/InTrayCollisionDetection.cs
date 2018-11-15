@@ -11,12 +11,14 @@ public class InTrayCollisionDetection : MonoBehaviour {
     private Material defaultMaterial;
     private MeshRenderer myMeshRenderer;
     private GUIController myGUIGontroller;
+    private CameraMovement myCamera;
     private bool isSelected, isTopTray;
 
 	// Use this for initialization
 	void Start () {
         myMeshRenderer = GetComponent<MeshRenderer>();
         myGUIGontroller = FindObjectOfType<GUIController>();
+        myCamera = FindObjectOfType<CameraMovement>();
         defaultMaterial = myMeshRenderer.material;
         isTopTray = false;
         if (myID==1) { isTopTray = true; }
@@ -46,6 +48,7 @@ public class InTrayCollisionDetection : MonoBehaviour {
         {
             myGUIGontroller.ShowPaperwork(isTopTray);
             myMeshRenderer.material = defaultMaterial;
+            myCamera.LookToInTray();
         }
     }
 }

@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour {
     public float speedH = 2.0f;
     public float speedV = 2.0f;
     public PostProcessingProfile myPostProcessing;
-    public float focusPullTime, frontViewFocusLength, frontViewAperture, leftViewFocusLength, leftViewAperture, rightViewFocusLength, rightViewAperture, downViewFocusLength, downViewAperture;
+    public float focusPullTime, frontViewFocusLength, frontViewAperture, leftViewFocusLength, leftViewAperture, rightViewFocusLength, rightViewAperture, downViewFocusLength, downViewAperture, inTrayViewFocusLength, inTrayViewAperture;
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
@@ -104,6 +104,33 @@ public class CameraMovement : MonoBehaviour {
         }
 
     }
+
+    public void LookToInTray()
+    {
+        if (myPosition == "Right")
+        {
+            myAnimator.SetTrigger("goToInTray");
+            myPosition = "InTray";
+            PullFocusOverTime(inTrayViewFocusLength, inTrayViewAperture, focusPullTime);
+
+        }
+
+    }
+
+    public void BackFromInTray()
+    {
+        if (myPosition == "InTray")
+        {
+            myAnimator.SetTrigger("backFromInTray");
+            myPosition = "Right";
+            PullFocusOverTime(rightViewFocusLength, rightViewAperture, focusPullTime);
+
+        }
+
+    }
+
+
+
 
     void Update()
     {

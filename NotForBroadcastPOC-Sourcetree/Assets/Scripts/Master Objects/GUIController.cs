@@ -218,6 +218,7 @@ public class GUIController : MonoBehaviour
     public void HidePaperwork()
     {
         paperworkMenu.SetActive(false);
+        freeLookCamera.BackFromInTray();
     }
 
 
