@@ -35,6 +35,9 @@ public class GUIController : MonoBehaviour
     public GameObject retryFloater;
     public Text myRetryCountdownDisplay;
     public Text myRetryGradeDisplay;
+    public GameObject levelCompleteFloater;
+    public Text myLevelCompleteCountdownDisplay;
+    public Text myLevelCompleteGradeDisplay;
 
 
     public AudioClip mainMenuMusic;
@@ -67,8 +70,8 @@ public class GUIController : MonoBehaviour
     private AudioSource[] allAudioSources;
     private bool paused;
     private bool cameFromMain = true;
-    private bool showingRetry;
-    private float myRetryCountdown;
+    private bool showingRetry, showingLevelCompleteFloater;
+    private float myRetryCountdown, myLevelCompleteCountdown;
     private int currentDay, currentSegment, currentTray;
     
 
@@ -131,6 +134,21 @@ public class GUIController : MonoBehaviour
                 retryFloater.SetActive(false);
             }
         }
+
+        if (showingLevelCompleteFloater)
+        {
+            myLevelCompleteCountdown -= Time.deltaTime;
+            if (myLevelCompleteCountdown > 0)
+            {
+                myLevelCompleteCountdownDisplay.text = Mathf.CeilToInt(myLevelCompleteCountdown).ToString();
+            }
+            else
+            {
+                showingLevelCompleteFloater = false;
+                levelCompleteFloater.SetActive(false);
+            }
+        }
+
     }
 
     public void ShowRetry(float thisTime)
@@ -142,6 +160,18 @@ public class GUIController : MonoBehaviour
             myRetryCountdownDisplay.text = Mathf.CeilToInt(thisTime).ToString();
             myRetryGradeDisplay.text = myScoringController.GetCurrentGrade();
             retryFloater.SetActive(true);
+        }
+    }
+
+    public void ShowLevelCompleteFloater(float thisTime)
+    {
+        if (!showingLevelCompleteFloater)
+        {
+            showingLevelCompleteFloater = true;
+            myLevelCompleteCountdown = thisTime;
+            myLevelCompleteCountdownDisplay.text = Mathf.CeilToInt(thisTime).ToString();
+            myLevelCompleteGradeDisplay.text = myScoringController.GetCurrentGrade();
+            levelCompleteFloater.SetActive(true);
         }
     }
 
@@ -379,7 +409,8 @@ public class GUIController : MonoBehaviour
         ChangeCameraTo(menuCamera);
         ChangeMenuTo(succeedMenu);
         ChangeMusicTo(succeedMenuMusic);
-
+        showingLevelCompleteFloater = false;
+        levelCompleteFloater.SetActive(false);
     }
 
     public void GoToFailed(string thisReason)

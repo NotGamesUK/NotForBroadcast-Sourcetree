@@ -71,7 +71,7 @@ public class MasterController : MonoBehaviour {
     public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
     public MasterState myState;
     [HideInInspector]
-    public bool preparingAd, overRunning, inDevMode;
+    public bool preparingAd, overRunning, inDevMode, showingLevelCompleteBanner;
     private float overrunTime, startPreRollTime;
     [HideInInspector]
     public List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
@@ -184,6 +184,7 @@ public class MasterController : MonoBehaviour {
                         // Copy EDL into Array
                         // Save All EDLs and Interference Log
                         myState = MasterState.PostRoll;
+                        Debug.Log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  Going into Broadcast Post Roll.");
                     }
                     startPreRollTime = -1;
                 }
@@ -237,6 +238,11 @@ public class MasterController : MonoBehaviour {
 
             case MasterState.PostRoll:
 
+                if (!myVisionMixer.inPostRoll && !showingLevelCompleteBanner)
+                {
+                    showingLevelCompleteBanner = true;
+                    myGUIController.ShowLevelCompleteFloater(myClock.clockTime);
+                }
                 // If in PostLevel State
                 // Wait for ENTER keypress or end of advert after PostRoll then:
                 if (Input.GetKeyDown(KeyCode.KeypadEnter))
@@ -471,9 +477,11 @@ public class MasterController : MonoBehaviour {
                 Debug.Log("PLAYING FINAL AD");
                 // Play final Ad
                 myVisionMixer.inPostRoll = true;
+                currentSequence = 3;
                 PrepareAdvert(thisAdvert, thisAdvertAudio);
+                showingLevelCompleteBanner = false;
                 // Call LevelComplete()
-                LevelComplete();
+                //LevelComplete();
             }
         }
 
@@ -508,7 +516,7 @@ public class MasterController : MonoBehaviour {
         broadcastEDL[thisEDL].Clear();
     }
 
-    void LevelComplete()
+    public void LevelComplete()
     {
         // Enter PostLevel State
         myState = MasterState.EndOfLevel;
@@ -524,6 +532,7 @@ public class MasterController : MonoBehaviour {
 
         Debug.Log("Saving File with Name: "+saveFileName);
         SaveBroadcast(saveFileName);
+        myRoomGod.ResetRoom();
     }
 
     void PauseGame()

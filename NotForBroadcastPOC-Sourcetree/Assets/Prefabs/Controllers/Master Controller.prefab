@@ -144,7 +144,7 @@ MonoBehaviour:
       boolData: 0
       objectData: {fileID: 0}
     - myName: Set Blinds to Down
-      myTimeframe: 1
+      myTimeframe: 2
       mySequenceOrAdNumber: 0
       eventTime: 0
       eventType: 23
