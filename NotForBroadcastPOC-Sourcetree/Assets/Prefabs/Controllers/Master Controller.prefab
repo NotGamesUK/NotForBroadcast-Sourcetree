@@ -76,10 +76,10 @@ MonoBehaviour:
   myScoringMode: 0
   broadcastScreensLive: 0
   bleepOn: 0
-  maxAudioChannel: 0
+  maxAudioChannel: 2
   channelMuted: 00000000
   bleepChannelMuted: 00000000
-  audiencePercentage: 0
+  audiencePercentage: 50
   footageCountdown: 0
   footageWeighting: 0
   audioWeighting: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   myBleepLight: {fileID: 0}
   screenVideoColour: 0000000000000000000000000000000000000000000000000000000000000000
   currentSequenceNumber: 0
-  currentBroadcastScreen: 0
+  currentBroadcastScreen: -1
   bleepWatchingCount: 0
 --- !u!114 &114258210600043390
 MonoBehaviour:
@@ -131,7 +131,7 @@ MonoBehaviour:
     - 01-01 Headlines
     - 01-02 Wildish
     - 01-03 Party Leaders
-    advertList: 'Nandos#Um Bongo#XXX#Budweiser#XXX#Skittles#Pot Noodle#XXX '
+    advertList: 'Haribo#Um Bongo#XXX#Budweiser#XXX#Digestives#Pot Noodle#XXX '
     gameEvents:
     - myName: Set Up Plugs
       myTimeframe: 2
@@ -608,29 +608,212 @@ MonoBehaviour:
     gameEvents: []
   masterLevelClock: 0
   currentLevel: 0
-  levelCalledFromGUI: 0
+  levelCalledFromGUI: 1
   currentSequence: 0
   myLevelData:
-    levelName: 
-    levelNumber: 0
-    dayNumber: 0
-    loopRoll: {fileID: 0}
-    loopRollSmaller: {fileID: 0}
-    loopRollAudio: {fileID: 0}
-    preRoll: {fileID: 0}
-    preRollSmaller: {fileID: 0}
-    preRollAudio: {fileID: 0}
+    levelName: 01 The Election
+    levelNumber: 1
+    dayNumber: 1
+    loopRoll: {fileID: 32900000, guid: a7e47b2f98a2cc7459e1b343a11abc23, type: 3}
+    loopRollSmaller: {fileID: 32900000, guid: 3fef20388c0b7a14b8d6146623c74160, type: 3}
+    loopRollAudio: {fileID: 8300000, guid: 95304d84dfc4abd48bf19f70410bcb40, type: 3}
+    preRoll: {fileID: 32900000, guid: 50005953ff3abd94aa2b1d0fd089d9a6, type: 3}
+    preRollSmaller: {fileID: 32900000, guid: 01e6d1021e5704e46ba10c16770f7824, type: 3}
+    preRollAudio: {fileID: 8300000, guid: 6db78d83a6ef07c4c8b6b7d3b997b7b3, type: 3}
     sequenceNames:
-    - 
-    - 
-    - 
-    advertList: 
-    gameEvents: []
-  myState: 0
+    - 01-01 Headlines
+    - 01-02 Wildish
+    - 01-03 Party Leaders
+    advertList: 'Haribo#Um Bongo#XXX#Budweiser#XXX#Digestives#Pot Noodle#XXX '
+    gameEvents:
+    - myName: Set Up Plugs
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 0
+      floatData: 0
+      stringData: 11110000
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Set Blinds to Down
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 23
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Set Master Volume Slider
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 7
+      floatData: 0.8
+      stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Set Broadcast Slider
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 8
+      floatData: 0.2
+      stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Hide Tower Control Plug
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Hide Tower Control
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Set Link Switch To On
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 21
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Hide Link Switch
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Show Mute Cover
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 1
+      objectData: {fileID: 0}
+    - myName: Hide Mixing Desk Tape
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 22
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Seq 02 Switch to Multi Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 38
+      eventType: 10
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Seq 02 Switch Back to Single Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 2
+      eventTime: 181
+      eventType: 11
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Seq 03 Switch to Multi Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 3
+      eventTime: 63
+      eventType: 10
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: Seq 03 Switch Back to Single Mode
+      myTimeframe: 0
+      mySequenceOrAdNumber: 3
+      eventTime: 262
+      eventType: 11
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 0
+      objectData: {fileID: 0}
+    - myName: TEST Spawn Walker
+      myTimeframe: 1
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 5
+      floatData: 0
+      stringData: MaleCorridorWalker
+      integerData: 10
+      boolData: 0
+      objectData: {fileID: 0}
+  myState: 4
   preparingAd: 0
   overRunning: 0
   inDevMode: 0
-  savedFiles: []
+  showingLevelCompleteBanner: 0
+  savedFiles:
+  - Day 666CC Test BR GradeCC B+ BR 23XX07XX18 - 18CC03
+  - Day 666CC Test BR GradeCC B+ BR 23XX07XX18 - 18CC06
+  - Day 0CC 01 Election Night BR GradeCC B+ BR 23XX07XX18 - 18CC46
+  - Day 0CC 01 Election Night BR GradeCC B+ BR 23XX07XX18 - 20CC07
+  - Day 666CC Test BR GradeCC B+ BR 25XX07XX18 - 15CC46
+  - Day 0CC 01 The Election BR GradeCC B+ BR 01XX08XX18 - 22CC22
+  - Day 0CC 01 The Election BR GradeCC B+ BR 01XX08XX18 - 22CC55
+  - Day 666CC Test BR GradeCC B+ BR 02XX08XX18 - 16CC35
+  - Day 666CC Test BR GradeCC B+ BR 02XX08XX18 - 18CC16
+  - Day 0CC 01 The Election BR GradeCC B+ BR 02XX08XX18 - 20CC51
+  - Day 0CC 01 The Election BR GradeCC B+ BR 02XX08XX18 - 23CC27
+  - Day 0CC 01 The Election BR GradeCC B+ BR 11XX08XX18 - 13CC12
+  - Day 1CC 01 The Election BR GradeCC B+ BR 20XX08XX18 - 18CC40
+  - Day 1CC 01 The Election BR GradeCC B+ BR 23XX08XX18 - 11CC57
+  - Day 1CC 01 The Election BR GradeCC B+ BR 25XX08XX18 - 12CC52
+  - Day 212CC 06 The Heatwave BR GradeCC B+ BR 25XX08XX18 - 13CC17
+  - Day 212CC 06 The Heatwave BR GradeCC B+ BR 31XX08XX18 - 11CC21
+  - Day 1CC 01 The Election BR GradeCC B+ BR 31XX08XX18 - 15CC05
+  - Day 212CC 06 The Heatwave BR GradeCC B+ BR 31XX08XX18 - 17CC04
+  - Day 212CC 06 The Heatwave BR GradeCC B+ BR 04XX09XX18 - 15CC04
+  - Day 666CC Test BR GradeCC B+ BR 08XX11XX18 - 00CC48
+  - Day 666CC Test BR GradeCC B+ BR 09XX11XX18 - 10CC49
+  - Day 666CC Test BR GradeCC B+ BR 12XX11XX18 - 15CC32
+  - Day 1CC 01 The Election BR GradeCC B+ BR 14XX11XX18 - 15CC52
+  - Day 212CC 06 The Heatwave BR GradeCC B+ BR 14XX11XX18 - 16CC19
+  - Day 1CC 01 The Election BR GradeCC B+ BR 19XX11XX18 - 13CC53
+  - Day 1CC 01 The Election BR GradeCC B+ BR 19XX11XX18 - 14CC19
+  - Day 1CC 01 The Election BR GradeCC B+ BR 19XX11XX18 - 14CC52
+  - Day 1CC 01 The Election BR GradeCC B+ BR 19XX11XX18 - 16CC05
+  - Day 1CC 01 The Election BR GradeCC B+ BR 19XX11XX18 - 16CC19
+  - Day 666CC Test BR GradeCC B+ BR 19XX11XX18 - 16CC29
+  - Day 666CC Test BR GradeCC B+ BR 19XX11XX18 - 16CC35
 --- !u!114 &114420280390703262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -642,20 +825,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9c104d7818c97408a4149f000c37c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequenceName: Blues Band
-  preparedScreensCount: 0
-  targetScreensCount: 0
+  sequenceName: 01-01 Headlines
+  preparedScreensCount: 3
+  targetScreensCount: 4
   mySequence:
-    SequenceName: 
-    runIn: 30
-    runOut: 15
-    screenVideo: []
-    playbackVideo: []
-    screenAudio: []
-    interferenceLevel: {fileID: 0}
-    AudioInterference: {fileID: 0}
-    resistanceVideo: {fileID: 0}
-    resistanceAudio: {fileID: 0}
+    SequenceName: 01-01 Headlines
+    runIn: 13
+    runOut: 12
+    screenVideo:
+    - {fileID: 32900000, guid: 99203755e9059f140ba11705418fba45, type: 3}
+    - {fileID: 32900000, guid: e27e343bfffd23a4698fe0f1a4641dd1, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: 66b507b04a231544e8e8c58e52cc2d80, type: 3}
+    - {fileID: 32900000, guid: b83a4cb2739412445984b943c1acc263, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 37cc8d3286e34b24899ec5074cdfcaca, type: 3}
+    - {fileID: 8300000, guid: 39b25571298c7ec4b86ccf9e6571d494, type: 3}
+    interferenceLevel: {fileID: 114807129099162190, guid: 19280fc58bbece545905989f6a62d539,
+      type: 2}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
     scoringMode: 0
   myOnAirLight: {fileID: 0}
   preRollReady: 0
@@ -686,7 +876,8 @@ MonoBehaviour:
   myFrequencyControlSlider: {fileID: 0}
   mySourceSelectSlider: {fileID: 0}
   myVisonMixerLinkSwitch: {fileID: 0}
-  myMode: 0
+  myMode: 1
+  myCameraController: {fileID: 0}
 --- !u!114 &114724817509428008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -699,4 +890,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EDL: []
-  myMode: 1
+  myMode: 0

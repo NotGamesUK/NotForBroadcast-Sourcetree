@@ -149,7 +149,7 @@ MonoBehaviour:
     scoringMode: 0
   - SequenceName: 01-03 Party Leaders
     runIn: 17
-    runOut: 20
+    runOut: 22
     screenVideo:
     - {fileID: 32900000, guid: 9417c00ce3e250d4d85f6e2c08b2d25d, type: 3}
     - {fileID: 32900000, guid: dca6773794020064386d23d4855a7381, type: 3}

@@ -175,11 +175,13 @@ public class PlaybackRoomController : MonoBehaviour {
 
 
                     case EditDecision.EditDecisionType.MuteChannel:
-                        myMixingDesk.MuteChannel(thisEdit.channelNumber);
+                        Debug.Log("Asking mixing Desk to MUTE Channel " + thisEdit.channelNumber);
+                        myMixingDesk.MuteBroadcastChannel(thisEdit.channelNumber);
                         break;
 
                     case EditDecision.EditDecisionType.UnMuteChannel:
-                        myMixingDesk.UnmuteChannel(thisEdit.channelNumber);
+                        Debug.Log("Asking mixing Desk to UNMUTE Channel " + thisEdit.channelNumber);
+                        myMixingDesk.UnMuteBroadcastChannel(thisEdit.channelNumber);
                         break;
 
                 }
@@ -275,7 +277,6 @@ public class PlaybackRoomController : MonoBehaviour {
 
 
 
-
         adCountdown = (float)myLevelData.preRoll.length;
         preparingAd = true;
         sequenceStarted = false;
@@ -332,6 +333,7 @@ public class PlaybackRoomController : MonoBehaviour {
             thisOpenedFile.Close();
 
             currentLevel = thisLoadedData.levelNumber;
+            Debug.Log("LOADED LEVEL NUMBER: " + currentLevel);
             for (int n = 0; n < 3; n++)
             {
                 playbackEDL[n] = thisLoadedData.savedEDL[n];
@@ -339,10 +341,10 @@ public class PlaybackRoomController : MonoBehaviour {
                 //////// DEBUG LOGGING:
                 // DEBUG - List sorted EDL            
                 int decisionCount = 1;
-                Debug.Log("This is Loaded EDL[" + n + "]");
+                //Debug.Log("This is Loaded EDL[" + n + "]");
                 foreach (EditDecision thisEdit in playbackEDL[n])
                 {
-                    print("LOADED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
+                    //print("LOADED Time: " + thisEdit.editTime + "  Decision " + decisionCount + ": " + thisEdit.editType);
                     decisionCount++;
                 }
                 /////////////////////////////////
@@ -441,5 +443,15 @@ public class PlaybackRoomController : MonoBehaviour {
         myBroadcastSystem.StopScreens();
         myBroadcastSystem.ResetScreens();
         zoomingOut = false;
+    }
+
+    public void StopPlayback()
+    {
+        myMode = PlaybackMode.Menu;
+        myCameraAnimator.SetTrigger("EndPlayback");
+        myBroadcastSystem.StopScreens();
+        myBroadcastSystem.ResetScreens();
+        myRoomGod.ResetRoom();
+        myGUIController.AbandonPlayback();
     }
 }

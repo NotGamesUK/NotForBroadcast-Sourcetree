@@ -343,7 +343,7 @@ public class BroadcastTV : MonoBehaviour {
         {
             myScreens[n].Play();
             myScreenAudioSources[n].Play();
-
+            //myDesk.myMutes[n].Unlock();
         }
         // Start White Noise
         myWhiteNoiseAudiosource.Play();

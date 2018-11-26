@@ -21,6 +21,7 @@ public class GUIController : MonoBehaviour
     public GameObject failMenu;
     public GameObject pauseMenu;
     public GameObject paperworkMenu;
+    public GameObject isPlayingBackMenu;
 
     public MainMenuTelly menuRoomTelly;
 
@@ -292,7 +293,7 @@ public class GUIController : MonoBehaviour
 
     public void StartPlayback()
     {
-        ChangeMenuTo(null);
+        ChangeMenuTo(isPlayingBackMenu);
         ChangeMusicTo(null);
     }
 
@@ -379,17 +380,34 @@ public class GUIController : MonoBehaviour
         myPlaybackController.PrepareList(cameFromMain);
     }
 
+    public void AbandonPlayback()
+    {
+        if (cameFromMain == true)
+        {
+            ChangeMenuTo(playbackMenu);
+            ChangeMusicTo(playbackMenuMusic);
+        }
+        else
+        {
+            ChangeMenuTo(succeedMenu);
+            ChangeCameraTo(menuCamera);
+            ChangeMusicTo(succeedMenuMusic);
+        }
+    }
+
     public void LeavePlayback()
     {
         ChangeCameraTo(menuCamera);
-        ChangeMusicTo(mainMenuMusic);
 
         if (cameFromMain == true) {
             ChangeMenuTo(mainMenu);
-        } else
+            ChangeMusicTo(mainMenuMusic);
+        }
+        else
         {
             // Came from End of Level
             ChangeMenuTo(succeedMenu);
+            ChangeMusicTo(succeedMenuMusic);
         }
 
     }

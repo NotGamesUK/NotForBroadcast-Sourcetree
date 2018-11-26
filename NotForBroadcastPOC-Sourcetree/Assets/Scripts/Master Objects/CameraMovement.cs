@@ -22,6 +22,7 @@ public class CameraMovement : MonoBehaviour {
     private float currentFocusDistance, currentAperture, targetFocusDistance, targetAperture, focusIncrement, apertureIncrement, focusPullCountdown;
     private bool pullingFocus;
 
+
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
@@ -37,6 +38,7 @@ public class CameraMovement : MonoBehaviour {
         targetFocusDistance = currentFocusDistance;
         targetAperture = currentAperture;
         pullingFocus = false;
+
     }
 
     public void LookDown()

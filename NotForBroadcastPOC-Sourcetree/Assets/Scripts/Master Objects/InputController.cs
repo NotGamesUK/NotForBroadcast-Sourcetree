@@ -17,14 +17,13 @@ public class InputController : MonoBehaviour {
     [HideInInspector]
     public InputMode myMode;
 
-    private CameraMovement myCameraController;
+    public CameraMovement myCameraController;
     private GUIController myGUIController;
     private GodOfTheRoom myRoomGod;
     private bool isPaused;
 
 	// Use this for initialization
 	void Start () {
-        myCameraController = FindObjectOfType<CameraMovement>();
         myGUIController = FindObjectOfType<GUIController>();
         myRoomGod = FindObjectOfType<GodOfTheRoom>();
         myMode = InputMode.Inactive;

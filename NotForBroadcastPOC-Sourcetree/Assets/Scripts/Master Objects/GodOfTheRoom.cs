@@ -109,7 +109,7 @@ public class GodOfTheRoom : MonoBehaviour
         for (int n=0; n<numberOfRoomLights; n++)
         {
             defaultRoomLightIntensity[n] = roomLights[n].intensity;
-            Debug.Log("Room Light " + n + " intensity set to " + defaultRoomLightIntensity[n]);
+            //Debug.Log("Room Light " + n + " intensity set to " + defaultRoomLightIntensity[n]);
         }
 
         fadingSound = false;

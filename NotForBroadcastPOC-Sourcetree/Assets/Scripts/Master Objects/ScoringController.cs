@@ -197,7 +197,7 @@ public class ScoringController : MonoBehaviour {
 
             broadcastScreenColour = thisColour;
 
-                Debug.Log("New Scoring System - Broadcast Screen Colour changed to " + broadcastScreenColour);
+                //Debug.Log("New Scoring System - Broadcast Screen Colour changed to " + broadcastScreenColour);
 
                 // Call Footage Colour Change Here!!
                 FootageColourChange(broadcastScreenColour);
@@ -207,7 +207,7 @@ public class ScoringController : MonoBehaviour {
         else if (screenChanged)
         {
                 // Screen Changed but Colour Remained the same
-                Debug.Log("New Scoring System - Broadcast Screen Changed but COLOUR is the SAME: " + broadcastScreenColour);
+                //Debug.Log("New Scoring System - Broadcast Screen Changed but COLOUR is the SAME: " + broadcastScreenColour);
 
                 // Call Footage Counter Reset Here!!
                 FootageCounterReset(broadcastScreenColour);
@@ -418,14 +418,14 @@ public class ScoringController : MonoBehaviour {
             bleepWatchingCount = 0;
             myBleepLight.LightOff();
         }
-        Debug.Log("NEW SCORING SYSTEM - BleepCount DECREASED TO - " + bleepWatchingCount);
+        //Debug.Log("NEW SCORING SYSTEM - BleepCount DECREASED TO - " + bleepWatchingCount);
 
     }
 
 
     public void FootageCounterReset(ScoringData.ScoreColour thisColour)
     {
-        Debug.Log("Resetting " + thisColour + " counter.");
+        //Debug.Log("Resetting " + thisColour + " counter.");
         FootageColourChange(thisColour);
     }
 

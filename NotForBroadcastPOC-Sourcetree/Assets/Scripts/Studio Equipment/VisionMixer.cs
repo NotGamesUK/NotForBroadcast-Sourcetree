@@ -24,6 +24,7 @@ public class VisionMixer : MonoBehaviour {
     private int maxScreen;
     private AudioClip thisAudioClip;
     private EDLController myEDLController;
+    private MasterController myMasterController;
 
     /// REMOVE AFTER EDL WORKING
     public BroadcastTV myBroadcastTV;
@@ -36,6 +37,7 @@ public class VisionMixer : MonoBehaviour {
         myMixingDesk = FindObjectOfType<SoundDesk>();
         myEDLController = FindObjectOfType<EDLController>();
         myBroadcastTV = FindObjectOfType<BroadcastTV>();
+        myMasterController = FindObjectOfType<MasterController>();
         currentScreen = 0;
 	}
 	
@@ -161,8 +163,9 @@ public class VisionMixer : MonoBehaviour {
 
 
             // Mute other sound channels as required
-            if (myLinkSwitch.isOn)
+            if (myLinkSwitch.isOn && myMasterController.myState != MasterController.MasterState.Menu)
             {
+                Debug.Log("Making Linked Muting Settings");
                 for (int n = 1; n <= 4; n++)
                 {
                     if (n == selectedScreen)

@@ -7,11 +7,10 @@ using UnityEngine.Audio;
 public class Speakers : MonoBehaviour {
 
     public AudioMixer myDesk;
-    private Light[] powerLEDs;
+    public Light[] powerLEDs;
 
 	// Use this for initialization
 	void Start () {
-        powerLEDs = GetComponentsInChildren<Light>();
 	}
 	
 	// Update is called once per frame

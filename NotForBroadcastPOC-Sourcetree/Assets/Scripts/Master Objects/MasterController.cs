@@ -64,8 +64,8 @@ public class MasterController : MonoBehaviour {
     private EventController myEventController;
 
     [HideInInspector]
-    public int currentLevel, levelCalledFromGUI;
-    public int currentSequence;
+    public int levelCalledFromGUI;
+    public int currentLevel, currentSequence;
     [HideInInspector]
     public LevelData myLevelData;
     public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
@@ -324,8 +324,8 @@ public class MasterController : MonoBehaviour {
     public void GetLevelInfoForPlayback(int thisLevel)
     {
         Debug.Log("Trying to Get Playback Info for Level " + thisLevel);
-        int thisPlaybackLevel = GetListNumberFromLevelNumber(thisLevel);
-        myPlaybackController.myLevelData = levelDataArray[thisPlaybackLevel];
+        //int thisPlaybackLevel = GetListNumberFromLevelNumber(thisLevel);
+        myPlaybackController.myLevelData = levelDataArray[thisLevel];
     }
 
     int GetListNumberFromLevelNumber(int thislevel)
@@ -609,6 +609,8 @@ public class MasterController : MonoBehaviour {
         else
         {
             Debug.Log("NO FILE LIST EXISTS");
+            savedFiles.Clear();
+
         }
 
     }
@@ -655,6 +657,7 @@ public class MasterController : MonoBehaviour {
         myFormatter.Serialize(thisOpenedFile, thisSaveData);
         thisOpenedFile.Close();
         Debug.Log("Adding File: "+thisSaveName+" to List of names.");
+        Debug.Log("Saving Level as " + currentLevel);
         savedFiles.Add(thisSaveName);
         Debug.Log("Calling SaveFileList.");
         SaveFileList();

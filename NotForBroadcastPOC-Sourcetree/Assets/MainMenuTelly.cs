@@ -80,7 +80,7 @@ public class MainMenuTelly : MonoBehaviour {
                 nextColour = frameColourChanges[currentArrayPos].Substring(0, 1);
                 string nextFrameString = frameColourChanges[currentArrayPos].Substring(1, 5);
                 nextChangeFrame = int.Parse(nextFrameString);
-                Debug.Log("Next Colour Code: " + nextColour + "  at frame: " + nextChangeFrame);
+                //Debug.Log("Next Colour Code: " + nextColour + "  at frame: " + nextChangeFrame);
                 //}
                 switch (nextColour) {
 
