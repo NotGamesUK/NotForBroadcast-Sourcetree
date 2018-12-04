@@ -269,12 +269,12 @@ public class PlaybackRoomController : MonoBehaviour {
         myRoomGod.SwitchScreensTo2DSound();
         myRoomGod.TripSwitchPower(true);
         myRoomGod.SetAllPlugs("00110000"); // Turn on Spreakers and Mixing Desk
-        myRoomGod.SetMixingDeskChannelSelect(2); // Set to Broadcast Only on Mixing Desk
+//        myRoomGod.SetMixingDeskChannelSelect(2); // Set to Broadcast Only on Mixing Desk
         myRoomGod.SetBroadcastVolumeSlider(1f); // Turn Volume to full
         myRoomGod.LoadTapeRack(myLevelData.advertList);
 
         myRoomGod.UnMuteRoom(); // Make all switches etc audible
-
+        myRoomGod.FadeInAll3DSound(0.1f);
 
 
         adCountdown = (float)myLevelData.preRoll.length;

@@ -348,13 +348,13 @@ MonoBehaviour:
       integerData: 0
       boolData: 1
       objectData: {fileID: 0}
-    - myName: Spawn Corridor Guard
+    - myName: Set Link Switch to On
       myTimeframe: 2
       mySequenceOrAdNumber: 0
       eventTime: 0
-      eventType: 5
+      eventType: 21
       floatData: 0
-      stringData: MaleCorridorGuardStanding
+      stringData: 
       integerData: 0
       boolData: 1
       objectData: {fileID: 0}
@@ -607,8 +607,8 @@ MonoBehaviour:
     advertList: Nandos#Um Bongo#Team01#Budweiser#Team02#Skittles#Pot Noodle#Team03
     gameEvents: []
   masterLevelClock: 0
-  currentLevel: 0
   levelCalledFromGUI: 1
+  currentLevel: 0
   currentSequence: 0
   myLevelData:
     levelName: 01 The Election
