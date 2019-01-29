@@ -202,6 +202,11 @@ public class GodOfTheRoom : MonoBehaviour
         mySky.SetSky(thisLevel);
     }
 
+    public void FlashObject(TutorialFlasher thisObject, float thisFlashTime, float thisFlashSpeed)
+    {
+        thisObject.FlashForXSeconds(thisFlashTime, thisFlashSpeed);
+    }
+
 
     // Room Controls
 

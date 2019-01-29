@@ -14,8 +14,8 @@ public class Telephone : MonoBehaviour {
     private AudioClip currentCall;
     private ButtonAnimating myButton;
     private Light myLight;
-
-    private bool isRinging, isConnected, isOnHold, hangUp;
+    [HideInInspector]
+    public bool isRinging, isConnected, isOnHold, hangUp;
     private float ringLength, ringCount;
 
 
@@ -27,7 +27,7 @@ public class Telephone : MonoBehaviour {
 
 
         ///////////////////////// TEST CODE:
-        Invoke("TEMPDELETEME", 2);
+        //Invoke("TEMPDELETEME", 2);
         ////////////////////////////////////
 	}
 	
@@ -84,7 +84,7 @@ public class Telephone : MonoBehaviour {
                 PlayCall();
 
                 ////////////////////////// REMOVE AFTER TESTING ///////////////////////////////
-                Invoke("TEMPAGAINDELETEME", 40);
+                //Invoke("TEMPAGAINDELETEME", 40);
                 //////////////////////////////////////////////////////
 
             }

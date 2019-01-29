@@ -62,6 +62,7 @@ public class MasterController : MonoBehaviour {
     private GodOfTheRoom myRoomGod;
     private InputController myInputController;
     private EventController myEventController;
+    private TutorialController myTutorialController;
 
     [HideInInspector]
     public int levelCalledFromGUI;
@@ -108,6 +109,7 @@ public class MasterController : MonoBehaviour {
         myRoomGod = FindObjectOfType<GodOfTheRoom>();
         myInputController = GetComponent<InputController>();
         myEventController = FindObjectOfType<EventController>();
+        myTutorialController = FindObjectOfType<TutorialController>();
         myState = MasterState.Menu;
         broadcastEDL[0] = new List<EditDecision>();
         broadcastEDL[1] = new List<EditDecision>();
@@ -124,6 +126,8 @@ public class MasterController : MonoBehaviour {
         myScoringController.InitialiseVU();
         myRoomGod.MuteAll3DSound();
         myRoomGod.LoadTapeRack(myLevelData.advertList);
+        myTutorialController.StartTutorial(thisLevel);
+
     }
 
     // Update is called once per frame

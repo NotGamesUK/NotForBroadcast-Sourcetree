@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
+using UnityEngine.Rendering.PostProcessing;
 
 
 public class CameraMovement : MonoBehaviour {
@@ -9,18 +10,25 @@ public class CameraMovement : MonoBehaviour {
     public bool freeLook = false;
     public float speedH = 2.0f;
     public float speedV = 2.0f;
+    public PostProcessVolume myNewPostProcessing;
     public PostProcessingProfile myPostProcessing;
     public float focusPullTime, frontViewFocusLength, frontViewAperture, leftViewFocusLength, leftViewAperture, rightViewFocusLength, rightViewAperture, downViewFocusLength, downViewAperture, inTrayViewFocusLength, inTrayViewAperture;
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
     private Animator myAnimator;
-    private string myPosition="Centre";
+    [HideInInspector]
+    public string myPosition="Centre";
     private Vector3 startPosition;
     private float startFOV;
     private Camera myCamera;
     private float currentFocusDistance, currentAperture, targetFocusDistance, targetAperture, focusIncrement, apertureIncrement, focusPullCountdown;
     private bool pullingFocus;
+
+    private DepthOfField myNewDOF;
+    [HideInInspector]
+    public bool leftViewLocked, downViewLocked, rightViewLocked;
+
 
 
     private void Start()
@@ -30,21 +38,26 @@ public class CameraMovement : MonoBehaviour {
         myCamera = GetComponent<Camera>();
         startFOV = myCamera.fieldOfView;
         var myDOF = myPostProcessing.depthOfField.settings;
+        myNewPostProcessing.profile.TryGetSettings(out myNewDOF);
         currentFocusDistance = frontViewFocusLength;
         currentAperture = frontViewAperture;
         myDOF.focusDistance = frontViewFocusLength;
         myDOF.aperture = frontViewAperture;
         myPostProcessing.depthOfField.settings = myDOF;
+
+
         targetFocusDistance = currentFocusDistance;
         targetAperture = currentAperture;
         pullingFocus = false;
-
+        leftViewLocked = false;
+        downViewLocked = false;
+        rightViewLocked = false;
     }
 
     public void LookDown()
     {
         //Debug.Log("TOLD TO LOOK DOWN.  My Current Position: "+myPosition);
-        if (myPosition != "Down")
+        if (myPosition != "Down" && !downViewLocked)
         {
             myAnimator.SetTrigger("downPressed");
             myPosition = "Down";
@@ -69,18 +82,21 @@ public class CameraMovement : MonoBehaviour {
     {
         if (myPosition != "Left")
         {
-            myAnimator.SetTrigger("leftPressed");
             if (myPosition == "Right")
             {
+                myAnimator.SetTrigger("leftPressed");
                 myPosition = "Centre";
                 PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
 
             }
             else
             {
-                myPosition = "Left";
-                PullFocusOverTime(leftViewFocusLength, leftViewAperture, focusPullTime);
-
+                if (!leftViewLocked)
+                {
+                    myPosition = "Left";
+                    myAnimator.SetTrigger("leftPressed");
+                    PullFocusOverTime(leftViewFocusLength, leftViewAperture, focusPullTime);
+                }
             }
         }
 
@@ -90,18 +106,21 @@ public class CameraMovement : MonoBehaviour {
     {
         if (myPosition != "Right")
         {
-            myAnimator.SetTrigger("rightPressed");
             if (myPosition == "Left")
             {
+                myAnimator.SetTrigger("rightPressed");
                 myPosition = "Centre";
                 PullFocusOverTime(frontViewFocusLength, frontViewAperture, focusPullTime);
 
             }
             else
             {
-                myPosition = "Right";
-                PullFocusOverTime(rightViewFocusLength, rightViewAperture, focusPullTime);
-
+                if (!rightViewLocked)
+                {
+                    myAnimator.SetTrigger("rightPressed");
+                    myPosition = "Right";
+                    PullFocusOverTime(rightViewFocusLength, rightViewAperture, focusPullTime);
+                }
             }
         }
 
