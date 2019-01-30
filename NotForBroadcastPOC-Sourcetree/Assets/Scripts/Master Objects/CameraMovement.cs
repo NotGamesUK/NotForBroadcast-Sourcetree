@@ -37,13 +37,19 @@ public class CameraMovement : MonoBehaviour {
         startPosition = this.transform.position;
         myCamera = GetComponent<Camera>();
         startFOV = myCamera.fieldOfView;
-        var myDOF = myPostProcessing.depthOfField.settings;
-        myNewPostProcessing.profile.TryGetSettings(out myNewDOF);
         currentFocusDistance = frontViewFocusLength;
         currentAperture = frontViewAperture;
+
+        // Old Post Processing Stack
+        var myDOF = myPostProcessing.depthOfField.settings;
         myDOF.focusDistance = frontViewFocusLength;
         myDOF.aperture = frontViewAperture;
-        myPostProcessing.depthOfField.settings = myDOF;
+
+        // New Post Processing Stack
+        myNewPostProcessing.profile.TryGetSettings(out myNewDOF);
+        myNewDOF.focusDistance.value = frontViewFocusLength;
+        myNewDOF.aperture.value = frontViewAperture;
+        myNewPostProcessing.profile.AddSettings(myNewDOF);
 
 
         targetFocusDistance = currentFocusDistance;
@@ -170,6 +176,9 @@ public class CameraMovement : MonoBehaviour {
 
         if (pullingFocus)
         {
+            // only one of these two needs to be Operational.  Delete the other when art has finished swapping over to new Post Processing Stack.
+
+            // Old Post Processing Stack
             var myDOF = myPostProcessing.depthOfField.settings;
             currentFocusDistance = myDOF.focusDistance;
             currentAperture = myDOF.aperture;
@@ -186,6 +195,25 @@ public class CameraMovement : MonoBehaviour {
             myDOF.focusDistance = currentFocusDistance;
             myDOF.aperture = currentAperture;
             myPostProcessing.depthOfField.settings = myDOF;
+
+            // New Post Processing Stack
+            myNewPostProcessing.profile.TryGetSettings(out myNewDOF);
+            currentFocusDistance = myNewDOF.focusDistance;
+            currentAperture = myNewDOF.aperture;
+            currentFocusDistance += (focusIncrement * Time.deltaTime);
+            currentAperture += (apertureIncrement * Time.deltaTime);
+            focusPullCountdown -= Time.deltaTime;
+            if (focusPullCountdown <= 0)
+            {
+                currentFocusDistance = targetFocusDistance;
+                currentAperture = targetAperture;
+                focusPullCountdown = 0;
+                pullingFocus = false;
+            }
+
+            myNewDOF.focusDistance.value = currentFocusDistance;
+            myNewDOF.aperture.value = currentAperture;
+            myNewPostProcessing.profile.AddSettings(myNewDOF);
 
         }
 
