@@ -1,21 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1962718779459812}
-  m_IsPrefabAsset: 1
 --- !u!1 &1962718779459812
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4156777894312240}
@@ -33,9 +23,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4156777894312240
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962718779459812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -44,72 +35,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114154697584577844
+--- !u!114 &114420280390703262
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f554da4f0a3034481e830f76c8eaa6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9c104d7818c97408a4149f000c37c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startAudiencePercentage: 50
-  minimumAudiencePercentage: 5
-  maxGreenSecsMultiCam: 10
-  maxOrangeSecsMultiCam: 3
-  maxOrangeSecsSingleCam: 2
-  footageWeight: 0.2
-  audioWeight: 1
-  interferenceWeight: 4
-  audioInterferenceWeight: 1.08
-  resistanceWeight: 1
-  bleepWeight: 0.14
-  bleepCooldownRate: 0.5
-  downWeight: 1
-  upWeight: 1.2
-  speedOfChange: 0.3
-  godWeighting: 0
-  myUpArrow: {fileID: 0}
-  myDownArrow: {fileID: 0}
-  myScoringMode: 0
-  broadcastScreensLive: 0
-  bleepOn: 0
-  maxAudioChannel: 2
-  channelMuted: 00000000
-  bleepChannelMuted: 00000000
-  audiencePercentage: 50
-  footageCountdown: 0
-  footageWeighting: 0
-  audioWeighting: 0
-  interferenceWeighting: 0
-  bleepWeighting: 0
-  thisAudienceChange: 0
-  lastAudienceChange: 0
-  screen:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  myWallLightRed: {fileID: 0}
-  myWallLightOrange: {fileID: 0}
-  myWallLightGreen: {fileID: 0}
-  mySFXPlayer: {fileID: 0}
-  myBleepLight: {fileID: 0}
-  screenVideoColour: 0000000000000000000000000000000000000000000000000000000000000000
-  currentSequenceNumber: 0
-  currentBroadcastScreen: -1
-  bleepWatchingCount: 0
+  sequenceName: 01-01 Headlines
+  preparedScreensCount: 3
+  targetScreensCount: 4
+  mySequence:
+    SequenceName: 01-01 Headlines
+    runIn: 13
+    runOut: 12
+    screenVideo:
+    - {fileID: 32900000, guid: 99203755e9059f140ba11705418fba45, type: 3}
+    - {fileID: 32900000, guid: e27e343bfffd23a4698fe0f1a4641dd1, type: 3}
+    playbackVideo:
+    - {fileID: 32900000, guid: 66b507b04a231544e8e8c58e52cc2d80, type: 3}
+    - {fileID: 32900000, guid: b83a4cb2739412445984b943c1acc263, type: 3}
+    screenAudio:
+    - {fileID: 8300000, guid: 37cc8d3286e34b24899ec5074cdfcaca, type: 3}
+    - {fileID: 8300000, guid: 39b25571298c7ec4b86ccf9e6571d494, type: 3}
+    interferenceLevel: {fileID: 114807129099162190, guid: 19280fc58bbece545905989f6a62d539,
+      type: 3}
+    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
+    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
+    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
+    scoringMode: 0
+  myOnAirLight: {fileID: 0}
+  preRollReady: 0
+  broadcastScreenDelayTime: 2
+--- !u!114 &114724817509428008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962718779459812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d63992dfd8cd3048b5442e0467cb1c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EDL: []
+  myMode: 0
 --- !u!114 &114258210600043390
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -168,7 +150,7 @@ MonoBehaviour:
       mySequenceOrAdNumber: 0
       eventTime: 0
       eventType: 8
-      floatData: 0.2
+      floatData: 0.1
       stringData: 
       integerData: 0
       boolData: 1
@@ -232,6 +214,16 @@ MonoBehaviour:
       stringData: 
       integerData: 0
       boolData: 0
+      objectData: {fileID: 0}
+    - myName: Show Intercom
+      myTimeframe: 2
+      mySequenceOrAdNumber: 0
+      eventTime: 0
+      eventType: 9
+      floatData: 0
+      stringData: 
+      integerData: 0
+      boolData: 1
       objectData: {fileID: 0}
     - myName: Seq 02 Switch to Multi Mode
       myTimeframe: 0
@@ -781,6 +773,7 @@ MonoBehaviour:
   overRunning: 0
   inDevMode: 0
   showingLevelCompleteBanner: 0
+  tutorialSaysStart: 0
   savedFiles:
   - Day 666CC Test BR GradeCC B+ BR 23XX07XX18 - 18CC03
   - Day 666CC Test BR GradeCC B+ BR 23XX07XX18 - 18CC06
@@ -814,47 +807,74 @@ MonoBehaviour:
   - Day 1CC 01 The Election BR GradeCC B+ BR 19XX11XX18 - 16CC19
   - Day 666CC Test BR GradeCC B+ BR 19XX11XX18 - 16CC29
   - Day 666CC Test BR GradeCC B+ BR 19XX11XX18 - 16CC35
---- !u!114 &114420280390703262
+--- !u!114 &114154697584577844
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9c104d7818c97408a4149f000c37c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 40f554da4f0a3034481e830f76c8eaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequenceName: 01-01 Headlines
-  preparedScreensCount: 3
-  targetScreensCount: 4
-  mySequence:
-    SequenceName: 01-01 Headlines
-    runIn: 13
-    runOut: 12
-    screenVideo:
-    - {fileID: 32900000, guid: 99203755e9059f140ba11705418fba45, type: 3}
-    - {fileID: 32900000, guid: e27e343bfffd23a4698fe0f1a4641dd1, type: 3}
-    playbackVideo:
-    - {fileID: 32900000, guid: 66b507b04a231544e8e8c58e52cc2d80, type: 3}
-    - {fileID: 32900000, guid: b83a4cb2739412445984b943c1acc263, type: 3}
-    screenAudio:
-    - {fileID: 8300000, guid: 37cc8d3286e34b24899ec5074cdfcaca, type: 3}
-    - {fileID: 8300000, guid: 39b25571298c7ec4b86ccf9e6571d494, type: 3}
-    interferenceLevel: {fileID: 114807129099162190, guid: 19280fc58bbece545905989f6a62d539,
-      type: 2}
-    AudioInterference: {fileID: 8300000, guid: d035996c0f08c3b4a8cc8524cfe83a27, type: 3}
-    resistanceVideo: {fileID: 32900000, guid: ef23d565a6233cc4bab17ef67da17193, type: 3}
-    resistanceAudio: {fileID: 8300000, guid: a71bb2a6cd26e524db1f47e5a68909d4, type: 3}
-    scoringMode: 0
-  myOnAirLight: {fileID: 0}
-  preRollReady: 0
-  broadcastScreenDelayTime: 2
+  startAudiencePercentage: 50
+  minimumAudiencePercentage: 5
+  maxGreenSecsMultiCam: 10
+  maxOrangeSecsMultiCam: 3
+  maxOrangeSecsSingleCam: 2
+  footageWeight: 0.2
+  audioWeight: 1
+  interferenceWeight: 4
+  audioInterferenceWeight: 1.08
+  resistanceWeight: 1
+  bleepWeight: 0.14
+  bleepCooldownRate: 0.5
+  downWeight: 1
+  upWeight: 1.2
+  speedOfChange: 0.3
+  godWeighting: 0
+  myUpArrow: {fileID: 0}
+  myDownArrow: {fileID: 0}
+  myScoringMode: 0
+  broadcastScreensLive: 0
+  bleepOn: 0
+  maxAudioChannel: 2
+  channelMuted: 00000000
+  bleepChannelMuted: 00000000
+  audiencePercentage: 50
+  footageCountdown: 0
+  footageWeighting: 0
+  audioWeighting: 0
+  interferenceWeighting: 0
+  bleepWeighting: 0
+  thisAudienceChange: 0
+  lastAudienceChange: 0
+  screen:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  myWallLightRed: {fileID: 0}
+  myWallLightOrange: {fileID: 0}
+  myWallLightGreen: {fileID: 0}
+  mySFXPlayer: {fileID: 0}
+  myBleepLight: {fileID: 0}
+  screenVideoColour: 0000000000000000000000000000000000000000000000000000000000000000
+  currentSequenceNumber: 0
+  currentBroadcastScreen: -1
+  bleepWatchingCount: 0
 --- !u!114 &114523897991296926
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962718779459812}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -878,16 +898,3 @@ MonoBehaviour:
   myVisonMixerLinkSwitch: {fileID: 0}
   myMode: 1
   myCameraController: {fileID: 0}
---- !u!114 &114724817509428008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1962718779459812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d63992dfd8cd3048b5442e0467cb1c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EDL: []
-  myMode: 0

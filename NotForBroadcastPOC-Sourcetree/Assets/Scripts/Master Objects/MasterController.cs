@@ -72,14 +72,14 @@ public class MasterController : MonoBehaviour {
     public enum MasterState { Menu, StartLevel, WaitingForPlayer, PreparingAd, PlayingAd, Active, PostRoll, EndOfLevel, FailLevel, Paused }
     public MasterState myState;
     [HideInInspector]
-    public bool preparingAd, overRunning, inDevMode, showingLevelCompleteBanner;
+    public bool preparingAd, overRunning, inDevMode, showingLevelCompleteBanner, tutorialSaysStart;
     private float overrunTime, startPreRollTime;
     [HideInInspector]
     public List<EditDecision>[] broadcastEDL = new List<EditDecision>[3];
     public List<String> savedFiles = new List<string>();
     private int myDayNumber;
     private string myLevelName;
-
+    
     private int decisionCount;
 
     private void Awake()
@@ -115,6 +115,7 @@ public class MasterController : MonoBehaviour {
         broadcastEDL[1] = new List<EditDecision>();
         broadcastEDL[2] = new List<EditDecision>();
         LoadFileList();
+        tutorialSaysStart = false;
     }
 
     public void StartBroadcast(int thisLevel)
@@ -127,7 +128,7 @@ public class MasterController : MonoBehaviour {
         myRoomGod.MuteAll3DSound();
         myRoomGod.LoadTapeRack(myLevelData.advertList);
         myTutorialController.StartTutorial(thisLevel);
-
+        tutorialSaysStart = false;
     }
 
     // Update is called once per frame
@@ -156,11 +157,11 @@ public class MasterController : MonoBehaviour {
 
                 // If in Waiting State
                 // Check if Condition is met
-                if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.KeypadEnter))
+                if ((Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.KeypadEnter)) || tutorialSaysStart)
                 {
                     PrepareAdvert(myLevelData.preRollSmaller, myLevelData.preRollAudio);
                     myRoomGod.MakeCheckpoint(0);
-
+                    tutorialSaysStart = false;
                 }
                 // Make relevant action (Send Fax, Phone Call, Display/Clear Tutorial text, etc)
                 // Move to next condition

@@ -10,7 +10,7 @@ public class AudienceVUMeter : MonoBehaviour {
     public ImageFader myRedFlash;
     public VUBar[] myBars;
 
-    private float currentPercentage;
+    public float currentPercentage;
     private int loopStart, loopEnd;
     private AudioSource mySFXPlayer;
 

@@ -8,7 +8,8 @@ public class EventController : MonoBehaviour {
     public enum RoomControllerState { Dormant, PreRoll, Advert, Sequence }
     [HideInInspector]
     public RoomControllerState myState;
-    private float myClock;
+    [HideInInspector]
+    public float myClock;
     private List<GameEvent> myEventList = new List<GameEvent>();
     [HideInInspector]
     public int currentAdvert, currentSequence, currentListPosition, maxListPosition;

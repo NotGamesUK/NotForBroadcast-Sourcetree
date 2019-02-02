@@ -3,7 +3,7 @@ guid: 558d4bcf01826c44f8edc96ddae9c139
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 16
+  fontSize: 32
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
@@ -12,10 +12,10 @@ TrueTypeFontImporter:
   fontNames:
   - Cabin
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 0b0695b25c5b65a438816df658fdd852, type: 3}
-  - {fileID: 12800000, guid: 2b2f4de2276ce13408cddf3fb09a8722, type: 3}
-  - {fileID: 12800000, guid: 40e536b7b34d62f4e812535e0cdec8dc, type: 3}
-  - {fileID: 12800000, guid: 1019067989a12b148b31b70c9efe9f5c, type: 3}
+  - {instanceID: 0}
+  - {instanceID: 0}
+  - {instanceID: 0}
+  - {instanceID: 0}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

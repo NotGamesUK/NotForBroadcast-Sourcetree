@@ -150,6 +150,18 @@ public class Telephone : MonoBehaviour {
         }
     }
 
+    public void PlayImmediately(AudioClip thisCall, bool thisHangUp)
+    {
+        // Load Call into Source
+        currentCall = thisCall;
+        // Set hangUp status
+        hangUp = thisHangUp;
+        // call PlayCall();
+        PlayCall();
+        isOnHold = false;
+
+    }
+
     void EndCall ()
     {
         // Release Button
@@ -176,4 +188,5 @@ public class Telephone : MonoBehaviour {
         // set isOnHold to true;
         isOnHold = true;
     }
+
 }

@@ -207,6 +207,11 @@ public class GodOfTheRoom : MonoBehaviour
         thisObject.FlashForXSeconds(thisFlashTime, thisFlashSpeed);
     }
 
+    public void StopFlashingObject(TutorialFlasher thisObject)
+    {
+        thisObject.StopFlashing();
+    }
+
 
     // Room Controls
 
